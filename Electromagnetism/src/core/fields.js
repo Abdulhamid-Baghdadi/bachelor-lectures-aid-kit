@@ -171,7 +171,7 @@ export function loopAxisBNumeric(I, a, z, n = 360, mu = MU0) {
 /** The same integral in closed form: B = μ I a² / (2 (a² + z²)^(3/2)). */
 export const loopAxisB = (I, a, z, mu = MU0) => mu * I * a * a / (2 * (a * a + z * z) ** 1.5);
 
-/** Skin depth δ, from P″ = Ĥ0²/(2γδ) = (Ĥ0²/2) √(μω/(2γ)) (4.31): δ = √(2/(μωγ)). */
+/** Skin depth δ = √(2/(μωγ)) (4.27), the depth that sets the loss P″ = Ĥ0²/(2γδ) (4.31). */
 export const skinDepth = (f, gamma, mur = 1) => Math.sqrt(2 / (MU0 * mur * 2 * Math.PI * f * gamma));
 /** B(x, t) = B̂0 e^(−x/δ) cos(ωt − x/δ) (4.28). */
 export const skinB = (B0, x, t, f, delta) => B0 * Math.exp(-x / delta) * Math.cos(2 * Math.PI * f * t - x / delta);

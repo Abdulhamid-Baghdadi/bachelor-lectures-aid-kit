@@ -46,7 +46,7 @@ export function lossyWave(f, epsr, sigma, mur = 1) {
 }
 
 /** Rectangular waveguide a × b (pp. 64–66): κ² = (mπ/a)² + (nπ/b)² = ω²εμ − k_z², so a mode carries power only above
- *  its cutoff f_c = (c/2)√((m/a)² + (n/b)²), where k_z is real. TE needs m + n ≥ 1, TM needs m, n ≥ 1. */
+ *  its cutoff f_G = (c/2)√((m/a)² + (n/b)²), where k_z is real. TE needs m + n ≥ 1, TM needs m, n ≥ 1. */
 export function waveguideModes(a, b, f, epsr = 1, max = 3) {
   const c = C0 / Math.sqrt(epsr), modes = [];
   for (let m = 0; m <= max; m++) for (let n = 0; n <= max; n++) {

@@ -13,7 +13,7 @@ export default {
     let aw = 0.02286, bw = 0.01016, f = 10e9;
     const pic = s("svg", { viewBox: "0 0 300 160", class: "schematic", role: "img", "aria-label": "Cross-section of the guide: the TE10 electric field, strongest in the middle, zero at the side walls" });
     const table = h("table", { class: "method" });
-    const rc = readout("TE10 cutoff f_c = c / (2a)"), rZ = readout("Wave impedance Z_W,TE"), rL = readout("Guide wavelength λ_H"), rV = readout("Group speed of the energy");
+    const rc = readout("TE10 cutoff f_G = c / (2a)"), rZ = readout("Wave impedance Z_W,TE"), rL = readout("Guide wavelength λ_H"), rV = readout("Group speed of the energy");
     const update = () => {
       const t = te10(aw, f), W = 280, Hh = W * bw / aw;
       pic.setAttribute("viewBox", `0 0 300 ${Hh + 20}`);
@@ -22,7 +22,7 @@ export default {
       rc.set(si(t.cutoff, "Hz"), t.carries ? "" : "warn", t.carries ? "" : "below cutoff: the field dies away along the guide, nothing is carried");
       rZ.set(t.carries ? si(t.Z, "Ω") : "—"); rL.set(t.carries ? si(t.lambdaH, "m") : "—"); rV.set(t.carries ? si(t.groupSpeed, "m/s") : "—");
       const modes = waveguideModes(aw, bw, f).slice(0, 8);
-      table.replaceChildren(h("thead", {}, h("tr", {}, h("th", {}, "Mode"), h("th", {}, "Cutoff f_c"), h("th", {}, "At this frequency"))),
+      table.replaceChildren(h("thead", {}, h("tr", {}, h("th", {}, "Mode"), h("th", {}, "Cutoff f_G"), h("th", {}, "At this frequency"))),
         h("tbody", {}, modes.map(m => h("tr", { class: m.carries ? "best" : "" },
           h("td", { class: "text" }, `${m.type}${m.m}${m.n}`), h("td", {}, si(m.fc, "Hz")), h("td", { class: "text" }, m.carries ? "carries power" : "cut off")))));
     };
