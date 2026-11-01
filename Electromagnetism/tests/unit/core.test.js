@@ -117,3 +117,10 @@ test("line: a short at the end gives |U| = |sin β(l−z)|/|sin βl| on a lossle
   near(ln.U(0.4), Math.abs(Math.sin(ln.beta * 0.9) / Math.sin(ln.beta * 1.3)), 1e-9);
   near(ln.lambda, F.C0 > 0 ? 1 / (1e8 * Math.sqrt(250e-9 * 100e-12)) : 0, 1e-9);
 });
+
+test("Gauss lab readout: the case of the bug report, +1 and −1 nC inside, reads 0.00 nC, not −0.0168 pC", () => {
+  const charges = [{ q: 2e-9, x: 0.15, y: 0.12 }, { q: -1e-9, x: 0.23, y: 0.19 }, { q: 1e-9, x: 0.33, y: 0.1 }, { q: -2e-9, x: 0.37, y: 0.22 }];
+  assert.equal(F.nanocoulomb(F.enclosedCharge(charges, 0.275, 0.145, 0.09)), "0.00 nC");
+  assert.equal(F.nanocoulomb(F.fluxThroughSphere(charges, 0.275, 0.145, 0.09, 50)), "0.00 nC");
+  assert.equal(F.nanocoulomb(-2e-9), "-2.00 nC");
+});

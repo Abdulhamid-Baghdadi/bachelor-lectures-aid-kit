@@ -52,6 +52,10 @@ export function fluxThroughSphere(charges, cx, cy, R, n = 200, eps = EPS0) {
   return total;
 }
 
+/** A charge in nC to two decimals, the scale of the lab's charges: the numerical integral's error near a surface charge
+ *  (a few pC at n = 50) falls below the last digit, and −0.00 shows as 0.00. */
+export const nanocoulomb = q => `${(Math.round(q * 1e11) / 100 || 0).toFixed(2)} nC`;
+
 /** V(∂A) = I(A) on a circle round a long straight wire (Tab. 2.1, row 3, static): H = I / (2π r). */
 export const wireH = (I, r) => I / (2 * Math.PI * r);
 

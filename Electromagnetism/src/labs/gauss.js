@@ -1,6 +1,6 @@
 // Gauss's law, Ψ(∂V) = Q(V) (Tab. 2.1, row 4): move a sphere over a set of charges; the electric flux out of it is the
 // charge inside, counted, and integrated numerically over the sphere as a check.
-import { enclosedCharge, fluxThroughSphere, chargesField, si } from "../core/index.js";
+import { enclosedCharge, fluxThroughSphere, nanocoulomb, chargesField } from "../core/index.js";
 import { h, s, slider, readout } from "../../../kit/ui/kit.js";
 import { arrows, draggable } from "../../../kit/ui/field.js";
 import * as a from "../../../kit/ui/art.js";
@@ -23,8 +23,9 @@ export default {
         s("circle", { cx: cx * 1000, cy: cy * 1000, r: R * 1000, class: "surface" }),
         ...CHARGES.map(c => s("g", { class: "charge" }, s("circle", { cx: c.x * 1000, cy: c.y * 1000, r: 12 }),
           s("text", { x: c.x * 1000, y: c.y * 1000 + 5, "text-anchor": "middle" }, `${c.q > 0 ? "+" : "−"}${Math.abs(c.q * 1e9)}`))));
-      inside.set(si(enclosedCharge(CHARGES, cx, cy, R), "C"));
-      flux.set(si(fluxThroughSphere(CHARGES, cx, cy, R, 50), "C"));
+      inside.set(nanocoulomb(enclosedCharge(CHARGES, cx, cy, R)));
+      // Both on one scale, so the integral's small error near a charge on the surface does not look like a different answer.
+      flux.set(nanocoulomb(fluxThroughSphere(CHARGES, cx, cy, R, 50)));
     };
     const sx = slider({ label: "Sphere centre x", unit: "m", min: 0.05, max: 0.41, value: cx, step: 0.005, onInput: v => { cx = v; update(); } });
     const sy = slider({ label: "Sphere centre y", unit: "m", min: 0.05, max: 0.25, value: cy, step: 0.005, onInput: v => { cy = v; update(); } });

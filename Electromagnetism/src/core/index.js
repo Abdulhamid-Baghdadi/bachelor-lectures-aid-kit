@@ -1,5 +1,5 @@
 // The core's front door: the laws, the units and the practice checker. Pure: no page, no clock, no randomness.
-export { MU0, C0, EPS0, Z0, pointPotential, chargesField, enclosedCharge, fluxThroughSphere, wireH, induction, dipoleBFlux,
+export { MU0, C0, EPS0, Z0, pointPotential, chargesField, enclosedCharge, fluxThroughSphere, nanocoulomb, wireH, induction, dipoleBFlux,
   charging, material, waveSpeed, wirePoynting, lorentzPath, gyroRadius, laplace, dipolePotential, dipoleField,
   relaxationTime, relaxed, loopAxisBNumeric, loopAxisB, skinDepth, skinB, planeWave, radiationResistance, dipolePattern,
   line, losslessLine } from "./fields.js";
