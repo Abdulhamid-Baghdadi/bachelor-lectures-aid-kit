@@ -1,0 +1,30 @@
+/* This lab's own look, after the kit's (../kit/style.css): its families' frame colours, the phasor plane's arrows and
+   legend keys, the equal-area shading, and two charts side by side. */
+[data-family=threephase] { --frame: #0369A1; }
+[data-family=equipment] { --frame: #7C3AED; }
+[data-family=operation] { --frame: #BE123C; }
+[data-family=machines] { --frame: #047857; }
+
+/* Phasors: told apart by colour and by dash, each named in the legend with the same stroke. */
+.vec.phasor line, .key { stroke: var(--ink); stroke-width: 2.5; }
+.vec.phasor polygon { fill: var(--ink); }
+.vec.phasor.a line, .key.a { stroke: var(--accent); stroke-width: 3; } .vec.phasor.a polygon { fill: var(--accent); }
+.vec.phasor.s line, .key.s { stroke: var(--second); stroke-width: 3; stroke-dasharray: 7 4; } .vec.phasor.s polygon { fill: var(--second); }
+.vec.phasor.e line, .key.e { stroke: var(--neg); stroke-width: 2.5; stroke-dasharray: 2 3; } .vec.phasor.e polygon { fill: var(--neg); }
+.vec.phasor.faint line, .key.faint { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 5 4; } .vec.phasor.faint polygon { fill: var(--muted); }
+.vec.phasor.thin line, .key.thin { stroke-width: 1.5; }
+.plane { max-width: 420px; margin: 0 auto; }
+
+/* The equal-area lab's two areas: filled outlines, hatched apart by their edge's dash too. */
+.series.area { stroke-width: 1.5; }
+.series.area.one { stroke: var(--danger); fill: color-mix(in srgb, var(--danger) 28%, transparent); }
+.series.area.two { stroke: var(--accent); fill: color-mix(in srgb, var(--accent) 38%, transparent); stroke-dasharray: 5 3; }
+
+.pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 8px; align-items: start; }
+@media (max-width: 420px) { .pair { grid-template-columns: 1fr; } }
+table.units { width: auto; margin-top: 8px; }
+table.units td, table.units th { padding: 2px 10px 2px 0; text-align: left; }
+
+/* "Power engineering" wraps the theme button under it at phone width instead of pushing it off the page. */
+.top { flex-wrap: wrap; }
+.top > div { min-width: 0; flex: 1 1 240px; }

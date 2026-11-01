@@ -24,6 +24,7 @@ The main task in every lab, recorded from the Electrodynamics Lab: move a contro
 | [Semiconductors, devices and circuits](semiconductors-lab/README.md) | Halbleiterphysik, Elektronische Bauelemente, Schaltungstechnik | Strasser (2015); Hobler (2009); Zimmermann (2010) |
 | [Special relativity](relativity-lab/README.md) | Relativitätstheorie | Einstein (1905) |
 | [Telecommunications](telecommunications-lab/README.md) | Telekommunikation | Goiser (2016) |
+| [Power engineering](power-engineering-lab/README.md) | Energieversorgung, Maschinen und Antriebe | Gawlik (2015); Schrödl (2012) |
 
 ## How to open it
 
@@ -34,7 +35,7 @@ python -m http.server 8771 --bind 127.0.0.1
 ```
 
 then <http://127.0.0.1:8771/>. The labs are ES modules, so opening `index.html` straight from the disk does not work.
-Tests, per folder: `node --test` in `kit`, `Electromagnetism`, `Automation`, `signals-systems-lab`, `semiconductors-lab` and `telecommunications-lab`.
+Tests, per folder: `node --test` in `kit`, `Electromagnetism`, `Automation`, `signals-systems-lab`, `semiconductors-lab`, `telecommunications-lab` and `power-engineering-lab`.
 
 ## Where your data stays
 
@@ -52,11 +53,13 @@ flowchart BT
   sc["signals-systems-lab/src/core: signals, transforms, filters"]
   hc["semiconductors-lab/src/core: bands, carriers, devices, circuits"]
   tc["telecommunications-lab/src/core: coding, modulation, detection, noise"]
+  pc["power-engineering-lab/src/core: three phases, lines, faults, machines"]
   el["Electrodynamics labs and page"]
   al["Automation labs and page"]
   sl["Signals and systems labs and page"]
   hl["Semiconductors, devices and circuits labs and page"]
   tl["Telecommunications labs and page"]
+  pl["Power engineering labs and page"]
   start["index.html: start page"]
   ku --> kc
   ec --> kc
@@ -74,11 +77,15 @@ flowchart BT
   tl --> tc
   tl --> ku
   tc --> kc
+  pl --> pc
+  pl --> ku
+  pc --> kc
   start -. links .-> el
   start -. links .-> al
   start -. links .-> sl
   start -. links .-> hl
   start -. links .-> tl
+  start -. links .-> pl
 ```
 
 Arrows point from a part to what it uses. The kit is shared once; each lab imports it by relative path (`../kit/...`),

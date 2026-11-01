@@ -1,0 +1,67 @@
+{
+  "format": "design-rules bibliography",
+  "version": 1,
+  "about": "The sources of this project's subject matter (power systems and electrical machines), apart from the design rules' bibliography, which keeps the design principles.",
+  "entries": [
+    {
+      "key": "gawlik2015",
+      "authors": [
+        "Gawlik, W."
+      ],
+      "year": 2015,
+      "title": "Energieversorgung: Skriptum zur Vorlesung 370.002, version of 4 October 2015",
+      "venue": "Lecture notes, Institute of Energy Systems and Electrical Drives, TU Wien; author and date from the title page. File 'EV 2014W V007.pdf', 304 pages, printed page = PDF page − 8",
+      "backs": "Every equation of the Energieversorgung labs by its number and printed page, and the worked examples used as practice: the 380 kV line (pp. 90–93), the transformer and short-circuit example (pp. 215–216), x″d (p. 213), paralleled transformers (p. 111), synchronous speed and slip (pp. 118–120).",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-01",
+        "note": "full text: read in the text layer, page by page, on 1 Nov 2026; formulas, scrambled in the text layer, were matched to their equation numbers and the page images where in doubt (p. 109, (4-77) as printed disagrees with (4-80))"
+      }
+    },
+    {
+      "key": "gawlik2015slides",
+      "authors": [
+        "Gawlik, W."
+      ],
+      "year": 2015,
+      "title": "Energieversorgung: lecture slides EV-V01+02 to EV-V21+22, winter term 2015/16",
+      "venue": "Lecture slides, TU Wien. The title slides name neither author nor year: the author from slide 2 of V01+02 ('Fragen, Fehler, Feedback: Wolfgang Gawlik') and the files' metadata, the year from the files' creation dates (Oct 2015 – Jan 2016)",
+      "backs": "Which slide set treats each part (named in data/labs.json); the equations themselves are cited from the notes, which the slides follow.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-01",
+        "note": "titles and text layers of all eleven sets read on 1 Nov 2026; their formulas are images"
+      }
+    },
+    {
+      "key": "schroedl2012",
+      "authors": [
+        "Schrödl, M."
+      ],
+      "year": 2012,
+      "title": "Elektrische Maschinen und Antriebe, LVA-Nr. 370.015",
+      "venue": "Lecture notes, Institute of Energy Systems and Electrical Drives, TU Wien, ©2012; author and year from the title page. A scan of 131 PDF pages with a poor OCR layer whose equations are missing",
+      "backs": "The space vector (M.7–M.9, p. 11; A.2, p. 152; A.28–A.29), the DC machine (G.29–G.49, pp. 119–124; G.80–G.83, p. 137; exercise p. 126) and the PMSM (P.1–P.8, pp. 224–226; P.18–P.19, p. 230).",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-01",
+        "note": "page images of PDF pages 19, 70, 73, 86, 105, 112–114 and 118 (printed pp. 11, 121, 124, 137, the A.22–A.29 page, 224–226, 230) rendered and read on 1 Nov 2026; (G.29)–(G.34) on pp. 119–120 and the exercise on p. 126 read in the OCR layer, where they came through legibly; the OCR layer otherwise used only to find the pages"
+      }
+    },
+    {
+      "key": "ma-pruefungen2017",
+      "authors": [
+        "Students of VO 370.015"
+      ],
+      "year": 2017,
+      "title": "Maschinen und Antriebe VO-370.015: Prüfungen, Beispiele, Hybrid (1 April 2017, GNU GPLv3)",
+      "venue": "A collection of past exams with worked solutions typed by students; file 'VO-370.015-Maschinen-und-Antriebe-exm-bsp-hyb-pge.pdf'",
+      "backs": "Practice from the exams of 24 June 2013 (PMSM in sine operation) and 24 July 2013 (separately excited DC machine). Each answer used was recomputed; the DC solution's speed lines at 300 V contain two slips, corrected and noted in the question.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-01",
+        "note": "full text, 1 Nov 2026"
+      }
+    }
+  ]
+}
