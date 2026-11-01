@@ -25,7 +25,8 @@ its animation clock lives in `../kit/ui/field.js`. A lab holds one equation. The
 `data/labs.json` (`"format": "electrodynamics-lab labs"`, version 1): the chapters of the notes (number, page range,
 title from its table of contents), then each lab's words, its `equations` (equation, what it is, its number in the
 notes or empty for a derived step) and practice questions with a `compute` block that `src/core/practice.js` works
-out. `bibliography.json` holds the subject source, Prechtl (2010).
+out. `bibliography.json` holds the subject sources: Prechtl (2010), Lasser (2012) and, for the special relativity part,
+Einstein (1905) (`src/core/relativity.js`, its laws tested in `tests/unit/relativity.test.js`).
 
 ## Held by tests
 

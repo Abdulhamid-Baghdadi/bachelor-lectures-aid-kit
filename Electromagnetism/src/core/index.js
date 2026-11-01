@@ -7,3 +7,4 @@ export { si, parseSi, isRight } from "../../../kit/core/index.js";
 export { solve } from "./practice.js";
 export { fresnel, brewsterAngle, criticalAngle, polarisation, lossyWave, waveguideModes, te10, microstrip, fresnelRadius,
   detour, link, dB, fromdB, radar, plateRCS, sphereRCS, twoPath, fadeDepth, doppler, fadeSpacing, twoWaveField } from "./propagation.js";
+export { lorentzFactor, boost, interval, clockTime, rodLength, addVelocities, boostFields, movingCharge } from "./relativity.js";

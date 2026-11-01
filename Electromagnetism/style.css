@@ -3,6 +3,7 @@
 [data-family=induction] { --frame: #047857; }
 [data-family=waves] { --frame: #6D28D9; }
 [data-family=propagation] { --frame: #92400E; }
+[data-family=relativity] { --frame: #1E40AF; }
 
 /* Wave propagation labs. */
 .ray { stroke-linecap: round; } .ray.in { stroke: var(--ink); } .ray.reflected { stroke: var(--second); } .ray.transmitted { stroke: var(--neg); }
@@ -10,3 +11,7 @@
 .hill { fill: color-mix(in srgb, var(--ok) 30%, var(--panel)); stroke: var(--ok); stroke-width: 2; }
 .hill.blocked { fill: color-mix(in srgb, var(--danger) 25%, var(--panel)); stroke: var(--danger); }
 .polarisation { max-width: 320px; margin: 0 auto; }
+
+/* Special relativity: the light cone dashed, the moving frame's axes in the accent colour, thicker. */
+.light { stroke: var(--second); stroke-width: 1.5; stroke-dasharray: 6 4; }
+.axis.moving { stroke: var(--accent); stroke-width: 2.5; }

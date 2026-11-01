@@ -1,7 +1,7 @@
 {
   "format": "electrodynamics-lab labs",
   "version": 1,
-  "about": "The chapters of two lecture notes, on electrodynamics and, after Lasser (2012), on wave propagation; first those of Prechtl (2010), Vorlesungen über Elektrodynamik, TU Wien, each in a family that colours its cards, with the labs it teaches; then each lab's words and practice questions. Chapter numbers, titles and page ranges are those of the notes' table of contents; equation numbers are the notes' own, checked against the PDF on 1 Nov 2026. Practice answers are worked by hand or, where marked, taken from the worked solutions of the course's exercise collection, the Aufgabensammlung of TU Wien from 2010 (checked against its scanned pages on 1 Nov 2026); tests/unit/labs-data.test.js recomputes each with the core and fails if they disagree.",
+  "about": "The chapters of two lecture notes, on electrodynamics and, after Lasser (2012), on wave propagation; first those of Prechtl (2010), Vorlesungen über Elektrodynamik, TU Wien, each in a family that colours its cards, with the labs it teaches; then each lab's words and practice questions. Chapter numbers, titles and page ranges are those of the notes' table of contents; equation numbers are the notes' own, checked against the PDF on 1 Nov 2026. Practice answers are worked by hand or, where marked, taken from the worked solutions of the course's exercise collection, the Aufgabensammlung of TU Wien from 2010 (checked against its scanned pages on 1 Nov 2026); tests/unit/labs-data.test.js recomputes each with the core and fails if they disagree. The special relativity part fills the gaps of a course that left no script, from Einstein (1905), checked against the scanned original on 1 Nov 2026, with Prechtl (2010) (2.43) as its low-speed limit; its practice answers are worked by hand.",
   "families": [
     {
       "id": "fields",
@@ -22,6 +22,10 @@
     {
       "id": "propagation",
       "name": "Wave propagation"
+    },
+    {
+      "id": "relativity",
+      "name": "Special relativity"
     }
   ],
   "lectures": [
@@ -146,6 +150,19 @@
       "labs": [
         "fading",
         "delayspread"
+      ]
+    },
+    {
+      "course": "Special relativity",
+      "number": "§§ 3–6",
+      "pages": "pp. 901–910",
+      "title": "Kinematics and the fields of moving bodies, after Einstein (1905)",
+      "family": "relativity",
+      "labs": [
+        "minkowski",
+        "dilation",
+        "velocity",
+        "movingcharge"
       ]
     }
   ],
@@ -1823,6 +1840,194 @@
           },
           "solution": "Strong ISI from a delay of half a symbol: the shortest symbol is 2Δτ = 40 ns, so at most 25 MBd.",
           "source": "Wave propagation exercise collection (Übungsteil, 5th edition, October 2011), exercise 25; result from its worked solution, p. 48"
+        }
+      ]
+    },
+    {
+      "id": "minkowski",
+      "title": "Minkowski diagram",
+      "idea": "Each frame has its own now. A moving frame's time and space axes tilt towards the light cone, and the two frames disagree on which events are simultaneous, yet agree on the interval.",
+      "law": "τ = γ (t − v x/c²)    ξ = γ (x − v t)    γ = 1/√(1 − (v/c)²)",
+      "lecture": "Einstein (1905), § 3, pp. 901–902",
+      "equations": [
+        {
+          "eq": "τ = γ (t − v x/V²),  ξ = γ (x − v t),  η = y,  ζ = z",
+          "note": "the Lorentz transformation from K to k moving at v along x",
+          "ref": "p. 902"
+        },
+        {
+          "eq": "γ = 1/√(1 − (v/V)²)",
+          "note": "Einstein's β, V the speed of light",
+          "ref": "p. 902"
+        },
+        {
+          "eq": "x² + y² + z² = V² t²  ⇒  ξ² + η² + ζ² = V² τ²",
+          "note": "a light sphere stays a light sphere",
+          "ref": "p. 901"
+        },
+        {
+          "eq": "(c t)² − x² = (c τ)² − ξ²",
+          "note": "the interval, for any event",
+          "ref": ""
+        }
+      ],
+      "practice": [
+        {
+          "question": "A frame moves at 0.6 c0. What is its Lorentz factor γ?",
+          "answer": 1.25,
+          "unit": "",
+          "compute": {
+            "law": "lorentzFactor",
+            "beta": 0.6
+          },
+          "solution": "γ = 1/√(1 − 0.36) = 1/√0.64 = 1/0.8 = 1.25.",
+          "source": "Worked by hand from Einstein (1905), p. 902; the course has no exercise collection"
+        }
+      ]
+    },
+    {
+      "id": "dilation",
+      "title": "Moving clocks and rods",
+      "idea": "A clock moving past you runs slow and a rod moving along its length is short, both by the same factor √(1 − (v/c)²).",
+      "law": "τ = t √(1 − (v/c)²)    L = L0 √(1 − (v/c)²)",
+      "lecture": "Einstein (1905), § 4, pp. 903–905",
+      "equations": [
+        {
+          "eq": "R √(1 − (v/V)²), R, R",
+          "note": "axes of a moving sphere of radius R, seen from K",
+          "ref": "p. 903"
+        },
+        {
+          "eq": "τ = t √(1 − (v/V)²)",
+          "note": "reading of a clock resting in k, at x = v t",
+          "ref": "p. 904"
+        },
+        {
+          "eq": "t − τ ≈ ½ t (v/V)²",
+          "note": "the moving clock's lag, to second order",
+          "ref": "p. 904"
+        }
+      ],
+      "practice": [
+        {
+          "question": "A clock moves at 0.8 c0. How much time does it show while 10 s pass in the resting frame?",
+          "answer": 6,
+          "unit": "s",
+          "compute": {
+            "law": "clockTime",
+            "beta": 0.8,
+            "t": 10
+          },
+          "solution": "√(1 − 0.64) = 0.6, so τ = 10 s × 0.6 = 6 s.",
+          "source": "Worked by hand from Einstein (1905), p. 904; the course has no exercise collection"
+        },
+        {
+          "question": "A 1 m rod moves along its length at 0.6 c0. How long is it, measured in the resting frame?",
+          "answer": 0.8,
+          "unit": "m",
+          "compute": {
+            "law": "rodLength",
+            "beta": 0.6,
+            "L": 1
+          },
+          "solution": "√(1 − 0.36) = 0.8, so L = 1 m × 0.8 = 0.8 m.",
+          "source": "Worked by hand from Einstein (1905), p. 903; the course has no exercise collection"
+        }
+      ]
+    },
+    {
+      "id": "velocity",
+      "title": "Adding velocities",
+      "idea": "Speeds do not simply add: two speeds below c always give one below c, and light keeps c in every frame.",
+      "law": "U = (v + w)/(1 + v w/c²)",
+      "lecture": "Einstein (1905), § 5, pp. 905–906",
+      "equations": [
+        {
+          "eq": "x = (w_ξ + v) t/(1 + v w_ξ/V²),  y = √(1 − (v/V)²) w_η t/(1 + v w_ξ/V²)",
+          "note": "motion of a point moving at (w_ξ, w_η) in k, seen from K",
+          "ref": "p. 905"
+        },
+        {
+          "eq": "U = √((v² + w² + 2 v w cos α) − (v w sin α/V)²)/(1 + v w cos α/V²)",
+          "note": "resulting speed, α the angle between v and w",
+          "ref": "p. 906"
+        },
+        {
+          "eq": "U = (v + w)/(1 + v w/V²)",
+          "note": "both along x",
+          "ref": "p. 906"
+        },
+        {
+          "eq": "U = (V + w)/(1 + w/V) = V",
+          "note": "light composed with any slower speed",
+          "ref": "p. 906"
+        }
+      ],
+      "practice": [
+        {
+          "question": "A ship flies at 0.5 c0 and fires a probe forward at 0.5 c0 relative to itself. How fast is the probe in the resting frame?",
+          "answer": 239800000.0,
+          "unit": "m/s",
+          "compute": {
+            "law": "addVelocities",
+            "v": 0.5,
+            "w": 0.5
+          },
+          "solution": "U = (0.5 + 0.5)/(1 + 0.25) c0 = 0.8 c0 = 2.40 × 10⁸ m/s, not c0.",
+          "source": "Worked by hand from Einstein (1905), p. 906; the course has no exercise collection"
+        }
+      ]
+    },
+    {
+      "id": "movingcharge",
+      "title": "Fields of a moving charge",
+      "idea": "Electric and magnetic fields are one field seen from different frames: a charge at rest has only E, the same charge moving has a flattened E and a B.",
+      "law": "E'_y = γ (E_y − v B_z)    E'_z = γ (E_z + v B_y)    B'_y = γ (B_y + v E_z/c²)    B'_z = γ (B_z − v E_y/c²)",
+      "lecture": "Einstein (1905), § 6, pp. 909–910; Prechtl (2010), eq. (2.43), p. 38",
+      "equations": [
+        {
+          "eq": "X' = X,  Y' = γ (Y − (v/V) N),  Z' = γ (Z + (v/V) M)",
+          "note": "electric force in k, Gaussian units",
+          "ref": "p. 909"
+        },
+        {
+          "eq": "L' = L,  M' = γ (M + (v/V) Z),  N' = γ (N − (v/V) Y)",
+          "note": "magnetic force in k, Gaussian units",
+          "ref": "p. 909"
+        },
+        {
+          "eq": "E'_x = E_x,  E'_y = γ (E_y − v B_z),  E'_z = γ (E_z + v B_y)",
+          "note": "the same in SI, with B = N/c",
+          "ref": ""
+        },
+        {
+          "eq": "B'_x = B_x,  B'_y = γ (B_y + v E_z/c²),  B'_z = γ (B_z − v E_y/c²)",
+          "note": "in SI",
+          "ref": ""
+        },
+        {
+          "eq": "E' = E + v × B,  B' = B",
+          "note": "the low-speed form, |v| ≪ c0, in Prechtl (2010)",
+          "ref": "(2.43)"
+        },
+        {
+          "eq": "E = Q γ r/(4πε0 (γ² x² + y² + z²)^{3/2}),  B = v × E/c²",
+          "note": "a charge passing the origin at v, at that moment",
+          "ref": ""
+        }
+      ],
+      "practice": [
+        {
+          "question": "A frame moves at 10⁶ m/s across a pure magnetic field of 1 T. What electric field strength does it see?",
+          "answer": 1000000.0,
+          "unit": "V/m",
+          "compute": {
+            "law": "boostedE",
+            "v": 1000000.0,
+            "B": 1
+          },
+          "solution": "E'_y = γ (0 − v B_z) with γ = 1.0000056, so |E'| = 1.000 × 10⁶ V/m; Prechtl's v × B gives the same to 6 digits.",
+          "source": "Worked by hand from Einstein (1905), p. 909; the course has no exercise collection"
         }
       ]
     }
