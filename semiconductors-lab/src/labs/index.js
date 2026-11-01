@@ -11,5 +11,12 @@ import capacitance from "./capacitance.js";
 import diode from "./diode.js";
 import bjt from "./bjt.js";
 import mosfet from "./mosfet.js";
+import cestage from "./cestage.js";
+import currentsource from "./currentsource.js";
+import poweramp from "./poweramp.js";
+import opamploop from "./opamploop.js";
+import slewrate from "./slewrate.js";
+import noise from "./noise.js";
 
-export const labs = [bands, fermi, carriers, drift, recombination, absorption, junction, capacitance, diode, bjt, mosfet];
+export const labs = [bands, fermi, carriers, drift, recombination, absorption, junction, capacitance, diode, bjt, mosfet,
+  cestage, currentsource, poweramp, opamploop, slewrate, noise];

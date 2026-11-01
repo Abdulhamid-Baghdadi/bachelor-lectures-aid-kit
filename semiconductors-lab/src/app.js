@@ -48,7 +48,7 @@ async function start() {
   };
 
   const overview = h("div", { class: "overview" },
-    h("p", { class: "lead" }, "Pick an idea: from bands and carriers, through transport and light, to the junction and the transistors."),
+    h("p", { class: "lead" }, "Pick an idea: from bands and carriers, through transport and light and the junction and transistors, to the circuits built from them."),
     h("div", { class: "lecture-rows" }, data.lectures.filter(lecture => lecture.labs.some(id => at.has(id))).map(lecture => h("section", { class: "lecture-row" },
       h("h2", {}, h("span", { class: "number" }, `${chapterOf(lecture)}`), " ", lecture.title,
         h("span", { class: "date" }, lecture.pages)),
@@ -92,11 +92,11 @@ async function start() {
     if (at.has(id)) {
       // A lab keeps its knobs where the student left them when they come back to it.
       main.replaceChildren(panel(id));
-      document.title = `${words.get(id).title} · Semiconductors Lab`;
+      document.title = `${words.get(id).title} · Semiconductors, devices and circuits`;
       if (focus) { scrollTo({ top: 0 }); main.querySelector("h2").focus({ preventScroll: true }); }
     } else {
       main.replaceChildren(overview);
-      document.title = "Semiconductors Lab";
+      document.title = "Semiconductors, devices and circuits";
       // Back on the overview, the card of the lab just left keeps the focus, so the keyboard does not start over.
       const from = overview.querySelector(`a[href="#${last}"]`);
       if (focus && from) { from.focus({ preventScroll: true }); from.scrollIntoView({ block: "center" }); }

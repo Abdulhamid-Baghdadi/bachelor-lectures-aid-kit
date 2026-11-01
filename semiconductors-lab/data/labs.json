@@ -1,11 +1,12 @@
 {
   "format": "semiconductors-lab labs",
   "version": 1,
-  "about": "Two courses fused, grouped by idea: Halbleiterphysik after Strasser (2015), Skriptum Halbleiterphysik, TU Wien, and Elektronische Bauelemente after its exercise collection, Hobler (2009). Every equation was read in the script on 1 Nov 2026; its section and printed page are given, with the equation number where the script prints one next to it. Practice questions come from the two courses' exercise sheets; those marked 'worked by hand' were solved here from the script's equations, the others agree with the course's worked solutions, whose page is named. tests/unit/labs-data.test.js recomputes each answer with the core and fails if they disagree.",
+  "about": "Three courses fused, grouped by idea: Halbleiterphysik after Strasser (2015), Skriptum Halbleiterphysik, TU Wien; Elektronische Bauelemente after its exercise collection, Hobler (2009); and Schaltungstechnik after Zimmermann (2010), Skriptum Schaltungstechnik, with the worked examples of Schneider & Zimmermann (2005). Pages of the Schaltungstechnik script (ST) are its printed pages, PDF page minus 6. Bode and Nyquist theory is left to the Automation lab. Every equation was read in the scripts on 1 Nov 2026; its section and printed page are given, with the equation number where the script prints one next to it. Practice questions come from the two courses' exercise sheets; those marked 'worked by hand' were solved here from the script's equations, the others agree with the course's worked solutions, whose page is named. tests/unit/labs-data.test.js recomputes each answer with the core and fails if they disagree.",
   "families": [
     { "id": "carriers", "name": "Bands and carriers" },
     { "id": "transport", "name": "Transport and light" },
-    { "id": "devices", "name": "Junctions and transistors" }
+    { "id": "devices", "name": "Junctions and transistors" },
+    { "id": "circuits", "name": "Circuits" }
   ],
   "lectures": [
     { "number": 1, "pages": "HL ch. 2–3, pp. 41–85", "title": "Bands and carriers", "family": "carriers",
@@ -13,7 +14,9 @@
     { "number": 2, "pages": "HL ch. 3–4, pp. 87–117", "title": "Transport and light", "family": "transport",
       "labs": ["drift", "recombination", "absorption"] },
     { "number": 3, "pages": "HL ch. 5–6, pp. 123–188; EB parts 1–3", "title": "Junctions and transistors", "family": "devices",
-      "labs": ["junction", "capacitance", "diode", "bjt", "mosfet"] }
+      "labs": ["junction", "capacitance", "diode", "bjt", "mosfet"] },
+    { "number": 4, "pages": "ST ch. 1, 2, 4, 6, pp. 1–134", "title": "Circuits", "family": "circuits",
+      "labs": ["cestage", "currentsource", "poweramp", "opamploop", "slewrate", "noise"] }
   ],
   "labs": [
     {
@@ -287,6 +290,151 @@
           "compute": { "law": "edgeOfOhmic", "U0": 12, "Ut": -3, "beta": 2e-3 },
           "solution": "UGS = 0, so ID = β/2 (0 − Ut)² = 1 mA/V² × 9 V² = 9 mA. The edge is UDS = UGS − Ut = 3 V, so RD = (12 V − 3 V)/9 mA = 1 kΩ.",
           "source": "Worked by hand from Hobler (2009), exercise 3.3 a, p. 48" }
+      ]
+    },
+    {
+      "id": "cestage",
+      "title": "The common-emitter stage",
+      "idea": "The base drive sets the collector current exponentially and the collector resistor turns it into a voltage: a steep, bent transfer curve. An emitter resistor straightens it and trades gain for a gain set by resistors.",
+      "law": "A = −S RC / (1 + S RE),  S = IC/UT",
+      "lecture": "Zimmermann (2010), section 1.1.1, pp. 1–2",
+      "equations": [
+        { "eq": "A = ua/ue ≈ −S (RC ∥ rCE) ≈ −S RC", "note": "without emitter resistor", "ref": "ST (1.1), p. 1" },
+        { "eq": "A = −S RC/(1 + S RE) ≈ −RC/RE for S RE ≫ 1", "note": "with current feedback", "ref": "ST (1.4), p. 2" },
+        { "eq": "S = IC/UT", "note": "the transconductance", "ref": "ST (1.18), p. 7" },
+        { "eq": "ue = UT ln(IC/Is) + IC RE, ua = U0 − IC RC", "note": "the large-signal transfer, from HL (6.1.2)", "ref": "" }
+      ],
+      "practice": [
+        { "question": "A common-emitter stage carries IC = 1 mA, with RC = 5 kΩ and RE = 1 kΩ. With UT = 25 mV, what is its small-signal gain?",
+          "answer": -4.88, "unit": "", "tolerance": 0.01,
+          "compute": { "law": "ceGain", "IC": 1e-3, "RC": 5e3, "RE": 1e3, "UT": 0.025 },
+          "solution": "S = IC/UT = 40 mS, S RE = 40, so A = −S RC/(1 + S RE) = −200/41 = −4.88; the approximation −RC/RE gives −5.",
+          "source": "Worked by hand from Zimmermann (2010), (1.4)" }
+      ]
+    },
+    {
+      "id": "currentsource",
+      "title": "The current source and its output resistance",
+      "idea": "A transistor's output curves are nearly flat, so it delivers a nearly constant current; the Early effect tilts them. Feedback through an emitter resistor raises the output resistance up to β times.",
+      "law": "ra = rCE (1 + β RE/(RE + rBE)),  rCE = UA/Ia",
+      "lecture": "Zimmermann (2010), sections 1.2.1–1.2.2, pp. 4–7",
+      "equations": [
+        { "eq": "ra = UA/Ia", "note": "the plain transistor, by its Early voltage", "ref": "ST (1.13), p. 5" },
+        { "eq": "ra ≈ rCE (1 + S RE) for RE ≪ rBE; β rCE for RE ≫ rBE", "note": "with emitter feedback", "ref": "ST (1.19), p. 7" },
+        { "eq": "rBE = β/S = β UT/Ia", "note": "the base–emitter resistance", "ref": "ST (1.18), p. 7" },
+        { "eq": "ra = rCE (1 + β RE/(RE + rBE))", "note": "the small-signal circuit solved; its two limits are (1.19)", "ref": "" }
+      ],
+      "practice": [
+        { "question": "A current source delivers 1 mA through a transistor with UA = 100 V and β = 100, with RE = 100 kΩ, far above rBE. What is its output resistance? (UT = 25 mV)",
+          "answer": 9.86e6, "unit": "Ω", "tolerance": 0.02,
+          "compute": { "law": "sourceR", "Ia": 1e-3, "UA": 100, "beta": 100, "RE": 1e5, "UT": 0.025 },
+          "solution": "rCE = UA/Ia = 100 kΩ, rBE = β UT/Ia = 2.5 kΩ; ra = rCE (1 + β RE/(RE + rBE)) = 100 kΩ × (1 + 100 × 0.976) = 9.86 MΩ, close to the limit β rCE = 10 MΩ of (1.19).",
+          "source": "Worked by hand from Zimmermann (2010), (1.13) and (1.19)" }
+      ]
+    },
+    {
+      "id": "poweramp",
+      "title": "Push-pull output stages",
+      "idea": "Two complementary emitter followers take turns: in class B neither conducts at rest, which saves power but leaves a dead zone at the crossing; a small bias (class AB) removes it. The efficiency rises with the swing, to 78.5 %.",
+      "law": "PL = Ûa²/(2RL),  PS = 2 UB Ûa/(π RL),  η = (π/4) Ûa/UB",
+      "lecture": "Zimmermann (2010), section 2.2, pp. 16–25; Schneider & Zimmermann (2005), example 1",
+      "equations": [
+        { "eq": "η = 1/16 = 6.25 %", "note": "class A emitter follower, RL = RE, swing to −UB/2", "ref": "ST (2.16), p. 22" },
+        { "eq": "PL = Ûa²/(2 RL)", "note": "load power of a sine", "ref": "ST (2.17), p. 23" },
+        { "eq": "PS = 2 UB Ûa/(π RL)", "note": "drawn from both supplies", "ref": "ST (2.18), p. 23" },
+        { "eq": "η = PL/PS = (π/4) Ûa/UB, at most 78.5 %", "note": "class B efficiency", "ref": "ST (2.19), (2.20), p. 24" },
+        { "eq": "PT,max at Ûa = 2UB/π = 0.637 UB; PT,max = 0.32 PS,max", "note": "the worst case for the heat sink", "ref": "ST (2.22), (2.23), p. 24" },
+        { "eq": "PvT,max = UB²/(π² RL) ≈ 0.1 UB²/RL", "note": "per transistor", "ref": "Rechenbeispiele B1/3" }
+      ],
+      "practice": [
+        { "question": "A class B push-pull stage is to deliver 25 W of sine into 8 Ω. What output amplitude does that take?",
+          "answer": 20, "unit": "V", "tolerance": 0.01,
+          "compute": { "law": "classBAmplitude", "PL": 25, "RL": 8 },
+          "solution": "PL = Ûa²/(2RL), so Ûa = √(2 × 25 W × 8 Ω) = 20 V; with 2–3 V left across the transistor the supply is UB = 22 V.",
+          "source": "Schneider & Zimmermann (2005), example 1, B1/1; agrees with its worked solution" },
+        { "question": "With UB = 22 V and RL = 8 Ω, what is the largest loss in one of the two transistors?",
+          "answer": 6.13, "unit": "W", "tolerance": 0.02,
+          "compute": { "law": "classBLossPerTransistor", "UB": 22, "RL": 8 },
+          "solution": "The loss peaks at Ûa = 2UB/π; there PvT,max = UB²/(π² RL) = 484/(9.87 × 8) W = 6.13 W, about 6 W per transistor.",
+          "source": "Schneider & Zimmermann (2005), example 1, B1/3; agrees with its worked solution (about 6 W)" }
+      ]
+    },
+    {
+      "id": "opamploop",
+      "title": "The op-amp's loop gain and phase margin",
+      "idea": "Feedback trades gain for bandwidth, keeping their product. Where the loop gain falls to one, the phase left over decides whether the step response settles calmly or rings; a follower is the hardest case.",
+      "law": "vr = vg/(1 + β vg),  margin = 180° + arg(β vg) where |β vg| = 1",
+      "lecture": "Zimmermann (2010), section 4.1, pp. 69–77; Schneider & Zimmermann (2005), example 6",
+      "equations": [
+        { "eq": "vg(ω) = vg0/(1 + jω/ωg)", "note": "one pole; the lab adds a second", "ref": "ST (4.1), p. 69" },
+        { "eq": "vr = vg/(1 + β vg)", "note": "the closed loop gain", "ref": "ST (4.4), p. 70" },
+        { "eq": "vs = β vg", "note": "the loop gain", "ref": "ST (4.6), p. 71" },
+        { "eq": "vr0 ωr = vg0 ωg", "note": "the gain-bandwidth product is kept", "ref": "ST (4.11), p. 72" },
+        { "eq": "phase margin ≥ 45°", "note": "for a usable amplifier", "ref": "ST §4.1, p. 76" },
+        { "eq": "the step of vr with two poles: a second-order system", "note": "solved in closed form, checked against a simulation", "ref": "" }
+      ],
+      "practice": [
+        { "question": "Example 6 b: a loop gain vs = 10⁴ × 0.1 / ((1 + jω/100 s⁻¹)(1 + jω/1111 s⁻¹)). At which angular frequency is |vs| = 1?",
+          "answer": 10530, "unit": "1/s", "tolerance": 0.01,
+          "compute": { "law": "crossover", "vg0": 1e4, "w1": 100, "w2": 1111.1, "beta": 0.1 },
+          "solution": "1000 / √((1 + (ω/100)²)(1 + (ω/1111)²)) = 1 gives ω ≈ 10 500 s⁻¹.",
+          "source": "Schneider & Zimmermann (2005), example 6 c, B6/4; agrees with its worked solution (10 530 s⁻¹)" },
+        { "question": "What phase margin does that loop have?",
+          "answer": 6, "unit": "°", "tolerance": 0.15,
+          "compute": { "law": "phaseMargin", "vg0": 1e4, "w1": 100, "w2": 1111.1, "beta": 0.1 },
+          "solution": "arg vs = −arctan(105) − arctan(9.5) ≈ −174°, so the margin is about 6°: the circuit rings strongly before it settles.",
+          "source": "Schneider & Zimmermann (2005), example 6 c, B6/4; agrees with its worked solution (about 6°)" }
+      ]
+    },
+    {
+      "id": "slewrate",
+      "title": "Slew-rate limiting",
+      "idea": "The compensation capacitor charges only so fast, so the output never changes faster than the slew rate. A large, fast sine turns into a triangle long before the small-signal bandwidth is reached.",
+      "law": "fp = SR / (2π Ûa)",
+      "lecture": "Zimmermann (2010), section 4.4, pp. 84–86",
+      "equations": [
+        { "eq": "SR = dUa/dt max = I1max/Ck", "note": "the compensation capacitor charged by the input stage's current; 0.6 V/µs for the 741", "ref": "ST §4.4, p. 85" },
+        { "eq": "dua/dt max = Ûa ω, at the zero crossing", "note": "a sine's steepest slope", "ref": "ST §4.4, p. 86" },
+        { "eq": "fp = SR/(2π Ûa)", "note": "the power bandwidth", "ref": "ST §4.4, p. 86" },
+        { "eq": "Ûa,max = SR/(2π f) for f > fp", "note": "the largest clean amplitude", "ref": "ST §4.4, p. 86" }
+      ],
+      "practice": [
+        { "question": "A 741 slews at 0.6 V/µs. Up to which frequency can it deliver an undistorted sine of 10 V amplitude?",
+          "answer": 9550, "unit": "Hz", "tolerance": 0.01,
+          "compute": { "law": "powerBandwidth", "SR": 0.6e6, "ua": 10 },
+          "solution": "fp = SR/(2π Ûa) = 0.6 V/µs / (2π × 10 V) = 9.5 kHz, which the script rounds to 10 kHz.",
+          "source": "Zimmermann (2010), section 4.4, p. 86, its worked example" },
+        { "question": "What amplitude can that op-amp still deliver undistorted at 100 kHz?",
+          "answer": 0.955, "unit": "V", "tolerance": 0.01,
+          "compute": { "law": "slewAmplitude", "SR": 0.6e6, "f": 1e5 },
+          "solution": "Ûa = SR/(2π f) = 0.6·10⁶ V/s / (2π × 10⁵ /s) = 0.95 V, which the script rounds to 1 V.",
+          "source": "Zimmermann (2010), section 4.4, p. 86, its worked example" }
+      ]
+    },
+    {
+      "id": "noise",
+      "title": "Thermal and shot noise",
+      "idea": "A resistor's electrons jitter with heat; a current crossing a barrier arrives in single charges. Both make white, Gaussian noise that grows with the square root of the bandwidth.",
+      "law": "v² = 4 kT R Δf,  i² = 2 q I Δf",
+      "lecture": "Zimmermann (2010), sections 6.2–6.3, pp. 128–134",
+      "equations": [
+        { "eq": "v² = 4 kB T R Δf", "note": "open-circuit thermal noise of a resistor", "ref": "ST (6.1), p. 128" },
+        { "eq": "i² = 4 kB T Δf / R", "note": "its short-circuit noise current", "ref": "ST (6.2), p. 128" },
+        { "eq": "kB T0 = 4·10⁻²¹ W/Hz at T0 = 290 K", "note": "the reference noise density", "ref": "ST §6.2, p. 130" },
+        { "eq": "i² = 2 q I Δf", "note": "shot noise of a current", "ref": "ST (6.11), p. 132" },
+        { "eq": "2qI = 4kT/R where I R = 2kT/q", "note": "where the two are equal", "ref": "" }
+      ],
+      "practice": [
+        { "question": "A diode carries 1 mA. What is its shot-noise current (RMS) in a bandwidth of 1 MHz?",
+          "answer": 1.79e-8, "unit": "A", "tolerance": 0.02,
+          "compute": { "law": "shotNoise", "I": 1e-3, "B": 1e6 },
+          "solution": "i² = 2 q I Δf = 2 × 1.6·10⁻¹⁹ C × 10⁻³ A × 10⁶ Hz = 3.2·10⁻¹⁶ A², so i = 1.8·10⁻⁸ A RMS.",
+          "source": "Zimmermann (2010), section 6.3, (6.12), p. 133, its worked example" },
+        { "question": "What is the thermal noise voltage (RMS) of a 1 kΩ resistor at 300 K in 10 kHz?",
+          "answer": 4.07e-7, "unit": "V", "tolerance": 0.02,
+          "compute": { "law": "thermalNoise", "R": 1e3, "T": 300, "B": 1e4 },
+          "solution": "v = √(4 kT R Δf) = √(4 × 1.38·10⁻²³ × 300 × 10³ × 10⁴) V = 0.41 µV.",
+          "source": "Worked by hand from Zimmermann (2010), (6.1)" }
       ]
     }
   ]

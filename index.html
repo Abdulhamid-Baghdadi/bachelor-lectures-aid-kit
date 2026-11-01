@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bachelor lectures aid kit</title>
-<meta name="description" content="interactive labs for TU Wien Bachelor lectures, each fusing two courses: electrodynamics and wave propagation; automation and modelling; signals and systems 1 and 2; semiconductor physics and devices.">
+<meta name="description" content="interactive labs for TU Wien Bachelor lectures, each fusing two or three courses: electrodynamics and wave propagation; automation and modelling; signals and systems 1 and 2; semiconductor physics, devices and circuits.">
 <script>
   // Before the page draws, so a chosen theme never flashes the other one.
   try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
@@ -30,7 +30,7 @@
 <header class="top">
   <div>
     <h1>Bachelor lectures aid kit</h1>
-    <p>Interactive labs for TU Wien Bachelor lectures. Each lab fuses two courses, so the same idea is met once.</p>
+    <p>Interactive labs for TU Wien Bachelor lectures. Each lab fuses two or three courses, so the same idea is met once.</p>
   </div>
   <button id="theme" type="button">Light or dark</button>
 </header>
@@ -58,11 +58,11 @@
       <p>Convolution, correlation, Fourier series and transform, sampling and aliasing, digital filters, DFT and FFT, multirate.</p>
     </a>
     <a class="lab" href="semiconductors-lab/" data-family="devices">
-      <h2>Semiconductors Lab</h2>
-      <p class="courses">Halbleiterphysik and Elektronische Bauelemente, after Strasser (2015) and Hobler (2009)</p>
-      <img class="light" src="semiconductors-lab/docs/light.png" alt="The Semiconductors Lab's overview: lab cards grouped under its three parts" width="1280" height="1000">
+      <h2>Semiconductors, devices and circuits</h2>
+      <p class="courses">Halbleiterphysik, Elektronische Bauelemente and Schaltungstechnik, after Strasser (2015), Hobler (2009) and Zimmermann (2010)</p>
+      <img class="light" src="semiconductors-lab/docs/light.png" alt="The overview of Semiconductors, devices and circuits: lab cards grouped under its four parts" width="1280" height="1000">
       <img class="dark" src="semiconductors-lab/docs/dark.png" alt="The MOSFET lab in the dark theme: output characteristics and the threshold readouts" width="1280" height="1000">
-      <p>Energy bands, Fermi–Dirac statistics, carrier densities, drift and diffusion, lifetime, absorption, the pn junction, the diode, the bipolar transistor and the MOSFET.</p>
+      <p>Energy bands, Fermi–Dirac statistics, carrier densities, drift and diffusion, lifetime, absorption, the pn junction, the diode, the bipolar transistor and the MOSFET; amplifier stages, current sources, push-pull stages, the op-amp loop, slew rate and noise.</p>
     </a>
   </div>
 </main>

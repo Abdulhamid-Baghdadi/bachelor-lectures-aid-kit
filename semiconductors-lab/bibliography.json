@@ -30,6 +30,35 @@
         "how": "full text",
         "date": "2026-11-01"
       }
+    },
+    {
+      "key": "zimmermann2010",
+      "authors": [
+        "Zimmermann, H."
+      ],
+      "year": 2010,
+      "title": "Schaltungstechnik (LVA 354.019), Skriptum",
+      "venue": "Lecture notes, Institute of Electrodynamics, Microwave and Circuit Engineering, TU Wien, October 2010",
+      "backs": "The circuit labs' equations by section, printed page and equation number: the common-emitter stage, current sources, push-pull stages, the op-amp loop, slew rate, thermal and shot noise.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-01"
+      }
+    },
+    {
+      "key": "schneider2005",
+      "authors": [
+        "Schneider, K.",
+        "Zimmermann, H."
+      ],
+      "year": 2005,
+      "title": "Rechenbeispiele zur VO Schaltungstechnik (LVA 354.019)",
+      "venue": "Worked examples, TU Wien, December 2005",
+      "backs": "Practice questions with worked solutions: example 1 (class B push-pull stage) and example 6 (loop gain and phase margin).",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-01"
+      }
     }
   ]
 }

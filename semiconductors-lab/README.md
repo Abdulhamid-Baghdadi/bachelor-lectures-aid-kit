@@ -1,8 +1,9 @@
-# Semiconductors Lab
+# Semiconductors, devices and circuits
 
-Eleven ideas of semiconductor physics and devices to play with in the browser, from energy bands to the MOSFET, after
-Strasser (2015), *Skriptum Halbleiterphysik*, and the exercise collection of Hobler (2009), *Elektronische
-Bauelemente*, the texts of two TU Wien courses.
+Seventeen ideas to play with in the browser, from energy bands through the MOSFET to the circuits built from
+transistors, after Strasser (2015), *Skriptum Halbleiterphysik*, the exercise collection of Hobler (2009),
+*Elektronische Bauelemente*, and Zimmermann (2010), *Skriptum Schaltungstechnik*, with the worked examples of
+Schneider & Zimmermann (2005): three TU Wien courses fused.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/drift-dark.gif">
@@ -16,12 +17,13 @@ Bauelemente*, the texts of two TU Wien courses.
 | 1 Bands and carriers | energy bands from coupled wells (Kronig–Penney), Fermi–Dirac occupation, carrier density and the Fermi level against temperature and doping |
 | 2 Transport and light | drift and diffusion (the Shockley–Haynes pulse), generation, recombination and lifetime, optical absorption and gain at the band gap |
 | 3 Junctions and transistors | the pn junction's space-charge zone, junction capacitance, the diode characteristic, the bipolar transistor's output characteristics, the MOSFET's threshold and output characteristics |
+| 4 Circuits | the common-emitter stage, the current source and its output resistance, push-pull output stages (class B and AB), the op-amp's loop gain and phase margin, slew-rate limiting, thermal and shot noise |
 
 Each lab has charts to move, readouts worked by the core, a table of the equations behind it with their section, page
-and equation number in the script, and practice questions from the two courses' exercise sheets. Silicon at 300 K
+and equation number in the scripts, and practice questions from the three courses' exercise sheets and worked examples. Silicon at 300 K
 unless a lab says otherwise, with the data of the script's table (p. 73).
 
-<img src="docs/light.png" alt="The overview in the light theme: three parts in rows, each lab a card with a line drawing of its idea" width="640">
+<img src="docs/light.png" alt="The overview in the light theme: four parts in rows, each lab a card with a line drawing of its idea" width="640">
 <img src="docs/dark.png" alt="The MOSFET lab in the dark theme: a family of output characteristics, the pinch-off parabola, and the threshold worked out from doping and oxide" width="640">
 
 ## Open it
@@ -54,5 +56,9 @@ Plain JavaScript modules, no build step. Layers and their tests: [ARCHITECTURE.m
   depletion approximation, and the diode's breakdown is only marked, not drawn.
 - The Early effect and channel-length modulation are left out, so the transistors' output curves are flat.
 - Absorption is relative (the script gives no cross-section) and drawn for direct GaAs only.
+- The circuits use ideal parts beyond what each lab names: class A, the cascode, compensation in detail, the
+  integrator and the analogue switches are left out; Bode and Nyquist diagrams are the Automation lab's.
+- The Schaltungstechnik script's text layer is an OCR; its exams' solutions are handwritten scans, not used. The
+  circuit questions come from the script's own worked examples and Schneider & Zimmermann (2005).
 - Most practice answers are worked by hand from the script; two agree with the Bauelemente course's scanned worked
   solutions. The Halbleiterphysik solutions are scans not read here.

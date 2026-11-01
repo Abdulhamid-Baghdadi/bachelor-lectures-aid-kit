@@ -17,16 +17,18 @@ its families' frame colours.
 | labs | `src/labs/**` | kit-core, core, kit | each lab's default export `{ id, art(), mount(element) }`; the list in `src/labs/index.js` |
 | app | `src/app.js` | kit-core, core, kit, labs | the page, `index.html` |
 
-The core is pure: no DOM, network, clock or randomness (`forbid` in `architecture.json`); nothing in it is random, so
-no seed is needed. `semiconductors.js` holds every law, in the script's units (cm⁻³, cm, F/cm, eV, A), with the
-silicon data of the script's table (p. 73) as one object, `SI`. The core names no lab.
+The core is pure: no DOM, network, clock or randomness (`forbid` in `architecture.json`); the noise lab's samples
+come from a seeded generator (`gaussian`), so the same seed gives the same trace. `semiconductors.js` holds the physics and the devices, in the script's units (cm⁻³, cm, F/cm, eV, A), with
+the silicon data of the script's table (p. 73) as one object, `SI`; `circuits.js` holds the circuits, in SI units, and
+the one seeded noise generator. The core names no lab.
 
 ## Data
 
-`data/labs.json` (`"format": "semiconductors-lab labs"`, version 1): three parts grouped by idea, then each lab's words,
+`data/labs.json` (`"format": "semiconductors-lab labs"`, version 1): four parts grouped by idea, then each lab's words,
 its `equations` (equation, what it is, its section, page and equation number in the script or the exercise collection,
 or empty for a step derived here) and practice questions with a `compute` block that `src/core/practice.js` works out.
-`bibliography.json` holds the subject sources, Strasser (2015) and Hobler (2009).
+`bibliography.json` holds the subject sources, Strasser (2015), Hobler (2009), Zimmermann (2010) and
+Schneider & Zimmermann (2005).
 
 ## Held by tests
 
@@ -36,6 +38,8 @@ or empty for a step derived here) and practice questions with a `compute` block 
   equation, bisection on neutrality against the closed form, finite differences against the analytic profiles and the
   Shockley–Haynes pulse, a numerical derivative against the capacitance and the transconductances) or a value the
   script prints (UT = 25.85 mV, λ = 1107 nm at 1.12 eV, the body factor 0.84 V, 0.15 /K, 60 mV a decade).
+- The circuits: `tests/unit/circuits.test.js`, against a numerical derivative, a nodal solution, a period
+  integral, an RK4 simulation, seeded noise, or the values the script and the worked examples print.
 - Practice answers: `tests/unit/labs-data.test.js`. Modules and data agree: `tests/unit/labs-modules.test.js`.
 - Citations: `tests/unit/design-citations.test.js`. README pictures: `tests/unit/readme.test.js`.
 

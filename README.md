@@ -1,6 +1,6 @@
 # Bachelor lectures aid kit
 
-Interactive labs for TU Wien Bachelor lectures, each fusing two courses, where you move a slider and watch the
+Interactive labs for TU Wien Bachelor lectures, each fusing two or three courses, where you move a slider and watch the
 lecture notes' own equations work.
 
 <picture>
@@ -12,7 +12,7 @@ The main task in every lab, recorded from the Electrodynamics Lab: move a contro
 
 | Light | Dark |
 |---|---|
-| <img src="docs/light.png" alt="The start page in the light theme: four lab panels, Electrodynamics, Automation, Signals and systems, and Semiconductors, each with its courses and a screenshot" width="420"> | <img src="docs/dark.png" alt="The start page in the dark theme: the same four lab panels" width="420"> |
+| <img src="docs/light.png" alt="The start page in the light theme: four lab panels, Electrodynamics, Automation, Signals and systems, and Semiconductors, devices and circuits, each with its courses and a screenshot" width="420"> | <img src="docs/dark.png" alt="The start page in the dark theme: the same four lab panels" width="420"> |
 
 ## The labs
 
@@ -21,7 +21,7 @@ The main task in every lab, recorded from the Electrodynamics Lab: move a contro
 | [Electrodynamics](Electromagnetism/README.md) | Elektrodynamik, Wellenausbreitung | Prechtl (2010); Lasser (2012) |
 | [Automation](Automation/README.md) | Automatisierung, Modellbildung | Kugi (2015); Kugi et al. (2015) |
 | [Signals and systems](signals-systems-lab/README.md) | Signale und Systeme 1, 2 | Prechtl (2010); Doblinger (2015) |
-| [Semiconductors](semiconductors-lab/README.md) | Halbleiterphysik, Elektronische Bauelemente | Strasser (2015); Hobler (2009) |
+| [Semiconductors, devices and circuits](semiconductors-lab/README.md) | Halbleiterphysik, Elektronische Bauelemente, Schaltungstechnik | Strasser (2015); Hobler (2009); Zimmermann (2010) |
 
 ## How to open it
 
@@ -48,11 +48,11 @@ flowchart BT
   ec["Electromagnetism/src/core: the laws"]
   ac["Automation/src/core: LTI numerics and models"]
   sc["signals-systems-lab/src/core: signals, transforms, filters"]
-  hc["semiconductors-lab/src/core: bands, carriers, junctions, transistors"]
+  hc["semiconductors-lab/src/core: bands, carriers, devices, circuits"]
   el["Electrodynamics labs and page"]
   al["Automation labs and page"]
   sl["Signals and systems labs and page"]
-  hl["Semiconductors labs and page"]
+  hl["Semiconductors, devices and circuits labs and page"]
   start["index.html: start page"]
   ku --> kc
   ec --> kc
