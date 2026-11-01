@@ -84,6 +84,8 @@ export function clock(tick, { label = "Play" } = {}) {
     button.setAttribute("aria-pressed", String(running));
     button.textContent = running ? "Pause" : label;
   });
+  // Draw once now: a tab in the background, or a browser that holds back animation frames, still shows the lab.
+  tick(t);
   requestAnimationFrame(frame);
   return { el: button, draw: () => tick(t) };
 }
