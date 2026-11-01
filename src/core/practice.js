@@ -21,6 +21,16 @@ const LAWS = {
   waveH: q => F.planeWave(q.E).H,
   radiation: q => F.radiationResistance(q.l, q.lambda),
   lineZ: q => F.losslessLine(q.L, q.Cp).ZW,
+  // The course's exercise collection: the same laws, in the forms its worked solutions use.
+  skinLoss: q => (q.N * q.I) ** 2 / (q.gamma * F.skinDepth(q.f, q.gamma)),
+  // E = (U/r) sin θ: ⟨S⟩ = U² sin²θ /(2 Z0 r²), over a sphere P = 4π U² /(3 Z0).
+  antennaPower: q => 4 * Math.PI * q.U ** 2 / (3 * F.Z0),
+  // ⟨S⟩ = Ê²/(2 Z0) for linear polarisation, Ê²/Z0 for circular; H = E/Z0.
+  waveAmplitude: q => Math.sqrt((q.polarisation === "linear" ? 2 : 1) * F.Z0 * q.S) / (q.find === "H" ? F.Z0 : 1),
+  isotropic: q => Math.sqrt(q.P * F.Z0 / (4 * Math.PI * q.r ** 2)),
+  coax: q => F.Z0 * Math.log(q.ratio) / (2 * Math.PI),
+  twoWire: q => F.Z0 * Math.log(2 * q.ratio) / Math.PI,
+  strip: q => F.Z0 * q.ratio,
 };
 
 /** The answer to a question's "compute" block; an unknown law is an error naming the ones there are. */
