@@ -38,8 +38,8 @@ export default {
     const build = () => controls.replaceChildren((mode === "ct"
       ? slider({ label: "Duration T", unit: "s", min: 0.25, max: 3, value: T, step: 0.05, format: v => `${v.toFixed(2)} s`, onInput: v => { T = v; update(); } })
       : slider({ label: "Half-width M", min: 0, max: 7, value: M, step: 1, format: v => `${2 * v + 1} samples`, onInput: v => { M = v; update(); } })).el);
-    root.append(h("div", { class: "stage" }, box, h("div", { class: "controls" },
-      choice("Time", [["ct", "Continuous: Fourier transform"], ["dt", "Discrete: DTFT"]], mode, v => { mode = v; build(); update(); }),
+    // The course switch sits above the chart, where it is seen first: SS1 is continuous time, SS2 discrete.
+    root.append(h("div", { class: "course-switch" }, choice("Course", [["ct", "SS1, continuous: Fourier transform"], ["dt", "SS2, discrete: DTFT"]], mode, v => { mode = v; build(); update(); })), h("div", { class: "stage" }, box, h("div", { class: "controls" },
       controls, rZ.el, rA.el,
       h("p", { class: "hint" }, "Halve the duration and the spectrum doubles in width and halves in height: duration times bandwidth stays fixed. A sampled signal's spectrum is the continuous one repeated every fs; only the band from −fs/2 to fs/2 is new information."))));
     build(); update();

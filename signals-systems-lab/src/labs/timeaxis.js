@@ -34,8 +34,8 @@ export default {
       }
     };
     const sc = slider({ label: "Scale a (sequences: whole numbers)", min: 0.5, max: 3, value: scale, step: 0.25, format: v => v.toFixed(2), onInput: v => { scale = v; update(); } });
-    root.append(h("div", { class: "stage" }, chartBox, h("div", { class: "controls" },
-      choice("Time", [["ct", "Continuous, x(t)"], ["dt", "Discrete, x[n]"]], mode, v => { mode = v; update(); }),
+    // The course switch sits above the chart, where it is seen first: SS1 is continuous time, SS2 discrete.
+    root.append(h("div", { class: "course-switch" }, choice("Course", [["ct", "SS1, continuous: x(t)"], ["dt", "SS2, discrete: x[n]"]], mode, v => { mode = v; update(); })), h("div", { class: "stage" }, chartBox, h("div", { class: "controls" },
       sc,
       slider({ label: "Shift t0 (or −n0)", min: -4, max: 4, value: shift, step: 1, format: v => v.toFixed(0), onInput: v => { shift = v; update(); } }),
       choice("Direction", [["f", "Forward"], ["r", "Reversed"]], "f", v => { reverse = v === "r"; update(); }),

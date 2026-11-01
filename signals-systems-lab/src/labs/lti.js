@@ -39,8 +39,8 @@ export default {
       if (!table[id]) id = Object.keys(table)[0];
       systemBox.replaceChildren(choice("System", Object.entries(table).map(([k, s]) => [k, s.name]), id, v => { id = v; update(); }));
     };
-    root.append(h("div", { class: "stage" }, box, h("div", { class: "controls" },
-      choice("Time", [["ct", "Continuous"], ["dt", "Discrete"]], mode, v => { mode = v; if (v === "dt" && id === "lowpass") id = "average"; if (v === "ct" && id === "average") id = "lowpass"; pickSystem(); update(); }),
+    // The course switch sits above the chart, where it is seen first: SS1 is continuous time, SS2 discrete.
+    root.append(h("div", { class: "course-switch" }, choice("Course", [["ct", "SS1, continuous"], ["dt", "SS2, discrete"]], mode, v => { mode = v; if (v === "dt" && id === "lowpass") id = "average"; if (v === "ct" && id === "average") id = "lowpass"; pickSystem(); update(); })), h("div", { class: "stage" }, box, h("div", { class: "controls" },
       systemBox, rL.el, rT.el,
       h("p", { class: "hint" }, "x1 is a pulse, x2 a triangle. When both pairs of lines lie on top of each other, the system is linear and time-invariant (LTI), and its impulse response alone tells everything it does. The offset y = x + 0.5 looks harmless but is not linear: zero in gives 0.5 out."))));
     pickSystem(); update();

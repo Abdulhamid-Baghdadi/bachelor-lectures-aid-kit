@@ -48,8 +48,8 @@ export default {
         rK.set(`${kmax} of ${N / 2}`, "", kmax >= N / 2 ? "all of them: the sequence is rebuilt exactly" : "");
       }
     };
-    root.append(h("div", { class: "stage" }, box, h("div", { class: "controls" },
-      choice("Time", [["ct", "Continuous signal"], ["dt", "Discrete sequence"]], mode, v => { mode = v; update(); }),
+    // The course switch sits above the chart, where it is seen first: SS1 is continuous time, SS2 discrete.
+    root.append(h("div", { class: "course-switch" }, choice("Course", [["ct", "SS1, continuous signal"], ["dt", "SS2, discrete sequence"]], mode, v => { mode = v; update(); })), h("div", { class: "stage" }, box, h("div", { class: "controls" },
       choice("Wave", [["square", "Square"], ["sawtooth", "Sawtooth"], ["triangle", "Triangle"]], wave, v => { wave = v; update(); }),
       slider({ label: "Highest harmonic K", min: 1, max: 60, value: K, step: 1, format: v => v.toFixed(0), onInput: v => { K = v; update(); } }),
       rO.el, rK.el,

@@ -49,8 +49,8 @@ export default {
     };
     const c = clock(draw, { label: "Slide" });
     ts = slider({ label: "Time t", unit: "s", min: -0.5, max: 4.5, value: t, step: 0.05, format: v => v.toFixed(2), onInput: v => { t = v; follow = false; c.draw(); } });
-    root.append(h("div", { class: "stage" }, box, h("div", { class: "controls" },
-      choice("Time", [["ct", "Continuous: integral"], ["dt", "Discrete: sum"]], mode, v => { mode = v; c.draw(); }),
+    // The course switch sits above the chart, where it is seen first: SS1 is continuous time, SS2 discrete.
+    root.append(h("div", { class: "course-switch" }, choice("Course", [["ct", "SS1, continuous: the integral"], ["dt", "SS2, discrete: the sum"]], mode, v => { mode = v; c.draw(); })), h("div", { class: "stage" }, box, h("div", { class: "controls" },
       choice("Input x", [["rect", "Pulse"], ["tri", "Triangle"]], xs, v => { xs = v; c.draw(); }),
       choice("Impulse response h", [["decay", "Decay"], ["rect", "Pulse"]], hs, v => { hs = v; c.draw(); }),
       c.el, ts, rY.el,

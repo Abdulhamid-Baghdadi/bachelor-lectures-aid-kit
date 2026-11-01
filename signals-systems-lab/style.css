@@ -7,3 +7,8 @@
 .zplane .unit { fill: none; stroke: var(--muted); stroke-width: 1.5; }
 .zplane .pole { stroke: var(--danger); stroke-width: 2.5; } .zplane .zero { fill: none; stroke: var(--accent); stroke-width: 2.5; }
 .fly { stroke: var(--muted); stroke-width: 1.2; fill: none; } .fly.on { stroke: var(--accent); stroke-width: 2.5; }
+
+/* The SS1 | SS2 switch above a lab's chart: the same idea in continuous and in discrete time. */
+.course-switch { margin: 8px 0 12px; }
+.course-switch .choice { border: 2px solid var(--accent); }
+.course-switch .choice legend { color: var(--accent); }
