@@ -21,12 +21,13 @@
       "title": "Shifting and scaling time",
       "idea": "Shift, reverse and scale the time axis: a signal only moves and stretches, a sequence scaled by M loses samples.",
       "law": "y(t) = x(at − t0)    y[n] = x[Mn + n0]",
+      "lawTex": "y(t) = x(at - t_0) \\qquad y[n] = x[Mn + n_0]",
       "lecture": "Prechtl (2010), section 1.2, pp. 5–12; Doblinger (2015), section 2.2, pp. 15–18",
       "equations": [
-        { "eq": "y(t) = x(at − t0)", "note": "scaled by a, shifted to start at t = t0/a", "ref": "SS1 §1.2" },
-        { "eq": "y(t) = x(−t)", "note": "reversed in time", "ref": "SS1 §1.2" },
-        { "eq": "y[n] = x[n − n0]", "note": "shift by a whole number of samples", "ref": "SS2 §2.2" },
-        { "eq": "y[n] = x[Mn]", "note": "keep every M-th sample (M a whole number)", "ref": "SS2 §2.2" }
+        { "eq": "y(t) = x(at − t0)", "tex": "y(t) = x(at - t_0)", "note": "scaled by a, shifted to start at t = t0/a", "ref": "SS1 §1.2" },
+        { "eq": "y(t) = x(−t)", "tex": "y(t) = x(-t)", "note": "reversed in time", "ref": "SS1 §1.2" },
+        { "eq": "y[n] = x[n − n0]", "tex": "y[n] = x[n - n_0]", "note": "shift by a whole number of samples", "ref": "SS2 §2.2" },
+        { "eq": "y[n] = x[Mn]", "tex": "y[n] = x[Mn]", "note": "keep every M-th sample (M a whole number)", "ref": "SS2 §2.2" }
       ],
       "practice": [
         { "question": "x[n] = 1 for n = 0 … 4 and 0 elsewhere. How many samples of y[n] = x[2n − 3] are not zero?",
@@ -41,11 +42,12 @@
       "title": "Linearity and time invariance",
       "idea": "Test a system: does the output of a sum equal the sum of the outputs, and does a delayed input give a delayed output?",
       "law": "S{a x1 + b x2} = a S{x1} + b S{x2}    S{x(t − t0)} = y(t − t0)",
+      "lawTex": "S\\{a x_1 + b x_2\\} = a\\,S\\{x_1\\} + b\\,S\\{x_2\\} \\qquad S\\{x(t - t_0)\\} = y(t - t_0)",
       "lecture": "Prechtl (2010), section 1.4, pp. 18–23; Doblinger (2015), section 3.1, pp. 30–44",
       "equations": [
-        { "eq": "S{a x1 + b x2} = a S{x1} + b S{x2}", "note": "linear: superposition holds", "ref": "SS1 §1.4" },
-        { "eq": "y(t) = S{x(t)} ⇒ y(t − t0) = S{x(t − t0)}", "note": "time-invariant", "ref": "SS1 §1.4" },
-        { "eq": "y[n] = S{x[n]} ⇒ y[n − n0] = S{x[n − n0]}", "note": "shift-invariant sequence system", "ref": "SS2 §3.1" }
+        { "eq": "S{a x1 + b x2} = a S{x1} + b S{x2}", "tex": "S\\{a x_1 + b x_2\\} = a\\,S\\{x_1\\} + b\\,S\\{x_2\\}", "note": "linear: superposition holds", "ref": "SS1 §1.4" },
+        { "eq": "y(t) = S{x(t)} ⇒ y(t − t0) = S{x(t − t0)}", "tex": "y(t) = S\\{x(t)\\} \\;\\Rightarrow\\; y(t - t_0) = S\\{x(t - t_0)\\}", "note": "time-invariant", "ref": "SS1 §1.4" },
+        { "eq": "y[n] = S{x[n]} ⇒ y[n − n0] = S{x[n − n0]}", "tex": "y[n] = S\\{x[n]\\} \\;\\Rightarrow\\; y[n - n_0] = S\\{x[n - n_0]\\}", "note": "shift-invariant sequence system", "ref": "SS2 §3.1" }
       ],
       "practice": [
         { "question": "An LTI system's step response is s(t) = (1 − e^(−t/τ)) V with τ = 1 s. The input is a pulse of height 1 from t = 0 to t = 1 s. What is the output at t = 2 s?",
@@ -60,12 +62,13 @@
       "title": "Convolution",
       "idea": "Flip the impulse response, slide it, multiply and add up: the output of any LTI system, integral or sum.",
       "law": "y(t) = ∫ x(τ) h(t − τ) dτ    y[n] = Σ x[k] h[n − k]",
+      "lawTex": "y(t) = \\int x(\\tau)\\, h(t - \\tau)\\,\\mathrm{d}\\tau \\qquad y[n] = \\sum_k x[k]\\, h[n - k]",
       "lecture": "Prechtl (2010), section 1.5, pp. 24–28; Doblinger (2015), section 3.1, pp. 30–44",
       "equations": [
-        { "eq": "y(t) = ∫ x(τ) h(t − τ) dτ = (x ∗ h)(t)", "note": "convolution integral", "ref": "SS1 §1.5" },
-        { "eq": "x ∗ h = h ∗ x", "note": "commutative", "ref": "SS1 §1.5" },
-        { "eq": "y[n] = Σₖ x[k] h[n − k]", "note": "convolution sum", "ref": "SS2 §3.1" },
-        { "eq": "length(x ∗ h) = Nx + Nh − 1", "note": "for finite sequences", "ref": "SS2 §3.1" }
+        { "eq": "y(t) = ∫ x(τ) h(t − τ) dτ = (x ∗ h)(t)", "tex": "y(t) = \\int x(\\tau)\\, h(t - \\tau)\\,\\mathrm{d}\\tau = (x * h)(t)", "note": "convolution integral", "ref": "SS1 §1.5" },
+        { "eq": "x ∗ h = h ∗ x", "tex": "x * h = h * x", "note": "commutative", "ref": "SS1 §1.5" },
+        { "eq": "y[n] = Σₖ x[k] h[n − k]", "tex": "y[n] = \\sum_k x[k]\\, h[n - k]", "note": "convolution sum", "ref": "SS2 §3.1" },
+        { "eq": "length(x ∗ h) = Nx + Nh − 1", "tex": "\\operatorname{length}(x * h) = N_x + N_h - 1", "note": "for finite sequences", "ref": "SS2 §3.1" }
       ],
       "practice": [
         { "question": "A pulse of height 1 and length 1 s enters a system with h(t) = e^(−t/τ) for t ≥ 0, τ = 0.5 s. What is y(t) at t = 1 s?",
@@ -80,13 +83,14 @@
       "title": "Random signals and correlation",
       "idea": "White noise forgets at once; a low-pass gives it memory. Cross-correlation finds an echo buried in noise.",
       "law": "r_xx[k] = E{x[n] x[n + k]}    σy² = σx² (1 − a)/(1 + a)",
+      "lawTex": "r_{xx}[k] = \\operatorname{E}\\{x[n]\\, x[n + k]\\} \\qquad \\sigma_y^2 = \\sigma_x^2\\, \\frac{1 - a}{1 + a}",
       "lecture": "Prechtl (2010), sections 1.3, 3.4 and 4.6, pp. 13–17, 80–83, 101–105; Doblinger (2015), section 3.1",
       "equations": [
-        { "eq": "r_xx(τ) = E{x(t) x(t + τ)}", "note": "autocorrelation", "ref": "SS1 §1.3" },
-        { "eq": "r_xy(τ) = E{x(t) y(t + τ)}", "note": "cross-correlation", "ref": "SS1 §3.4" },
-        { "eq": "Φ_yy(f) = |H(f)|² Φ_xx(f)", "note": "noise through an LTI system", "ref": "SS1 §4.6" },
-        { "eq": "y[n] = a y[n − 1] + (1 − a) x[n]", "note": "the lab's low-pass", "ref": "" },
-        { "eq": "σy² = σx² (1 − a)/(1 + a), r_yy[k]/r_yy[0] = a^|k|", "note": "its output for white input", "ref": "" }
+        { "eq": "r_xx(τ) = E{x(t) x(t + τ)}", "tex": "r_{xx}(\\tau) = \\operatorname{E}\\{x(t)\\, x(t + \\tau)\\}", "note": "autocorrelation", "ref": "SS1 §1.3" },
+        { "eq": "r_xy(τ) = E{x(t) y(t + τ)}", "tex": "r_{xy}(\\tau) = \\operatorname{E}\\{x(t)\\, y(t + \\tau)\\}", "note": "cross-correlation", "ref": "SS1 §3.4" },
+        { "eq": "Φ_yy(f) = |H(f)|² Φ_xx(f)", "tex": "\\Phi_{yy}(f) = |H(f)|^2\\, \\Phi_{xx}(f)", "note": "noise through an LTI system", "ref": "SS1 §4.6" },
+        { "eq": "y[n] = a y[n − 1] + (1 − a) x[n]", "tex": "y[n] = a\\, y[n - 1] + (1 - a)\\, x[n]", "note": "the lab's low-pass", "ref": "" },
+        { "eq": "σy² = σx² (1 − a)/(1 + a), r_yy[k]/r_yy[0] = a^|k|", "tex": "\\sigma_y^2 = \\sigma_x^2\\, \\frac{1 - a}{1 + a}, \\qquad \\frac{r_{yy}[k]}{r_{yy}[0]} = a^{|k|}", "note": "its output for white input", "ref": "" }
       ],
       "practice": [
         { "question": "White noise of variance 1 passes through y[n] = 0.9 y[n − 1] + 0.1 x[n]. What is the output's variance?",
@@ -101,12 +105,13 @@
       "title": "Fourier series",
       "idea": "A periodic signal is a sum of harmonics; at a jump, the partial sums always overshoot. A periodic sequence needs only N.",
       "law": "x(t) = Σ c_k e^(j2πkt/T)    x[n] = (1/N) Σ X[k] e^(j2πkn/N)",
+      "lawTex": "x(t) = \\sum_k c_k\\, \\mathrm{e}^{\\mathrm{j}2\\pi k t/T} \\qquad x[n] = \\frac{1}{N} \\sum_k X[k]\\, \\mathrm{e}^{\\mathrm{j}2\\pi k n/N}",
       "lecture": "Prechtl (2010), chapter 5, pp. 108–121; Doblinger (2015), section 2.3, pp. 19–29",
       "equations": [
-        { "eq": "x(t) = Σₖ c_k e^(j2πkt/T),  c_k = (1/T) ∫_T x(t) e^(−j2πkt/T) dt", "note": "Fourier series", "ref": "SS1 §5.1" },
-        { "eq": "square wave ±1: x(t) = (4/π) Σ_odd sin(2πkt/T)/k", "note": "coefficients fall as 1/k", "ref": "SS1 §5.1" },
-        { "eq": "x[n] = (1/N) Σ_{k=0}^{N−1} X[k] e^(j2πkn/N)", "note": "discrete Fourier series, period N", "ref": "SS2 §2.3" },
-        { "eq": "max of partial sum → 1 + 0.179 for a jump from −1 to 1", "note": "Gibbs overshoot, (2/π) Si(π)", "ref": "" }
+        { "eq": "x(t) = Σₖ c_k e^(j2πkt/T),  c_k = (1/T) ∫_T x(t) e^(−j2πkt/T) dt", "tex": "x(t) = \\sum_k c_k\\, \\mathrm{e}^{\\mathrm{j}2\\pi k t/T}, \\qquad c_k = \\frac{1}{T} \\int_T x(t)\\, \\mathrm{e}^{-\\mathrm{j}2\\pi k t/T}\\,\\mathrm{d}t", "note": "Fourier series", "ref": "SS1 §5.1" },
+        { "eq": "square wave ±1: x(t) = (4/π) Σ_odd sin(2πkt/T)/k", "tex": "\\text{square wave } {\\pm 1}\\colon\\quad x(t) = \\frac{4}{\\pi} \\sum_{k\\ \\text{odd}} \\frac{\\sin(2\\pi k t/T)}{k}", "note": "coefficients fall as 1/k", "ref": "SS1 §5.1" },
+        { "eq": "x[n] = (1/N) Σ_{k=0}^{N−1} X[k] e^(j2πkn/N)", "tex": "x[n] = \\frac{1}{N} \\sum_{k=0}^{N-1} X[k]\\, \\mathrm{e}^{\\mathrm{j}2\\pi k n/N}", "note": "discrete Fourier series, period N", "ref": "SS2 §2.3" },
+        { "eq": "max of partial sum → 1 + 0.179 for a jump from −1 to 1", "tex": "\\text{max of partial sum} \\to 1 + 0.179 \\quad \\text{for a jump from } {-1} \\text{ to } 1", "note": "Gibbs overshoot, (2/π) Si(π)", "ref": "" }
       ],
       "practice": [
         { "question": "A square wave jumps between −1 and +1. What is the amplitude of its third harmonic?",
@@ -121,12 +126,13 @@
       "title": "Fourier transform",
       "idea": "Shorter in time is wider in frequency. A sequence has the same spectrum near zero, but repeated every sampling rate.",
       "law": "X(f) = ∫ x(t) e^(−j2πft) dt    X(e^jΩ) = Σ x[n] e^(−jΩn)",
+      "lawTex": "X(f) = \\int x(t)\\, \\mathrm{e}^{-\\mathrm{j}2\\pi f t}\\,\\mathrm{d}t \\qquad X(\\mathrm{e}^{\\mathrm{j}\\Omega}) = \\sum_n x[n]\\, \\mathrm{e}^{-\\mathrm{j}\\Omega n}",
       "lecture": "Prechtl (2010), sections 3.1–3.3, pp. 65–79; Doblinger (2015), section 4.1, pp. 67–73",
       "equations": [
-        { "eq": "X(f) = ∫ x(t) e^(−j2πft) dt", "note": "Fourier transform", "ref": "SS1 §3.1" },
-        { "eq": "rect(t/T) ↔ T sinc(fT)", "note": "pulse and its spectrum", "ref": "SS1 §3.1" },
-        { "eq": "x(at) ↔ (1/|a|) X(f/a)", "note": "similarity theorem", "ref": "SS1 §3.2" },
-        { "eq": "X(e^jΩ) = Σₙ x[n] e^(−jΩn), period 2π", "note": "DTFT", "ref": "SS2 §4.1" }
+        { "eq": "X(f) = ∫ x(t) e^(−j2πft) dt", "tex": "X(f) = \\int x(t)\\, \\mathrm{e}^{-\\mathrm{j}2\\pi f t}\\,\\mathrm{d}t", "note": "Fourier transform", "ref": "SS1 §3.1" },
+        { "eq": "rect(t/T) ↔ T sinc(fT)", "tex": "\\operatorname{rect}(t/T) \\leftrightarrow T \\operatorname{sinc}(fT)", "note": "pulse and its spectrum", "ref": "SS1 §3.1" },
+        { "eq": "x(at) ↔ (1/|a|) X(f/a)", "tex": "x(at) \\leftrightarrow \\frac{1}{|a|}\\, X(f/a)", "note": "similarity theorem", "ref": "SS1 §3.2" },
+        { "eq": "X(e^jΩ) = Σₙ x[n] e^(−jΩn), period 2π", "tex": "X(\\mathrm{e}^{\\mathrm{j}\\Omega}) = \\sum_n x[n]\\, \\mathrm{e}^{-\\mathrm{j}\\Omega n}, \\qquad \\text{period } 2\\pi", "note": "DTFT", "ref": "SS2 §4.1" }
       ],
       "practice": [
         { "question": "A pulse lasts 1 ms. At what frequency is its spectrum first zero?",
@@ -141,12 +147,13 @@
       "title": "Harmonics and power",
       "idea": "Harmonics in the current add RMS current and apparent power but no active power: they are distortion power.",
       "law": "S² = P² + Q² + D²    THD = √(Σ_{k>1} I_k²) / I_1",
+      "lawTex": "S^2 = P^2 + Q^2 + D^2 \\qquad \\mathrm{THD} = \\frac{\\sqrt{\\sum_{k>1} I_k^2}}{I_1}",
       "lecture": "Prechtl (2010), chapter 6, pp. 122–133",
       "equations": [
-        { "eq": "I = √(Σ I_k²)", "note": "RMS of a current with harmonics", "ref": "SS1 §6.2" },
-        { "eq": "P = U I_1 cos φ_1,  Q = U I_1 sin φ_1", "note": "with a sine voltage, only the fundamental carries P and Q", "ref": "SS1 §6.3" },
-        { "eq": "S = U I,  D = √(S² − P² − Q²)", "note": "apparent and distortion power", "ref": "SS1 §6.3" },
-        { "eq": "λ = P/S", "note": "power factor", "ref": "SS1 §6.3" }
+        { "eq": "I = √(Σ I_k²)", "tex": "I = \\sqrt{\\textstyle\\sum_k I_k^2}", "note": "RMS of a current with harmonics", "ref": "SS1 §6.2" },
+        { "eq": "P = U I_1 cos φ_1,  Q = U I_1 sin φ_1", "tex": "P = U I_1 \\cos\\varphi_1, \\qquad Q = U I_1 \\sin\\varphi_1", "note": "with a sine voltage, only the fundamental carries P and Q", "ref": "SS1 §6.3" },
+        { "eq": "S = U I,  D = √(S² − P² − Q²)", "tex": "S = U I, \\qquad D = \\sqrt{S^2 - P^2 - Q^2}", "note": "apparent and distortion power", "ref": "SS1 §6.3" },
+        { "eq": "λ = P/S", "tex": "\\lambda = \\frac{P}{S}", "note": "power factor", "ref": "SS1 §6.3" }
       ],
       "practice": [
         { "question": "A 230 V sine voltage drives a current of 10 A (fundamental, in phase), 3 A at the third and 2 A at the fifth harmonic, all RMS. What is the RMS current?",
@@ -166,12 +173,13 @@
       "title": "DFT, windows and the FFT",
       "idea": "N samples give N lines that sample the spectrum; a sine between lines leaks, a window tames it, the FFT gets there fast.",
       "law": "X[k] = Σ_{n=0}^{N−1} x[n] e^(−j2πkn/N)    Δf = fs/N",
+      "lawTex": "X[k] = \\sum_{n=0}^{N-1} x[n]\\, \\mathrm{e}^{-\\mathrm{j}2\\pi k n/N} \\qquad \\Delta f = \\frac{f_\\mathrm{s}}{N}",
       "lecture": "Doblinger (2015), sections 7.1, 7.4 and 7.6, pp. 169–174, 180, 186–191",
       "equations": [
-        { "eq": "X[k] = Σₙ x[n] e^(−j2πkn/N)", "note": "DFT", "ref": "SS2 §7.1" },
-        { "eq": "X[k] = X(e^jΩ) at Ω = 2πk/N", "note": "the DFT samples the DTFT", "ref": "SS2 §7.2" },
-        { "eq": "Δf = fs/N", "note": "line spacing", "ref": "SS2 §7.1" },
-        { "eq": "(N/2) log₂ N butterflies", "note": "radix-2 FFT, against N² products", "ref": "SS2 §7.6" }
+        { "eq": "X[k] = Σₙ x[n] e^(−j2πkn/N)", "tex": "X[k] = \\sum_n x[n]\\, \\mathrm{e}^{-\\mathrm{j}2\\pi k n/N}", "note": "DFT", "ref": "SS2 §7.1" },
+        { "eq": "X[k] = X(e^jΩ) at Ω = 2πk/N", "tex": "X[k] = X(\\mathrm{e}^{\\mathrm{j}\\Omega}) \\big|_{\\Omega = 2\\pi k/N}", "note": "the DFT samples the DTFT", "ref": "SS2 §7.2" },
+        { "eq": "Δf = fs/N", "tex": "\\Delta f = \\frac{f_\\mathrm{s}}{N}", "note": "line spacing", "ref": "SS2 §7.1" },
+        { "eq": "(N/2) log₂ N butterflies", "tex": "\\frac{N}{2} \\log_2 N \\ \\text{butterflies}", "note": "radix-2 FFT, against N² products", "ref": "SS2 §7.6" }
       ],
       "practice": [
         { "question": "A DFT of N = 1024 samples is taken at fs = 8 kHz. How far apart are its lines?",
@@ -186,12 +194,13 @@
       "title": "Sampling and aliasing",
       "idea": "Sample fast enough and sincs rebuild the signal exactly; too slowly, and the samples fit a slower sine instead.",
       "law": "x(t) = Σ x[n] sinc((t − nT)/T)    fs > 2 f_max",
+      "lawTex": "x(t) = \\sum_n x[n] \\operatorname{sinc}\\!\\Big(\\frac{t - nT}{T}\\Big) \\qquad f_\\mathrm{s} > 2 f_\\mathrm{max}",
       "lecture": "Doblinger (2015), section 4.2, pp. 74–90",
       "equations": [
-        { "eq": "x[n] = x(nT),  fs = 1/T", "note": "ideal sampling", "ref": "SS2 §4.2" },
-        { "eq": "X_s(f) = (1/T) Σ_k X(f − k fs)", "note": "the spectrum repeats every fs", "ref": "SS2 §4.2" },
-        { "eq": "x(t) = Σₙ x[n] sinc((t − nT)/T)", "note": "ideal reconstruction", "ref": "SS2 §4.2" },
-        { "eq": "f_alias = |f − fs · round(f/fs)|", "note": "where a sine folds to", "ref": "" }
+        { "eq": "x[n] = x(nT),  fs = 1/T", "tex": "x[n] = x(nT), \\qquad f_\\mathrm{s} = \\frac{1}{T}", "note": "ideal sampling", "ref": "SS2 §4.2" },
+        { "eq": "X_s(f) = (1/T) Σ_k X(f − k fs)", "tex": "X_\\mathrm{s}(f) = \\frac{1}{T} \\sum_k X(f - k f_\\mathrm{s})", "note": "the spectrum repeats every fs", "ref": "SS2 §4.2" },
+        { "eq": "x(t) = Σₙ x[n] sinc((t − nT)/T)", "tex": "x(t) = \\sum_n x[n] \\operatorname{sinc}\\!\\Big(\\frac{t - nT}{T}\\Big)", "note": "ideal reconstruction", "ref": "SS2 §4.2" },
+        { "eq": "f_alias = |f − fs · round(f/fs)|", "tex": "f_\\mathrm{alias} = \\big|f - f_\\mathrm{s} \\cdot \\operatorname{round}(f/f_\\mathrm{s})\\big|", "note": "where a sine folds to", "ref": "" }
       ],
       "practice": [
         { "question": "A 7 kHz sine is sampled at 10 kHz. At what frequency does it appear?",
@@ -211,12 +220,13 @@
       "title": "Digital filters",
       "idea": "An IIR filter from an analogue Butterworth by the bilinear transform, or an FIR filter from a windowed sinc.",
       "law": "s = 2fs (z − 1)/(z + 1)    ωa = 2fs tan(π fc / fs)    h[n] = 2Fc sinc(2Fc (n − (N−1)/2)) w[n]",
+      "lawTex": "s = 2 f_\\mathrm{s}\\, \\frac{z - 1}{z + 1} \\qquad \\omega_\\mathrm{a} = 2 f_\\mathrm{s} \\tan\\frac{\\pi f_\\mathrm{c}}{f_\\mathrm{s}} \\qquad h[n] = 2F_\\mathrm{c} \\operatorname{sinc}\\!\\Big(2F_\\mathrm{c}\\Big(n - \\frac{N - 1}{2}\\Big)\\Big)\\, w[n]",
       "lecture": "Doblinger (2015), sections 6.2 and 6.3, pp. 135–157",
       "equations": [
-        { "eq": "|Ha(jω)|² = 1 / (1 + (ω/ωa)^(2N))", "note": "Butterworth prototype", "ref": "SS2 §6.3" },
-        { "eq": "s = 2fs (z − 1)/(z + 1)", "note": "bilinear transform", "ref": "SS2 §6.3" },
-        { "eq": "ωa = 2fs tan(π fc / fs)", "note": "pre-warping", "ref": "SS2 §6.3" },
-        { "eq": "h[n] = h_ideal[n] w[n]", "note": "window method", "ref": "SS2 §6.2" }
+        { "eq": "|Ha(jω)|² = 1 / (1 + (ω/ωa)^(2N))", "tex": "|H_\\mathrm{a}(\\mathrm{j}\\omega)|^2 = \\frac{1}{1 + (\\omega/\\omega_\\mathrm{a})^{2N}}", "note": "Butterworth prototype", "ref": "SS2 §6.3" },
+        { "eq": "s = 2fs (z − 1)/(z + 1)", "tex": "s = 2 f_\\mathrm{s}\\, \\frac{z - 1}{z + 1}", "note": "bilinear transform", "ref": "SS2 §6.3" },
+        { "eq": "ωa = 2fs tan(π fc / fs)", "tex": "\\omega_\\mathrm{a} = 2 f_\\mathrm{s} \\tan\\frac{\\pi f_\\mathrm{c}}{f_\\mathrm{s}}", "note": "pre-warping", "ref": "SS2 §6.3" },
+        { "eq": "h[n] = h_ideal[n] w[n]", "tex": "h[n] = h_\\mathrm{ideal}[n]\\, w[n]", "note": "window method", "ref": "SS2 §6.2" }
       ],
       "practice": [
         { "question": "A digital low-pass at fs = 8 kHz should cut off at 1 kHz by the bilinear transform. To what frequency is the analogue prototype pre-warped?",
@@ -236,12 +246,13 @@
       "title": "Changing the sampling rate",
       "idea": "Keep every M-th sample and what lay above fs/(2M) folds into the band; filter first. Insert zeros, filter after.",
       "law": "y[n] = x[Mn]    Y(e^jΩ) = (1/M) Σ_{m=0}^{M−1} X(e^(j(Ω − 2πm)/M))",
+      "lawTex": "y[n] = x[Mn] \\qquad Y(\\mathrm{e}^{\\mathrm{j}\\Omega}) = \\frac{1}{M} \\sum_{m=0}^{M-1} X\\big(\\mathrm{e}^{\\mathrm{j}(\\Omega - 2\\pi m)/M}\\big)",
       "lecture": "Doblinger (2015), sections 8.1 and 8.2, pp. 192–206",
       "equations": [
-        { "eq": "y[n] = x[Mn]", "note": "downsampling", "ref": "SS2 §8.1" },
-        { "eq": "Y(e^jΩ) = (1/M) Σₘ X(e^(j(Ω − 2πm)/M))", "note": "its spectrum: stretched and folded", "ref": "SS2 §8.2" },
-        { "eq": "y[n] = x[n/L] for n a multiple of L, else 0", "note": "upsampling", "ref": "SS2 §8.1" },
-        { "eq": "Y(e^jΩ) = X(e^(jΩL))", "note": "its spectrum: images", "ref": "SS2 §8.2" }
+        { "eq": "y[n] = x[Mn]", "tex": "y[n] = x[Mn]", "note": "downsampling", "ref": "SS2 §8.1" },
+        { "eq": "Y(e^jΩ) = (1/M) Σₘ X(e^(j(Ω − 2πm)/M))", "tex": "Y(\\mathrm{e}^{\\mathrm{j}\\Omega}) = \\frac{1}{M} \\sum_m X\\big(\\mathrm{e}^{\\mathrm{j}(\\Omega - 2\\pi m)/M}\\big)", "note": "its spectrum: stretched and folded", "ref": "SS2 §8.2" },
+        { "eq": "y[n] = x[n/L] for n a multiple of L, else 0", "tex": "y[n] = \\begin{cases} x[n/L] & n \\text{ a multiple of } L \\\\ 0 & \\text{else} \\end{cases}", "note": "upsampling", "ref": "SS2 §8.1" },
+        { "eq": "Y(e^jΩ) = X(e^(jΩL))", "tex": "Y(\\mathrm{e}^{\\mathrm{j}\\Omega}) = X(\\mathrm{e}^{\\mathrm{j}\\Omega L})", "note": "its spectrum: images", "ref": "SS2 §8.2" }
       ],
       "practice": [
         { "question": "A 48 kHz signal is to be downsampled by M = 4. Up to what frequency may the anti-aliasing filter pass?",

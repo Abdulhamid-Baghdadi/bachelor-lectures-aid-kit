@@ -3,6 +3,7 @@
 // and next lab as small cards below. The address (#convolution) says which lab is open; none means the overview.
 // Reads the words from data/labs.json; a lab with no words there, or words with no lab, is reported, not skipped.
 import { h, practice } from "../../kit/ui/kit.js";
+import { math } from "../../kit/ui/math.js";
 import { parseSi } from "./core/index.js";
 import { labs } from "./labs/index.js";
 
@@ -71,12 +72,12 @@ async function start() {
         h("div", { class: "intro" },
           h("p", { class: "eyebrow" }, `${chapterOf(lecture)} · ${lecture.pages} · ${lecture.title}`),
           h("h2", { id: `title-${id}`, tabindex: "-1" }, w.title), h("p", { class: "idea" }, w.idea),
-          h("p", { class: "law" }, w.law), h("p", { class: "source" }, `Source: ${w.lecture}`))),
+          h("p", { class: "law" }, w.lawTex ? math(w.lawTex, { display: true }) : w.law), h("p", { class: "source" }, `Source: ${w.lecture}`))),
       body,
       // The full set for readers who know the subject: each equation with what it is and its number in the notes.
       w.equations?.length ? h("section", { class: "equations" }, h("h3", {}, "The equations"),
         h("table", { class: "eqs" }, h("tbody", {}, w.equations.map(e => h("tr", {},
-          h("td", { class: "eq" }, e.eq), h("td", { class: "note" }, e.note), h("td", { class: "ref" }, e.ref || "derived")))))) : null,
+          h("td", { class: "eq" }, e.tex ? math(e.tex, { display: true }) : e.eq), h("td", { class: "note" }, e.note), h("td", { class: "ref" }, e.ref || "derived")))))) : null,
       w.practice.length ? h("section", { class: "practice-list" }, h("h3", {}, "Practise"),
         w.practice.map(q => practice({ ...q, parse: parseSi }))) : null,
       h("nav", { class: "steps", "aria-label": "Previous and next lab" },

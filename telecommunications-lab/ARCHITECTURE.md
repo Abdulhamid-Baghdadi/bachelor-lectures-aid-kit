@@ -13,7 +13,8 @@ families' frame colours, the eye's traces, the constellation's cloud and the Ham
 |---|---|---|---|
 | kit-core | `../kit/core/**` (shared) | nothing | `../kit/core/index.js` |
 | core | `src/core/**` | kit-core | `src/core/index.js` |
-| kit | `../kit/ui/**` (shared) | kit-core | `../kit/ui/kit.js`, `../kit/ui/chart.js`, `../kit/ui/field.js`, `../kit/ui/art.js` |
+| vendor | `../kit/vendor/*.mjs` (shared) | nothing | Temml, `../kit/vendor/temml.mjs`; only `../kit/ui/math.js` imports it |
+| kit | `../kit/ui/**` (shared) | kit-core, vendor | `../kit/ui/kit.js`, `../kit/ui/chart.js`, `../kit/ui/field.js`, `../kit/ui/art.js`, `../kit/ui/math.js` |
 | labs | `src/labs/**` | kit-core, core, kit | each lab's default export `{ id, art(), mount(element) }`; the list in `src/labs/index.js` |
 | app | `src/app.js` | kit-core, core, kit, labs | the page, `index.html` |
 
@@ -48,6 +49,9 @@ garbled formulas, each backed by a seeded simulation.
 
 ## Where it departs from the rules
 
+- One library, Temml, typesets the equations: the exception to the plain-web rule, stated with why in
+  `../kit/ARCHITECTURE.md`. An equation's optional `tex` (and the law's `lawTex`) is its LaTeX; without one the page
+  shows the plain `eq` text. How to write it: `../kit/MATH.md`.
 - No file format round-trip test: the app reads `labs.json` and never writes it.
 - The dependency matrix is not drawn yet.
 

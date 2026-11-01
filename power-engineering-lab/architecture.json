@@ -7,9 +7,19 @@
   "sources": [
     "src/**/*.js",
     "../kit/core/**/*.js",
-    "../kit/ui/**/*.js"
+    "../kit/ui/**/*.js",
+    "../kit/vendor/**/*.mjs"
   ],
   "layers": [
+    {
+      "name": "vendor",
+      "why": "Temml, the one library: LaTeX to MathML for the kit's math helper (../ARCHITECTURE.md)",
+      "files": [
+        "../kit/vendor/**/*.mjs"
+      ],
+      "uses": [],
+      "packages": []
+    },
     {
       "name": "kit-core",
       "why": "Complex numbers, units and the answer check every lab shares, pure",
@@ -53,7 +63,8 @@
         "../kit/ui/**/*.js"
       ],
       "uses": [
-        "kit-core"
+        "kit-core",
+        "vendor"
       ],
       "packages": []
     },
