@@ -55,6 +55,16 @@ export function monteCarlo(f, x, s, seed, n) {
   return { mean: mean(ys), s: std(ys), ys };
 }
 
+/** Fixed axes for a model's spread, so a slider changes the curve and not the scale: the result axis spans ±4 s(y)
+ *  at the widest setting (every input at relMax %), the density axis tops out at the normal peak 1/(s√(2π)) for every
+ *  input at relRef %; a narrower curve runs off the top. */
+export function spreadAxes(m, relMax, relRef) {
+  const x = m.inputs.map(i => i[2]), y0 = m.f(x);
+  const at = r => gauss(m.f, x, x.map(xi => Math.abs(xi) * r / 100));
+  const span = 4 * at(relMax);
+  return { xMin: y0 - span, xMax: y0 + span, yMax: 1 / (at(relRef) * Math.sqrt(2 * Math.PI)) };
+}
+
 /** The models the propagation lab offers, each with its inputs and units. */
 export const MODELS = {
   power: { name: "P = U · I · cos φ", unit: "W", f: ([U, I, phi]) => U * I * Math.cos(phi),

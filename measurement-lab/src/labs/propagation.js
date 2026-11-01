@@ -1,11 +1,11 @@
 // Propagation of uncertainty (Schrüfer et al. 2012, sections 1.3.3 and 1.3.6; the lab script's task 2.5): a result
 // computed from several measured quantities; Gauss's law against the worst case and a seeded Monte Carlo of the model.
-import { MODELS, gauss, worstCase, monteCarlo, partials, si } from "../core/index.js";
+import { MODELS, spreadAxes, gauss, worstCase, monteCarlo, partials, si } from "../core/index.js";
 import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
 import { lineChart } from "../../../kit/ui/chart.js";
 import * as a from "../../../kit/ui/art.js";
 
-const BINS = 41, DRAWS = 20000;
+const BINS = 81, DRAWS = 20000;
 
 export default {
   id: "propagation",
@@ -27,12 +27,13 @@ export default {
     const update = () => {
       const m = MODELS[key], x = m.inputs.map(i => i[2]), s = x.map((xi, i) => Math.abs(xi) * rel[key][i] / 100), y0 = m.f(x);
       const g = gauss(m.f, x, s), w = worstCase(m.f, x, s), mc = monteCarlo(m.f, x, s, 42, DRAWS);
-      const span = 4 * Math.max(g, 1e-9 * Math.abs(y0)), lo = y0 - span, width = 2 * span / BINS, count = Array(BINS).fill(0);
+      // The axes stay put for the model (the sliders' widest setting and 1 %), so the curve narrows and grows as they move.
+      const ax = spreadAxes(m, 10, 1), lo = ax.xMin, width = (ax.xMax - ax.xMin) / BINS, count = Array(BINS).fill(0);
       for (const y of mc.ys) { const b = Math.floor((y - lo) / width); if (b >= 0 && b < BINS) count[b]++; }
       const centres = count.map((_, b) => lo + (b + 0.5) * width), density = count.map(c => c / DRAWS / width);
       box.replaceChildren(lineChart({ label: `Spread of ${m.name}: ${DRAWS} seeded draws against the normal curve of Gauss's law`,
         lines: [{ x: centres, y: density, name: "Monte Carlo", stem: true }, { x: centres, y: centres.map(v => Math.exp(-(((v - y0) / g) ** 2) / 2) / (g * Math.sqrt(2 * Math.PI))), name: "Gauss", cls: "second" }],
-        xLabel: `Result ${m.name.split(" =")[0]} [${m.unit}]`, yLabel: `Probability density [1/${m.unit}]`, yMin: 0, xFormat: v => v.toPrecision(4), yFormat: v => v.toPrecision(2) }));
+        xLabel: `Result ${m.name.split(" =")[0]} [${m.unit}]`, yLabel: `Probability density [1/${m.unit}]`, yMin: 0, ...ax, xFormat: v => v.toPrecision(4), yFormat: v => v.toPrecision(2) }));
       rG.set(`± ${si(g, m.unit)}`, "", `${(100 * g / Math.abs(y0)).toFixed(2)} % of ${si(y0, m.unit)}`);
       rW.set(`± ${si(w, m.unit)}`, "", "the sum of eq. 1.37, signs all alike");
       rC.set(`± ${si(mc.s, m.unit)}`, "", "the spread of the drawn results");

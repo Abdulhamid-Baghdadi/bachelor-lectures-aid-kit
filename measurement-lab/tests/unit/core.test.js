@@ -186,3 +186,10 @@ test("seismic sensor: eq. 7.114 against eq. 7.108 integrated; D = 1 gives Ω²/(
   near(T.phase(1, 0.5), -Math.PI / 2, 1e-12, "−90° at resonance");
   near(T.natural(1000, 0.1), 100, 1e-12, "ω0 = √(c/m)"); near(T.damping(2, 1000, 0.1), 0.1, 1e-12, "D");
 });
+
+test("propagation chart: fixed axes, ±4 s(y) at 10 % and the normal peak at 1 % (weighing, worked by hand)", () => {
+  // g₂ = g₃ − g₁ at 600 g and 80 g: s = √(60² + 8²) = 60.53 g at 10 %, 6.053 g at 1 %.
+  const a = T.spreadAxes(T.MODELS.weight, 10, 1);
+  near(a.xMin, 520 - 4 * 60.531, 0.01, "left edge"); near(a.xMax, 520 + 4 * 60.531, 0.01, "right edge");
+  near(a.yMax, 1 / (6.0531 * Math.sqrt(2 * Math.PI)), 1e-5, "top");
+});

@@ -2,7 +2,7 @@
 // seeded generators.
 export { uniform, gaussian, mean, std, dB } from "./maths.js";
 export { STUDENT, LEVELS, studentT, repeated, readings, partials, systematic, relativePowerLaw, gauss, worstCase,
-  monteCarlo, MODELS } from "./uncertainty.js";
+  monteCarlo, spreadAxes, MODELS } from "./uncertainty.js";
 export { parallel, voltmeterReading, ammeterReading, loadingError, shunt, seriesResistor, currentCorrect, voltageCorrect,
   crossover, WAVES, distorted, averages, FORM_SINE, meterReadings, probeStep, probeRatio, compensatingCT,
   probeStepNumeric } from "./meters.js";
