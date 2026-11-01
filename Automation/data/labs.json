@@ -365,7 +365,7 @@
     {
       "id": "phase",
       "title": "Solution behaviour of ẋ = Ax",
-      "idea": "The eigenvalues of A decide everything: real ones make nodes or saddles, complex ones make the states turn, and negative real parts bring them home.",
+      "idea": "A linear system without input, ẋ = Ax, rests at x = 0. Start it anywhere and the state x = (x1, x2) traces a path, its trajectory; drawn for many starts, the paths form the phase portrait. The two eigenvalues of A alone decide its shape. Real ones of the same sign give a node: the paths run in, or out, without turning. Real ones of opposite sign give a saddle: in along one direction, out along the other. Complex ones α ± jβ make the paths turn: a focus spirals in when α < 0 and out when α > 0, and a centre (α = 0) circles forever. Negative real parts bring every start home.",
       "law": "x(t) = Φ(t) x0 = exp(At) x0",
       "lawTex": "\\mathbf{x}(t) = \\boldsymbol{\\Phi}(t)\\,\\mathbf{x}_0 = \\exp(\\mathbf{A}t)\\,\\mathbf{x}_0",
       "lecture": "Kugi (2015), section 3.3 (pp. 51–53); eqs. (2.22), (3.45)",
