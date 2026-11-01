@@ -1,0 +1,933 @@
+{
+  "format": "electrodynamics-lab labs",
+  "version": 1,
+  "about": "The chapters of the lecture notes Prechtl (2010), Vorlesungen über Elektrodynamik, TU Wien, each in a family that colours its cards, with the labs it teaches; then each lab's words and practice questions. Chapter numbers, titles and page ranges are those of the notes' table of contents; equation numbers are the notes' own, checked against the PDF on 1 Nov 2026. Practice answers are worked by hand; tests/unit/labs-data.test.js recomputes each with the core and fails if they disagree.",
+  "families": [
+    {
+      "id": "fields",
+      "name": "Properties of fields"
+    },
+    {
+      "id": "statics",
+      "name": "Static and stationary fields"
+    },
+    {
+      "id": "induction",
+      "name": "Induction"
+    },
+    {
+      "id": "waves",
+      "name": "Waves"
+    }
+  ],
+  "lectures": [
+    {
+      "number": 2,
+      "pages": "pp. 25–58",
+      "title": "Properties of electromagnetic fields",
+      "family": "fields",
+      "labs": [
+        "gauss",
+        "monopole",
+        "faraday",
+        "ampere",
+        "continuity",
+        "materials",
+        "poynting",
+        "lorentz"
+      ]
+    },
+    {
+      "number": 3,
+      "pages": "pp. 59–104",
+      "title": "Static and stationary fields",
+      "family": "statics",
+      "labs": [
+        "coulomb",
+        "laplace",
+        "dipole",
+        "relaxation",
+        "biotsavart"
+      ]
+    },
+    {
+      "number": 4,
+      "pages": "pp. 105–116",
+      "title": "Induction",
+      "family": "induction",
+      "labs": [
+        "skin"
+      ]
+    },
+    {
+      "number": 5,
+      "pages": "pp. 117–145",
+      "title": "Electromagnetic waves",
+      "family": "waves",
+      "labs": [
+        "speed",
+        "planewave",
+        "hertz",
+        "line"
+      ]
+    }
+  ],
+  "labs": [
+    {
+      "id": "gauss",
+      "title": "Gauss's law",
+      "idea": "The electric flux out of any closed surface counts the charge inside it, and nothing else.",
+      "law": "∮ n·D dA = ∫ ϱ dV    ∇·D = ϱ",
+      "lecture": "Prechtl (2010), Tab. 2.1, row 4 (p. 30); eq. (2.23)",
+      "practice": [
+        {
+          "question": "A closed surface holds charges of 3 nC, −1 nC and 2 nC; a 5 nC charge sits outside. What electric flux Ψ leaves the surface?",
+          "answer": 4e-09,
+          "unit": "C",
+          "compute": {
+            "law": "flux",
+            "Q": [
+              3e-09,
+              -1e-09,
+              2e-09
+            ]
+          },
+          "solution": "Ψ(∂V) = Q(V) = 3 − 1 + 2 = 4 nC. The charge outside adds nothing.",
+          "source": "Worked by hand from Tab. 2.1, row 4"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "Ψ(∂V) = Q(V)",
+          "note": "global form",
+          "ref": "Tab. 2.1"
+        },
+        {
+          "eq": "∮∂V n·D dA = ∫V ϱ dV",
+          "note": "integral form",
+          "ref": "Tab. 2.1"
+        },
+        {
+          "eq": "∇·D = ϱ,   n·[[D]] = σ",
+          "note": "local form and jump condition",
+          "ref": "(2.23)"
+        },
+        {
+          "eq": "Ψ(∂V) − Q(V) = ∫V′(∇·D − ϱ) dV + ∫S′(n·[[D]] − σ) dA = 0",
+          "note": "from the global to the local form",
+          "ref": "(2.21)"
+        }
+      ]
+    },
+    {
+      "id": "monopole",
+      "title": "No magnetic charge",
+      "idea": "Magnetic field lines never start or end: as much flux enters any closed surface as leaves it.",
+      "law": "∮ n·B dA = 0    ∇·B = 0",
+      "lecture": "Prechtl (2010), Tab. 2.1, row 2 (p. 30); p. 31",
+      "practice": [
+        {
+          "question": "A closed surface encloses only the north pole of a bar magnet. What magnetic flux leaves it, in Wb?",
+          "answer": 0,
+          "unit": "Wb",
+          "tolerance": 0,
+          "compute": {
+            "law": "monopole"
+          },
+          "solution": "Zero. Φ(∂V) = 0 for every closed surface: the lines that leave near the pole come back in through the part of the surface that cuts the magnet.",
+          "source": "Tab. 2.1, row 2, by definition"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "Φ(∂V) = 0",
+          "note": "global form",
+          "ref": "Tab. 2.1"
+        },
+        {
+          "eq": "∮∂V n·B dA = 0",
+          "note": "integral form",
+          "ref": "Tab. 2.1"
+        },
+        {
+          "eq": "∇·B = 0,   n·[[B]] = 0",
+          "note": "local form: normal B is continuous",
+          "ref": "Tab. 2.1"
+        },
+        {
+          "eq": "B = ∇×A",
+          "note": "so B is a curl: a vector potential exists",
+          "ref": "(5.5)"
+        }
+      ]
+    },
+    {
+      "id": "faraday",
+      "title": "Induction law",
+      "idea": "A changing magnetic flux through a loop drives a voltage round it, strongest where the flux changes fastest.",
+      "law": "∮ s·E ds = −d/dt ∫ n·B dA    ∇×E = −∂B/∂t",
+      "lecture": "Prechtl (2010), Tab. 2.1, row 1 (p. 30)",
+      "practice": [
+        {
+          "question": "A coil of 100 turns, each 0.01 m², sits in a field B̂ sin(ωt) with B̂ = 0.2 T and f = 50 Hz. What is the peak voltage?",
+          "answer": 62.83,
+          "unit": "V",
+          "compute": {
+            "law": "inductionPeak",
+            "N": 100,
+            "A": 0.01,
+            "B": 0.2,
+            "f": 50
+          },
+          "solution": "Û = N A B̂ ω = 100 × 0.01 m² × 0.2 T × 2π × 50 Hz = 62.8 V.",
+          "source": "Worked by hand from Tab. 2.1, row 1"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "U(∂A) = −Φ̇(A)",
+          "note": "global form",
+          "ref": "Tab. 2.1"
+        },
+        {
+          "eq": "∮∂A s·E ds = −d/dt ∫A n·B dA",
+          "note": "integral form (fixed loop)",
+          "ref": "Tab. 2.1"
+        },
+        {
+          "eq": "∇×E = −∂tB,   n×[[E]] = 0",
+          "note": "local form: tangential E is continuous",
+          "ref": "Tab. 2.1"
+        },
+        {
+          "eq": "Û = N A B̂ ω",
+          "note": "for B = B̂ sin ωt through N turns of area A (derived)",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "ampere",
+      "title": "Ampère–Maxwell law",
+      "idea": "Current, and a changing electric flux, make a magnetic field that circles it.",
+      "law": "∮ s·H ds = ∫ n·J dA + d/dt ∫ n·D dA    ∇×H = J + ∂D/∂t",
+      "lecture": "Prechtl (2010), Tab. 2.1, row 3 (p. 30); eq. (2.22)",
+      "practice": [
+        {
+          "question": "A long straight wire carries 10 A. What is the magnetic field strength H 5 cm from it?",
+          "answer": 31.83,
+          "unit": "A/m",
+          "compute": {
+            "law": "wireH",
+            "I": 10,
+            "r": 0.05
+          },
+          "solution": "On a circle round the wire H · 2πr = I, so H = 10 A / (2π × 0.05 m) = 31.8 A/m.",
+          "source": "Worked by hand from Tab. 2.1, row 3"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "V(∂A) = I(A) + Ψ̇(A)",
+          "note": "global form",
+          "ref": "Tab. 2.1"
+        },
+        {
+          "eq": "∮∂A s·H ds = ∫A n·J dA + d/dt ∫A n·D dA",
+          "note": "integral form",
+          "ref": "Tab. 2.1"
+        },
+        {
+          "eq": "∇×H = J + ∂tD,   n×[[H]] = K",
+          "note": "local form, surface current K",
+          "ref": "(2.22)"
+        },
+        {
+          "eq": "H = I / (2πr)",
+          "note": "long straight wire, static (derived)",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "continuity",
+      "title": "Conservation of charge",
+      "idea": "Charge is never made or lost: the current into a closed surface is the rate the charge inside grows.",
+      "law": "∮ n·J dA = −dQ/dt    ∇·J = −∂ϱ/∂t",
+      "lecture": "Prechtl (2010), Tab. 2.1, row 5 (p. 30)",
+      "practice": [
+        {
+          "question": "A steady 2 mA flows onto an insulated plate. How long until it holds 1 mC?",
+          "answer": 0.5,
+          "unit": "s",
+          "compute": {
+            "law": "chargeTime",
+            "Q": 0.001,
+            "I": 0.002
+          },
+          "solution": "dQ/dt = I, so t = Q / I = 1 mC / 2 mA = 0.5 s.",
+          "source": "Worked by hand from Tab. 2.1, row 5"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "I(∂V) = −Q̇(V)",
+          "note": "global form",
+          "ref": "Tab. 2.1"
+        },
+        {
+          "eq": "∮∂V n·J dA = −d/dt ∫V ϱ dV",
+          "note": "integral form",
+          "ref": "Tab. 2.1"
+        },
+        {
+          "eq": "∇·J = −∂tϱ,   n·[[J]] = −∂tσ",
+          "note": "local form",
+          "ref": "Tab. 2.1"
+        },
+        {
+          "eq": "∇·(∇×H) = 0 ⇒ ∇·J + ∂t∇·D = 0",
+          "note": "follows from the Ampère–Maxwell and Gauss laws (derived)",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "materials",
+      "title": "Material equations",
+      "idea": "The field E is set by the voltages; how much flux density D, polarisation P and current J it brings depends on the material.",
+      "law": "D = ε E, ε = ε0 εr, εr = 1 + χ    P = ε0 χ E    J = γ E",
+      "lecture": "Prechtl (2010), eqs. (2.34), (2.36)–(2.38), pp. 35–36",
+      "practice": [
+        {
+          "question": "A material with χ = 3 is in a field of 100 kV/m. What is the flux density D?",
+          "answer": 3.542e-06,
+          "unit": "C/m²",
+          "compute": {
+            "law": "permittivity",
+            "E": 100000.0,
+            "chi": 3
+          },
+          "solution": "εr = 1 + χ = 4, so D = ε0 εr E = 8.854 pC/(V·m) × 4 × 10⁵ V/m = 3.54 µC/m².",
+          "source": "Worked by hand from (2.37), (2.38)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "D = ε0E + P,   H = B/μ0 − M",
+          "note": "general linking relations",
+          "ref": "(2.29), (3.3)"
+        },
+        {
+          "eq": "J = γE",
+          "note": "local Ohm's law",
+          "ref": "(2.34)"
+        },
+        {
+          "eq": "P = ε0χE,   M = κH",
+          "note": "linear isotropic polarisation and magnetisation",
+          "ref": "(2.36)"
+        },
+        {
+          "eq": "D = εE,   B = μH",
+          "note": "",
+          "ref": "(2.37)"
+        },
+        {
+          "eq": "ε = ε0εr, μ = μ0μr, εr = 1 + χ, μr = 1 + κ",
+          "note": "",
+          "ref": "(2.38)"
+        },
+        {
+          "eq": "J − vϱ = γ(E + v×B)",
+          "note": "Ohm's law in a moving body",
+          "ref": "(2.44)"
+        }
+      ]
+    },
+    {
+      "id": "poynting",
+      "title": "Poynting vector",
+      "idea": "Energy flows through the field, not the copper: the power a wire heats with streams in through its surface.",
+      "law": "S = E × H    ∮ n·(E × H) dA = −∫ J·E dV (static fields)",
+      "lecture": "Prechtl (2010), eqs. (2.107)–(2.109), pp. 52–53",
+      "practice": [
+        {
+          "question": "A wire 1 m long and 1 mm in radius carries 3 A with 2 V along it. What is the Poynting vector at its surface?",
+          "answer": 954.9,
+          "unit": "W/m²",
+          "compute": {
+            "law": "poynting",
+            "U": 2,
+            "I": 3,
+            "a": 0.001,
+            "l": 1
+          },
+          "solution": "E = U/l = 2 V/m, H = I/(2πa) = 477.5 A/m, S = E H = 955 W/m². Times the surface 2πal = 6.28 × 10⁻³ m² gives 6 W = U I.",
+          "source": "Worked by hand from (2.107)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "S = E × H",
+          "note": "Poynting vector",
+          "ref": "(2.107)"
+        },
+        {
+          "eq": "E·∂tD + H·∂tB + ∇·(E×H) = −J·E",
+          "note": "local energy balance",
+          "ref": "(2.108)"
+        },
+        {
+          "eq": "∮∂V n·(E×H) dA = −∫V J·E dV",
+          "note": "static fields: the inflow is the Joule heat",
+          "ref": "(2.109)"
+        },
+        {
+          "eq": "w = ½ E·D + ½ H·B",
+          "note": "energy density, linear media (derived)",
+          "ref": ""
+        },
+        {
+          "eq": "E = U/l,  H = I/(2πa)  ⇒  S·2πal = UI",
+          "note": "resistive wire (derived)",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "lorentz",
+      "title": "Lorentz force",
+      "idea": "An electric field pushes a charge along it; a magnetic field pushes only across its motion, so it bends the path but never speeds it up.",
+      "law": "f = ϱ E + J × B    for one charge: F = q (E + v × B)",
+      "lecture": "Prechtl (2010), eq. (2.100), p. 52",
+      "practice": [
+        {
+          "question": "An electron moves at 10⁶ m/s across a field of 1 mT. What is the radius of its circle?",
+          "answer": 0.005686,
+          "unit": "m",
+          "compute": {
+            "law": "gyro",
+            "q": 1.602176634e-19,
+            "m": 9.1093837e-31,
+            "v": 1000000.0,
+            "B": 0.001
+          },
+          "solution": "q v B = m v²/r, so r = m v / (q B) = 9.109 × 10⁻³¹ kg × 10⁶ m/s / (1.602 × 10⁻¹⁹ C × 10⁻³ T) = 5.69 mm.",
+          "source": "Worked by hand from (2.100)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "f = ϱE + J×B",
+          "note": "force density on true charges and currents",
+          "ref": "(2.100)"
+        },
+        {
+          "eq": "r = J·E",
+          "note": "power density given to matter",
+          "ref": "(2.100)"
+        },
+        {
+          "eq": "F = q(E + v×B)",
+          "note": "point charge: ϱ → qδ, J → qvδ (derived)",
+          "ref": ""
+        },
+        {
+          "eq": "r = m v / (|q| B),   ω = |q|B/m",
+          "note": "circle in B alone (derived)",
+          "ref": ""
+        },
+        {
+          "eq": "v_drift = E×B / B²",
+          "note": "crossed fields (derived)",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "coulomb",
+      "title": "Point charge and potential",
+      "idea": "A charge raises the potential around it as 1/r; the field points down the potential's slope.",
+      "law": "ϕ = Q / (4π ε r)    E = −∇ϕ",
+      "lecture": "Prechtl (2010), eqs. (3.4), (3.13), pp. 60–61",
+      "practice": [
+        {
+          "question": "What is the field strength 10 cm from a point charge of 1 nC in vacuum?",
+          "answer": 898.8,
+          "unit": "V/m",
+          "compute": {
+            "law": "pointField",
+            "Q": 1e-09,
+            "r": 0.1
+          },
+          "solution": "E = Q / (4π ε0 r²) = 10⁻⁹ C / (4π × 8.854 × 10⁻¹² F/m × 0.01 m²) = 899 V/m.",
+          "source": "Worked by hand from (3.13) with E = −∇ϕ"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "∇×E = 0  ⇒  E = −∇ϕ",
+          "note": "electrostatics",
+          "ref": "(3.2), (3.4)"
+        },
+        {
+          "eq": "U(C) = ∫C s·E ds = ϕ(r1) − ϕ(r2)",
+          "note": "voltage as a potential difference",
+          "ref": "(3.4)"
+        },
+        {
+          "eq": "G(r, r′) = 1 / (4π|r − r′|)",
+          "note": "fundamental solution of the Laplace operator",
+          "ref": "(3.11)"
+        },
+        {
+          "eq": "ϕ(r) = Q / (4πε|r − r′|)",
+          "note": "point charge",
+          "ref": "(3.13)"
+        },
+        {
+          "eq": "ϕ(r) = 1/(4πε) ∫V ϱ(r′)/|r − r′| dV′",
+          "note": "any charge distribution",
+          "ref": "(3.14)"
+        }
+      ]
+    },
+    {
+      "id": "laplace",
+      "title": "Laplace equation",
+      "idea": "Where there is no charge, the potential at each point is the average of its surroundings; the electrodes fix the rest.",
+      "law": "∇²ϕ = −ϱ/ε (Poisson)    ∇²ϕ = 0 (Laplace)",
+      "lecture": "Prechtl (2010), eqs. (3.8), (3.9), p. 61",
+      "practice": [
+        {
+          "question": "Two large parallel plates are held at 10 V and 0 V. What is the potential halfway between them?",
+          "answer": 5,
+          "unit": "V",
+          "compute": {
+            "law": "laplaceMid",
+            "U1": 10,
+            "U2": 0
+          },
+          "solution": "Between large plates ∇²ϕ = d²ϕ/dx² = 0, so ϕ is linear in x: halfway it is (10 + 0)/2 = 5 V.",
+          "source": "Worked by hand from (3.9)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "∇·D = ϱ, D = εE, E = −∇ϕ",
+          "note": "",
+          "ref": "(3.7)"
+        },
+        {
+          "eq": "∇²ϕ = −ϱ/ε",
+          "note": "Poisson equation",
+          "ref": "(3.8)"
+        },
+        {
+          "eq": "∇²ϕ = 0",
+          "note": "Laplace equation, no space charge",
+          "ref": "(3.9)"
+        },
+        {
+          "eq": "ϕi,j = ¼(ϕi−1,j + ϕi+1,j + ϕi,j−1 + ϕi,j+1)",
+          "note": "five-point difference form solved here (derived)",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "dipole",
+      "title": "Electric dipole",
+      "idea": "Two equal and opposite charges close together: their fields almost cancel, so the potential falls as 1/r² and the field as 1/r³.",
+      "law": "ϕ = e_r·p / (4π ε0 r²)    E = (3 e_r (e_r·p) − p) / (4π ε0 r³)",
+      "lecture": "Prechtl (2010), eq. (5.42), p. 124",
+      "practice": [
+        {
+          "question": "A dipole of 1 pC·m: what is the potential 10 cm away along its axis?",
+          "answer": 0.8988,
+          "unit": "V",
+          "compute": {
+            "law": "dipole",
+            "p": 1e-12,
+            "r": 0.1,
+            "theta": 0
+          },
+          "solution": "ϕ = p / (4π ε0 r²) = 10⁻¹² C·m × 8.988 × 10⁹ m/F / 0.01 m² = 0.899 V.",
+          "source": "Worked by hand from (5.42)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "P(r, t) = p(t) δ(r)",
+          "note": "dipole as a singular polarisation",
+          "ref": "(5.35)"
+        },
+        {
+          "eq": "ϕ = e_r·p / (4πε0r²)",
+          "note": "static potential",
+          "ref": "(5.42)"
+        },
+        {
+          "eq": "E = (3e_r(e_r·p) − p) / (4πε0r³)",
+          "note": "static field",
+          "ref": "(5.42)"
+        },
+        {
+          "eq": "E_r = 2p cos θ/(4πε0r³),  E_θ = p sin θ/(4πε0r³)",
+          "note": "in spherical components (derived)",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "relaxation",
+      "title": "Charge relaxation",
+      "idea": "Charge put inside a conductor does not stay: it dies away exponentially with the time ε/γ and ends up on the surface.",
+      "law": "∂ϱ/∂t + (γ/ε) ϱ = 0    ϱ = ϱ0 e^(−t/T_R), T_R = ε/γ",
+      "lecture": "Prechtl (2010), eqs. (3.103), (3.105), pp. 85–86",
+      "practice": [
+        {
+          "question": "Pure water has εr = 80 and γ = 10⁻⁴ S/m. What is its relaxation time?",
+          "answer": 7.083e-06,
+          "unit": "s",
+          "compute": {
+            "law": "relaxation",
+            "epsr": 80,
+            "gamma": 0.0001
+          },
+          "solution": "T_R = ε0 εr / γ = 8.854 × 10⁻¹² × 80 / 10⁻⁴ s = 7.08 µs.",
+          "source": "Worked by hand from (3.105)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "D = εE,   J = γE + ϱv",
+          "note": "material equations used",
+          "ref": "(3.102)"
+        },
+        {
+          "eq": "∂tϱ + ∇·(ϱv) + (γ/ε)ϱ = 0",
+          "note": "relaxation equation",
+          "ref": "(3.103)"
+        },
+        {
+          "eq": "T_R = ε/γ,   Re = εv0/(γL)",
+          "note": "relaxation time and electric Reynolds number",
+          "ref": "(3.105)"
+        },
+        {
+          "eq": "ϱ(t) = ϱ0 e^(−t/T_R)",
+          "note": "body at rest (derived)",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "biotsavart",
+      "title": "Biot–Savart formula",
+      "idea": "Every short piece of a current adds a little magnetic field; sum the pieces and you have the field of any wire shape.",
+      "law": "B = μ I / (4π) ∮ s′ × e_R / R² ds′",
+      "lecture": "Prechtl (2010), eq. (3.144), p. 95",
+      "practice": [
+        {
+          "question": "A circular loop of radius 5 cm carries 5 A. What is the flux density at its centre?",
+          "answer": 6.283e-05,
+          "unit": "T",
+          "compute": {
+            "law": "loopCentre",
+            "I": 5,
+            "a": 0.05
+          },
+          "solution": "Every piece is at R = a and at right angles to e_R, so B = μ0 I / (4π a²) × 2πa = μ0 I / (2a) = 62.8 µT.",
+          "source": "Worked by hand from (3.144)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "∇·B = 0,  B = μH,  H = −∇ϕ_M",
+          "note": "magnetic scalar potential in current-free regions",
+          "ref": "(3.145)"
+        },
+        {
+          "eq": "∇²ϕ_M = 0",
+          "note": "",
+          "ref": "(3.146)"
+        },
+        {
+          "eq": "B = μI/(4π) ∮C s′×e_R / R² ds′",
+          "note": "Biot–Savart formula",
+          "ref": "(3.144)"
+        },
+        {
+          "eq": "B_z = μIa² / (2(a² + z²)^(3/2))",
+          "note": "on the axis of a circular loop (derived)",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "skin",
+      "title": "Skin effect",
+      "idea": "An alternating field cannot reach deep into a conductor: it dies away and lags within a few skin depths.",
+      "law": "B = B̂0 e^(−x/δ) cos(ωt − x/δ)    δ = √(2 / (μ ω γ))",
+      "lecture": "Prechtl (2010), eqs. (4.28)–(4.31), pp. 111–112",
+      "practice": [
+        {
+          "question": "What is the skin depth of copper (γ = 5.8 × 10⁷ S/m) at 50 Hz?",
+          "answer": 0.009346,
+          "unit": "m",
+          "compute": {
+            "law": "skin",
+            "f": 50,
+            "gamma": 58000000.0
+          },
+          "solution": "δ = √(2 / (μ0 ω γ)) = √(2 / (4π × 10⁻⁷ × 314.16 × 5.8 × 10⁷)) m = 9.35 mm.",
+          "source": "Worked by hand from (4.31)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "B = B̂0 e^(−x/δ) cos(ωt − x/δ)",
+          "note": "field in the half-space",
+          "ref": "(4.28)"
+        },
+        {
+          "eq": "P″ = Ĥ0²/(2γδ) = (Ĥ0²/2)√(μω/(2γ))",
+          "note": "time-averaged loss per unit surface",
+          "ref": "(4.31)"
+        },
+        {
+          "eq": "δ = √(2/(μωγ))",
+          "note": "skin depth (from (4.31))",
+          "ref": "(4.31)"
+        },
+        {
+          "eq": "B̂(x) = B̂0 cos(kx)/cos(kd/2),  k = (1 − j)/δ",
+          "note": "plate of thickness d",
+          "ref": "(4.32)"
+        }
+      ]
+    },
+    {
+      "id": "speed",
+      "title": "Speed of electromagnetic waves",
+      "idea": "Maxwell's equations give waves that travel at 1/√(με): in vacuum the speed of light, slower in matter.",
+      "law": "c = 1 / √(μ ε)    μ0 ε0 c0² = 1",
+      "lecture": "Prechtl (2010), eqs. (2.25), (5.19), pp. 31, 120",
+      "practice": [
+        {
+          "question": "How fast does an electromagnetic wave travel in a material with εr = 4 and μr = 1?",
+          "answer": 149900000.0,
+          "unit": "m/s",
+          "compute": {
+            "law": "speed",
+            "epsr": 4
+          },
+          "solution": "c = c0 / √(εr μr) = 299 792 458 m/s / 2 = 1.50 × 10⁸ m/s.",
+          "source": "Worked by hand from (5.19)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "μ0ε0c0² = 1",
+          "note": "Maxwell relation",
+          "ref": "(2.25)"
+        },
+        {
+          "eq": "∇²A − με∂t²A = −μJ,  ∇²ϕ − με∂t²ϕ = −ϱ/ε",
+          "note": "wave equations, Lorenz gauge",
+          "ref": "(5.14)"
+        },
+        {
+          "eq": "∇·A + με∂tϕ = 0",
+          "note": "Lorenz gauge",
+          "ref": "(5.13)"
+        },
+        {
+          "eq": "c = 1/√(με)",
+          "note": "propagation speed",
+          "ref": "(5.19)"
+        },
+        {
+          "eq": "G = δ(t − t′ − |r − r′|/c) / (4π|r − r′|)",
+          "note": "retarded fundamental solution",
+          "ref": "(5.21)"
+        }
+      ]
+    },
+    {
+      "id": "planewave",
+      "title": "Plane wave",
+      "idea": "In a free wave E and H stand at right angles to each other and to the direction of travel, in step, their ratio fixed by the medium.",
+      "law": "H = κ × E / Z    Z = √(μ/ε)    S = E²/Z",
+      "lecture": "Prechtl (2010), eqs. (5.70)–(5.72), p. 133",
+      "practice": [
+        {
+          "question": "A plane wave in vacuum has E = 1 V/m. What is H?",
+          "answer": 0.002654,
+          "unit": "A/m",
+          "compute": {
+            "law": "waveH",
+            "E": 1
+          },
+          "solution": "H = E / Z0 = 1 V/m / 376.73 Ω = 2.65 mA/m.",
+          "source": "Worked by hand from (5.70), (5.71)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "θ(r, t) = ct − κ·r",
+          "note": "phase function",
+          "ref": "(5.64)"
+        },
+        {
+          "eq": "κ·E = 0,  κ·H = 0",
+          "note": "transverse",
+          "ref": "(5.66)"
+        },
+        {
+          "eq": "κ×E − μcH = 0,  κ×H + εcE = 0",
+          "note": "",
+          "ref": "(5.68)"
+        },
+        {
+          "eq": "Z = √(μ/ε)",
+          "note": "wave impedance",
+          "ref": "(5.70)"
+        },
+        {
+          "eq": "H = κ×E / Z",
+          "note": "",
+          "ref": "(5.71)"
+        },
+        {
+          "eq": "S = E×H = (E²/Z) κ = ZH² κ",
+          "note": "",
+          "ref": "(5.72)"
+        }
+      ]
+    },
+    {
+      "id": "hertz",
+      "title": "Hertz dipole",
+      "idea": "A short antenna radiates across its axis, not along it, and the power it sends out grows with the square of its length in wavelengths.",
+      "law": "P = R_S I²    R_S = (2π/3) (l/λ)² Z0",
+      "lecture": "Prechtl (2010), eqs. (5.49)–(5.53), p. 127",
+      "practice": [
+        {
+          "question": "A short dipole is a tenth of a wavelength long. What is its radiation resistance?",
+          "answer": 7.89,
+          "unit": "Ω",
+          "compute": {
+            "law": "radiation",
+            "l": 0.1,
+            "lambda": 1
+          },
+          "solution": "R_S = (2π/3) × 0.1² × 376.73 Ω = 7.89 Ω.",
+          "source": "Worked by hand from (5.53)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "Π(r, t) = p(t − r/c0) / (4πε0r)",
+          "note": "Hertz vector of an oscillating dipole",
+          "ref": "(5.36)"
+        },
+        {
+          "eq": "A = (1/c0²) ∂tΠ,  ϕ = −∇·Π",
+          "note": "potentials from the Hertz vector",
+          "ref": "(5.32)"
+        },
+        {
+          "eq": "P = ω²|p|² k² Z0 / (12π)",
+          "note": "radiated power",
+          "ref": "(5.49)"
+        },
+        {
+          "eq": "Z0 = √(μ0/ε0) = μ0c0 = 376.730… Ω",
+          "note": "",
+          "ref": "(5.50)"
+        },
+        {
+          "eq": "P = R_S I²,  R_S = (2π/3)(l/λ)² Z0",
+          "note": "radiation resistance",
+          "ref": "(5.52), (5.53)"
+        },
+        {
+          "eq": "dP/dΩ ∝ sin²θ",
+          "note": "far-field pattern (from (5.41))",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "line",
+      "title": "Transmission line",
+      "idea": "On a line, voltage and current travel as waves; a load equal to the wave impedance swallows them, any other load sends some back.",
+      "law": "Z_W = √(Z′/Y′)    γ = √(Y′Z′)    Z′ = R′ + jωL′, Y′ = G′ + jωC′",
+      "lecture": "Prechtl (2010), eqs. (5.110)–(5.121), pp. 140–143",
+      "practice": [
+        {
+          "question": "A lossless line has L′ = 250 nH/m and C′ = 100 pF/m. What is its wave impedance?",
+          "answer": 50,
+          "unit": "Ω",
+          "compute": {
+            "law": "lineZ",
+            "L": 2.5e-07,
+            "Cp": 1e-10
+          },
+          "solution": "Z_W = √(L′/C′) = √(250 × 10⁻⁹ / 100 × 10⁻¹²) Ω = √2500 Ω = 50 Ω.",
+          "source": "Worked by hand from (5.110)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "∂zU + L′∂tI = 0,  ∂zI + C′∂tU = 0",
+          "note": "lossless line equations",
+          "ref": "(5.107)"
+        },
+        {
+          "eq": "L′C′ = με = 1/c²",
+          "note": "",
+          "ref": "(5.106)"
+        },
+        {
+          "eq": "U1 = Z_W I1,  Z_W = √(L′/C′)",
+          "note": "wave impedance, lossless",
+          "ref": "(5.110)"
+        },
+        {
+          "eq": "∂zU + L′∂tI + R′I = 0,  ∂zI + C′∂tU + G′U = 0",
+          "note": "lossy line (telegrapher's equations)",
+          "ref": "(5.111)"
+        },
+        {
+          "eq": "γ = √((G′ + jωC′)(R′ + jωL′)) = α + jβ",
+          "note": "propagation constant",
+          "ref": "(5.116)"
+        },
+        {
+          "eq": "Z_W = √(Z′/Y′)",
+          "note": "",
+          "ref": "(5.117)"
+        },
+        {
+          "eq": "L′/R′ = C′/G′ ⇒ α = √(R′G′), β = ω√(L′C′)",
+          "note": "distortion-free line",
+          "ref": "(5.118), (5.119)"
+        },
+        {
+          "eq": "U(z) = [Z_A cosh γ(l−z) + Z_W sinh γ(l−z)] / [Z_A cosh γl + Z_W sinh γl] · U(0)",
+          "note": "voltage along the line",
+          "ref": "(5.121)"
+        },
+        {
+          "eq": "Z_E = −jZ_W cot(2πl/λ)",
+          "note": "input impedance of an open lossless line",
+          "ref": "(5.125)"
+        }
+      ]
+    }
+  ]
+}
