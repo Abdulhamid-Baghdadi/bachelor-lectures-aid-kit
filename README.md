@@ -1,6 +1,6 @@
 # Bachelor lectures aid kit
 
-Interactive labs for TU Wien Bachelor lectures, each fusing two or three courses, where you move a slider and watch the
+Interactive labs for TU Wien ETIT Bachelor lectures, each fusing two or three courses, where you move a slider and watch the
 lecture notes' own equations work.
 
 <picture>
