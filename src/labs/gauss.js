@@ -2,7 +2,7 @@
 // charge inside, counted, and integrated numerically over the sphere as a check.
 import { enclosedCharge, fluxThroughSphere, chargesField, si } from "../core/index.js";
 import { h, s, slider, readout } from "../ui/kit.js";
-import { arrows } from "../ui/field.js";
+import { arrows, draggable } from "../ui/field.js";
 import * as a from "../ui/art.js";
 
 const W = 460, H = 300;
@@ -26,12 +26,14 @@ export default {
       inside.set(si(enclosedCharge(CHARGES, cx, cy, R), "C"));
       flux.set(si(fluxThroughSphere(CHARGES, cx, cy, R, 50), "C"));
     };
-    root.append(h("div", { class: "stage" }, drawing, h("div", { class: "controls" },
-      slider({ label: "Sphere centre x", unit: "m", min: 0.05, max: 0.41, value: cx, step: 0.005, onInput: v => { cx = v; update(); } }),
-      slider({ label: "Sphere centre y", unit: "m", min: 0.05, max: 0.25, value: cy, step: 0.005, onInput: v => { cy = v; update(); } }),
+    const sx = slider({ label: "Sphere centre x", unit: "m", min: 0.05, max: 0.41, value: cx, step: 0.005, onInput: v => { cx = v; update(); } });
+    const sy = slider({ label: "Sphere centre y", unit: "m", min: 0.05, max: 0.25, value: cy, step: 0.005, onInput: v => { cy = v; update(); } });
+    const clamp = (v, lo, hi) => Math.round(Math.min(hi, Math.max(lo, v)) * 200) / 200;
+    draggable(drawing, (x, y) => { cx = clamp(x / 1000, 0.05, 0.41); cy = clamp(y / 1000, 0.05, 0.25); sx.set(cx); sy.set(cy); update(); });
+    root.append(h("div", { class: "stage" }, drawing, h("div", { class: "controls" }, sx, sy,
       slider({ label: "Sphere radius", unit: "m", min: 0.02, max: 0.2, value: R, step: 0.005, onInput: v => { R = v; update(); } }),
       inside.el, flux.el,
-      h("p", { class: "hint" }, "The charges are in nC. The two readouts agree wherever you put the sphere: only the charge inside counts, not where it sits or what is outside. A charge outside sends field lines in and out again. The integral is numerical, so it is off by a little when a charge sits right on the surface."))));
+      h("p", { class: "hint" }, "Drag on the drawing to move the sphere. The charges are in nC. The two readouts agree wherever you put the sphere: only the charge inside counts, not where it sits or what is outside. A charge outside sends field lines in and out again. The integral is numerical, so it is off by a little when a charge sits right on the surface."))));
     update();
   },
 };

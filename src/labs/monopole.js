@@ -2,7 +2,7 @@
 // sphere you move round it; the flux out is always zero, integrated numerically.
 import { dipoleBFlux } from "../core/index.js";
 import { h, s, slider, readout } from "../ui/kit.js";
-import { arrows } from "../ui/field.js";
+import { arrows, draggable } from "../ui/field.js";
 import * as a from "../ui/art.js";
 
 const W = 460, H = 300, OX = 230, OY = 150;
@@ -28,12 +28,15 @@ export default {
       const phi = dipoleBFlux(1, cx, cy, R, 50);
       flux.set(`${Math.abs(phi) < 1e-9 ? "0" : phi.toExponential(1)} Wb`, "", "Every line that enters the sphere leaves it again.");
     };
-    root.append(h("div", { class: "stage" }, drawing, h("div", { class: "controls" },
-      slider({ label: "Sphere centre x", unit: "m", min: -0.2, max: 0.2, value: cx, step: 0.005, onInput: v => { cx = v; update(); } }),
-      slider({ label: "Sphere centre y", unit: "m", min: -0.12, max: 0.12, value: cy, step: 0.005, onInput: v => { cy = v; update(); } }),
+    const sx = slider({ label: "Sphere centre x", unit: "m", min: -0.2, max: 0.2, value: cx, step: 0.005, onInput: v => { cx = v; update(); } });
+    const sy = slider({ label: "Sphere centre y", unit: "m", min: -0.12, max: 0.12, value: cy, step: 0.005, onInput: v => { cy = v; update(); } });
+    const clamp = (v, lo, hi) => Math.round(Math.min(hi, Math.max(lo, v)) * 200) / 200;
+    // The drawing's y runs down from the top; the sphere's y runs up from the magnet.
+    draggable(drawing, (x, y) => { cx = clamp((x - OX) / 1000, -0.2, 0.2); cy = clamp((OY - y) / 1000, -0.12, 0.12); sx.set(cx); sy.set(cy); update(); });
+    root.append(h("div", { class: "stage" }, drawing, h("div", { class: "controls" }, sx, sy,
       slider({ label: "Sphere radius", unit: "m", min: 0.02, max: 0.12, value: R, step: 0.005, onInput: v => { R = v; update(); } }),
       flux.el,
-      h("p", { class: "hint" }, "Compare Gauss's law for D: there the flux counts the charge inside. For B it is always zero, magnet inside or not, because there is no magnetic charge to count (Prechtl 2010, p. 31)."))));
+      h("p", { class: "hint" }, "Drag on the drawing to move the sphere. Compare Gauss's law for D: there the flux counts the charge inside. For B it is always zero, magnet inside or not, because there is no magnetic charge to count (Prechtl 2010, p. 31)."))));
     update();
   },
 };

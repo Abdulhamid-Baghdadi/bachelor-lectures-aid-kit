@@ -54,5 +54,5 @@ Plain JavaScript modules, no build step. Layers and their tests: [ARCHITECTURE.m
 - Material values (permittivities, conductivities) are typical room-temperature figures, not from the notes.
 - Equation numbers and page ranges refer to the 2010 edition of the notes; no text of the notes is reproduced.
 - Practice answers for chapters 2 and 3 are worked by hand; the course's exercises for those chapters are symbolic
-  derivations. Chapters 4 and 5 add nine numerical exercises from the course's exercise collection (Aufgabensammlung,
-  TU Wien, 2010), with their answers from its worked solutions.
+  derivations. Chapters 4 and 5 add nine numerical exercises from the course's exercise collection, the Aufgabensammlung of
+  TU Wien from 2010, with their answers from its worked solutions.

@@ -275,3 +275,5 @@ table.eqs .note { color: var(--muted); font-size: 0.92rem; }
 table.eqs .ref { white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--muted); text-align: right; }
 @media (max-width: 760px) { table.eqs, table.eqs tbody, table.eqs tr, table.eqs td { display: block; }
   table.eqs td { border: 0; padding: 2px 0; } table.eqs tr { border-bottom: 1px solid var(--line); padding: 8px 0; } table.eqs .ref { text-align: left; } }
+.draggable { cursor: grab; touch-action: none; }
+.draggable:active { cursor: grabbing; }

@@ -47,6 +47,18 @@ export function arrows(W, H, nx, ny, vec, cls = "vec") {
   return g;
 }
 
+/** Lets the reader drag on a drawing: pointer down anywhere, then move; onDrag gets the point in the drawing's own
+ *  units. Mouse, pen and touch alike. The sliders stay as the keyboard's way to the same values. */
+export function draggable(svg, onDrag) {
+  const at = e => {
+    const p = new DOMPoint(e.clientX, e.clientY).matrixTransform(svg.getScreenCTM().inverse());
+    onDrag(p.x, p.y);
+  };
+  svg.classList.add("draggable");
+  svg.addEventListener("pointerdown", e => { svg.setPointerCapture(e.pointerId); at(e); e.preventDefault(); });
+  svg.addEventListener("pointermove", e => { if (svg.hasPointerCapture(e.pointerId)) at(e); });
+}
+
 /** A polar plot of r(θ) in [0, 1], θ from the vertical axis (the dipole axis), both halves. */
 export function polar(size, r, label) {
   const c = size / 2, R = size / 2 - 24;
