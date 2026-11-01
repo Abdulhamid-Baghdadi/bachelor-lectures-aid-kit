@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bachelor lectures aid kit</title>
-<meta name="description" content="interactive labs for TU Wien Bachelor lectures, each fusing two or three courses: electrodynamics and wave propagation; automation and modelling; signals and systems 1 and 2; semiconductor physics, devices and circuits; special relativity; telecommunications; power systems and electrical machines.">
+<meta name="description" content="interactive labs for TU Wien Bachelor lectures, each fusing two or three courses: electrodynamics and wave propagation; automation and modelling; signals and systems 1 and 2; semiconductor physics, devices and circuits; special relativity; telecommunications; power systems and electrical machines; electrical measurement.">
 <script>
   // Before the page draws, so a chosen theme never flashes the other one.
   try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
@@ -18,6 +18,7 @@
   [data-family=kinematics] { --frame: #1E40AF; }
   [data-family=telecom] { --frame: #0369A1; }
   [data-family=power] { --frame: #047857; }
+  [data-family=measure] { --frame: #7C3AED; }
   .lab:hover { box-shadow: 0 2px 8px rgba(0,0,0,.2); }
   .lab:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
   .lab h2 { margin: 0; font-size: 1.25rem; color: var(--accent); }
@@ -87,6 +88,13 @@
       <img class="light" src="power-engineering-lab/docs/light.png" alt="The Power Engineering Lab's overview: lab cards grouped under its four parts" width="1280" height="1000">
       <img class="dark" src="power-engineering-lab/docs/dark.png" alt="The long-line lab in the dark theme: the voltage rising along an open 800 km line" width="1280" height="1000">
       <p>Star and delta, three-phase power, the transformer under load, the long line and the Ferranti effect, voltage collapse, per-unit values, the short-circuit current, equal areas, the rotating field, the DC machine and the PMSM.</p>
+    </a>
+    <a class="lab" href="measurement-lab/" data-family="measure">
+      <h2>Measurement Lab</h2>
+      <p class="courses">Messtechnik and Messtechnik-Labor, after Schrüfer et al. (2012) and Schitter (2015)</p>
+      <img class="light" src="measurement-lab/docs/light.png" alt="The Measurement Lab's overview: lab cards grouped under its three parts" width="1280" height="1000">
+      <img class="dark" src="measurement-lab/docs/dark.png" alt="The mean, rectified mean and RMS lab in the dark theme: a triangle wave on which a rectifier meter reads 3.8 per cent low" width="1280" height="1000">
+      <p>Repeated readings and Student's t, propagation of uncertainty, the meter loading the circuit, resistance from U and I, mean and RMS, the 10 : 1 probe, the Wheatstone bridge, the wattmeter, the seismic sensor, counters, A/D converters and quantisation noise.</p>
     </a>
   </div>
 </main>

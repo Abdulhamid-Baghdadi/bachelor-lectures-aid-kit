@@ -1,0 +1,17 @@
+/* This lab's own look, after the kit's (../kit/style.css): its families' frame colours, a third chart series, and the
+   button that draws new readings. */
+[data-family=errors] { --frame: #7C3AED; }
+[data-family=sensors] { --frame: #B45309; }
+[data-family=digital] { --frame: #0369A1; }
+
+.series.third { stroke: var(--danger); stroke-width: 2.5; stroke-dasharray: 2 4; }
+
+.again { justify-self: start; min-height: 44px; padding: 8px 14px; border-radius: 8px; border: 2px solid var(--line);
+         background: var(--panel); color: var(--ink); font: inherit; cursor: pointer; }
+.again:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.sub { display: grid; gap: 12px; }
+
+/* "Measurement" is a long word: at phone width the header wraps the theme button under it instead of pushing it off
+   the page. */
+.top { flex-wrap: wrap; }
+.top > div { min-width: 0; flex: 1 1 240px; }
