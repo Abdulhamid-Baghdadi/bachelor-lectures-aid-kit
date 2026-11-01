@@ -2,7 +2,6 @@
 // trusted.
 import * as F from "./fields.js";
 import * as P from "./propagation.js";
-import * as R from "./relativity.js";
 
 const LAWS = {
   pointField: q => q.Q / (4 * Math.PI * F.EPS0 * q.r ** 2),
@@ -69,13 +68,6 @@ const LAWS = {
     const Pmin = q.snr * q.k * q.T * q.B, Ps = P.fromdB(q.PsdBW), G = P.fromdB(q.GdBi);
     return 1e3 * (P.radar(Ps, G, q.sigma, q.f, 1e3) / Pmin) ** 0.25;
   },
-  // Special relativity, Einstein (1905); speeds given as fractions of c0 (beta).
-  lorentzFactor: q => R.lorentzFactor(q.beta * F.C0),
-  clockTime: q => R.clockTime(q.t, q.beta * F.C0),
-  rodLength: q => R.rodLength(q.L, q.beta * F.C0),
-  addVelocities: q => R.addVelocities(q.v * F.C0, q.w * F.C0),
-  // |E'| seen from a frame moving at v across a pure magnetic field B along z.
-  boostedE: q => Math.hypot(...R.boostFields({ E: [0, 0, 0], B: [0, 0, q.B] }, q.v).E),
 };
 
 /** Boltzmann's constant, as the collection rounds it (1.38 × 10⁻²³ Ws/K); an exercise may give its own. */

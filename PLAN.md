@@ -6,9 +6,10 @@ Written 1 Nov 2026. Three interactive labs for TU Wien Bachelor lectures, each f
 
 | Lab | Fuses | Sources | State on 1 Nov 2026 |
 |---|---|---|---|
-| Electrodynamics | Elektrodynamik + Wellenausbreitung | Prechtl (2010); Lasser (2012); Einstein (1905) for a special relativity part | 32 labs, published from Abdulhamid-Baghdadi/electrodynamics-lab; its session still running on the Desktop copy |
+| Electrodynamics | Elektrodynamik + Wellenausbreitung | Prechtl (2010); Lasser (2012) | 26 labs, published from Abdulhamid-Baghdadi/electrodynamics-lab; its session still running on the Desktop copy |
 | Automation | Automatisierung + Modellbildung | Kugi (2015); Kugi et al. (2015) | 18 labs (modelling done, automation chapter 1 and Bode); chapters 2–8 being built by its session |
 | Signals and systems | SS1 (continuous) + SS2 (discrete) | Prechtl (2010), *Signale und Systeme 1*; Doblinger (2015) | 11 labs; in this repository since 1 Nov 2026 |
+| Special relativity | Relativitätstheorie (2017; blackboard photos only) | Einstein (1905); Prechtl (2010) (2.43) as its low-speed limit | 4 labs in `relativity-lab/`, since 1 Nov 2026; Maxwell's equations stay in Electrodynamics |
 
 ## Who teaches what (no topic twice)
 

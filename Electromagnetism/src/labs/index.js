@@ -28,11 +28,7 @@ import friis from "./friis.js";
 import radar from "./radar.js";
 import fading from "./fading.js";
 import delayspread from "./delayspread.js";
-import minkowski from "./minkowski.js";
-import dilation from "./dilation.js";
-import velocity from "./velocity.js";
-import movingcharge from "./movingcharge.js";
 
 export const labs = [gauss, monopole, faraday, ampere, continuity, materials, poynting, lorentz, coulomb, laplace, dipole,
   relaxation, biotsavart, skin, speed, planewave, hertz, line, polarisation, lossy, fresnel, waveguide, microstrip, fresnelzone, friis, radar,
-  fading, delayspread, minkowski, dilation, velocity, movingcharge];
+  fading, delayspread];

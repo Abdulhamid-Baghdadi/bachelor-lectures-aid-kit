@@ -2,7 +2,11 @@
 // are the journal's printed ones. Einstein writes V for the speed of light and β for the factor now called γ; here c0
 // and γ. The frame k moves at v along the x axis of the resting frame K; positions in m, times in s, one dimension of
 // space where the y and z axes do not change.
-import { C0, EPS0 } from "./fields.js";
+/** The speed of light and the field constants in SI, as Prechtl (2010) uses them: μ0 = 4π × 10⁻⁷ Vs/(Am),
+ *  ε0 = 1/(μ0 c0²). */
+export const C0 = 299792458;
+export const MU0 = 4e-7 * Math.PI;
+export const EPS0 = 1 / (MU0 * C0 * C0);
 
 /** γ = 1/√(1 − (v/c)²), Einstein's β (p. 902). Only below the speed of light: "für Überlichtgeschwindigkeiten werden
  *  unsere Überlegungen sinnlos" (p. 903). */

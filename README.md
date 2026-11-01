@@ -22,6 +22,7 @@ The main task in every lab, recorded from the Electrodynamics Lab: move a contro
 | [Automation](Automation/README.md) | Automatisierung, Modellbildung | Kugi (2015); Kugi et al. (2015) |
 | [Signals and systems](signals-systems-lab/README.md) | Signale und Systeme 1, 2 | Prechtl (2010); Doblinger (2015) |
 | [Semiconductors, devices and circuits](semiconductors-lab/README.md) | Halbleiterphysik, Elektronische Bauelemente, Schaltungstechnik | Strasser (2015); Hobler (2009); Zimmermann (2010) |
+| [Special relativity](relativity-lab/README.md) | Relativitätstheorie | Einstein (1905) |
 
 ## How to open it
 

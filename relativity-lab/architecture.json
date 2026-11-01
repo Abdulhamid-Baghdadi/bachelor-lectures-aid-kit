@@ -1,0 +1,89 @@
+{
+  "format": "design-rules architecture",
+  "version": 1,
+  "name": "Special Relativity Lab",
+  "about": "The layers of ARCHITECTURE.md, bottom first. The kit core (complex numbers, units, the answer check) is shared by every lab; the core knows the laws of special relativity and nothing of the page; the kit (../kit) draws and knows no law; each lab joins the two for one idea; the app groups the labs under Einstein's sections and lays out the page.",
+  "reader": "es-modules",
+  "sources": [
+    "src/**/*.js",
+    "../kit/core/**/*.js",
+    "../kit/ui/**/*.js"
+  ],
+  "layers": [
+    {
+      "name": "kit-core",
+      "why": "Complex numbers, units and the answer check every lab shares, pure",
+      "files": [
+        "../kit/core/**/*.js"
+      ],
+      "uses": [],
+      "packages": [],
+      "forbid": [
+        "document",
+        "window",
+        "fetch",
+        "Date",
+        "Math.random",
+        "localStorage"
+      ]
+    },
+    {
+      "name": "core",
+      "why": "The laws of special relativity and the field transformation, pure",
+      "files": [
+        "src/core/**/*.js"
+      ],
+      "uses": [
+        "kit-core"
+      ],
+      "packages": [],
+      "forbid": [
+        "document",
+        "window",
+        "fetch",
+        "Date",
+        "Math.random",
+        "localStorage"
+      ]
+    },
+    {
+      "name": "kit",
+      "why": "Controls, readouts, charts, field maps and card drawings every lab draws with, shared by every lab",
+      "files": [
+        "../kit/ui/**/*.js"
+      ],
+      "uses": [
+        "kit-core"
+      ],
+      "packages": []
+    },
+    {
+      "name": "labs",
+      "why": "One idea each: a diagram or field to play with, its equations and its practice",
+      "files": [
+        "src/labs/**/*.js"
+      ],
+      "uses": [
+        "kit-core",
+        "core",
+        "kit"
+      ],
+      "packages": []
+    },
+    {
+      "name": "app",
+      "why": "Reads labs.json, lays out the sections with their labs, and the theme",
+      "files": [
+        "src/app.js"
+      ],
+      "uses": [
+        "kit-core",
+        "core",
+        "kit",
+        "labs"
+      ],
+      "packages": []
+    }
+  ],
+  "allow": []
+}

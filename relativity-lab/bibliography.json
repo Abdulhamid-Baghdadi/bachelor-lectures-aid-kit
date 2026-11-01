@@ -1,0 +1,35 @@
+{
+  "format": "design-rules bibliography",
+  "version": 1,
+  "about": "The sources of this project's subject matter (special relativity), apart from the design rules' bibliography, which keeps the design principles.",
+  "entries": [
+    {
+      "key": "einstein1905",
+      "authors": [
+        "Einstein, A."
+      ],
+      "year": 1905,
+      "title": "Zur Elektrodynamik bewegter Körper",
+      "venue": "Annalen der Physik 17 (322 in the continuous count), 891–921, doi:10.1002/andp.19053221004",
+      "backs": "The special relativity labs: the Lorentz transformation (p. 902), the light sphere (p. 901), length contraction (p. 903), moving clocks (p. 904), velocity addition (pp. 905–906), the transformation of the fields (p. 909), by printed page. Checked against the scanned original, 1905_17_891-921.pdf from the Annalen der Physik history pages at Universität Augsburg, pp. 901–910 read page by page; not found in Zotero, which was closed.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-01"
+      }
+    },
+    {
+      "key": "prechtl2010",
+      "authors": [
+        "Prechtl, A."
+      ],
+      "year": 2010,
+      "title": "Vorlesungen über Elektrodynamik",
+      "venue": "Lecture notes, Institute of Electrodynamics, Microwave and Circuit Engineering, TU Wien",
+      "backs": "The low-speed limit of the field transformation, eq. (2.43), p. 38, and Coulomb's field, eq. (3.13), against which the labs' laws are tested.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-01"
+      }
+    }
+  ]
+}

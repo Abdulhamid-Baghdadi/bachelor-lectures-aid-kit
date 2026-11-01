@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Special Relativity Lab</title>
+<meta name="description" content="Four ideas of special relativity to play with: the Minkowski diagram, moving clocks and rods, adding velocities, and the fields of a moving charge.">
+<script>
+  // Before the page draws, so a chosen theme never flashes the other one.
+  try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+</script>
+<link rel="stylesheet" href="../kit/style.css">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="src/app.js"></script>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1><a href="#">Special Relativity Lab</a></h1>
+    <p>Drag the events and move the sliders: frames, clocks, rods and fields seen from two frames at once. After Einstein (1905), <i>Zur Elektrodynamik bewegter Körper</i>.</p>
+  </div>
+  <button id="theme" type="button">Light or dark</button>
+</header>
+<main></main>
+<footer>
+  <p>A learning aid for TU Wien's Relativitätstheorie course, which left no script: every equation comes from Einstein (1905), by section and page; no text of it is reproduced.
+    Maxwell's equations and the fields of resting charges and currents are in the <a href="../Electromagnetism/">Electrodynamics Lab</a>.</p>
+</footer>
+<noscript><p>Special Relativity Lab needs JavaScript.</p></noscript>
+</body>
+</html>
