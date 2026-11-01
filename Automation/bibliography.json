@@ -1,0 +1,25 @@
+{
+  "format": "design-rules bibliography",
+  "version": 1,
+  "about": "The sources of this project's subject matter, apart from the design rules' bibliography, which keeps the design principles.",
+  "entries": [
+    {
+      "key": "kugi2015",
+      "authors": ["Kugi, A."],
+      "year": 2015,
+      "title": "Automatisierung, Vorlesung und Übung, Wintersemester 2015/2016",
+      "venue": "Lecture notes, Institut für Automatisierungs- und Regelungstechnik, TU Wien",
+      "backs": "Every equation of the Automation labs, by its equation number; chapter titles and page ranges from its table of contents.",
+      "checked": { "how": "full text", "date": "2026-11-01" }
+    },
+    {
+      "key": "kugi2015modellbildung",
+      "authors": ["Kugi, A.", "et al."],
+      "year": 2015,
+      "title": "Modellbildung, Vorlesung und Übung, SS 2015",
+      "venue": "Lecture notes, Institut für Automatisierungs- und Regelungstechnik, TU Wien",
+      "backs": "Every equation of the Modelling labs, by its equation number; chapter page ranges from its page headers.",
+      "checked": { "how": "full text", "date": "2026-11-01" }
+    }
+  ]
+}

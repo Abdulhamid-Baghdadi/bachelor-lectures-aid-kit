@@ -1,0 +1,4 @@
+# The Modellbildung notes name their authors only as "A. Kugi et al.", so the checker cannot match "Kugi et al. (2015)"
+# to a list of three names; both Kugi sources are in bibliography.json, checked against the PDFs.
+Kugi
+SS
