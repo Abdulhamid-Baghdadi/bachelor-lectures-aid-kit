@@ -5,6 +5,10 @@ import { h, slider, readout } from "../../../kit/ui/kit.js";
 import { lineChart } from "../../../kit/ui/chart.js";
 import * as a from "../../../kit/ui/art.js";
 
+/** The note under U: only light, |w| = c0, keeps c0 (p. 906). Two speeds below c0 can come close to c0 without being
+ *  light, so the note follows w, not U. */
+export const lightNote = w => Math.abs(w) === 1 ? "light stays at c0 in every frame" : "";
+
 export default {
   id: "velocity",
   art: () => a.picture("A train moving right with a ball thrown forward inside it, the two speeds adding to less than their sum",
@@ -16,7 +20,7 @@ export default {
     const rU = readout("Speed in K, U"), rG = readout("Galileo's sum v + w"), rD = readout("Shortfall of U against v + w");
     const update = () => {
       const U = addVelocities(v * C0, w * C0) / C0;
-      rU.set(`${U.toFixed(4)} c0`, "", Math.abs(U) >= 0.9999 ? "light stays at c0 in every frame" : "");
+      rU.set(`${U.toFixed(4)} c0`, "", lightNote(w));
       rG.set(`${(v + w).toFixed(4)} c0`, Math.abs(v + w) > 1 ? "warn" : "", Math.abs(v + w) > 1 ? "faster than light: wrong" : "");
       rD.set(`${((v + w - U) / (v + w || 1) * 100).toFixed(2)} %`);
       const ws = Array.from({ length: 201 }, (_, k) => -1 + k * 0.01);

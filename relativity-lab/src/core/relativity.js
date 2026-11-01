@@ -47,8 +47,8 @@ export function boostFields({ E, B }, v) {
 }
 
 /** The fields at (x, y) of a charge q passing the origin at v along x, at that moment. Worked as the reader would:
- *  the charge rests in k, where its field is Coulomb's, Prechtl (2010) (3.13), at ξ = γx (p. 902 at t = 0); then
- *  back to K with the field transformation for −v (derived). */
+ *  the charge rests in k, where its field is Coulomb's, −grad of the point-charge potential of Prechtl (2010) (3.13),
+ *  p. 61, at ξ = γx (p. 902 at t = 0); then back to K with the field transformation for −v (derived). */
 export function movingCharge(q, v, x, y) {
   const g = lorentzFactor(v), xi = g * x, r3 = Math.hypot(xi, y) ** 3, k = q / (4 * Math.PI * EPS0 * r3);
   return boostFields({ E: [k * xi, k * y, 0], B: [0, 0, 0] }, -v);
