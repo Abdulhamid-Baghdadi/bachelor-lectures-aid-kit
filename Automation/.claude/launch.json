@@ -1,6 +1,6 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "automation-lab", "runtimeExecutable": "python", "runtimeArgs": ["-m", "http.server", "8767", "--bind", "127.0.0.1"], "port": 8767 }
+    { "name": "automation-lab", "runtimeExecutable": "python", "runtimeArgs": ["-m", "http.server", "8767", "--bind", "127.0.0.1", "--directory", ".."], "port": 8767 }
   ]
 }

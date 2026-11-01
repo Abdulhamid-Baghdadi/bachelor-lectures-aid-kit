@@ -31,11 +31,11 @@ and local forms, jump conditions, derived steps marked as derived) and a practic
 
 ## Open it
 
-Published at <https://abdulhamid-baghdadi.github.io/electrodynamics-lab/>. Locally, serve the folder and open
-<http://127.0.0.1:8766/>:
+Published at <https://abdulhamid-baghdadi.github.io/bachelor-lectures-aid-kit/Electromagnetism/>. Locally, serve the repository's root (the lab uses `../kit`) and open
+<http://127.0.0.1:8766/Electromagnetism/>:
 
 ```bash
-python -m http.server 8766 --bind 127.0.0.1
+python -m http.server 8766 --bind 127.0.0.1 --directory ..
 ```
 
 Nothing is sent anywhere; the page keeps only your light or dark choice in the browser.
