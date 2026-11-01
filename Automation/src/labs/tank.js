@@ -1,9 +1,9 @@
 // The two-tank system of section 1.5 (1.29) against its linearisation about the rest state (Ruhelage) for an inflow qR,
 // (2.53) and (2.54) as Aufgabe 2.18 works them out: small steps of the inflow agree, large ones part.
 import { tankRhs, tankRest, tankLinear, simulate, matVec, si } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 // Example values, not from the notes: tanks of 0.02 m² with outlets of 0.5 cm².
 const P = { A: 0.02, a: 5e-5 };

@@ -1,10 +1,10 @@
 // Diffusion of a magnetic field into a conductor (Prechtl 2010, section 4.2): an alternating field at the surface
 // enters as B = B̂0 e^(−x/δ) cos(ωt − x/δ) (4.28), damped and delayed, with the skin depth δ = √(2/(μωγ)) (from 4.31).
 import { skinDepth, skinB, si } from "../core/index.js";
-import { h, slider, readout, choice } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import { clock } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import { clock } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 // Typical values [γ in S/m, μr], for illustration.
 const STUFF = { copper: [5.8e7, 1], aluminium: [3.7e7, 1], steel: [6e6, 100], seawater: [4, 1] };

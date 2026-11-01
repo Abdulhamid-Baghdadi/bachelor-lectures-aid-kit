@@ -1,7 +1,7 @@
 // The laws of the lecture notes, Prechtl (2010), Vorlesungen über Elektrodynamik, TU Wien, each next to the equation
 // number it comes from. Notation as in the notes: γ for conductivity, ϱ for charge density, Ψ for electric flux.
 // SI units throughout; geometry in metres.
-import { C, cAdd, cMul, cDiv, cSqrt, cExp, cAbs, cCosh, cSinh } from "./complex.js";
+import { C, cAdd, cMul, cDiv, cSqrt, cExp, cAbs, cCosh, cSinh } from "../../../kit/core/index.js";
 
 /** μ0 as fixed by the 2010 ampere (p. 31), c0 by the metre, ε0 from μ0 ε0 c0² = 1 (2.25). */
 export const MU0 = 4e-7 * Math.PI;

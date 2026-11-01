@@ -1,9 +1,9 @@
 // Point kinematics, Example 2.1 of Kugi et al. (2015): accelerate, coast, brake. Velocity is the integral of the
 // acceleration and position the integral of velocity (2.5)–(2.7); amin and t3 are chosen so the mass stops at xsoll.
 import { mechProfile, mechProfileAt, si } from "../core/index.js";
-import { h, slider, readout, choice } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const SHOW = { a: "Acceleration a [m/s²]", v: "Velocity v [m/s]", x: "Position x [m]" };
 

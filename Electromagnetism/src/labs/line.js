@@ -2,9 +2,9 @@
 // from (5.121), with γ = √(Y′Z′) (5.116) and the wave impedance Z_W = √(Z′/Y′) (5.117). Matched, the wave runs into the
 // load; open or shorted, it comes back and stands.
 import { line, si } from "../core/index.js";
-import { h, slider, readout, choice } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "line",

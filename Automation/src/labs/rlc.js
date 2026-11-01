@@ -1,9 +1,9 @@
 // The series resonant circuit of section 1.2: the state model (1.8) with x = [uC, iL], driven by a step of the input
 // voltage; while (1.12) holds the states ring at ω = √(1/(CL) − δ²) (1.11) as they settle.
 import { rlcStep, rlcRates, si } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "rlc",

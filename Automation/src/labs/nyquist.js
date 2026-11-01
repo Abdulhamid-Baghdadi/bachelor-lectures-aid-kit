@@ -1,9 +1,9 @@
 // The Nyquist criterion (Kugi 2015, 4.4.3): the locus of the open loop L(jω) against the point −1 decides the closed
 // loop's stability (4.45); for L of the form (4.54) the phase margin Φ = arg L(jωC) + π (4.55) must be positive.
 import { bode, logspace, closeLoop, step, loopMargins, loopRouthKmax } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const DEN = [1, 2, 1, 0]; // s(s + 1)², Aufgabe 4.12
 

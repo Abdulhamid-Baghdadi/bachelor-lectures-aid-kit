@@ -1,9 +1,9 @@
 // The Biot–Savart formula, B = μI/(4π) ∮ s′ × e_R / R² ds′ (3.144): a circular loop cut into n straight pieces, each
 // adding its share at points on the axis; the sum against the integral's closed form.
 import { loopAxisB, loopAxisBNumeric, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "biotsavart",

@@ -1,8 +1,8 @@
 // The force on charge and current, f = ϱE + J×B (2.100), for one point charge: F = q (E + v × B). An electron fired
 // across crossed fields; its path, worked step by step.
 import { lorentzPath, gyroRadius, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import * as a from "../../../kit/ui/art.js";
 
 const QE = -1.602176634e-19, ME = 9.1093837e-31, W = 460, H = 300;
 

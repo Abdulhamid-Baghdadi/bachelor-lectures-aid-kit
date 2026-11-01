@@ -2,9 +2,9 @@
 // target of radar cross-section σ; for a plate square to the beam σ = 4πA²/λ² (12.18), for a large sphere σ = πr²
 // (12.19). The echo falls with d⁴, not d².
 import { radar, plateRCS, sphereRCS, dB, fromdB, C0, si } from "../core/index.js";
-import { h, slider, readout, choice } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "radar",

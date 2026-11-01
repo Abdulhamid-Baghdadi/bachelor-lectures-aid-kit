@@ -1,9 +1,9 @@
 // The first-order lag (P-T1 element) of section 3.8.1, G(s) = V/(1 + sT) (3.133): its step response
 // h(t) = V(1 − e^(−t/T)) (3.134), with the tangent at t = 0 of slope V/T (Aufgabe 3.33) reaching V at t = T.
 import { pt1Step, si } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "pt1",

@@ -1,9 +1,9 @@
 // Sampled systems (Kugi 2015, 6.2 and 6.4): a P-T2 plant behind a zero-order hold becomes x_{k+1} = Φx_k + Γu_k
 // (6.19); its poles go to z = e^{sTa} (Satz 6.3); the sample time should give 4 to 10 samples per rise time (6.62).
 import { step, loopDiscretise, loopStairs, loopZPoles, loopRisePT2, roots, charpoly, cAbs } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const TE = 12;
 const z = ([re, im]) => im ? `${re.toFixed(3)} ± ${Math.abs(im).toFixed(3)}j` : re.toFixed(3);

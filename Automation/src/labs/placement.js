@@ -2,9 +2,9 @@
 // formula (8.18b) puts the poles of Φ + Γkᵀ where wanted, g (8.39) makes y_k → r. With every pole at 0 it is the
 // dead-beat controller (Satz 8.3), which settles in at most n = 2 steps.
 import { loopDoubleIntegrator, loopStateGain, loopPrefilter, loopPairZ, loopRun } from "../core/index.js";
-import { h, slider, readout, choice } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const TE = 10;
 

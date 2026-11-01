@@ -2,9 +2,9 @@
 // field-strength hills and holes; the holes lie λ/(2 sin(φ/2)) apart and are (A1 − A2)/(A1 + A2) deep. A car driving
 // through the pattern fades at the difference of the two Doppler shifts (13.12, p. 151). Drag to steer the car.
 import { twoWaveField, fadeSpacing, fadeDepth, doppler, C0, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { heatmap, arrow, clock, draggable } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { heatmap, arrow, clock, draggable } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 const W = 460, H = 300, deg = Math.PI / 180;
 

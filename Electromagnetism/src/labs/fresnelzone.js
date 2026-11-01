@@ -1,9 +1,9 @@
 // Fresnel zones, Lasser (2012) p. 107: a radio link counts as free space as long as the first Fresnel ellipsoid, the
 // points whose detour is at most λ/2, stays clear. Its radius r = √(λ d1 d2 / d). Drag the obstacle.
 import { fresnelRadius, detour, C0, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { draggable } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { draggable } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 const W = 460, H = 240, X1 = 30, X2 = 430, Y = 100;
 

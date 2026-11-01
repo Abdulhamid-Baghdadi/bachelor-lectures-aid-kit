@@ -2,9 +2,9 @@
 // (13.2), has the transfer function |H(jω)| = √(A1² + A2² + 2A1A2 cos ωΔτ) (13.4): notches every 1/Δτ. A signal
 // narrower than that spacing sees a flat channel; a wider one is cut by notches and smeared in time.
 import { twoPath, fadeDepth, si } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "delayspread",

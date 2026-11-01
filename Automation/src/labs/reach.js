@@ -1,9 +1,9 @@
 // Reachability (Kugi 2015, 7.1): x' = Ax + bu (7.10) is completely reachable when R(A, b) = [b, Ab] has rank n
 // (7.11); then the input (7.18) built from the Gramian (7.15) steers the state from 0 to any target in the time T.
 import { simulate, rank, det, loopReachMatrix, loopSteer } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const TARGET = [1, -0.5];
 

@@ -1,6 +1,6 @@
 // The laws of Kugi (2015), chapters 4–8: the loop with one degree of freedom, stability tests, loop shaping, sampled
 // systems, the Tustin transformation, reachability, state feedback and the observer. Pure: built on lti.js, no page.
-import { cDiv, cAbs, cExp } from "./complex.js";
+import { cDiv, cAbs, cExp } from "../../../kit/core/index.js";
 import {
   polyval, polyMul, polyAdd, roots, freq, bode, logspace, routh, realise, zoh, ackermann, expm, inv, eye, matMul,
   matVec, matAdd, matScale, transpose, det,

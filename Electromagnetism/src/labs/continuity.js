@@ -1,10 +1,10 @@
 // Conservation of charge, I(∂V) = −dQ/dt (Tab. 2.1, row 5): a capacitor plate charged through a resistor. The
 // current flowing into the plate is the rate its charge grows; take a closed surface round the plate and count.
 import { charging, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import { clock } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import { clock } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "continuity",

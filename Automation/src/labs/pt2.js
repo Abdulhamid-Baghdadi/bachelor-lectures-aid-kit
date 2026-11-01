@@ -1,9 +1,9 @@
 // The second-order lag (P-T2 element) of section 3.8.2, G(s) = V/(1 + 2ξ(sT) + (sT)²) (3.137): its step response
 // (3.138) between the envelopes of Aufgabe 3.34, and its poles (−ξ ± j√(1 − ξ²))/T.
 import { pt2Step, pt2Poles, pt2Peak } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "pt2",

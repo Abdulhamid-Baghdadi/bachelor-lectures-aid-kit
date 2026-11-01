@@ -1,9 +1,9 @@
 // Polarisation, Lasser (2012) pp. 33–35: at a fixed place e_x = E1 cos ωt, e_y = E2 cos(ωt + ψ); the tip of E traces
 // a line, a circle or an ellipse. Drawn in the notes' axes, x right and y down, looking along the wave.
 import { polarisation } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { clock, arrow } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { clock, arrow } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 const deg = Math.PI / 180, R = 110, C = 130;
 

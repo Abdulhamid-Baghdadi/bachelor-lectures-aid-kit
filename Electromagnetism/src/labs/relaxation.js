@@ -1,10 +1,10 @@
 // Charge relaxation, ∂tϱ + (γ/ε) ϱ = 0 (3.103 at rest): charge placed inside a conductor dies away as e^(−t/T_R) with
 // the relaxation time T_R = ε/γ (3.105), and turns up on the surface.
 import { relaxationTime, relaxed, si } from "../core/index.js";
-import { h, s, readout, choice, slider } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import { clock } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, readout, choice, slider } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import { clock } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 // Typical room-temperature values [εr, γ in S/m], for illustration.
 const STUFF = { copper: [1, 5.8e7], seawater: [80, 4], water: [80, 1e-4], glass: [6, 1e-12] };

@@ -1,10 +1,10 @@
 // Kinetic and potential energy (Kugi et al. 2015, (2.81), (2.92)): a mass on a linear spring trades one for the
 // other, and with no friction their sum stays put.
 import { smdResponse, mechKinetic, mechSpringEnergy, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import { clock } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import { clock } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 const N = 400;
 

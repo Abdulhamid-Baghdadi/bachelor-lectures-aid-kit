@@ -2,9 +2,9 @@
 // dynamics Φ + k̂cᵀ (8.65), k̂ from Ackermann's formula (8.66b); the controller fed by x̂ (8.73) keeps its own poles,
 // and the loop's poles are the controller's and the observer's together (8.74).
 import { loopDoubleIntegrator, loopStateGain, loopObserverGain, loopPairZ, loopRun, roots, charpoly, cAbs } from "../core/index.js";
-import { h, slider, readout, choice } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const Ta = 0.2, TE = 10, X0 = [1, 0], XH0 = [0, 0];
 

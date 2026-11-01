@@ -2,9 +2,9 @@
 // tied to a pin by a spring, moves under a central force. Its angular momentum (2.131) is constant, so the line from
 // the pin sweeps equal areas in equal times (2.136), Kepler's second law.
 import { mechCentral, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { clock } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { clock } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 const m = 0.5, c = 20, N = 1200, TEND = 6, S = 600, O = 200;
 

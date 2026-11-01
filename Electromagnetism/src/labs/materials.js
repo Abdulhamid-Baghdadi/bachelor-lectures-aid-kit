@@ -2,8 +2,8 @@
 // Ohm's law J = γ E (2.34). A slab between two plates at a fixed voltage: E is set by the voltage, D and P by the
 // material.
 import { material, EPS0, si } from "../core/index.js";
-import { h, s, slider, readout, choice } from "../ui/kit.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout, choice } from "../../../kit/ui/kit.js";
+import * as a from "../../../kit/ui/art.js";
 
 const STUFF = { air: [0.0006, 0], paper: [2.5, 1e-12], glass: [6, 1e-11], water: [79, 5e-6] };
 

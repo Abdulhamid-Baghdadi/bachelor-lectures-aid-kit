@@ -1,7 +1,7 @@
 // The numerics every lab shares: polynomials with real coefficients (highest power first), their roots, transfer
 // functions G(s) = num(s)/den(s) and their frequency response, small dense matrices, the matrix exponential and a fixed
 // step Runge–Kutta integrator. Deterministic: fixed steps, fixed starting points, no randomness.
-import { cAdd, cMul, cDiv, cAbs } from "./complex.js";
+import { cAdd, cMul, cDiv, cAbs } from "../../../kit/core/index.js";
 
 export const cSub = (a, b) => [a[0] - b[0], a[1] - b[1]];
 export const cArg = a => Math.atan2(a[1], a[0]);

@@ -2,9 +2,9 @@
 // of uniform temperature in a ceramic tank, m0 cp dT/dt = P − kA(T − T∞) (3.97), so T rises as a first-order step
 // response with time constant m0 cp/(kA) (3.99) until it boils at Ts; then the water boils away (3.104).
 import { heatWallK, heatTankTemp, heatTankBoilTime, heatTankDryTime, heatTankPower, si } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 // Typical values: 1 kg of water, 0.05 m² of ceramic wall 5 mm thick (λ ≈ 1.5 W/(m K)), αi = 500, αa = 10 W/(m²K).
 const W = { m0: 1, cp: 4190, hv: 2.257e6, Tinf: 20, Ts: 100, A: 0.05 };

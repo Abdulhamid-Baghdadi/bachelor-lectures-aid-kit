@@ -2,9 +2,9 @@
 // (3.151) and PID (3.157), each as its step response or its Bode diagram. The ideal D and PD elements are not
 // realisable (Satz 3.6), so they have a Bode diagram but no step response here.
 import { transferElement, step, bode, logspace, leadMax } from "../core/index.js";
-import { h, slider, readout, choice } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const KINDS = [["P", "P"], ["I", "I"], ["PI", "PI"], ["DT1", "D-T1"], ["PD", "PD"], ["lead", "Lead"], ["PID", "PID"]];
 const WS = logspace(1e-2, 1e3, 300), LX = WS.map(Math.log10), tick = v => String(Number((10 ** v).toPrecision(1)));

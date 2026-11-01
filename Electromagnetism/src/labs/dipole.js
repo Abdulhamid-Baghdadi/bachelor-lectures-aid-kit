@@ -1,9 +1,9 @@
 // The static electric dipole, ϕ = e_r·p / (4π ε0 r²) and E = (3 e_r e_r·p − p) / (4π ε0 r³) (5.42): the potential as
 // a colour map, the field as arrows, and a probe you move round it.
 import { dipolePotential, dipoleField, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { heatmap, arrows, draggable } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { heatmap, arrows, draggable } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 const W = 460, H = 300, OX = 230, OY = 150;
 

@@ -1,9 +1,9 @@
 // The spring-mass-damper (Kugi et al. 2015, section 2.2.6): one mass of (2.121), m q̈ + d q̇ + c q = f, released from
 // q0 and shaken by f = F sin(ωt). The damper takes energy out at the rate d q̇² (2.124).
 import { smdResponse, smdParams, smdAmplitude, logspace, si } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const m = 1, F = 1;
 

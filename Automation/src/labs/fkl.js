@@ -2,9 +2,9 @@
 // phase margin Φ, read from ωC·tr ≈ 1.5 (5.2) and Φ[°] + ü[%] ≈ 70 (5.3), fix TI (5.16) and VI (5.17) of the PI
 // controller (5.14) for the plant (5.13).
 import { series, closeLoop, step, stepInfo, bode, logspace, loopPiShape, loopTangentRise } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const G = { num: [5], den: [1, 2 * 0.707, 1] }; // (5.13)
 

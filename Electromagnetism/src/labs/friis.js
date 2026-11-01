@@ -2,8 +2,8 @@
 // between isotropic antennas L_ISO = −20 log(λ/(4πd)) (12.10), and in dB P_e = P_s + G_s − L_ISO + G_e (12.9), drawn as
 // a level plan.
 import { link, dB, fromdB, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "friis",

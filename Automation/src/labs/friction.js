@@ -1,9 +1,9 @@
 // Dissipative forces (Kugi et al. 2015, section 2.2.5): a block on a rough floor with Coulomb friction (2.99), (2.100)
 // and viscous friction (2.106). It slides by (2.101) until it stops, then sticks while the push stays below fH (2.102).
 import { mechSlide, mechFriction, si } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const m = 1, G = 9.81, TEND = 3;
 

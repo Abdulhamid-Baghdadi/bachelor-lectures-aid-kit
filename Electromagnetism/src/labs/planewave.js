@@ -1,9 +1,9 @@
 // A free plane wave (Prechtl 2010, pp. 132–134): E and H across the direction of travel and in step, H = κ × E / Z
 // (5.71), Z = √(μ/ε) (5.70), carrying the power density S = E²/Z (5.72).
 import { planeWave, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { clock } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { clock } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "planewave",

@@ -2,10 +2,10 @@
 // x = L, cools from a uniform start. Space is cut into N intervals (3.106) and time into steps Δt (3.107); the explicit
 // Euler scheme (3.110) is stable only if aΔt/Δx² ≤ 1/2 (3.111). Beside it, the exact series solution (worked by hand).
 import { heatFdmStep, heatRodSeries, si } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import { clock } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import { clock } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 // Steel as in the notes' Aufgabe 3.14/3.15: λ = 60 W/(m K), ρ = 7850 kg/m³, cp = 450 J/(kg K); L = 0.5 m.
 const ROD = { a: 60 / (7850 * 450), L: 0.5, TA: 80, TL: 20 };

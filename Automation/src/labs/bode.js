@@ -2,9 +2,9 @@
 // G(s) = V(1 − s/ωz) / (s(1 + 2ξ s/ωn + s²/ωn²)). Its magnitude is the sum of the parts' magnitudes (3.121), each
 // drawn as straight asymptotes by (3.122)–(3.125).
 import { bode, bodeAsymptote, logspace } from "../core/index.js";
-import { h, slider, readout, choice } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const WS = logspace(1e-3, 1e2, 300), LX = WS.map(Math.log10);
 const tick = v => String(Number((10 ** v).toPrecision(1)));

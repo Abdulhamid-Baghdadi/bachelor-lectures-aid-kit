@@ -2,9 +2,9 @@
 // the resistances 1/α0, Li/λi, 1/αL add up (3.84), and the same flux q drops the temperature over each (3.82).
 // The layers are the notes' own window, Beispiel 3.2: single or double glazing.
 import { heatWallProfile, si } from "../core/index.js";
-import { h, slider, readout, choice } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const GLASS = { L: 0.004, lambda: 1 }; // typical float glass, 4 mm, λ ≈ 1 W/(m K)
 

@@ -5,7 +5,8 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import * as H from "../../src/core/heat.js";
-import { solve, isRight } from "../../src/core/practice.js";
+import { solve } from "../../src/core/practice.js";
+import { isRight } from "../../src/core/index.js";
 
 const near = (a, b, rel = 1e-6, what = "") => assert.ok(Math.abs(a - b) <= rel * Math.max(1, Math.abs(b)), `${what}: ${a} vs ${b}`);
 

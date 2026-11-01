@@ -2,8 +2,8 @@
 // sees an effective permittivity ε_eff = 1 + q(ε_r − 1) between 1 and ε_r; the line is shorter and its impedance
 // lower than the same strip in air: Z_L = Z_L,0/√ε_eff, λ = λ0/√ε_eff. A quasi-TEM wave.
 import { microstrip, C0, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "microstrip",

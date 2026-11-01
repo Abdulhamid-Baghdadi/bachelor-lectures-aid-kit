@@ -1,9 +1,9 @@
 // The dead-time element of section 3.8.10: y(t) = u(t − Tt) (3.158), G(s) = e^(−sTt) (3.159). On a sine input the
 // output keeps its amplitude, |G(jω)| = 1, and lags by ωTt, a phase that grows without bound with the frequency.
 import { deadTimePhase } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "deadtime",

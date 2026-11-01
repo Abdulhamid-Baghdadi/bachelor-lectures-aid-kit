@@ -2,9 +2,9 @@
 // and tip. The temperature falls along it, and the fin efficiency ηf = Q(0)/Qmax (3.94) compares its heat flow with
 // that of a fin at T0 all over. The profile is the fin equation worked by hand; defaults are the notes' Aufgabe 3.14.
 import { finTemperature, finHeat, finEfficiency, si } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "fin",

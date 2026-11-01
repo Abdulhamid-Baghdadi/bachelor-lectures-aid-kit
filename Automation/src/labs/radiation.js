@@ -2,9 +2,9 @@
 // inner tube inside a vacuum jacket. The outer tube loses q′ = πD(α(T2 − T∞) + ε2σ(T2⁴ − T∞⁴)) (3.65) by convection
 // and radiation; the inner tube must be hot enough to push q′ across the vacuum by radiation alone (3.67).
 import { heatOuterLoss, heatInnerTemp, heatRadAlpha, si } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const K = 273.15;
 

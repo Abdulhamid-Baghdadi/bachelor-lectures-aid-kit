@@ -1,9 +1,9 @@
 // The loop with one degree of freedom (Kugi 2015, 4.3.1): y = Tr,y·r + Td,y·d with Gd = 1 (4.20); the sensitivity
 // S = Td,y (4.23) sets how much of a disturbance is left, and the steady-state error follows table (5.10).
 import { series, closeLoop, sensitivity, response, loopSteadyError, freq, cAbs } from "../core/index.js";
-import { h, slider, readout, choice } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const G = { num: [1], den: [1, 2, 1] }, TE = 20, TD = 10;
 

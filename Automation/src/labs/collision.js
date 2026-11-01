@@ -1,9 +1,9 @@
 // Momentum is kept when two masses meet (Kugi et al. 2015, (2.69)–(2.71)): the forces between them cancel, so their
 // centre of mass moves on unchanged. How much kinetic energy (2.81) survives depends on the coefficient of restitution.
 import { mechCollide, mechKinetic, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { clock } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { clock } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 const W = 460, H = 120, X = x => 230 + x * 40;
 

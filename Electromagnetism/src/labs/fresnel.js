@@ -2,10 +2,10 @@
 // transmitted ray, the Fresnel formulas split the power between reflection and transmission, separately for the TE
 // and the TM case. Drag on the drawing to aim the ray.
 import { fresnel, brewsterAngle, criticalAngle } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import { draggable } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import { draggable } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 const W = 460, H = 280, X0 = 230, Y0 = 140, L = 120, deg = Math.PI / 180;
 

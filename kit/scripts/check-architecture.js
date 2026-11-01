@@ -1,8 +1,8 @@
 // Enforces the layers of ARCHITECTURE.md, written in architecture.json, to the design rules' layering contract
 // (UA-SMARTLab/design-rules, skill/architecture.md). It fails on an import of a layer above, or of one beneath that a
 // layer's "uses" does not list; a cycle between modules; a package a layer may not import; a name a layer must keep
-// out; a module in no layer; and an import of a file that is not there. Run with `npm run check`; exits with an error
-// listing every finding. Its own tests: tests/unit/architecture.test.js.
+// out; a module in no layer; and an import of a file that is not there. Run from a lab's folder, `node ../kit/scripts/check-architecture.js`, or name the lab: `node kit/scripts/check-architecture.js Automation`; exits with an error
+// listing every finding. Its own tests: kit/tests/architecture.test.js.
 //
 // The design rules' check_layers.py reads the same architecture.json, to cross-check this one and to draw the
 // dependency matrix; this check needs nothing but Node, so it runs wherever the site is built.
@@ -101,7 +101,7 @@ function load(root) {
   const unheld = [...Object.keys(arch).filter(k => !KEYS.has(k)),
                   ...arch.layers.flatMap(l => Object.keys(l).filter(k => !LAYER_KEYS.has(k)).map(k => `${l.name}.${k}`))];
   if (unheld.length)
-    throw new Error(`${file} uses ${unheld.join(", ")}, not held by scripts/check-architecture.js: add it there with a test, or take it out.`);
+    throw new Error(`${file} uses ${unheld.join(", ")}, not held by kit/scripts/check-architecture.js: add it there with a test, or take it out.`);
   for (const layer of arch.layers)
     for (const other of layer.uses ?? [])
       if (!names.includes(other))
@@ -225,7 +225,7 @@ export function check(root) {
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+  const root = resolve(process.argv[2] ?? ".");
   try {
     const { uses, findings } = check(root);
     if (findings.length) {

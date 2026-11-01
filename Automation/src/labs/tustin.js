@@ -2,9 +2,9 @@
 // controller into a discrete one whose response at ω equals the continuous one at Ω = (2/Ta)·tan(ωTa/2) (6.89):
 // the frequency axis is warped, and every feature slides towards lower frequencies.
 import { freq, cAbs, logspace, loopTustin, loopFreqZ, loopUnwarp, loopWarp } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const XI = 0.1;
 

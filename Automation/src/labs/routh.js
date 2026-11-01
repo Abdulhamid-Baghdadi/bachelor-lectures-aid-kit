@@ -1,9 +1,9 @@
 // Routh–Hurwitz (Kugi 2015, 4.4.1): the Routh array (4.31) with entries (4.32) tells from the coefficients alone
 // whether a polynomial is Hurwitz; for the loop of Beispiel 4.4 it gives the range 0 < K < 3 (4.36).
 import { routh, roots, loopRouthKmax } from "../core/index.js";
-import { h, slider, readout, choice } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const CASES = {
   loop: { text: "Loop of Beispiel 4.4: s³ + 3s² + 9s + 9K (4.34)" },

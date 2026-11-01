@@ -2,7 +2,7 @@
 // lab it teaches, a picture of the idea on each. A lab: its chapter above it, its field, its practice, and the previous
 // and next lab as small cards below. The address (#gauss) says which lab is open; none means the overview.
 // Reads the words from data/labs.json; a lab with no words there, or words with no lab, is reported, not skipped.
-import { h, practice } from "./ui/kit.js";
+import { h, practice } from "../../kit/ui/kit.js";
 import { parseSi } from "./core/index.js";
 import { labs } from "./labs/index.js";
 

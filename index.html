@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bachelor lectures aid kit</title>
+<meta name="description" content="Interactive labs for TU Wien Bachelor lectures, each fusing two courses: electrodynamics and wave propagation; automation and modelling.">
+<script>
+  // Before the page draws, so a chosen theme never flashes the other one.
+  try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+</script>
+<link rel="stylesheet" href="kit/style.css">
+<style>
+  .labs { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 20px; margin-top: 16px; }
+  .lab { display: grid; gap: 10px; padding: 16px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line);
+         border-top: 6px solid var(--frame); color: var(--ink); text-decoration: none; }
+  .lab:hover { box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+  .lab:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+  .lab h2 { margin: 0; font-size: 1.25rem; color: var(--accent); }
+  .lab p { margin: 0; }
+  .lab .courses { color: var(--muted); font-size: 0.95rem; }
+  .lab img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); }
+  .lab .dark { display: none; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .lab .light { display: none; } :root:not([data-theme="light"]) .lab .dark { display: block; } }
+  :root[data-theme="dark"] .lab .light { display: none; } :root[data-theme="dark"] .lab .dark { display: block; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Bachelor lectures aid kit</h1>
+    <p>Interactive labs for TU Wien Bachelor lectures. Each lab fuses two courses, so the same idea is met once.</p>
+  </div>
+  <button id="theme" type="button">Light or dark</button>
+</header>
+<main>
+  <div class="labs">
+    <a class="lab" href="Electromagnetism/" data-family="waves">
+      <h2>Electrodynamics Lab</h2>
+      <p class="courses">Elektrodynamik and Wellenausbreitung, after Prechtl (2010) and Lasser (2012)</p>
+      <img class="light" src="Electromagnetism/docs/light.png" alt="The Electrodynamics Lab's overview: lab cards grouped under the chapters of the notes" width="1280" height="1000">
+      <img class="dark" src="Electromagnetism/docs/dark.png" alt="The Gauss's law lab in the dark theme" width="1280" height="1000">
+      <p>Maxwell's equations, potentials, the skin effect, waves, lines, waveguides, antennas, link budgets and fading.</p>
+    </a>
+    <a class="lab" href="Automation/" data-family="loop">
+      <h2>Automation Lab</h2>
+      <p class="courses">Automatisierung and Modellbildung, after Kugi (2015) and Kugi et al. (2015)</p>
+      <img class="light" src="Automation/docs/light.png" alt="The Automation Lab's overview: lab cards grouped under the two courses and their chapters" width="1280" height="1000">
+      <img class="dark" src="Automation/docs/dark.png" alt="The PI design by loop shaping lab in the dark theme: a Bode plot and the closed loop's step response" width="1280" height="1000">
+      <p>Transfer functions, Bode and Nyquist, the control loop, state space, sampling, and the models of mechanics and heat.</p>
+    </a>
+  </div>
+</main>
+<footer>
+  <p>A learning aid; equation numbers refer to the lecture notes, and no text of them is reproduced. Everything runs in your browser; nothing is sent anywhere.</p>
+</footer>
+<script>
+  document.querySelector("#theme").addEventListener("click", () => {
+    const root = document.documentElement;
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    try { localStorage.setItem("theme", root.dataset.theme); } catch { /* private window: the choice lasts this visit */ }
+  });
+</script>
+</body>
+</html>

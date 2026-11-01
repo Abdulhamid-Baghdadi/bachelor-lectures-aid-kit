@@ -1,9 +1,9 @@
 // The rectangular waveguide, Lasser (2012) pp. 64–66: each mode TE_mn or TM_mn carries power only above its cutoff,
 // from κ² = (mπ/a)² + (nπ/b)² = ω²εμ − k_z². The TE10 field across the guide, and the mode chart for its size.
 import { waveguideModes, te10, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { heatmap } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { heatmap } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "waveguide",

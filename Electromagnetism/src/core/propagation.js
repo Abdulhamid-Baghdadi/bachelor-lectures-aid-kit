@@ -1,7 +1,7 @@
 // The laws of the wave propagation lecture notes, Lasser (2012), Wellenausbreitung, TU Wien, 10th edition after
 // Bonek's lectures; page and equation numbers are the printed ones. Notation as in those notes: σ for conductivity,
 // δ for the complex permittivity, Γ for reflection factors, Θ for angles from the normal.
-import { C, cMul, cSqrt } from "./complex.js";
+import { C, cMul, cSqrt } from "../../../kit/core/index.js";
 import { MU0, EPS0, C0 } from "./fields.js";
 
 const deg = Math.PI / 180;

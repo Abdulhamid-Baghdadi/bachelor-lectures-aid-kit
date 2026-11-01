@@ -1,10 +1,10 @@
 // The induction law, U(∂A) = −dΦ/dt (Tab. 2.1, row 1): a loop in a field B̂ sin(ωt); the flux and the voltage round
 // the loop, a quarter period apart.
 import { induction, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import { clock } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import { clock } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "faraday",

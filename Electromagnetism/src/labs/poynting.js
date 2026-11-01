@@ -1,9 +1,9 @@
 // The Poynting vector S = E × H (2.107) and the energy balance (2.108, 2.109): the energy a resistive wire turns to heat
 // does not run inside the copper; it flows in from the field around it, through the surface, as S.
 import { wirePoynting, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { arrow } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { arrow } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "poynting",

@@ -4,7 +4,8 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import * as M from "../../src/core/mechanics.js";
-import { solve, isRight } from "../../src/core/practice.js";
+import { solve } from "../../src/core/practice.js";
+import { isRight } from "../../src/core/index.js";
 
 const near = (a, b, tol = 1e-6) => assert.ok(Math.abs(a - b) <= tol * (1 + Math.abs(b)), `${a} ≠ ${b}`);
 

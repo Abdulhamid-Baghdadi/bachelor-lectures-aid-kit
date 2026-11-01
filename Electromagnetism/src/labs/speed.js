@@ -1,9 +1,9 @@
 // The wave equation's speed, c = 1/√(με) (5.19), and in vacuum the Maxwell relation μ0 ε0 c0² = 1 (2.25): a pulse
 // racing through vacuum and through a medium side by side.
 import { waveSpeed, C0, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { clock } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { clock } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "speed",

@@ -1,9 +1,9 @@
 // No magnetic charges, Φ(∂V) = 0 (Tab. 2.1, row 2): the field of a small current loop (a magnetic dipole), and a
 // sphere you move round it; the flux out is always zero, integrated numerically.
 import { dipoleBFlux } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { arrows, draggable } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { arrows, draggable } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 const W = 460, H = 300, OX = 230, OY = 150;
 

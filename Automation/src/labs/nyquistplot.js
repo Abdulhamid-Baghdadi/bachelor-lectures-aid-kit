@@ -1,9 +1,9 @@
 // The Nyquist locus (Ortskurve) of section 3.7.1: G(jω) drawn in the complex plane with ω as the parameter, for the
 // notes' examples (3.112) and (3.114) and two of Aufgabe 3.27; the dot is the point for the chosen ω.
 import { nyquistLocus, freq, cAbs, cArg } from "../core/index.js";
-import { h, slider, readout, choice } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 const SYSTEMS = {
   rc: { num: [1], den: [0.5, 1], name: "1/(1 + s/2), (3.105)" },

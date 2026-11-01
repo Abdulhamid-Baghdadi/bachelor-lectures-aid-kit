@@ -1,9 +1,9 @@
 // Gauss's law, Ψ(∂V) = Q(V) (Tab. 2.1, row 4): move a sphere over a set of charges; the electric flux out of it is the
 // charge inside, counted, and integrated numerically over the sphere as a check.
 import { enclosedCharge, fluxThroughSphere, chargesField, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { arrows, draggable } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { arrows, draggable } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 const W = 460, H = 300;
 const CHARGES = [{ q: 2e-9, x: 0.15, y: 0.12 }, { q: -1e-9, x: 0.23, y: 0.19 }, { q: 1e-9, x: 0.33, y: 0.1 }, { q: -2e-9, x: 0.37, y: 0.22 }];

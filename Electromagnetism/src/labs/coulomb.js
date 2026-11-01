@@ -1,9 +1,9 @@
 // Two point charges: the potential ϕ = Q/(4πε r) (3.13) as a colour map, the field E = −∇ϕ (3.4) as arrows.
 // 1 drawing unit is 1 mm; the charges sit on the middle line.
 import { chargesField, EPS0, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { heatmap, arrows, draggable } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { heatmap, arrows, draggable } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 const W = 460, H = 300;
 

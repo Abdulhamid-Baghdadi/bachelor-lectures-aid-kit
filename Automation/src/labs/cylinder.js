@@ -2,9 +2,9 @@
 // q′ = 2π(TF − T∞)/(1/(r0α0) + Σ ln(ri/ri−1)/λi + 1/(rNαN)) (3.93). A thin pipe or cable gains outer surface as it
 // is insulated, so up to the critical radius rc = λ/α more insulation loses more heat (derived from (3.93)).
 import { heatPipeLoss, heatCriticalRadius, si } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "cylinder",

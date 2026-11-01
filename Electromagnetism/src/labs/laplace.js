@@ -1,9 +1,9 @@
 // The Laplace equation ∇²ϕ = 0 (3.9) in a charge-free region: electrodes held at fixed potentials inside an earthed
 // box, the potential between them worked out on a grid by successive over-relaxation.
 import { laplace } from "../core/index.js";
-import { h, s, slider, readout, choice } from "../ui/kit.js";
-import { heatmap } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { heatmap } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 const NX = 46, NY = 30, CELL = 10;
 

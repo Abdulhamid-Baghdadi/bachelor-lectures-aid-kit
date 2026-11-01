@@ -1,9 +1,9 @@
 // The Hertz dipole (Prechtl 2010, pp. 123–128): a short antenna of length l radiates P = R_S I² with the radiation
 // resistance R_S = (2π/3)(l/λ)² Z0 (5.52, 5.53); its far field goes as sin θ, its power as sin²θ.
 import { radiationResistance, dipolePattern, C0, si } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { polar } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { polar } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "hertz",

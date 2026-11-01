@@ -2,9 +2,9 @@
 // pole pair σ ± jω and one real zero z, scaled to a static gain of 1. Damping and time constant of the pair by
 // (3.166), (3.167); the step response shows what the positions mean.
 import { step, roots, pairDamping, biboStable } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 export default {
   id: "polezero",

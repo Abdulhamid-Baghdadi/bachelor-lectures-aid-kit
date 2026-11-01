@@ -1,9 +1,9 @@
 // The solution behaviour of ẋ = Ax (3.45) for a 2 × 2 matrix A: trajectories x(t) = Φ(t)x0 with Φ(t) = exp(At) (2.22)
 // from starts on a circle; the eigenvalues decide node, focus, saddle or centre (Satz 3.3) and stability (Satz 3.4).
 import { eigen2, phaseTrajectory } from "../core/index.js";
-import { h, slider, readout, choice } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 // Example 3.3 of the notes first; the others are example matrices for each kind of rest point.
 const PRESETS = { ex33: [[1.4, -1.2], [-1.2, -0.4]], node: [[-1, 0.5], [0, -2]], focus: [[-0.3, 1], [-1, -0.3]], centre: [[0, 1], [-1, 0]] };

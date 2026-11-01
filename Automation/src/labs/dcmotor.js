@@ -1,9 +1,9 @@
 // The separately excited DC motor of section 1.4 with its excitation held constant (kΨF = K): (1.25a) and (1.25d)
 // give the armature current and speed after the armature voltage and the load torque m g r are switched on.
 import { dcMotorRhs, dcMotorRest, simulate, si } from "../core/index.js";
-import { h, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import * as a from "../../../kit/ui/art.js";
 
 // Example values, not from the notes: a small motor, its drum and load lumped into J.
 const P = { RA: 1, LA: 0.01, K: 0.1, J: 2e-4 };

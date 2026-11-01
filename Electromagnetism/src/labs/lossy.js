@@ -2,10 +2,10 @@
 // s = σ/(εω) turns the propagation constant into γ = α + jβ = jω√(μδ). One formula from a good dielectric (s ≪ 1)
 // to a good conductor (s ≫ 1), where 1/α becomes the skin depth.
 import { lossyWave, skinDepth, si } from "../core/index.js";
-import { h, slider, readout, choice } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import { clock } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import { clock } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 // Typical values [εr, σ in S/m], for illustration.
 const STUFF = { dry: [4, 1e-3], wet: [20, 0.05], sea: [80, 4], copper: [1, 5.8e7] };

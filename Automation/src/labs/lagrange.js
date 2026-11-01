@@ -2,10 +2,10 @@
 // its centre. The Lagrangian (2.212) gives the coupled equations (2.214), simulated here with rk4. A motor holds the
 // beam near a set angle (a PD law of our own, not in the notes) so the ball's rolling can be watched.
 import { ballBeamRun, ballBeamEnergy, si } from "../core/index.js";
-import { h, s, slider, readout } from "../ui/kit.js";
-import { lineChart } from "../ui/chart.js";
-import { clock } from "../ui/field.js";
-import * as a from "../ui/art.js";
+import { h, s, slider, readout } from "../../../kit/ui/kit.js";
+import { lineChart } from "../../../kit/ui/chart.js";
+import { clock } from "../../../kit/ui/field.js";
+import * as a from "../../../kit/ui/art.js";
 
 const PAR = { mK: 0.1, rK: 0.02, thB: 0.05, g: 9.81 }, L = 0.5, TEND = 4, N = 800, S = 360;
 

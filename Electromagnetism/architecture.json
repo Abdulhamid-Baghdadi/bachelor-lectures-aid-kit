@@ -2,17 +2,19 @@
   "format": "design-rules architecture",
   "version": 1,
   "name": "Electrodynamics Lab",
-  "about": "The layers of ARCHITECTURE.md, bottom first. The core knows the laws and nothing of the page; the kit draws and knows no law; each lab joins the two for one equation; the app groups the labs under their chapters and lays out the page.",
+  "about": "The layers of ARCHITECTURE.md, bottom first. The kit core (complex numbers, units, the answer check) is shared by every lab; the core knows the laws and nothing of the page; the kit (../kit) draws and knows no law; each lab joins the two for one equation; the app groups the labs under their chapters and lays out the page.",
   "reader": "es-modules",
   "sources": [
-    "src/**/*.js"
+    "src/**/*.js",
+    "../kit/core/**/*.js",
+    "../kit/ui/**/*.js"
   ],
   "layers": [
     {
-      "name": "core",
-      "why": "The laws of electrodynamics, complex numbers and units, pure",
+      "name": "kit-core",
+      "why": "Complex numbers, units and the answer check every lab shares, pure",
       "files": [
-        "src/core/**/*.js"
+        "../kit/core/**/*.js"
       ],
       "uses": [],
       "packages": [],
@@ -26,13 +28,32 @@
       ]
     },
     {
-      "name": "kit",
-      "why": "Controls, readouts, charts, field maps and card drawings every lab draws with",
+      "name": "core",
+      "why": "The laws of electrodynamics, complex numbers and units, pure",
       "files": [
-        "src/ui/**/*.js"
+        "src/core/**/*.js"
       ],
       "uses": [
-        "core"
+        "kit-core"
+      ],
+      "packages": [],
+      "forbid": [
+        "document",
+        "window",
+        "fetch",
+        "Date",
+        "Math.random",
+        "localStorage"
+      ]
+    },
+    {
+      "name": "kit",
+      "why": "Controls, readouts, charts, field maps and card drawings every lab draws with, shared by every lab",
+      "files": [
+        "../kit/ui/**/*.js"
+      ],
+      "uses": [
+        "kit-core"
       ],
       "packages": []
     },
@@ -43,6 +64,7 @@
         "src/labs/**/*.js"
       ],
       "uses": [
+        "kit-core",
         "core",
         "kit"
       ],
@@ -55,6 +77,7 @@
         "src/app.js"
       ],
       "uses": [
+        "kit-core",
         "core",
         "kit",
         "labs"
