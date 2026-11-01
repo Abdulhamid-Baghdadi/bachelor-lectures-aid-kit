@@ -61,3 +61,6 @@ Plain JavaScript modules, no build step. Layers and their tests: [ARCHITECTURE.m
 - Practice answers for chapters 2 and 3 are worked by hand; the course's exercises for those chapters are symbolic
   derivations. Chapters 4 and 5 add nine numerical exercises from the course's exercise collection, the Aufgabensammlung of
   TU Wien from 2010, with their answers from its worked solutions.
+- The wave propagation labs add eight exercises from that course's exercise part, the Übungsteil of October 2011: six
+  with the answers of its worked solutions, and two from the airport radar exercise, for which it prints no number,
+  worked by hand. Its other numerical exercises (multipath, a partly filled guide) fit no lab's model and are left out.

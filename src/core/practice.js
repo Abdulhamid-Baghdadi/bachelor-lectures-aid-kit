@@ -41,7 +41,30 @@ const LAWS = {
   fresnelDiameter: q => 2 * P.fresnelRadius(q.lambda, q.d / 2, q.d / 2),
   pathLoss: q => P.link(1, 1, 1, q.f, q.d).Liso,
   sphere: q => P.sphereRCS(q.r),
+  // Wave propagation exercises (Übungsteil), in the forms their worked solutions use.
+  microstripLambda: q => F.C0 / q.f / Math.sqrt(q.eff),
+  fillingFactor: q => (q.eff - 1) / (q.epsr - 1),
+  // σ = A_w G = 4π A_w²/λ² (12.18) with the plate's effective area A_w = A w.
+  retroRCS: q => P.plateRCS(q.A * q.w, F.C0 / q.f),
+  // Moon as a reflector: P_E = SNR k T B; whole Moon lit: σ = π D_M²/4 · r, EIRP = P_E (4πd²)² / (σ A_e),
+  // P_s = EIRP / G_s with G_s = 4π A_e/λ². Beam narrower than the Moon: P_E = P_s r A_e / (4πd²).
+  moonPower: q => {
+    const PE = q.snr * K_B * q.T * q.B, Ae = Math.PI * q.D ** 2 / 4 * q.w, lambda = F.C0 / q.f;
+    if (q.beam === "narrow") return PE * 4 * Math.PI * q.d ** 2 / (q.r * Ae);
+    const sigma = Math.PI * q.DM ** 2 / 4 * q.r;
+    return PE * (4 * Math.PI * q.d ** 2) ** 2 / (sigma * Ae) / (4 * Math.PI * Ae / lambda ** 2);
+  },
+  // One-way link (12.9) against the noise k T B: P_s = SNR + k T B − G_s − G_e + L_ISO, all in dB; returned in W.
+  linkPower: q => P.fromdB(P.dB(q.snr * q.k * q.T * q.B) - q.Gs - q.Ge + P.link(1, 1, 1, q.f, q.d).Liso),
+  // Monostatic range from (12.17) where the echo meets SNR k T B.
+  radarRange: q => {
+    const Pmin = q.snr * q.k * q.T * q.B, Ps = P.fromdB(q.PsdBW), G = P.fromdB(q.GdBi);
+    return 1e3 * (P.radar(Ps, G, q.sigma, q.f, 1e3) / Pmin) ** 0.25;
+  },
 };
+
+/** Boltzmann's constant, as the collection rounds it (1.38 × 10⁻²³ Ws/K); an exercise may give its own. */
+const K_B = 1.38e-23;
 
 /** The answer to a question's "compute" block; an unknown law is an error naming the ones there are. */
 export function solve(compute) {
