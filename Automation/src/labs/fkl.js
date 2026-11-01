@@ -20,10 +20,10 @@ export default {
     const update = () => {
       const d = loopPiShape(G, wc, phi);
       if (!d.possible) { pi.set("—", "danger", `the zero would have to turn the phase by ${d.lift.toFixed(1)}°; a PI zero gives 0° to 90°`); }
-      else pi.set(`VI = ${d.VI.toFixed(3)}, TI = ${d.TI.toFixed(2)} s`, "", `arg L1(jωC) = ${d.argL1.toFixed(1)}°, so the zero lifts ${d.lift.toFixed(1)}° (5.16)`);
+      else pi.set(`VI = ${d.VI.toFixed(3)}, TI = ${d.TI.toFixed(2)} s`, "", `arg L1(IωC) = ${d.argL1.toFixed(1)}°, so the zero lifts ${d.lift.toFixed(1)}° (5.16)`);
       const L = d.possible ? series(d.R, G) : { num: G.num, den: [...G.den, 0] };
       const ws = logspace(0.01, 10, 300), B = bode(L, ws), B1 = bode({ num: G.num, den: [...G.den, 0] }, ws);
-      bodeChart.replaceChildren(lineChart({ lines: [{ x: ws.map(Math.log10), y: B.map(p => p.db), name: "|L(jω)|" }, { x: ws.map(Math.log10), y: B1.map(p => p.db), name: "|L1(jω)|", cls: "faint" }],
+      bodeChart.replaceChildren(lineChart({ lines: [{ x: ws.map(Math.log10), y: B.map(p => p.db), name: "|L(Iω)|" }, { x: ws.map(Math.log10), y: B1.map(p => p.db), name: "|L1(Iω)|", cls: "faint" }],
         marks: [{ x: Math.log10(wc), y: 0, shape: "dot" }], yMin: -60, yMax: 60, xFormat: v => `10^${v.toFixed(0)}`,
         xLabel: "Frequency log₁₀ ω [rad/s]", yLabel: "Magnitude [dB]", label: "Bode magnitude of the open loop with the chosen crossover" }));
       const T = 8 * 1.5 / wc, r = step(closeLoop(L), T, 800), info = stepInfo(r.t, r.y);

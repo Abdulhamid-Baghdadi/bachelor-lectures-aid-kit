@@ -60,7 +60,7 @@ export function roots(p) {
   return z.map(([re, im]) => [re, Math.abs(im) < 1e-9 * (1 + Math.abs(re)) ? 0 : im]).sort((u, v) => u[0] - v[0] || u[1] - v[1]);
 }
 
-/** G(jω) of a transfer function { num, den }. */
+/** G(Iω) of a transfer function { num, den }. */
 export const freq = (G, w) => cDiv(polyval(G.num, [0, w]), polyval(G.den, [0, w]));
 /** G(s) at a complex s. */
 export const tfAt = (G, s) => cDiv(polyval(G.num, s), polyval(G.den, s));

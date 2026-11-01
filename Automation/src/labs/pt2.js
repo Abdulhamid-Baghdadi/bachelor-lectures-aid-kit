@@ -1,5 +1,5 @@
 // The second-order lag (P-T2 element) of section 3.8.2, G(s) = V/(1 + 2ξ(sT) + (sT)²) (3.137): its step response
-// (3.138) between the envelopes of Aufgabe 3.34, and its poles (−ξ ± j√(1 − ξ²))/T.
+// (3.138) between the envelopes of Aufgabe 3.34, and its poles (−ξ ± I√(1 − ξ²))/T.
 import { pt2Step, pt2Poles, pt2Peak } from "../core/index.js";
 import { h, slider, readout } from "../../../kit/ui/kit.js";
 import { lineChart } from "../../../kit/ui/chart.js";
@@ -25,7 +25,7 @@ export default {
         lines: [], marks: p.map(([re, im]) => ({ x: re, y: im, shape: "x" })), xMin: -1.1 / T, xMax: 0.5 / T, yMin: -1.1 / T, yMax: 1.1 / T,
         xLabel: "Real part Re s [1/s]", yLabel: "Imaginary part Im s [1/s]", xFormat: v => v.toFixed(0), yFormat: v => v.toFixed(0) }));
       rPeak.set(pt2Peak(V, xi).toFixed(2), "", `overshoot ${(100 * (pt2Peak(V, xi) / V - 1)).toFixed(0)} % of V`);
-      rPole.set(`${p[0][0].toFixed(2)} ± j${Math.abs(p[0][1]).toFixed(2)} 1/s`, "", "on a circle of radius 1/T; the angle grows as ξ falls");
+      rPole.set(`${p[0][0].toFixed(2)} ± I${Math.abs(p[0][1]).toFixed(2)} 1/s`, "", "on a circle of radius 1/T; the angle grows as ξ falls");
     };
     root.append(h("div", { class: "stage" }, h("div", {}, chartBox, poleBox), h("div", { class: "controls" },
       slider({ label: "Gain V", unit: "", min: 1, max: 10, value: V, step: 0.5, format: v => v.toFixed(1), onInput: v => { V = v; update(); } }),

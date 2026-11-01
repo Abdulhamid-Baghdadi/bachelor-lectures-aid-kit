@@ -22,11 +22,11 @@ export default {
       const G = { num: [-V / wz, V], den: [1 / wn ** 2, 2 * xi / wn, 1, 0] }, B = bode(G, WS), parts = { V, r: 1, z1: [wz], p2: [wn] };
       chartBox.replaceChildren(show === "mag"
         ? lineChart({ label: "Bode magnitude of the composite transfer function with its asymptotes",
-            lines: [{ x: LX, y: B.map(p => p.db), name: "|G(jω)|" }, { x: LX, y: WS.map(w => bodeAsymptote(parts, w)), name: "asymptotes", cls: "faint" }],
-            yMin: -140, yMax: 80, xLabel: "Angular frequency ω [rad/s]", yLabel: "Magnitude |G(jω)| [dB]", xFormat: tick })
+            lines: [{ x: LX, y: B.map(p => p.db), name: "|G(Iω)|" }, { x: LX, y: WS.map(w => bodeAsymptote(parts, w)), name: "asymptotes", cls: "faint" }],
+            yMin: -140, yMax: 80, xLabel: "Angular frequency ω [rad/s]", yLabel: "Magnitude |G(Iω)| [dB]", xFormat: tick })
         : lineChart({ label: "Bode phase of the composite transfer function",
-            lines: [{ x: LX, y: B.map(p => p.phase), name: "arg G(jω)" }], yMin: -360, yMax: 0,
-            xLabel: "Angular frequency ω [rad/s]", yLabel: "Phase arg G(jω) [°]", xFormat: tick, yFormat: v => v.toFixed(0) }));
+            lines: [{ x: LX, y: B.map(p => p.phase), name: "arg G(Iω)" }], yMin: -360, yMax: 0,
+            xLabel: "Angular frequency ω [rad/s]", yLabel: "Phase arg G(Iω) [°]", xFormat: tick, yFormat: v => v.toFixed(0) }));
       const at = bode(G, [wn])[0];
       rRes.set(`${at.db.toFixed(1)} dB, ${bodeAsymptote(parts, wn).toFixed(1)} dB`, "", `the gap is the correction −20 log(2ξ) = ${(-20 * Math.log10(2 * xi)).toFixed(1)} dB`);
       rPh.set(`${B[0].phase.toFixed(0)}°, ${B.at(-1).phase.toFixed(0)}°`, "", "the zero 1 − s/ωz lies in the right half plane, so it lowers the phase");

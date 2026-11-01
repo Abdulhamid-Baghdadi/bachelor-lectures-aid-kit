@@ -4,7 +4,7 @@
 import { rk4Step } from "./lti.js";
 
 /** Example 2.1: a motor accelerates a mass with amax for t0…t1, coasts to t2, then brakes with amin so that it stops
- *  at xsoll. amin from (2.11), t3 from (2.10); t0 = 0, v0 = x0 = 0 as in the notes. */
+ *  at xsoll. amin from (2.11), t3 from (2.9); t0 = 0, v0 = x0 = 0 as in the notes. */
 export function mechProfile(amax, t1, t2, xsoll) {
   const amin = -(amax ** 2) * t1 ** 2 / (amax * t1 * (t1 - 2 * t2) + 2 * xsoll);
   const t3 = t2 - amax * t1 / amin;
@@ -82,7 +82,7 @@ export function mechCentral({ m, c, s0 = 0, x0, y0, vx0, vy0, T, n = 1000 }) {
 }
 
 /** Example 2.20, ball on a beam: state [φ1, φ̇1, r, ṙ], torque τ on the beam. The two equations (2.214) are linear
- *  in the accelerations; they are solved here as a 2 × 2 system. Θ_K = 2/5 mK rK² by (2.207). */
+ *  in the accelerations; they are solved here as a 2 × 2 system. θK,zz = 2/5 mK rK² by (2.207). */
 export function ballBeamRhs({ mK, rK, thB, g = 9.81 }, tau) {
   const thK = 0.4 * mK * rK ** 2;
   return ([p, w, r, v]) => {

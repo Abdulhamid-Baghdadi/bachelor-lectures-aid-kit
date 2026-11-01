@@ -10,7 +10,7 @@ const deg = r => r * 180 / Math.PI;
 /** State model (1.8), (1.9) with x = [uC, iL]: ẋ = Ax + bu, y = cᵀx. */
 export const rlcModel = (R, L, C) => ({ A: [[0, 1 / C], [-1 / L, -R / L]], b: [0, 1 / L], c: [0, R] });
 
-/** δ = R/(2L) and ω = √(1/(CL) − δ²) of (1.11); ω is NaN when (1.12) fails (no oscillation). */
+/** τ = R/(2L) and ω = √(1/(CL) − τ²) of (1.11); ω is NaN when (1.12) fails (no oscillation). */
 export const rlcRates = (R, L, C) => ({ delta: R / (2 * L), omega: Math.sqrt(1 / (C * L) - (R / (2 * L)) ** 2) });
 
 /** The free response (1.10) for u = 0 from uC,0 and iL,0, valid while (1.12) holds. */
@@ -87,13 +87,13 @@ export function bodeAsymptote({ V, r = 0, z1 = [], p1 = [], z2 = [], p2 = [] }, 
     + z2.reduce((s, k) => s + 2 * up(k), 0) - p2.reduce((s, k) => s + 2 * up(k), 0);
 }
 
-/** The Nyquist locus (Ortskurve) G(jω) for ω from w0 to w1, both branches: { re, im } for ω > 0 and its mirror. */
+/** The Nyquist locus (Ortskurve) G(Iω) for ω from w0 to w1, both branches: { re, im } for ω > 0 and its mirror. */
 export function nyquistLocus(G, w0, w1, n = 400) {
   const pts = bode(G, Array.from({ length: n }, (_, k) => w0 * (w1 / w0) ** (k / (n - 1))));
   return { re: pts.map(p => p.re), im: pts.map(p => p.im) };
 }
 
-/** The first ω in [w0, w1] where G(jω) crosses the real axis (Im G = 0), by bisection on a log grid. */
+/** The first ω in [w0, w1] where G(Iω) crosses the real axis (Im G = 0), by bisection on a log grid. */
 export function realAxisCrossing(G, w0, w1) {
   const im = w => freq(G, w)[1];
   const ws = Array.from({ length: 400 }, (_, k) => w0 * (w1 / w0) ** (k / 399));
@@ -117,7 +117,7 @@ export function pt2Step(V, T, xi, t) {
   const r = Math.sqrt(1 - xi * xi), w = r * t / T;
   return V * (1 - (xi / r * Math.sin(w) + Math.cos(w)) * Math.exp(-xi * t / T));
 }
-/** The poles of (3.137): s = (−ξ ± j√(1 − ξ²))/T for ξ < 1. */
+/** The poles of (3.137): s = (−ξ ± I√(1 − ξ²))/T for ξ < 1. */
 export const pt2Poles = (T, xi) => roots(pt2(1, T, xi).den);
 /** The peak of (3.138): its first maximum, at ωd t = π, is V(1 + e^(−πξ/√(1 − ξ²))) (derived from (3.138)). */
 export const pt2Peak = (V, xi) => V * (1 + Math.exp(-Math.PI * xi / Math.sqrt(1 - xi * xi)));
@@ -136,15 +136,15 @@ export function transferElement(kind, { VP = 1, VI = 1, VD = 1, TI = 1, TD = 1, 
     default: throw new Error(`No element "${kind}"; there are P, I, PI, D, DT1, PD, lead and PID.`);
   }
 }
-/** The lead element's largest phase lift (3.155), (3.156): at ωmax = 1/(T√α), φmax = arctan(1/√α) − arctan(√α). */
+/** The lead element's largest phase lift (3.155), (3.156): at ωmax = 1/(√η T), φmax = arctan(1/√η) − arctan(√η), with η = alpha. */
 export const leadMax = (T, alpha) => ({ w: 1 / (T * Math.sqrt(alpha)), phi: deg(Math.atan(1 / Math.sqrt(alpha)) - Math.atan(Math.sqrt(alpha))) });
 
-/** The dead-time element (3.159), G(jω) = e^(−jωTt): magnitude 1, phase −ωTt in degrees. */
+/** The dead-time element (3.159), G(Iω) = e^(−IωTt): magnitude 1, phase −ωTt in degrees. */
 export const deadTimePhase = (Tt, w) => -deg(w * Tt);
 
 // ---- 3.10 Pole-zero diagram ------------------------------------------------------------------------------------------
 
-/** Damping ξ and time constant T of a pole pair σ ± jω, by (3.166) and (3.167). */
+/** Damping ξ and time constant T of a pole pair α ± Iβ, by (3.166) and (3.167). */
 export const pairDamping = (sigma, omega) => ({ xi: -sigma / Math.hypot(sigma, omega), T: 1 / Math.hypot(sigma, omega) });
 /** BIBO stable (Satz 3.8) when every pole has a negative real part. */
 export const biboStable = poles => poles.every(([re]) => re < 0);

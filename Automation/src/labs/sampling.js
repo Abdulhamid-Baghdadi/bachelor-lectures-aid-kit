@@ -6,7 +6,7 @@ import { lineChart } from "../../../kit/ui/chart.js";
 import * as a from "../../../kit/ui/art.js";
 
 const TE = 12;
-const z = ([re, im]) => im ? `${re.toFixed(3)} ± ${Math.abs(im).toFixed(3)}j` : re.toFixed(3);
+const z = ([re, im]) => im ? `${re.toFixed(3)} ± ${Math.abs(im).toFixed(3)}I` : re.toFixed(3);
 
 export default {
   id: "sampling",

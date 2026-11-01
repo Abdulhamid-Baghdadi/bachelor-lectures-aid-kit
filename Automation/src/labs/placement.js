@@ -26,7 +26,7 @@ export default {
         marks: run.y.map((v, i) => ({ x: i * Ta, y: v, shape: "dot" })), xMin: 0, xMax: TE, yMin: 0, yMax: 1.6,
         xLabel: "Time t [s]", yLabel: "Output y [1]", label: "Output of the sampled double integrator under state feedback for a step reference" }));
       gain.set(`k = (${k.map(v => v.toFixed(3)).join(", ")}), g = ${g.toFixed(3)}`);
-      zp.set(poles.map(p => Array.isArray(p) ? `${p[0].toFixed(3)}${p[1] ? ` ${p[1] < 0 ? "−" : "+"} ${Math.abs(p[1]).toFixed(3)}j` : ""}` : p.toFixed(1)).join(", "),
+      zp.set(poles.map(p => Array.isArray(p) ? `${p[0].toFixed(3)}${p[1] ? ` ${p[1] < 0 ? "−" : "+"} ${Math.abs(p[1]).toFixed(3)}I` : ""}` : p.toFixed(1)).join(", "),
         "", mode === "dead" ? "both at z = 0: settled after 2 steps" : "z = e^{sTa} of the chosen s-plane pair");
       const um = Math.max(...run.u.map(Math.abs));
       umax.set(um.toFixed(2), um > 10 ? "warn" : "", mode === "dead" ? "the price of dead-beat grows as 1/Ta²" : "");

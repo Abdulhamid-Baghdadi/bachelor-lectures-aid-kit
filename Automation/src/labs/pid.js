@@ -30,8 +30,8 @@ export default {
       } else {
         const B = bode(G, WS);
         chartBox.replaceChildren(lineChart({ label: `Bode diagram of the ${kind} element`,
-          lines: show === "mag" ? [{ x: LX, y: B.map(p => p.db), name: "|G(jω)|" }] : [{ x: LX, y: B.map(p => p.phase), name: "arg G(jω)" }],
-          xLabel: "Angular frequency ω [rad/s]", yLabel: show === "mag" ? "Magnitude |G(jω)| [dB]" : "Phase arg G(jω) [°]", xFormat: tick, yFormat: v => v.toFixed(0) }));
+          lines: show === "mag" ? [{ x: LX, y: B.map(p => p.db), name: "|G(Iω)|" }] : [{ x: LX, y: B.map(p => p.phase), name: "arg G(Iω)" }],
+          xLabel: "Angular frequency ω [rad/s]", yLabel: show === "mag" ? "Magnitude |G(Iω)| [dB]" : "Phase arg G(Iω) [°]", xFormat: tick, yFormat: v => v.toFixed(0) }));
       }
       const fmt = p => p.map(c => Number(c.toPrecision(3))).join(", ");
       rNote.set(`num [${fmt(G.num)}], den [${fmt(G.den)}]`, "", "coefficients of s from the highest power down");
@@ -43,9 +43,9 @@ export default {
       choice("Show", [["step", "Step response"], ["mag", "Magnitude"], ["phase", "Phase"]], show, v => { show = v; update(); }),
       slider({ label: "Gain VP, VI, VD or V", unit: "", min: 0.5, max: 10, value: gain, step: 0.5, format: v => v.toFixed(1), onInput: v => { gain = v; update(); } }),
       slider({ label: "Time constant TI, TD or T", unit: "s", min: 0.1, max: 2, value: T1, step: 0.05, onInput: v => { T1 = v; update(); } }),
-      slider({ label: "Lead ratio α", unit: "", min: 0.02, max: 0.9, value: alpha, step: 0.01, format: v => v.toFixed(2), onInput: v => { alpha = v; update(); } }),
+      slider({ label: "Lead ratio η", unit: "", min: 0.02, max: 0.9, value: alpha, step: 0.01, format: v => v.toFixed(2), onInput: v => { alpha = v; update(); } }),
       rNote.el, rLead.el,
-      h("p", { class: "hint" }, "The I part keeps rising for as long as the input lasts and adds −90° of phase; the D part jumps at the start and adds +90°. PI starts at VI·TI and climbs with slope VI. The lead element lifts the phase most at ωmax = 1/(T√α). TR is 0.1·T for D-T1 and PID."))));
+      h("p", { class: "hint" }, "The I part keeps rising for as long as the input lasts and adds −90° of phase; the D part jumps at the start and adds +90°. PI starts at VI·TI and climbs with slope VI. The lead element lifts the phase most at ωmax = 1/(√η T). TR is 0.1·T for D-T1 and PID."))));
     update();
   },
 };

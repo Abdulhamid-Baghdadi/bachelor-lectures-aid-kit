@@ -21,8 +21,8 @@ export default {
       const R = { num: [w0 * w0], den: [1, 2 * XI * w0, w0 * w0] }, Rz = loopTustin(R, Ta), wN = Math.PI / Ta;
       const ws = logspace(0.1, Math.min(1000, 0.999 * wN), 500).filter(w => w < wN);
       const db = g => 20 * Math.log10(cAbs(g));
-      chart.replaceChildren(lineChart({ lines: [{ x: ws.map(Math.log10), y: ws.map(w => db(freq(R, w))), name: "continuous R(jω)", cls: "faint" },
-        { x: ws.map(Math.log10), y: ws.map(w => db(loopFreqZ(Rz, w, Ta))), name: "Tustin R(e^{jωTa})" }],
+      chart.replaceChildren(lineChart({ lines: [{ x: ws.map(Math.log10), y: ws.map(w => db(freq(R, w))), name: "continuous R(Iω)", cls: "faint" },
+        { x: ws.map(Math.log10), y: ws.map(w => db(loopFreqZ(Rz, w, Ta))), name: "Tustin R(e^{IωTa})" }],
         yMin: -40, yMax: 20, xFormat: v => `10^${v.toFixed(1)}`, xLabel: "Frequency log₁₀ ω [rad/s]", yLabel: "Magnitude [dB]",
         label: "Magnitude of the continuous filter and of its Tustin discretisation up to half the sampling frequency" }));
       const wp = loopUnwarp(w0, Ta);

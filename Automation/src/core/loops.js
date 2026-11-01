@@ -44,8 +44,8 @@ export function loopRouthKmax({ num, den, Kmax = 1e4 }) {
 
 // --- 4.4.3 margins read off the open loop ---
 
-/** The crossover frequency ωC (|L| = 1), the phase margin Φ = arg L(jωC) + π (4.55), the phase crossover ω180 and the
- *  gain margin 1/|L(jω180)|, from the unwrapped Bode data. NaN where the curve does not cross. */
+/** The crossover frequency ωC (|L| = 1), the phase margin Φ = arg L(IωC) + π (4.55), the phase crossover ω180 and the
+ *  gain margin 1/|L(Iω180)|, from the unwrapped Bode data. NaN where the curve does not cross. */
 export function loopMargins(L, w0 = 1e-3, w1 = 1e3, n = 3000) {
   const B = bode(L, logspace(w0, w1, n));
   const cross = (f, level) => {
@@ -69,7 +69,7 @@ export function loopMargins(L, w0 = 1e-3, w1 = 1e3, n = 3000) {
 // --- 5.1 PI design by loop shaping ---
 
 /** The PI controller R(s) = VI(1 + sTI)/s (5.14) for a crossover ωC and phase margin Φ in degrees: the zero lifts the
- *  phase of L1 = G/s (5.15) by the missing angle (5.16), then VI puts |L(jωC)| = 1 (5.17). */
+ *  phase of L1 = G/s (5.15) by the missing angle (5.16), then VI puts |L(IωC)| = 1 (5.17). */
 export function loopPiShape(G, wc, phi) {
   const L1 = { num: G.num, den: polyMul(G.den, [1, 0]) };
   const argL1 = bode(L1, [...logspace(wc * 1e-3, wc, 400)]).at(-1).phase;
@@ -123,7 +123,7 @@ export function loopTustin(G, Ta) {
   }, [0]);
   return { num: map(G.num), den: map(G.den) };
 }
-/** The discrete frequency response G(e^{jωTa}). */
+/** The discrete frequency response G(e^{IωTa}). */
 export const loopFreqZ = (Gz, w, Ta) => { const z = [Math.cos(w * Ta), Math.sin(w * Ta)]; return cDiv(polyval(Gz.num, z), polyval(Gz.den, z)); };
 
 // --- 7.1 reachability ---
@@ -180,7 +180,7 @@ export function loopRun({ Phi, Gamma, c, k, g = 0, kh = null, x0, xh0 = x0, r = 
   }
   return out;
 }
-/** z-poles of a pair s = −ξω0 ± jω0√(1 − ξ²) sampled with Ta (Satz 6.3). */
+/** z-poles of a pair s = −ξω0 ± Iω0√(1 − ξ²) sampled with Ta (Satz 6.3). */
 export function loopPairZ(w0, xi, Ta) {
   const re = -xi * w0, im = w0 * Math.sqrt(Math.max(0, 1 - xi * xi));
   return [cExp([re * Ta, im * Ta]), cExp([re * Ta, -im * Ta])];

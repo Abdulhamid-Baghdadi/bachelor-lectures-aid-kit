@@ -7,7 +7,7 @@ import * as a from "../../../kit/ui/art.js";
 
 // Example 3.3 of the notes first; the others are example matrices for each kind of rest point.
 const PRESETS = { ex33: [[1.4, -1.2], [-1.2, -0.4]], node: [[-1, 0.5], [0, -2]], focus: [[-0.3, 1], [-1, -0.3]], centre: [[0, 1], [-1, 0]] };
-const fmt = ([re, im]) => im === 0 ? re.toFixed(2) : `${re.toFixed(2)} ${im < 0 ? "−" : "+"} j${Math.abs(im).toFixed(2)}`;
+const fmt = ([re, im]) => im === 0 ? re.toFixed(2) : `${re.toFixed(2)} ${im < 0 ? "−" : "+"} I${Math.abs(im).toFixed(2)}`;
 
 export default {
   id: "phase",
@@ -36,7 +36,7 @@ export default {
       choice("Start from", [["ex33", "Example 3.3"], ["node", "Node"], ["focus", "Focus"], ["centre", "Centre"]], "ex33",
         v => { M = PRESETS[v].map(r => [...r]); sliders.forEach((s, k) => s.set(M[k >> 1][k & 1])); update(); }),
       ...sliders, rEig.el, rKind.el,
-      h("p", { class: "hint" }, "Dots mark the starts, ○ the rest point. Real eigenvalues give straight runs along the eigenvectors (a node, or a saddle when their signs differ); complex ones σ ± jω make the states turn, inwards when σ < 0. In Example 3.3 a start on the eigenvector of λ1 = −1 would run straight in; every other start leaves along λ2 = 2."))));
+      h("p", { class: "hint" }, "Dots mark the starts, ○ the rest point. Real eigenvalues give straight runs along the eigenvectors (a node, or a saddle when their signs differ); complex ones α ± Iβ make the states turn, inwards when α < 0. In Example 3.3 a start on the eigenvector of λ1 = −1 would run straight in; every other start leaves along λ2 = 2."))));
     update();
   },
 };

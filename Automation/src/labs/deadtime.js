@@ -1,5 +1,5 @@
 // The dead-time element of section 3.8.10: y(t) = u(t − Tt) (3.158), G(s) = e^(−sTt) (3.159). On a sine input the
-// output keeps its amplitude, |G(jω)| = 1, and lags by ωTt, a phase that grows without bound with the frequency.
+// output keeps its amplitude, |G(Iω)| = 1, and lags by ωTt, a phase that grows without bound with the frequency.
 import { deadTimePhase } from "../core/index.js";
 import { h, slider, readout } from "../../../kit/ui/kit.js";
 import { lineChart } from "../../../kit/ui/chart.js";
@@ -13,7 +13,7 @@ export default {
   mount(root) {
     let Tt = 0.2, w = 5;
     const chartBox = h("div", {});
-    const rPh = readout("Phase of G(jω) = e^(−jωTt)"), rMag = readout("Magnitude |G(jω)|");
+    const rPh = readout("Phase of G(Iω) = e^(−IωTt)"), rMag = readout("Magnitude |G(Iω)|");
     const update = () => {
       const tEnd = Math.max(4 * Math.PI / w, 2 * Tt), ts = Array.from({ length: 401 }, (_, k) => k * tEnd / 400);
       const u = t => (t >= 0 ? Math.sin(w * t) : 0);

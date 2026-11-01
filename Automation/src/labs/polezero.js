@@ -1,5 +1,5 @@
 // The pole-zero diagram of section 3.10 with BIBO stability (Satz 3.8): G(s) = (1 − s/z)·(σ² + ω²)/((s − σ)² + ω²), a
-// pole pair σ ± jω and one real zero z, scaled to a static gain of 1. Damping and time constant of the pair by
+// pole pair α ± Iβ and one real zero z, scaled to a static gain of 1. Damping and time constant of the pair by
 // (3.166), (3.167); the step response shows what the positions mean.
 import { step, roots, pairDamping, biboStable } from "../core/index.js";
 import { h, slider, readout } from "../../../kit/ui/kit.js";
@@ -29,11 +29,11 @@ export default {
       rBibo.set(stable ? "Yes" : "No", stable ? "" : "danger", stable ? "every pole in the left half plane" : "a pole on or right of the imaginary axis: the output grows");
     };
     root.append(h("div", { class: "stage" }, h("div", {}, pzBox, stepBox), h("div", { class: "controls" },
-      slider({ label: "Pole real part σ", unit: "1/s", min: -5, max: 1, value: sigma, step: 0.1, format: v => v.toFixed(1), onInput: v => { sigma = v; update(); } }),
-      slider({ label: "Pole imaginary part ω", unit: "1/s", min: 0, max: 3.5, value: omega, step: 0.1, format: v => v.toFixed(1), onInput: v => { omega = v; update(); } }),
+      slider({ label: "Pole real part α", unit: "1/s", min: -5, max: 1, value: sigma, step: 0.1, format: v => v.toFixed(1), onInput: v => { sigma = v; update(); } }),
+      slider({ label: "Pole imaginary part β", unit: "1/s", min: 0, max: 3.5, value: omega, step: 0.1, format: v => v.toFixed(1), onInput: v => { omega = v; update(); } }),
       slider({ label: "Zero z", unit: "1/s", min: -6, max: 2, value: z, step: 0.1, format: v => v.toFixed(1), onInput: v => { z = v || 0.1; update(); } }),
       rXi.el, rBibo.el,
-      h("p", { class: "hint" }, "Poles further left settle faster; further from the real axis they ring faster. Push σ past zero and the response runs away. Move the zero right of the origin and the step first dips the wrong way. The default pair −2 ± j1.5 is the one of the notes' (3.163): ξ = 0.8, T = 0.4 s."))));
+      h("p", { class: "hint" }, "Poles further left settle faster; further from the real axis they ring faster. Push α past zero and the response runs away. Move the zero right of the origin and the step first dips the wrong way. The default pair −2 ± I1.5 is the one of the notes' (3.163): ξ = 0.8, T = 0.4 s."))));
     update();
   },
 };

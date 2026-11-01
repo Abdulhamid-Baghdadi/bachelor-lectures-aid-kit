@@ -1,5 +1,5 @@
-// The Nyquist criterion (Kugi 2015, 4.4.3): the locus of the open loop L(jω) against the point −1 decides the closed
-// loop's stability (4.45); for L of the form (4.54) the phase margin Φ = arg L(jωC) + π (4.55) must be positive.
+// The Nyquist criterion (Kugi 2015, 4.4.3): the locus of the open loop L(Iω) against the point −1 decides the closed
+// loop's stability (4.45); for L of the form (4.54) the phase margin Φ = arg L(IωC) + π (4.55) must be positive.
 import { bode, logspace, closeLoop, step, loopMargins, loopRouthKmax } from "../core/index.js";
 import { h, slider, readout } from "../../../kit/ui/kit.js";
 import { lineChart } from "../../../kit/ui/chart.js";
@@ -20,10 +20,10 @@ export default {
     const update = () => {
       const L = { num: [K], den: DEN }, B = bode(L, logspace(0.05, 50, 500)), m = loopMargins(L);
       const ring = Array.from({ length: 73 }, (_, k) => k * Math.PI / 36);
-      locus.replaceChildren(lineChart({ lines: [{ x: B.map(p => p.re), y: B.map(p => p.im), name: "L(jω), ω > 0" },
+      locus.replaceChildren(lineChart({ lines: [{ x: B.map(p => p.re), y: B.map(p => p.im), name: "L(Iω), ω > 0" },
         { x: ring.map(Math.cos), y: ring.map(Math.sin), name: "unit circle", cls: "faint" }],
         marks: [{ x: -1, y: 0, shape: "dot", name: "−1", cls: "second" }],
-        xMin: -3, xMax: 1, yMin: -3, yMax: 1, xLabel: "Real part Re L(jω) [1]", yLabel: "Imaginary part Im L(jω) [1]", xFormat: v => v.toFixed(1),
+        xMin: -3, xMax: 1, yMin: -3, yMax: 1, xLabel: "Real part Re L(Iω) [1]", yLabel: "Imaginary part Im L(Iω) [1]", xFormat: v => v.toFixed(1),
         label: "Nyquist locus of the open loop with the critical point minus one" }));
       const r = step(closeLoop(L), 40, 400);
       stepChart.replaceChildren(lineChart({ lines: [{ x: r.t, y: r.y, name: "closed-loop step h(t)" }], yMin: -0.5, yMax: 2,

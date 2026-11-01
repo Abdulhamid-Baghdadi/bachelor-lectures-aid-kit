@@ -1,5 +1,5 @@
 // The series resonant circuit of section 1.2: the state model (1.8) with x = [uC, iL], driven by a step of the input
-// voltage; while (1.12) holds the states ring at ω = √(1/(CL) − δ²) (1.11) as they settle.
+// voltage; while (1.12) holds the states ring at ω = √(1/(CL) − τ²) (1.11) as they settle.
 import { rlcStep, rlcRates, si } from "../core/index.js";
 import { h, slider, readout } from "../../../kit/ui/kit.js";
 import { lineChart } from "../../../kit/ui/chart.js";
@@ -14,14 +14,14 @@ export default {
   mount(root) {
     let R = 1, L = 1, C = 1, U = 1;
     const chartBox = h("div", {});
-    const rRates = readout("Decay rate δ = R/(2L) and ringing ω (1.11)"), rEnd = readout("Final state (uC, iL)");
+    const rRates = readout("Decay rate τ = R/(2L) and ringing ω (1.11)"), rEnd = readout("Final state (uC, iL)");
     const update = () => {
       const T = Math.min(12 * Math.sqrt(L * C) + 6 * L / R, 60), run = rlcStep(R, L, C, U, T);
       chartBox.replaceChildren(lineChart({ label: "Capacitor voltage and coil current after a step of the input voltage",
         lines: [{ x: run.t, y: run.x.map(x => x[0]), name: "uC(t) [V]" }, { x: run.t, y: run.x.map(x => x[1]), name: "iL(t) [A]", cls: "second" }],
         xLabel: "Time t [s]", yLabel: "State uC [V], iL [A]" }));
       const { delta, omega } = rlcRates(R, L, C);
-      rRates.set(`δ = ${si(delta, "1/s")}`, "", Number.isFinite(omega) ? `ω = ${si(omega, "rad/s")}: it rings` : "1/(CL) ≤ δ²: no ringing, (1.12) fails");
+      rRates.set(`τ = ${si(delta, "1/s")}`, "", Number.isFinite(omega) ? `ω = ${si(omega, "rad/s")}: it rings` : "1/(CL) ≤ τ²: no ringing, (1.12) fails");
       const end = run.x.at(-1);
       rEnd.set(`${si(end[0], "V")}, ${si(end[1], "A")}`, "", "the capacitor takes the whole input voltage; no current flows");
     };

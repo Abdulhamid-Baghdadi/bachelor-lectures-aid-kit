@@ -177,6 +177,7 @@
       "title": "Series resonant circuit",
       "idea": "A circuit's state is what its energy stores hold: the capacitor's voltage and the coil's current. Two states, two first-order equations.",
       "law": "d/dt [uC, iL] = [[0, 1/C], [−1/L, −R/L]] [uC, iL] + [0, 1/L] u    y = R iL",
+      "lawTex": "\\frac{\\mathrm{d}}{\\mathrm{d}t}\\begin{bmatrix} u_\\mathrm{C} \\\\ i_\\mathrm{L} \\end{bmatrix} = \\begin{bmatrix} 0 & \\frac{1}{C} \\\\ -\\frac{1}{L} & -\\frac{R}{L} \\end{bmatrix} \\begin{bmatrix} u_\\mathrm{C} \\\\ i_\\mathrm{L} \\end{bmatrix} + \\begin{bmatrix} 0 \\\\ \\frac{1}{L} \\end{bmatrix} u \\qquad y = R\\, i_\\mathrm{L}",
       "lecture": "Kugi (2015), section 1.2 (pp. 4–6); eq. (1.8)",
       "practice": [
         {
@@ -196,31 +197,37 @@
       "equations": [
         {
           "eq": "−u + uC + uL + y = 0,   iC − iL = 0,   iL − iR = 0",
+          "tex": "-u + u_\\mathrm{C} + u_\\mathrm{L} + y = 0, \\qquad i_\\mathrm{C} - i_\\mathrm{L} = 0, \\qquad i_\\mathrm{L} - i_\\mathrm{R} = 0",
           "note": "Kirchhoff's mesh and node equations",
           "ref": "(1.6)"
         },
         {
           "eq": "C duC/dt = iC,   L diL/dt = uL,   R iR = y",
+          "tex": "C \\frac{\\mathrm{d}}{\\mathrm{d}t} u_\\mathrm{C} = i_\\mathrm{C}, \\qquad L \\frac{\\mathrm{d}}{\\mathrm{d}t} i_\\mathrm{L} = u_\\mathrm{L}, \\qquad R\\, i_\\mathrm{R} = y",
           "note": "the components' equations",
           "ref": "(1.7)"
         },
         {
           "eq": "d/dt [uC, iL] = [[0, 1/C], [−1/L, −R/L]] [uC, iL] + [0, 1/L] u",
+          "tex": "\\frac{\\mathrm{d}}{\\mathrm{d}t}\\begin{bmatrix} u_\\mathrm{C} \\\\ i_\\mathrm{L} \\end{bmatrix} = \\begin{bmatrix} 0 & \\frac{1}{C} \\\\ -\\frac{1}{L} & -\\frac{R}{L} \\end{bmatrix} \\begin{bmatrix} u_\\mathrm{C} \\\\ i_\\mathrm{L} \\end{bmatrix} + \\begin{bmatrix} 0 \\\\ \\frac{1}{L} \\end{bmatrix} u",
           "note": "state differential equations",
           "ref": "(1.8)"
         },
         {
           "eq": "y = [0, R] [uC, iL]",
+          "tex": "y = \\begin{bmatrix} 0 & R \\end{bmatrix} \\begin{bmatrix} u_\\mathrm{C} \\\\ i_\\mathrm{L} \\end{bmatrix}",
           "note": "output equation",
           "ref": "(1.9)"
         },
         {
-          "eq": "δ = R/(2L),   ω = √(1/(CL) − (R/(2L))²)",
-          "note": "decay rate and ringing frequency of the free response (1.10)",
+          "eq": "τ = R/(2L),   ω = √(1/(CL) − (R/(2L))²)",
+          "tex": "\\tau = \\frac{R}{2L}, \\qquad \\omega = \\sqrt{\\frac{1}{CL} - \\Big(\\frac{R}{2L}\\Big)^2}",
+          "note": "decay rate τ and ringing frequency of the free response (1.10)",
           "ref": "(1.11)"
         },
         {
           "eq": "1/√(CL) > R/(2L)",
+          "tex": "\\frac{1}{\\sqrt{CL}} > \\frac{R}{2L}",
           "note": "the condition for ringing",
           "ref": "(1.12)"
         }
@@ -231,6 +238,7 @@
       "title": "DC motor",
       "idea": "The armature voltage sets the motor's speed and the load sets its current: at rest the motor's torque balances the load.",
       "law": "LA diA/dt = uA − RA iA − K ω    J dω/dt = K iA − m g r",
+      "lawTex": "L_\\mathrm{A} \\frac{\\mathrm{d}i_\\mathrm{A}}{\\mathrm{d}t} = u_\\mathrm{A} - R_\\mathrm{A} i_\\mathrm{A} - K\\omega \\qquad J \\frac{\\mathrm{d}\\omega}{\\mathrm{d}t} = K i_\\mathrm{A} - mgr",
       "lecture": "Kugi (2015), section 1.4 (pp. 9–11); eq. (1.25)",
       "practice": [
         {
@@ -251,32 +259,38 @@
       "equations": [
         {
           "eq": "−uA + RA iA + uLA + uind = 0",
+          "tex": "-u_\\mathrm{A} + R_\\mathrm{A} i_\\mathrm{A} + u_{L\\mathrm{A}} + u_\\mathrm{ind} = 0",
           "note": "mesh of the armature circuit",
           "ref": "(1.17a)"
         },
         {
-          "eq": "uind = k ΨF(iF) ω",
+          "eq": "uind = k ψF(iF) ω",
+          "tex": "u_\\mathrm{ind} = k\\,\\psi_\\mathrm{F}(i_\\mathrm{F})\\,\\omega",
           "note": "induced voltage",
           "ref": "(1.19)"
         },
         {
-          "eq": "Mel = k ΨF(iF) iA",
+          "eq": "Mel = k ψF(iF) iA",
+          "tex": "M_\\mathrm{el} = k\\,\\psi_\\mathrm{F}(i_\\mathrm{F})\\, i_\\mathrm{A}",
           "note": "electrical torque",
           "ref": "(1.22)"
         },
         {
-          "eq": "diA/dt = (uA − RA iA − k ΨF(iF) ω)/LA",
+          "eq": "diA/dt = (uA − RA iA − k ψF(iF) ω)/LA",
+          "tex": "\\frac{\\mathrm{d}}{\\mathrm{d}t} i_\\mathrm{A} = \\frac{1}{L_\\mathrm{A}} \\big(u_\\mathrm{A} - R_\\mathrm{A} i_\\mathrm{A} - k\\,\\psi_\\mathrm{F}(i_\\mathrm{F})\\,\\omega\\big)",
           "note": "armature current",
           "ref": "(1.25a)"
         },
         {
-          "eq": "dω/dt = (k ΨF(iF) iA − m g r)/(θG + θT + m r²)",
+          "eq": "dω/dt = (k ψF(iF) iA − m g r)/(ΘG + ΘT + m r²)",
+          "tex": "\\frac{\\mathrm{d}}{\\mathrm{d}t} \\omega = \\frac{1}{\\Theta_\\mathrm{G} + \\Theta_\\mathrm{T} + m r^2} \\big(k\\,\\psi_\\mathrm{F}(i_\\mathrm{F})\\, i_\\mathrm{A} - mgr\\big)",
           "note": "speed of the drum with the load on its cable",
           "ref": "(1.25d)"
         },
         {
           "eq": "iA,R = m g r/K,   ωR = (uA − RA iA,R)/K",
-          "note": "rest state with K = k ΨF constant",
+          "tex": "i_{\\mathrm{A},R} = \\frac{mgr}{K}, \\qquad \\omega_R = \\frac{u_\\mathrm{A} - R_\\mathrm{A} i_{\\mathrm{A},R}}{K}",
+          "note": "rest state with K = k ψF constant (derived from (1.25a), (1.25d))",
           "ref": ""
         }
       ]
@@ -286,6 +300,7 @@
       "title": "Two tanks and linearisation",
       "idea": "Near a rest state (Ruhelage) a nonlinear system behaves like its linearisation; the further it strays, the worse the match.",
       "law": "A dh1/dt = q − a√(2g h1)    A dh2/dt = a√(2g h1) − a√(2g h2)    Δẋ = (∂f/∂x) Δx + (∂f/∂u) Δu",
+      "lawTex": "A \\frac{\\mathrm{d}h_1}{\\mathrm{d}t} = q - a\\sqrt{2g h_1} \\qquad A \\frac{\\mathrm{d}h_2}{\\mathrm{d}t} = a\\sqrt{2g h_1} - a\\sqrt{2g h_2} \\qquad \\Delta\\dot{\\mathbf{x}} = \\frac{\\partial \\mathbf{f}}{\\partial \\mathbf{x}} \\Delta\\mathbf{x} + \\frac{\\partial \\mathbf{f}}{\\partial \\mathbf{u}} \\Delta\\mathbf{u}",
       "lecture": "Kugi (2015), sections 1.5 and 2.5.2 (pp. 12–13, 32–35); eqs. (1.29), (2.53), (2.54)",
       "practice": [
         {
@@ -294,7 +309,7 @@
           "unit": "m",
           "compute": {
             "law": "sysTankRest",
-            "a": 5e-05,
+            "a": 0.00005,
             "qR": 0.0001,
             "g": 9.81
           },
@@ -305,36 +320,43 @@
       "equations": [
         {
           "eq": "A dh1/dt = q − q1,   A dh2/dt = q1 − q2",
+          "tex": "A \\frac{\\mathrm{d}}{\\mathrm{d}t} h_1 = q - q_1, \\qquad A \\frac{\\mathrm{d}}{\\mathrm{d}t} h_2 = q_1 - q_2",
           "note": "volume balances",
           "ref": "(1.27)"
         },
         {
           "eq": "q1 = a√(2g h1),   q2 = a√(2g h2)",
+          "tex": "q_1 = a\\sqrt{2g h_1}, \\qquad q_2 = a\\sqrt{2g h_2}",
           "note": "outflow through each outlet",
           "ref": "(1.28)"
         },
         {
           "eq": "A dh1/dt = −a√(2g h1) + q,   A dh2/dt = a√(2g)(√h1 − √h2)",
+          "tex": "A \\frac{\\mathrm{d}}{\\mathrm{d}t} h_1 = -a\\sqrt{2g}\\sqrt{h_1} + q, \\qquad A \\frac{\\mathrm{d}}{\\mathrm{d}t} h_2 = a\\sqrt{2g}\\big(\\sqrt{h_1} - \\sqrt{h_2}\\big)",
           "note": "state differential equations",
           "ref": "(1.29)"
         },
         {
           "eq": "f(xR, uR) = 0",
+          "tex": "\\mathbf{f}(\\mathbf{x}_R, \\mathbf{u}_R) = \\mathbf{0}",
           "note": "rest state (operating point)",
           "ref": "(2.49a)"
         },
         {
           "eq": "Δẋ = A Δx + B Δu,   Δy = C Δx + D Δu",
+          "tex": "\\Delta\\dot{\\mathbf{x}} = \\mathbf{A}\\Delta\\mathbf{x} + \\mathbf{B}\\Delta\\mathbf{u}, \\qquad \\Delta\\mathbf{y} = \\mathbf{C}\\Delta\\mathbf{x} + \\mathbf{D}\\Delta\\mathbf{u}",
           "note": "linearisation about the rest state",
           "ref": "(2.53)"
         },
         {
           "eq": "A = ∂f/∂x,   B = ∂f/∂u,   C = ∂h/∂x,   D = ∂h/∂u   at (xR, uR)",
+          "tex": "\\mathbf{A} = \\frac{\\partial}{\\partial \\mathbf{x}} \\mathbf{f}(\\mathbf{x}_R, \\mathbf{u}_R), \\quad \\mathbf{B} = \\frac{\\partial}{\\partial \\mathbf{u}} \\mathbf{f}(\\mathbf{x}_R, \\mathbf{u}_R), \\quad \\mathbf{C} = \\frac{\\partial}{\\partial \\mathbf{x}} \\mathbf{h}(\\mathbf{x}_R, \\mathbf{u}_R), \\quad \\mathbf{D} = \\frac{\\partial}{\\partial \\mathbf{u}} \\mathbf{h}(\\mathbf{x}_R, \\mathbf{u}_R)",
           "note": "the Jacobians",
           "ref": "(2.54)"
         },
         {
           "eq": "h1,R = h2,R = qR²/(2g a²),   A = (a²g/(A qR)) [[−1, 0], [1, −1]],   B = [1/A, 0]",
+          "tex": "h_{1,R} = h_{2,R} = \\frac{q_R^2}{2 g a^2}, \\qquad \\frac{\\mathrm{d}}{\\mathrm{d}t}\\begin{bmatrix} \\Delta h_1 \\\\ \\Delta h_2 \\end{bmatrix} = \\frac{a^2 g}{A q_R} \\begin{bmatrix} -1 & 0 \\\\ 1 & -1 \\end{bmatrix} \\begin{bmatrix} \\Delta h_1 \\\\ \\Delta h_2 \\end{bmatrix} + \\begin{bmatrix} \\frac{1}{A} \\\\ 0 \\end{bmatrix} \\Delta q",
           "note": "for the two tanks, Aufgabe 2.18",
           "ref": ""
         }
@@ -345,6 +367,7 @@
       "title": "Solution behaviour of ẋ = Ax",
       "idea": "The eigenvalues of A decide everything: real ones make nodes or saddles, complex ones make the states turn, and negative real parts bring them home.",
       "law": "x(t) = Φ(t) x0 = exp(At) x0",
+      "lawTex": "\\mathbf{x}(t) = \\boldsymbol{\\Phi}(t)\\,\\mathbf{x}_0 = \\exp(\\mathbf{A}t)\\,\\mathbf{x}_0",
       "lecture": "Kugi (2015), section 3.3 (pp. 51–53); eqs. (2.22), (3.45)",
       "practice": [
         {
@@ -371,31 +394,37 @@
       "equations": [
         {
           "eq": "Φ(t) = exp(At)",
+          "tex": "\\boldsymbol{\\Phi}(t) = \\exp(\\mathbf{A}t)",
           "note": "transition matrix of a time-invariant system",
           "ref": "(2.22)"
         },
         {
           "eq": "ẋ = Ax,   x(0) = x0",
+          "tex": "\\dot{\\mathbf{x}} = \\mathbf{A}\\mathbf{x}, \\qquad \\mathbf{x}(0) = \\mathbf{x}_0",
           "note": "the autonomous linear system",
           "ref": "(3.45)"
         },
         {
-          "eq": "t^k e^(λt),   t^k e^(σt) cos(ωt),   t^k e^(σt) sin(ωt)",
-          "note": "the functions every solution is built from (Satz 3.3)",
+          "eq": "t^k1 e^(λt),   t^k2 e^(αt) cos(βt),   t^k3 e^(αt) sin(βt)",
+          "tex": "t^{k_1} \\mathrm{e}^{\\lambda t}, \\qquad t^{k_2} \\mathrm{e}^{\\alpha t} \\cos(\\beta t), \\qquad t^{k_3} \\mathrm{e}^{\\alpha t} \\sin(\\beta t)",
+          "note": "the functions every solution is built from (Satz 3.3); λ real, α ± Iβ complex eigenvalues",
           "ref": "(3.46)"
         },
         {
           "eq": "lim x(t) = lim Φ(t) x0 = 0  ⇔  all Re λ < 0",
+          "tex": "\\lim_{t \\to \\infty} \\mathbf{x}(t) = \\lim_{t \\to \\infty} \\boldsymbol{\\Phi}(t)\\,\\mathbf{x}_0 = \\mathbf{0} \\;\\Leftrightarrow\\; \\operatorname{Re}(\\lambda_j) < 0 \\text{ for all } j",
           "note": "global asymptotic stability (Satz 3.4)",
           "ref": "(3.47)"
         },
         {
-          "eq": "x(t) = ξ0 exp(λ1 t) v1",
+          "eq": "x(t) = γ0 exp(λ1 t) v1",
+          "tex": "\\mathbf{x}(t) = \\gamma_0 \\exp(\\lambda_1 t)\\,\\mathbf{v}_1",
           "note": "a start on an eigenvector stays on it",
           "ref": "(3.54)"
         },
         {
           "eq": "ẋ = [[1.4, −1.2], [−1.2, −0.4]] x",
+          "tex": "\\dot{\\mathbf{x}} = \\mathbf{A}\\mathbf{x} = \\begin{bmatrix} 1.4 & -1.2 \\\\ -1.2 & -0.4 \\end{bmatrix} \\mathbf{x}",
           "note": "Example 3.3: λ1 = −1, λ2 = 2",
           "ref": "(3.55)"
         }
@@ -405,8 +434,9 @@
       "id": "nyquistplot",
       "title": "Nyquist locus",
       "idea": "The frequency response G(jω) is a point in the complex plane for each ω; together they draw a curve, the Nyquist locus (Ortskurve).",
-      "law": "ω ↦ (Re G(jω), Im G(jω))",
-      "lecture": "Kugi (2015), section 3.7.1 (pp. 71–73); eqs. (3.112), (3.114)",
+      "law": "ω ↦ (Re G(Iω), Im G(Iω))",
+      "lawTex": "\\omega \\mapsto \\big(\\operatorname{Re}(G(\\mathrm{I}\\omega)),\\, \\operatorname{Im}(G(\\mathrm{I}\\omega))\\big)",
+      "lecture": "Kugi (2015), section 3.7 and 3.7.1 (pp. 69–73); eqs. (3.112), (3.114)",
       "practice": [
         {
           "question": "The Nyquist locus of G(s) = (10s² + 15s + 10)/(s² + s + 3), the notes' (3.114), crosses the real axis at ω0 > 0. What is ω0?",
@@ -433,27 +463,32 @@
       ],
       "equations": [
         {
-          "eq": "y(t) = A0 |G(jω0)| sin(ω0 t + arg G(jω0))",
+          "eq": "y(t) = A0 |G(Iω0)| sin(ω0 t + arg G(Iω0))",
+          "tex": "y(t) = A_0 \\lvert G(\\mathrm{I}\\omega_0) \\rvert \\sin\\!\\big(\\omega_0 t + \\arg(G(\\mathrm{I}\\omega_0))\\big)",
           "note": "steady response to a sine input",
           "ref": "(3.103)"
         },
         {
           "eq": "G(s) = 1/(1 + sRC)",
+          "tex": "G(s) = \\frac{1}{1 + sRC}",
           "note": "the RC example",
           "ref": "(3.105)"
         },
         {
-          "eq": "G(jω) = 1/(1 + (ω/2)²) − j (ω/2)/(1 + (ω/2)²)",
+          "eq": "G(Iω) = 1/(1 + (ω/2)²) + I (−ω/2)/(1 + (ω/2)²)",
+          "tex": "G(\\mathrm{I}\\omega) = \\frac{1}{1 + \\big(\\frac{\\omega}{2}\\big)^2} + \\mathrm{I} \\frac{-\\frac{\\omega}{2}}{1 + \\big(\\frac{\\omega}{2}\\big)^2}",
           "note": "its real and imaginary parts",
           "ref": "(3.112)"
         },
         {
           "eq": "(Re G − ½)² + (Im G)² = ¼",
+          "tex": "\\Big(\\operatorname{Re}(G(\\mathrm{I}\\omega)) - \\frac{1}{2}\\Big)^2 + \\operatorname{Im}(G(\\mathrm{I}\\omega))^2 = \\frac{1}{4}",
           "note": "the locus is a circle",
           "ref": "(3.113)"
         },
         {
           "eq": "G(s) = (10s² + 15s + 10)/(s² + s + 3)",
+          "tex": "G(s) = \\frac{10s^2 + 15s + 10}{s^2 + s + 3}",
           "note": "the second example",
           "ref": "(3.114)"
         }
@@ -463,7 +498,8 @@
       "id": "bode",
       "title": "Bode diagram",
       "idea": "On logarithmic axes the parts of a transfer function add: each factor contributes straight asymptotes, and the sum is the whole.",
-      "law": "|G(jω)|dB = Σ |Gi(jω)|dB    arg G(jω) = Σ arg Gi(jω)",
+      "law": "|G(Iω)|dB = Σ |Gi(Iω)|dB    arg G(Iω) = Σ arg Gi(Iω)",
+      "lawTex": "\\lvert G(\\mathrm{I}\\omega) \\rvert_\\mathrm{dB} = \\sum_i \\lvert G_i(\\mathrm{I}\\omega) \\rvert_\\mathrm{dB} \\qquad \\arg(G(\\mathrm{I}\\omega)) = \\sum_i \\arg(G_i(\\mathrm{I}\\omega))",
       "lecture": "Kugi (2015), section 3.7.2 (pp. 73–79); eqs. (3.121), (3.128)",
       "practice": [
         {
@@ -507,32 +543,38 @@
       ],
       "equations": [
         {
-          "eq": "|G(jω)|dB = 20 log|z1(jω)| + 20 log|z2(jω)| − 20 log|n1(jω)| − 20 log|n2(jω)|",
+          "eq": "|G(Iω)|dB = 20 log|z1(Iω)| + 20 log|z2(Iω)| − 20 log|n1(Iω)| − 20 log|n2(Iω)|",
+          "tex": "\\lvert G(\\mathrm{I}\\omega) \\rvert_\\mathrm{dB} = 20\\log(\\lvert z_1(\\mathrm{I}\\omega) \\rvert) + 20\\log(\\lvert z_2(\\mathrm{I}\\omega) \\rvert) - 20\\log(\\lvert n_1(\\mathrm{I}\\omega) \\rvert) - 20\\log(\\lvert n_2(\\mathrm{I}\\omega) \\rvert)",
           "note": "magnitudes of a series connection add",
           "ref": "(3.117)"
         },
         {
           "eq": "G(s) = V z(s)/(s^r n(s)), with factors 1 + s/ωk and 1 + 2ξk s/ωk + s²/ωk²",
+          "tex": "G(s) = \\frac{V}{s^r} \\frac{z(s)}{n(s)}, \\quad \\text{factors } 1 + \\frac{s}{\\omega_k} \\text{ and } 1 + 2\\xi_k \\frac{s}{\\omega_k} + \\Big(\\frac{s}{\\omega_k}\\Big)^2",
           "note": "normalised form",
           "ref": "(3.119)"
         },
         {
-          "eq": "|(jω)^r|dB = 20 r log ω,   arg = 90° r",
+          "eq": "|(Iω)^r|dB = 20 r log ω,   arg = 90° r",
+          "tex": "\\lvert G_2 \\rvert_\\mathrm{dB} = 20 r \\log(\\omega), \\qquad \\arg(G_2) = 90^\\circ r",
           "note": "integrators and differentiators",
           "ref": "(3.123)"
         },
         {
-          "eq": "|1 + jω/ωk|dB ≈ 0 for ω ≪ ωk, 20 log(ω/ωk) for ω ≫ ωk",
+          "eq": "|1 + Iω/ωk|dB ≈ 0 for ω ≪ ωk, 20 log(ω/ωk) for ω ≫ ωk",
+          "tex": "\\lvert G_3 \\rvert_\\mathrm{dB} = 20\\log\\bigg(\\sqrt{1 + \\Big(\\frac{\\omega}{\\omega_k}\\Big)^2}\\bigg) \\approx \\begin{cases} 0 & \\text{for } \\lvert \\omega/\\omega_k \\rvert \\ll 1 \\\\ 20\\log\\big(\\lvert \\omega/\\omega_k \\rvert\\big) & \\text{for } \\lvert \\omega/\\omega_k \\rvert \\gg 1 \\end{cases}",
           "note": "first-order term",
           "ref": "(3.124)"
         },
         {
-          "eq": "|1 − (ω/ωk)² + j2ξk ω/ωk|dB ≈ 0 for ω ≪ ωk, 40 log(ω/ωk) for ω ≫ ωk",
+          "eq": "|1 − (ω/ωk)² + I2ξk ω/ωk|dB ≈ 0 for ω ≪ ωk, 40 log(ω/ωk) for ω ≫ ωk",
+          "tex": "\\lvert G_4 \\rvert_\\mathrm{dB} \\approx \\begin{cases} 0 & \\text{for } \\omega/\\omega_k \\ll 1 \\\\ 40\\log(\\omega/\\omega_k) & \\text{for } \\omega/\\omega_k \\gg 1 \\end{cases}",
           "note": "second-order term",
           "ref": "(3.125)"
         },
         {
           "eq": "G(s) = −10⁻²(s − 10)/(s(s² + 0.1s + 0.01))",
+          "tex": "G(s) = -10^{-2} \\frac{s - 10}{s(s^2 + 0.1s + 0.01)}",
           "note": "the composite example",
           "ref": "(3.128)"
         }
@@ -543,6 +585,7 @@
       "title": "First-order lag",
       "idea": "A first-order lag (P-T1 element) follows a step along an exponential: V says where it ends, T how fast it gets there.",
       "law": "G(s) = V/(1 + sT)    h(t) = V(1 − e^(−t/T))",
+      "lawTex": "G(s) = \\frac{V}{1 + sT} \\qquad h(t) = V\\big(1 - \\mathrm{e}^{-t/T}\\big)",
       "lecture": "Kugi (2015), section 3.8.1 (pp. 80–81); eqs. (3.133), (3.134)",
       "practice": [
         {
@@ -574,21 +617,25 @@
       "equations": [
         {
           "eq": "G(s) = V/(1 + sT)",
+          "tex": "G(s) = \\frac{V}{1 + sT}",
           "note": "gain V, time constant T > 0",
           "ref": "(3.133)"
         },
         {
           "eq": "h(t) = V(1 − e^(−t/T)) σ(t)",
+          "tex": "h(t) = \\mathcal{L}^{-1}\\Big\\{G(s)\\frac{1}{s}\\Big\\} = V\\big(1 - \\mathrm{e}^{-t/T}\\big)\\,\\sigma(t)",
           "note": "step response",
           "ref": "(3.134)"
         },
         {
           "eq": "g(t) = dh/dt = (V/T) e^(−t/T) σ(t)",
+          "tex": "g(t) = \\mathcal{L}^{-1}\\{G(s)\\} = \\frac{\\mathrm{d}}{\\mathrm{d}t} h(t) = \\frac{V}{T} \\mathrm{e}^{-t/T}\\,\\sigma(t)",
           "note": "impulse response",
           "ref": "(3.135)"
         },
         {
           "eq": "G(s) = 10/(1 + s/2)",
+          "tex": "G(s) = \\frac{10}{1 + \\frac{s}{2}}",
           "note": "the notes' example",
           "ref": "(3.136)"
         }
@@ -599,6 +646,7 @@
       "title": "Second-order lag",
       "idea": "The damping of a second-order lag (P-T2 element) decides how far it overshoots and how long it rings; the time constant only stretches time.",
       "law": "G(s) = V/(1 + 2ξ(sT) + (sT)²)",
+      "lawTex": "G(s) = \\frac{V}{1 + 2\\xi(sT) + (sT)^2}",
       "lecture": "Kugi (2015), section 3.8.2 (pp. 81–82); eqs. (3.137), (3.138)",
       "practice": [
         {
@@ -629,27 +677,32 @@
       "equations": [
         {
           "eq": "G(s) = V/(1 + 2ξ(sT) + (sT)²)",
-          "note": "gain V, time constant T, damping 0 < ξ < 1",
+          "tex": "G(s) = \\frac{V}{1 + 2\\xi(sT) + (sT)^2}",
+          "note": "gain V, time constant T, damping 0 ≤ ξ < 1",
           "ref": "(3.137)"
         },
         {
-          "eq": "h(t) = V[1 − (ξ/√(1 − ξ²) sin(√(1 − ξ²) t/T) + cos(√(1 − ξ²) t/T)) e^(−ξt/T)] σ(t)",
+          "eq": "h(t) = V[1 − (1/√(1 − ξ²))(ξ sin(√(1 − ξ²) t/T) + √(1 − ξ²) cos(√(1 − ξ²) t/T)) e^(−ξt/T)] σ(t)",
+          "tex": "h(t) = V\\Bigg(1 - \\frac{1}{\\sqrt{1 - \\xi^2}}\\bigg(\\xi \\sin\\!\\Big(\\sqrt{1 - \\xi^2}\\,\\frac{t}{T}\\Big) + \\sqrt{1 - \\xi^2} \\cos\\!\\Big(\\sqrt{1 - \\xi^2}\\,\\frac{t}{T}\\Big)\\bigg) \\mathrm{e}^{-\\xi t/T}\\Bigg)\\,\\sigma(t)",
           "note": "step response",
           "ref": "(3.138)"
         },
         {
           "eq": "g(t) = V/(T√(1 − ξ²)) e^(−ξt/T) sin(√(1 − ξ²) t/T) σ(t)",
+          "tex": "g(t) = \\frac{V}{T\\sqrt{1 - \\xi^2}} \\mathrm{e}^{-\\xi t/T} \\sin\\!\\Big(\\sqrt{1 - \\xi^2}\\,\\frac{t}{T}\\Big)\\,\\sigma(t)",
           "note": "impulse response",
           "ref": "(3.139)"
         },
         {
-          "eq": "γ1,2(t) = V(1 ± e^(−ξt/T)/√(1 − ξ²))",
-          "note": "envelopes, Aufgabe 3.34",
+          "eq": "θ1/2(t) = V(1 ± e^(−ξt/T)/√(1 − ξ²))",
+          "tex": "\\theta_{1/2}(t) = V\\bigg(1 \\pm \\frac{\\mathrm{e}^{-\\xi t/T}}{\\sqrt{1 - \\xi^2}}\\bigg)",
+          "note": "envelopes (Hüllkurven), Lösung von Aufgabe 3.34",
           "ref": ""
         },
         {
-          "eq": "s1,2 = (−ξ ± j√(1 − ξ²))/T",
-          "note": "poles",
+          "eq": "s1,2 = (−ξ ± I√(1 − ξ²))/T",
+          "tex": "s_{1,2} = \\frac{-\\xi \\pm \\mathrm{I}\\sqrt{1 - \\xi^2}}{T}",
+          "note": "poles (derived from (3.137))",
           "ref": ""
         }
       ]
@@ -659,6 +712,7 @@
       "title": "Controller elements",
       "idea": "P answers now, I remembers the past and D looks ahead: the controller elements combine them, each with its own step response and Bode diagram.",
       "law": "G(s) = VP (1 + TI s)(1 + TD s)/(s(1 + TR s))",
+      "lawTex": "G(s) = V_\\mathrm{P} \\frac{(1 + T_\\mathrm{I} s)(1 + T_\\mathrm{D} s)}{s(1 + T_\\mathrm{R} s)}",
       "lecture": "Kugi (2015), sections 3.8.3–3.8.9 (pp. 83–87); eqs. (3.141)–(3.157)",
       "practice": [
         {
@@ -690,46 +744,55 @@
       "equations": [
         {
           "eq": "G(s) = VP",
+          "tex": "G(s) = V_\\mathrm{P}",
           "note": "P element",
           "ref": "(3.141)"
         },
         {
           "eq": "G(s) = VI/s",
+          "tex": "G(s) = \\frac{V_\\mathrm{I}}{s}",
           "note": "integrator (I element)",
           "ref": "(3.143)"
         },
         {
           "eq": "G(s) = VI(1 + sTI)/s = VI/s + VI TI",
+          "tex": "G(s) = \\frac{V_\\mathrm{I}(1 + sT_\\mathrm{I})}{s} = \\frac{V_\\mathrm{I}}{s} + V_\\mathrm{I} T_\\mathrm{I}",
           "note": "PI element",
           "ref": "(3.145)"
         },
         {
           "eq": "G(s) = VD s",
+          "tex": "G(s) = V_\\mathrm{D}\\, s",
           "note": "ideal differentiator, not realisable",
           "ref": "(3.147)"
         },
         {
           "eq": "GR(s) = VD s/(1 + TR s)",
+          "tex": "G_\\mathrm{R}(s) = \\frac{V_\\mathrm{D}\\, s}{1 + T_\\mathrm{R} s}",
           "note": "D-T1 element",
           "ref": "(3.148)"
         },
         {
           "eq": "G(s) = VP(1 + TD s)",
+          "tex": "G(s) = V_\\mathrm{P}(1 + T_\\mathrm{D} s)",
           "note": "PD element, not realisable",
           "ref": "(3.150)"
         },
         {
-          "eq": "G(s) = V(1 + sT)/(1 + αsT),   0 < α < 1",
+          "eq": "G(s) = V(1 + sT)/(1 + sηT),   0 < η < 1",
+          "tex": "G(s) = V \\frac{1 + sT}{1 + s\\eta T}, \\qquad 0 < \\eta < 1",
           "note": "lead element (PD-T1)",
           "ref": "(3.151)"
         },
         {
-          "eq": "ωmax = 1/(T√α),   φmax = arctan(1/√α) − arctan(√α)",
+          "eq": "ωmax = 1/(√η T),   φmax = arctan(1/√η) − arctan(√η)",
+          "tex": "\\omega_\\mathrm{max} = \\frac{1}{\\sqrt{\\eta}\\, T}, \\qquad \\varphi_\\mathrm{max} = \\arctan\\Big(\\frac{1}{\\sqrt{\\eta}}\\Big) - \\arctan\\big(\\sqrt{\\eta}\\big)",
           "note": "largest phase lift of the lead element",
           "ref": "(3.155), (3.156)"
         },
         {
           "eq": "G(s) = VP(1 + TI s)(1 + TD s)/(s(1 + TR s))",
+          "tex": "G(s) = V_\\mathrm{P} \\frac{(1 + T_\\mathrm{I} s)(1 + T_\\mathrm{D} s)}{s(1 + T_\\mathrm{R} s)}",
           "note": "PID element",
           "ref": "(3.157)"
         }
@@ -740,6 +803,7 @@
       "title": "Dead time",
       "idea": "A dead time (Totzeit) passes the input on unchanged but late, which costs phase in proportion to the frequency.",
       "law": "y(t) = u(t − Tt)    G(s) = e^(−sTt)",
+      "lawTex": "y(t) = u(t - T_\\mathrm{t}) \\qquad G(s) = \\mathrm{e}^{-sT_\\mathrm{t}}",
       "lecture": "Kugi (2015), section 3.8.10 (p. 87); eqs. (3.158), (3.159)",
       "practice": [
         {
@@ -758,17 +822,20 @@
       "equations": [
         {
           "eq": "y(t) = u(t − Tt)",
+          "tex": "y(t) = u(t - T_\\mathrm{t})",
           "note": "the input shifted by the dead time",
           "ref": "(3.158)"
         },
         {
           "eq": "G(s) = e^(−sTt)",
+          "tex": "G(s) = \\mathrm{e}^{-sT_\\mathrm{t}}",
           "note": "transfer function, by the shift theorem",
           "ref": "(3.159)"
         },
         {
-          "eq": "|G(jω)| = 1,   arg G(jω) = −ωTt",
-          "note": "frequency response",
+          "eq": "|G(Iω)| = 1,   arg G(Iω) = −ωTt",
+          "tex": "\\lvert G(\\mathrm{I}\\omega) \\rvert = 1, \\qquad \\arg(G(\\mathrm{I}\\omega)) = -\\omega T_\\mathrm{t}",
+          "note": "frequency response (derived from (3.159))",
           "ref": ""
         }
       ]
@@ -777,7 +844,8 @@
       "id": "polezero",
       "title": "Pole-zero diagram",
       "idea": "Where the poles sit tells how a system responds: left of the imaginary axis it is BIBO stable, and a pole pair's angle and distance give its damping and time constant.",
-      "law": "ξ = −σ/√(σ² + ω²)    T = 1/√(σ² + ω²)",
+      "law": "ξ = −α/√(α² + β²)    T = 1/√(α² + β²)",
+      "lawTex": "\\xi = \\frac{-\\alpha}{\\sqrt{\\alpha^2 + \\beta^2}} \\qquad T = \\frac{1}{\\sqrt{\\alpha^2 + \\beta^2}}",
       "lecture": "Kugi (2015), sections 3.10 and 3.6 (pp. 90–91, 67–68); eqs. (3.163), (3.166), (3.167)",
       "practice": [
         {
@@ -808,28 +876,33 @@
       "equations": [
         {
           "eq": "G(s) = 10s(s + 1)/((s − 0.5)(s² + 4s + 6.25))",
+          "tex": "G(s) = \\frac{10s(s + 1)}{(s - 0.5)(s^2 + 4s + 6.25)}",
           "note": "the notes' example",
           "ref": "(3.163)"
         },
         {
-          "eq": "n(s) = (s − σ − jω)(s − σ + jω) = 1/T² + (2ξ/T) s + s²",
+          "eq": "n(s) = (s − α − Iβ)(s − α + Iβ) = 1/T² + 2ξ s/T + s²",
+          "tex": "n(s) = (s - \\alpha - \\mathrm{I}\\beta)(s - \\alpha + \\mathrm{I}\\beta) = \\frac{1}{T^2} + 2\\xi\\frac{s}{T} + s^2",
           "note": "a pole pair as a P-T2 denominator",
           "ref": "(3.165)"
         },
         {
-          "eq": "ξ = −σ/√(σ² + ω²)",
+          "eq": "ξ = −α/√(α² + β²)",
+          "tex": "\\xi = \\frac{-\\alpha}{\\sqrt{\\alpha^2 + \\beta^2}}",
           "note": "damping: constant on a ray through the origin",
           "ref": "(3.166)"
         },
         {
-          "eq": "T = 1/√(σ² + ω²)",
+          "eq": "T = 1/√(α² + β²)",
+          "tex": "T = \\frac{1}{\\sqrt{\\alpha^2 + \\beta^2}}",
           "note": "time constant: constant on a circle about the origin",
           "ref": "(3.167)"
         },
         {
-          "eq": "Re(si) < 0 for every pole si",
+          "eq": "Re(si) = αi < 0 for every pole si",
+          "tex": "\\operatorname{Re}(s_i) = \\alpha_i < 0 \\quad \\text{for every pole } s_i",
           "note": "BIBO stability (Satz 3.8)",
-          "ref": ""
+          "ref": "(3.101)"
         }
       ]
     },
@@ -838,7 +911,8 @@
       "title": "Control loop with one degree of freedom",
       "idea": "One controller sets both how the output follows the reference and how much of a disturbance is left; an integrator in the loop removes the steady-state error.",
       "law": "Tr,y = RG/(1 + RG)    Td,y = S = 1/(1 + RG)    Tr,y + Td,y = 1",
-      "lecture": "Kugi (2015), section 4.3.1 (pp. 101–107); eq. (4.20), (4.23), (5.10)",
+      "lawTex": "T_{r,y} = \\frac{RG}{1 + RG} \\qquad T_{d,y} = S = \\frac{1}{1 + RG} \\qquad T_{r,y} + T_{d,y} = 1",
+      "lecture": "Kugi (2015), section 4.3.1 (pp. 101–107) and chapter 5 (p. 122); eq. (4.20), (4.23), (5.10)",
       "practice": [
         {
           "question": "The open loop is L(s) = 8/(1 + s)², a plant 2/(1 + s)² under a P controller with gain 4. What steady-state error e∞ does a unit reference step leave?",
@@ -880,31 +954,37 @@
       "equations": [
         {
           "eq": "Tr,y = R G/(1 + R G),   Td,y = Gd/(1 + R G),   Tn,y = −R G/(1 + R G)",
+          "tex": "T_{r,y} = \\frac{RG}{1 + RG}, \\qquad T_{d,y} = \\frac{G_d}{1 + RG}, \\qquad T_{n,y} = \\frac{-RG}{1 + RG}",
           "note": "reference, disturbance and noise to the output",
           "ref": "(4.12)"
         },
         {
           "eq": "Tr,y = L/(1 + L),   Td,y = 1/(1 + L),   L = R G",
+          "tex": "T_{r,y} = \\frac{L}{1 + L}, \\qquad T_{d,y} = \\frac{1}{1 + L}, \\qquad L = RG",
           "note": "with Gd = 1, the disturbance acting at the output",
           "ref": "(4.20)"
         },
         {
           "eq": "Tr,u = −Td,u = R/(1 + R G)",
+          "tex": "T_{r,u} = -T_{d,u} = \\frac{R}{1 + RG}",
           "note": "the input the controller asks for",
           "ref": "(4.22)"
         },
         {
           "eq": "S = lim (ΔTr,y/Tr,y)/(ΔG/G) = 1/(1 + R G)",
+          "tex": "S = \\lim_{\\Delta G \\to 0} \\frac{\\Delta T_{r,y}}{T_{r,y}} \\frac{G}{\\Delta G} = \\frac{1}{1 + RG}",
           "note": "sensitivity (Sensitivitätsfunktion)",
           "ref": "(4.23)"
         },
         {
           "eq": "Tr,y + Td,y = 1",
+          "tex": "T_{r,y} + T_{d,y} = \\frac{RG}{1 + RG} + \\frac{1}{1 + RG} = 1",
           "note": "so T = 1 − S is the complementary sensitivity",
           "ref": "(4.24)"
         },
         {
           "eq": "step: e∞ = 1/(1 + V) for ρ = 0, 0 for ρ = 1;   ramp: e∞ = ∞ for ρ = 0, 1/V for ρ = 1",
+          "tex": "r = \\sigma(t)\\!: \\; e_\\infty = \\begin{cases} \\frac{1}{1 + V} & \\rho = 0 \\\\ 0 & \\rho = 1 \\end{cases} \\qquad r = t\\!: \\; e_\\infty = \\begin{cases} \\infty & \\rho = 0 \\\\ \\frac{1}{V} & \\rho = 1 \\end{cases}",
           "note": "steady-state error (bleibende Regelabweichung)",
           "ref": "(5.10)"
         }
@@ -915,6 +995,7 @@
       "title": "Routh–Hurwitz test",
       "idea": "Whether every root of a polynomial lies in the left half plane can be read from its coefficients alone, without computing a root.",
       "law": "a_ij = (a_{i−1,1} a_{i−2,j+1} − a_{i−2,1} a_{i−1,j+1}) / a_{i−1,1}",
+      "lawTex": "a_{ij} = \\frac{a_{i-1,1}\\, a_{i-2,j+1} - a_{i-2,1}\\, a_{i-1,j+1}}{a_{i-1,1}}",
       "lecture": "Kugi (2015), section 4.4.1 (pp. 110–112); eq. (4.31), (4.32), (4.34)–(4.36)",
       "practice": [
         {
@@ -940,31 +1021,37 @@
       "equations": [
         {
           "eq": "n(s) = a_n sⁿ + … + a_1 s + a_0: all a_j ≠ 0 with one sign",
+          "tex": "n(s) = a_n s^n + \\dots + a_1 s + a_0\\!: \\quad \\text{all } a_j \\ne 0 \\text{ with the same sign}",
           "note": "necessary for a Hurwitz polynomial, also sufficient for n = 2 (Satz 4.2)",
           "ref": "Satz 4.2"
         },
         {
-          "eq": "s³ + s² + 11s + 51 = (s + 3)(s − 1 + 4j)(s − 1 − 4j)",
+          "eq": "s³ + s² + 11s + 51 = (s + 3)(s − 1 + 4I)(s − 1 − 4I)",
+          "tex": "n(s) = s^3 + s^2 + 11s + 51 = (s + 3)(s - 1 + 4\\mathrm{I})(s - 1 - 4\\mathrm{I})",
           "note": "positive coefficients, still not Hurwitz",
           "ref": "(4.30)"
         },
         {
           "eq": "rows sⁿ: a_n, a_{n−2}, …;  s^{n−1}: a_{n−1}, a_{n−3}, …",
+          "tex": "s^n\\!: \\; a_{01} = a_n,\\; a_{02} = a_{n-2},\\; \\dots \\qquad s^{n-1}\\!: \\; a_{11} = a_{n-1},\\; a_{12} = a_{n-3},\\; \\dots",
           "note": "the Routh array; its first column is the pivot column",
           "ref": "(4.31)"
         },
         {
           "eq": "a_ij = (a_{i−1,1} a_{i−2,j+1} − a_{i−2,1} a_{i−1,j+1}) / a_{i−1,1}",
+          "tex": "a_{ij} = \\frac{a_{i-1,1}\\, a_{i-2,j+1} - a_{i-2,1}\\, a_{i-1,j+1}}{a_{i-1,1}}",
           "note": "the entries; Hurwitz exactly when the pivot column has no zero and one sign (Satz 4.3)",
           "ref": "(4.32)"
         },
         {
           "eq": "Tr,y = 9K/(s³ + 3s² + 9s + 9K)",
+          "tex": "T_{r,y}(s) = \\frac{RG}{1 + RG} = \\frac{9K}{s^3 + 3s^2 + 9s + 9K}",
           "note": "Beispiel 4.4 with R = K/s",
           "ref": "(4.34)"
         },
         {
           "eq": "9 − 3K > 0,   9K > 0   ⇒   0 < K < 3",
+          "tex": "9 - 3K > 0, \\qquad 9K > 0 \\;\\Rightarrow\\; 0 < K < 3",
           "note": "the stable range of the gain",
           "ref": "(4.36)"
         }
@@ -974,7 +1061,8 @@
       "id": "nyquist",
       "title": "Nyquist criterion",
       "idea": "The locus of the open loop L(jω) and the point −1 decide whether the closed loop is stable; the phase margin says how far it is from the edge.",
-      "law": "Δarg(1 + L(jω)) = (max(deg zL, deg nL) − N₋(nL) + N₊(nL))·π    Φ = arg L(jωC) + π",
+      "law": "Δarg(1 + L(Iω)) = (max(grad zL, grad nL) − N₋(nL) + N₊(nL))·π    Φ = arg L(IωC) + π",
+      "lawTex": "\\Delta\\arg\\big(1 + L(\\mathrm{I}\\omega)\\big) = \\big(\\max(\\operatorname{grad}(z_L), \\operatorname{grad}(n_L)) - N_-(n_L) + N_+(n_L)\\big)\\pi \\qquad \\Phi = \\arg\\big(L(\\mathrm{I}\\omega_\\mathrm{C})\\big) + \\pi",
       "lecture": "Kugi (2015), section 4.4.3 (pp. 114–118); eq. (4.45), (4.54), (4.55)",
       "practice": [
         {
@@ -1019,26 +1107,31 @@
       "equations": [
         {
           "eq": "L(s) = zL(s)/nL(s),   Tr,y = zL/(zL + nL)",
+          "tex": "L(s) = \\frac{z_L(s)}{n_L(s)}, \\qquad T_{r,y}(s) = \\frac{z_L(s)}{z_L(s) + n_L(s)}",
           "note": "open and closed loop",
           "ref": "(4.44)"
         },
         {
-          "eq": "Δarg(1 + L(jω)) = (max(deg zL, deg nL) − N₋(nL) + N₊(nL))·π",
+          "eq": "Δarg(1 + L(Iω)) = (max(grad zL, grad nL) − N₋(nL) + N₊(nL))·π",
+          "tex": "\\Delta\\arg\\big(1 + L(\\mathrm{I}\\omega)\\big) = \\big(\\max(\\operatorname{grad}(z_L), \\operatorname{grad}(n_L)) - N_-(n_L) + N_+(n_L)\\big)\\pi",
           "note": "Nyquist criterion (Satz 4.5): stable exactly when this holds",
           "ref": "(4.45)"
         },
         {
-          "eq": "L(s) = (V/s^ρ)·(zL(s)/nL(s))·e^{−sTt},   zL(0) = nL(0) = 1",
+          "eq": "L(s) = (V/s^ρ)·(zL(s)/nL(s))·exp(−sTt),   zL(0) = nL(0) = 1",
+          "tex": "L(s) = \\frac{V}{s^\\rho} \\frac{z_L(s)}{n_L(s)} \\exp(-sT_\\mathrm{t}), \\qquad z_L(0) = n_L(0) = 1",
           "note": "the form for the Bode version (Satz 4.6)",
           "ref": "(4.54)"
         },
         {
-          "eq": "Φ = arg L(jωC) + π",
+          "eq": "Φ = arg L(IωC) + π",
+          "tex": "\\Phi = \\arg\\big(L(\\mathrm{I}\\omega_\\mathrm{C})\\big) + \\pi",
           "note": "phase margin (Phasenreserve); stable when positive",
           "ref": "(4.55)"
         },
         {
-          "eq": "gain margin = 1/|L(jω180)|,   arg L(jω180) = −π",
+          "eq": "gain margin = 1/|L(Iω180)|,   arg L(Iω180) = −π",
+          "tex": "\\text{gain margin} = \\frac{1}{\\lvert L(\\mathrm{I}\\omega_{180}) \\rvert}, \\qquad \\arg\\big(L(\\mathrm{I}\\omega_{180})\\big) = -\\pi",
           "note": "not defined in the notes; the usual reading of the same locus",
           "ref": ""
         }
@@ -1049,6 +1142,7 @@
       "title": "PI design by loop shaping",
       "idea": "Rise time and overshoot of the closed loop translate into a crossover frequency and a phase margin of the open loop, which a PI controller can set.",
       "law": "ωC·tr ≈ 1.5    Φ[°] + ü[%] ≈ 70    R(s) = VI(1 + sTI)/s",
+      "lawTex": "\\omega_\\mathrm{C} t_r \\approx 1.5 \\qquad \\Phi[^\\circ] + \\ddot{u}[\\%] \\approx 70 \\qquad R(s) = \\frac{V_\\mathrm{I}(1 + sT_\\mathrm{I})}{s}",
       "lecture": "Kugi (2015), chapter 5 and section 5.1 (pp. 120–126); eq. (5.2), (5.3), (5.13)–(5.18)",
       "practice": [
         {
@@ -1095,41 +1189,49 @@
       "equations": [
         {
           "eq": "Tr,y = R G/(1 + R G) = L/(1 + L)",
+          "tex": "T_{r,y}(s) = \\frac{R(s)G(s)}{1 + R(s)G(s)} = \\frac{L(s)}{1 + L(s)}",
           "note": "the closed loop to be shaped",
           "ref": "(5.1)"
         },
         {
           "eq": "ωC·tr ≈ 1.5",
+          "tex": "\\omega_\\mathrm{C} t_r \\approx 1.5",
           "note": "rise time from the crossover frequency (Durchtrittsfrequenz)",
           "ref": "(5.2)"
         },
         {
           "eq": "Φ[°] + ü[%] ≈ 70",
+          "tex": "\\Phi[^\\circ] + \\ddot{u}[\\%] \\approx 70",
           "note": "overshoot from the phase margin",
           "ref": "(5.3)"
         },
         {
           "eq": "G(s) = 5/(1 + 2·0.707s + s²)",
+          "tex": "G(s) = \\frac{5}{1 + 2 \\times 0.707s + s^2}",
           "note": "the plant; targets tr = 3 s, ü = 10 %, e∞ = 0",
           "ref": "(5.13)"
         },
         {
           "eq": "R(s) = VI(1 + sTI)/s",
+          "tex": "R(s) = \\frac{V_\\mathrm{I}(1 + sT_\\mathrm{I})}{s}",
           "note": "PI controller",
           "ref": "(5.14)"
         },
         {
-          "eq": "arctan(ωC·TI) = Φ − 180° − arg L1(jωC)",
-          "note": "the zero lifts the phase",
+          "eq": "arg(1 + IωC TI) = arctan(ωC·TI) = Φ − 180° − arg L1(IωC)",
+          "tex": "\\arg(1 + \\mathrm{I}\\omega_\\mathrm{C} T_\\mathrm{I}) = \\arctan(\\omega_\\mathrm{C} T_\\mathrm{I}) = \\Phi - \\pi - \\arg\\big(L_1(\\mathrm{I}\\omega_\\mathrm{C})\\big)",
+          "note": "the zero lifts the phase; in the notes' case by 13.3°",
           "ref": "(5.16)"
         },
         {
-          "eq": "|VI·L1(jωC)·(1 + jωC TI)| = 1",
+          "eq": "VI·|L1(IωC)·(1 + IωC TI)| = 1",
+          "tex": "V_\\mathrm{I} \\big\\lvert L_1(\\mathrm{I}\\omega_\\mathrm{C})\\,(1 + \\mathrm{I}\\omega_\\mathrm{C} T_\\mathrm{I}) \\big\\rvert = 1",
           "note": "the gain sets the crossover",
           "ref": "(5.17)"
         },
         {
           "eq": "R(s) = 0.1(1 + 0.47s)/s",
+          "tex": "R(s) = \\frac{0.1(1 + 0.47s)}{s}",
           "note": "the notes' result",
           "ref": "(5.18)"
         }
@@ -1139,7 +1241,8 @@
       "id": "sampling",
       "title": "Sampled systems and the sample time",
       "idea": "Behind a zero-order hold a continuous plant becomes a difference equation whose poles are e^{sTa}; a few samples per rise time are enough.",
-      "law": "x_{k+1} = Φx_k + Γu_k,  Φ = e^{ATa},  Γ = ∫₀^Ta e^{Aτ} dτ b    z = e^{sTa}    tr/Ta ≈ 4 to 10",
+      "law": "x_{k+1} = Φx_k + Γu_k,  Φ = exp(ATa),  Γ = ∫₀^Ta exp(Aτ) dτ b    z = e^{sTa}    tr/Ta ≈ 4 to 10",
+      "lawTex": "\\mathbf{x}_{k+1} = \\boldsymbol{\\Phi}\\mathbf{x}_k + \\boldsymbol{\\Gamma}u_k, \\quad \\boldsymbol{\\Phi} = \\exp(\\mathbf{A}T_\\mathrm{a}), \\quad \\boldsymbol{\\Gamma} = \\int_0^{T_\\mathrm{a}} \\exp(\\mathbf{A}\\tau)\\,\\mathrm{d}\\tau\\,\\mathbf{b} \\qquad z = \\mathrm{e}^{sT_\\mathrm{a}} \\qquad \\frac{t_r}{T_\\mathrm{a}} \\approx 4 \\text{ to } 10",
       "lecture": "Kugi (2015), sections 6.2.2 and 6.4 (pp. 141–152); eq. (6.19), (6.25), (6.61), (6.62)",
       "practice": [
         {
@@ -1170,36 +1273,43 @@
       "equations": [
         {
           "eq": "x_{k+1} = Φx_k + Γu_k,   y_k = Cx_k + Du_k",
+          "tex": "\\mathbf{x}_{k+1} = \\boldsymbol{\\Phi}\\mathbf{x}_k + \\boldsymbol{\\Gamma}\\mathbf{u}_k, \\qquad \\mathbf{y}_k = \\mathbf{C}\\mathbf{x}_k + \\mathbf{D}\\mathbf{u}_k",
           "note": "the sampled system (Abtastsystem)",
           "ref": "(6.19a, b)"
         },
         {
-          "eq": "Φ = e^{ATa},   Γ = ∫₀^Ta e^{Aτ} dτ B",
+          "eq": "Φ = exp(ATa),   Γ = ∫₀^Ta exp(Aτ) dτ B",
+          "tex": "\\boldsymbol{\\Phi} = \\exp(\\mathbf{A}T_\\mathrm{a}), \\qquad \\boldsymbol{\\Gamma} = \\int_0^{T_\\mathrm{a}} \\exp(\\mathbf{A}\\tau)\\,\\mathrm{d}\\tau\\,\\mathbf{B}",
           "note": "with a zero-order hold",
           "ref": "(6.19c, d)"
         },
         {
           "eq": "Φ = [[1, Ta], [0, 1]],   Γ = [Ta²/2, Ta]",
+          "tex": "\\boldsymbol{\\Phi} = \\begin{bmatrix} 1 & T_\\mathrm{a} \\\\ 0 & 1 \\end{bmatrix}, \\qquad \\boldsymbol{\\Gamma} = \\begin{bmatrix} \\frac{T_\\mathrm{a}^2}{2} \\\\ T_\\mathrm{a} \\end{bmatrix}",
           "note": "the double integrator",
           "ref": "(6.25)"
         },
         {
           "eq": "s_j pole of G(s)   ⇒   e^{s_j Ta} pole of G(z)",
+          "tex": "s_j \\text{ pole of } G(s) \\;\\Rightarrow\\; \\mathrm{e}^{s_j T_\\mathrm{a}} \\text{ pole of } G(z)",
           "note": "the left half plane maps into the unit circle",
           "ref": "Satz 6.3"
         },
         {
-          "eq": "G(s) = V2/(1 + 2ξ(sT2) + (sT2)²)",
+          "eq": "G(s) = V2/(1 + 2ξ(sT2) + (sT2)²),   0 < ξ < 1",
+          "tex": "G(s) = \\frac{V_2}{1 + 2\\xi(sT_2) + (sT_2)^2}, \\qquad 0 < \\xi < 1",
           "note": "P-T2 element",
           "ref": "(6.60)"
         },
         {
           "eq": "tr = T2·exp(arccos ξ / tan(arccos ξ))",
+          "tex": "t_r = T_2 \\exp\\bigg(\\frac{\\arccos(\\xi)}{\\tan(\\arccos(\\xi))}\\bigg)",
           "note": "its rise time",
           "ref": "(6.61)"
         },
         {
           "eq": "min(tr)/Ta ≈ 4 to 10",
+          "tex": "\\frac{\\min(t_r)}{T_\\mathrm{a}} \\approx 4 \\text{ to } 10",
           "note": "rule of thumb for the sample time (Abtastzeit)",
           "ref": "(6.62)"
         }
@@ -1210,6 +1320,7 @@
       "title": "Tustin transformation and frequency warping",
       "idea": "Substituting q = (2/Ta)(z − 1)/(z + 1) for s keeps a controller's shape but bends its frequency axis: what sat at Ω now sits at a lower ω.",
       "law": "q = (2/Ta)(z − 1)/(z + 1)    Ω = (2/Ta)·tan(ωTa/2)",
+      "lawTex": "q = \\frac{2}{T_\\mathrm{a}} \\frac{z - 1}{z + 1} \\qquad \\Omega = \\frac{2}{T_\\mathrm{a}} \\tan\\Big(\\omega \\frac{T_\\mathrm{a}}{2}\\Big)",
       "lecture": "Kugi (2015), section 6.6 (pp. 160–164); eq. (6.89)–(6.92)",
       "practice": [
         {
@@ -1239,27 +1350,32 @@
       ],
       "equations": [
         {
-          "eq": "(e^{jωTa} − 1)/(e^{jωTa} + 1) = j·tan(ωTa/2)",
+          "eq": "(e^{IωTa} − 1)/(e^{IωTa} + 1) = I·tan(ωTa/2)",
+          "tex": "\\frac{\\mathrm{e}^{\\mathrm{I}\\omega T_\\mathrm{a}} - 1}{\\mathrm{e}^{\\mathrm{I}\\omega T_\\mathrm{a}} + 1} = \\tanh\\Big(\\mathrm{I}\\frac{\\omega T_\\mathrm{a}}{2}\\Big) = \\mathrm{I}\\tan\\Big(\\frac{\\omega T_\\mathrm{a}}{2}\\Big)",
           "note": "the unit circle onto the imaginary axis",
           "ref": "(6.87)"
         },
         {
           "eq": "Ω = (2/Ta)·tan(ωTa/2)",
+          "tex": "\\Omega = \\frac{2}{T_\\mathrm{a}} \\tan\\Big(\\omega \\frac{T_\\mathrm{a}}{2}\\Big)",
           "note": "transformed frequency; 0 ≤ ω < π/Ta fills 0 ≤ Ω < ∞",
           "ref": "(6.89)"
         },
         {
           "eq": "q = (2/Ta)(z − 1)/(z + 1)",
+          "tex": "q = \\frac{2}{T_\\mathrm{a}} \\frac{z - 1}{z + 1}",
           "note": "the q-transformation",
           "ref": "(6.90)"
         },
         {
           "eq": "z = (1 + qTa/2)/(1 − qTa/2)",
+          "tex": "z = \\frac{1 + \\frac{T_\\mathrm{a}}{2} q}{1 - \\frac{T_\\mathrm{a}}{2} q}",
           "note": "its inverse, the bilinear transformation after Tustin",
           "ref": "(6.91)"
         },
         {
           "eq": "G#(q) = G(z) at z = (1 + qTa/2)/(1 − qTa/2)",
+          "tex": "G^\\#(q) = G(z)\\big|_{z = \\frac{1 + \\frac{T_\\mathrm{a}}{2} q}{1 - \\frac{T_\\mathrm{a}}{2} q}}",
           "note": "q-transfer function",
           "ref": "(6.92)"
         }
@@ -1270,6 +1386,7 @@
       "title": "Reachability",
       "idea": "An input can steer a linear system from rest to any state exactly when the reachability matrix has full rank.",
       "law": "R(A, b) = [b, Ab, …, A^{n−1}b],  rank n    u(t) = bᵀe^{Aᵀ(T−t)}G⁻¹x(T)",
+      "lawTex": "\\mathcal{R}(\\mathbf{A}, \\mathbf{b}) = \\begin{bmatrix} \\mathbf{b} & \\mathbf{A}\\mathbf{b} & \\dots & \\mathbf{A}^{n-1}\\mathbf{b} \\end{bmatrix}, \\; \\operatorname{rang} = n \\qquad \\mathbf{u}(t) = \\mathbf{b}^\\mathrm{T} \\big(\\mathrm{e}^{\\mathbf{A}(T - t)}\\big)^\\mathrm{T} \\mathbf{G}^{-1} \\mathbf{x}(T)",
       "lecture": "Kugi (2015), section 7.1 (pp. 184–187); eq. (7.11), (7.15), (7.18), (7.21)",
       "practice": [
         {
@@ -1327,26 +1444,31 @@
       "equations": [
         {
           "eq": "x' = Ax + Bu,   x(0) = x0",
+          "tex": "\\dot{\\mathbf{x}} = \\mathbf{A}\\mathbf{x} + \\mathbf{B}\\mathbf{u}, \\qquad \\mathbf{x}(0) = \\mathbf{x}_0",
           "note": "the system",
           "ref": "(7.10)"
         },
         {
           "eq": "R(A, B) = [B, AB, A²B, …, A^{n−1}B]",
+          "tex": "\\mathcal{R}(\\mathbf{A}, \\mathbf{B}) = \\begin{bmatrix} \\mathbf{B} & \\mathbf{A}\\mathbf{B} & \\mathbf{A}^2\\mathbf{B} & \\dots & \\mathbf{A}^{n-1}\\mathbf{B} \\end{bmatrix}",
           "note": "reachability matrix (Erreichbarkeitsmatrix); reachable exactly when rank n (Satz 7.1)",
           "ref": "(7.11)"
         },
         {
           "eq": "G = ∫₀ᵀ e^{Aτ} B Bᵀ e^{Aᵀτ} dτ",
+          "tex": "\\mathbf{G} = \\int_0^T \\mathrm{e}^{\\mathbf{A}\\tau} \\mathbf{B}\\mathbf{B}^\\mathrm{T} \\big(\\mathrm{e}^{\\mathbf{A}\\tau}\\big)^\\mathrm{T} \\,\\mathrm{d}\\tau",
           "note": "Gramian (Gramsche Matrix), regular for every T > 0 when reachable",
           "ref": "(7.15)"
         },
         {
           "eq": "u(t) = Bᵀ e^{Aᵀ(T−t)} G⁻¹ x(T)",
+          "tex": "\\mathbf{u}(t) = \\mathbf{B}^\\mathrm{T} \\big(\\mathrm{e}^{\\mathbf{A}(T - t)}\\big)^\\mathrm{T} \\mathbf{G}^{-1} \\mathbf{x}(T)",
           "note": "steers x from 0 to x(T)",
           "ref": "(7.18)"
         },
         {
           "eq": "A G∞ + G∞ Aᵀ + B Bᵀ = 0",
+          "tex": "\\mathbf{A}\\mathbf{G}_\\infty + \\mathbf{G}_\\infty \\mathbf{A}^\\mathrm{T} + \\mathbf{B}\\mathbf{B}^\\mathrm{T} = \\mathbf{0}",
           "note": "the Gramian for T → ∞ when A is a Hurwitz matrix",
           "ref": "(7.21)"
         }
@@ -1357,6 +1479,7 @@
       "title": "State controller by pole placement",
       "idea": "Feeding back the whole state places the closed loop's poles anywhere, provided the system is reachable; with all poles at zero it settles in n steps.",
       "law": "u_k = kᵀx_k + g r_k    kᵀ = −v1ᵀ p_g,soll(Φ),  v1ᵀ = e_nᵀ R(Φ, Γ)⁻¹",
+      "lawTex": "u_k = \\mathbf{k}^\\mathrm{T}\\mathbf{x}_k + g r_k \\qquad \\mathbf{k}^\\mathrm{T} = -\\mathbf{v}_1^\\mathrm{T} p_{g,\\mathrm{soll}}(\\boldsymbol{\\Phi}), \\quad \\mathbf{v}_1^\\mathrm{T} = \\mathbf{e}_n^\\mathrm{T} \\mathcal{R}(\\boldsymbol{\\Phi}, \\boldsymbol{\\Gamma})^{-1}",
       "lecture": "Kugi (2015), sections 8.1 and 8.1.1 (pp. 204–215); eq. (8.4), (8.18), (8.29), (8.39)",
       "practice": [
         {
@@ -1425,38 +1548,45 @@
       "equations": [
         {
           "eq": "x_{k+1} = Φx_k + Γu_k,   y_k = cᵀx_k + du_k",
+          "tex": "\\mathbf{x}_{k+1} = \\boldsymbol{\\Phi}\\mathbf{x}_k + \\boldsymbol{\\Gamma}u_k, \\qquad y_k = \\mathbf{c}^\\mathrm{T}\\mathbf{x}_k + d u_k",
           "note": "the plant",
           "ref": "(8.3)"
         },
         {
           "eq": "u_k = kᵀx_k + g r_k",
+          "tex": "u_k = \\mathbf{k}^\\mathrm{T}\\mathbf{x}_k + g r_k",
           "note": "state feedback (Zustandsrückführung)",
           "ref": "(8.4)"
         },
         {
           "eq": "x_{k+1} = (Φ + Γkᵀ)x_k + Γg r_k",
+          "tex": "\\mathbf{x}_{k+1} = \\big(\\boldsymbol{\\Phi} + \\boldsymbol{\\Gamma}\\mathbf{k}^\\mathrm{T}\\big)\\mathbf{x}_k + \\boldsymbol{\\Gamma} g r_k",
           "note": "the closed loop",
           "ref": "(8.5)"
         },
         {
           "eq": "e_nᵀ = v1ᵀ[Γ, ΦΓ, …, Φ^{n−1}Γ],   kᵀ = −v1ᵀ p_g,soll(Φ)",
+          "tex": "\\mathbf{e}_n^\\mathrm{T} = \\mathbf{v}_1^\\mathrm{T} \\begin{bmatrix} \\boldsymbol{\\Gamma} & \\boldsymbol{\\Phi}\\boldsymbol{\\Gamma} & \\dots & \\boldsymbol{\\Phi}^{n-1}\\boldsymbol{\\Gamma} \\end{bmatrix}, \\qquad \\mathbf{k}^\\mathrm{T} = -\\mathbf{v}_1^\\mathrm{T} p_{g,\\mathrm{soll}}(\\boldsymbol{\\Phi})",
           "note": "Ackermann's formula (Satz 8.2)",
           "ref": "(8.18)"
         },
         {
           "eq": "v1ᵀ = e_nᵀ R(Φ, Γ)⁻¹",
+          "tex": "\\mathbf{v}_1^\\mathrm{T} = \\mathbf{e}_n^\\mathrm{T} \\mathcal{R}(\\boldsymbol{\\Phi}, \\boldsymbol{\\Gamma})^{-1}",
           "note": "needs complete reachability",
           "ref": "(8.29)"
         },
         {
           "eq": "g = 1/((cᵀ + dkᵀ)(E − Φ − Γkᵀ)⁻¹Γ + d)",
+          "tex": "g = \\frac{1}{\\big(\\mathbf{c}^\\mathrm{T} + d\\mathbf{k}^\\mathrm{T}\\big)\\big(\\mathbf{E} - \\boldsymbol{\\Phi} - \\boldsymbol{\\Gamma}\\mathbf{k}^\\mathrm{T}\\big)^{-1}\\boldsymbol{\\Gamma} + d}",
           "note": "prefilter for y_k → r_0",
           "ref": "(8.39)"
         },
         {
-          "eq": "p_g,soll(z) = zⁿ   ⇒   x_k = 0 for k ≥ n",
+          "eq": "p_g,soll(z) = zⁿ   ⇒   x_k = Φ_gᵏ x_0 = 0 for k ≥ n",
+          "tex": "p_{g,\\mathrm{soll}}(z) = z^n \\;\\Rightarrow\\; \\mathbf{x}_k = \\boldsymbol{\\Phi}_g^k \\mathbf{x}_0 = \\mathbf{0} \\text{ for } k \\ge n",
           "note": "dead-beat controller (Satz 8.3)",
-          "ref": "(8.46)"
+          "ref": "Satz 8.3, (8.46)"
         }
       ]
     },
@@ -1465,6 +1595,7 @@
       "title": "Luenberger observer and the separation principle",
       "idea": "A model of the plant corrected by the measured output estimates the full state; controller and observer can be designed apart, their poles simply add up.",
       "law": "x̂_{k+1} = Φx̂_k + Γu_k + k̂(ŷ_k − y_k)    e_{k+1} = (Φ + k̂cᵀ)e_k    p_ges = p_g,soll · p̂_g,soll",
+      "lawTex": "\\hat{\\mathbf{x}}_{k+1} = \\boldsymbol{\\Phi}\\hat{\\mathbf{x}}_k + \\boldsymbol{\\Gamma}u_k + \\hat{\\mathbf{k}}(\\hat{y}_k - y_k) \\qquad \\mathbf{e}_{k+1} = \\big(\\boldsymbol{\\Phi} + \\hat{\\mathbf{k}}\\mathbf{c}^\\mathrm{T}\\big)\\mathbf{e}_k \\qquad p_\\mathrm{ges} = p_{g,\\mathrm{soll}}\\, \\hat{p}_{g,\\mathrm{soll}}",
       "lecture": "Kugi (2015), sections 8.3.2 and 8.4 (pp. 220–224); eq. (8.64)–(8.66), (8.73), (8.74)",
       "practice": [
         {
@@ -1500,31 +1631,37 @@
       "equations": [
         {
           "eq": "x̂_{k+1} = Φx̂_k + Γu_k + k̂(ŷ_k − y_k),   ŷ_k = cᵀx̂_k + du_k",
+          "tex": "\\hat{\\mathbf{x}}_{k+1} = \\boldsymbol{\\Phi}\\hat{\\mathbf{x}}_k + \\boldsymbol{\\Gamma}u_k + \\hat{\\mathbf{k}}(\\hat{y}_k - y_k), \\qquad \\hat{y}_k = \\mathbf{c}^\\mathrm{T}\\hat{\\mathbf{x}}_k + d u_k",
           "note": "full Luenberger observer (vollständiger Beobachter)",
           "ref": "(8.64)"
         },
         {
           "eq": "e_{k+1} = (Φ + k̂cᵀ)e_k,   e = x̂ − x",
+          "tex": "\\mathbf{e}_{k+1} = \\big(\\boldsymbol{\\Phi} + \\hat{\\mathbf{k}}\\mathbf{c}^\\mathrm{T}\\big)\\mathbf{e}_k, \\qquad \\mathbf{e} = \\hat{\\mathbf{x}} - \\mathbf{x}",
           "note": "error dynamics",
           "ref": "(8.65)"
         },
         {
-          "eq": "k̂ = −p̂_g,soll(Φ) v̂1,   v̂1 = O(cᵀ, Φ)⁻¹ e_n",
+          "eq": "k̂ = −p̂_g,soll(Φ) v̂1,   e_n = O(cᵀ, Φ) v̂1",
+          "tex": "\\hat{\\mathbf{k}} = -\\hat{p}_{g,\\mathrm{soll}}(\\boldsymbol{\\Phi})\\,\\hat{\\mathbf{v}}_1, \\qquad \\mathbf{e}_n = \\mathcal{O}\\big(\\mathbf{c}^\\mathrm{T}, \\boldsymbol{\\Phi}\\big)\\,\\hat{\\mathbf{v}}_1",
           "note": "Ackermann's formula for the observer (Satz 8.5), needs complete observability",
           "ref": "(8.66)"
         },
         {
           "eq": "Φᵀ for Φ,   c for Γ,   k̂ for k",
+          "tex": "\\boldsymbol{\\Phi}^\\mathrm{T} \\text{ for } \\boldsymbol{\\Phi}, \\qquad \\mathbf{c} \\text{ for } \\boldsymbol{\\Gamma}, \\qquad \\hat{\\mathbf{k}} \\text{ for } \\mathbf{k}",
           "note": "duality with the controller design",
           "ref": "(8.68)"
         },
         {
           "eq": "u_k = kᵀx̂_k + g r_k",
+          "tex": "u_k = \\mathbf{k}^\\mathrm{T}\\hat{\\mathbf{x}}_k + g r_k",
           "note": "the controller fed by the estimate",
           "ref": "(8.73)"
         },
         {
           "eq": "p_ges(z) = det(zE − Φ − Γkᵀ)·det(zE − Φ − k̂cᵀ)",
+          "tex": "p_\\mathrm{ges}(z) = \\det\\big(z\\mathbf{E} - (\\boldsymbol{\\Phi} + \\boldsymbol{\\Gamma}\\mathbf{k}^\\mathrm{T})\\big) \\det\\big(z\\mathbf{E} - (\\boldsymbol{\\Phi} + \\hat{\\mathbf{k}}\\mathbf{c}^\\mathrm{T})\\big) = p_{g,\\mathrm{soll}}(z)\\,\\hat{p}_{g,\\mathrm{soll}}(z)",
           "note": "separation principle (Satz 8.6)",
           "ref": "(8.74)"
         }
@@ -1535,6 +1672,7 @@
       "title": "Point kinematics",
       "idea": "Velocity is the integral of acceleration and position the integral of velocity, so an acceleration profile fixes where a mass stops.",
       "law": "v(t) = v(t0) + ∫ a dτ    x(t) = x(t0) + ∫ v dτ",
+      "lawTex": "v(t) = v(t_0) + \\int_{t_0}^{t} a(\\tau)\\,\\mathrm{d}\\tau \\qquad x(t) = x(t_0) + \\int_{t_0}^{t} v(\\tau)\\,\\mathrm{d}\\tau",
       "lecture": "Kugi et al. (2015), section 2.1, Example 2.1 (pp. 8–9); eq. (2.5)–(2.11)",
       "practice": [
         {
@@ -1555,26 +1693,31 @@
       "equations": [
         {
           "eq": "v1(t) = v0 + amax (t − t0),   x1(t) = x0 + v0 (t − t0) + ½ amax (t − t0)²",
-          "note": "speeding up",
+          "tex": "v_1(t) = v_0 + a_\\mathrm{max}(t - t_0), \\qquad x_1(t) = x_0 + v_0(t - t_0) + \\frac{1}{2} a_\\mathrm{max}(t - t_0)^2",
+          "note": "speeding up; the notes take v0 = x0 = 0, the lab keeps them general",
           "ref": "(2.5)"
         },
         {
           "eq": "v2(t) = amax (t1 − t0),   x2(t) = ½ amax (t1 − t0)² + amax (t1 − t0)(t − t1)",
+          "tex": "v_2(t) = a_\\mathrm{max}(t_1 - t_0), \\qquad x_2(t) = \\frac{1}{2} a_\\mathrm{max}(t_1 - t_0)^2 + a_\\mathrm{max}(t_1 - t_0)(t - t_1)",
           "note": "coasting",
           "ref": "(2.6)"
         },
         {
           "eq": "v3(t) = amax (t1 − t0) + amin (t − t2)",
+          "tex": "v_3(t) = a_\\mathrm{max}(t_1 - t_0) + a_\\mathrm{min}(t - t_2)",
           "note": "braking",
           "ref": "(2.7)"
         },
         {
           "eq": "t3 = t2 − amax (t1 − t0) / amin",
+          "tex": "t_3 = t_2 - \\frac{a_\\mathrm{max}}{a_\\mathrm{min}}(t_1 - t_0)",
           "note": "the stopping time, from v3(t3) = 0",
-          "ref": "(2.10)"
+          "ref": "(2.9)"
         },
         {
           "eq": "amin = −amax² (t1 − t0)² / (amax (t1 − t0)(t1 + t0 − 2 t2) + 2 xsoll)",
+          "tex": "a_\\mathrm{min} = \\frac{-a_\\mathrm{max}^2 (t_1 - t_0)^2}{a_\\mathrm{max}(t_1 - t_0)(t_1 + t_0 - 2t_2) + 2x_\\mathrm{soll}}",
           "note": "the braking that stops at xsoll",
           "ref": "(2.11)"
         }
@@ -1585,7 +1728,8 @@
       "title": "Conservation of momentum",
       "idea": "When two masses meet, the forces between them cancel, so their total momentum is the same before and after.",
       "law": "(mi + mj) d²rS/dt² = fi + fj",
-      "lecture": "Kugi et al. (2015), section 2.2.3 (pp. 24–27); eq. (2.62), (2.69)–(2.71), (2.81)",
+      "lawTex": "(m_i + m_j) \\frac{\\mathrm{d}^2}{\\mathrm{d}t^2} \\mathbf{r}_S = \\mathbf{f}_i + \\mathbf{f}_j",
+      "lecture": "Kugi et al. (2015), section 2.2.3 (pp. 24–27) and 2.2.4 (p. 29); eq. (2.62), (2.69)–(2.71), (2.81)",
       "practice": [
         {
           "question": "A 2 kg block moving at 3 m/s runs into a 1 kg block at rest, and they stick together (plastic, e = 0). How fast does the 2 kg block move afterwards?",
@@ -1622,26 +1766,31 @@
       "equations": [
         {
           "eq": "d/dt p = d/dt (m v) = f",
+          "tex": "\\frac{\\mathrm{d}}{\\mathrm{d}t} \\mathbf{p} = \\frac{\\mathrm{d}}{\\mathrm{d}t} (m\\mathbf{v}) = \\mathbf{f}",
           "note": "conservation of momentum (Impulserhaltungssatz) for a point mass",
           "ref": "(2.62)"
         },
         {
           "eq": "mi dvi/dt = fi + fij,   mj dvj/dt = fj + fji,   fij = −fji",
+          "tex": "m_i \\frac{\\mathrm{d}}{\\mathrm{d}t} \\mathbf{v}_i = \\mathbf{f}_i + \\mathbf{f}_{ij}, \\qquad m_j \\frac{\\mathrm{d}}{\\mathrm{d}t} \\mathbf{v}_j = \\mathbf{f}_j + \\mathbf{f}_{ji}, \\qquad \\mathbf{f}_{ij} = -\\mathbf{f}_{ji}",
           "note": "two masses with forces between them",
           "ref": "(2.69)"
         },
         {
           "eq": "(mi + mj) d²rS/dt² = fi + fj",
+          "tex": "(m_i + m_j) \\frac{\\mathrm{d}^2}{\\mathrm{d}t^2} \\mathbf{r}_S = \\mathbf{f}_i + \\mathbf{f}_j",
           "note": "the internal forces cancel; the centre of mass moves as one mass",
           "ref": "(2.71)"
         },
         {
           "eq": "u1,2 = vS ∓ e m2,1 (v1 − v2) / (m1 + m2),   vS = (m1 v1 + m2 v2) / (m1 + m2)",
+          "tex": "u_{1,2} = v_S \\mp e\\, m_{2,1} \\frac{v_1 - v_2}{m_1 + m_2}, \\qquad v_S = \\frac{m_1 v_1 + m_2 v_2}{m_1 + m_2}",
           "note": "velocities after a short impact with coefficient of restitution e (not in the notes)",
           "ref": ""
         },
         {
           "eq": "T = ½ m vᵀv",
+          "tex": "T = \\frac{1}{2} m \\mathbf{v}^\\mathrm{T} \\mathbf{v}",
           "note": "kinetic energy",
           "ref": "(2.81)"
         }
@@ -1652,7 +1801,8 @@
       "title": "Kinetic and potential energy",
       "idea": "A mass on a spring trades kinetic for potential energy and back, and with no friction their sum stays constant.",
       "law": "T + V = ½ m v² + ½ c (s − s0)² = const",
-      "lecture": "Kugi et al. (2015), section 2.2.4, Example 2.9 (pp. 28–31); eq. (2.81), (2.92)",
+      "lawTex": "T + V = \\frac{1}{2} m v^2 + \\frac{1}{2} c (s - s_0)^2 = \\text{const}",
+      "lecture": "Kugi et al. (2015), section 2.2.4, Example 2.9 (pp. 28–31); eq. (2.79)–(2.81), (2.91), (2.92)",
       "practice": [
         {
           "question": "A 0.5 kg mass on a spring of rate c = 200 N/m is pulled 0.1 m from the spring's free length and let go. How fast is it moving when it passes the free length?",
@@ -1671,26 +1821,31 @@
       "equations": [
         {
           "eq": "P = fR · v",
+          "tex": "P = \\mathbf{f}_R \\cdot \\mathbf{v}",
           "note": "power",
           "ref": "(2.79)"
         },
         {
           "eq": "E(t) − E(t0) = ∫ P dτ",
+          "tex": "E(t) - E(t_0) = \\int_{t_0}^{t} P(\\tau)\\,\\mathrm{d}\\tau",
           "note": "energy transferred",
           "ref": "(2.80)"
         },
         {
           "eq": "T = ½ m vᵀv",
+          "tex": "T = \\frac{1}{2} m \\mathbf{v}^\\mathrm{T} \\mathbf{v}",
           "note": "kinetic energy",
           "ref": "(2.81)"
         },
         {
           "eq": "V(s) = ∫ fF(s̃) ds̃ from s0 to s",
+          "tex": "V(s) = \\int_{s_0}^{s} f_F(\\tilde{s})\\,\\mathrm{d}\\tilde{s}",
           "note": "potential energy of a spring",
           "ref": "(2.91)"
         },
         {
           "eq": "V(s) = ½ c (s − s0)²",
+          "tex": "V(s) = \\frac{1}{2} c (s - s_0)^2",
           "note": "linear spring",
           "ref": "(2.92)"
         }
@@ -1701,6 +1856,7 @@
       "title": "Friction",
       "idea": "Friction turns motion into heat: dry (Coulomb) friction stops a sliding block at a steady rate, viscous friction fades it gradually.",
       "law": "m ẍ = fe − µC m g sign(ẋ) − µV ẋ",
+      "lawTex": "m\\ddot{x} = f_e - \\mu_C m g \\operatorname{sign}(\\dot{x}) - \\mu_V \\dot{x}",
       "lecture": "Kugi et al. (2015), section 2.2.5 (pp. 33–38); eq. (2.99)–(2.103), (2.106)",
       "practice": [
         {
@@ -1720,27 +1876,32 @@
       "equations": [
         {
           "eq": "fH = µH fN",
+          "tex": "f_H = \\mu_H f_N",
           "note": "limit of static friction (Haftreibung)",
           "ref": "(2.99)"
         },
         {
           "eq": "fC = µC fN sign(ẋ)",
+          "tex": "f_C = \\mu_C f_N \\operatorname{sign}(\\dot{x})",
           "note": "sliding (Coulomb) friction",
           "ref": "(2.100)"
         },
         {
           "eq": "m ẍ = fe − µC m g sign(ẋ)",
+          "tex": "m\\ddot{x} = f_e - \\mu_C m g \\operatorname{sign}(\\dot{x})",
           "note": "the sliding block",
           "ref": "(2.101)"
         },
         {
           "eq": "sticking: |fe| ≤ fH and ẋ = 0 ⇒ ẋ = 0; sliding otherwise",
+          "tex": "\\lvert f_e \\rvert \\le f_H \\text{ and } \\dot{x} = 0\\!: \\; \\dot{x} = 0 \\qquad \\text{otherwise}\\!: \\; m\\dot{v} = f_e - \\mu_C m g \\operatorname{sign}(v)",
           "note": "switching between sticking and sliding",
-          "ref": "(2.102)"
+          "ref": "(2.102), (2.103)"
         },
         {
-          "eq": "fr = µV v",
-          "note": "viscous friction",
+          "eq": "fr = µV Δv",
+          "tex": "f_r = \\mu_V \\Delta v",
+          "note": "viscous friction; Δv is the relative speed",
           "ref": "(2.106)"
         }
       ]
@@ -1750,6 +1911,7 @@
       "title": "Spring-mass-damper system",
       "idea": "A mass on a spring and damper rings at its natural frequency, dies away through the damper, and answers a shaking force most strongly near that frequency.",
       "law": "M q̈ + D q̇ + C q = B fe",
+      "lawTex": "\\mathbf{M}\\ddot{\\mathbf{q}} + \\mathbf{D}\\dot{\\mathbf{q}} + \\mathbf{C}\\mathbf{q} = \\mathbf{B}\\mathbf{f}_e",
       "lecture": "Kugi et al. (2015), section 2.2.6, Example 2.12 (pp. 41–43); eq. (2.121)–(2.124)",
       "practice": [
         {
@@ -1783,26 +1945,31 @@
       "equations": [
         {
           "eq": "M q̈ + D q̇ + C q = k + b fL",
+          "tex": "\\mathbf{M}\\ddot{\\mathbf{q}} + \\mathbf{D}\\dot{\\mathbf{q}} + \\mathbf{C}\\mathbf{q} = \\mathbf{k} + \\mathbf{b} f_L",
           "note": "Example 2.12, three masses",
           "ref": "(2.115)"
         },
         {
           "eq": "M q̈ + D q̇ + C q = B fe",
+          "tex": "\\mathbf{M}\\ddot{\\mathbf{q}} + \\mathbf{D}\\dot{\\mathbf{q}} + \\mathbf{C}\\mathbf{q} = \\mathbf{B}\\mathbf{f}_e",
           "note": "any linear spring-mass-damper system, about its rest position",
           "ref": "(2.121)"
         },
         {
           "eq": "T = ½ q̇ᵀ M q̇,   V = ½ qᵀ C q",
+          "tex": "T = \\frac{1}{2} \\dot{\\mathbf{q}}^\\mathrm{T} \\mathbf{M} \\dot{\\mathbf{q}}, \\qquad V = \\frac{1}{2} \\mathbf{q}^\\mathrm{T} \\mathbf{C} \\mathbf{q}",
           "note": "stored energy",
           "ref": "(2.122), (2.123)"
         },
         {
           "eq": "dE/dt = −q̇ᵀ D q̇ + q̇ᵀ B fe",
+          "tex": "\\frac{\\mathrm{d}}{\\mathrm{d}t} E = -\\dot{\\mathbf{q}}^\\mathrm{T} \\mathbf{D} \\dot{\\mathbf{q}} + \\dot{\\mathbf{q}}^\\mathrm{T} \\mathbf{B} \\mathbf{f}_e",
           "note": "the damper dissipates, the force supplies",
           "ref": "(2.124)"
         },
         {
           "eq": "ω0 = √(c/m),   ζ = d / (2√(cm)),   A = F / √((c − m ω²)² + (d ω)²)",
+          "tex": "\\omega_0 = \\sqrt{\\frac{c}{m}}, \\qquad \\zeta = \\frac{d}{2\\sqrt{cm}}, \\qquad A = \\frac{F}{\\sqrt{(c - m\\omega^2)^2 + (d\\omega)^2}}",
           "note": "one mass: natural frequency, damping ratio, steady amplitude",
           "ref": ""
         }
@@ -1813,7 +1980,8 @@
       "title": "Conservation of angular momentum",
       "idea": "Under a central force the angular momentum is constant, so the line to the centre sweeps equal areas in equal times.",
       "law": "d l(0)/dt = τ(0)    l(0) = 2 m dA(0)/dt",
-      "lecture": "Kugi et al. (2015), section 2.2.8, Example 2.13 (pp. 44–46); eq. (2.131)–(2.136)",
+      "lawTex": "\\frac{\\mathrm{d}}{\\mathrm{d}t} \\mathbf{l}^{(0)} = \\boldsymbol{\\tau}^{(0)} \\qquad \\mathbf{l}^{(0)} = 2m \\frac{\\mathrm{d}}{\\mathrm{d}t} \\mathbf{A}^{(0)}",
+      "lecture": "Kugi et al. (2015), section 2.2.8 (pp. 44–46), Example 2.13 (p. 46); eq. (2.131)–(2.136)",
       "practice": [
         {
           "question": "A 0.5 kg puck circles a pin on a spring with angular momentum l = 0.3 kg m²/s about the pin. What area does the line from the pin sweep each second?",
@@ -1831,16 +1999,19 @@
       "equations": [
         {
           "eq": "l(0) = r × p = r × m v",
+          "tex": "\\mathbf{l}^{(0)} = \\mathbf{r} \\times \\mathbf{p} = \\mathbf{r} \\times m\\mathbf{v}",
           "note": "angular momentum",
           "ref": "(2.131)"
         },
         {
           "eq": "d l(0)/dt = d(r × p)/dt = τ(0)",
+          "tex": "\\frac{\\mathrm{d}}{\\mathrm{d}t} \\mathbf{l}^{(0)} = \\frac{\\mathrm{d}}{\\mathrm{d}t} (\\mathbf{r} \\times \\mathbf{p}) = \\boldsymbol{\\tau}^{(0)}",
           "note": "conservation of angular momentum (Drallsatz)",
           "ref": "(2.134)"
         },
         {
           "eq": "dA(0)/dt = ½ r × v,   l(0) = 2 m dA(0)/dt",
+          "tex": "\\frac{\\mathrm{d}}{\\mathrm{d}t} \\mathbf{A}^{(0)} = \\frac{1}{2} \\mathbf{r} \\times \\mathbf{v}, \\qquad \\mathbf{l}^{(0)} = 2m \\frac{\\mathrm{d}}{\\mathrm{d}t} \\mathbf{A}^{(0)}",
           "note": "areal velocity",
           "ref": "(2.135), (2.136)"
         }
@@ -1851,7 +2022,8 @@
       "title": "Euler–Lagrange equations",
       "idea": "From the kinetic and potential energy alone, the Lagrangian gives the equations of motion of a ball rolling on a turning beam.",
       "law": "d/dt ∂L/∂q̇j − ∂L/∂qj = fnp,j    L = T − V",
-      "lecture": "Kugi et al. (2015), section 2.3, Example 2.20 (pp. 62–64); eq. (2.196), (2.205)–(2.214)",
+      "lawTex": "\\frac{\\mathrm{d}}{\\mathrm{d}t} \\frac{\\partial L}{\\partial \\dot{q}_j} - \\frac{\\partial L}{\\partial q_j} = f_{np,j} \\qquad L = T - V",
+      "lecture": "Kugi et al. (2015), section 2.3 (p. 60), Example 2.20 (pp. 62–64); eq. (2.196), (2.205)–(2.214)",
       "practice": [
         {
           "question": "A 0.1 kg ball rests on the beam of Example 2.20 at r = 0.2 m from the pivot, with the beam level. With g = 9.81 m/s², what torque on the beam holds it there?",
@@ -1863,38 +2035,44 @@
             "rR": 0.2,
             "g": 9.81
           },
-          "solution": "Set all speeds and accelerations to zero with φ1 = 0 in (2.214): the first equation holds for any r, the second leaves τ(0) = g mK r = 9.81 · 0.1 · 0.2 = 0.196 N m.",
+          "solution": "Set all speeds and accelerations to zero with φ1 = 0 in (2.214): the first equation holds for any r, the second leaves τe(0) = g mK r = 9.81 · 0.1 · 0.2 = 0.196 N m.",
           "source": "Worked by hand from (eq. 2.214)"
         }
       ],
       "equations": [
         {
           "eq": "d/dt ∂L/∂q̇j − ∂L/∂qj = fnp,j,   L = T − V",
+          "tex": "\\frac{\\mathrm{d}}{\\mathrm{d}t} \\frac{\\partial}{\\partial \\dot{q}_j} L - \\frac{\\partial}{\\partial q_j} L = f_{np,j}, \\qquad L = T - V",
           "note": "Euler–Lagrange equations",
           "ref": "(2.196)"
         },
         {
           "eq": "Tt,K = ½ mK (r² φ̇1² + (ṙ − rK φ̇1)²)",
+          "tex": "T_{t,K} = \\frac{1}{2} m_K \\big(r^2 \\dot{\\varphi}_1^2 + (\\dot{r} - r_K \\dot{\\varphi}_1)^2\\big)",
           "note": "ball, translation",
           "ref": "(2.206)"
         },
         {
-          "eq": "ΘK,zz = 2/5 mK rK²,   Tr,K = ½ ΘK,zz (φ̇1 − ṙ/rK)²",
+          "eq": "θK,zz = 2/5 mK rK²,   Tr,K = ½ θK,zz (φ̇1 − ṙ/rK)²",
+          "tex": "\\theta_{K,zz} = \\frac{2}{5} m_K r_K^2, \\qquad T_{r,K} = \\frac{1}{2} \\theta_{K,zz} \\Big(\\dot{\\varphi}_1 - \\frac{\\dot{r}}{r_K}\\Big)^2",
           "note": "ball, rotation, rolling ṙ = −rK φ̇2",
           "ref": "(2.207)–(2.209)"
         },
         {
-          "eq": "Tr,B = ½ ΘB,zz φ̇1²,   V = mK g (r sin φ1 + rK cos φ1) − mK g rK",
+          "eq": "Tr,B = ½ θB,zz φ̇1²,   V = mK g (r sin φ1 + rK cos φ1) − mK g rK",
+          "tex": "T_{r,B} = \\frac{1}{2} \\theta_{B,zz} \\dot{\\varphi}_1^2, \\qquad V = m_K g \\big(r \\sin(\\varphi_1) + r_K \\cos(\\varphi_1)\\big) - m_K g r_K",
           "note": "beam and potential energy",
           "ref": "(2.210), (2.211)"
         },
         {
-          "eq": "(mK + ΘK,zz/rK²) r̈ − (ΘK,zz/rK + mK rK) φ̈1 − mK r φ̇1² + mK g sin φ1 = 0",
+          "eq": "(mK + θK,zz/rK²) r̈ − (θK,zz/rK + mK rK) φ̈1 − mK r φ̇1² + mK g sin φ1 = 0",
+          "tex": "\\Big(m_K + \\frac{\\theta_{K,zz}}{r_K^2}\\Big) \\ddot{r} - \\Big(\\frac{\\theta_{K,zz}}{r_K} + m_K r_K\\Big) \\ddot{\\varphi}_1 - m_K r \\dot{\\varphi}_1^2 + m_K g \\sin(\\varphi_1) = 0",
           "note": "equation for the ball",
           "ref": "(2.214a)"
         },
         {
-          "eq": "−(mK rK + ΘK,zz/rK) r̈ + (ΘK,zz + ΘB,zz + mK (r² + rK²)) φ̈1 + 2 mK r ṙ φ̇1 + mK g (r cos φ1 − rK sin φ1) = τ(0)",
+          "eq": "−(mK rK + θK,zz/rK) r̈ + (θK,zz + θB,zz + mK (r² + rK²)) φ̈1 + 2 mK r ṙ φ̇1 + mK g (r cos φ1 − rK sin φ1) = τe(0)",
+          "tex": "-\\Big(m_K r_K + \\frac{\\theta_{K,zz}}{r_K}\\Big) \\ddot{r} + \\Big(\\theta_{K,zz} + \\theta_{B,zz} + m_K\\big(r^2 + r_K^2\\big)\\Big) \\ddot{\\varphi}_1 + 2 m_K r \\dot{r} \\dot{\\varphi}_1 + m_K g \\big(r \\cos(\\varphi_1) - r_K \\sin(\\varphi_1)\\big) = \\tau_e^{(0)}",
           "note": "equation for the beam",
           "ref": "(2.214b, c)"
         }
@@ -1905,6 +2083,7 @@
       "title": "Heat radiation",
       "idea": "Every surface radiates in proportion to T⁴; near room temperature that is about as much as gentle convection, and far more when hot.",
       "law": "q′ = πD(α(T2 − T∞) + ε2σ(T2⁴ − T∞⁴))    Eb = σT⁴",
+      "lawTex": "\\dot{q}^\\circ = D\\pi\\big(\\alpha(T_2 - T_\\infty) + \\varepsilon_2 \\sigma (T_2^4 - T_\\infty^4)\\big) \\qquad E_b = \\sigma T^4",
       "lecture": "Kugi et al. (2015), section 3.2.4 (pp. 79–91), Beispiel 3.1 (pp. 88–90); eqs. (3.35), (3.42), (3.63)–(3.67)",
       "practice": [
         {
@@ -1926,41 +2105,49 @@
       "equations": [
         {
           "eq": "Eb(T) = σT⁴,  σ = 5.6704 × 10⁻⁸ W/(m²K⁴)",
+          "tex": "E_b(T) = \\sigma T^4, \\qquad \\sigma = 5.6704 \\times 10^{-8}\\,\\mathrm{W/(m^2\\,K^4)}",
           "note": "Stefan–Boltzmann law for a black body",
           "ref": "(3.35)"
         },
         {
           "eq": "ε(T) = E(T)/Eb(T)",
+          "tex": "\\varepsilon(T) = \\frac{E(T)}{E_b(T)}",
           "note": "total emissivity",
           "ref": "(3.36)"
         },
         {
           "eq": "Ji = εiσTi⁴ + (1 − εi)Gi",
+          "tex": "J_i = \\varepsilon_i \\sigma T_i^4 + (1 - \\varepsilon_i) G_i",
           "note": "radiosity of a grey, opaque surface (net-radiation method)",
           "ref": "(3.42)"
         },
         {
           "eq": "AiFij = AjFji",
+          "tex": "A_i F_{ij} = A_j F_{ji}",
           "note": "reciprocity of view factors",
           "ref": "(3.48)"
         },
         {
           "eq": "q1 = σ(T1⁴ − T2⁴)/(1/ε1 + (d/D)(1/ε2 − 1))",
-          "note": "net flux between concentric tubes, (3.63) rearranged",
+          "tex": "\\dot{q}_1 = \\frac{\\varepsilon_1 \\varepsilon_2 \\sigma}{\\varepsilon_2 + \\varepsilon_1 (1 - \\varepsilon_2) \\frac{d}{D}} \\big(T_1^4 - T_2^4\\big)",
+          "note": "net flux between concentric tubes; (3.63) divided by ε1ε2",
           "ref": "(3.63)"
         },
         {
           "eq": "q′ = πD(α(T2 − T∞) + ε2σ(T2⁴ − T∞⁴))",
+          "tex": "\\dot{q}^\\circ = D\\pi\\big(\\alpha(T_2 - T_\\infty) + \\varepsilon_2 \\sigma (T_2^4 - T_\\infty^4)\\big)",
           "note": "loss of the outer tube by convection and radiation",
           "ref": "(3.65)"
         },
         {
           "eq": "T1 = (T2⁴ + (1/ε1 + (d/D)(1/ε2 − 1)) q′/(πdσ))^(1/4)",
+          "tex": "T_1 = \\bigg(T_2^4 + \\Big(\\frac{1}{\\varepsilon_1} + \\frac{d}{D}\\Big(\\frac{1}{\\varepsilon_2} - 1\\Big)\\Big) \\frac{\\dot{q}^\\circ}{\\pi d \\sigma}\\bigg)^{1/4}",
           "note": "inner tube temperature at full load",
           "ref": "(3.67)"
         },
         {
           "eq": "αrad = εσ(T2² + T∞²)(T2 + T∞)",
+          "tex": "\\alpha_\\mathrm{rad} = \\varepsilon \\sigma \\big(T_2^2 + T_\\infty^2\\big)(T_2 + T_\\infty)",
           "note": "linearised radiation coefficient, so that εσ(T2⁴ − T∞⁴) = αrad(T2 − T∞)",
           "ref": ""
         }
@@ -1971,6 +2158,7 @@
       "title": "Plane wall",
       "idea": "Through a layered wall the same heat flux crosses every layer, so the thermal resistances add like resistors in series.",
       "law": "q = k(T∞,0 − T∞,L)    1/k = 1/α0 + Σ Li/λi + 1/αL",
+      "lawTex": "\\dot{q} = k(T_{\\infty,0} - T_{\\infty,L}) \\qquad \\frac{1}{k} = \\frac{1}{\\alpha_0} + \\sum_{i=1}^{N} \\frac{L_i}{\\lambda_i} + \\frac{1}{\\alpha_L}",
       "lecture": "Kugi et al. (2015), section 3.4.1 (pp. 95–98), Beispiel 3.2 (pp. 97–98); eqs. (3.81)–(3.88)",
       "practice": [
         {
@@ -1996,7 +2184,7 @@
               }
             ]
           },
-          "solution": "1/kD = 1/αI + 2LG/λG + D/λL + 1/αA = 0.125 + 0.008 + 0.48 + 0.05 = 0.663 m²K/W, so kD = 1.51 W/(m²K).",
+          "solution": "1/kD = 1/αI + 2δ/λG + D/λL + 1/αA = 0.125 + 0.008 + 0.48 + 0.05 = 0.663 m²K/W, so kD = 1.51 W/(m²K).",
           "source": "Worked by hand from (3.86)"
         },
         {
@@ -2023,26 +2211,31 @@
       "equations": [
         {
           "eq": "q = (λ/L)(T0 − TL)",
+          "tex": "\\dot{q} = \\frac{\\lambda}{L} (T_0 - T_L)",
           "note": "one layer, constant conductivity, surface temperatures given",
           "ref": "(3.81)"
         },
         {
           "eq": "q = α0(T∞,0 − T0) = (λ1/L1)(T0 − T1) = … = αL(TL − T∞,L)",
+          "tex": "\\dot{q} = \\alpha_0 (T_{\\infty,0} - T_0) = \\frac{\\lambda_1}{L_1} (T_0 - T_1) = \\dots = \\alpha_L (T_L - T_{\\infty,L})",
           "note": "the same flux through every layer and film",
           "ref": "(3.82)"
         },
         {
           "eq": "q = k(T∞,0 − T∞,L),  1/k = 1/α0 + Σ Li/λi + 1/αL",
+          "tex": "\\dot{q} = k (T_{\\infty,0} - T_{\\infty,L}), \\qquad k = \\frac{1}{\\frac{1}{\\alpha_0} + \\sum_{i=1}^{N} \\frac{L_i}{\\lambda_i} + \\frac{1}{\\alpha_L}}",
           "note": "heat transfer coefficient (k-value)",
           "ref": "(3.84)"
         },
         {
-          "eq": "q(1/αI + 2LG/λG + D/λL + 1/αA) = TI − TA",
+          "eq": "q(1/αI + 2δ/λG + D/λL + 1/αA) = TI − TA",
+          "tex": "\\dot{q} \\Big(\\frac{1}{\\alpha_I} + 2\\frac{\\delta}{\\lambda_G} + \\frac{D}{\\lambda_L} + \\frac{1}{\\alpha_A}\\Big) = T_I - T_A",
           "note": "double glazing",
           "ref": "(3.86)"
         },
         {
-          "eq": "1/kE = 1/αI + LG/λG + 1/αA",
+          "eq": "1/kE = 1/αI + δ/λG + 1/αA",
+          "tex": "\\frac{1}{k_E} = \\frac{1}{\\alpha_I} + \\frac{\\delta}{\\lambda_G} + \\frac{1}{\\alpha_A}",
           "note": "single glazing",
           "ref": "(3.87)"
         }
@@ -2053,6 +2246,7 @@
       "title": "Insulated pipe",
       "idea": "Insulating a thin pipe also enlarges its surface, so up to a critical radius more insulation loses more heat.",
       "law": "q′ = 2π(TF − T∞) / (1/(r0α0) + Σ ln(ri/ri−1)/λi + 1/(rNαN))    rc = λ/α",
+      "lawTex": "\\dot{q}^\\circ = \\frac{2\\pi (T_F - T_\\infty)}{\\frac{1}{r_0 \\alpha_0} + \\sum_{i=1}^{N} \\frac{1}{\\lambda_i} \\ln\\big(\\frac{r_i}{r_{i-1}}\\big) + \\frac{1}{r_N \\alpha_N}} \\qquad r_c = \\frac{\\lambda}{\\alpha}",
       "lecture": "Kugi et al. (2015), section 3.4.2 (pp. 98–100); eqs. (3.89)–(3.93)",
       "practice": [
         {
@@ -2092,26 +2286,31 @@
       "equations": [
         {
           "eq": "0 = λi (1/r) ∂/∂r (r ∂T/∂r)",
+          "tex": "0 = \\lambda_i \\frac{1}{r} \\frac{\\partial}{\\partial r} \\Big(r \\frac{\\partial T}{\\partial r}\\Big)",
           "note": "stationary conduction in layer i, no sources",
           "ref": "(3.89)"
         },
         {
           "eq": "T(r) = Ti−1 + (Ti − Ti−1) ln(r/ri−1)/ln(ri/ri−1)",
+          "tex": "T(r) = T_{i-1} + (T_i - T_{i-1}) \\frac{\\ln(r/r_{i-1})}{\\ln(r_i/r_{i-1})}",
           "note": "logarithmic profile in a layer",
           "ref": "(3.90)"
         },
         {
           "eq": "q(r) = (λi/r)(Ti−1 − Ti)/ln(ri/ri−1)",
+          "tex": "\\dot{q}(r) = \\lambda_i \\frac{1}{r} \\frac{T_{i-1} - T_i}{\\ln(r_i/r_{i-1})}",
           "note": "flux density falls as 1/r",
           "ref": "(3.91)"
         },
         {
           "eq": "q′ = 2π(TF − T∞) / (1/(r0α0) + Σ ln(ri/ri−1)/λi + 1/(rNαN))",
+          "tex": "\\dot{q}^\\circ = \\frac{2\\pi (T_F - T_\\infty)}{\\frac{1}{r_0 \\alpha_0} + \\sum_{i=1}^{N} \\frac{1}{\\lambda_i} \\ln\\big(\\frac{r_i}{r_{i-1}}\\big) + \\frac{1}{r_N \\alpha_N}}",
           "note": "heat flow per unit length",
           "ref": "(3.93)"
         },
         {
           "eq": "rc = λ/αN",
+          "tex": "r_c = \\frac{\\lambda}{\\alpha_N}",
           "note": "critical insulation radius, dq′/drN = 0",
           "ref": ""
         }
@@ -2122,6 +2321,7 @@
       "title": "Cooling fins",
       "idea": "A fin enlarges the surface, but it cools along its length, so each extra length adds less: its efficiency falls.",
       "law": "ηf = Q(0)/Qmax    θ(x)/θ0 = (cosh m(L−x) + β sinh m(L−x))/(cosh mL + β sinh mL)",
+      "lawTex": "\\eta_f = \\frac{\\dot{Q}(0)}{\\dot{Q}_\\mathrm{max}} \\qquad \\frac{\\theta(x)}{\\theta_0} = \\frac{\\cosh m(L - x) + \\beta \\sinh m(L - x)}{\\cosh mL + \\beta \\sinh mL}",
       "lecture": "Kugi et al. (2015), section 3.4.3 (pp. 100–101); eq. (3.94); parameters of Aufgabe 3.14 (p. 107)",
       "practice": [
         {
@@ -2139,33 +2339,38 @@
             "T0": 353,
             "Tinf": 293
           },
-          "solution": "m = √(αP/(λA)) = √(12.5/0.6) = 4.564 1/m, mL = 2.282, β = αL/(λm) = 0.0913. Q(0) = λAmθ0 (sinh mL + β cosh mL)/(cosh mL + β sinh mL) = 2.739 × 60 × 0.997 W = 161.5 W. Qmax = (αPL + αLA)θ0 = 6.5 × 60 W = 390 W, so ηf = 0.414.",
+          "solution": "m = √(αP/(λA)) = √(12.5/0.6) = 4.564 1/m, mL = 2.282, β = αL/(λm) = 0.0913. Q(0) = λAmθ0 (sinh mL + β cosh mL)/(cosh mL + β sinh mL) = 2.739 × 60 × 0.983 W = 161.5 W. Qmax = (αPL + αLA)θ0 = 6.5 × 60 W = 390 W, so ηf = 0.414.",
           "source": "Worked by hand from (3.94)"
         }
       ],
       "equations": [
         {
           "eq": "λA d²T/dx² = αP(T − T∞)",
-          "note": "fin equation: conduction along, convection off the sides",
+          "tex": "\\lambda A \\frac{\\mathrm{d}^2 T}{\\mathrm{d}x^2} = \\alpha P (T - T_\\infty)",
+          "note": "fin equation: conduction along, convection off the sides (derived; the notes solve it in their appendix, not checked)",
           "ref": ""
         },
         {
           "eq": "m² = αP/(λA),  β = αL/(λm)",
+          "tex": "m^2 = \\frac{\\alpha P}{\\lambda A}, \\qquad \\beta = \\frac{\\alpha_L}{\\lambda m}",
           "note": "fin parameter and tip number",
           "ref": ""
         },
         {
           "eq": "θ(x)/θ0 = (cosh m(L−x) + β sinh m(L−x))/(cosh mL + β sinh mL)",
+          "tex": "\\frac{\\theta(x)}{\\theta_0} = \\frac{\\cosh m(L - x) + \\beta \\sinh m(L - x)}{\\cosh mL + \\beta \\sinh mL}",
           "note": "temperature with a convective tip, θ = T − T∞",
           "ref": ""
         },
         {
           "eq": "Q(0) = λAmθ0 (sinh mL + β cosh mL)/(cosh mL + β sinh mL)",
+          "tex": "\\dot{Q}(0) = \\lambda A m \\theta_0 \\frac{\\sinh mL + \\beta \\cosh mL}{\\cosh mL + \\beta \\sinh mL}",
           "note": "heat flow into the base",
           "ref": ""
         },
         {
           "eq": "ηf = Q(0)/Qmax ∈ [0, 1]",
+          "tex": "\\eta_f = \\frac{\\dot{Q}(0)}{\\dot{Q}_\\mathrm{max}} \\in [0, 1]",
           "note": "fin efficiency (Rippenwirkungsgrad); Qmax with the whole fin at T0",
           "ref": "(3.94)"
         }
@@ -2176,6 +2381,7 @@
       "title": "Heating a tank of water",
       "idea": "Water of uniform temperature heats like a first-order system: it rises towards T∞ + P/(kA) with time constant m0cp/(kA).",
       "law": "m0cp dT/dt = P − kA(T − T∞)    T(t) = T∞ + (P/(kA))(1 − e^(−kAt/(m0cp)))",
+      "lawTex": "m_0 c_p \\frac{\\mathrm{d}T}{\\mathrm{d}t} = P - kA(T - T_\\infty) \\qquad T(t) = T_\\infty + \\frac{P}{kA}\\Big(1 - \\mathrm{e}^{-\\frac{kA}{m_0 c_p} t}\\Big)",
       "lecture": "Kugi et al. (2015), section 3.5, Beispiel 3.3 (pp. 101–103); eqs. (3.97)–(3.104)",
       "practice": [
         {
@@ -2202,26 +2408,31 @@
       "equations": [
         {
           "eq": "m0cp dT/dt = P − kA(T − T∞),  T(0) = T∞",
+          "tex": "m_0 c_p \\frac{\\mathrm{d}}{\\mathrm{d}t} T(t) = P - kA\\big(T(t) - T_\\infty\\big), \\qquad T(0) = T_\\infty",
           "note": "energy balance of the water",
           "ref": "(3.97)"
         },
         {
           "eq": "k = 1/(1/αi + L/λ + 1/αa)",
+          "tex": "k = \\frac{1}{\\frac{1}{\\alpha_i} + \\frac{L}{\\lambda} + \\frac{1}{\\alpha_a}}",
           "note": "heat transfer coefficient of the wall",
           "ref": "(3.98)"
         },
         {
           "eq": "T(t) = T∞ + (P/(kA))(1 − e^(−kAt/(m0cp)))",
+          "tex": "T(t) = T_\\infty + \\frac{P}{kA}\\Big(1 - \\mathrm{e}^{-\\frac{kA}{m_0 c_p} t}\\Big)",
           "note": "temperature until it boils",
           "ref": "(3.99)"
         },
         {
           "eq": "P = kA(Ts − T∞)/(1 − e^(−kAts/(m0cp)))",
+          "tex": "P = \\frac{kA(T_s - T_\\infty)}{1 - \\mathrm{e}^{-\\frac{kA}{m_0 c_p} t_s}}",
           "note": "power to boil at ts",
           "ref": "(3.100)"
         },
         {
           "eq": "t = ts + (hvm0/(kA(Ts − T∞))) ln(P/(P − kA(Ts − T∞)))",
+          "tex": "t = t_s + \\ln\\Big(\\frac{P}{P - kA(T_s - T_\\infty)}\\Big) \\frac{h_v m_0}{kA(T_s - T_\\infty)}",
           "note": "time when all the water has boiled away",
           "ref": "(3.104)"
         }
@@ -2232,6 +2443,7 @@
       "title": "Finite differences",
       "idea": "On a grid, conduction moves each node towards the average of its neighbours; the explicit scheme is stable only for small enough time steps.",
       "law": "Ti^(j+1) = Ti^j + (aΔt/Δx²)(Ti−1^j − 2Ti^j + Ti+1^j)    aΔt/Δx² ≤ 1/2",
+      "lawTex": "T_i^{j+1} = T_i^j + \\frac{a\\Delta t}{\\Delta x^2}\\big(T_{i-1}^j - 2T_i^j + T_{i+1}^j\\big) \\qquad \\frac{a\\Delta t}{\\Delta x^2} \\le \\frac{1}{2}",
       "lecture": "Kugi et al. (2015), section 3.6.1 (pp. 104–107); eqs. (3.105)–(3.111)",
       "practice": [
         {
@@ -2253,26 +2465,31 @@
       "equations": [
         {
           "eq": "∂T/∂t = a ∂²T/∂x²,  a = λ/(ρcp)",
+          "tex": "\\frac{\\partial T}{\\partial t} = a \\frac{\\partial^2 T}{\\partial x^2}, \\quad a = \\frac{\\lambda}{\\rho c_p}, \\qquad \\frac{\\partial T}{\\partial x}\\Big|_{x=0} = 0, \\quad T(t, L) = T_L(t)",
           "note": "1D conduction, no sources; ∂T/∂x = 0 at x = 0, T(t, L) = TL",
           "ref": "(3.105)"
         },
         {
           "eq": "xi = iΔx,  Δx = L/N",
+          "tex": "x_i = i\\Delta x, \\qquad \\Delta x = \\frac{L}{N}",
           "note": "space grid",
           "ref": "(3.106)"
         },
         {
-          "eq": "dTi/dt = (a/Δx²)(Ti−1 − 2Ti + Ti+1)",
+          "eq": "dTi/dt = (a/Δx²)(Ti−1 − 2Ti + Ti+1),   dT0/dt = (2a/Δx²)(T1 − T0)",
+          "tex": "\\dot{T}_i = \\frac{a}{\\Delta x^2}\\big(T_{i-1} - 2T_i + T_{i+1}\\big), \\qquad \\dot{T}_0 = \\frac{2a}{\\Delta x^2}\\big(T_1 - T_0\\big)",
           "note": "semi-discrete model, already in state-space form",
           "ref": "(3.108)"
         },
         {
           "eq": "Ti^(j+1) = Ti^j + (aΔt/Δx²)(Ti−1^j − 2Ti^j + Ti+1^j),  T0^(j+1) = T0^j + (2aΔt/Δx²)(T1^j − T0^j)",
+          "tex": "T_i^{j+1} = T_i^j + \\frac{a\\Delta t}{\\Delta x^2}\\big(T_{i-1}^j - 2T_i^j + T_{i+1}^j\\big), \\qquad T_0^{j+1} = T_0^j + \\frac{2a\\Delta t}{\\Delta x^2}\\big(T_1^j - T_0^j\\big)",
           "note": "explicit Euler scheme",
           "ref": "(3.110)"
         },
         {
           "eq": "aΔt/Δx² ≤ 1/2",
+          "tex": "\\frac{a\\Delta t}{\\Delta x^2} \\le \\frac{1}{2}",
           "note": "stability of the explicit scheme",
           "ref": "(3.111)"
         }
