@@ -1,0 +1,35 @@
+{
+  "format": "design-rules bibliography",
+  "version": 1,
+  "about": "The sources of this project's subject matter (the physics), apart from the design rules' bibliography, which keeps the design principles.",
+  "entries": [
+    {
+      "key": "prechtl2010",
+      "authors": [
+        "Prechtl, A."
+      ],
+      "year": 2010,
+      "title": "Vorlesungen über Elektrodynamik",
+      "venue": "Lecture notes, Institute of Electrodynamics, Microwave and Circuit Engineering, TU Wien",
+      "backs": "Every equation in the labs, by its equation number; chapter titles and page ranges from its table of contents.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-01"
+      }
+    },
+    {
+      "key": "lasser2012",
+      "authors": [
+        "Lasser, G."
+      ],
+      "year": 2012,
+      "title": "Wellenausbreitung (389.064), 10th edition, based on lectures by E. Bonek",
+      "venue": "Lecture notes, Institute of Telecommunications, TU Wien",
+      "backs": "The wave propagation labs, by printed page and equation number.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-01"
+      }
+    }
+  ]
+}

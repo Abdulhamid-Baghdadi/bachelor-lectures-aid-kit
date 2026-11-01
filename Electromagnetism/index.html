@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electrodynamics Lab</title>
+<meta name="description" content="Twenty-eight key equations of electrodynamics and wave propagation to play with: Maxwell's equations, potentials, the Poynting vector, the skin effect, waves, reflection, waveguides, antennas, link budgets, radar and multipath fading.">
+<script>
+  // Before the page draws, so a chosen theme never flashes the other one.
+  try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+</script>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="src/app.js"></script>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1><a href="#">Electrodynamics Lab</a></h1>
+    <p>Move the sliders and watch the key equations of electrodynamics and wave propagation work. After the TU Wien lecture notes of Prechtl (2010), <i>Vorlesungen über Elektrodynamik</i>, and Lasser (2012), <i>Wellenausbreitung</i>.</p>
+  </div>
+  <button id="theme" type="button">Light or dark</button>
+</header>
+<main></main>
+<footer>
+  <p>A learning aid: ideal materials, typical material values, numerical integrals on coarse grids. Equation numbers refer to the lecture notes; no text of them is reproduced.
+    Companion to the <a href="https://abdulhamid-baghdadi.github.io/circuit-lab/">Circuit Lab</a>.
+    <a href="https://github.com/Abdulhamid-Baghdadi/electrodynamics-lab">Source</a>.</p>
+</footer>
+<noscript><p>Electrodynamics Lab needs JavaScript.</p></noscript>
+</body>
+</html>
