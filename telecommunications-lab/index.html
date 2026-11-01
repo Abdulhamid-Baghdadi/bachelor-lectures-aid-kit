@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telecommunications</title>
+<meta name="description" content="Ten ideas of digital telecommunication: quantisation and PCM, entropy and Huffman coding, line codes, raised-cosine pulses and the eye, the matched filter and bit errors, repetition and Hamming codes, PSK and QAM in noise, synchronisation errors, and the noise figure of a receiver.">
+<script>
+  // Before the page draws, so a chosen theme never flashes the other one.
+  try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+</script>
+<link rel="stylesheet" href="../kit/style.css">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="src/app.js"></script>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1><a href="#">Telecommunications</a></h1>
+    <p>Move the sliders and watch bits become pulses, pulses meet noise, and codes and receivers fight back. After the TU Wien lecture slides of Goiser (2016), <i>Telekommunikation</i>, and the course's formulary.</p>
+  </div>
+  <button id="theme" type="button">Light or dark</button>
+</header>
+<main></main>
+<footer>
+  <p>A learning aid: white Gaussian noise, ideal synchronisation unless a lab says otherwise, noise drawn from seeded generators so every visit looks the same. Slide numbers refer to the lecture sets; no text of them is reproduced.
+    Sampling, the Fourier transform and filters are in the <a href="../signals-systems-lab/">Signals and Systems lab</a>; free-space link budgets, fading and delay spread in the <a href="../Electromagnetism/">Electrodynamics lab</a>.</p>
+</footer>
+<noscript><p>Telecommunications needs JavaScript.</p></noscript>
+</body>
+</html>

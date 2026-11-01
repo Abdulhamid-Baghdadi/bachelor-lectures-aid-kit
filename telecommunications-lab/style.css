@@ -1,0 +1,26 @@
+/* This lab's own look, after the kit's (../kit/style.css): its families' frame colours, the eye's traces, the
+   constellation's cloud, and the Hamming lab's bit buttons. */
+[data-family=source] { --frame: #7C3AED; }
+[data-family=baseband] { --frame: #0369A1; }
+[data-family=coding] { --frame: #B45309; }
+[data-family=carrier] { --frame: #BE123C; }
+[data-family=receiver] { --frame: #047857; }
+
+.series.trace { stroke: var(--accent); stroke-width: 1; opacity: 0.45; }
+.mark.dot.cloud { fill: var(--muted); }
+
+.bits { display: flex; flex-wrap: wrap; gap: 6px; }
+.bit { display: grid; justify-items: center; min-width: 44px; min-height: 44px; padding: 4px 6px; border-radius: 8px;
+       border: 2px solid var(--line); background: var(--panel); color: var(--ink); font: inherit; cursor: pointer; }
+.bit[aria-pressed=true] { border-color: var(--accent); }
+.bit.flipped { border-color: var(--danger); border-style: dashed; }
+.bit .bit-name { font-size: 0.75rem; color: var(--muted); }
+.bit .bit-value { font-size: 1.25rem; font-weight: 700; }
+.bit:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.decode td.hit { outline: 2px solid var(--danger); font-weight: 700; }
+.decode table { width: auto; }
+
+/* "Telecommunications" is one long word: at phone width the header wraps the theme button under it instead of
+   pushing it off the page. */
+.top { flex-wrap: wrap; }
+.top > div { min-width: 0; flex: 1 1 240px; }

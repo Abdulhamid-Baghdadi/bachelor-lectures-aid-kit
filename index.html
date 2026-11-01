@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bachelor lectures aid kit</title>
-<meta name="description" content="interactive labs for TU Wien Bachelor lectures, each fusing two or three courses: electrodynamics and wave propagation; automation and modelling; signals and systems 1 and 2; semiconductor physics, devices and circuits.">
+<meta name="description" content="interactive labs for TU Wien Bachelor lectures, each fusing two or three courses: electrodynamics and wave propagation; automation and modelling; signals and systems 1 and 2; semiconductor physics, devices and circuits; special relativity; telecommunications.">
 <script>
   // Before the page draws, so a chosen theme never flashes the other one.
   try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
@@ -16,6 +16,7 @@
          border-top: 6px solid var(--frame); color: var(--ink); text-decoration: none; }
   [data-family=devices] { --frame: #BE123C; }
   [data-family=kinematics] { --frame: #1E40AF; }
+  [data-family=telecom] { --frame: #0369A1; }
   .lab:hover { box-shadow: 0 2px 8px rgba(0,0,0,.2); }
   .lab:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
   .lab h2 { margin: 0; font-size: 1.25rem; color: var(--accent); }
@@ -71,6 +72,13 @@
       <img class="light" src="relativity-lab/docs/light.png" alt="The Special Relativity Lab's overview: lab cards grouped under Einstein's kinematic and electrodynamic parts" width="1280" height="1000">
       <img class="dark" src="relativity-lab/docs/dark.png" alt="The moving charge lab in the dark theme: the electric field squeezed across the path and the magnetic field above and below it" width="1280" height="1000">
       <p>The Minkowski diagram, simultaneity, moving clocks and rods, adding velocities, and E and B mixing under a boost.</p>
+    </a>
+    <a class="lab" href="telecommunications-lab/" data-family="telecom">
+      <h2>Telecommunications Lab</h2>
+      <p class="courses">Telekommunikation, after the slides of Goiser (2016)</p>
+      <img class="light" src="telecommunications-lab/docs/light.png" alt="The Telecommunications Lab's overview: lab cards grouped under its five parts" width="1280" height="1000">
+      <img class="dark" src="telecommunications-lab/docs/dark.png" alt="The PSK and QAM lab in the dark theme: a 16-QAM constellation with a cloud of received symbols" width="1280" height="1000">
+      <p>Quantisation and PCM, entropy and Huffman coding, line codes, raised-cosine pulses and the eye, the matched filter, repetition and Hamming codes, PSK and QAM in noise, synchronisation errors, and the noise figure.</p>
     </a>
   </div>
 </main>

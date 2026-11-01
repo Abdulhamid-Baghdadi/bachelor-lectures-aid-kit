@@ -1,0 +1,35 @@
+{
+  "format": "design-rules bibliography",
+  "version": 1,
+  "about": "The sources of this project's subject matter (telecommunication), apart from the design rules' bibliography, which keeps the design principles.",
+  "entries": [
+    {
+      "key": "goiser2016",
+      "authors": [
+        "Goiser, A. M. J."
+      ],
+      "year": 2016,
+      "title": "Telekommunikation: lecture slides, sets 0–11 and 99 (Signale und Systeme, PCM, Basisbandübertragung, Optimale Filterung, Quellkodierung, Kanalkodierung, Trägermodulation I and II, Mobile Kommunikation, Rauschen und Link-Budget, Synchronisation)",
+      "venue": "Lecture slides, Institute of Telecommunications, TU Wien; the year from the files' names (…_2016_V…), the author from every title slide",
+      "backs": "Every equation of the labs, by set and printed slide number, and the worked examples used as practice questions.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-01"
+      }
+    },
+    {
+      "key": "formulary2017",
+      "authors": [
+        "Institute of Telecommunications, TU Wien"
+      ],
+      "year": 2017,
+      "title": "Notation, Definitionen und Formelsammlung, 389.138 Telekommunikation, 2017S",
+      "venue": "Course formulary, dated 2017-03-07; no author named",
+      "backs": "Q(x) = ½ erfc(x/√2) (eq. 5), the binary error probability Q(V/2σ) (eq. 6), and the matched-filter error probabilities of Table 2.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-01"
+      }
+    }
+  ]
+}

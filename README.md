@@ -23,6 +23,7 @@ The main task in every lab, recorded from the Electrodynamics Lab: move a contro
 | [Signals and systems](signals-systems-lab/README.md) | Signale und Systeme 1, 2 | Prechtl (2010); Doblinger (2015) |
 | [Semiconductors, devices and circuits](semiconductors-lab/README.md) | Halbleiterphysik, Elektronische Bauelemente, Schaltungstechnik | Strasser (2015); Hobler (2009); Zimmermann (2010) |
 | [Special relativity](relativity-lab/README.md) | Relativitätstheorie | Einstein (1905) |
+| [Telecommunications](telecommunications-lab/README.md) | Telekommunikation | Goiser (2016) |
 
 ## How to open it
 
@@ -33,7 +34,7 @@ python -m http.server 8771 --bind 127.0.0.1
 ```
 
 then <http://127.0.0.1:8771/>. The labs are ES modules, so opening `index.html` straight from the disk does not work.
-Tests, per folder: `node --test` in `kit`, `Electromagnetism`, `Automation`, `signals-systems-lab` and `semiconductors-lab`.
+Tests, per folder: `node --test` in `kit`, `Electromagnetism`, `Automation`, `signals-systems-lab`, `semiconductors-lab` and `telecommunications-lab`.
 
 ## Where your data stays
 
@@ -50,10 +51,12 @@ flowchart BT
   ac["Automation/src/core: LTI numerics and models"]
   sc["signals-systems-lab/src/core: signals, transforms, filters"]
   hc["semiconductors-lab/src/core: bands, carriers, devices, circuits"]
+  tc["telecommunications-lab/src/core: coding, modulation, detection, noise"]
   el["Electrodynamics labs and page"]
   al["Automation labs and page"]
   sl["Signals and systems labs and page"]
   hl["Semiconductors, devices and circuits labs and page"]
+  tl["Telecommunications labs and page"]
   start["index.html: start page"]
   ku --> kc
   ec --> kc
@@ -68,10 +71,14 @@ flowchart BT
   sl --> ku
   hl --> hc
   hl --> ku
+  tl --> tc
+  tl --> ku
+  tc --> kc
   start -. links .-> el
   start -. links .-> al
   start -. links .-> sl
   start -. links .-> hl
+  start -. links .-> tl
 ```
 
 Arrows point from a part to what it uses. The kit is shared once; each lab imports it by relative path (`../kit/...`),
