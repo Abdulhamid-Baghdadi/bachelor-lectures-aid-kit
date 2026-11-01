@@ -1,0 +1,293 @@
+{
+  "format": "semiconductors-lab labs",
+  "version": 1,
+  "about": "Two courses fused, grouped by idea: Halbleiterphysik after Strasser (2015), Skriptum Halbleiterphysik, TU Wien, and Elektronische Bauelemente after its exercise collection, Hobler (2009). Every equation was read in the script on 1 Nov 2026; its section and printed page are given, with the equation number where the script prints one next to it. Practice questions come from the two courses' exercise sheets; those marked 'worked by hand' were solved here from the script's equations, the others agree with the course's worked solutions, whose page is named. tests/unit/labs-data.test.js recomputes each answer with the core and fails if they disagree.",
+  "families": [
+    { "id": "carriers", "name": "Bands and carriers" },
+    { "id": "transport", "name": "Transport and light" },
+    { "id": "devices", "name": "Junctions and transistors" }
+  ],
+  "lectures": [
+    { "number": 1, "pages": "HL ch. 2–3, pp. 41–85", "title": "Bands and carriers", "family": "carriers",
+      "labs": ["bands", "fermi", "carriers"] },
+    { "number": 2, "pages": "HL ch. 3–4, pp. 87–117", "title": "Transport and light", "family": "transport",
+      "labs": ["drift", "recombination", "absorption"] },
+    { "number": 3, "pages": "HL ch. 5–6, pp. 123–188; EB parts 1–3", "title": "Junctions and transistors", "family": "devices",
+      "labs": ["junction", "capacitance", "diode", "bjt", "mosfet"] }
+  ],
+  "labs": [
+    {
+      "id": "bands",
+      "title": "Energy bands from coupled wells",
+      "idea": "One well has sharp levels; N wells side by side split each level into N; a crystal's many wells fill whole bands, separated by gaps.",
+      "law": "P sin(αa)/(αa) + cos(αa) = cos(ka)",
+      "lecture": "Strasser (2015), sections 2.1 and 2.2.3, pp. 41–43 and 54–58",
+      "equations": [
+        { "eq": "Ψ1,2 = ΨH(r1) ± ΨH(r2)", "note": "two coupled states, bonding and anti-bonding", "ref": "HL (2.1.2), p. 43" },
+        { "eq": "α² = 2mE/ħ², β² = 2m(V0 − E)/ħ²", "note": "wave numbers in the well and in the barrier", "ref": "HL (2.2.10), p. 56" },
+        { "eq": "(β² − α²)/(2αβ) sinh(βb) sin(αa) + cosh(βb) cos(αa) = cos(k(a + b))", "note": "the Kronig–Penney condition", "ref": "HL (2.2.12), p. 56" },
+        { "eq": "P sin(αa)/(αa) + cos(αa) = cos(ka), P = m a V0 b/ħ²", "note": "thin, high barriers; bands where the left side lies in [−1, 1]", "ref": "HL (2.2.13), p. 57" },
+        { "eq": "E = n²π²ħ²/(2ma²)", "note": "P → ∞: the levels of the infinite well", "ref": "HL §2.2.3, p. 58" },
+        { "eq": "ψ″ jumps by 2P/a · ψ at each barrier", "note": "the transfer matrix used for N wells and as the second route", "ref": "" }
+      ],
+      "practice": [
+        { "question": "A GaAs layer 10 nm thick between AlAs is a quantum well for electrons, m* = 0.067 m0. In the infinite-well approximation, what is the lowest subband's energy above the band edge?",
+          "answer": 0.0561, "unit": "eV", "tolerance": 0.01,
+          "compute": { "law": "wellLevel", "n": 1, "a": 10e-9, "m": 0.067 },
+          "solution": "E1 = π²ħ²/(2 m* a²) = 9.87 × (1.055·10⁻³⁴ J s)² / (2 × 0.067 × 9.11·10⁻³¹ kg × 10⁻¹⁶ m²) = 8.99·10⁻²¹ J = 56 meV. It is the P → ∞ limit of this lab, where each band shrinks onto n² E1.",
+          "source": "Worked by hand from Halbleiterphysik exercise sheet 10, problem 38 a (WS 2015/16), with Strasser (2015), section 2.2.3" }
+      ]
+    },
+    {
+      "id": "fermi",
+      "title": "Fermi–Dirac occupation",
+      "idea": "Each state holds one electron at most: at 0 K every state below the Fermi level is full and every one above empty; warmth softens the edge over a few kT.",
+      "law": "f(E) = 1 / (1 + e^((E − EF)/kT))",
+      "lecture": "Strasser (2015), section 3.1.2, pp. 79–82",
+      "equations": [
+        { "eq": "n2/n1 = exp(−(E2 − E1)/kT)", "note": "Maxwell–Boltzmann, two levels with equal numbers of states", "ref": "HL (3.1.4), p. 79" },
+        { "eq": "f(E) = 1/(1 + exp((E − EF)/kT)), f(EF) = 1/2", "note": "Fermi–Dirac occupation", "ref": "HL §3.1.2, p. 79" },
+        { "eq": "f(E) ≈ exp(−(E − EF)/kT)", "note": "the non-degenerate approximation, for E − EF of several kT", "ref": "HL (3.1.16), p. 82" }
+      ],
+      "practice": [
+        { "question": "What is the probability that a state 0.1 eV above the Fermi level is occupied at 300 K?",
+          "answer": 0.0205, "unit": "", "tolerance": 0.01,
+          "compute": { "law": "occupation", "dE": 0.1, "T": 300 },
+          "solution": "kT = 25.85 meV at 300 K, so (E − EF)/kT = 3.87 and f = 1/(1 + e^3.87) = 1/48.9 = 0.0205. The Boltzmann approximation gives e^−3.87 = 0.0209, already within 2 %.",
+          "source": "Worked by hand from Strasser (2015), section 3.1.2" }
+      ]
+    },
+    {
+      "id": "carriers",
+      "title": "Carrier density and the Fermi level",
+      "idea": "Doping sets the majority density; mass action fixes the minority one; heat raises ni until the sample turns intrinsic and the Fermi level returns to mid-gap.",
+      "law": "n p = ni² = NC NV e^(−Eg/kT)",
+      "lecture": "Strasser (2015), sections 3.1.2–3.1.3, pp. 82–85; material data p. 73",
+      "equations": [
+        { "eq": "n = NC exp(−(EC − EF)/kT), NC = 2(2π mn* kT)^(3/2)/h³", "note": "electrons, non-degenerate", "ref": "HL (3.1.17), p. 82" },
+        { "eq": "ni² = n p = NC NV exp(−(EC − EV)/kT)", "note": "mass action; ni = 1.45·10¹⁰ cm⁻³ for Si at 300 K (table p. 73)", "ref": "HL (3.1.20), p. 83" },
+        { "eq": "Ei = (EC + EV)/2 + ½ kT ln(NV/NC)", "note": "the intrinsic level", "ref": "HL (3.1.21), p. 84" },
+        { "eq": "n = ni exp((EF − Ei)/kT), p = ni exp((Ei − EF)/kT)", "note": "densities against the intrinsic level", "ref": "HL (3.1.22), p. 84" },
+        { "eq": "n = ½(ND − NA) + √(¼(ND − NA)² + ni²)", "note": "all dopants ionised, neutral sample", "ref": "HL (3.1.23), p. 84" },
+        { "eq": "ni(T) = ni(300 K) (T/300 K)^(3/2) exp(−Eg/2k (1/T − 1/300 K))", "note": "from (3.1.17) and (3.1.20) with Eg held constant", "ref": "" }
+      ],
+      "practice": [
+        { "question": "Silicon at 300 K is doped with ND = 10¹⁶ cm⁻³ donors. What is the hole density p?",
+          "answer": 2.1e4, "unit": "cm⁻³", "tolerance": 0.02,
+          "compute": { "law": "minority", "ND": 1e16, "T": 300 },
+          "solution": "n ≈ ND = 10¹⁶ cm⁻³ since ND ≫ ni; p = ni²/n = (1.45·10¹⁰)²/10¹⁶ = 2.1·10⁴ cm⁻³ (3.1.24).",
+          "source": "Worked by hand from Strasser (2015), section 3.1.3, with ni from the table on p. 73" },
+        { "question": "How far above the intrinsic level Ei does the Fermi level lie in that sample?",
+          "answer": 0.348, "unit": "eV", "tolerance": 0.01,
+          "compute": { "law": "fermiAboveIntrinsic", "ND": 1e16, "T": 300 },
+          "solution": "EF − Ei = kT ln(n/ni) = 25.85 meV × ln(10¹⁶/1.45·10¹⁰) = 25.85 meV × 13.44 = 0.348 eV (3.1.22).",
+          "source": "Worked by hand from Strasser (2015), section 3.1.2" }
+      ]
+    },
+    {
+      "id": "drift",
+      "title": "Drift and diffusion",
+      "idea": "A pulse of minority carriers moves with the field (drift), spreads by itself (diffusion) and fades (recombination): the Shockley–Haynes experiment shows all three at once.",
+      "law": "Jp = e p µp E − e Dp dp/dx",
+      "lecture": "Strasser (2015), sections 3.4.1–3.4.5, pp. 95–107",
+      "equations": [
+        { "eq": "σ = e(n µn + p µp)", "note": "conductivity from both carriers", "ref": "HL (3.4.13), p. 96" },
+        { "eq": "R = ρ L/A, ρ = 1/σ", "note": "a bar's resistance", "ref": "HL (3.4.14), (3.4.15), p. 96" },
+        { "eq": "vn = −µn E, vp = +µp E", "note": "drift velocities", "ref": "HL (3.4.16), p. 97" },
+        { "eq": "D = UT µ, UT = kT/e", "note": "Einstein relation; 25.85 mV at 300 K", "ref": "HL §3.4.3, p. 103" },
+        { "eq": "Jp = e p µp E − e Dp dp/dx, Jn = e n µn E + e Dn dn/dx", "note": "drift and diffusion currents", "ref": "HL (3.4.27), p. 103" },
+        { "eq": "∂p/∂t − Dp ∂²p/∂x² + µp E ∂p/∂x + (p − p0)/τL = 0", "note": "the pulse's equation", "ref": "HL (3.4.42), p. 107" },
+        { "eq": "p − p0 = const/√(4πDp t) · exp(−(x − µp E t)²/(4 Dp t)) · exp(−t/τL)", "note": "its solution, a drifting Gaussian", "ref": "HL (3.4.43), p. 107" }
+      ],
+      "practice": [
+        { "question": "A silicon photoconductor is doped n-type, ND = 5·10¹⁵ cm⁻³, 100 µm long, 100 µm wide and 1 µm thick. What is its resistance in the dark at 300 K?",
+          "answer": 8320, "unit": "Ω", "tolerance": 0.02,
+          "compute": { "law": "barResistance", "n": 5e15, "p": 0, "L": 100e-4, "w": 100e-4, "d": 1e-4 },
+          "solution": "σ = e ND µn = 1.602·10⁻¹⁹ × 5·10¹⁵ × 1500 = 1.20 S/cm; R = L/(σ w d) = 0.01 cm / (1.20 S/cm × 0.01 cm × 10⁻⁴ cm) = 8.32 kΩ. Mobility from the script's table, p. 73.",
+          "source": "Worked by hand from Halbleiterphysik exercise sheet 10, problem 37 a (WS 2015/16)" },
+        { "question": "Holes in n-silicon (µp = 450 cm²/(V s)) are injected and collected 5 mm further on, with a field of 10 V/cm. When does the pulse's peak arrive?",
+          "answer": 1.11e-4, "unit": "s", "tolerance": 0.01,
+          "compute": { "law": "driftTime", "distance": 0.5, "mu": 450, "E": 10 },
+          "solution": "The peak moves at µp E = 450 × 10 = 4500 cm/s (3.4.43); 0.5 cm / 4500 cm/s = 111 µs.",
+          "source": "Worked by hand from Strasser (2015), section 3.4.5" }
+      ]
+    },
+    {
+      "id": "recombination",
+      "title": "Generation, recombination and lifetime",
+      "idea": "Light makes electron–hole pairs; they recombine with the minority-carrier lifetime τ. In time the excess settles at Gτ; in space it reaches a diffusion length L = √(Dτ).",
+      "law": "dΔp/dt = G − Δp/τ",
+      "lecture": "Strasser (2015), sections 3.2 and 3.4.4, pp. 87–90 and 103–106",
+      "equations": [
+        { "eq": "∂p/∂t + (1/e) ∂Jp/∂x = G − R", "note": "continuity for holes", "ref": "HL (3.4.29), p. 103" },
+        { "eq": "G − R = −(p − p0)/τL", "note": "the lifetime approximation", "ref": "HL (3.4.34), p. 104" },
+        { "eq": "Δp(t) = Gτ(1 − e^(−t/τ)), then Δp(toff) e^(−(t − toff)/τ)", "note": "uniform light switched on and off", "ref": "" },
+        { "eq": "pn(x) = pn0 + (pn(0) − pn0) e^(−x/Lp), Lp = √(Dp τL)", "note": "injection into a long sample", "ref": "HL (3.4.35), p. 104" },
+        { "eq": "pn(x) = pn0 + (pn(0) − pn0) sinh((W − x)/Lp)/sinh(W/Lp)", "note": "a sample of length W", "ref": "HL (3.4.37), p. 105" }
+      ],
+      "practice": [
+        { "question": "The photoconductor of the drift lab (ND = 5·10¹⁵ cm⁻³, 100 µm × 100 µm × 1 µm) is lit uniformly with G = 8·10²¹ cm⁻³ s⁻¹; the lifetime is 10 µs. What is its resistance now?",
+          "answer": 382, "unit": "Ω", "tolerance": 0.02,
+          "compute": { "law": "photoResistance", "ND": 5e15, "G": 8e21, "tau": 10e-6, "L": 100e-4, "w": 100e-4, "d": 1e-4 },
+          "solution": "Δn = Δp = Gτ = 8·10¹⁶ cm⁻³. σ = e[(ND + Δn) µn + Δp µp] = 1.602·10⁻¹⁹ × (8.5·10¹⁶ × 1500 + 8·10¹⁶ × 450) = 26.2 S/cm; R = L/(σ w d) = 382 Ω. Mobilities from the script's table, p. 73.",
+          "source": "Worked by hand from Halbleiterphysik exercise sheet 10, problem 37 b (WS 2015/16)" },
+        { "question": "Holes in silicon at 300 K (µp = 450 cm²/(V s)) live 10 µs. What is their diffusion length?",
+          "answer": 1.08e-4, "unit": "m", "tolerance": 0.02,
+          "compute": { "law": "diffusionLength", "mu": 450, "T": 300, "tau": 10e-6 },
+          "solution": "Dp = UT µp = 0.02585 V × 450 cm²/(V s) = 11.6 cm²/s; Lp = √(Dp τ) = √(11.6 × 10⁻⁵) cm = 0.0108 cm = 108 µm.",
+          "source": "Worked by hand from Strasser (2015), section 3.4.4" }
+      ]
+    },
+    {
+      "id": "absorption",
+      "title": "Optical absorption at the band gap",
+      "idea": "A photon is absorbed only if it can lift an electron across the gap; in a direct semiconductor the absorption grows as the square root of the excess energy, and with enough injected carriers it turns into gain.",
+      "law": "α(ω) = σ Zj(ω) (fv(E1) − fc(E2)),  Zj ∝ √(ħω − Eg)",
+      "lecture": "Strasser (2015), section 4.2.1, pp. 113–117; material data p. 73",
+      "equations": [
+        { "eq": "E2 − E1 = ħ²k²/(2mp*) + Eg + ħ²k²/(2mn*) = ħω", "note": "a vertical transition, parabolic bands", "ref": "HL (4.2.2), p. 114" },
+        { "eq": "E1 = EV − (mr/mp*)(ħω − Eg), E2 = EC + (mr/mn*)(ħω − Eg), 1/mr = 1/mp* + 1/mn*", "note": "the states taking part", "ref": "HL §4.2.1, p. 114" },
+        { "eq": "Zj(ω) = (2mr)^(3/2)/(2π²ħ²) √(ħω − Eg)", "note": "the joint density of states", "ref": "HL (4.2.4), p. 114" },
+        { "eq": "α(ω) = σ(ω) Zj(ω) (fv(E1) − fc(E2))", "note": "absorption minus stimulated emission", "ref": "HL (4.2.8), p. 115" },
+        { "eq": "EFc − EFv > Eg", "note": "the condition for gain", "ref": "HL (4.2.10), p. 115" },
+        { "eq": "λg = hc/Eg", "note": "the longest wavelength absorbed", "ref": "" }
+      ],
+      "practice": [
+        { "question": "Silicon's band gap is 1.12 eV. What is the longest wavelength it absorbs across the gap?",
+          "answer": 1.107e-6, "unit": "m", "tolerance": 0.005,
+          "compute": { "law": "cutoff", "Eg": 1.12 },
+          "solution": "λ = hc/Eg = 6.626·10⁻³⁴ J s × 2.998·10⁸ m/s / (1.12 × 1.602·10⁻¹⁹ J) = 1107 nm, as the script's table prints beside 1.12 eV (p. 73).",
+          "source": "Worked by hand; the script's table on p. 73 prints the same 1107 nm" },
+        { "question": "In GaAs (Eg = 1.42 eV, mn* = 0.067 m0, mp* = 0.5 m0) a photon of 1.52 eV is absorbed. How far above the conduction band edge does the electron land?",
+          "answer": 0.0882, "unit": "eV", "tolerance": 0.01,
+          "compute": { "law": "electronShare", "hw": 1.52, "Eg": 1.42, "mn": 0.067, "mp": 0.5 },
+          "solution": "1/mr = 1/0.067 + 1/0.5 = 16.93, mr = 0.0591 m0; E2 − EC = (mr/mn*)(ħω − Eg) = 0.882 × 0.1 eV = 88 meV. The hole takes the other 12 meV.",
+          "source": "Worked by hand from Halbleiterphysik exercise sheet 10, problem 39 (WS 2015/16), its GaAs data, with Strasser (2015), p. 114" }
+      ]
+    },
+    {
+      "id": "junction",
+      "title": "The pn junction's space-charge zone",
+      "idea": "Where p meets n, the carriers leave and the ionised dopants stay: a charge double layer, a triangular field and a potential step UD − U. The zone grows into the lighter-doped side.",
+      "law": "d = √(2ε(UD − U)/(e N0)),  1/N0 = 1/NA + 1/ND",
+      "lecture": "Strasser (2015), section 5.2.1, pp. 128–131; UD from section 5.3.4, p. 139",
+      "equations": [
+        { "eq": "NA dp = ND dn", "note": "equal charges on both sides", "ref": "HL (5.2.2), p. 129" },
+        { "eq": "dE/dx = ρ/ε", "note": "Poisson's equation", "ref": "HL (5.2.3), p. 129" },
+        { "eq": "Emax = e NA dp/ε = e ND dn/ε", "note": "the peak field at the boundary", "ref": "HL (5.2.4), p. 129" },
+        { "eq": "UD = (e/2ε)(NA dp² + ND dn²)", "note": "the area under the field", "ref": "HL (5.2.6), p. 129" },
+        { "eq": "d = √(2ε(UD − U)/(e N0)), dn = d NA/(NA + ND), dp = d ND/(NA + ND), Emax = √(2eN0(UD − U)/ε)", "note": "with bias U", "ref": "HL (5.2.13), p. 131" },
+        { "eq": "UD = UT ln(NA ND/ni²)", "note": "the diffusion voltage", "ref": "HL (5.3.19), p. 139" }
+      ],
+      "practice": [
+        { "question": "A silicon junction has NA = 10¹⁷ cm⁻³ and ND = 10¹⁵ cm⁻³ at 300 K, no bias. How wide is its space-charge zone? (εr = 11.9)",
+          "answer": 9.61e-7, "unit": "m", "tolerance": 0.02,
+          "compute": { "law": "depletionWidth", "NA": 1e17, "ND": 1e15, "U": 0 },
+          "solution": "UD = UT ln(NA ND/ni²) = 25.85 mV × ln(10³²/2.10·10²⁰) = 0.695 V. N0 = 1/(10⁻¹⁷ + 10⁻¹⁵) = 9.90·10¹⁴ cm⁻³. d = √(2 × 1.054·10⁻¹² F/cm × 0.695 V / (1.602·10⁻¹⁹ C × 9.90·10¹⁴ cm⁻³)) = 9.61·10⁻⁵ cm = 0.961 µm, 99 % of it on the n side.",
+          "source": "Worked by hand from Strasser (2015), section 5.2.1" }
+      ]
+    },
+    {
+      "id": "capacitance",
+      "title": "Junction capacitance",
+      "idea": "The space-charge zone is a plate capacitor whose gap widens with reverse bias, so the capacitance falls as 1/√(UD − U): a voltage-tuned capacitor, and a way to measure doping.",
+      "law": "Cs = εA/d = A √(ε e N0 / (2(UD − U)))",
+      "lecture": "Strasser (2015), section 5.2.2, pp. 131–132; breakdown section 5.3.5, p. 140",
+      "equations": [
+        { "eq": "I = dQ/dt = (dQ/dU)(dU/dt) = Cs dU/dt", "note": "the capacitive current", "ref": "HL (5.2.14), p. 132" },
+        { "eq": "Cs = dQp/dU = εA/d = A √(ε e N0/(2(UD − U)))", "note": "the junction capacitance", "ref": "HL (5.2.15), p. 132" },
+        { "eq": "1/Cs² = 2(UD − U)/(A² ε e N0)", "note": "a straight line in U; its slope gives N0", "ref": "" },
+        { "eq": "UB* ≈ ε Emax²/(2 e N0)", "note": "the breakdown estimate; Emax ≈ 300 kV/cm for Si", "ref": "HL (5.3.22), p. 140" }
+      ],
+      "practice": [
+        { "question": "A silicon p⁺n diode has NA = 10¹⁹ cm⁻³, ND = 10¹⁶ cm⁻³ and an area of 0.01 mm². What is its junction capacitance at 5 V reverse bias?",
+          "answer": 1.2e-12, "unit": "F", "tolerance": 0.02,
+          "compute": { "law": "capacitance", "NA": 1e19, "ND": 1e16, "U": -5, "area": 1e-4 },
+          "solution": "UD = UT ln(NA ND/ni²) = 0.874 V; N0 ≈ ND = 9.99·10¹⁵ cm⁻³. Cs/A = √(ε e N0/(2(UD − U))) = √(1.054·10⁻¹² × 1.602·10⁻¹⁹ × 9.99·10¹⁵ / (2 × 5.874)) = 1.198·10⁻⁸ F/cm²; with A = 10⁻⁴ cm², Cs = 1.20 pF.",
+          "source": "Worked by hand from Strasser (2015), section 5.2.2" }
+      ]
+    },
+    {
+      "id": "diode",
+      "title": "The diode characteristic",
+      "idea": "Forward bias injects minority carriers that diffuse away: the current grows exponentially, 60 mV a decade, until the series resistance takes over; reverse, only the small saturation current flows until breakdown.",
+      "law": "I = Is (e^(U/(n UT)) − 1)",
+      "lecture": "Strasser (2015), section 5.3, pp. 133–141; Hobler (2009), part 1, p. 3",
+      "equations": [
+        { "eq": "pn = pN exp(U/UT), np = nP exp(U/UT)", "note": "minority densities at the zone's edges", "ref": "HL (5.3.4), p. 134" },
+        { "eq": "Js = e ni² (Dp/(Lp ND) + Dn/(Ln NA))", "note": "the saturation current density, long diode", "ref": "HL (5.3.10), p. 136" },
+        { "eq": "I = Is (exp(U/UT) − 1)", "note": "the ideal characteristic", "ref": "HL (5.3.11), p. 136" },
+        { "eq": "(1/Js) dJs/dT = UG/(UT T)", "note": "0.15 /K for Si at 300 K", "ref": "HL (5.3.16), p. 139" },
+        { "eq": "dU/dT = −(UG − U)/T", "note": "about −2 mV/K at constant current", "ref": "HL (5.3.18), p. 139" },
+        { "eq": "I = Is (exp(Ud/(n UT)) − 1), U = Ud + I Rs", "note": "ideality factor n (the collection takes n = 2) and a series resistance; the script names both effects (p. 137)", "ref": "EB part 1, p. 3" },
+        { "eq": "UB* ≈ ε Emax²/(2 e N0)", "note": "breakdown, marked only", "ref": "HL (5.3.22), p. 140" }
+      ],
+      "practice": [
+        { "question": "Exercise 1.6: a 1.5 V source drives a diode through 1 Ω, and 0.7 V falls across the diode. With n = 2 and UT = 25 mV, what is its saturation current Is?",
+          "answer": 6.65e-7, "unit": "A", "tolerance": 0.02,
+          "compute": { "law": "saturationFromPoint", "I": 0.8, "U": 0.7, "n": 2, "UT": 0.025 },
+          "solution": "I = (1.5 V − 0.7 V)/1 Ω = 0.8 A. Is = I/(e^(U/(n UT)) − 1) = 0.8 A / (e^14 − 1) = 0.8 A / 1.20·10⁶ = 0.665 µA.",
+          "source": "Worked by hand from Hobler (2009), exercise 1.6 c, p. 6, with its diode data on p. 3" },
+        { "question": "With the collection's n = 2 and UT = 25 mV, by how much must the voltage rise for the forward current to grow tenfold?",
+          "answer": 0.115, "unit": "V", "tolerance": 0.01,
+          "compute": { "law": "decade", "n": 2, "UT": 0.025 },
+          "solution": "I ∝ e^(U/(n UT)), so ΔU = n UT ln 10 = 2 × 25 mV × 2.303 = 115 mV a decade; the ideal diode (n = 1) needs about 60 mV.",
+          "source": "Worked by hand from Strasser (2015), p. 137, and Hobler (2009), p. 3" }
+      ]
+    },
+    {
+      "id": "bjt",
+      "title": "The bipolar transistor's output characteristics",
+      "idea": "The base–emitter voltage sets the electrons injected into a thin base; the collector collects them whatever its voltage, so the transistor is a current source, until the collector junction too turns forward.",
+      "law": "IC = Is (e^(UBE/UT) − e^(UBC/UT)),  B = IC/IB",
+      "lecture": "Strasser (2015), section 6.1, pp. 161–168; Hobler (2009), part 2, p. 17",
+      "equations": [
+        { "eq": "IC = e Dn np A/W", "note": "diffusion across a thin base of width W", "ref": "HL (6.1.1), p. 161" },
+        { "eq": "IC = IT = Is exp(UBE/UT)", "note": "the transfer current, active region", "ref": "HL (6.1.2), p. 162" },
+        { "eq": "B = IC/IB", "note": "the current gain", "ref": "HL (6.1.3), p. 162" },
+        { "eq": "IC = Is (exp(UBE/UT) − exp(UBC/UT))", "note": "for small and medium currents", "ref": "HL (6.1.4), p. 164" },
+        { "eq": "gm = ∂IC/∂UBE = IC/UT", "note": "the transconductance, from (6.1.2)", "ref": "" },
+        { "eq": "vu = −gm RC", "note": "the common-emitter stage's small-signal gain", "ref": "EB 2.1, solutions p. 12" }
+      ],
+      "practice": [
+        { "question": "Exercise 2.1: a common-emitter stage on U0 = 5 V should carry IC0 = 10 mA with its output resting at Ua0 = 3 V. What collector resistor RC does it need?",
+          "answer": 200, "unit": "Ω", "tolerance": 0.01,
+          "compute": { "law": "collectorResistor", "U0": 5, "Ua0": 3, "IC": 0.01 },
+          "solution": "RC = (U0 − Ua0)/IC0 = 2 V / 10 mA = 200 Ω.",
+          "source": "Hobler (2009), exercise 2.1 a, p. 17; agrees with the course's worked solutions (Lösungswege, p. 12)" },
+        { "question": "What is that stage's small-signal voltage gain vu, with UT = 25 mV?",
+          "answer": -80, "unit": "", "tolerance": 0.01,
+          "compute": { "law": "gain", "U0": 5, "Ua0": 3, "UT": 0.025 },
+          "solution": "gm = IC0/UT = 10 mA / 25 mV = 0.4 S; vu = −gm RC = −0.4 S × 200 Ω = −80.",
+          "source": "Hobler (2009), exercise 2.1 b, p. 17; agrees with the course's worked solutions (Lösungswege, p. 12)" }
+      ]
+    },
+    {
+      "id": "mosfet",
+      "title": "The MOSFET: threshold and output characteristics",
+      "idea": "Above the threshold voltage the gate holds a channel of electrons at the surface; the drain current grows with UDS until the channel pinches off at its drain end, and is then constant.",
+      "law": "ID = β((UGS − Ut)UDS − UDS²/2),  then ID = β/2 (UGS − Ut)²",
+      "lecture": "Strasser (2015), sections 6.2.2–6.2.3, pp. 174–188; Hobler (2009), part 3, pp. 47–48",
+      "equations": [
+        { "eq": "ΦF = (kT/e) ln(NA/ni)", "note": "the Fermi potential of the substrate", "ref": "HL §6.2.2, p. 174" },
+        { "eq": "Ut = ΦMS − Qf/Cox − QB/Cox + 2ΦF", "note": "the threshold: work function, oxide charge, bulk charge, band bending", "ref": "HL §6.2.3, p. 183" },
+        { "eq": "QB = −√(2 εSi e NA (2ΦF + USB)), Cox = εox/dox", "note": "the bulk charge, with the substrate voltage", "ref": "HL §6.2.3, p. 184" },
+        { "eq": "−QK = Cox (UGS − Ut)", "note": "the channel charge", "ref": "HL (6.2.15), p. 185" },
+        { "eq": "ID = β((UGS − Ut)UDS − ½UDS²) for UDS ≤ UGS − Ut; ID = β/2 (UGS − Ut)² beyond", "note": "the output characteristics, β = µ Cox W/L", "ref": "HL (6.2.22), p. 187" },
+        { "eq": "gm = β|UGS − Ut| = √(2β|ID|)", "note": "the transconductance in the current-source region", "ref": "HL §6.2.3, p. 188" }
+      ],
+      "practice": [
+        { "question": "A source follower: the gate rests at Ue0 = 4 V and the n-MOS (Ut = 1 V, β = 2.5 mA/V²) carries 1 mA in its current-source region. What is the output (source) voltage Ua0?",
+          "answer": 2.11, "unit": "V", "tolerance": 0.01,
+          "compute": { "law": "sourceFollower", "Ue0": 4, "Ut": 1, "ID": 1e-3, "beta": 2.5e-3 },
+          "solution": "ID = β/2 (UGS − Ut)², so UGS = Ut + √(2ID/β) = 1 V + √0.8 V = 1.89 V; Ua0 = Ue0 − UGS = 2.11 V.",
+          "source": "Elektronische Bauelemente, Beispiel 5.1 (source follower), as in the course's worked solutions (Lösungswege, p. 47)" },
+        { "question": "Exercise 3.3: a self-conducting n-MOS (Ut = −3 V, β = 2 mA/V²) has its gate and source at 0 V and its drain through RD to U0 = 12 V. Which RD puts it exactly at the edge of the ohmic region?",
+          "answer": 1000, "unit": "Ω", "tolerance": 0.01,
+          "compute": { "law": "edgeOfOhmic", "U0": 12, "Ut": -3, "beta": 2e-3 },
+          "solution": "UGS = 0, so ID = β/2 (0 − Ut)² = 1 mA/V² × 9 V² = 9 mA. The edge is UDS = UGS − Ut = 3 V, so RD = (12 V − 3 V)/9 mA = 1 kΩ.",
+          "source": "Worked by hand from Hobler (2009), exercise 3.3 a, p. 48" }
+      ]
+    }
+  ]
+}

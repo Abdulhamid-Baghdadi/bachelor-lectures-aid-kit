@@ -1,0 +1,35 @@
+{
+  "format": "design-rules bibliography",
+  "version": 1,
+  "about": "The sources of this project's subject matter (semiconductor physics and devices), apart from the design rules' bibliography, which keeps the design principles.",
+  "entries": [
+    {
+      "key": "strasser2015",
+      "authors": [
+        "Strasser, G."
+      ],
+      "year": 2015,
+      "title": "Skriptum Halbleiterphysik (362.069 VU, 362.106 VO)",
+      "venue": "Lecture notes, TU Wien, October 2015; adapted from the notes of E. Gornik",
+      "backs": "Every equation of the labs, by section, printed page and equation number; the silicon data from its table on p. 73.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-01"
+      }
+    },
+    {
+      "key": "hobler2009",
+      "authors": [
+        "Hobler, G."
+      ],
+      "year": 2009,
+      "title": "Elektronische Bauelemente: Beispielsammlung, Sommersemester 2009",
+      "venue": "Exercise collection, Institut für Festkörperelektronik, TU Wien",
+      "backs": "The device parameters (ideality factor n = 2, UT = 25 mV, B = 100) and the practice questions on diodes, bipolar transistors and MOSFETs; its worked solutions (Lösungswege, a scanned copy) for exercises 2.1 and 5.1.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-01"
+      }
+    }
+  ]
+}

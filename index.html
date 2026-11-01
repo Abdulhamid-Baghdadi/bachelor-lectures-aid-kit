@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bachelor lectures aid kit</title>
-<meta name="description" content="interactive labs for TU Wien Bachelor lectures, each fusing two courses: electrodynamics and wave propagation; automation and modelling; signals and systems 1 and 2.">
+<meta name="description" content="interactive labs for TU Wien Bachelor lectures, each fusing two courses: electrodynamics and wave propagation; automation and modelling; signals and systems 1 and 2; semiconductor physics and devices.">
 <script>
   // Before the page draws, so a chosen theme never flashes the other one.
   try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
@@ -14,6 +14,7 @@
   .labs { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 20px; margin-top: 16px; }
   .lab { display: grid; gap: 10px; padding: 16px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line);
          border-top: 6px solid var(--frame); color: var(--ink); text-decoration: none; }
+  [data-family=devices] { --frame: #BE123C; }
   .lab:hover { box-shadow: 0 2px 8px rgba(0,0,0,.2); }
   .lab:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
   .lab h2 { margin: 0; font-size: 1.25rem; color: var(--accent); }
@@ -55,6 +56,13 @@
       <img class="light" src="signals-systems-lab/docs/light.png" alt="The Signals and Systems Lab's overview: lab cards grouped under its parts" width="1280" height="1000">
       <img class="dark" src="signals-systems-lab/docs/dark.png" alt="The digital filters lab in the dark theme: a filter's magnitude response and its controls" width="1280" height="1000">
       <p>Convolution, correlation, Fourier series and transform, sampling and aliasing, digital filters, DFT and FFT, multirate.</p>
+    </a>
+    <a class="lab" href="semiconductors-lab/" data-family="devices">
+      <h2>Semiconductors Lab</h2>
+      <p class="courses">Halbleiterphysik and Elektronische Bauelemente, after Strasser (2015) and Hobler (2009)</p>
+      <img class="light" src="semiconductors-lab/docs/light.png" alt="The Semiconductors Lab's overview: lab cards grouped under its three parts" width="1280" height="1000">
+      <img class="dark" src="semiconductors-lab/docs/dark.png" alt="The MOSFET lab in the dark theme: output characteristics and the threshold readouts" width="1280" height="1000">
+      <p>Energy bands, Fermi–Dirac statistics, carrier densities, drift and diffusion, lifetime, absorption, the pn junction, the diode, the bipolar transistor and the MOSFET.</p>
     </a>
   </div>
 </main>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semiconductors Lab</title>
+<meta name="description" content="Eleven ideas of semiconductor physics and devices to play with: energy bands, Fermi–Dirac statistics, carrier densities, drift and diffusion, lifetime, optical absorption, the pn junction, its capacitance, the diode, the bipolar transistor and the MOSFET.">
+<script>
+  // Before the page draws, so a chosen theme never flashes the other one.
+  try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+</script>
+<link rel="stylesheet" href="../kit/style.css">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="src/app.js"></script>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1><a href="#">Semiconductors Lab</a></h1>
+    <p>Move the sliders and watch the bands, the carriers and the devices respond. After the TU Wien lecture notes of Strasser (2015), <i>Halbleiterphysik</i>, and the exercise collection of Hobler (2009), <i>Elektronische Bauelemente</i>.</p>
+  </div>
+  <button id="theme" type="button">Light or dark</button>
+</header>
+<main></main>
+<footer>
+  <p>A learning aid: silicon at 300 K unless a lab says otherwise, all dopants ionised, the depletion approximation for junctions. Sections, pages and equation numbers refer to the two texts; no text of them is reproduced.
+    Circuits with diodes and transistors at beginner level are in the circuit lab; the Signals and Automation labs hold the systems around them.</p>
+</footer>
+<noscript><p>Semiconductors Lab needs JavaScript.</p></noscript>
+</body>
+</html>
