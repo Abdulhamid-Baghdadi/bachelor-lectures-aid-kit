@@ -66,3 +66,27 @@ Both earlier sessions have ended. `Electromagnetism` is at 687a9d1 (the Desktop 
 `bachelor-lectures-aid-kit`, private until you say otherwise: `kit/` shared once (page, style, controls, charts,
 architecture check), the three labs as folders, one Pages site with a start page. The old electrodynamics-lab address
 points to the new one. Until step 2, each session keeps working in its own folder.
+
+## Next courses worth a lab (surveyed 1 Nov 2026)
+
+From the tables of contents in `01_TU_Bachelor`. Ranked by how much moving pictures help, and fused in pairs as before.
+
+1. **Semiconductors and devices**: Halbleiterphysik (`HL_skript_2015_2.pdf`, 6 chapters) + Elektronische
+   Bauelemente (exercise collection with worked solutions). Energy bands, Fermi–Dirac statistics, carrier density
+   against doping and temperature, drift and diffusion, the pn junction's space-charge zone, the diode
+   characteristic, bipolar and field-effect transistors.
+2. **Telecommunications**: 13 lecture sets. PCM and quantisation, baseband pulses and the eye diagram, the matched
+   filter, Huffman source coding, Hamming channel coding, AM/FM, QAM constellations in noise, synchronisation.
+   Links to the Signals lab for sampling and to Electrodynamics for link budgets instead of repeating them.
+3. **Power engineering**: Energieversorgung (11 lecture sets) + Maschinen und Antriebe. Three-phase phasors,
+   transformer and line models, short circuits, the power-angle curve and stability, the rotating field, the
+   induction motor's torque–speed curve. The machines text (Schrödl 2012) is a scan without a text layer: its
+   contents must be read from the page images.
+4. **Measurement**: Messtechnik (book in 10 chapters) + Messtechnik-Labor. Bridges, measurement error, power
+   measurement, ADC types, oscilloscope triggering; spectrum analysis links to the Signals lab.
+5. **Circuit design**: Schaltungstechnik. Fused into lab 1 on 1 Nov 2026, as its third part "Circuits". Current mirrors, cascode, power amplifier classes, op-amp stability and
+   phase margin, slew rate, noise. The public circuit-lab already covers the beginner level (Ohm's law, divider,
+   basic op-amp and transistor), so this one starts above it.
+
+Not suited, or not yet checked: programming (Programmieren 1–2, OOP), project management, FPGA and MC labs, Bluetooth;
+Photonik and Sensorik are scans whose contents were not read; Mathematik 3 (numerics) and Robotics could follow later.
