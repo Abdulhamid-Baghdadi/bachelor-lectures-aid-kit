@@ -12,7 +12,7 @@ The main task in every lab, recorded from the Electrodynamics Lab: move a contro
 
 | Light | Dark |
 |---|---|
-| <img src="docs/light.png" alt="The start page in the light theme: four lab panels, Electrodynamics, Automation, Signals and systems, and Semiconductors, devices and circuits, each with its courses and a screenshot" width="420"> | <img src="docs/dark.png" alt="The start page in the dark theme: the same four lab panels" width="420"> |
+| <img src="docs/light.png" alt="The start page in the light theme: eight lab panels, from Electrodynamics to Measurement, each with its courses and a screenshot" width="420"> | <img src="docs/dark.png" alt="The start page in the dark theme: the same eight lab panels" width="420"> |
 
 ## The labs
 

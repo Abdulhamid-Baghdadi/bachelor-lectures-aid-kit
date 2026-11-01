@@ -71,9 +71,13 @@ export function choice(label, options, value, onChange) {
 
 /** A practice question from the course's exercise sheet: the student types an answer with its prefix ("22.5 m"),
  *  and it is right within the tolerance. The worked solution opens on request. */
+/** The placeholder of a practice answer: "Number in Hz", or "A number" when the answer has no unit ("" or "1"). */
+export const answerHint = unit => unit && unit !== "1" ? `Number in ${unit}` : "A number";
+
 export function practice({ question, source, answer, unit, tolerance = 0.02, solution, parse }) {
   const id = `q${++uid}`;
-  const input = h("input", { id, type: "text", inputmode: "decimal", autocomplete: "off", placeholder: `e.g. 4k7 or 0.02` });
+  // The hint names what this question expects; a sample value would mislead, since every question has its own scale.
+  const input = h("input", { id, type: "text", inputmode: "decimal", autocomplete: "off", placeholder: answerHint(unit) });
   const verdict = h("p", { class: "verdict", role: "status" });
   const check = e => {
     e.preventDefault();
