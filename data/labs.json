@@ -1,0 +1,2282 @@
+{
+  "format": "automation-lab labs",
+  "version": 1,
+  "about": "The chapters of two TU Wien lecture notes, Kugi (2015), Automatisierung (WS 2015/16), and Kugi et al. (2015), Modellbildung (SS 2015), each chapter in a family that colours its cards, with the labs it teaches; then each lab's words and practice questions. Chapter numbers, titles (translated) and page ranges are those of the notes' tables of contents and page headers; equation numbers are the notes' own, checked against the PDFs' text on 1 Nov 2026. Practice answers are worked by hand; tests/unit/labs-data.test.js recomputes each with the core and fails if they disagree.",
+  "courses": [
+    {
+      "id": "auto",
+      "short": "Automation",
+      "title": "Automation (Automatisierung)",
+      "source": "Kugi (2015), TU Wien, WS 2015/16"
+    },
+    {
+      "id": "model",
+      "short": "Modelling",
+      "title": "Modelling (Modellbildung)",
+      "source": "Kugi et al. (2015), TU Wien, SS 2015"
+    }
+  ],
+  "families": [
+    {
+      "id": "systems",
+      "name": "Systems and models"
+    },
+    {
+      "id": "linear",
+      "name": "Linear systems"
+    },
+    {
+      "id": "loop",
+      "name": "The control loop"
+    },
+    {
+      "id": "digital",
+      "name": "Digital control"
+    },
+    {
+      "id": "state",
+      "name": "State space"
+    },
+    {
+      "id": "mechanics",
+      "name": "Mechanics"
+    },
+    {
+      "id": "heat",
+      "name": "Heat transfer"
+    }
+  ],
+  "lectures": [
+    {
+      "course": "auto",
+      "number": 1,
+      "pages": "pp. 1–20",
+      "title": "Systems and system models",
+      "family": "systems",
+      "labs": [
+        "rlc",
+        "dcmotor"
+      ]
+    },
+    {
+      "course": "auto",
+      "number": 2,
+      "pages": "pp. 21–39",
+      "title": "System properties",
+      "family": "systems",
+      "labs": [
+        "tank"
+      ]
+    },
+    {
+      "course": "auto",
+      "number": 3,
+      "pages": "pp. 40–92",
+      "title": "Linear dynamic systems",
+      "family": "linear",
+      "labs": [
+        "phase",
+        "nyquistplot",
+        "bode",
+        "pt1",
+        "pt2",
+        "pid",
+        "deadtime",
+        "polezero"
+      ]
+    },
+    {
+      "course": "auto",
+      "number": 4,
+      "pages": "pp. 93–119",
+      "title": "The control loop",
+      "family": "loop",
+      "labs": [
+        "loop1dof",
+        "routh",
+        "nyquist"
+      ]
+    },
+    {
+      "course": "auto",
+      "number": 5,
+      "pages": "pp. 120–136",
+      "title": "Loop shaping (Frequenzkennlinienverfahren)",
+      "family": "loop",
+      "labs": [
+        "fkl"
+      ]
+    },
+    {
+      "course": "auto",
+      "number": 6,
+      "pages": "pp. 137–181",
+      "title": "The digital control loop",
+      "family": "digital",
+      "labs": [
+        "sampling",
+        "tustin"
+      ]
+    },
+    {
+      "course": "auto",
+      "number": 7,
+      "pages": "pp. 182–203",
+      "title": "Reachability and observability",
+      "family": "state",
+      "labs": [
+        "reach"
+      ]
+    },
+    {
+      "course": "auto",
+      "number": 8,
+      "pages": "pp. 204–226",
+      "title": "State controller and state observer",
+      "family": "state",
+      "labs": [
+        "placement",
+        "observer"
+      ]
+    },
+    {
+      "course": "model",
+      "number": 2,
+      "pages": "pp. 7–67",
+      "title": "Mechanical systems",
+      "family": "mechanics",
+      "labs": [
+        "kinematics",
+        "collision",
+        "energy",
+        "friction",
+        "smd",
+        "angular",
+        "lagrange"
+      ]
+    },
+    {
+      "course": "model",
+      "number": 3,
+      "pages": "pp. 69–117",
+      "title": "Heat transfer",
+      "family": "heat",
+      "labs": [
+        "radiation",
+        "wall",
+        "cylinder",
+        "fin",
+        "transient",
+        "fdm"
+      ]
+    }
+  ],
+  "labs": [
+    {
+      "id": "rlc",
+      "title": "Series resonant circuit",
+      "idea": "A circuit's state is what its energy stores hold: the capacitor's voltage and the coil's current. Two states, two first-order equations.",
+      "law": "d/dt [uC, iL] = [[0, 1/C], [−1/L, −R/L]] [uC, iL] + [0, 1/L] u    y = R iL",
+      "lecture": "Kugi (2015), section 1.2 (pp. 4–6); eq. (1.8)",
+      "practice": [
+        {
+          "question": "The series resonant circuit has R = 1 Ω, L = 1 H and C = 1 F, as in the notes' Figure 1.5. At what angular frequency ω do its states ring?",
+          "answer": 0.866,
+          "unit": "rad/s",
+          "compute": {
+            "law": "sysRlcOmega",
+            "R": 1,
+            "L": 1,
+            "C": 1
+          },
+          "solution": "δ = R/(2L) = 0.5 1/s. Since 1/(CL) = 1 > δ² = 0.25, (1.12) holds and ω = √(1/(CL) − δ²) = √0.75 = 0.866 rad/s.",
+          "source": "Worked by hand from (eq. 1.11)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "−u + uC + uL + y = 0,   iC − iL = 0,   iL − iR = 0",
+          "note": "Kirchhoff's mesh and node equations",
+          "ref": "(1.6)"
+        },
+        {
+          "eq": "C duC/dt = iC,   L diL/dt = uL,   R iR = y",
+          "note": "the components' equations",
+          "ref": "(1.7)"
+        },
+        {
+          "eq": "d/dt [uC, iL] = [[0, 1/C], [−1/L, −R/L]] [uC, iL] + [0, 1/L] u",
+          "note": "state differential equations",
+          "ref": "(1.8)"
+        },
+        {
+          "eq": "y = [0, R] [uC, iL]",
+          "note": "output equation",
+          "ref": "(1.9)"
+        },
+        {
+          "eq": "δ = R/(2L),   ω = √(1/(CL) − (R/(2L))²)",
+          "note": "decay rate and ringing frequency of the free response (1.10)",
+          "ref": "(1.11)"
+        },
+        {
+          "eq": "1/√(CL) > R/(2L)",
+          "note": "the condition for ringing",
+          "ref": "(1.12)"
+        }
+      ]
+    },
+    {
+      "id": "dcmotor",
+      "title": "DC motor",
+      "idea": "The armature voltage sets the motor's speed and the load sets its current: at rest the motor's torque balances the load.",
+      "law": "LA diA/dt = uA − RA iA − K ω    J dω/dt = K iA − m g r",
+      "lecture": "Kugi (2015), section 1.4 (pp. 9–11); eq. (1.25)",
+      "practice": [
+        {
+          "question": "A DC motor with constant excitation has K = kΨF = 0.1 V·s and RA = 1 Ω. It is fed with uA = 12 V and holds a load torque m g r = 0.05 N·m. What speed ω does it settle at?",
+          "answer": 115,
+          "unit": "rad/s",
+          "compute": {
+            "law": "sysDcSpeed",
+            "RA": 1,
+            "K": 0.1,
+            "uA": 12,
+            "ML": 0.05
+          },
+          "solution": "At rest dω/dt = 0 gives K iA = m g r, so iA = 0.05/0.1 = 0.5 A. Then diA/dt = 0 gives uA = RA iA + K ω, so ω = (12 − 1·0.5)/0.1 = 115 rad/s.",
+          "source": "Worked by hand from (eq. 1.25)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "−uA + RA iA + uLA + uind = 0",
+          "note": "mesh of the armature circuit",
+          "ref": "(1.17a)"
+        },
+        {
+          "eq": "uind = k ΨF(iF) ω",
+          "note": "induced voltage",
+          "ref": "(1.19)"
+        },
+        {
+          "eq": "Mel = k ΨF(iF) iA",
+          "note": "electrical torque",
+          "ref": "(1.22)"
+        },
+        {
+          "eq": "diA/dt = (uA − RA iA − k ΨF(iF) ω)/LA",
+          "note": "armature current",
+          "ref": "(1.25a)"
+        },
+        {
+          "eq": "dω/dt = (k ΨF(iF) iA − m g r)/(θG + θT + m r²)",
+          "note": "speed of the drum with the load on its cable",
+          "ref": "(1.25d)"
+        },
+        {
+          "eq": "iA,R = m g r/K,   ωR = (uA − RA iA,R)/K",
+          "note": "rest state with K = k ΨF constant",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "tank",
+      "title": "Two tanks and linearisation",
+      "idea": "Near a rest state (Ruhelage) a nonlinear system behaves like its linearisation; the further it strays, the worse the match.",
+      "law": "A dh1/dt = q − a√(2g h1)    A dh2/dt = a√(2g h1) − a√(2g h2)    Δẋ = (∂f/∂x) Δx + (∂f/∂u) Δu",
+      "lecture": "Kugi (2015), sections 1.5 and 2.5.2 (pp. 12–13, 32–35); eqs. (1.29), (2.53), (2.54)",
+      "practice": [
+        {
+          "question": "Both tanks of the two-tank system have outlets of a = 5·10⁻⁵ m² (0.5 cm²). The steady inflow is qR = 10⁻⁴ m³/s and g = 9.81 m/s². At what level h1,R = h2,R do the tanks rest?",
+          "answer": 0.2039,
+          "unit": "m",
+          "compute": {
+            "law": "sysTankRest",
+            "a": 5e-05,
+            "qR": 0.0001,
+            "g": 9.81
+          },
+          "solution": "At rest dh1/dt = 0, so a√(2g h1,R) = qR and h1,R = qR²/(2g a²) = 10⁻⁸/(2·9.81·2.5·10⁻⁹) = 0.204 m. The second tank passes the same flow, so h2,R = h1,R.",
+          "source": "Worked by hand from (eq. 1.29)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "A dh1/dt = q − q1,   A dh2/dt = q1 − q2",
+          "note": "volume balances",
+          "ref": "(1.27)"
+        },
+        {
+          "eq": "q1 = a√(2g h1),   q2 = a√(2g h2)",
+          "note": "outflow through each outlet",
+          "ref": "(1.28)"
+        },
+        {
+          "eq": "A dh1/dt = −a√(2g h1) + q,   A dh2/dt = a√(2g)(√h1 − √h2)",
+          "note": "state differential equations",
+          "ref": "(1.29)"
+        },
+        {
+          "eq": "f(xR, uR) = 0",
+          "note": "rest state (operating point)",
+          "ref": "(2.49a)"
+        },
+        {
+          "eq": "Δẋ = A Δx + B Δu,   Δy = C Δx + D Δu",
+          "note": "linearisation about the rest state",
+          "ref": "(2.53)"
+        },
+        {
+          "eq": "A = ∂f/∂x,   B = ∂f/∂u,   C = ∂h/∂x,   D = ∂h/∂u   at (xR, uR)",
+          "note": "the Jacobians",
+          "ref": "(2.54)"
+        },
+        {
+          "eq": "h1,R = h2,R = qR²/(2g a²),   A = (a²g/(A qR)) [[−1, 0], [1, −1]],   B = [1/A, 0]",
+          "note": "for the two tanks, Aufgabe 2.18",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "phase",
+      "title": "Solution behaviour of ẋ = Ax",
+      "idea": "The eigenvalues of A decide everything: real ones make nodes or saddles, complex ones make the states turn, and negative real parts bring them home.",
+      "law": "x(t) = Φ(t) x0 = exp(At) x0",
+      "lecture": "Kugi (2015), section 3.3 (pp. 51–53); eqs. (2.22), (3.45)",
+      "practice": [
+        {
+          "question": "Example 3.3 of the notes has A = [[1.4, −1.2], [−1.2, −0.4]]. What is its larger eigenvalue, the one trajectories leave along?",
+          "answer": 2,
+          "unit": "1/s",
+          "compute": {
+            "law": "sysEigenMax",
+            "A": [
+              [
+                1.4,
+                -1.2
+              ],
+              [
+                -1.2,
+                -0.4
+              ]
+            ]
+          },
+          "solution": "det(λE − A) = λ² − (trace A)λ + det A = λ² − 1.0λ − 2 = (λ − 2)(λ + 1). So λ1 = −1 and λ2 = 2: a saddle, unstable.",
+          "source": "Worked by hand from (eq. 3.55)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "Φ(t) = exp(At)",
+          "note": "transition matrix of a time-invariant system",
+          "ref": "(2.22)"
+        },
+        {
+          "eq": "ẋ = Ax,   x(0) = x0",
+          "note": "the autonomous linear system",
+          "ref": "(3.45)"
+        },
+        {
+          "eq": "t^k e^(λt),   t^k e^(σt) cos(ωt),   t^k e^(σt) sin(ωt)",
+          "note": "the functions every solution is built from (Satz 3.3)",
+          "ref": "(3.46)"
+        },
+        {
+          "eq": "lim x(t) = lim Φ(t) x0 = 0  ⇔  all Re λ < 0",
+          "note": "global asymptotic stability (Satz 3.4)",
+          "ref": "(3.47)"
+        },
+        {
+          "eq": "x(t) = ξ0 exp(λ1 t) v1",
+          "note": "a start on an eigenvector stays on it",
+          "ref": "(3.54)"
+        },
+        {
+          "eq": "ẋ = [[1.4, −1.2], [−1.2, −0.4]] x",
+          "note": "Example 3.3: λ1 = −1, λ2 = 2",
+          "ref": "(3.55)"
+        }
+      ]
+    },
+    {
+      "id": "nyquistplot",
+      "title": "Nyquist locus",
+      "idea": "The frequency response G(jω) is a point in the complex plane for each ω; together they draw a curve, the Nyquist locus (Ortskurve).",
+      "law": "ω ↦ (Re G(jω), Im G(jω))",
+      "lecture": "Kugi (2015), section 3.7.1 (pp. 71–73); eqs. (3.112), (3.114)",
+      "practice": [
+        {
+          "question": "The Nyquist locus of G(s) = (10s² + 15s + 10)/(s² + s + 3), the notes' (3.114), crosses the real axis at ω0 > 0. What is ω0?",
+          "answer": 2.6458,
+          "unit": "rad/s",
+          "compute": {
+            "law": "sysNyquistCross",
+            "num": [
+              10,
+              15,
+              10
+            ],
+            "den": [
+              1,
+              1,
+              3
+            ],
+            "w0": 0.1,
+            "w1": 100
+          },
+          "solution": "G(jω) = (10 − 10ω² + j15ω)/(3 − ω² + jω). Multiply by the conjugate of the denominator: the imaginary part of the numerator is 15ω(3 − ω²) − ω(10 − 10ω²) = ω(35 − 5ω²). It vanishes at ω0² = 7, so ω0 = √7 = 2.65 rad/s (Aufgabe 3.26).",
+          "source": "Worked by hand from (eq. 3.114)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "y(t) = A0 |G(jω0)| sin(ω0 t + arg G(jω0))",
+          "note": "steady response to a sine input",
+          "ref": "(3.103)"
+        },
+        {
+          "eq": "G(s) = 1/(1 + sRC)",
+          "note": "the RC example",
+          "ref": "(3.105)"
+        },
+        {
+          "eq": "G(jω) = 1/(1 + (ω/2)²) − j (ω/2)/(1 + (ω/2)²)",
+          "note": "its real and imaginary parts",
+          "ref": "(3.112)"
+        },
+        {
+          "eq": "(Re G − ½)² + (Im G)² = ¼",
+          "note": "the locus is a circle",
+          "ref": "(3.113)"
+        },
+        {
+          "eq": "G(s) = (10s² + 15s + 10)/(s² + s + 3)",
+          "note": "the second example",
+          "ref": "(3.114)"
+        }
+      ]
+    },
+    {
+      "id": "bode",
+      "title": "Bode diagram",
+      "idea": "On logarithmic axes the parts of a transfer function add: each factor contributes straight asymptotes, and the sum is the whole.",
+      "law": "|G(jω)|dB = Σ |Gi(jω)|dB    arg G(jω) = Σ arg Gi(jω)",
+      "lecture": "Kugi (2015), section 3.7.2 (pp. 73–79); eqs. (3.121), (3.128)",
+      "practice": [
+        {
+          "question": "Take the notes' example in normalised form, G(s) = 10(1 − s/10)/(s(1 + 2·½·s/0.1 + s²/0.1²)). What does the asymptotic magnitude read at ω = 1 rad/s?",
+          "answer": -20,
+          "unit": "dB",
+          "compute": {
+            "law": "sysBodeAsym",
+            "V": 10,
+            "r": 1,
+            "z1": [
+              10
+            ],
+            "p2": [
+              0.1
+            ],
+            "w": 1
+          },
+          "solution": "Gain: 20 log 10 = 20 dB. Integrator: −20 log 1 = 0 dB. Pole pair at 0.1 rad/s: one decade past its corner, −40 dB. Zero at 10 rad/s: not reached, 0 dB. Sum: −20 dB.",
+          "source": "Worked by hand from (eq. 3.121a)"
+        },
+        {
+          "question": "Same G(s): what does the asymptote read at ω = 0.01 rad/s, below every corner?",
+          "answer": 60,
+          "unit": "dB",
+          "compute": {
+            "law": "sysBodeAsym",
+            "V": 10,
+            "r": 1,
+            "z1": [
+              10
+            ],
+            "p2": [
+              0.1
+            ],
+            "w": 0.01
+          },
+          "solution": "Only the gain and the integrator count: 20 log 10 − 20 log 0.01 = 20 + 40 = 60 dB.",
+          "source": "Worked by hand from (eq. 3.121a)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "|G(jω)|dB = 20 log|z1(jω)| + 20 log|z2(jω)| − 20 log|n1(jω)| − 20 log|n2(jω)|",
+          "note": "magnitudes of a series connection add",
+          "ref": "(3.117)"
+        },
+        {
+          "eq": "G(s) = V z(s)/(s^r n(s)), with factors 1 + s/ωk and 1 + 2ξk s/ωk + s²/ωk²",
+          "note": "normalised form",
+          "ref": "(3.119)"
+        },
+        {
+          "eq": "|(jω)^r|dB = 20 r log ω,   arg = 90° r",
+          "note": "integrators and differentiators",
+          "ref": "(3.123)"
+        },
+        {
+          "eq": "|1 + jω/ωk|dB ≈ 0 for ω ≪ ωk, 20 log(ω/ωk) for ω ≫ ωk",
+          "note": "first-order term",
+          "ref": "(3.124)"
+        },
+        {
+          "eq": "|1 − (ω/ωk)² + j2ξk ω/ωk|dB ≈ 0 for ω ≪ ωk, 40 log(ω/ωk) for ω ≫ ωk",
+          "note": "second-order term",
+          "ref": "(3.125)"
+        },
+        {
+          "eq": "G(s) = −10⁻²(s − 10)/(s(s² + 0.1s + 0.01))",
+          "note": "the composite example",
+          "ref": "(3.128)"
+        }
+      ]
+    },
+    {
+      "id": "pt1",
+      "title": "First-order lag",
+      "idea": "A first-order lag (P-T1 element) follows a step along an exponential: V says where it ends, T how fast it gets there.",
+      "law": "G(s) = V/(1 + sT)    h(t) = V(1 − e^(−t/T))",
+      "lecture": "Kugi (2015), section 3.8.1 (pp. 80–81); eqs. (3.133), (3.134)",
+      "practice": [
+        {
+          "question": "For the notes' example G(s) = 10/(1 + s/2), so V = 10 and T = 0.5 s, what is the step response at t = 0.5 s?",
+          "answer": 6.3212,
+          "unit": "",
+          "compute": {
+            "law": "sysPt1Step",
+            "V": 10,
+            "T": 0.5,
+            "t": 0.5
+          },
+          "solution": "h(T) = V(1 − e⁻¹) = 10 · 0.632 = 6.32, 63 % of the final value.",
+          "source": "Worked by hand from (eq. 3.134)"
+        },
+        {
+          "question": "Same element: what is the slope of the step response at t = 0?",
+          "answer": 20,
+          "unit": "1/s",
+          "compute": {
+            "law": "sysPt1Slope",
+            "V": 10,
+            "T": 0.5
+          },
+          "solution": "dh/dt = (V/T) e^(−t/T), which at t = 0 is V/T = 10/0.5 = 20 1/s (Aufgabe 3.33).",
+          "source": "Worked by hand from (eq. 3.135)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "G(s) = V/(1 + sT)",
+          "note": "gain V, time constant T > 0",
+          "ref": "(3.133)"
+        },
+        {
+          "eq": "h(t) = V(1 − e^(−t/T)) σ(t)",
+          "note": "step response",
+          "ref": "(3.134)"
+        },
+        {
+          "eq": "g(t) = dh/dt = (V/T) e^(−t/T) σ(t)",
+          "note": "impulse response",
+          "ref": "(3.135)"
+        },
+        {
+          "eq": "G(s) = 10/(1 + s/2)",
+          "note": "the notes' example",
+          "ref": "(3.136)"
+        }
+      ]
+    },
+    {
+      "id": "pt2",
+      "title": "Second-order lag",
+      "idea": "The damping of a second-order lag (P-T2 element) decides how far it overshoots and how long it rings; the time constant only stretches time.",
+      "law": "G(s) = V/(1 + 2ξ(sT) + (sT)²)",
+      "lecture": "Kugi (2015), section 3.8.2 (pp. 81–82); eqs. (3.137), (3.138)",
+      "practice": [
+        {
+          "question": "A P-T2 element has T = 0.1 s and ξ = 0.5. What is the imaginary part of its upper pole, the frequency it rings at?",
+          "answer": 8.66,
+          "unit": "rad/s",
+          "compute": {
+            "law": "sysPt2Imag",
+            "T": 0.1,
+            "xi": 0.5
+          },
+          "solution": "1 + 2ξ(sT) + (sT)² = 0 gives s = (−ξ ± j√(1 − ξ²))/T = (−0.5 ± j0.866)/0.1, so Im s = 8.66 rad/s.",
+          "source": "Worked by hand from (eq. 3.137)"
+        },
+        {
+          "question": "With V = 5 and ξ = 0.5, what is the peak value of the step response?",
+          "answer": 5.815,
+          "unit": "",
+          "compute": {
+            "law": "sysPt2Peak",
+            "V": 5,
+            "xi": 0.5
+          },
+          "solution": "The first maximum of (3.138) is where √(1 − ξ²) t/T = π. There the bracket gives h = V(1 + e^(−πξ/√(1 − ξ²))) = 5(1 + e^(−1.814)) = 5 · 1.163 = 5.82.",
+          "source": "Worked by hand from (eq. 3.138)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "G(s) = V/(1 + 2ξ(sT) + (sT)²)",
+          "note": "gain V, time constant T, damping 0 < ξ < 1",
+          "ref": "(3.137)"
+        },
+        {
+          "eq": "h(t) = V[1 − (ξ/√(1 − ξ²) sin(√(1 − ξ²) t/T) + cos(√(1 − ξ²) t/T)) e^(−ξt/T)] σ(t)",
+          "note": "step response",
+          "ref": "(3.138)"
+        },
+        {
+          "eq": "g(t) = V/(T√(1 − ξ²)) e^(−ξt/T) sin(√(1 − ξ²) t/T) σ(t)",
+          "note": "impulse response",
+          "ref": "(3.139)"
+        },
+        {
+          "eq": "γ1,2(t) = V(1 ± e^(−ξt/T)/√(1 − ξ²))",
+          "note": "envelopes, Aufgabe 3.34",
+          "ref": ""
+        },
+        {
+          "eq": "s1,2 = (−ξ ± j√(1 − ξ²))/T",
+          "note": "poles",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "pid",
+      "title": "Controller elements",
+      "idea": "P answers now, I remembers the past and D looks ahead: the controller elements combine them, each with its own step response and Bode diagram.",
+      "law": "G(s) = VP (1 + TI s)(1 + TD s)/(s(1 + TR s))",
+      "lecture": "Kugi (2015), sections 3.8.3–3.8.9 (pp. 83–87); eqs. (3.141)–(3.157)",
+      "practice": [
+        {
+          "question": "A lead element G(s) = V(1 + sT)/(1 + αsT) has T = 1 s and α = 0.1, as in Aufgabe 3.42. What is its largest phase lift φmax?",
+          "answer": 54.9,
+          "unit": "°",
+          "compute": {
+            "law": "sysLeadMaxPhase",
+            "T": 1,
+            "alpha": 0.1
+          },
+          "solution": "The phase peaks at ωmax = 1/(T√α) = 3.16 rad/s, where φmax = arctan(1/√α) − arctan(√α) = arctan(3.162) − arctan(0.316) = 72.5° − 17.5° = 54.9°.",
+          "source": "Worked by hand from (eq. 3.156)"
+        },
+        {
+          "question": "A PI element has VI = 2 1/s and TI = 0.5 s. What is its step response at t = 1 s?",
+          "answer": 3,
+          "unit": "",
+          "compute": {
+            "law": "sysPiStep",
+            "VI": 2,
+            "TI": 0.5,
+            "t": 1
+          },
+          "solution": "h(t) = VI t + VI TI (Aufgabe 3.37) = 2 · 1 + 2 · 0.5 = 3.",
+          "source": "Worked by hand from (eq. 3.146)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "G(s) = VP",
+          "note": "P element",
+          "ref": "(3.141)"
+        },
+        {
+          "eq": "G(s) = VI/s",
+          "note": "integrator (I element)",
+          "ref": "(3.143)"
+        },
+        {
+          "eq": "G(s) = VI(1 + sTI)/s = VI/s + VI TI",
+          "note": "PI element",
+          "ref": "(3.145)"
+        },
+        {
+          "eq": "G(s) = VD s",
+          "note": "ideal differentiator, not realisable",
+          "ref": "(3.147)"
+        },
+        {
+          "eq": "GR(s) = VD s/(1 + TR s)",
+          "note": "D-T1 element",
+          "ref": "(3.148)"
+        },
+        {
+          "eq": "G(s) = VP(1 + TD s)",
+          "note": "PD element, not realisable",
+          "ref": "(3.150)"
+        },
+        {
+          "eq": "G(s) = V(1 + sT)/(1 + αsT),   0 < α < 1",
+          "note": "lead element (PD-T1)",
+          "ref": "(3.151)"
+        },
+        {
+          "eq": "ωmax = 1/(T√α),   φmax = arctan(1/√α) − arctan(√α)",
+          "note": "largest phase lift of the lead element",
+          "ref": "(3.155), (3.156)"
+        },
+        {
+          "eq": "G(s) = VP(1 + TI s)(1 + TD s)/(s(1 + TR s))",
+          "note": "PID element",
+          "ref": "(3.157)"
+        }
+      ]
+    },
+    {
+      "id": "deadtime",
+      "title": "Dead time",
+      "idea": "A dead time (Totzeit) passes the input on unchanged but late, which costs phase in proportion to the frequency.",
+      "law": "y(t) = u(t − Tt)    G(s) = e^(−sTt)",
+      "lecture": "Kugi (2015), section 3.8.10 (p. 87); eqs. (3.158), (3.159)",
+      "practice": [
+        {
+          "question": "A conveyor gives a dead time Tt = 0.2 s. By what phase does its output lag a sine input of ω = 5 rad/s?",
+          "answer": -57.3,
+          "unit": "°",
+          "compute": {
+            "law": "sysDeadTimePhase",
+            "Tt": 0.2,
+            "w": 5
+          },
+          "solution": "G(jω) = e^(−jωTt) has magnitude 1 and phase −ωTt = −5 · 0.2 = −1 rad = −57.3°.",
+          "source": "Worked by hand from (eq. 3.159)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "y(t) = u(t − Tt)",
+          "note": "the input shifted by the dead time",
+          "ref": "(3.158)"
+        },
+        {
+          "eq": "G(s) = e^(−sTt)",
+          "note": "transfer function, by the shift theorem",
+          "ref": "(3.159)"
+        },
+        {
+          "eq": "|G(jω)| = 1,   arg G(jω) = −ωTt",
+          "note": "frequency response",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "polezero",
+      "title": "Pole-zero diagram",
+      "idea": "Where the poles sit tells how a system responds: left of the imaginary axis it is BIBO stable, and a pole pair's angle and distance give its damping and time constant.",
+      "law": "ξ = −σ/√(σ² + ω²)    T = 1/√(σ² + ω²)",
+      "lecture": "Kugi (2015), sections 3.10 and 3.6 (pp. 90–91, 67–68); eqs. (3.163), (3.166), (3.167)",
+      "practice": [
+        {
+          "question": "The notes' example (3.163) has the pole pair −2 ± j1.5. What damping ξ does it have?",
+          "answer": 0.8,
+          "unit": "",
+          "compute": {
+            "law": "sysPoleDamping",
+            "sigma": -2,
+            "omega": 1.5
+          },
+          "solution": "ξ = −σ/√(σ² + ω²) = 2/√(4 + 2.25) = 2/2.5 = 0.8.",
+          "source": "Worked by hand from (eq. 3.166)"
+        },
+        {
+          "question": "And what time constant T?",
+          "answer": 0.4,
+          "unit": "s",
+          "compute": {
+            "law": "sysPoleTime",
+            "sigma": -2,
+            "omega": 1.5
+          },
+          "solution": "T = 1/√(σ² + ω²) = 1/2.5 = 0.4 s: the pair lies on the half circle of radius 2.5.",
+          "source": "Worked by hand from (eq. 3.167)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "G(s) = 10s(s + 1)/((s − 0.5)(s² + 4s + 6.25))",
+          "note": "the notes' example",
+          "ref": "(3.163)"
+        },
+        {
+          "eq": "n(s) = (s − σ − jω)(s − σ + jω) = 1/T² + (2ξ/T) s + s²",
+          "note": "a pole pair as a P-T2 denominator",
+          "ref": "(3.165)"
+        },
+        {
+          "eq": "ξ = −σ/√(σ² + ω²)",
+          "note": "damping: constant on a ray through the origin",
+          "ref": "(3.166)"
+        },
+        {
+          "eq": "T = 1/√(σ² + ω²)",
+          "note": "time constant: constant on a circle about the origin",
+          "ref": "(3.167)"
+        },
+        {
+          "eq": "Re(si) < 0 for every pole si",
+          "note": "BIBO stability (Satz 3.8)",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "loop1dof",
+      "title": "Control loop with one degree of freedom",
+      "idea": "One controller sets both how the output follows the reference and how much of a disturbance is left; an integrator in the loop removes the steady-state error.",
+      "law": "Tr,y = RG/(1 + RG)    Td,y = S = 1/(1 + RG)    Tr,y + Td,y = 1",
+      "lecture": "Kugi (2015), section 4.3.1 (pp. 101–107); eq. (4.20), (4.23), (5.10)",
+      "practice": [
+        {
+          "question": "The open loop is L(s) = 8/(1 + s)², a plant 2/(1 + s)² under a P controller with gain 4. What steady-state error e∞ does a unit reference step leave?",
+          "answer": 0.111,
+          "unit": "",
+          "compute": {
+            "law": "loopStepError",
+            "num": [
+              8
+            ],
+            "den": [
+              1,
+              2,
+              1
+            ]
+          },
+          "solution": "L has no pole at s = 0 (ρ = 0) and gain V = 8, so by (5.10) e∞ = 1/(1 + V) = 1/9 = 0.111.",
+          "source": "Worked by hand from (eq. 5.10)"
+        },
+        {
+          "question": "With a PI controller the open loop becomes L(s) = 2/(s(1 + s)). What steady-state error e∞ does a unit ramp r(t) = t leave?",
+          "answer": 0.5,
+          "unit": "",
+          "compute": {
+            "law": "loopRampError",
+            "num": [
+              2
+            ],
+            "den": [
+              1,
+              1,
+              0
+            ]
+          },
+          "solution": "One pole at s = 0 (ρ = 1) and V = 2, so by (5.10) e∞ = 1/V = 0.5 for the ramp; a step would leave none.",
+          "source": "Worked by hand from (eq. 5.10)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "Tr,y = R G/(1 + R G),   Td,y = Gd/(1 + R G),   Tn,y = −R G/(1 + R G)",
+          "note": "reference, disturbance and noise to the output",
+          "ref": "(4.12)"
+        },
+        {
+          "eq": "Tr,y = L/(1 + L),   Td,y = 1/(1 + L),   L = R G",
+          "note": "with Gd = 1, the disturbance acting at the output",
+          "ref": "(4.20)"
+        },
+        {
+          "eq": "Tr,u = −Td,u = R/(1 + R G)",
+          "note": "the input the controller asks for",
+          "ref": "(4.22)"
+        },
+        {
+          "eq": "S = lim (ΔTr,y/Tr,y)/(ΔG/G) = 1/(1 + R G)",
+          "note": "sensitivity (Sensitivitätsfunktion)",
+          "ref": "(4.23)"
+        },
+        {
+          "eq": "Tr,y + Td,y = 1",
+          "note": "so T = 1 − S is the complementary sensitivity",
+          "ref": "(4.24)"
+        },
+        {
+          "eq": "step: e∞ = 1/(1 + V) for ρ = 0, 0 for ρ = 1;   ramp: e∞ = ∞ for ρ = 0, 1/V for ρ = 1",
+          "note": "steady-state error (bleibende Regelabweichung)",
+          "ref": "(5.10)"
+        }
+      ]
+    },
+    {
+      "id": "routh",
+      "title": "Routh–Hurwitz test",
+      "idea": "Whether every root of a polynomial lies in the left half plane can be read from its coefficients alone, without computing a root.",
+      "law": "a_ij = (a_{i−1,1} a_{i−2,j+1} − a_{i−2,1} a_{i−1,j+1}) / a_{i−1,1}",
+      "lecture": "Kugi (2015), section 4.4.1 (pp. 110–112); eq. (4.31), (4.32), (4.34)–(4.36)",
+      "practice": [
+        {
+          "question": "The loop of Beispiel 4.4 has R(s) = K/s and G(s) = 9/(s² + 3s + 9). Up to what gain K is the closed loop stable?",
+          "answer": 3,
+          "unit": "",
+          "compute": {
+            "law": "loopRouthKmax",
+            "num": [
+              9
+            ],
+            "den": [
+              1,
+              3,
+              9,
+              0
+            ]
+          },
+          "solution": "The closed loop's denominator is s³ + 3s² + 9s + 9K (4.34). The Routh array has the pivot column 1, 3, (3·9 − 9K)/3 = 9 − 3K, 9K (4.35). All positive needs 9 − 3K > 0 and 9K > 0, so 0 < K < 3 (4.36).",
+          "source": "Worked by hand from (eq. 4.35)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "n(s) = a_n sⁿ + … + a_1 s + a_0: all a_j ≠ 0 with one sign",
+          "note": "necessary for a Hurwitz polynomial, also sufficient for n = 2 (Satz 4.2)",
+          "ref": "Satz 4.2"
+        },
+        {
+          "eq": "s³ + s² + 11s + 51 = (s + 3)(s − 1 + 4j)(s − 1 − 4j)",
+          "note": "positive coefficients, still not Hurwitz",
+          "ref": "(4.30)"
+        },
+        {
+          "eq": "rows sⁿ: a_n, a_{n−2}, …;  s^{n−1}: a_{n−1}, a_{n−3}, …",
+          "note": "the Routh array; its first column is the pivot column",
+          "ref": "(4.31)"
+        },
+        {
+          "eq": "a_ij = (a_{i−1,1} a_{i−2,j+1} − a_{i−2,1} a_{i−1,j+1}) / a_{i−1,1}",
+          "note": "the entries; Hurwitz exactly when the pivot column has no zero and one sign (Satz 4.3)",
+          "ref": "(4.32)"
+        },
+        {
+          "eq": "Tr,y = 9K/(s³ + 3s² + 9s + 9K)",
+          "note": "Beispiel 4.4 with R = K/s",
+          "ref": "(4.34)"
+        },
+        {
+          "eq": "9 − 3K > 0,   9K > 0   ⇒   0 < K < 3",
+          "note": "the stable range of the gain",
+          "ref": "(4.36)"
+        }
+      ]
+    },
+    {
+      "id": "nyquist",
+      "title": "Nyquist criterion",
+      "idea": "The locus of the open loop L(jω) and the point −1 decide whether the closed loop is stable; the phase margin says how far it is from the edge.",
+      "law": "Δarg(1 + L(jω)) = (max(deg zL, deg nL) − N₋(nL) + N₊(nL))·π    Φ = arg L(jωC) + π",
+      "lecture": "Kugi (2015), section 4.4.3 (pp. 114–118); eq. (4.45), (4.54), (4.55)",
+      "practice": [
+        {
+          "question": "The open loop is L(s) = K/(s(s + 1)²) with K = 0.5 (Aufgabe 4.12). By what factor may the gain grow before the closed loop becomes unstable?",
+          "answer": 4,
+          "unit": "",
+          "compute": {
+            "law": "loopGainMargin",
+            "num": [
+              0.5
+            ],
+            "den": [
+              1,
+              2,
+              1,
+              0
+            ]
+          },
+          "solution": "arg L(jω) = −90° − 2·arctan ω = −180° at ω = 1 rad/s. There |L| = 0.5/(1·(1 + 1)) = 0.25, so the locus crosses the real axis at −0.25 and K may grow by 1/0.25 = 4, to K = 2.",
+          "source": "Worked by hand from (eq. 4.45)"
+        },
+        {
+          "question": "For the same loop with K = 0.5, what is the phase margin Φ?",
+          "answer": 44.1,
+          "unit": "°",
+          "compute": {
+            "law": "loopPhaseMargin",
+            "num": [
+              0.5
+            ],
+            "den": [
+              1,
+              2,
+              1,
+              0
+            ]
+          },
+          "solution": "|L(jωC)| = 1 means 0.5 = ωC(1 + ωC²); by trial ωC ≈ 0.424 rad/s. Then arg L = −90° − 2·arctan 0.424 = −90° − 45.9° = −135.9°, so Φ = 180° − 135.9° = 44.1° (4.55).",
+          "source": "Worked by hand from (eq. 4.55)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "L(s) = zL(s)/nL(s),   Tr,y = zL/(zL + nL)",
+          "note": "open and closed loop",
+          "ref": "(4.44)"
+        },
+        {
+          "eq": "Δarg(1 + L(jω)) = (max(deg zL, deg nL) − N₋(nL) + N₊(nL))·π",
+          "note": "Nyquist criterion (Satz 4.5): stable exactly when this holds",
+          "ref": "(4.45)"
+        },
+        {
+          "eq": "L(s) = (V/s^ρ)·(zL(s)/nL(s))·e^{−sTt},   zL(0) = nL(0) = 1",
+          "note": "the form for the Bode version (Satz 4.6)",
+          "ref": "(4.54)"
+        },
+        {
+          "eq": "Φ = arg L(jωC) + π",
+          "note": "phase margin (Phasenreserve); stable when positive",
+          "ref": "(4.55)"
+        },
+        {
+          "eq": "gain margin = 1/|L(jω180)|,   arg L(jω180) = −π",
+          "note": "not defined in the notes; the usual reading of the same locus",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "fkl",
+      "title": "PI design by loop shaping",
+      "idea": "Rise time and overshoot of the closed loop translate into a crossover frequency and a phase margin of the open loop, which a PI controller can set.",
+      "law": "ωC·tr ≈ 1.5    Φ[°] + ü[%] ≈ 70    R(s) = VI(1 + sTI)/s",
+      "lecture": "Kugi (2015), chapter 5 and section 5.1 (pp. 120–126); eq. (5.2), (5.3), (5.13)–(5.18)",
+      "practice": [
+        {
+          "question": "For the plant G(s) = 5/(1 + 1.414s + s²) the targets are ωC = 0.5 rad/s and Φ = 60°, and arg L1(jωC) = −133.3° for L1 = G/s. What time constant TI must the PI controller's zero have?",
+          "answer": 0.47,
+          "unit": "s",
+          "compute": {
+            "law": "loopPiTI",
+            "num": [
+              5
+            ],
+            "den": [
+              1,
+              1.414,
+              1
+            ],
+            "wc": 0.5,
+            "phi": 60
+          },
+          "solution": "The loop needs arg L(jωC) = Φ − 180° = −120°, so the zero must add 13.3°: arctan(ωC·TI) = 13.3° (5.16), TI = tan 13.3°/0.5 = 0.47 s.",
+          "source": "Worked by hand from (eq. 5.16)"
+        },
+        {
+          "question": "With TI = 0.47 s, what gain VI puts the crossover at ωC = 0.5 rad/s?",
+          "answer": 0.1,
+          "unit": "",
+          "compute": {
+            "law": "loopPiVI",
+            "num": [
+              5
+            ],
+            "den": [
+              1,
+              1.414,
+              1
+            ],
+            "wc": 0.5,
+            "phi": 60
+          },
+          "solution": "|VI·5(1 + 0.47·0.5j)/(0.5j(1 − 0.25 + 0.707j))| = 1 (5.17): VI·5·1.027/(0.5·1.031) = 1, so VI = 0.1 (5.18).",
+          "source": "Worked by hand from (eq. 5.17)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "Tr,y = R G/(1 + R G) = L/(1 + L)",
+          "note": "the closed loop to be shaped",
+          "ref": "(5.1)"
+        },
+        {
+          "eq": "ωC·tr ≈ 1.5",
+          "note": "rise time from the crossover frequency (Durchtrittsfrequenz)",
+          "ref": "(5.2)"
+        },
+        {
+          "eq": "Φ[°] + ü[%] ≈ 70",
+          "note": "overshoot from the phase margin",
+          "ref": "(5.3)"
+        },
+        {
+          "eq": "G(s) = 5/(1 + 2·0.707s + s²)",
+          "note": "the plant; targets tr = 3 s, ü = 10 %, e∞ = 0",
+          "ref": "(5.13)"
+        },
+        {
+          "eq": "R(s) = VI(1 + sTI)/s",
+          "note": "PI controller",
+          "ref": "(5.14)"
+        },
+        {
+          "eq": "arctan(ωC·TI) = Φ − 180° − arg L1(jωC)",
+          "note": "the zero lifts the phase",
+          "ref": "(5.16)"
+        },
+        {
+          "eq": "|VI·L1(jωC)·(1 + jωC TI)| = 1",
+          "note": "the gain sets the crossover",
+          "ref": "(5.17)"
+        },
+        {
+          "eq": "R(s) = 0.1(1 + 0.47s)/s",
+          "note": "the notes' result",
+          "ref": "(5.18)"
+        }
+      ]
+    },
+    {
+      "id": "sampling",
+      "title": "Sampled systems and the sample time",
+      "idea": "Behind a zero-order hold a continuous plant becomes a difference equation whose poles are e^{sTa}; a few samples per rise time are enough.",
+      "law": "x_{k+1} = Φx_k + Γu_k,  Φ = e^{ATa},  Γ = ∫₀^Ta e^{Aτ} dτ b    z = e^{sTa}    tr/Ta ≈ 4 to 10",
+      "lecture": "Kugi (2015), sections 6.2.2 and 6.4 (pp. 141–152); eq. (6.19), (6.25), (6.61), (6.62)",
+      "practice": [
+        {
+          "question": "A P-T2 plant has T2 = 1 s and damping ξ = 0.5. What is its rise time tr?",
+          "answer": 1.83,
+          "unit": "s",
+          "compute": {
+            "law": "loopRisePT2",
+            "T2": 1,
+            "xi": 0.5
+          },
+          "solution": "arccos 0.5 = π/3 = 1.047 and tan(π/3) = 1.732, so by (6.61) tr = 1·exp(1.047/1.732) = e^0.605 = 1.83 s. By (6.62) Ta should lie between 0.18 s and 0.46 s.",
+          "source": "Worked by hand from (eq. 6.61)"
+        },
+        {
+          "question": "A continuous plant has a pole at s = −2 1/s. Where does the sampled system's pole lie for Ta = 0.1 s?",
+          "answer": 0.819,
+          "unit": "",
+          "compute": {
+            "law": "loopZPole",
+            "s": -2,
+            "Ta": 0.1
+          },
+          "solution": "By Satz 6.3 the pole moves to z = e^{sTa} = e^{−0.2} = 0.819, inside the unit circle as a stable pole must.",
+          "source": "Worked by hand from Satz 6.3"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "x_{k+1} = Φx_k + Γu_k,   y_k = Cx_k + Du_k",
+          "note": "the sampled system (Abtastsystem)",
+          "ref": "(6.19a, b)"
+        },
+        {
+          "eq": "Φ = e^{ATa},   Γ = ∫₀^Ta e^{Aτ} dτ B",
+          "note": "with a zero-order hold",
+          "ref": "(6.19c, d)"
+        },
+        {
+          "eq": "Φ = [[1, Ta], [0, 1]],   Γ = [Ta²/2, Ta]",
+          "note": "the double integrator",
+          "ref": "(6.25)"
+        },
+        {
+          "eq": "s_j pole of G(s)   ⇒   e^{s_j Ta} pole of G(z)",
+          "note": "the left half plane maps into the unit circle",
+          "ref": "Satz 6.3"
+        },
+        {
+          "eq": "G(s) = V2/(1 + 2ξ(sT2) + (sT2)²)",
+          "note": "P-T2 element",
+          "ref": "(6.60)"
+        },
+        {
+          "eq": "tr = T2·exp(arccos ξ / tan(arccos ξ))",
+          "note": "its rise time",
+          "ref": "(6.61)"
+        },
+        {
+          "eq": "min(tr)/Ta ≈ 4 to 10",
+          "note": "rule of thumb for the sample time (Abtastzeit)",
+          "ref": "(6.62)"
+        }
+      ]
+    },
+    {
+      "id": "tustin",
+      "title": "Tustin transformation and frequency warping",
+      "idea": "Substituting q = (2/Ta)(z − 1)/(z + 1) for s keeps a controller's shape but bends its frequency axis: what sat at Ω now sits at a lower ω.",
+      "law": "q = (2/Ta)(z − 1)/(z + 1)    Ω = (2/Ta)·tan(ωTa/2)",
+      "lecture": "Kugi (2015), section 6.6 (pp. 160–164); eq. (6.89)–(6.92)",
+      "practice": [
+        {
+          "question": "With Ta = 0.1 s, which transformed frequency Ω belongs to ω = 10 rad/s?",
+          "answer": 10.93,
+          "unit": "rad/s",
+          "compute": {
+            "law": "loopWarp",
+            "w": 10,
+            "Ta": 0.1
+          },
+          "solution": "Ω = (2/Ta)·tan(ωTa/2) = 20·tan 0.5 = 20·0.5463 = 10.93 rad/s (6.89).",
+          "source": "Worked by hand from (eq. 6.89)"
+        },
+        {
+          "question": "A filter designed with its resonance at 10 rad/s is discretised by Tustin with Ta = 0.1 s. At what real frequency ω does the discrete filter peak?",
+          "answer": 9.27,
+          "unit": "rad/s",
+          "compute": {
+            "law": "loopUnwarp",
+            "W": 10,
+            "Ta": 0.1
+          },
+          "solution": "The peak lies where Ω = 10: tan(ωTa/2) = 10·0.1/2 = 0.5, so ω = 20·arctan 0.5 = 20·0.4636 = 9.27 rad/s (6.89 solved for ω).",
+          "source": "Worked by hand from (eq. 6.89)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "(e^{jωTa} − 1)/(e^{jωTa} + 1) = j·tan(ωTa/2)",
+          "note": "the unit circle onto the imaginary axis",
+          "ref": "(6.87)"
+        },
+        {
+          "eq": "Ω = (2/Ta)·tan(ωTa/2)",
+          "note": "transformed frequency; 0 ≤ ω < π/Ta fills 0 ≤ Ω < ∞",
+          "ref": "(6.89)"
+        },
+        {
+          "eq": "q = (2/Ta)(z − 1)/(z + 1)",
+          "note": "the q-transformation",
+          "ref": "(6.90)"
+        },
+        {
+          "eq": "z = (1 + qTa/2)/(1 − qTa/2)",
+          "note": "its inverse, the bilinear transformation after Tustin",
+          "ref": "(6.91)"
+        },
+        {
+          "eq": "G#(q) = G(z) at z = (1 + qTa/2)/(1 − qTa/2)",
+          "note": "q-transfer function",
+          "ref": "(6.92)"
+        }
+      ]
+    },
+    {
+      "id": "reach",
+      "title": "Reachability",
+      "idea": "An input can steer a linear system from rest to any state exactly when the reachability matrix has full rank.",
+      "law": "R(A, b) = [b, Ab, …, A^{n−1}b],  rank n    u(t) = bᵀe^{Aᵀ(T−t)}G⁻¹x(T)",
+      "lecture": "Kugi (2015), section 7.1 (pp. 184–187); eq. (7.11), (7.15), (7.18), (7.21)",
+      "practice": [
+        {
+          "question": "A = diag(−1, −3) and b = [1, 1]. What is the determinant of the reachability matrix R(A, b)?",
+          "answer": -2,
+          "unit": "",
+          "compute": {
+            "law": "loopReachDet",
+            "A": [
+              [
+                -1,
+                0
+              ],
+              [
+                0,
+                -3
+              ]
+            ],
+            "b": [
+              1,
+              1
+            ]
+          },
+          "solution": "Ab = [−1, −3], so R = [[1, −1], [1, −3]] (7.11) and det R = 1·(−3) − (−1)·1 = −2 ≠ 0: rank 2, completely reachable.",
+          "source": "Worked by hand from (eq. 7.11)"
+        },
+        {
+          "question": "For the same system, what is the off-diagonal entry of the Gramian G for T → ∞?",
+          "answer": 0.25,
+          "unit": "s",
+          "compute": {
+            "law": "loopGramian",
+            "A": [
+              [
+                -1,
+                0
+              ],
+              [
+                0,
+                -3
+              ]
+            ],
+            "b": [
+              1,
+              1
+            ],
+            "T": 40,
+            "i": 0,
+            "j": 1
+          },
+          "solution": "A is a Hurwitz matrix, so G solves AG + GAᵀ + bbᵀ = 0 (7.21). The off-diagonal entry gives −G12 − 3G12 + 1 = 0, so G12 = 1/4 = 0.25.",
+          "source": "Worked by hand from (eq. 7.21)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "x' = Ax + Bu,   x(0) = x0",
+          "note": "the system",
+          "ref": "(7.10)"
+        },
+        {
+          "eq": "R(A, B) = [B, AB, A²B, …, A^{n−1}B]",
+          "note": "reachability matrix (Erreichbarkeitsmatrix); reachable exactly when rank n (Satz 7.1)",
+          "ref": "(7.11)"
+        },
+        {
+          "eq": "G = ∫₀ᵀ e^{Aτ} B Bᵀ e^{Aᵀτ} dτ",
+          "note": "Gramian (Gramsche Matrix), regular for every T > 0 when reachable",
+          "ref": "(7.15)"
+        },
+        {
+          "eq": "u(t) = Bᵀ e^{Aᵀ(T−t)} G⁻¹ x(T)",
+          "note": "steers x from 0 to x(T)",
+          "ref": "(7.18)"
+        },
+        {
+          "eq": "A G∞ + G∞ Aᵀ + B Bᵀ = 0",
+          "note": "the Gramian for T → ∞ when A is a Hurwitz matrix",
+          "ref": "(7.21)"
+        }
+      ]
+    },
+    {
+      "id": "placement",
+      "title": "State controller by pole placement",
+      "idea": "Feeding back the whole state places the closed loop's poles anywhere, provided the system is reachable; with all poles at zero it settles in n steps.",
+      "law": "u_k = kᵀx_k + g r_k    kᵀ = −v1ᵀ p_g,soll(Φ),  v1ᵀ = e_nᵀ R(Φ, Γ)⁻¹",
+      "lecture": "Kugi (2015), sections 8.1 and 8.1.1 (pp. 204–215); eq. (8.4), (8.18), (8.29), (8.39)",
+      "practice": [
+        {
+          "question": "For x_{k+1} = [[1, 1], [0, 1]]x_k + [0, 1]u_k a dead-beat controller is wanted (Aufgabe 8.5). What is the second entry k2 of kᵀ?",
+          "answer": -2,
+          "unit": "",
+          "compute": {
+            "law": "loopStateGain",
+            "Phi": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "Gamma": [
+              0,
+              1
+            ],
+            "poles": [
+              0,
+              0
+            ],
+            "i": 1
+          },
+          "solution": "R = [Γ, ΦΓ] = [[0, 1], [1, 1]], so v1ᵀ = e₂ᵀR⁻¹ = [1, 0] (8.29). With p_g,soll(z) = z², kᵀ = −v1ᵀΦ² = −[1, 0]·[[1, 2], [0, 1]] = [−1, −2] (8.18b), as Aufgabe 8.5 states.",
+          "source": "Worked by hand from (eq. 8.18b)"
+        },
+        {
+          "question": "With that controller and y_k = x_{1,k}, what prefilter g gives y_k → r?",
+          "answer": 1,
+          "unit": "",
+          "compute": {
+            "law": "loopPrefilter",
+            "Phi": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "Gamma": [
+              0,
+              1
+            ],
+            "c": [
+              1,
+              0
+            ],
+            "d": 0,
+            "poles": [
+              0,
+              0
+            ]
+          },
+          "solution": "Φ + Γkᵀ = [[1, 1], [−1, −1]], so E − Φ − Γkᵀ = [[0, −1], [1, 2]] with inverse [[2, 1], [−1, 0]]. Times Γ gives [1, 0], and cᵀ of that is 1, so g = 1/1 = 1 (8.39).",
+          "source": "Worked by hand from (eq. 8.39)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "x_{k+1} = Φx_k + Γu_k,   y_k = cᵀx_k + du_k",
+          "note": "the plant",
+          "ref": "(8.3)"
+        },
+        {
+          "eq": "u_k = kᵀx_k + g r_k",
+          "note": "state feedback (Zustandsrückführung)",
+          "ref": "(8.4)"
+        },
+        {
+          "eq": "x_{k+1} = (Φ + Γkᵀ)x_k + Γg r_k",
+          "note": "the closed loop",
+          "ref": "(8.5)"
+        },
+        {
+          "eq": "e_nᵀ = v1ᵀ[Γ, ΦΓ, …, Φ^{n−1}Γ],   kᵀ = −v1ᵀ p_g,soll(Φ)",
+          "note": "Ackermann's formula (Satz 8.2)",
+          "ref": "(8.18)"
+        },
+        {
+          "eq": "v1ᵀ = e_nᵀ R(Φ, Γ)⁻¹",
+          "note": "needs complete reachability",
+          "ref": "(8.29)"
+        },
+        {
+          "eq": "g = 1/((cᵀ + dkᵀ)(E − Φ − Γkᵀ)⁻¹Γ + d)",
+          "note": "prefilter for y_k → r_0",
+          "ref": "(8.39)"
+        },
+        {
+          "eq": "p_g,soll(z) = zⁿ   ⇒   x_k = 0 for k ≥ n",
+          "note": "dead-beat controller (Satz 8.3)",
+          "ref": "(8.46)"
+        }
+      ]
+    },
+    {
+      "id": "observer",
+      "title": "Luenberger observer and the separation principle",
+      "idea": "A model of the plant corrected by the measured output estimates the full state; controller and observer can be designed apart, their poles simply add up.",
+      "law": "x̂_{k+1} = Φx̂_k + Γu_k + k̂(ŷ_k − y_k)    e_{k+1} = (Φ + k̂cᵀ)e_k    p_ges = p_g,soll · p̂_g,soll",
+      "lecture": "Kugi (2015), sections 8.3.2 and 8.4 (pp. 220–224); eq. (8.64)–(8.66), (8.73), (8.74)",
+      "practice": [
+        {
+          "question": "For x_{k+1} = [[2, 1], [0, 10]]x_k + [0, 1]u_k with y_k = x_{1,k} a dead-beat observer is wanted (Aufgabe 8.9). What is the second entry of k̂?",
+          "answer": -100,
+          "unit": "",
+          "compute": {
+            "law": "loopObserverGain",
+            "Phi": [
+              [
+                2,
+                1
+              ],
+              [
+                0,
+                10
+              ]
+            ],
+            "c": [
+              1,
+              0
+            ],
+            "poles": [
+              0,
+              0
+            ],
+            "i": 1
+          },
+          "solution": "Φ + k̂cᵀ = [[2 + k̂1, 1], [k̂2, 10]] must have trace 0 and determinant 0 (8.66): k̂1 = −12, then 10(2 + k̂1) − k̂2 = −100 − k̂2 = 0 gives k̂2 = −100, as Aufgabe 8.9 states.",
+          "source": "Worked by hand from (eq. 8.66b)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "x̂_{k+1} = Φx̂_k + Γu_k + k̂(ŷ_k − y_k),   ŷ_k = cᵀx̂_k + du_k",
+          "note": "full Luenberger observer (vollständiger Beobachter)",
+          "ref": "(8.64)"
+        },
+        {
+          "eq": "e_{k+1} = (Φ + k̂cᵀ)e_k,   e = x̂ − x",
+          "note": "error dynamics",
+          "ref": "(8.65)"
+        },
+        {
+          "eq": "k̂ = −p̂_g,soll(Φ) v̂1,   v̂1 = O(cᵀ, Φ)⁻¹ e_n",
+          "note": "Ackermann's formula for the observer (Satz 8.5), needs complete observability",
+          "ref": "(8.66)"
+        },
+        {
+          "eq": "Φᵀ for Φ,   c for Γ,   k̂ for k",
+          "note": "duality with the controller design",
+          "ref": "(8.68)"
+        },
+        {
+          "eq": "u_k = kᵀx̂_k + g r_k",
+          "note": "the controller fed by the estimate",
+          "ref": "(8.73)"
+        },
+        {
+          "eq": "p_ges(z) = det(zE − Φ − Γkᵀ)·det(zE − Φ − k̂cᵀ)",
+          "note": "separation principle (Satz 8.6)",
+          "ref": "(8.74)"
+        }
+      ]
+    },
+    {
+      "id": "kinematics",
+      "title": "Point kinematics",
+      "idea": "Velocity is the integral of acceleration and position the integral of velocity, so an acceleration profile fixes where a mass stops.",
+      "law": "v(t) = v(t0) + ∫ a dτ    x(t) = x(t0) + ∫ v dτ",
+      "lecture": "Kugi et al. (2015), section 2.1, Example 2.1 (pp. 8–9); eq. (2.5)–(2.11)",
+      "practice": [
+        {
+          "question": "As in Example 2.1, a mass starts at rest at x = 0 at t0 = 0, accelerates with amax = 2 m/s² until t1 = 1 s, coasts until t2 = 3 s, then brakes so that it stops at xsoll = 8 m. What braking acceleration amin is needed?",
+          "answer": -0.6667,
+          "unit": "m/s²",
+          "compute": {
+            "law": "mechAmin",
+            "amax": 2,
+            "t1": 1,
+            "t2": 3,
+            "xsoll": 8
+          },
+          "solution": "By (2.11) with t0 = 0: amin = −amax² t1² / (amax t1 (t1 − 2 t2) + 2 xsoll) = −4 / (2 · (1 − 6) + 16) = −4/6 = −0.667 m/s². Check: 1 m while speeding up, 4 m coasting at 2 m/s, and v²/(2|amin|) = 3 m braking, 8 m in all.",
+          "source": "Worked by hand from (eq. 2.11)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "v1(t) = v0 + amax (t − t0),   x1(t) = x0 + v0 (t − t0) + ½ amax (t − t0)²",
+          "note": "speeding up",
+          "ref": "(2.5)"
+        },
+        {
+          "eq": "v2(t) = amax (t1 − t0),   x2(t) = ½ amax (t1 − t0)² + amax (t1 − t0)(t − t1)",
+          "note": "coasting",
+          "ref": "(2.6)"
+        },
+        {
+          "eq": "v3(t) = amax (t1 − t0) + amin (t − t2)",
+          "note": "braking",
+          "ref": "(2.7)"
+        },
+        {
+          "eq": "t3 = t2 − amax (t1 − t0) / amin",
+          "note": "the stopping time, from v3(t3) = 0",
+          "ref": "(2.10)"
+        },
+        {
+          "eq": "amin = −amax² (t1 − t0)² / (amax (t1 − t0)(t1 + t0 − 2 t2) + 2 xsoll)",
+          "note": "the braking that stops at xsoll",
+          "ref": "(2.11)"
+        }
+      ]
+    },
+    {
+      "id": "collision",
+      "title": "Conservation of momentum",
+      "idea": "When two masses meet, the forces between them cancel, so their total momentum is the same before and after.",
+      "law": "(mi + mj) d²rS/dt² = fi + fj",
+      "lecture": "Kugi et al. (2015), section 2.2.3 (pp. 24–27); eq. (2.62), (2.69)–(2.71), (2.81)",
+      "practice": [
+        {
+          "question": "A 2 kg block moving at 3 m/s runs into a 1 kg block at rest, and they stick together (plastic, e = 0). How fast does the 2 kg block move afterwards?",
+          "answer": 2,
+          "unit": "m/s",
+          "compute": {
+            "law": "mechCollision",
+            "m1": 2,
+            "v1": 3,
+            "m2": 1,
+            "v2": 0,
+            "e": 0
+          },
+          "solution": "No outside force acts along the track, so momentum is kept, (2.71): 2 · 3 + 1 · 0 = (2 + 1) u, so u = 2 m/s.",
+          "source": "Worked by hand from (eq. 2.71)"
+        },
+        {
+          "question": "In the same plastic collision, how much kinetic energy is lost?",
+          "answer": 3,
+          "unit": "J",
+          "compute": {
+            "law": "mechCollision",
+            "m1": 2,
+            "v1": 3,
+            "m2": 1,
+            "v2": 0,
+            "e": 0,
+            "ask": "lost"
+          },
+          "solution": "By (2.81), before: ½ · 2 · 3² = 9 J; after: ½ · 3 · 2² = 6 J; lost: 3 J, to heat and deformation.",
+          "source": "Worked by hand from (eq. 2.81)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "d/dt p = d/dt (m v) = f",
+          "note": "conservation of momentum (Impulserhaltungssatz) for a point mass",
+          "ref": "(2.62)"
+        },
+        {
+          "eq": "mi dvi/dt = fi + fij,   mj dvj/dt = fj + fji,   fij = −fji",
+          "note": "two masses with forces between them",
+          "ref": "(2.69)"
+        },
+        {
+          "eq": "(mi + mj) d²rS/dt² = fi + fj",
+          "note": "the internal forces cancel; the centre of mass moves as one mass",
+          "ref": "(2.71)"
+        },
+        {
+          "eq": "u1,2 = vS ∓ e m2,1 (v1 − v2) / (m1 + m2),   vS = (m1 v1 + m2 v2) / (m1 + m2)",
+          "note": "velocities after a short impact with coefficient of restitution e (not in the notes)",
+          "ref": ""
+        },
+        {
+          "eq": "T = ½ m vᵀv",
+          "note": "kinetic energy",
+          "ref": "(2.81)"
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "title": "Kinetic and potential energy",
+      "idea": "A mass on a spring trades kinetic for potential energy and back, and with no friction their sum stays constant.",
+      "law": "T + V = ½ m v² + ½ c (s − s0)² = const",
+      "lecture": "Kugi et al. (2015), section 2.2.4, Example 2.9 (pp. 28–31); eq. (2.81), (2.92)",
+      "practice": [
+        {
+          "question": "A 0.5 kg mass on a spring of rate c = 200 N/m is pulled 0.1 m from the spring's free length and let go. How fast is it moving when it passes the free length?",
+          "answer": 2,
+          "unit": "m/s",
+          "compute": {
+            "law": "mechSpringSpeed",
+            "m": 0.5,
+            "c": 200,
+            "ds": 0.1
+          },
+          "solution": "By (2.92) the spring holds ½ · 200 · 0.1² = 1 J. At s = s0 all of it is kinetic, (2.81): ½ · 0.5 · v² = 1 J, so v = 2 m/s.",
+          "source": "Worked by hand from (eq. 2.81), (eq. 2.92)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "P = fR · v",
+          "note": "power",
+          "ref": "(2.79)"
+        },
+        {
+          "eq": "E(t) − E(t0) = ∫ P dτ",
+          "note": "energy transferred",
+          "ref": "(2.80)"
+        },
+        {
+          "eq": "T = ½ m vᵀv",
+          "note": "kinetic energy",
+          "ref": "(2.81)"
+        },
+        {
+          "eq": "V(s) = ∫ fF(s̃) ds̃ from s0 to s",
+          "note": "potential energy of a spring",
+          "ref": "(2.91)"
+        },
+        {
+          "eq": "V(s) = ½ c (s − s0)²",
+          "note": "linear spring",
+          "ref": "(2.92)"
+        }
+      ]
+    },
+    {
+      "id": "friction",
+      "title": "Friction",
+      "idea": "Friction turns motion into heat: dry (Coulomb) friction stops a sliding block at a steady rate, viscous friction fades it gradually.",
+      "law": "m ẍ = fe − µC m g sign(ẋ) − µV ẋ",
+      "lecture": "Kugi et al. (2015), section 2.2.5 (pp. 33–38); eq. (2.99)–(2.103), (2.106)",
+      "practice": [
+        {
+          "question": "A block slides on a floor at 2 m/s with only Coulomb friction, µC = 0.4, and no push. With g = 9.81 m/s², how far does it slide before it stops?",
+          "answer": 0.5097,
+          "unit": "m",
+          "compute": {
+            "law": "mechSlideDistance",
+            "v0": 2,
+            "muC": 0.4,
+            "g": 9.81
+          },
+          "solution": "By (2.101) with fe = 0 the block slows at µC g = 3.924 m/s², a constant. It stops after v0²/(2 µC g) = 4 / 7.848 = 0.510 m.",
+          "source": "Worked by hand from (eq. 2.101)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "fH = µH fN",
+          "note": "limit of static friction (Haftreibung)",
+          "ref": "(2.99)"
+        },
+        {
+          "eq": "fC = µC fN sign(ẋ)",
+          "note": "sliding (Coulomb) friction",
+          "ref": "(2.100)"
+        },
+        {
+          "eq": "m ẍ = fe − µC m g sign(ẋ)",
+          "note": "the sliding block",
+          "ref": "(2.101)"
+        },
+        {
+          "eq": "sticking: |fe| ≤ fH and ẋ = 0 ⇒ ẋ = 0; sliding otherwise",
+          "note": "switching between sticking and sliding",
+          "ref": "(2.102)"
+        },
+        {
+          "eq": "fr = µV v",
+          "note": "viscous friction",
+          "ref": "(2.106)"
+        }
+      ]
+    },
+    {
+      "id": "smd",
+      "title": "Spring-mass-damper system",
+      "idea": "A mass on a spring and damper rings at its natural frequency, dies away through the damper, and answers a shaking force most strongly near that frequency.",
+      "law": "M q̈ + D q̇ + C q = B fe",
+      "lecture": "Kugi et al. (2015), section 2.2.6, Example 2.12 (pp. 41–43); eq. (2.121)–(2.124)",
+      "practice": [
+        {
+          "question": "A 2 kg mass hangs on a spring of rate c = 800 N/m. What is its natural frequency ω0 = √(c/m)?",
+          "answer": 20,
+          "unit": "rad/s",
+          "compute": {
+            "law": "mechNatural",
+            "m": 2,
+            "c": 800,
+            "d": 16
+          },
+          "solution": "With one mass, (2.121) reads m q̈ + d q̇ + c q = f; undamped and free it oscillates as sin(ω0 t) with ω0 = √(c/m) = √400 = 20 rad/s.",
+          "source": "Worked by hand from (eq. 2.121)"
+        },
+        {
+          "question": "The same mass has a damper of d = 16 N s/m. What is the damping ratio ζ = d / (2√(cm))?",
+          "answer": 0.2,
+          "unit": "",
+          "compute": {
+            "law": "mechNatural",
+            "m": 2,
+            "c": 800,
+            "d": 16,
+            "ask": "zeta"
+          },
+          "solution": "Dividing (2.121) by m gives q̈ + 2ζω0 q̇ + ω0² q = f/m with ζ = d / (2√(cm)) = 16 / (2 · 40) = 0.2.",
+          "source": "Worked by hand from (eq. 2.121)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "M q̈ + D q̇ + C q = k + b fL",
+          "note": "Example 2.12, three masses",
+          "ref": "(2.115)"
+        },
+        {
+          "eq": "M q̈ + D q̇ + C q = B fe",
+          "note": "any linear spring-mass-damper system, about its rest position",
+          "ref": "(2.121)"
+        },
+        {
+          "eq": "T = ½ q̇ᵀ M q̇,   V = ½ qᵀ C q",
+          "note": "stored energy",
+          "ref": "(2.122), (2.123)"
+        },
+        {
+          "eq": "dE/dt = −q̇ᵀ D q̇ + q̇ᵀ B fe",
+          "note": "the damper dissipates, the force supplies",
+          "ref": "(2.124)"
+        },
+        {
+          "eq": "ω0 = √(c/m),   ζ = d / (2√(cm)),   A = F / √((c − m ω²)² + (d ω)²)",
+          "note": "one mass: natural frequency, damping ratio, steady amplitude",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "angular",
+      "title": "Conservation of angular momentum",
+      "idea": "Under a central force the angular momentum is constant, so the line to the centre sweeps equal areas in equal times.",
+      "law": "d l(0)/dt = τ(0)    l(0) = 2 m dA(0)/dt",
+      "lecture": "Kugi et al. (2015), section 2.2.8, Example 2.13 (pp. 44–46); eq. (2.131)–(2.136)",
+      "practice": [
+        {
+          "question": "A 0.5 kg puck circles a pin on a spring with angular momentum l = 0.3 kg m²/s about the pin. What area does the line from the pin sweep each second?",
+          "answer": 0.3,
+          "unit": "m²/s",
+          "compute": {
+            "law": "mechArealVelocity",
+            "m": 0.5,
+            "l": 0.3
+          },
+          "solution": "By (2.136), l(0) = 2 m dA(0)/dt, so dA/dt = l / (2m) = 0.3 / 1 = 0.3 m²/s, the same at every point of the path.",
+          "source": "Worked by hand from (eq. 2.136)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "l(0) = r × p = r × m v",
+          "note": "angular momentum",
+          "ref": "(2.131)"
+        },
+        {
+          "eq": "d l(0)/dt = d(r × p)/dt = τ(0)",
+          "note": "conservation of angular momentum (Drallsatz)",
+          "ref": "(2.134)"
+        },
+        {
+          "eq": "dA(0)/dt = ½ r × v,   l(0) = 2 m dA(0)/dt",
+          "note": "areal velocity",
+          "ref": "(2.135), (2.136)"
+        }
+      ]
+    },
+    {
+      "id": "lagrange",
+      "title": "Euler–Lagrange equations",
+      "idea": "From the kinetic and potential energy alone, the Lagrangian gives the equations of motion of a ball rolling on a turning beam.",
+      "law": "d/dt ∂L/∂q̇j − ∂L/∂qj = fnp,j    L = T − V",
+      "lecture": "Kugi et al. (2015), section 2.3, Example 2.20 (pp. 62–64); eq. (2.196), (2.205)–(2.214)",
+      "practice": [
+        {
+          "question": "A 0.1 kg ball rests on the beam of Example 2.20 at r = 0.2 m from the pivot, with the beam level. With g = 9.81 m/s², what torque on the beam holds it there?",
+          "answer": 0.1962,
+          "unit": "N m",
+          "compute": {
+            "law": "mechBeamRestTorque",
+            "mK": 0.1,
+            "rR": 0.2,
+            "g": 9.81
+          },
+          "solution": "Set all speeds and accelerations to zero with φ1 = 0 in (2.214): the first equation holds for any r, the second leaves τ(0) = g mK r = 9.81 · 0.1 · 0.2 = 0.196 N m.",
+          "source": "Worked by hand from (eq. 2.214)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "d/dt ∂L/∂q̇j − ∂L/∂qj = fnp,j,   L = T − V",
+          "note": "Euler–Lagrange equations",
+          "ref": "(2.196)"
+        },
+        {
+          "eq": "Tt,K = ½ mK (r² φ̇1² + (ṙ − rK φ̇1)²)",
+          "note": "ball, translation",
+          "ref": "(2.206)"
+        },
+        {
+          "eq": "ΘK,zz = 2/5 mK rK²,   Tr,K = ½ ΘK,zz (φ̇1 − ṙ/rK)²",
+          "note": "ball, rotation, rolling ṙ = −rK φ̇2",
+          "ref": "(2.207)–(2.209)"
+        },
+        {
+          "eq": "Tr,B = ½ ΘB,zz φ̇1²,   V = mK g (r sin φ1 + rK cos φ1) − mK g rK",
+          "note": "beam and potential energy",
+          "ref": "(2.210), (2.211)"
+        },
+        {
+          "eq": "(mK + ΘK,zz/rK²) r̈ − (ΘK,zz/rK + mK rK) φ̈1 − mK r φ̇1² + mK g sin φ1 = 0",
+          "note": "equation for the ball",
+          "ref": "(2.214a)"
+        },
+        {
+          "eq": "−(mK rK + ΘK,zz/rK) r̈ + (ΘK,zz + ΘB,zz + mK (r² + rK²)) φ̈1 + 2 mK r ṙ φ̇1 + mK g (r cos φ1 − rK sin φ1) = τ(0)",
+          "note": "equation for the beam",
+          "ref": "(2.214b, c)"
+        }
+      ]
+    },
+    {
+      "id": "radiation",
+      "title": "Heat radiation",
+      "idea": "Every surface radiates in proportion to T⁴; near room temperature that is about as much as gentle convection, and far more when hot.",
+      "law": "q′ = πD(α(T2 − T∞) + ε2σ(T2⁴ − T∞⁴))    Eb = σT⁴",
+      "lecture": "Kugi et al. (2015), section 3.2.4 (pp. 79–91), Beispiel 3.1 (pp. 88–90); eqs. (3.35), (3.42), (3.63)–(3.67)",
+      "practice": [
+        {
+          "question": "The vacuum-jacketed tube reactor of Beispiel 3.1: outer tube D = 100 mm, ε2 = 0.8, α = 10 W/(m²K), air and surroundings at T∞ = 20 °C. Its surface must stay at or below T2,max = 45 °C. What is the largest heat flow per metre q′ it may give off?",
+          "answer": 119.3,
+          "unit": "W/m",
+          "compute": {
+            "law": "heatOuterLoss",
+            "T2": 318.15,
+            "Tinf": 293.15,
+            "alpha": 10,
+            "eps2": 0.8,
+            "D": 0.1
+          },
+          "solution": "q′ = πD(α(T2 − T∞) + ε2σ(T2⁴ − T∞⁴)) = π × 0.1 m × (10 × 25 + 0.8 × 5.6704 × 10⁻⁸ × (318.15⁴ − 293.15⁴)) W/m² = π × 0.1 × (250 + 129.8) W/m = 78.5 + 40.8 = 119.3 W/m.",
+          "source": "Worked by hand from (3.66)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "Eb(T) = σT⁴,  σ = 5.6704 × 10⁻⁸ W/(m²K⁴)",
+          "note": "Stefan–Boltzmann law for a black body",
+          "ref": "(3.35)"
+        },
+        {
+          "eq": "ε(T) = E(T)/Eb(T)",
+          "note": "total emissivity",
+          "ref": "(3.36)"
+        },
+        {
+          "eq": "Ji = εiσTi⁴ + (1 − εi)Gi",
+          "note": "radiosity of a grey, opaque surface (net-radiation method)",
+          "ref": "(3.42)"
+        },
+        {
+          "eq": "AiFij = AjFji",
+          "note": "reciprocity of view factors",
+          "ref": "(3.48)"
+        },
+        {
+          "eq": "q1 = σ(T1⁴ − T2⁴)/(1/ε1 + (d/D)(1/ε2 − 1))",
+          "note": "net flux between concentric tubes, (3.63) rearranged",
+          "ref": "(3.63)"
+        },
+        {
+          "eq": "q′ = πD(α(T2 − T∞) + ε2σ(T2⁴ − T∞⁴))",
+          "note": "loss of the outer tube by convection and radiation",
+          "ref": "(3.65)"
+        },
+        {
+          "eq": "T1 = (T2⁴ + (1/ε1 + (d/D)(1/ε2 − 1)) q′/(πdσ))^(1/4)",
+          "note": "inner tube temperature at full load",
+          "ref": "(3.67)"
+        },
+        {
+          "eq": "αrad = εσ(T2² + T∞²)(T2 + T∞)",
+          "note": "linearised radiation coefficient, so that εσ(T2⁴ − T∞⁴) = αrad(T2 − T∞)",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "wall",
+      "title": "Plane wall",
+      "idea": "Through a layered wall the same heat flux crosses every layer, so the thermal resistances add like resistors in series.",
+      "law": "q = k(T∞,0 − T∞,L)    1/k = 1/α0 + Σ Li/λi + 1/αL",
+      "lecture": "Kugi et al. (2015), section 3.4.1 (pp. 95–98), Beispiel 3.2 (pp. 97–98); eqs. (3.81)–(3.88)",
+      "practice": [
+        {
+          "question": "Double glazing as in Beispiel 3.2: two panes of glass 4 mm thick (λG = 1 W/(m K)) with a 12 mm gap of still air (λL = 0.025 W/(m K)); αI = 8 W/(m²K) inside, αA = 20 W/(m²K) outside. What is its heat transfer coefficient kD?",
+          "answer": 1.508,
+          "unit": "W/(m²K)",
+          "compute": {
+            "law": "heatWallK",
+            "alpha0": 8,
+            "alphaL": 20,
+            "layers": [
+              {
+                "L": 0.004,
+                "lambda": 1
+              },
+              {
+                "L": 0.012,
+                "lambda": 0.025
+              },
+              {
+                "L": 0.004,
+                "lambda": 1
+              }
+            ]
+          },
+          "solution": "1/kD = 1/αI + 2LG/λG + D/λL + 1/αA = 0.125 + 0.008 + 0.48 + 0.05 = 0.663 m²K/W, so kD = 1.51 W/(m²K).",
+          "source": "Worked by hand from (3.86)"
+        },
+        {
+          "question": "For the same window, how many times larger is the heat transfer coefficient kE of a single pane of 4 mm glass, kE/kD?",
+          "answer": 3.704,
+          "unit": "",
+          "compute": {
+            "law": "heatGlazingRatio",
+            "alphaI": 8,
+            "alphaA": 20,
+            "glass": {
+              "L": 0.004,
+              "lambda": 1
+            },
+            "gap": {
+              "L": 0.012,
+              "lambda": 0.025
+            }
+          },
+          "solution": "1/kE = 0.125 + 0.004 + 0.05 = 0.179 m²K/W; kE/kD = (1/kD)/(1/kE) = 0.663/0.179 = 3.70.",
+          "source": "Worked by hand from (3.87) and (3.88)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "q = (λ/L)(T0 − TL)",
+          "note": "one layer, constant conductivity, surface temperatures given",
+          "ref": "(3.81)"
+        },
+        {
+          "eq": "q = α0(T∞,0 − T0) = (λ1/L1)(T0 − T1) = … = αL(TL − T∞,L)",
+          "note": "the same flux through every layer and film",
+          "ref": "(3.82)"
+        },
+        {
+          "eq": "q = k(T∞,0 − T∞,L),  1/k = 1/α0 + Σ Li/λi + 1/αL",
+          "note": "heat transfer coefficient (k-value)",
+          "ref": "(3.84)"
+        },
+        {
+          "eq": "q(1/αI + 2LG/λG + D/λL + 1/αA) = TI − TA",
+          "note": "double glazing",
+          "ref": "(3.86)"
+        },
+        {
+          "eq": "1/kE = 1/αI + LG/λG + 1/αA",
+          "note": "single glazing",
+          "ref": "(3.87)"
+        }
+      ]
+    },
+    {
+      "id": "cylinder",
+      "title": "Insulated pipe",
+      "idea": "Insulating a thin pipe also enlarges its surface, so up to a critical radius more insulation loses more heat.",
+      "law": "q′ = 2π(TF − T∞) / (1/(r0α0) + Σ ln(ri/ri−1)/λi + 1/(rNαN))    rc = λ/α",
+      "lecture": "Kugi et al. (2015), section 3.4.2 (pp. 98–100); eqs. (3.89)–(3.93)",
+      "practice": [
+        {
+          "question": "A wire of radius 2 mm is held at 60 °C and sheathed in PVC (λ = 0.2 W/(m K)) to an outer radius of 10 mm; air at 20 °C, α = 10 W/(m²K). What heat flow per metre q′ leaves it?",
+          "answer": 13.93,
+          "unit": "W/m",
+          "compute": {
+            "law": "heatPipeLoss",
+            "TF": 60,
+            "Tinf": 20,
+            "radii": [
+              0.002,
+              0.01
+            ],
+            "lambdas": [
+              0.2
+            ],
+            "alpha0": 1000000000,
+            "alphaN": 10
+          },
+          "solution": "With the inner surface at TF the term 1/(r0α0) vanishes: q′ = 2π × 40 K / (ln(10/2)/0.2 + 1/(0.01 × 10)) = 251.3 / (8.05 + 10) W/m = 13.9 W/m.",
+          "source": "Worked by hand from (3.93)"
+        },
+        {
+          "question": "For the same sheath, at what outer radius rc is the heat loss largest?",
+          "answer": 0.02,
+          "unit": "m",
+          "compute": {
+            "law": "heatCriticalRadius",
+            "lambda": 0.2,
+            "alpha": 10
+          },
+          "solution": "Only ln(rN/r0)/λ + 1/(rNα) in (3.93) depends on rN; its derivative 1/(λrN) − 1/(αrN²) is zero at rN = λ/α = 0.2/10 m = 20 mm.",
+          "source": "Worked by hand from (3.93)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "0 = λi (1/r) ∂/∂r (r ∂T/∂r)",
+          "note": "stationary conduction in layer i, no sources",
+          "ref": "(3.89)"
+        },
+        {
+          "eq": "T(r) = Ti−1 + (Ti − Ti−1) ln(r/ri−1)/ln(ri/ri−1)",
+          "note": "logarithmic profile in a layer",
+          "ref": "(3.90)"
+        },
+        {
+          "eq": "q(r) = (λi/r)(Ti−1 − Ti)/ln(ri/ri−1)",
+          "note": "flux density falls as 1/r",
+          "ref": "(3.91)"
+        },
+        {
+          "eq": "q′ = 2π(TF − T∞) / (1/(r0α0) + Σ ln(ri/ri−1)/λi + 1/(rNαN))",
+          "note": "heat flow per unit length",
+          "ref": "(3.93)"
+        },
+        {
+          "eq": "rc = λ/αN",
+          "note": "critical insulation radius, dq′/drN = 0",
+          "ref": ""
+        }
+      ]
+    },
+    {
+      "id": "fin",
+      "title": "Cooling fins",
+      "idea": "A fin enlarges the surface, but it cools along its length, so each extra length adds less: its efficiency falls.",
+      "law": "ηf = Q(0)/Qmax    θ(x)/θ0 = (cosh m(L−x) + β sinh m(L−x))/(cosh mL + β sinh mL)",
+      "lecture": "Kugi et al. (2015), section 3.4.3 (pp. 100–101); eq. (3.94); parameters of Aufgabe 3.14 (p. 107)",
+      "practice": [
+        {
+          "question": "The rod of Aufgabe 3.14: L = 0.5 m, A = 0.01 m², P = 0.5 m, λ = 60 W/(m K), α = αL = 25 W/(m²K), base at 353 K, air at 293 K. What is its fin efficiency ηf?",
+          "answer": 0.4141,
+          "unit": "",
+          "compute": {
+            "law": "heatFinEfficiency",
+            "L": 0.5,
+            "A": 0.01,
+            "P": 0.5,
+            "lambda": 60,
+            "alpha": 25,
+            "alphaL": 25,
+            "T0": 353,
+            "Tinf": 293
+          },
+          "solution": "m = √(αP/(λA)) = √(12.5/0.6) = 4.564 1/m, mL = 2.282, β = αL/(λm) = 0.0913. Q(0) = λAmθ0 (sinh mL + β cosh mL)/(cosh mL + β sinh mL) = 2.739 × 60 × 0.997 W = 161.5 W. Qmax = (αPL + αLA)θ0 = 6.5 × 60 W = 390 W, so ηf = 0.414.",
+          "source": "Worked by hand from (3.94)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "λA d²T/dx² = αP(T − T∞)",
+          "note": "fin equation: conduction along, convection off the sides",
+          "ref": ""
+        },
+        {
+          "eq": "m² = αP/(λA),  β = αL/(λm)",
+          "note": "fin parameter and tip number",
+          "ref": ""
+        },
+        {
+          "eq": "θ(x)/θ0 = (cosh m(L−x) + β sinh m(L−x))/(cosh mL + β sinh mL)",
+          "note": "temperature with a convective tip, θ = T − T∞",
+          "ref": ""
+        },
+        {
+          "eq": "Q(0) = λAmθ0 (sinh mL + β cosh mL)/(cosh mL + β sinh mL)",
+          "note": "heat flow into the base",
+          "ref": ""
+        },
+        {
+          "eq": "ηf = Q(0)/Qmax ∈ [0, 1]",
+          "note": "fin efficiency (Rippenwirkungsgrad); Qmax with the whole fin at T0",
+          "ref": "(3.94)"
+        }
+      ]
+    },
+    {
+      "id": "transient",
+      "title": "Heating a tank of water",
+      "idea": "Water of uniform temperature heats like a first-order system: it rises towards T∞ + P/(kA) with time constant m0cp/(kA).",
+      "law": "m0cp dT/dt = P − kA(T − T∞)    T(t) = T∞ + (P/(kA))(1 − e^(−kAt/(m0cp)))",
+      "lecture": "Kugi et al. (2015), section 3.5, Beispiel 3.3 (pp. 101–103); eqs. (3.97)–(3.104)",
+      "practice": [
+        {
+          "question": "The tank of Beispiel 3.3 holds 1 kg of water (cp = 4190 J/(kg K)) at T∞ = 20 °C; its ceramic wall has A = 0.05 m², L = 5 mm, λ = 1.5 W/(m K), αi = 500 and αa = 10 W/(m²K). What heater power P brings it to the boil (Ts = 100 °C) after ts = 10 min?",
+          "answer": 577.9,
+          "unit": "W",
+          "compute": {
+            "law": "heatTankPower",
+            "ts": 600,
+            "A": 0.05,
+            "Lw": 0.005,
+            "lambda": 1.5,
+            "alphaI": 500,
+            "alphaA": 10,
+            "m0": 1,
+            "cp": 4190,
+            "Tinf": 20,
+            "Ts": 100
+          },
+          "solution": "1/k = 1/500 + 0.005/1.5 + 1/10 = 0.10533 m²K/W, so kA = 0.4747 W/K. kA ts/(m0cp) = 284.8/4190 = 0.06797; P = kA(Ts − T∞)/(1 − e^(−0.06797)) = 37.97/0.06571 W = 578 W.",
+          "source": "Worked by hand from (3.98) and (3.100)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "m0cp dT/dt = P − kA(T − T∞),  T(0) = T∞",
+          "note": "energy balance of the water",
+          "ref": "(3.97)"
+        },
+        {
+          "eq": "k = 1/(1/αi + L/λ + 1/αa)",
+          "note": "heat transfer coefficient of the wall",
+          "ref": "(3.98)"
+        },
+        {
+          "eq": "T(t) = T∞ + (P/(kA))(1 − e^(−kAt/(m0cp)))",
+          "note": "temperature until it boils",
+          "ref": "(3.99)"
+        },
+        {
+          "eq": "P = kA(Ts − T∞)/(1 − e^(−kAts/(m0cp)))",
+          "note": "power to boil at ts",
+          "ref": "(3.100)"
+        },
+        {
+          "eq": "t = ts + (hvm0/(kA(Ts − T∞))) ln(P/(P − kA(Ts − T∞)))",
+          "note": "time when all the water has boiled away",
+          "ref": "(3.104)"
+        }
+      ]
+    },
+    {
+      "id": "fdm",
+      "title": "Finite differences",
+      "idea": "On a grid, conduction moves each node towards the average of its neighbours; the explicit scheme is stable only for small enough time steps.",
+      "law": "Ti^(j+1) = Ti^j + (aΔt/Δx²)(Ti−1^j − 2Ti^j + Ti+1^j)    aΔt/Δx² ≤ 1/2",
+      "lecture": "Kugi et al. (2015), section 3.6.1 (pp. 104–107); eqs. (3.105)–(3.111)",
+      "practice": [
+        {
+          "question": "The steel rod of Aufgabe 3.15 (λ = 60 W/(m K), ρ = 7850 kg/m³, cp = 450 J/(kg K), L = 0.5 m) is cut into N = 10 intervals. What is the largest time step Δt the explicit scheme allows?",
+          "answer": 73.59,
+          "unit": "s",
+          "compute": {
+            "law": "heatFdmMaxStep",
+            "lambda": 60,
+            "rho": 7850,
+            "cp": 450,
+            "L": 0.5,
+            "N": 10
+          },
+          "solution": "a = λ/(ρcp) = 60/(7850 × 450) m²/s = 1.699 × 10⁻⁵ m²/s, Δx = L/N = 0.05 m; Δt ≤ Δx²/(2a) = 0.0025/(3.397 × 10⁻⁵) s = 73.6 s.",
+          "source": "Worked by hand from (3.106) and (3.111)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "∂T/∂t = a ∂²T/∂x²,  a = λ/(ρcp)",
+          "note": "1D conduction, no sources; ∂T/∂x = 0 at x = 0, T(t, L) = TL",
+          "ref": "(3.105)"
+        },
+        {
+          "eq": "xi = iΔx,  Δx = L/N",
+          "note": "space grid",
+          "ref": "(3.106)"
+        },
+        {
+          "eq": "dTi/dt = (a/Δx²)(Ti−1 − 2Ti + Ti+1)",
+          "note": "semi-discrete model, already in state-space form",
+          "ref": "(3.108)"
+        },
+        {
+          "eq": "Ti^(j+1) = Ti^j + (aΔt/Δx²)(Ti−1^j − 2Ti^j + Ti+1^j),  T0^(j+1) = T0^j + (2aΔt/Δx²)(T1^j − T0^j)",
+          "note": "explicit Euler scheme",
+          "ref": "(3.110)"
+        },
+        {
+          "eq": "aΔt/Δx² ≤ 1/2",
+          "note": "stability of the explicit scheme",
+          "ref": "(3.111)"
+        }
+      ]
+    }
+  ]
+}
