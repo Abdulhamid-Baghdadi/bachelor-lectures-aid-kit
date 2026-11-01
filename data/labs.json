@@ -1,7 +1,7 @@
 {
   "format": "electrodynamics-lab labs",
   "version": 1,
-  "about": "The chapters of the lecture notes Prechtl (2010), Vorlesungen über Elektrodynamik, TU Wien, each in a family that colours its cards, with the labs it teaches; then each lab's words and practice questions. Chapter numbers, titles and page ranges are those of the notes' table of contents; equation numbers are the notes' own, checked against the PDF on 1 Nov 2026. Practice answers are worked by hand or, where marked, taken from the worked solutions of the course's exercise collection, the Aufgabensammlung of TU Wien from 2010 (checked against its scanned pages on 1 Nov 2026); tests/unit/labs-data.test.js recomputes each with the core and fails if they disagree.",
+  "about": "The chapters of two lecture notes, on electrodynamics and, after Lasser (2012), on wave propagation; first those of Prechtl (2010), Vorlesungen über Elektrodynamik, TU Wien, each in a family that colours its cards, with the labs it teaches; then each lab's words and practice questions. Chapter numbers, titles and page ranges are those of the notes' table of contents; equation numbers are the notes' own, checked against the PDF on 1 Nov 2026. Practice answers are worked by hand or, where marked, taken from the worked solutions of the course's exercise collection, the Aufgabensammlung of TU Wien from 2010 (checked against its scanned pages on 1 Nov 2026); tests/unit/labs-data.test.js recomputes each with the core and fails if they disagree.",
   "families": [
     {
       "id": "fields",
@@ -18,6 +18,10 @@
     {
       "id": "waves",
       "name": "Waves"
+    },
+    {
+      "id": "propagation",
+      "name": "Wave propagation"
     }
   ],
   "lectures": [
@@ -69,6 +73,68 @@
         "planewave",
         "hertz",
         "line"
+      ]
+    },
+    {
+      "course": "Wave propagation",
+      "number": 3,
+      "pages": "pp. 27–42",
+      "title": "The homogeneous plane wave",
+      "family": "propagation",
+      "labs": [
+        "polarisation",
+        "lossy"
+      ]
+    },
+    {
+      "course": "Wave propagation",
+      "number": 4,
+      "pages": "pp. 43–52",
+      "title": "Reflection at smooth boundaries",
+      "family": "propagation",
+      "labs": [
+        "fresnel"
+      ]
+    },
+    {
+      "course": "Wave propagation",
+      "number": 6,
+      "pages": "pp. 63–76",
+      "title": "Rectangular waveguides and resonators",
+      "family": "propagation",
+      "labs": [
+        "waveguide"
+      ]
+    },
+    {
+      "course": "Wave propagation",
+      "number": 9,
+      "pages": "pp. 93–104",
+      "title": "Strip lines",
+      "family": "propagation",
+      "labs": [
+        "microstrip"
+      ]
+    },
+    {
+      "course": "Wave propagation",
+      "number": 10,
+      "pages": "pp. 105–108",
+      "title": "Waves and obstacles",
+      "family": "propagation",
+      "labs": [
+        "fresnelzone"
+      ]
+    },
+    {
+      "course": "Wave propagation",
+      "number": 12,
+      "pages": "pp. 139–143",
+      "title": "Waves in free space",
+      "family": "propagation",
+      "labs": [
+        "friis",
+        "radar"
       ]
     }
   ],
@@ -1036,6 +1102,430 @@
           "eq": "Z_E = −jZ_W cot(2πl/λ)",
           "note": "input impedance of an open lossless line",
           "ref": "(5.125)"
+        }
+      ]
+    },
+    {
+      "id": "polarisation",
+      "title": "Polarisation",
+      "idea": "Two field components across the wave, out of step, make the tip of E trace a line, a circle or an ellipse.",
+      "law": "e_x = E1 cos ωt    e_y = E2 cos(ωt + ψ)    ellipticity a/b",
+      "lecture": "Lasser (2012), pp. 33–35",
+      "equations": [
+        {
+          "eq": "e_x(0,t) = E1 cos ωt,  e_y(0,t) = E2 cos(ωt + ψ)",
+          "note": "components at a fixed place",
+          "ref": "pp. 33–34"
+        },
+        {
+          "eq": "ψ = 0, ±180°",
+          "note": "linear polarisation, ellipticity ∞",
+          "ref": "p. 35"
+        },
+        {
+          "eq": "ψ = ∓90°, E1 = E2  ⇒  e_x² + e_y² = E²",
+          "note": "circular: right-hand for −90°, clockwise seen along the wave",
+          "ref": "p. 34"
+        },
+        {
+          "eq": "ellipticity = a/b  or  20 log(a/b) dB",
+          "note": "a, b the half axes of the ellipse",
+          "ref": "Fig. 3.4"
+        },
+        {
+          "eq": "e_x(z,0) = E cos kz,  e_y(z,0) = ±E sin kz",
+          "note": "at a fixed time: a screw in space",
+          "ref": "p. 35"
+        }
+      ],
+      "practice": [
+        {
+          "question": "E1 = 2 V/m, E2 = 1 V/m, ψ = 90°. What is the ellipticity in dB?",
+          "answer": 6.02,
+          "unit": "dB",
+          "compute": {
+            "law": "ellipticity",
+            "E1": 2,
+            "E2": 1,
+            "psi": 90
+          },
+          "solution": "With ψ = 90° the ellipse is upright with half axes a = 2 and b = 1, so 20 log(2/1) = 6.02 dB.",
+          "source": "Worked by hand from Lasser (2012), Fig. 3.4"
+        }
+      ]
+    },
+    {
+      "id": "lossy",
+      "title": "Plane wave in a lossy medium",
+      "idea": "Conductivity turns the permittivity complex; one formula then covers everything from glass to copper.",
+      "law": "δ = ε(1 − js), s = σ/(εω)    γ = α + jβ = jω√(μδ)",
+      "lecture": "Lasser (2012), p. 38",
+      "equations": [
+        {
+          "eq": "∇×E = −jωμH,  ∇×H = σE + jωεE",
+          "note": "Maxwell's equations for harmonic fields",
+          "ref": "(3.17), (3.18)"
+        },
+        {
+          "eq": "δ = ε − jσ/ω = ε(1 − js)",
+          "note": "complex permittivity",
+          "ref": "(3.19)"
+        },
+        {
+          "eq": "s = 1/Q = tan θ = σ/(εω)",
+          "note": "loss tangent: quality factor of the medium, loss angle",
+          "ref": "(3.19)"
+        },
+        {
+          "eq": "E = Ê e^(−γ·r),  γ = α + jβ",
+          "note": "plane wave with complex propagation constant",
+          "ref": "(3.20)"
+        },
+        {
+          "eq": "γ × (γ × E) = ω²μδE",
+          "note": "",
+          "ref": "(3.26)"
+        },
+        {
+          "eq": "γ = jω√(μδ)",
+          "note": "from (3.26) with γ·E = 0 (derived)",
+          "ref": ""
+        },
+        {
+          "eq": "s ≫ 1:  1/α → √(2/(μωσ))",
+          "note": "good conductor: the skin depth of Prechtl (2010), (4.31) (derived)",
+          "ref": ""
+        }
+      ],
+      "practice": [
+        {
+          "question": "Sea water (εr = 80, σ = 4 S/m) at 1 MHz: at what depth has the field fallen to 1/e?",
+          "answer": 0.252,
+          "unit": "m",
+          "compute": {
+            "law": "lossyDepth",
+            "f": 1000000.0,
+            "epsr": 80,
+            "sigma": 4
+          },
+          "solution": "s = σ/(εω) = 4/(80 × 8.854 pF/m × 2π × 1 MHz) ≈ 900 ≫ 1, a good conductor: 1/α ≈ √(2/(μ0ωσ)) = √(2/(4π × 10⁻⁷ × 6.28 × 10⁶ × 4)) m = 0.252 m.",
+          "source": "Worked by hand from Lasser (2012), p. 38"
+        }
+      ]
+    },
+    {
+      "id": "fresnel",
+      "title": "Reflection and refraction",
+      "idea": "At a boundary a wave splits into a reflected and a transmitted part; how much depends on the angle and on whether E lies in the plane of incidence.",
+      "law": "sin Θ1 / sin Θ2 = n2/n1    Γ_TE, Γ_TM (Fresnel)    tan Θ_B = n2/n1",
+      "lecture": "Lasser (2012), pp. 45–46",
+      "equations": [
+        {
+          "eq": "Θ_e = Θ_r = Θ1",
+          "note": "law of reflection",
+          "ref": "p. 45"
+        },
+        {
+          "eq": "sin Θ1 / sin Θ2 = √(ε2/ε1) = n2/n1",
+          "note": "Snell's law",
+          "ref": "p. 45"
+        },
+        {
+          "eq": "Γ_TM = (n² cos Θ1 − √(n² − sin²Θ1)) / (n² cos Θ1 + √(n² − sin²Θ1))",
+          "note": "Fresnel, TM case, n = n2/n1",
+          "ref": "p. 45"
+        },
+        {
+          "eq": "T_TM = 2n cos Θ1 / (n² cos Θ1 + √(n² − sin²Θ1))",
+          "note": "",
+          "ref": "p. 45"
+        },
+        {
+          "eq": "Γ_TE = (cos Θ1 − √(n² − sin²Θ1)) / (cos Θ1 + √(n² − sin²Θ1))",
+          "note": "Fresnel, TE case",
+          "ref": "p. 45"
+        },
+        {
+          "eq": "T_TE = 2 cos Θ1 / (cos Θ1 + √(n² − sin²Θ1))",
+          "note": "",
+          "ref": "p. 45"
+        },
+        {
+          "eq": "Γ_TM = 0  ⇐  tan Θ_B = n2/n1",
+          "note": "Brewster angle; none in the TE case",
+          "ref": "p. 46"
+        },
+        {
+          "eq": "sin Θ_c = n2/n1  (n2 < n1)",
+          "note": "total reflection beyond Θ_c, from Snell's law with Θ2 = 90° (derived)",
+          "ref": ""
+        }
+      ],
+      "practice": [
+        {
+          "question": "At what angle does TM light pass from air into glass (n = 1.5) without reflection?",
+          "answer": 56.31,
+          "unit": "°",
+          "compute": {
+            "law": "brewster",
+            "n1": 1,
+            "n2": 1.5
+          },
+          "solution": "tan Θ_B = n2/n1 = 1.5, so Θ_B = 56.3°.",
+          "source": "Worked by hand from Lasser (2012), p. 46"
+        }
+      ]
+    },
+    {
+      "id": "waveguide",
+      "title": "Rectangular waveguide",
+      "idea": "A metal tube carries a wave only above a cutoff frequency set by its width; between the first two cutoffs exactly one mode runs.",
+      "law": "κ² = (mπ/a)² + (nπ/b)² = ω²εμ − k_z²    λ_G = 2a for TE10",
+      "lecture": "Lasser (2012), pp. 64–66",
+      "equations": [
+        {
+          "eq": "κ² = (mπ/a)² + (nπ/b)² = ω²εμ − k_z²",
+          "note": "for TE and TM modes alike",
+          "ref": "p. 65"
+        },
+        {
+          "eq": "f_c,mn = (c/2) √((m/a)² + (n/b)²)",
+          "note": "cutoff, where k_z = 0 (derived)",
+          "ref": ""
+        },
+        {
+          "eq": "λ_G = 2a",
+          "note": "cutoff wavelength of the fundamental mode TE10",
+          "ref": "p. 66"
+        },
+        {
+          "eq": "λ_H = λ / √(1 − (λ/2a)²)",
+          "note": "guide wavelength",
+          "ref": "p. 66"
+        },
+        {
+          "eq": "Z_W = E_x/H_y = −E_y/H_x",
+          "note": "field wave impedance",
+          "ref": "p. 66"
+        },
+        {
+          "eq": "Z_W,TE = η / √(1 − (λ/λ_G)²),  η = √(μ/ε)",
+          "note": "for TE modes",
+          "ref": "p. 66"
+        },
+        {
+          "eq": "v_P/c = λ_H/λ,  v_P v_G = c²",
+          "note": "phase and group speed",
+          "ref": "Fig. 6.2"
+        }
+      ],
+      "practice": [
+        {
+          "question": "What is the TE10 cutoff frequency of a WR-90 guide, a = 22.86 mm?",
+          "answer": 6557000000.0,
+          "unit": "Hz",
+          "compute": {
+            "law": "te10Cutoff",
+            "a": 0.02286
+          },
+          "solution": "λ_G = 2a = 45.72 mm, so f_c = c0/λ_G = 299 792 458 m/s / 0.04572 m = 6.557 GHz.",
+          "source": "Worked by hand from Lasser (2012), p. 66"
+        }
+      ]
+    },
+    {
+      "id": "microstrip",
+      "title": "Microstrip line",
+      "idea": "On a circuit board the field runs partly in air and partly in the substrate; the wave sees an average of the two.",
+      "law": "ε_eff = 1 + q(ε_r − 1)    Z_L = Z_L,0/√ε_eff    λ = λ0/√ε_eff",
+      "lecture": "Lasser (2012), p. 96",
+      "equations": [
+        {
+          "eq": "Z_L = Z_L,0 / √ε_eff",
+          "note": "Z_L,0 the same line in air",
+          "ref": "p. 96"
+        },
+        {
+          "eq": "λ = λ0 / √ε_eff",
+          "note": "wavelength on the line",
+          "ref": "p. 96"
+        },
+        {
+          "eq": "ε_eff = 1 + q(ε_r − 1)",
+          "note": "filling factor q",
+          "ref": "p. 96"
+        },
+        {
+          "eq": "w/h → 0: q → 0.5,   w/h → ∞: q → 1",
+          "note": "narrow and wide strips",
+          "ref": "p. 96"
+        },
+        {
+          "eq": "ε_eff ≈ (ε_r + 1)/2",
+          "note": "very narrow strips",
+          "ref": "p. 96"
+        }
+      ],
+      "practice": [
+        {
+          "question": "A very narrow strip on FR-4 (εr = 4.4), q = 0.5. What is ε_eff?",
+          "answer": 2.7,
+          "unit": "",
+          "compute": {
+            "law": "effPermittivity",
+            "epsr": 4.4,
+            "q": 0.5
+          },
+          "solution": "ε_eff = 1 + 0.5 × (4.4 − 1) = 2.7, the same as (εr + 1)/2.",
+          "source": "Worked by hand from Lasser (2012), p. 96"
+        }
+      ]
+    },
+    {
+      "id": "fresnelzone",
+      "title": "Fresnel zones",
+      "idea": "A radio link needs more than a clear line of sight: the ellipsoid of paths up to half a wavelength longer must stay free too.",
+      "law": "detour = λ/2 on the 1st Fresnel ellipsoid    r = √(λ d1 d2 / d)",
+      "lecture": "Lasser (2012), p. 107",
+      "equations": [
+        {
+          "eq": "Δd = λ/2",
+          "note": "the 1st Fresnel ellipsoid: detour of half a wavelength, phase shift π",
+          "ref": "p. 107"
+        },
+        {
+          "eq": "Δd = λ",
+          "note": "the 2nd ellipsoid, phase shift 2π",
+          "ref": "p. 107"
+        },
+        {
+          "eq": "√(d1² + r²) + √(d2² + r²) − d = λ/2",
+          "note": "the detour at height r above the line of sight (derived)",
+          "ref": ""
+        },
+        {
+          "eq": "r ≈ √(λ d1 d2 / d)",
+          "note": "for r ≪ d1, d2 (derived)",
+          "ref": ""
+        },
+        {
+          "eq": "Δd = 0…λ/4: constructive;  λ/4…λ/2: destructive",
+          "note": "inner and outer halves of the 1st zone",
+          "ref": "p. 107"
+        }
+      ],
+      "practice": [
+        {
+          "question": "The notes' exercise: a radio link of d = 50 km at λ = 5 cm. How wide is the 1st Fresnel zone at most?",
+          "answer": 50,
+          "unit": "m",
+          "compute": {
+            "law": "fresnelDiameter",
+            "lambda": 0.05,
+            "d": 50000.0
+          },
+          "solution": "At mid-path d1 = d2 = 25 km: r = √(λ d1 d2/d) = √(0.05 m × 12.5 km) = 25 m, so the diameter is 50 m.",
+          "source": "Lasser (2012), exercise on p. 107; the notes give D = 50 m"
+        }
+      ]
+    },
+    {
+      "id": "friis",
+      "title": "Link budget",
+      "idea": "A radio link is an account in decibels: transmit power, plus the gains, minus the free-space loss, against the receiver's minimum.",
+      "law": "P_e = P_s G_s G_e (λ/(4πd))²    L_ISO = −20 log(λ/(4πd))",
+      "lecture": "Lasser (2012), p. 140",
+      "equations": [
+        {
+          "eq": "T_e(r) = G P_s / (4πr²)",
+          "note": "power flux density of an antenna with gain G",
+          "ref": "(11.49)"
+        },
+        {
+          "eq": "P_e = P_s G_s G_e (λ/(4πd))²",
+          "note": "received power",
+          "ref": "(12.6)"
+        },
+        {
+          "eq": "P_e = P_s A_s A_e / (λd)²",
+          "note": "with antenna areas instead of gains",
+          "ref": "(12.7)"
+        },
+        {
+          "eq": "L = 10 log(P_s/P_e) dB",
+          "note": "transmission loss",
+          "ref": "(12.8)"
+        },
+        {
+          "eq": "P_e = P_s + G_s − L_ISO + G_e (in dB)",
+          "note": "level plan",
+          "ref": "(12.9)"
+        },
+        {
+          "eq": "L_ISO = −20 log(λ/(4πd)) dB",
+          "note": "basic loss between isotropic antennas",
+          "ref": "(12.10)"
+        },
+        {
+          "eq": "L_Sys = L + SNR_min (dB)",
+          "note": "system value",
+          "ref": "(12.11)"
+        }
+      ],
+      "practice": [
+        {
+          "question": "What is the basic transmission loss L_ISO at 1 GHz over 1 km?",
+          "answer": 92.44,
+          "unit": "dB",
+          "compute": {
+            "law": "pathLoss",
+            "f": 1000000000.0,
+            "d": 1000.0
+          },
+          "solution": "λ = 0.2998 m; L_ISO = 20 log(4π × 1000 m / 0.2998 m) = 20 log 41 916 = 92.4 dB.",
+          "source": "Worked by hand from Lasser (2012), (12.10)"
+        }
+      ]
+    },
+    {
+      "id": "radar",
+      "title": "Radar equation",
+      "idea": "A radar hears its own echo: the wave travels out and back, so the echo falls with the fourth power of range.",
+      "law": "P_e/P_s = σ G² (λ/4π)² / (4π d⁴)",
+      "lecture": "Lasser (2012), p. 143",
+      "equations": [
+        {
+          "eq": "P_e = T_e A_e = P_s G_s σ λ² G_e / ((4πd²)² 4π)",
+          "note": "bistatic",
+          "ref": "(12.16)"
+        },
+        {
+          "eq": "P_e/P_s = σ G_s² (λ/4π)² / (4π d⁴)",
+          "note": "monostatic, G_s = G_e",
+          "ref": "(12.17)"
+        },
+        {
+          "eq": "σ = A G = 4π A²/λ²",
+          "note": "flat plate square to the beam",
+          "ref": "(12.18)"
+        },
+        {
+          "eq": "σ0 = π r²",
+          "note": "large metal sphere, r ≫ λ",
+          "ref": "(12.19)"
+        }
+      ],
+      "practice": [
+        {
+          "question": "What is the radar cross-section of a metal sphere 1 m in radius (r ≫ λ)?",
+          "answer": 3.1416,
+          "unit": "m²",
+          "compute": {
+            "law": "sphere",
+            "r": 1
+          },
+          "solution": "σ0 = πr² = π m² = 3.14 m².",
+          "source": "Worked by hand from Lasser (2012), (12.19)"
         }
       ]
     }

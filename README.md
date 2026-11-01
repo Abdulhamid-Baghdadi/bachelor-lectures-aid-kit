@@ -1,6 +1,6 @@
 # Electrodynamics Lab
 
-Eighteen key equations of electrodynamics to play with in the browser, from Maxwell's equations to transmission lines,
+Twenty-six key equations of electrodynamics and wave propagation to play with in the browser, from Maxwell's equations to transmission lines,
 each with its full equation set and its number in the lecture notes of Prechtl (2010), *Vorlesungen über
 Elektrodynamik*, TU Wien.
 
@@ -17,6 +17,11 @@ Elektrodynamik*, TU Wien.
 | 3 Static and stationary fields | point charge and potential, Laplace equation (solved on a grid), electric dipole, charge relaxation, Biot–Savart formula |
 | 4 Induction | skin effect |
 | 5 Electromagnetic waves | wave speed, plane wave, Hertz dipole, transmission line |
+| Wave propagation, after Lasser (2012) | polarisation, plane wave in a lossy medium, reflection and refraction (Fresnel, Brewster), rectangular waveguide, microstrip line, Fresnel zones, link budget, radar equation |
+
+The first four rows follow Prechtl (2010); the last follows the TU Wien wave propagation notes, *Wellenausbreitung*,
+which treat the engineering side more exactly: complex permittivity, reflection by polarisation, waveguide modes, link
+budgets in decibels.
 
 Each lab has a field or chart to move, readouts worked by the physics core, a table of the equations behind it (integral
 and local forms, jump conditions, derived steps marked as derived) and a practice question.

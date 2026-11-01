@@ -8,6 +8,9 @@ import { labs } from "./labs/index.js";
 
 const main = document.querySelector("main");
 
+/** "Chapter 3" for the electrodynamics notes; the other course's chapters carry its name, "Wave propagation 4". */
+const chapterOf = lecture => lecture.course ? `${lecture.course} ${lecture.number}` : `Chapter ${lecture.number}`;
+
 function fail(message) {
   main.replaceChildren(h("p", { class: "error", role: "alert" }, message));
 }
@@ -41,13 +44,13 @@ async function start() {
       art, h("span", { class: "plate" },
         label ? h("span", { class: "dir" }, label) : null,
         h("span", { class: "name" }, words.get(id).title),
-        h("span", { class: "meta" }, `Chapter ${lecture.number} · ${family.get(lecture.family)}`)));
+        h("span", { class: "meta" }, `${chapterOf(lecture)} · ${family.get(lecture.family)}`)));
   };
 
   const overview = h("div", { class: "overview" },
     h("p", { class: "lead" }, "Pick an equation. They follow the lecture notes, chapter by chapter."),
     h("div", { class: "lecture-rows" }, data.lectures.filter(lecture => lecture.labs.some(id => at.has(id))).map(lecture => h("section", { class: "lecture-row" },
-      h("h2", {}, h("span", { class: "number" }, `Chapter ${lecture.number}`), " ", lecture.title,
+      h("h2", {}, h("span", { class: "number" }, `${chapterOf(lecture)}`), " ", lecture.title,
         h("span", { class: "date" }, lecture.pages)),
       h("div", { class: "cards" }, lecture.labs.filter(id => at.has(id)).map(id => card(order[at.get(id)])))))));
 
@@ -64,9 +67,9 @@ async function start() {
       h("a", { href: "#", class: "back" }, "← All equations"),
       h("header", { class: "hero" },
         h("div", { class: "hero-card" }, art, h("span", { class: "plate" },
-          h("span", { class: "name" }, w.title), h("span", { class: "meta" }, `Chapter ${lecture.number} · ${family.get(lecture.family)}`))),
+          h("span", { class: "name" }, w.title), h("span", { class: "meta" }, `${chapterOf(lecture)} · ${family.get(lecture.family)}`))),
         h("div", { class: "intro" },
-          h("p", { class: "eyebrow" }, `Chapter ${lecture.number} · ${lecture.pages} · ${lecture.title}`),
+          h("p", { class: "eyebrow" }, `${chapterOf(lecture)} · ${lecture.pages} · ${lecture.title}`),
           h("h2", { id: `title-${id}`, tabindex: "-1" }, w.title), h("p", { class: "idea" }, w.idea),
           h("p", { class: "law" }, w.law), h("p", { class: "source" }, `Source: ${w.lecture}`))),
       body,

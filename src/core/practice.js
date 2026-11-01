@@ -1,6 +1,7 @@
 // A practice question's answer, worked from its data with the laws, so the answer in labs.json is checked, never
 // trusted.
 import * as F from "./fields.js";
+import * as P from "./propagation.js";
 
 const LAWS = {
   pointField: q => q.Q / (4 * Math.PI * F.EPS0 * q.r ** 2),
@@ -31,6 +32,15 @@ const LAWS = {
   coax: q => F.Z0 * Math.log(q.ratio) / (2 * Math.PI),
   twoWire: q => F.Z0 * Math.log(2 * q.ratio) / Math.PI,
   strip: q => F.Z0 * q.ratio,
+  // Wave propagation, Lasser (2012).
+  brewster: q => P.brewsterAngle(q.n1, q.n2) * 180 / Math.PI,
+  ellipticity: q => P.polarisation(q.E1, q.E2, q.psi * Math.PI / 180).dB,
+  lossyDepth: q => P.lossyWave(q.f, q.epsr, q.sigma).depth,
+  te10Cutoff: q => P.te10(q.a, 1e12).cutoff,
+  effPermittivity: q => P.microstrip(q.epsr, q.q, 1, 1e9).eff,
+  fresnelDiameter: q => 2 * P.fresnelRadius(q.lambda, q.d / 2, q.d / 2),
+  pathLoss: q => P.link(1, 1, 1, q.f, q.d).Liso,
+  sphere: q => P.sphereRCS(q.r),
 };
 
 /** The answer to a question's "compute" block; an unknown law is an error naming the ones there are. */

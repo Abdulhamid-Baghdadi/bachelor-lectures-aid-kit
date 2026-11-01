@@ -40,11 +40,13 @@ main { padding: 8px 24px 32px; max-width: 1280px; }
 .top h1 a { color: inherit; text-decoration: none; }
 .lead { margin: 4px 0 8px; color: var(--muted); }
 .lecture-rows { display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: start; }
-.lecture-row { margin: 14px 0 8px; max-width: 100%; }
+.lecture-row { margin: 14px 0 8px; max-width: 100%; min-width: 0; flex: 0 1 auto; }
 .lecture-row h2 { font-size: 1.1rem; margin: 0 0 10px; display: flex; flex-wrap: wrap; gap: 0 8px; align-items: baseline; max-width: 620px; }
 .lecture-row h2 .number { color: var(--accent); }
 .lecture-row h2 .date { color: var(--muted); font-weight: 400; font-size: 0.95rem; }
-.cards { display: grid; grid-auto-flow: column; grid-auto-columns: 196px; gap: 16px; }
+/* Cards wrap onto further lines: a chapter with many labs never pushes the page sideways. */
+.cards { display: flex; flex-wrap: wrap; gap: 16px; }
+.cards > .card { flex: 0 0 196px; }
 
 /* A lab card after the Methodical card game: a frame in its family's colour, the picture on a dark art box, the
    title on a light plate. The card is a printed object, so it keeps its colours in both themes. */
@@ -55,6 +57,7 @@ main { padding: 8px 24px 32px; max-width: 1280px; }
 [data-family=statics] { --frame: #9F1239; }
 [data-family=induction] { --frame: #047857; }
 [data-family=waves] { --frame: #6D28D9; }
+[data-family=propagation] { --frame: #92400E; }
 .card .art { display: block; border-radius: 8px; overflow: hidden; line-height: 0; box-shadow: inset 0 0 0 2px rgba(0,0,0,.4); }
 .card .art svg { width: 100%; height: auto; }
 .card .plate { display: grid; gap: 2px; padding: 8px 10px; border-radius: 8px; background: linear-gradient(#ffffff, #e9ecf1); color: #16181d; }
@@ -158,7 +161,7 @@ footer { padding: 0 24px 24px; color: var(--muted); font-size: 0.9rem; }
 @media (max-width: 760px) {
   .top, main, footer { padding-left: 16px; padding-right: 16px; }
   .lecture-rows { display: block; }
-  .cards { grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .cards { display: grid; grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .card .name { font-size: 0.95rem; }
   .card.small { width: 100%; }
   .steps { flex-direction: column; }
@@ -277,3 +280,10 @@ table.eqs .ref { white-space: nowrap; font-variant-numeric: tabular-nums; color:
   table.eqs td { border: 0; padding: 2px 0; } table.eqs tr { border-bottom: 1px solid var(--line); padding: 8px 0; } table.eqs .ref { text-align: left; } }
 .draggable { cursor: grab; touch-action: none; }
 .draggable:active { cursor: grabbing; }
+
+/* Wave propagation labs. */
+.ray { stroke-linecap: round; } .ray.in { stroke: var(--ink); } .ray.reflected { stroke: var(--second); } .ray.transmitted { stroke: var(--neg); }
+.fline { fill: none; stroke-width: 1.5; } .fline.in { stroke: var(--neg); } .fline.out { stroke: var(--muted); stroke-dasharray: 4 3; }
+.hill { fill: color-mix(in srgb, var(--ok) 30%, var(--panel)); stroke: var(--ok); stroke-width: 2; }
+.hill.blocked { fill: color-mix(in srgb, var(--danger) 25%, var(--panel)); stroke: var(--danger); }
+.polarisation { max-width: 320px; margin: 0 auto; }
