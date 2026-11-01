@@ -44,11 +44,19 @@ test("Fourier partial sums approach each wave away from its jumps, and the squar
   near(peak, 1.17898, 0.003, "Gibbs overshoot, (2/π) Si(π)");
 });
 
-test("harmonic powers: S² = P² + Q² + D² and THD by definition", () => {
-  const h = S.harmonics(230, [{ k: 1, I: 10, phi: 0 }, { k: 3, I: 3, phi: 0 }, { k: 5, I: 2, phi: 0 }]);
-  near(h.Irms, Math.sqrt(113), 1e-9, "RMS");
-  near(h.THD, Math.sqrt(13) / 10, 1e-9, "THD");
-  near(h.D, 230 * Math.sqrt(13), 1e-6, "distortion power");
+// Prechtl (2010), section 6.3, p. 127, sine voltage and a current with harmonics: (6.23) I and S, (6.24) P,
+// (6.26) Q1, (6.27) λ, (6.28) D = U √(I2² + I3² + …) = k_i S with k_i from (6.13); S² = P² + Q1² + D² from (6.19),
+// (6.22) with Qv = Q1.
+test("harmonic powers after Prechtl (2010), (6.23)–(6.28): Q1, k_i and S² = P² + Q1² + D²", () => {
+  const phi = Math.PI / 6, h = S.harmonics(230, [{ k: 1, I: 10, phi }, { k: 3, I: 3, phi: 0 }, { k: 5, I: 2, phi: 0 }]);
+  near(h.Irms, Math.sqrt(113), 1e-9, "RMS, (6.23)");
+  near(h.P, 2300 * Math.cos(phi), 1e-9, "P, (6.24)");
+  near(h.Q1, 2300 * Math.sin(phi), 1e-9, "Q1, (6.26)");
+  near(h.k, Math.sqrt(13 / 113), 1e-12, "harmonic content k_i, (6.13)");
+  near(h.D, 230 * Math.sqrt(13), 1e-6, "distortion power, (6.28)");
+  near(h.D, h.k * h.S, 1e-9, "D = k_i S, (6.28)");
+  near(h.S ** 2, h.P ** 2 + h.Q1 ** 2 + h.D ** 2, 1e-6, "S² = P² + Q1² + D²");
+  near(h.lambda, Math.sqrt(1 - 13 / 113) * Math.cos(phi), 1e-12, "λ = g_i cos φ1, (6.27)");
 });
 
 test("reindexing, aliasing and ideal reconstruction by definition", () => {

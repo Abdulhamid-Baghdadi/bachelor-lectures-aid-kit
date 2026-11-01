@@ -1,6 +1,6 @@
 // Harmonics and power (Prechtl 2010, chapter 6): a sine voltage drives a current with harmonics. Only the
 // fundamental, in phase with the voltage, carries active power; the harmonics add to the RMS current and the
-// apparent power as distortion power D, with S² = P² + Q² + D².
+// apparent power as distortion power D, with S² = P² + Q1² + D² (Prechtl's Q is the whole reactive power, Q² = Q1² + D²).
 import { harmonics, range, si } from "../core/index.js";
 import { h, slider, readout } from "../../../kit/ui/kit.js";
 import { lineChart } from "../../../kit/ui/chart.js";
@@ -16,8 +16,8 @@ export default {
   mount(root) {
     let I1 = 10, I3 = 3, I5 = 2, phi = 0;
     const box = h("div", {});
-    const rI = readout("RMS current I"), rT = readout("Total harmonic distortion"), rP = readout("Active power P"),
-          rQ = readout("Reactive power Q"), rD = readout("Distortion power D"), rL = readout("Power factor λ = P/S");
+    const rI = readout("RMS current I"), rT = readout("Harmonic content kᵢ"), rP = readout("Active power P"),
+          rQ = readout("Fundamental reactive power Q₁"), rD = readout("Distortion power D"), rL = readout("Power factor λ = P/S");
     const update = () => {
       const parts = [{ k: 1, I: I1, phi }, { k: 3, I: I3, phi: 0 }, { k: 5, I: I5, phi: 0 }], q = harmonics(U, parts);
       const ts = range(0, 20e-3, 401), w = 2 * Math.PI * 50;
@@ -26,8 +26,8 @@ export default {
         { x: ts.map(t => t * 1e3), y: ts.map(t => Math.SQRT2 * U * Math.sin(w * t) / 20), name: "u(t) / 20 [V]", cls: "faint" },
         { x: ts.map(t => t * 1e3), y: ts.map(i), name: "i(t) [A]" }],
         xLabel: "Time t [ms]", yLabel: "Current [A], voltage / 20 [V]", yMin: -25, yMax: 25 }));
-      rI.set(si(q.Irms, "A")); rT.set(`${(q.THD * 100).toFixed(1)} %`); rP.set(si(q.P, "W"));
-      rQ.set(si(q.Q, "var")); rD.set(si(q.D, "VA"), "", "S² = P² + Q² + D²"); rL.set(q.lambda.toFixed(3));
+      rI.set(si(q.Irms, "A")); rT.set(`${(q.k * 100).toFixed(1)} %`, "", "harmonics' RMS / I"); rP.set(si(q.P, "W"));
+      rQ.set(si(q.Q1, "var")); rD.set(si(q.D, "VA"), "", "S² = P² + Q₁² + D²"); rL.set(q.lambda.toFixed(3));
     };
     root.append(h("div", { class: "stage" }, box, h("div", { class: "controls" },
       slider({ label: "Fundamental I1", unit: "A", min: 0, max: 15, value: I1, step: 0.5, onInput: v => { I1 = v; update(); } }),

@@ -30,6 +30,24 @@
         "how": "record",
         "date": "2026-11-01"
       }
+    },
+    {
+      "key": "doblinger2016",
+      "authors": [
+        "Doblinger, G.",
+        "Novak, C.",
+        "Gonter, J.",
+        "Hannak, G.",
+        "Goertz, N."
+      ],
+      "year": 2016,
+      "title": "Signale und Systeme 2: Beispielsammlung",
+      "venue": "Exercise collection with solutions, TU Wien, January 2016 (sus2ue.pdf)",
+      "backs": "The digital filters lab's practice question on the bilinear transform: Aufgabe 5.4, p. 22, Lösung p. 85.",
+      "checked": {
+        "how": "record",
+        "date": "2026-11-01"
+      }
     }
   ]
 }

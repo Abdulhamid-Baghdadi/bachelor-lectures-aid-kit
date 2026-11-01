@@ -18,6 +18,8 @@ const LAWS = {
   alias: q => S.alias(q.f, q.fs),
   sincMidpoint: q => S.reconstruct([1], 1, q.t),
   idealTap: q => 2 * q.fc * S.sinc(2 * q.fc * q.offset),
+  // The pole of a Butterworth low-pass of order N by the bilinear transform, its real part.
+  bilinearPole: q => S.butterworth(q.N, q.fc, q.fs).poles[0][0],
   prewarp: q => 2 * q.fs * Math.tan(Math.PI * q.fc / q.fs) / (2 * Math.PI),
   binSpacing: q => q.fs / q.N,
   antiAlias: q => q.fs / (2 * q.M),

@@ -41,8 +41,8 @@ export default {
           lineChart({ label: "The periodic sequence and the sum of its first harmonics", lines: [
             { x: ns, y: ns.map(n => x[((n % N) + N) % N]), name: "x[n]", cls: "faint", stem: true }, { x: ns, y: ns.map(rebuild), name: `sum up to k = ${kmax}`, stem: true }],
             xLabel: "Index n [1]", yLabel: "Value [1]", yMin: -1.3, yMax: 1.3 }),
-          lineChart({ label: "Size of each coefficient of the discrete Fourier series, one period", lines: [{ x: X.map((_, k) => k), y: X.map(c => Math.hypot(...c) / N), name: "|X[k]| / N", stem: true }],
-            xLabel: "Harmonic number k [1]", yLabel: "Coefficient |X[k]| / N [1]", yMin: 0 }));
+          lineChart({ label: "Size of each coefficient of the discrete Fourier series, one period", lines: [{ x: X.map((_, k) => k), y: X.map(c => Math.hypot(...c) / N), name: "|c_k| = |X[k]| / N", stem: true }],
+            xLabel: "Harmonic number k [1]", yLabel: "Coefficient |c_k| [1]", yMin: 0 }));
         const err = Math.max(...ns.map(n => Math.abs(rebuild(n) - x[((n % N) + N) % N])));
         rO.set(err < 1e-9 ? "exact" : `largest error ${err.toFixed(3)}`, "", `period N = ${N}`);
         rK.set(`${kmax} of ${N / 2}`, "", kmax >= N / 2 ? "all of them: the sequence is rebuilt exactly" : "");

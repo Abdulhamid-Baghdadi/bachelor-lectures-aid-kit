@@ -146,14 +146,16 @@ export function partialSum(wave, K, t) {
   return y;
 }
 
-/** A sine voltage of RMS U and a current of harmonics [{ k, I (RMS), phi (rad, against the voltage) }]: the RMS
- *  current, total harmonic distortion, active, reactive, apparent and distortion power. */
+/** A sine voltage of RMS U and a current of harmonics [{ k, I (RMS), phi (rad, against the voltage) }], after
+ *  Prechtl (2010), section 6.3, (6.23)–(6.28): the RMS current, its harmonic content k_i = √(I2² + I3² + …)/I (6.13),
+ *  active power P, the fundamental's reactive power Q1 (Prechtl's Q is the whole reactive power, Q² = Q1² + D²),
+ *  apparent power S, distortion power D and power factor λ. */
 export function harmonics(U, parts) {
   const Irms = Math.sqrt(parts.reduce((s, p) => s + p.I ** 2, 0));
   const one = parts.find(p => p.k === 1) ?? { I: 0, phi: 0 };
   const rest = Math.sqrt(parts.filter(p => p.k !== 1).reduce((s, p) => s + p.I ** 2, 0));
-  const P = U * one.I * Math.cos(one.phi), Q = U * one.I * Math.sin(one.phi), S = U * Irms;
-  return { Irms, THD: one.I ? rest / one.I : Infinity, P, Q, S, D: Math.sqrt(Math.max(0, S * S - P * P - Q * Q)),
+  const P = U * one.I * Math.cos(one.phi), Q1 = U * one.I * Math.sin(one.phi), S = U * Irms;
+  return { Irms, k: Irms ? rest / Irms : 0, P, Q1, S, D: Math.sqrt(Math.max(0, S * S - P * P - Q1 * Q1)),
            lambda: S ? P / S : 0 };
 }
 
@@ -169,7 +171,8 @@ export const alias = (f, fs) => Math.abs(f - fs * Math.round(f / fs));
 /** Ideal reconstruction from samples x[n] taken every T: x(t) = Σ x[n] sinc((t − nT)/T). */
 export const reconstruct = (samples, T, t) => samples.reduce((s, v, n) => s + v * sinc((t - n * T) / T), 0);
 
-/** Window functions of length N, as Doblinger (2015) tabulates them in section 6.2. */
+/** Window functions of length N, as Doblinger (2015) gives them in section 6.2.1: (6.39), p. 139, with the
+ *  coefficients of Tabelle 6.1, p. 140. */
 export const WINDOWS = {
   rectangular: (n, N) => 1,
   hann: (n, N) => 0.5 - 0.5 * Math.cos(2 * Math.PI * n / (N - 1)),
