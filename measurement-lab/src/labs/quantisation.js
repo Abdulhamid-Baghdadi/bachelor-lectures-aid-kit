@@ -36,7 +36,7 @@ export default {
       slider({ label: "Input range, peak to peak", unit: "V", min: 0.1, max: 20, log: true, value: range, onInput: v => { range = v; update(); } }).el,
       slider({ label: "SNR measured on a real converter", unit: "dB", min: 20, max: 100, value: measured, step: 0.5, format: v => `${v} dB`, onInput: v => { measured = v; update(); } }).el,
       rL.el, rN.el, rS.el, rE.el,
-      h("p", { class: "hint" }, "Each bit halves the step and adds 6 dB. A signal that fills only a tenth of the range loses 20 dB: choose the range to fit. The lab script reads an oscilloscope's resolution off its screen (task 1.2.4): an 8-bit scope on 8 divisions of 1 V has steps of 31 mV. Real converters fall short of the ideal line through noise and non-linearity; the measured SNR names their effective bits. The same law as PCM, seen from the line coder, is in the Telecommunications lab."))));
+      h("p", { class: "hint" }, "Each bit halves the step and adds 6 dB. A signal that fills only a tenth of the range loses 20 dB: choose the range to fit. The lab script reads an oscilloscope's resolution off its screen (task 1.2.4); for example an 8-bit scope on 8 divisions of 1 V has steps of 31 mV. Real converters fall short of the ideal line through noise and non-linearity; the measured SNR names their effective bits. The same law as PCM, seen from the line coder, is in the Telecommunications lab."))));
     update();
   },
 };

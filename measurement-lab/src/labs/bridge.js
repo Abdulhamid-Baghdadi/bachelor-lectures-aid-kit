@@ -1,6 +1,6 @@
 // The Wheatstone bridge (Schrüfer et al. 2012, section 3.3; the lab script's tasks 3.1.1 and 3.3): balanced it measures
 // a resistance by ratio; unbalanced, its diagonal voltage follows a strain gauge's change, nearly straight for one
-// active arm, exactly straight for two opposite arms or four.
+// active arm, exactly straight for opposite changes in one divider or four arms (Bild 3.9 f, h).
 import { ARRANGEMENTS, deflection, loaded, arms, si } from "../core/index.js";
 import { h, slider, readout, choice } from "../../../kit/ui/kit.js";
 import { lineChart } from "../../../kit/ui/chart.js";
@@ -38,7 +38,7 @@ export default {
       slider({ label: "Supply U0", unit: "V", min: 1, max: 10, value: U0, step: 0.5, onInput: v => { U0 = v; update(); } }).el,
       slider({ label: "Meter resistance RM", unit: "Ω", min: 100, max: 1e8, log: true, value: RM, onInput: v => { RM = v; update(); } }).el,
       rD.el, rL.el, rN.el, rM.el,
-      h("p", { class: "hint" }, "At ΔR = 0 the bridge is balanced, R2·R3 = R1·R4 (eq. 3.13), whatever the supply: the balanced bridge measures a ratio, the deflected bridge a change. A strain gauge changes by ΔR/R0 = K·ε, K about 2, so ε = 5·10⁻⁴ gives 0.1 % and 1.25 mV from a 5 V quarter bridge (Beispiel 3.2). Two opposite arms double the signal and cancel temperature (eqs. 3.78–3.79); the lab script compares a half and a full bridge on a load cell (task 3.3)."))));
+      h("p", { class: "hint" }, "At ΔR = 0 the bridge is balanced, R2·R3 = R1·R4 (eq. 3.13), whatever the supply: the balanced bridge measures a ratio, the deflected bridge a change. A strain gauge changes by ΔR/R0 = K·ε, K about 2, so ε = 5·10⁻⁴ gives 0.1 % and 1.25 mV from a 5 V quarter bridge (Beispiel 3.2). Opposite changes in one divider double the signal and stay straight (Bild 3.9 f). A passive second gauge cancels temperature (eq. 3.78); glued across the load it also adds its Poisson change, (1 + μ) times the quarter bridge (eq. 3.79); the lab script compares a half and a full bridge on a load cell (task 3.3)."))));
     update();
   },
 };

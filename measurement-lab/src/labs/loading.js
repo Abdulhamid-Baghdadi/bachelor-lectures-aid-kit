@@ -42,7 +42,7 @@ export default {
     root.append(h("div", { class: "stage" }, box, h("div", { class: "controls" },
       choice("Meter", [["voltmeter", "Voltmeter across a source"], ["ammeter", "Ammeter in a loop"]], kind, v => { kind = v; build(); }),
       ctl, rT.el, rR.el, rE.el,
-      h("p", { class: "hint" }, "A voltmeter should be much larger than the source's resistance, an ammeter much smaller than the loop's. When the reading halves, the meter equals the source's resistance: that is how the lab script finds a meter's own resistance (task 1.1.1; Schrüfer et al. 2012, p. 91). A shunt Rp = RM·IM/(I − IM) extends an ammeter's range, a series resistor a voltmeter's (eqs. 2.31, 2.34)."))));
+      h("p", { class: "hint" }, "A voltmeter should be much larger than the source's resistance, an ammeter much smaller than the loop's. When the reading halves, the meter equals the source's resistance (Schrüfer et al. 2012, p. 91). The lab script finds a voltmeter's own resistance from the divider it forms with a known 100 kΩ (task 1.1.1). A shunt Rp = RM·IM/(I − IM) extends an ammeter's range, a series resistor a voltmeter's (eqs. 2.31, 2.34)."))));
     build();
   },
 };

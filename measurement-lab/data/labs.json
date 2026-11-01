@@ -3,14 +3,56 @@
   "version": 1,
   "about": "Messtechnik (376.045) and the Messtechnik-Labor (376.046) at TU Wien, after the course book of Schrüfer et al. (2012), Elektrische Messtechnik, 10th edition, and the lab script of Schitter (2015), winter term 2015/16. Equation numbers and pages are the book's printed ones, read in its text layer on 1 Nov 2026; the lab script's tasks are cited by number and its printed page (Seite). The book's worked examples (Beispiele) and its Table 5.8 are the practice questions where they exist; the rest were worked by hand from the book's equations and say so. tests/unit/labs-data.test.js recomputes every answer with the core and fails if they disagree. Spectrum analysis (the DFT, windows, leakage) is the Signals and Systems lab's; three-phase power the Power engineering lab's; Bode plots the Automation lab's.",
   "families": [
-    { "id": "errors", "name": "Errors and analogue meters" },
-    { "id": "sensors", "name": "Bridges, power and vibration" },
-    { "id": "digital", "name": "Digital measurement" }
+    {
+      "id": "errors",
+      "name": "Errors and analogue meters"
+    },
+    {
+      "id": "sensors",
+      "name": "Bridges, power and vibration"
+    },
+    {
+      "id": "digital",
+      "name": "Digital measurement"
+    }
   ],
   "lectures": [
-    { "number": 1, "pages": "book ch. 1–3; lab exercises 1–2", "title": "Errors and analogue meters", "family": "errors", "labs": ["scatter", "propagation", "loading", "resistance", "rms", "probe"] },
-    { "number": 2, "pages": "book ch. 2–3 and 7; lab exercises 2–3", "title": "Bridges, power and vibration", "family": "sensors", "labs": ["bridge", "power", "seismic"] },
-    { "number": 3, "pages": "book ch. 5–6; lab exercise 1", "title": "Digital measurement", "family": "digital", "labs": ["counter", "adc", "quantisation"] }
+    {
+      "number": 1,
+      "pages": "book ch. 1–3; lab exercises 1–2",
+      "title": "Errors and analogue meters",
+      "family": "errors",
+      "labs": [
+        "scatter",
+        "propagation",
+        "loading",
+        "resistance",
+        "rms",
+        "probe"
+      ]
+    },
+    {
+      "number": 2,
+      "pages": "book ch. 2–3 and 7; lab exercises 2–3",
+      "title": "Bridges, power and vibration",
+      "family": "sensors",
+      "labs": [
+        "bridge",
+        "power",
+        "seismic"
+      ]
+    },
+    {
+      "number": 3,
+      "pages": "book ch. 5–6; lab exercise 1",
+      "title": "Digital measurement",
+      "family": "digital",
+      "labs": [
+        "counter",
+        "adc",
+        "quantisation"
+      ]
+    }
   ],
   "labs": [
     {
@@ -18,26 +60,75 @@
       "title": "Repeated readings and their mean",
       "idea": "Readings of one quantity scatter; their mean is uncertain by only s/√N, and with few readings Student's factor t widens the interval.",
       "law": "u(x̄) = t · s/√N",
+      "lawTex": "u(\\bar{x}) = t\\,\\frac{s(x_i)}{\\sqrt{N}}",
       "lecture": "Schrüfer et al. (2012), sections 1.3.4–1.3.7, pp. 37–44",
       "equations": [
-        { "eq": "x̄ = (1/N) Σ xᵢ", "note": "the mean of N readings", "ref": "eq. 1.46, p. 37" },
-        { "eq": "s = √( Σ (xᵢ − x̄)² / (N − 1) )", "note": "the empirical standard deviation of one reading, its standard uncertainty", "ref": "eqs. 1.48–1.49, p. 38" },
-        { "eq": "s(x̄) = s/√N", "note": "the standard deviation of the mean", "ref": "eq. 1.53, p. 39" },
-        { "eq": "x̄ ± a · s/√N; a = 1, 2, 3 for 68.3, 95.5, 99.7 %", "note": "the result with a coverage factor, normal readings", "ref": "eq. 1.55, pp. 38–40" },
-        { "eq": "u(x̄) = t · s/√N", "note": "Student's factor for few readings, Table 1.6", "ref": "eq. 1.83, p. 44" }
+        {
+          "eq": "x̄ = (1/N) Σ xᵢ",
+          "tex": "\\bar{x} = \\frac{1}{N} \\sum_{i=1}^{N} x_i",
+          "note": "the mean of N readings",
+          "ref": "eq. 1.46, p. 37"
+        },
+        {
+          "eq": "s = √( Σ (xᵢ − x̄)² / (N − 1) )",
+          "tex": "s(x_i) = \\sqrt{\\frac{\\sum_{i=1}^{N} (x_i - \\bar{x})^2}{N - 1}} = u(x_i)",
+          "note": "the empirical standard deviation of one reading, its standard uncertainty",
+          "ref": "eqs. 1.48–1.49, p. 38"
+        },
+        {
+          "eq": "s(x̄) = s/√N",
+          "tex": "s(\\bar{x}) = \\frac{s(x_i)}{\\sqrt{N}}",
+          "note": "the standard deviation of the mean",
+          "ref": "eq. 1.53, p. 39"
+        },
+        {
+          "eq": "x̄ ± a · s/√N; a = 1, 2, 3 for 68.3, 95.5, 99.7 %",
+          "tex": "\\bar{x} \\pm a\\,\\frac{s(x_i)}{\\sqrt{N}}, \\qquad a = 1, 2, 3 \\;\\text{for } 68.3, 95.5, 99.7\\,\\%",
+          "note": "the result with a coverage factor, normal readings",
+          "ref": "eq. 1.55, pp. 38–40"
+        },
+        {
+          "eq": "u(x̄) = t · s/√N",
+          "tex": "u(\\bar{x}) = t\\,\\frac{s(x_i)}{\\sqrt{N}}",
+          "note": "Student's factor for few readings, Table 1.6",
+          "ref": "eq. 1.83, p. 44"
+        }
       ],
       "practice": [
         {
           "question": "Ten readings of a voltage: 6.7, 6.4, 6.3, 6.6, 6.5, 6.7, 6.5, 6.3, 6.6, 6.4 V. What is the standard uncertainty of their mean?",
-          "answer": 0.047, "unit": "V", "tolerance": 0.02,
-          "compute": { "law": "meanUncertainty", "xs": [6.7, 6.4, 6.3, 6.6, 6.5, 6.7, 6.5, 6.3, 6.6, 6.4] },
+          "answer": 0.047,
+          "unit": "V",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "meanUncertainty",
+            "xs": [
+              6.7,
+              6.4,
+              6.3,
+              6.6,
+              6.5,
+              6.7,
+              6.5,
+              6.3,
+              6.6,
+              6.4
+            ]
+          },
           "solution": "Mean 65.0 V/10 = 6.5 V. The squared deviations add to 0.20 V², so s = √(0.20/9) = 0.15 V and s/√N = 0.15/√10 = 0.047 V: the result is (6.5 ± 0.047) V at 68.3 %.",
           "source": "Schrüfer et al. (2012), Beispiel 1.3, Table 1.5, p. 40"
         },
         {
           "question": "Five readings scatter with s = 0.15 V. How wide is the 95.5 % half-interval of their mean, with Student's factor?",
-          "answer": 0.2, "unit": "V", "tolerance": 0.01,
-          "compute": { "law": "studentU", "N": 5, "s": 0.15, "a": 2 },
+          "answer": 0.2,
+          "unit": "V",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "studentU",
+            "N": 5,
+            "s": 0.15,
+            "a": 2
+          },
           "solution": "Table 1.6 gives t = 2.98 for N = 5 at 95.5 %. u = t · s/√N = 2.98 · 0.15/√5 = 0.200 V, against 0.134 V with the normal factor 2.",
           "source": "Worked by hand from Schrüfer et al. (2012), eq. 1.83 and Table 1.6, p. 44"
         }
@@ -48,26 +139,77 @@
       "title": "Propagation of uncertainty",
       "idea": "A result computed from several measured quantities inherits their errors: known systematic ones add with their sensitivities, independent random ones add as squares, Gauss's law.",
       "law": "s(y) = √Σ (∂f/∂xᵢ · s(xᵢ))²",
+      "lawTex": "s(y) = \\sqrt{\\sum_{i=1}^{N} \\Big(\\frac{\\partial f}{\\partial x_i}\\Big)^2 s^2(x_i)}",
       "lecture": "Schrüfer et al. (2012), sections 1.3.3 and 1.3.6, pp. 35–43; Schitter (2015), task 2.5",
       "equations": [
-        { "eq": "Δy = Σ ∂f/∂xᵢ · Δxᵢ", "note": "a known systematic error carried through the model, linearised", "ref": "eq. 1.37, p. 35" },
-        { "eq": "Δy/y = Σ αᵢ · Δxᵢ/xᵢ for y = Π aᵢ xᵢ^αᵢ", "note": "for products of powers the relative errors add, weighted by the exponents", "ref": "eq. 1.43, p. 36" },
-        { "eq": "s(y) = √Σ (∂f/∂xᵢ)² s²(xᵢ)", "note": "Gauss's law for independent inputs (1821)", "ref": "eqs. 1.73–1.74, p. 42" },
-        { "eq": "P = U · I · cos Φ", "note": "the lab script's model: the uncertainty of P from those of I and Φ", "ref": "Schitter (2015), eq. 2.1, Seite 21" },
-        { "eq": "sworst = Σ |∂f/∂xᵢ| s(xᵢ)", "note": "every contribution with the same sign: an upper bound", "ref": "" }
+        {
+          "eq": "Δy = Σ ∂f/∂xᵢ · Δxᵢ",
+          "tex": "\\Delta y = \\sum_{i=1}^{n} \\frac{\\partial f}{\\partial x_i}\\,\\Delta x_i",
+          "note": "a known systematic error carried through the model, linearised",
+          "ref": "eq. 1.37, p. 35"
+        },
+        {
+          "eq": "Δy/y = Σ αᵢ · Δxᵢ/xᵢ for y = Π aᵢ xᵢ^αᵢ",
+          "tex": "\\frac{\\Delta y}{y} = \\sum_{i=1}^{n} \\alpha_i \\frac{\\Delta x_i}{x_i} \\qquad \\text{for } y = a_1 x_1^{\\alpha_1} \\cdots a_n x_n^{\\alpha_n}",
+          "note": "for products of powers the relative errors add, weighted by the exponents",
+          "ref": "eq. 1.43, p. 36"
+        },
+        {
+          "eq": "s(y) = √Σ (∂f/∂xᵢ)² s²(xᵢ)",
+          "tex": "s(y) = \\sqrt{\\sum_{i=1}^{N} \\Big(\\frac{\\partial f}{\\partial x_i}\\Big)^2 s^2(x_i)}",
+          "note": "Gauss's law for independent inputs (1821)",
+          "ref": "eqs. 1.73–1.74, p. 42"
+        },
+        {
+          "eq": "P = U · I · cos Φ",
+          "tex": "P = U I \\cos\\varphi",
+          "note": "the lab script's model: the uncertainty of P from those of I and Φ",
+          "ref": "Schitter (2015), eq. 2.1, Seite 21"
+        },
+        {
+          "eq": "sworst = Σ |∂f/∂xᵢ| s(xᵢ)",
+          "tex": "s_\\mathrm{worst} = \\sum_{i} \\Big|\\frac{\\partial f}{\\partial x_i}\\Big|\\, s(x_i)",
+          "note": "every contribution with the same sign: an upper bound",
+          "ref": ""
+        }
       ],
       "practice": [
         {
           "question": "Full package g₃ = 600 g with s₃ = 9 g, empty package g₁ = 80 g with s₁ = 5 g. What is the standard deviation of the contents g₂ = g₃ − g₁?",
-          "answer": 10.3, "unit": "g", "tolerance": 0.01,
-          "compute": { "law": "gauss", "model": "weight", "x": [600, 80], "s": [9, 5] },
+          "answer": 10.3,
+          "unit": "g",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "gauss",
+            "model": "weight",
+            "x": [
+              600,
+              80
+            ],
+            "s": [
+              9,
+              5
+            ]
+          },
           "solution": "Both partial derivatives have magnitude 1, so s₂ = √(9² + 5²) g = √106 g = 10.3 g. 95 of 100 packages hold (520 ± 20.6) g.",
           "source": "Schrüfer et al. (2012), Beispiel 1.4, p. 43"
         },
         {
           "question": "Relative errors ΔU/U = −0.011 and ΔR/R = −0.031. What is the relative error of P = U²/R (as a fraction)?",
-          "answer": 0.009, "unit": "", "tolerance": 0.01,
-          "compute": { "law": "powerLaw", "alphas": [2, -1], "rel": [-0.011, -0.031] },
+          "answer": 0.009,
+          "unit": "",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "powerLaw",
+            "alphas": [
+              2,
+              -1
+            ],
+            "rel": [
+              -0.011,
+              -0.031
+            ]
+          },
           "solution": "P = U² · R⁻¹, so ΔP/P = 2 · (−0.011) − 1 · (−0.031) = +0.009: the power reads 0.9 % high and can be corrected.",
           "source": "Schrüfer et al. (2012), Beispiel 1.2, p. 36"
         }
@@ -78,33 +220,80 @@
       "title": "The meter loads the circuit",
       "idea": "A voltmeter draws current and forms a divider with the source's resistance; an ammeter adds its resistance to the loop. Each reads true only when it is far larger, or far smaller, than the circuit.",
       "law": "UV = Uq · RV/(Ri + RV)",
+      "lawTex": "U_\\mathrm{V} = U_\\mathrm{q}\\,\\frac{R_\\mathrm{V}}{R_\\mathrm{i} + R_\\mathrm{V}}",
       "lecture": "Schrüfer et al. (2012), section 2.1.2, pp. 90–93; Schitter (2015), tasks 1.1.1–1.1.2",
       "equations": [
-        { "eq": "UV = Uq · RV/(Ri + RV)", "note": "a voltmeter across a source with internal resistance Ri", "ref": "" },
-        { "eq": "I = Uq/(R + RA)", "note": "an ammeter in a loop of resistance R", "ref": "" },
-        { "eq": "Ri = RM when the reading halves", "note": "how to find a meter's or a source's resistance", "ref": "p. 91" },
-        { "eq": "Rp = RM · IM/(I − IM)", "note": "the shunt that extends a current range", "ref": "eq. 2.31, p. 91" },
-        { "eq": "Rv = U/I − Rp ‖ RM", "note": "the series resistor that extends a voltage range", "ref": "eq. 2.34, p. 92" }
+        {
+          "eq": "UV = Uq · RV/(Ri + RV)",
+          "tex": "U_\\mathrm{V} = U_\\mathrm{q}\\,\\frac{R_\\mathrm{V}}{R_\\mathrm{i} + R_\\mathrm{V}}",
+          "note": "a voltmeter across a source with internal resistance Ri",
+          "ref": "eq. 2.28, p. 90, as UM/UL = 1/(1 + Ri/RM)"
+        },
+        {
+          "eq": "I = Uq/(R + RA)",
+          "tex": "I = \\frac{U_\\mathrm{q}}{R + R_\\mathrm{A}}",
+          "note": "an ammeter in a loop of resistance R",
+          "ref": "eq. 2.24, p. 89, as IM = UL/(Ri + RM)"
+        },
+        {
+          "eq": "Ri = RM when the reading halves",
+          "tex": "R_\\mathrm{i} = R_\\mathrm{M} \\quad \\text{when the reading halves}",
+          "note": "how to find a meter's or a source's resistance",
+          "ref": "p. 91"
+        },
+        {
+          "eq": "Rp = RM · IM/(I − IM)",
+          "tex": "R_\\mathrm{p} = R_\\mathrm{M}\\,\\frac{I_\\mathrm{M}}{I - I_\\mathrm{M}}",
+          "note": "the shunt that extends a current range",
+          "ref": "eq. 2.31, p. 91"
+        },
+        {
+          "eq": "Rv = U/I − Rp ‖ RM",
+          "tex": "R_\\mathrm{v} = \\frac{U}{I} - (R_\\mathrm{p} \\parallel R_\\mathrm{M})",
+          "note": "the series resistor that extends a voltage range",
+          "ref": "eq. 2.34, p. 92"
+        }
       ],
       "practice": [
         {
           "question": "A movement of 400 Ω reads full scale at 0.2 mA. Which shunt makes it read 1 mA full scale?",
-          "answer": 100, "unit": "Ω", "tolerance": 0.01,
-          "compute": { "law": "shunt", "RM": 400, "IM": 0.0002, "I": 0.001 },
+          "answer": 100,
+          "unit": "Ω",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "shunt",
+            "RM": 400,
+            "IM": 0.0002,
+            "I": 0.001
+          },
           "solution": "Rp = RM · IM/(I − IM) = 400 Ω · 0.2/(1 − 0.2) = 100 Ω.",
           "source": "Schrüfer et al. (2012), Beispiel 2.1, p. 91"
         },
         {
           "question": "That shunted movement (400 Ω ‖ 100 Ω, 1 mA full scale) is to read 100 mV full scale. Which series resistor does it need?",
-          "answer": 20, "unit": "Ω", "tolerance": 0.01,
-          "compute": { "law": "seriesResistor", "U": 0.1, "I": 0.001, "Rpar": 80 },
+          "answer": 20,
+          "unit": "Ω",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "seriesResistor",
+            "U": 0.1,
+            "I": 0.001,
+            "Rpar": 80
+          },
           "solution": "The movement drops 1 mA · 80 Ω = 80 mV (eq. 2.32), so Rv = 100 mV/1 mA − 80 Ω = 20 Ω.",
           "source": "Schrüfer et al. (2012), eqs. 2.32–2.35, pp. 92–93"
         },
         {
           "question": "A 10 V source with 100 kΩ internal resistance is read by a voltmeter of 10 MΩ. What does it show?",
-          "answer": 9.901, "unit": "V", "tolerance": 0.001,
-          "compute": { "law": "voltmeter", "Uq": 10, "Ri": 100000, "RV": 10000000 },
+          "answer": 9.901,
+          "unit": "V",
+          "tolerance": 0.001,
+          "compute": {
+            "law": "voltmeter",
+            "Uq": 10,
+            "Ri": 100000,
+            "RV": 10000000
+          },
           "solution": "U = 10 V · 10 MΩ/(10.1 MΩ) = 9.901 V, about 1 % low.",
           "source": "Worked by hand, after Schitter (2015), task 1.1.1 (U = 10 V, 100 kΩ)"
         }
@@ -115,25 +304,59 @@
       "title": "Resistance from voltage and current",
       "idea": "Measured with an ammeter and a voltmeter, a resistance reads too high when the voltmeter also sees the ammeter's drop and too low when the ammeter also carries the voltmeter's current; each circuit suits one end of the scale.",
       "law": "Rx = U/I − RA or Rx = U/(I − U/RV)",
+      "lawTex": "R_x = \\frac{U}{I} - R_\\mathrm{A} \\qquad R_x = \\frac{U}{I - U/R_\\mathrm{V}}",
       "lecture": "Schrüfer et al. (2012), section 3.1.1, pp. 195–196; Schitter (2015), task 1.1.3",
       "equations": [
-        { "eq": "Rx = (U − RA I)/I = U/I − RA", "note": "current-correct circuit (Bild 3.1 a), for large resistances", "ref": "eq. 3.1, p. 195" },
-        { "eq": "Rx = U/(I − U/RV)", "note": "voltage-correct circuit (Bild 3.1 b), for small resistances", "ref": "eq. 3.2, p. 196" },
-        { "eq": "Rx = √(RA RV)", "note": "where both raw errors are equal, to first order", "ref": "" },
-        { "eq": "Rx = (Ux/Ur) · Rr", "note": "comparison with a reference resistor in series avoids the error", "ref": "eq. 3.3, p. 196" }
+        {
+          "eq": "Rx = (U − RA I)/I = U/I − RA",
+          "tex": "R_x = \\frac{U - R_\\mathrm{A} I}{I} = \\frac{U}{I} - R_\\mathrm{A}",
+          "note": "current-correct circuit (Bild 3.1 a), for large resistances",
+          "ref": "eq. 3.1, p. 195"
+        },
+        {
+          "eq": "Rx = U/(I − U/RV)",
+          "tex": "R_x = \\frac{U}{I - U/R_\\mathrm{V}}",
+          "note": "voltage-correct circuit (Bild 3.1 b), for small resistances",
+          "ref": "eq. 3.2, p. 196"
+        },
+        {
+          "eq": "Rx = √(RA RV)",
+          "tex": "R_x = \\sqrt{R_\\mathrm{A} R_\\mathrm{V}}",
+          "note": "where both raw errors are equal, to first order",
+          "ref": ""
+        },
+        {
+          "eq": "Rx = (Ux/Ur) · Rr",
+          "tex": "R_x = \\frac{U_x}{U_\\mathrm{r}}\\,R_\\mathrm{r}",
+          "note": "comparison with a reference resistor in series avoids the error",
+          "ref": "eq. 3.3, p. 196"
+        }
       ],
       "practice": [
         {
           "question": "100 Ω measured current-correct with an ammeter of 1 Ω. What does U/I give before correction?",
-          "answer": 101, "unit": "Ω", "tolerance": 0.001,
-          "compute": { "law": "currentCorrectRaw", "Rx": 100, "RA": 1, "RV": 10000000 },
+          "answer": 101,
+          "unit": "Ω",
+          "tolerance": 0.001,
+          "compute": {
+            "law": "currentCorrectRaw",
+            "Rx": 100,
+            "RA": 1,
+            "RV": 10000000
+          },
           "solution": "The voltmeter sees Rx and RA in series: U/I = Rx + RA = 101 Ω, 1 % high. Eq. 3.1 subtracts RA.",
           "source": "Worked by hand from Schrüfer et al. (2012), eq. 3.1, after Schitter (2015), task 1.1.3"
         },
         {
           "question": "With RA = 1 Ω and RV = 1 MΩ, above which resistance is the current-correct circuit the better one?",
-          "answer": 1000, "unit": "Ω", "tolerance": 0.01,
-          "compute": { "law": "crossover", "RA": 1, "RV": 1000000 },
+          "answer": 1000,
+          "unit": "Ω",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "crossover",
+            "RA": 1,
+            "RV": 1000000
+          },
           "solution": "Current-correct errs by RA/Rx, voltage-correct by about Rx/RV. They are equal at Rx = √(RA·RV) = √(10⁶) Ω = 1 kΩ.",
           "source": "Worked by hand from Schrüfer et al. (2012), eqs. 3.1–3.2"
         }
@@ -144,26 +367,63 @@
       "title": "Mean, rectified mean and RMS",
       "idea": "A rectifier meter measures the rectified mean and multiplies by 1.11, the form factor of a sine; for any other waveform it reads wrong, while a true-RMS meter does not.",
       "law": "form factor = RMS/rectified mean = 1.11 for a sine",
+      "lawTex": "\\text{form factor} = \\frac{U}{\\overline{|u|}} = 1.11 \\quad \\text{for a sine}",
       "lecture": "Schrüfer et al. (2012), section 2.1.3, pp. 95–99; Schitter (2015), tasks 1.2.2–1.2.3",
       "equations": [
-        { "eq": "x̄ = (1/T) ∫₀ᵀ x(t) dt", "note": "the linear mean, the DC part, what a moving coil shows", "ref": "eq. 2.36, p. 95" },
-        { "eq": "|x̄| = (1/T) ∫₀ᵀ |x(t)| dt", "note": "the rectified mean", "ref": "eq. 2.37, p. 95" },
-        { "eq": "Xeff = √( (1/T) ∫₀ᵀ x²(t) dt )", "note": "the RMS value", "ref": "eqs. 2.38–2.39, p. 95" },
-        { "eq": "|ū| = 2û/π = 0.637 û; U = û/√2 = 0.707 û", "note": "for a sine", "ref": "eqs. 2.41–2.42, pp. 95–96" },
-        { "eq": "crest factor = û/U = 1.41; form factor = U/|ū| = 1.11", "note": "for a sine", "ref": "eqs. 2.43–2.44, p. 96" }
+        {
+          "eq": "x̄ = (1/T) ∫₀ᵀ x(t) dt",
+          "tex": "\\overline{x(t)} = \\frac{1}{T} \\int_0^T x(t)\\,\\mathrm{d}t",
+          "note": "the linear mean, the DC part, what a moving coil shows",
+          "ref": "eq. 2.36, p. 95"
+        },
+        {
+          "eq": "|x̄| = (1/T) ∫₀ᵀ |x(t)| dt",
+          "tex": "\\overline{|x(t)|} = \\frac{1}{T} \\int_0^T |x(t)|\\,\\mathrm{d}t",
+          "note": "the rectified mean",
+          "ref": "eq. 2.37, p. 95"
+        },
+        {
+          "eq": "Xeff = √( (1/T) ∫₀ᵀ x²(t) dt )",
+          "tex": "X_\\mathrm{eff} = \\sqrt{\\frac{1}{T} \\int_0^T x^2(t)\\,\\mathrm{d}t}",
+          "note": "the RMS value",
+          "ref": "eqs. 2.38–2.39, p. 95"
+        },
+        {
+          "eq": "|ū| = 2û/π = 0.637 û; U = û/√2 = 0.707 û",
+          "tex": "\\overline{|u|} = \\frac{2}{\\pi}\\hat{u} = 0.637\\,\\hat{u} \\qquad U = \\frac{\\hat{u}}{\\sqrt{2}} = 0.707\\,\\hat{u}",
+          "note": "for a sine",
+          "ref": "eqs. 2.41–2.42, pp. 95–96"
+        },
+        {
+          "eq": "crest factor = û/U = 1.41; form factor = U/|ū| = 1.11",
+          "tex": "\\text{crest factor} = \\frac{\\hat{u}}{U} = 1.41 \\qquad \\text{form factor} = \\frac{U}{\\overline{|u|}} = 1.11",
+          "note": "for a sine",
+          "ref": "eqs. 2.43–2.44, p. 96"
+        }
       ],
       "practice": [
         {
           "question": "A rectifier multimeter calibrated for sines measures a square wave of 1 V peak. What does it show?",
-          "answer": 1.11, "unit": "V", "tolerance": 0.005,
-          "compute": { "law": "rectifierReading", "wave": "square", "peak": 1 },
+          "answer": 1.11,
+          "unit": "V",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "rectifierReading",
+            "wave": "square",
+            "peak": 1
+          },
           "solution": "The rectified mean of a ±1 V square wave is 1 V; the scale multiplies by 1.11, so it shows 1.11 V, while the RMS value is 1 V: 11 % high.",
           "source": "Worked by hand from Schrüfer et al. (2012), eqs. 2.37–2.44 and p. 98"
         },
         {
           "question": "The same meter on a triangle wave: what is its relative error (as a fraction)?",
-          "answer": -0.0383, "unit": "", "tolerance": 0.02,
-          "compute": { "law": "rectifierError", "wave": "triangle" },
+          "answer": -0.0383,
+          "unit": "",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "rectifierError",
+            "wave": "triangle"
+          },
           "solution": "A triangle of peak û has rectified mean û/2 and RMS û/√3. The meter shows 1.1107 · 0.5 û = 0.5554 û against 0.5774 û: −3.8 %.",
           "source": "Worked by hand from Schrüfer et al. (2012), eqs. 2.37–2.39"
         }
@@ -174,27 +434,73 @@
       "title": "Compensating a 10 : 1 probe",
       "idea": "The probe's resistor and trimmer capacitor and the scope's input form a divider that is the same at every frequency only when both halves have the same time constant; a square wave shows whether they do.",
       "law": "RT·CT = RE·C*E",
+      "lawTex": "R_\\mathrm{T} C_\\mathrm{T} = R_\\mathrm{E} C_\\mathrm{E}^{*}",
       "lecture": "Schrüfer et al. (2012), section 2.2.2, pp. 115–116; Schitter (2015), task 1.2.1",
       "equations": [
-        { "eq": "U₁/U₂ = 1 + (R₁/R₂) · (1 + jωR₂C₂)/(1 + jωR₁C₁)", "note": "the frequency-compensated divider", "ref": "eq. 2.96, p. 115" },
-        { "eq": "R₁C₁ = R₂C₂ ⇒ U₁/U₂ = 1 + R₁/R₂", "note": "flat in frequency", "ref": "eqs. 2.97–2.98, p. 115" },
-        { "eq": "RT·CT = RE·C*E, C*E = CE + CK", "note": "the probe's condition, the cable's capacitance included", "ref": "eq. 2.100, p. 116" },
-        { "eq": "u₂(t₀) = CT/(CT + C*E) · ue(t₀)", "note": "at an edge the capacitors divide", "ref": "eq. 2.101, p. 116" },
-        { "eq": "u₂(t₁) = RE/(RT + RE) · ue(t₁)", "note": "once settled the resistors divide", "ref": "eq. 2.102, p. 116" },
-        { "eq": "τ = (RT ‖ RE)(CT + C*E)", "note": "how fast it settles between the two, from the node equation", "ref": "" }
+        {
+          "eq": "U₁/U₂ = 1 + (R₁/R₂) · (1 + jωR₂C₂)/(1 + jωR₁C₁)",
+          "tex": "\\frac{\\underline{U}_1}{\\underline{U}_2} = 1 + \\frac{R_1}{R_2}\\,\\frac{1 + \\mathrm{j}\\omega R_2 C_2}{1 + \\mathrm{j}\\omega R_1 C_1}",
+          "note": "the frequency-compensated divider",
+          "ref": "eq. 2.96, p. 115"
+        },
+        {
+          "eq": "R₁C₁ = R₂C₂ ⇒ U₁/U₂ = 1 + R₁/R₂",
+          "tex": "R_1 C_1 = R_2 C_2 \\;\\Rightarrow\\; \\frac{\\underline{U}_1}{\\underline{U}_2} = 1 + \\frac{R_1}{R_2}",
+          "note": "flat in frequency",
+          "ref": "eqs. 2.97–2.98, p. 115"
+        },
+        {
+          "eq": "RT·CT = RE·C*E, C*E = CE + CK",
+          "tex": "R_\\mathrm{T} C_\\mathrm{T} = R_\\mathrm{E} C_\\mathrm{E}^{*}, \\qquad C_\\mathrm{E}^{*} = C_\\mathrm{E} + C_\\mathrm{K}",
+          "note": "the probe's condition, the cable's capacitance included",
+          "ref": "eq. 2.100, p. 116"
+        },
+        {
+          "eq": "u₂(t₀) = CT/(CT + C*E) · ue(t₀)",
+          "tex": "u_2(t_0) = \\frac{C_\\mathrm{T}}{C_\\mathrm{T} + C_\\mathrm{E}^{*}}\\,u_\\mathrm{e}(t_0)",
+          "note": "at an edge the capacitors divide",
+          "ref": "eq. 2.101, p. 116"
+        },
+        {
+          "eq": "u₂(t₁) = RE/(RT + RE) · ue(t₁)",
+          "tex": "u_2(t_1) = \\frac{R_\\mathrm{E}}{R_\\mathrm{T} + R_\\mathrm{E}}\\,u_\\mathrm{e}(t_1)",
+          "note": "once settled the resistors divide",
+          "ref": "eq. 2.102, p. 116"
+        },
+        {
+          "eq": "τ = (RT ‖ RE)(CT + C*E)",
+          "tex": "\\tau = (R_\\mathrm{T} \\parallel R_\\mathrm{E})(C_\\mathrm{T} + C_\\mathrm{E}^{*})",
+          "note": "how fast it settles between the two, from the node equation",
+          "ref": ""
+        }
       ],
       "practice": [
         {
           "question": "A scope input of 1 MΩ with 100 pF including the cable, a probe resistor of 9 MΩ. Which trimmer capacitance compensates it?",
-          "answer": 1.111e-11, "unit": "F", "tolerance": 0.01,
-          "compute": { "law": "compensatingCT", "RT": 9000000, "RE": 1000000, "CE": 1e-10 },
+          "answer": 1.111e-11,
+          "unit": "F",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "compensatingCT",
+            "RT": 9000000,
+            "RE": 1000000,
+            "CE": 1e-10
+          },
           "solution": "CT = RE · CE*/RT = 1 MΩ · 100 pF/9 MΩ = 11.1 pF. Type 11.1p.",
           "source": "Worked by hand from Schrüfer et al. (2012), eq. 2.100"
         },
         {
           "question": "The same probe trimmed to 8 pF: what fraction of a step appears at the edge?",
-          "answer": 0.0741, "unit": "", "tolerance": 0.01,
-          "compute": { "law": "probeEdge", "RT": 9000000, "CT": 8e-12, "RE": 1000000, "CE": 1e-10 },
+          "answer": 0.0741,
+          "unit": "",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "probeEdge",
+            "RT": 9000000,
+            "CT": 8e-12,
+            "RE": 1000000,
+            "CE": 1e-10
+          },
           "solution": "CT/(CT + CE*) = 8/108 = 0.074, less than the 0.1 it settles to: under-compensated, the corners round off.",
           "source": "Worked by hand from Schrüfer et al. (2012), eqs. 2.101–2.102"
         }
@@ -203,36 +509,89 @@
     {
       "id": "bridge",
       "title": "The Wheatstone bridge",
-      "idea": "Balanced, the bridge measures a resistance as a ratio, whatever the supply; deflected, its diagonal voltage follows a small change, bent for one active arm and straight for two opposite arms or four.",
+      "idea": "Balanced, the bridge measures a resistance as a ratio, whatever the supply; deflected, its diagonal voltage follows a small change, bent for one active arm and straight for opposite changes in one divider or for four active arms.",
       "law": "Ud = U₀ (R₂R₃ − R₁R₄)/((R₁ + R₂)(R₃ + R₄))",
+      "lawTex": "U_\\mathrm{d} = U_0\\,\\frac{R_2 R_3 - R_1 R_4}{(R_1 + R_2)(R_3 + R_4)}",
       "lecture": "Schrüfer et al. (2012), sections 3.3 and 3.11, pp. 199–205 and 238–239; Schitter (2015), tasks 3.1.1 and 3.3",
       "equations": [
-        { "eq": "Ud = U₃ − U₁ = U₀ (R₂R₃ − R₁R₄)/((R₁ + R₂)(R₃ + R₄))", "note": "the diagonal voltage, U₁ across R₁, U₃ across R₃", "ref": "eq. 3.12, p. 200" },
-        { "eq": "R₂R₃ = R₁R₄ ⇒ R₂ = R₁R₄/R₃", "note": "balance, and the unknown from it", "ref": "eqs. 3.13–3.14, p. 200" },
-        { "eq": "Ud = U₀ ΔR/(4R₀ + 2ΔR) ≈ (U₀/4) ΔR/R₀", "note": "the quarter bridge", "ref": "eqs. 3.18–3.19, p. 203" },
-        { "eq": "Ud = (U₀/2) ΔR/R₀; Ud = U₀ ΔR/R₀", "note": "half bridge with opposite changes in one divider, and full bridge: exact", "ref": "Bild 3.9 f, h, pp. 203–204" },
-        { "eq": "Ri = R₁ ‖ R₂ + R₃ ‖ R₄; IM = Ud/(Ri + RM)", "note": "the bridge as a source loaded by a meter", "ref": "eqs. 3.22–3.23, p. 205" },
-        { "eq": "ΔR/R₀ = K ε; σ = F/A = E ε", "note": "a strain gauge on a loaded bar", "ref": "eqs. 3.75–3.76, Beispiel 3.2, pp. 238–239" }
+        {
+          "eq": "Ud = U₃ − U₁ = U₀ (R₂R₃ − R₁R₄)/((R₁ + R₂)(R₃ + R₄))",
+          "tex": "U_\\mathrm{d} = U_3 - U_1 = U_0\\,\\frac{R_2 R_3 - R_1 R_4}{(R_1 + R_2)(R_3 + R_4)}",
+          "note": "the diagonal voltage, U₁ across R₁, U₃ across R₃",
+          "ref": "eq. 3.12, p. 200"
+        },
+        {
+          "eq": "R₂R₃ = R₁R₄ ⇒ R₂ = R₁R₄/R₃",
+          "tex": "R_2 R_3 = R_1 R_4 \\;\\Rightarrow\\; R_2 = \\frac{R_1 R_4}{R_3}",
+          "note": "balance, and the unknown from it",
+          "ref": "eqs. 3.13–3.14, p. 200"
+        },
+        {
+          "eq": "Ud = U₀ ΔR/(4R₀ + 2ΔR) ≈ (U₀/4) ΔR/R₀",
+          "tex": "U_\\mathrm{d} = U_0\\,\\frac{\\Delta R}{4R_0 + 2\\Delta R} \\approx \\frac{U_0}{4}\\,\\frac{\\Delta R}{R_0}",
+          "note": "the quarter bridge",
+          "ref": "eqs. 3.18–3.19, p. 203"
+        },
+        {
+          "eq": "Ud = (U₀/2) ΔR/R₀; Ud = U₀ ΔR/R₀",
+          "tex": "U_\\mathrm{d} = \\frac{U_0}{2}\\,\\frac{\\Delta R}{R_0} \\qquad U_\\mathrm{d} = U_0\\,\\frac{\\Delta R}{R_0}",
+          "note": "half bridge with opposite changes in one divider, and full bridge: exact",
+          "ref": "Bild 3.9 f, h, pp. 203–204"
+        },
+        {
+          "eq": "Ri = R₁ ‖ R₂ + R₃ ‖ R₄; IM = Ud/(Ri + RM)",
+          "tex": "R_\\mathrm{i} = (R_1 \\parallel R_2) + (R_3 \\parallel R_4) \\qquad I_\\mathrm{M} = \\frac{U_\\mathrm{d}}{R_\\mathrm{i} + R_\\mathrm{M}}",
+          "note": "the bridge as a source loaded by a meter",
+          "ref": "eqs. 3.22–3.23, p. 205"
+        },
+        {
+          "eq": "ΔR/R₀ = K ε; σ = F/A = E ε",
+          "tex": "\\frac{\\Delta R}{R_0} = K\\varepsilon \\qquad \\sigma = \\frac{F}{A} = E\\varepsilon",
+          "note": "a strain gauge on a loaded bar",
+          "ref": "eqs. 3.68, 3.75–3.76, pp. 235–238"
+        }
       ],
       "practice": [
         {
           "question": "A steel bar of 10 cm² carries 100 kN; E = 2·10¹¹ N/m². A gauge with K = 2 sits in a 5 V quarter bridge. What is the diagonal voltage?",
-          "answer": 0.00125, "unit": "V", "tolerance": 0.01,
-          "compute": { "law": "gaugeBridge", "U0": 5, "K": 2, "F": 100000, "A": 0.001, "E": 200000000000 },
+          "answer": 0.00125,
+          "unit": "V",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "gaugeBridge",
+            "U0": 5,
+            "K": 2,
+            "F": 100000,
+            "A": 0.001,
+            "E": 200000000000
+          },
           "solution": "σ = F/A = 10⁸ N/m², ε = σ/E = 5·10⁻⁴, ΔR/R₀ = Kε = 10⁻³, Ud = U₀/4 · 10⁻³ = 1.25 mV.",
           "source": "Schrüfer et al. (2012), Beispiel 3.2, p. 239"
         },
         {
           "question": "R₁ = 1 kΩ, R₃ = 2 kΩ and R₄ = 4.7 kΩ balance the bridge. What is the unknown R₂?",
-          "answer": 2350, "unit": "Ω", "tolerance": 0.001,
-          "compute": { "law": "balance", "R1": 1000, "R3": 2000, "R4": 4700 },
+          "answer": 2350,
+          "unit": "Ω",
+          "tolerance": 0.001,
+          "compute": {
+            "law": "balance",
+            "R1": 1000,
+            "R3": 2000,
+            "R4": 4700
+          },
           "solution": "R₂ = R₁R₄/R₃ = 1 kΩ · 4.7 kΩ/2 kΩ = 2.35 kΩ.",
           "source": "Worked by hand from Schrüfer et al. (2012), eq. 3.14"
         },
         {
           "question": "A full bridge on 10 V, every gauge changing by 0.2 %. What is the diagonal voltage?",
-          "answer": 0.02, "unit": "V", "tolerance": 0.001,
-          "compute": { "law": "fullBridge", "U0": 10, "x": 0.002 },
+          "answer": 0.02,
+          "unit": "V",
+          "tolerance": 0.001,
+          "compute": {
+            "law": "fullBridge",
+            "U0": 10,
+            "x": 0.002
+          },
           "solution": "Ud = U₀ · ΔR/R₀ = 10 V · 0.002 = 20 mV, four times the quarter bridge and exactly linear.",
           "source": "Worked by hand from Schrüfer et al. (2012), Bild 3.9 h"
         }
@@ -243,26 +602,65 @@
       "title": "Active power and the wattmeter",
       "idea": "Instantaneous power swings at twice the line frequency about its mean U·I·cos φ, which the wattmeter's pointer settles on; the meter's own paths take power, and where the voltage path is clamped decides which.",
       "law": "P = U · I · cos φ",
+      "lawTex": "P = U I \\cos\\varphi",
       "lecture": "Schrüfer et al. (2012), section 2.1.4, pp. 101–104; Schitter (2015), task 2.8",
       "equations": [
-        { "eq": "α = k I₁ I₂ cos φ", "note": "the electrodynamic movement averages the product of its coils' currents", "ref": "eqs. 2.60–2.65, p. 103" },
-        { "eq": "P = U I cos φ; Q = U I sin φ; S = U I", "note": "active, reactive and apparent power", "ref": "eqs. 2.56–2.58, p. 102" },
-        { "eq": "Pq = PV + PM", "note": "the source's power splits between the load and the meter", "ref": "eq. 2.51, p. 101" },
-        { "eq": "error = UV²/RU (at the load); IV² RI (at the source)", "note": "the meter's own consumption in the two connections of Bild 2.26 a, b", "ref": "" },
-        { "eq": "p(t) = U I [cos φ − cos(2ωt + φ)]", "note": "the instantaneous power", "ref": "eqs. 2.62–2.63, p. 103" }
+        {
+          "eq": "α = k I₁ I₂ cos φ",
+          "tex": "\\bar{\\alpha} = k I_1 I_2 \\cos\\varphi",
+          "note": "the electrodynamic movement averages the product of its coils' currents",
+          "ref": "eqs. 2.60–2.65, p. 103"
+        },
+        {
+          "eq": "P = U I cos φ; Q = U I sin φ; S = U I",
+          "tex": "P = U I \\cos\\varphi \\qquad Q = U I \\sin\\varphi \\qquad S = U I",
+          "note": "active, reactive and apparent power",
+          "ref": "eqs. 2.56–2.58, p. 102"
+        },
+        {
+          "eq": "Pq = PV + PM",
+          "tex": "P_\\mathrm{q} = P_\\mathrm{V} + P_\\mathrm{M}",
+          "note": "the source's power splits between the load and the meter",
+          "ref": "eq. 2.51, p. 101"
+        },
+        {
+          "eq": "error = UV²/RU (at the load); IV² RI (at the source)",
+          "tex": "\\frac{U_\\mathrm{V}^2}{R_U} \\;\\text{(at the load)} \\qquad I_\\mathrm{V}^2 R_I \\;\\text{(at the source)}",
+          "note": "the meter's own consumption in the two connections of Bild 2.26 a, b",
+          "ref": ""
+        },
+        {
+          "eq": "p(t) = U I [cos φ − cos(2ωt + φ)]",
+          "tex": "p(t) = U I\\,[\\cos\\varphi - \\cos(2\\omega t + \\varphi)]",
+          "note": "the instantaneous power",
+          "ref": "eqs. 2.62–2.63, p. 103"
+        }
       ],
       "practice": [
         {
           "question": "230 V, 2 A, the current lagging by 30°. What active power does the wattmeter show?",
-          "answer": 398.4, "unit": "W", "tolerance": 0.002,
-          "compute": { "law": "activePower", "U": 230, "I": 2, "phiDeg": 30 },
+          "answer": 398.4,
+          "unit": "W",
+          "tolerance": 0.002,
+          "compute": {
+            "law": "activePower",
+            "U": 230,
+            "I": 2,
+            "phiDeg": 30
+          },
           "solution": "P = U I cos φ = 230 V · 2 A · cos 30° = 398.4 W; Q = 230 var, S = 460 VA.",
           "source": "Worked by hand from Schrüfer et al. (2012), eq. 2.56"
         },
         {
           "question": "With the voltage path of 20 kΩ clamped at the load, which error does 230 V at the load add to the reading?",
-          "answer": 2.645, "unit": "W", "tolerance": 0.002,
-          "compute": { "law": "voltagePathLoss", "U": 230, "RU": 20000 },
+          "answer": 2.645,
+          "unit": "W",
+          "tolerance": 0.002,
+          "compute": {
+            "law": "voltagePathLoss",
+            "U": 230,
+            "RU": 20000
+          },
           "solution": "The current path carries the voltage path's current too, so the meter adds U²/RU = 230²/20 000 W = 2.645 W.",
           "source": "Worked by hand from Schrüfer et al. (2012), eq. 2.51 and Bild 2.26 a"
         }
@@ -273,26 +671,64 @@
       "title": "The seismic vibration sensor",
       "idea": "A mass on a spring inside a shaking housing lags behind it: far above its natural frequency it stands still and the pick-up reads displacement, far below it follows and reads acceleration.",
       "law": "|xa/xe| = Ω²/√((1 − Ω²)² + 4D²Ω²)",
+      "lawTex": "\\left|\\frac{\\hat{x}_\\mathrm{a}}{\\hat{x}_\\mathrm{e}}\\right| = \\frac{\\Omega^2}{\\sqrt{(1 - \\Omega^2)^2 + 4D^2\\Omega^2}}",
       "lecture": "Schrüfer et al. (2012), section 7.4, pp. 369–370",
       "equations": [
-        { "eq": "c xa + w ẋa + m ẍa = −m ẍe", "note": "the mass's motion xa relative to the housing, the housing's xe", "ref": "eq. 7.108, p. 369" },
-        { "eq": "xa + 2DT ẋa + T² ẍa = −T² ẍe", "note": "the standard form, T = 1/ω₀ = √(m/c), D = w/(2√(cm))", "ref": "eq. 7.112, p. 369" },
-        { "eq": "G(jω) = Ω²/(1 − Ω² + j2DΩ), Ω = ω/ω₀", "note": "the frequency response", "ref": "eq. 7.113, p. 369" },
-        { "eq": "|G| = Ω²/√((1 − Ω²)² + 4D²Ω²); D = 1: Ω²/(1 + Ω²)", "note": "the amplitude response", "ref": "eqs. 7.114–7.115, p. 370" },
-        { "eq": "Ω ≫ 1: x̂a = x̂e; Ω ≪ 1: |G| = Ω²", "note": "displacement sensor above, accelerometer below", "ref": "eqs. 7.116–7.117, p. 370" }
+        {
+          "eq": "c xa + w ẋa + m ẍa = −m ẍe",
+          "tex": "c\\,x_\\mathrm{a} + w\\,\\dot{x}_\\mathrm{a} + m\\,\\ddot{x}_\\mathrm{a} = -m\\,\\ddot{x}_\\mathrm{e}",
+          "note": "the mass's motion xa relative to the housing, the housing's xe",
+          "ref": "eq. 7.108, p. 369"
+        },
+        {
+          "eq": "xa + 2DT ẋa + T² ẍa = −T² ẍe",
+          "tex": "x_\\mathrm{a} + 2DT\\,\\dot{x}_\\mathrm{a} + T^2\\ddot{x}_\\mathrm{a} = -T^2\\ddot{x}_\\mathrm{e}, \\qquad T = \\frac{1}{\\omega_0} = \\sqrt{\\frac{m}{c}}, \\quad D = \\frac{w}{2\\sqrt{cm}}",
+          "note": "the standard form, T = 1/ω₀ = √(m/c), D = w/(2√(cm))",
+          "ref": "eq. 7.112, p. 369"
+        },
+        {
+          "eq": "G(jω) = Ω²/(1 − Ω² + j2DΩ), Ω = ω/ω₀",
+          "tex": "G(\\mathrm{j}\\Omega) = \\frac{x_\\mathrm{a}}{x_\\mathrm{e}} = \\frac{\\Omega^2}{1 - \\Omega^2 + \\mathrm{j}2D\\Omega}, \\qquad \\Omega = \\frac{\\omega}{\\omega_0}",
+          "note": "the frequency response",
+          "ref": "eq. 7.113, p. 369"
+        },
+        {
+          "eq": "|G| = Ω²/√((1 − Ω²)² + 4D²Ω²); D = 1: Ω²/(1 + Ω²)",
+          "tex": "|G(\\mathrm{j}\\Omega)| = \\frac{\\Omega^2}{\\sqrt{(1 - \\Omega^2)^2 + 4D^2\\Omega^2}} \\qquad D = 1:\\; \\frac{\\Omega^2}{1 + \\Omega^2}",
+          "note": "the amplitude response",
+          "ref": "eqs. 7.114–7.115, p. 370"
+        },
+        {
+          "eq": "Ω ≫ 1: x̂a = x̂e; Ω ≪ 1: |G| = Ω²",
+          "tex": "\\Omega \\gg 1:\\; \\hat{x}_\\mathrm{a} = \\hat{x}_\\mathrm{e} \\qquad \\Omega \\ll 1:\\; |G| = \\Omega^2",
+          "note": "displacement sensor above, accelerometer below",
+          "ref": "eqs. 7.116–7.117, p. 370"
+        }
       ],
       "practice": [
         {
           "question": "A seismic mass of 0.1 kg hangs on a spring of 1000 N/m. What is its natural frequency?",
-          "answer": 15.92, "unit": "Hz", "tolerance": 0.002,
-          "compute": { "law": "naturalHz", "m": 0.1, "c": 1000 },
+          "answer": 15.92,
+          "unit": "Hz",
+          "tolerance": 0.002,
+          "compute": {
+            "law": "naturalHz",
+            "m": 0.1,
+            "c": 1000
+          },
           "solution": "ω₀ = √(c/m) = √(10 000) s⁻¹ = 100 s⁻¹, f₀ = ω₀/2π = 15.9 Hz.",
           "source": "Worked by hand from Schrüfer et al. (2012), eq. 7.112"
         },
         {
           "question": "With D = 1, what fraction of the housing's displacement does the sensor read at its natural frequency?",
-          "answer": 0.5, "unit": "", "tolerance": 0.001,
-          "compute": { "law": "seismicGain", "W": 1, "D": 1 },
+          "answer": 0.5,
+          "unit": "",
+          "tolerance": 0.001,
+          "compute": {
+            "law": "seismicGain",
+            "W": 1,
+            "D": 1
+          },
           "solution": "Eq. 7.115 at Ω = 1: 1/(1 + 1) = 0.5.",
           "source": "Worked by hand from Schrüfer et al. (2012), eq. 7.115"
         }
@@ -303,32 +739,71 @@
       "title": "Counting frequency and period",
       "idea": "A counter opens a gate and counts edges; the count is uncertain by one, so counting the signal for a gate T resolves 1/T, and timing one period with a clock f₀ resolves fx²/f₀.",
       "law": "fx = Nx/T; Nx = f₀ Tx; ±1 count",
+      "lawTex": "f_x = \\frac{N_x}{T} \\qquad N_x = f_0 T_x \\qquad \\pm 1 \\text{ count}",
       "lecture": "Schrüfer et al. (2012), sections 5.5–5.6, pp. 295–299",
       "equations": [
-        { "eq": "Nx = f₀ Tx", "note": "a time interval or period counted in clock periods; ±1 count", "ref": "eq. 5.7, p. 295" },
-        { "eq": "fx = Nx/T", "note": "a frequency counted in a gate of known length", "ref": "eq. 5.9, p. 297" },
-        { "eq": "fx = (f₀/N₀) Nx", "note": "the gate made by counting N₀ clock periods", "ref": "eq. 5.10, p. 298" },
-        { "eq": "fx = √(f₀/T)", "note": "where both modes resolve alike: 1/T = fx²/f₀", "ref": "" }
+        {
+          "eq": "Nx = f₀ Tx",
+          "tex": "N_x = f_0 T_x",
+          "note": "a time interval or period counted in clock periods; ±1 count",
+          "ref": "eq. 5.7, p. 295"
+        },
+        {
+          "eq": "fx = Nx/T",
+          "tex": "f_x = \\frac{N_x}{T}",
+          "note": "a frequency counted in a gate of known length",
+          "ref": "eq. 5.9, p. 297"
+        },
+        {
+          "eq": "fx = (f₀/N₀) Nx",
+          "tex": "f_x = \\frac{f_0}{N_0}\\,N_x",
+          "note": "the gate made by counting N₀ clock periods",
+          "ref": "eq. 5.10, p. 298"
+        },
+        {
+          "eq": "fx = √(f₀/T)",
+          "tex": "f_x = \\sqrt{\\frac{f_0}{T}}",
+          "note": "where both modes resolve alike: 1/T = fx²/f₀",
+          "ref": ""
+        }
       ],
       "practice": [
         {
           "question": "A counter with a 1 s gate counts a 100.3143 kHz signal. What frequency does it give?",
-          "answer": 100314, "unit": "Hz", "tolerance": 0.000001,
-          "compute": { "law": "gateResult", "fx": 100314.3, "T": 1 },
+          "answer": 100314,
+          "unit": "Hz",
+          "tolerance": 0.000001,
+          "compute": {
+            "law": "gateResult",
+            "fx": 100314.3,
+            "T": 1
+          },
           "solution": "Nx = 100 314 edges in 1 s; a 4-digit counter in overflow shows 0314. The result is 100 314 Hz ± 1 Hz.",
           "source": "Schrüfer et al. (2012), Table 5.8, p. 299"
         },
         {
           "question": "A 50 Hz signal is timed over one period with a 10 MHz clock. How fine is the resolution in frequency?",
-          "answer": 0.00025, "unit": "Hz", "tolerance": 0.01,
-          "compute": { "law": "periodResolution", "fx": 50, "f0": 10000000 },
+          "answer": 0.00025,
+          "unit": "Hz",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "periodResolution",
+            "fx": 50,
+            "f0": 10000000
+          },
           "solution": "Nx = f₀/fx = 200 000 counts, ±1, so a relative 5·10⁻⁶ and Δf = fx²/f₀ = 0.25 mHz, against 1 Hz for a 1 s gate.",
           "source": "Worked by hand from Schrüfer et al. (2012), eqs. 5.7 and 5.9"
         },
         {
           "question": "With a 10 MHz clock and a 1 s gate, below which frequency is period measurement the finer?",
-          "answer": 3162, "unit": "Hz", "tolerance": 0.001,
-          "compute": { "law": "counterCrossover", "f0": 10000000, "T": 1 },
+          "answer": 3162,
+          "unit": "Hz",
+          "tolerance": 0.001,
+          "compute": {
+            "law": "counterCrossover",
+            "f0": 10000000,
+            "T": 1
+          },
           "solution": "1/T = fx²/f₀ gives fx = √(f₀/T) = √(10⁷) Hz = 3.16 kHz.",
           "source": "Worked by hand from Schrüfer et al. (2012), eqs. 5.7 and 5.9"
         }
@@ -339,32 +814,72 @@
       "title": "Flash, successive approximation, dual slope",
       "idea": "A flash converter compares with every level at once; successive approximation weighs one bit per step; the dual slope integrates the input for a fixed time and times the reference's way back, so R, C and the clock cancel.",
       "law": "Nx = Na · ūx/U₀",
+      "lawTex": "N_x = \\frac{N_\\mathrm{a}}{U_0}\\,\\bar{u}_x",
       "lecture": "Schrüfer et al. (2012), sections 6.2–6.3, pp. 305–314",
       "equations": [
-        { "eq": "n comparators: n + 1 ranges", "note": "the parallel (flash) converter, thermometer code to Gray code", "ref": "Table 6.1, pp. 307–308" },
-        { "eq": "Ur = U₀/2, then ± U₀/4, …", "note": "successive approximation: keep a weight while ux ≥ Ur", "ref": "Bild 6.6, p. 310" },
-        { "eq": "ua(t₂) = −(1/RC) ūx (t₂ − t₁)", "note": "the dual slope's run-down over a fixed time", "ref": "eq. 6.11, p. 313" },
-        { "eq": "ūx Na/f = U₀ Nx/f ⇒ Nx = (Na/U₀) ūx", "note": "R, C and the clock cancel", "ref": "eqs. 6.13–6.16, pp. 313–314" }
+        {
+          "eq": "n comparators: n + 1 ranges",
+          "tex": "n \\text{ comparators: } n + 1 \\text{ ranges}",
+          "note": "the parallel (flash) converter, thermometer code to Gray code",
+          "ref": "Table 6.1, pp. 307–308"
+        },
+        {
+          "eq": "Ur = U₀/2, then ± U₀/4, …",
+          "tex": "U_\\mathrm{r} = \\frac{U_0}{2}, \\text{ then } \\pm\\frac{U_0}{4}, \\ldots",
+          "note": "successive approximation: keep a weight while ux ≥ Ur",
+          "ref": "Bild 6.6, p. 310"
+        },
+        {
+          "eq": "ua(t₂) = −(1/RC) ūx (t₂ − t₁)",
+          "tex": "u_\\mathrm{a}(t_2) = -\\frac{1}{RC}\\,\\bar{u}_x\\,(t_2 - t_1)",
+          "note": "the dual slope's run-down over a fixed time",
+          "ref": "eq. 6.11, p. 313"
+        },
+        {
+          "eq": "ūx Na/f = U₀ Nx/f ⇒ Nx = (Na/U₀) ūx",
+          "tex": "\\bar{u}_x \\frac{N_\\mathrm{a}}{f} = U_0 \\frac{N_x}{f} \\;\\Rightarrow\\; N_x = \\frac{N_\\mathrm{a}}{U_0}\\,\\bar{u}_x",
+          "note": "R, C and the clock cancel",
+          "ref": "eqs. 6.13–6.16, pp. 313–314"
+        }
       ],
       "practice": [
         {
           "question": "An 8-bit successive-approximation converter on 0–10 V converts 6.3 V. What code (as a decimal number) does it give?",
-          "answer": 161, "unit": "", "tolerance": 0,
-          "compute": { "law": "sarCode", "ux": 6.3, "U0": 10, "n": 8 },
+          "answer": 161,
+          "unit": "",
+          "tolerance": 0,
+          "compute": {
+            "law": "sarCode",
+            "ux": 6.3,
+            "U0": 10,
+            "n": 8
+          },
           "solution": "Keep 5 V (1), 7.5 too much (0), keep 6.25 (1), then 6.875, 6.5625, 6.40625, 6.328 too much (000 0), keep 6.289 (1): 1010 0001 = 161, i.e. 6.289 V.",
           "source": "Worked by hand from Schrüfer et al. (2012), section 6.2.5"
         },
         {
           "question": "A dual-slope converter runs down for Na = 1000 clock periods; U₀ = 2 V; the input is 1.234 V. What does it count?",
-          "answer": 617, "unit": "", "tolerance": 0,
-          "compute": { "law": "dualSlope", "ux": 1.234, "U0": 2, "Na": 1000 },
+          "answer": 617,
+          "unit": "",
+          "tolerance": 0,
+          "compute": {
+            "law": "dualSlope",
+            "ux": 1.234,
+            "U0": 2,
+            "Na": 1000
+          },
           "solution": "Nx = Na · ux/U₀ = 1000 · 1.234/2 = 617.",
           "source": "Worked by hand from Schrüfer et al. (2012), eq. 6.16"
         },
         {
           "question": "How many comparators does an 8-bit flash converter need?",
-          "answer": 255, "unit": "", "tolerance": 0,
-          "compute": { "law": "flashComparators", "n": 8 },
+          "answer": 255,
+          "unit": "",
+          "tolerance": 0,
+          "compute": {
+            "law": "flashComparators",
+            "n": 8
+          },
           "solution": "2⁸ = 256 ranges need 255 comparators; the 3-bit converter of Bild 6.4 has seven.",
           "source": "Worked by hand from Schrüfer et al. (2012), section 6.2.3"
         }
@@ -375,33 +890,75 @@
       "title": "Resolution and quantisation noise",
       "idea": "An n-bit converter rounds to steps of the range over 2ⁿ, an error of RMS Δu/√12 that sets its signal-to-noise ratio; a measured SNR tells how many of its bits are real.",
       "law": "SNR = 6.02 n + 1.76 dB",
+      "lawTex": "\\mathrm{SNR} = 6.02\\,n + 1.76\\,\\mathrm{dB}",
       "lecture": "Schrüfer et al. (2012), section 6.4.4, pp. 323–325; Schitter (2015), task 1.2.4",
       "equations": [
-        { "eq": "uR = udig − uan, |uR| ≤ Δu/2", "note": "the quantisation error", "ref": "eq. 6.36, p. 323" },
-        { "eq": "UR = Δu/√12", "note": "its RMS value, spread evenly over a step", "ref": "eq. 6.37, p. 323" },
-        { "eq": "SNR = 6.02 n + 10.79 dB", "note": "a full-scale DC value", "ref": "eq. 6.42, p. 324" },
-        { "eq": "SNR = 6.02 n + 1.76 dB", "note": "a full-scale sine", "ref": "eq. 6.44, p. 325" },
-        { "eq": "neff = (SNRgem − 1.76)/6.02", "note": "the effective number of bits", "ref": "eq. 6.45, p. 325" }
+        {
+          "eq": "uR = udig − uan, |uR| ≤ Δu/2",
+          "tex": "u_\\mathrm{R} = u_\\mathrm{dig} - u_\\mathrm{an}, \\qquad |u_\\mathrm{R}| \\le \\frac{\\Delta u}{2}",
+          "note": "the quantisation error",
+          "ref": "eq. 6.36, p. 323"
+        },
+        {
+          "eq": "UR = Δu/√12",
+          "tex": "U_\\mathrm{R} = \\frac{\\Delta u}{\\sqrt{12}}",
+          "note": "its RMS value, spread evenly over a step",
+          "ref": "eq. 6.37, p. 323"
+        },
+        {
+          "eq": "SNR = 6.02 n + 10.79 dB",
+          "tex": "\\mathrm{SNR} = 6.02\\,n + 10.79\\,\\mathrm{dB}",
+          "note": "a full-scale DC value",
+          "ref": "eq. 6.42, p. 324"
+        },
+        {
+          "eq": "SNR = 6.02 n + 1.76 dB",
+          "tex": "\\mathrm{SNR} = 6.02\\,n + 1.76\\,\\mathrm{dB}",
+          "note": "a full-scale sine",
+          "ref": "eq. 6.44, p. 325"
+        },
+        {
+          "eq": "neff = (SNRgem − 1.76)/6.02",
+          "tex": "n_\\mathrm{eff} = \\frac{\\mathrm{SNR}_\\mathrm{gem} - 1.76}{6.02}",
+          "note": "the effective number of bits",
+          "ref": "eq. 6.45, p. 325"
+        }
       ],
       "practice": [
         {
           "question": "What SNR does an ideal 12-bit converter give for a full-scale sine?",
-          "answer": 74, "unit": "dB", "tolerance": 0.002,
-          "compute": { "law": "snrSine", "n": 12 },
+          "answer": 74,
+          "unit": "dB",
+          "tolerance": 0.002,
+          "compute": {
+            "law": "snrSine",
+            "n": 12
+          },
           "solution": "6.02 · 12 + 1.76 = 74.0 dB.",
           "source": "Worked by hand from Schrüfer et al. (2012), eq. 6.44"
         },
         {
           "question": "A converter measures 62 dB on a full-scale sine. How many effective bits does it have?",
-          "answer": 10.0, "unit": "bit", "tolerance": 0.01,
-          "compute": { "law": "enob", "snr": 62 },
+          "answer": 10,
+          "unit": "bit",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "enob",
+            "snr": 62
+          },
           "solution": "neff = (62 − 1.76)/6.02 = 10.0 bit.",
           "source": "Worked by hand from Schrüfer et al. (2012), eq. 6.45"
         },
         {
           "question": "A 10-bit converter spans 10 V. What is the RMS value of its quantisation noise?",
-          "answer": 0.00282, "unit": "V", "tolerance": 0.01,
-          "compute": { "law": "quantisationNoise", "range": 10, "n": 10 },
+          "answer": 0.00282,
+          "unit": "V",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "quantisationNoise",
+            "range": 10,
+            "n": 10
+          },
           "solution": "Δu = 10 V/1024 = 9.77 mV; Δu/√12 = 2.82 mV.",
           "source": "Worked by hand from Schrüfer et al. (2012), eq. 6.37"
         }

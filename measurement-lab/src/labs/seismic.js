@@ -29,7 +29,7 @@ export default {
       rG.set(g < 0.01 ? g.toExponential(2) : g.toFixed(3), "", `at Ω = ${W.toPrecision(3)} (eq. 7.114)`);
       rP.set(`${(phase(W, D) * 180 / Math.PI).toFixed(0)}°`, "", "−90° at Ω = 1, −180° far above");
       rM.set(W > 3 ? "displacement sensor" : W < 0.3 ? "accelerometer" : "neither: near resonance", W >= 0.3 && W <= 3 ? "warn" : "",
-        W > 3 ? "xa follows xe (eq. 7.116): low ω0, large mass" : W < 0.3 ? "xa = Ω²·xe, proportional to acceleration (eq. 7.117)" : "the reading depends strongly on D");
+        W > 3 ? "the mass stands still, xa = −xe (eqs. 7.110, 7.116): low ω0, large mass" : W < 0.3 ? "xa = Ω²·xe, proportional to acceleration (eq. 7.117)" : "the reading depends strongly on D");
     };
     root.append(h("div", { class: "stage" }, h("div", {}, box, time), h("div", { class: "controls" },
       slider({ label: "Frequency ratio Ω = ω/ω0", unit: "", min: -2, max: 2, value: logW, step: 0.01, format: v => (10 ** v).toPrecision(3), onInput: v => { logW = v; update(); } }).el,

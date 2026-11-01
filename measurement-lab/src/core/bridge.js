@@ -11,7 +11,7 @@ export const balance = (R1, R3, R4) => R1 * R4 / R3;
  *  opposite changes in one divider (f), and the full bridge (h). */
 export const ARRANGEMENTS = {
   quarter: { name: "Quarter bridge, one active arm", signs: [0, 1, 0, 0], approx: 1 / 4 },
-  half: { name: "Half bridge, two opposite arms", signs: [-1, 1, 0, 0], approx: 1 / 2 },
+  half: { name: "Half bridge, opposite changes in one divider", signs: [-1, 1, 0, 0], approx: 1 / 2 },
   full: { name: "Full bridge, four active arms", signs: [-1, 1, 1, -1], approx: 1 },
 };
 
