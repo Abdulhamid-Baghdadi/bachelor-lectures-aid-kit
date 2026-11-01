@@ -32,7 +32,7 @@ export default {
       format: x => x.toFixed(2), onInput: x => { w[i] = x; update(); } }).el);
     root.append(h("div", { class: "stage" }, h("div", {}, box, table), h("div", { class: "controls" },
       rH.el, rL.el, rE.el, ...sliders,
-      h("p", { class: "hint" }, "The weights are scaled to sum to one. The slides' source (slide 41) gives H = 2.55, L = 2.61, η = 97.7 %. Make every weight a power of ½ and L meets H exactly. Ties are broken the same way every time, so the code does not flicker."))));
+      h("p", { class: "hint" }, "The weights are scaled to sum to one. The slides' source (slides 41 and 56) gives H = 2.55, L = 2.61, η = 97.7 %. Make every weight a power of ½ and L meets H exactly. Ties are broken the same way every time, so the code does not flicker."))));
     update();
   },
 };

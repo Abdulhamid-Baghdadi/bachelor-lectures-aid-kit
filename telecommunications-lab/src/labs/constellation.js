@@ -31,7 +31,7 @@ export default {
       choice("Modulation", SCHEMES, scheme, v => { scheme = v; update(); }),
       slider({ label: "Symbol energy over noise density Es/N0", unit: "dB", min: 0, max: 30, value: es, step: 0.5, format: v => `${v} dB`, onInput: v => { es = v; update(); } }),
       rF.el, rC.el, rS.el,
-      h("p", { class: "hint" }, "The receiver decides for the nearest point (×); a ring marks a symbol it got wrong. Gray labels (slide 6) make a neighbour's mistake cost one bit. Every scheme's mean symbol energy is the same here, so the points of 64-QAM stand much closer: it needs about 12 dB more than QPSK for the same error rate, but carries three times the bits in the same bandwidth (set 8, slides 3, 40)."))));
+      h("p", { class: "hint" }, "The receiver decides for the nearest point (×); a ring marks a symbol it got wrong. Gray labels (slide 6) make a neighbour's mistake cost one bit. Every scheme's mean symbol energy is the same here, so the points of 64-QAM stand much closer: it needs about 13.5 dB more than QPSK for a symbol error rate of 10⁻⁵ (worked from set 8, slides 18 and 37), but carries three times the bits in the same bandwidth (slide 40)."))));
     update();
   },
 };

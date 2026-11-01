@@ -107,7 +107,7 @@ export function berCounted(EbN0, noise) {
 }
 
 /** The raised-cosine spectrum by its definition (set 4, slides 23–26): flat to fN(1 − α), a half cosine down to zero at
- *  fN(1 + α), odd-symmetric about the corner frequency fN = 1/(2T0). T0 = 1, f in units of 1/T0. */
+ *  fN(1 + α), odd-symmetric about the corner frequency f_χ = 1/(2T0). T0 = 1, f in units of 1/T0. */
 export function raisedCosineSpectrum(f, alpha) {
   const fN = 0.5, a = Math.abs(f);
   if (a <= fN * (1 - alpha)) return 1;
