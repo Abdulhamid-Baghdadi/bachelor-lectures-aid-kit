@@ -2,7 +2,7 @@
 // 1 drawing unit is 1 mm; the charges sit on the middle line.
 import { chargesField, EPS0, si } from "../core/index.js";
 import { h, s, slider, readout } from "../ui/kit.js";
-import { heatmap, arrows } from "../ui/field.js";
+import { heatmap, arrows, draggable } from "../ui/field.js";
 import * as a from "../ui/art.js";
 
 const W = 460, H = 300;
@@ -31,12 +31,15 @@ export default {
       const m = at(W / 2, H / 2);
       probe.set(si(Math.hypot(m.Ex, m.Ey), "V/m"));
     };
+    const sd = slider({ label: "Distance between them", unit: "m", min: 0.04, max: 0.36, value: d / 1000, step: 0.01, onInput: v => { d = v * 1000; update(); } });
+    // The charges stay mirrored about the centre: dragging either one sets the distance between them.
+    draggable(drawing, x => { d = Math.round(Math.min(360, Math.max(40, 2 * Math.abs(x - W / 2))) / 10) * 10; sd.set(d / 1000); update(); });
     root.append(h("div", { class: "stage" }, drawing, h("div", { class: "controls" },
       slider({ label: "Charge Q1", unit: "C", min: -5e-9, max: 5e-9, value: q1, step: 0.25e-9, onInput: v => { q1 = v; update(); } }),
       slider({ label: "Charge Q2", unit: "C", min: -5e-9, max: 5e-9, value: q2, step: 0.25e-9, onInput: v => { q2 = v; update(); } }),
-      slider({ label: "Distance between them", unit: "m", min: 0.04, max: 0.36, value: d / 1000, step: 0.01, onInput: v => { d = v * 1000; update(); } }),
+      sd,
       probe.el,
-      h("p", { class: "hint" }, "Red is positive potential, blue negative. The arrows point down the slope of the potential: E = −∇ϕ. Give both charges the same sign and watch the field vanish between them."))));
+      h("p", { class: "hint" }, "Drag on the drawing to move the charges apart or together. Red is positive potential, blue negative. The arrows point down the slope of the potential: E = −∇ϕ. Give both charges the same sign and watch the field vanish between them."))));
     update();
   },
 };

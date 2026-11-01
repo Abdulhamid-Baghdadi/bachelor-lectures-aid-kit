@@ -2,7 +2,7 @@
 // a colour map, the field as arrows, and a probe you move round it.
 import { dipolePotential, dipoleField, si } from "../core/index.js";
 import { h, s, slider, readout } from "../ui/kit.js";
-import { heatmap, arrows } from "../ui/field.js";
+import { heatmap, arrows, draggable } from "../ui/field.js";
 import * as a from "../ui/art.js";
 
 const W = 460, H = 300, OX = 230, OY = 150;
@@ -31,14 +31,24 @@ export default {
       pic.replaceChildren(...background, s("circle", { cx: px, cy: py, r: 7, class: "probe" }),
         s("line", { x1: OX, y1: OY, x2: px, y2: py, class: "radius" }));
       const { Er, Etheta } = dipoleField(p, r, t);
-      rPhi.set(si(dipolePotential(p, r, t), "V")); rE.set(si(Math.hypot(Er, Etheta), "V/m"));
+      // cos 90° is not exactly 0 in floating point; show the zero the equation gives.
+      const phi = dipolePotential(p, r, t);
+      rPhi.set(si(Math.abs(phi) < 1e-12 ? 0 : phi, "V")); rE.set(si(Math.hypot(Er, Etheta), "V/m"));
     };
+    const sr = slider({ label: "Probe distance r", unit: "m", min: 0.02, max: 0.14, value: r, step: 0.005, onInput: v => { r = v; update(); } });
+    const st = slider({ label: "Probe angle θ from the axis", unit: "°", min: 0, max: 180, value: th, step: 5, format: v => `${v} °`, onInput: v => { th = v; update(); } });
+    // The probe goes where the reader points; the field is symmetric about the axis, so θ runs 0–180° on either side.
+    draggable(pic, (x, y) => {
+      const [rr, t] = polarAt(x, y);
+      r = Math.round(Math.min(0.14, Math.max(0.02, rr)) * 200) / 200;
+      th = Math.round(Math.abs(t) * 180 / Math.PI / 5) * 5;
+      sr.set(r); st.set(th); update();
+    });
     root.append(h("div", { class: "stage" }, pic, h("div", { class: "controls" },
       slider({ label: "Dipole moment p", unit: "C·m", min: 1e-13, max: 1e-11, value: p, log: true, onInput: v => { p = v; update(); } }),
-      slider({ label: "Probe distance r", unit: "m", min: 0.02, max: 0.14, value: r, step: 0.005, onInput: v => { r = v; update(); } }),
-      slider({ label: "Probe angle θ from the axis", unit: "°", min: 0, max: 180, value: th, step: 5, format: v => `${v} °`, onInput: v => { th = v; update(); } }),
+      sr, st,
       rPhi.el, rE.el,
-      h("p", { class: "hint" }, "Double r: the potential falls to a quarter and the field to an eighth, faster than a single charge. On the plane θ = 90° the potential is zero, yet the field is not."))));
+      h("p", { class: "hint" }, "Drag on the drawing to move the probe. Double r: the potential falls to a quarter and the field to an eighth, faster than a single charge. On the plane θ = 90° the potential is zero, yet the field is not."))));
     update();
   },
 };

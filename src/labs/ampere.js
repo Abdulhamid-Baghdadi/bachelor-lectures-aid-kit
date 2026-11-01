@@ -2,7 +2,7 @@
 // magnetic voltage round any circle is the current through it.
 import { wireH, si } from "../core/index.js";
 import { h, s, slider, readout } from "../ui/kit.js";
-import { arrows } from "../ui/field.js";
+import { arrows, draggable } from "../ui/field.js";
 import * as a from "../ui/art.js";
 
 const W = 460, H = 300, OX = 230, OY = 150;
@@ -27,11 +27,14 @@ export default {
       field.set(si(Hv, "A/m"));
       loop.set(si(Hv * 2 * Math.PI * r, "A"), "", `equal to the current I = ${si(Math.abs(I), "A")}, at any radius`);
     };
+    const sr = slider({ label: "Radius of the path r", unit: "m", min: 0.02, max: 0.14, value: r, step: 0.005, onInput: v => { r = v; update(); } });
+    // The path passes through the point the reader drags.
+    draggable(drawing, (x, y) => { r = Math.round(Math.min(0.14, Math.max(0.02, Math.hypot(x - OX, y - OY) / 1000)) * 200) / 200; sr.set(r); update(); });
     root.append(h("div", { class: "stage" }, drawing, h("div", { class: "controls" },
       slider({ label: "Current I", unit: "A", min: -50, max: 50, value: I, step: 1, onInput: v => { I = v; update(); } }),
-      slider({ label: "Radius of the path r", unit: "m", min: 0.02, max: 0.14, value: r, step: 0.005, onInput: v => { r = v; update(); } }),
+      sr,
       field.el, loop.el,
-      h("p", { class: "hint" }, "• is current out of the page, × into it; the field turns by the right-hand rule. H falls as 1/r while the path grows as r, so their product, the magnetic voltage, stays the current enclosed."))));
+      h("p", { class: "hint" }, "Drag on the drawing to resize the path. • is current out of the page, × into it; the field turns by the right-hand rule. H falls as 1/r while the path grows as r, so their product, the magnetic voltage, stays the current enclosed."))));
     update();
   },
 };
