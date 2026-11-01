@@ -34,7 +34,7 @@ export default {
       slider({ label: "Phase angle φ between voltage and current", unit: "°", min: -90, max: 90, value: phi, step: 1, format: v => `${v}°`, onInput: v => { phi = v; update(); } }),
       slider({ label: "Current in phase c, share of the others", unit: "", min: 0, max: 1.5, value: ic, step: 0.05, format: v => `${v.toFixed(2)}`, onInput: v => { ic = v; update(); } }),
       rP.el, rQ.el, rS.el, rR.el,
-      h("p", { class: "hint" }, "230 V and 10 A a phase. One phase's power swings at twice the frequency around U I cos φ (3-26); at φ = ±90° it averages to zero. A three-phase machine on a balanced system therefore sees a steady torque. Harmonics and distortion power are in the Signals and systems lab."))));
+      h("p", { class: "hint" }, "230 V and 10 A a phase. One phase's power swings at twice the frequency around U I cos(φ_u − φ_i) (3-26); at φ = ±90° it averages to zero. A three-phase machine on a balanced system therefore sees a steady torque. Harmonics and distortion power are in the Signals and systems lab."))));
     update();
   },
 };

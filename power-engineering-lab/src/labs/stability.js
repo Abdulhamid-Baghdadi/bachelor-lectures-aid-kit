@@ -37,7 +37,7 @@ export default {
       const cr = criticalAngle(sys) / DEG;
       rA.set(r.A1.toFixed(3), "", "∫ (P_m − P_fault) dδ from δ0 to δc: energy taken up while the line is faulted");
       rB.set(dc < dm ? r.A2.toFixed(3) : "0", "", `∫ (P_one line − P_m) dδ from δc to ${dm.toFixed(0)}°`);
-      rV.set(r.stable ? "stable" : "loses step", r.stable ? "" : "danger", r.stable ? "A2 ≥ A1: the rotor swings back" : "A1 > A2: the rotor cannot be braked, the generator slips");
+      rV.set(r.stable ? "stable" : "loses step", r.stable ? "" : "danger", r.stable ? "A2 > A1: the rotor swings back" : "A1 ≥ A2: the rotor cannot be braked, the generator slips");
       rC.set(Number.isFinite(cr) ? `${cr.toFixed(1)}°` : "none", "", `start at δ0 = ${d0.toFixed(1)}°; clear before δcr, where A1 = A2`);
     };
     root.append(h("div", { class: "stage" }, box, h("div", { class: "controls" },

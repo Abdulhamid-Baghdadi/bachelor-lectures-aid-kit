@@ -33,7 +33,7 @@ export default {
       slider({ label: "Armature voltage U_A", unit: "V", min: -500, max: 500, value: UA, step: 10, format: v => `${v} V`, onInput: v => { UA = v; update(); } }),
       slider({ label: "Field, share of rated flux Φ/Φ_N", unit: "", min: 0.33, max: 1, value: phi, step: 0.01, format: v => v.toFixed(2), onInput: v => { phi = v; update(); } }),
       rN.el, rD.el, rM.el, rP.el,
-      h("p", { class: "hint" }, "U_i = kΦ n with k = z p/a (G.30); U_A = J R_A + kΦ n in the steady state (G.38). Below rated speed the armature voltage sets the speed at constant torque; above it the field is weakened at constant power (p. 137). A negative torque is braking: the machine runs as a generator and the speed rises a little. The machine's transfer function and its control loop are in the Automation lab."))));
+      h("p", { class: "hint" }, "U_i = kΦ n with k = z p/a (G.30); U_A = J R_A + kΦ n in the steady state (G.38 with dJ/dt = 0, G.46). Below rated speed the armature voltage sets the speed at constant torque; above it the field is weakened at constant power (p. 137). A negative torque is braking: the machine runs as a generator and the speed rises a little. The machine's transfer function and its control loop are in the Automation lab."))));
     update();
   },
 };

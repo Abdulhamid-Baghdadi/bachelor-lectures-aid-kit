@@ -58,12 +58,12 @@ export function exampleNetwork(q, Uref) {
 // --- Equal-area criterion (6.4.4), per unit of the generator's rating; angles in radians.
 
 /** The two areas for a turbine power Pm, the curves' peaks before, during and after the fault, and the clearing angle
- *  δc. A1 accelerates, A2 can brake; stable while A2 ≥ A1. */
+ *  δc. A1 accelerates, A2 can brake; stable while A2 > A1 (p. 237); equal areas are the limit. */
 export function equalArea({ Pm, Ppre, Pfault, Ppost }, dc) {
   const d0 = Math.asin(Pm / Ppre), dmax = Math.PI - Math.asin(Pm / Ppost);
   const A1 = Pm * (dc - d0) + Pfault * (Math.cos(dc) - Math.cos(d0));
   const A2 = Ppost * (Math.cos(dc) - Math.cos(dmax)) - Pm * (dmax - dc);
-  return { d0, dmax, A1, A2, stable: A2 >= A1 };
+  return { d0, dmax, A1, A2, stable: A2 > A1 };
 }
 /** The critical clearing angle, where A1 = A2: cos δcr = [Pm (δmax − δ0) + Ppost cos δmax − Pfault cos δ0]/(Ppost − Pfault),
  *  derived here from the two integrals. NaN if the generator falls out of step even without a fault. */
