@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { typeset } from "../ui/math.js";
+import { typeset, scrolls } from "../ui/math.js";
 
 test("LaTeX becomes MathML with its source as annotation; display sets it as a block", () => {
   const inline = typeset(String.raw`\mathrm{e}^{\mathrm{j}\omega t}`);
@@ -42,4 +42,13 @@ test("every tex and lawTex in the labs' labs.json typesets", () => {
     for (const w of data.labs) for (const tex of [w.lawTex, ...(w.equations ?? []).map(e => e.tex)])
       if (tex !== undefined) assert.equal(typeset(tex, { display: true }).error, "", `${lab}, ${w.id}: ${tex}`);
   }
+});
+
+test("a display box is a Tab stop exactly while its equation is wider than it (WCAG 2.1.1)", () => {
+  // Right results by definition: scrolling happens only when the content is wider than the box; one pixel is
+  // rounding, not scrolling.
+  assert.equal(scrolls(640, 320), true);
+  assert.equal(scrolls(320, 320), false);
+  assert.equal(scrolls(321, 320), false);
+  assert.equal(scrolls(322, 320), true);
 });

@@ -16,6 +16,26 @@ export function typeset(tex, { display = false } = {}) {
   }
 }
 
+/** Does a box this wide hold content this wide only by scrolling? Then the keyboard must reach it (WCAG 2.1.1); one
+ *  pixel of slack, since browsers round the two widths differently. Pure, so it is tested without a layout. */
+export const scrolls = (scrollWidth, clientWidth) => scrollWidth > clientWidth + 1;
+
+// One observer for every display equation: when a box's width changes (the page lays it out, the window narrows),
+// it is a Tab stop exactly while its equation is wider than it. A box that fits adds no stop to the page.
+const watcher = typeof ResizeObserver === "function" ? new ResizeObserver(entries => {
+  for (const { target: el } of entries) {
+    if (scrolls(el.scrollWidth, el.clientWidth)) {
+      el.tabIndex = 0;
+      el.setAttribute("role", "region");
+      el.setAttribute("aria-label", "Equation, scrolls sideways");
+    } else {
+      el.removeAttribute("tabindex");
+      el.removeAttribute("role");
+      el.removeAttribute("aria-label");
+    }
+  }
+}) : null;
+
 /** An element showing tex as typeset mathematics. Inline it is a span; display: true sets it on its own line. A long
  *  equation scrolls inside its own box, never the page. If the LaTeX does not parse, the source is shown as it is with
  *  a note saying why, so a typo is seen and fixed rather than hidden. */
@@ -25,6 +45,7 @@ export function math(tex, { display = false } = {}) {
   const { markup, error } = typeset(tex, { display });
   if (!error) {
     el.innerHTML = markup;
+    if (display) watcher?.observe(el);
     return el;
   }
   el.classList.add("math-error");
