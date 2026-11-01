@@ -28,12 +28,12 @@ test("the current source: the closed form against a nodal solution, and the limi
 test("class B: the powers (2.17), (2.18) against the period integral; 78.5 % at full drive and PT,max at 0.637 UB", () => {
   for (const u of [3, 10, 15]) {
     const a = C.classBPowers(u, 15, 8), b = C.classBPowersNumeric(u, 15, 8);
-    rel(a.PL, b.PL, 1e-6, "PL"); rel(a.PS, b.PS, 1e-6, "PS");
+    rel(a.PL, b.PL, 1e-6, "PL"); rel(a.PB, b.PB, 1e-6, "PB");
   }
   near(C.classBEfficiency(15, 15), 0.785, 0.001, "η max");
   const us = Array.from({ length: 1501 }, (_, k) => k / 100), PT = us.map(u => C.classBPowers(u, 15, 8).PT);
   near(us[PT.indexOf(Math.max(...PT))] / 15, 0.637, 0.002, "worst amplitude");
-  near(Math.max(...PT) / C.classBPowers(15, 15, 8).PS, 0.32, 0.005, "0.32 PS,max");
+  near(Math.max(...PT) / C.classBPowers(15, 15, 8).PB, 0.32, 0.005, "0.32 PB,max");
 });
 
 test("the push-pull stage: class B has a dead zone, class AB follows the input closely", () => {

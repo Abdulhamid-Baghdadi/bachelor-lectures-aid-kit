@@ -43,21 +43,21 @@ export function sourceRNodal(Ia, { UA, beta, RE, UT }) {
 
 /** Class B efficiency η = (π/4) Ûa/UB (2.19), at most 78.5 % (2.20). */
 export const classBEfficiency = (ua, UB) => Math.PI / 4 * ua / UB;
-/** Class B powers for a sine of amplitude Ûa into RL: PL = Ûa²/(2RL) (2.17), PS = 2 UB Ûa/(π RL) (2.18), and both
- *  transistors' loss PT = PS − PL (2.21). */
+/** Class B powers for a sine of amplitude Ûa into RL: PL = Ûa²/(2RL) (2.17), PB = 2 UB Ûa/(π RL) (2.18), and both
+ *  transistors' loss PT = PB − PL (2.21). */
 export function classBPowers(ua, UB, RL) {
-  const PL = ua * ua / (2 * RL), PS = 2 * UB * ua / (Math.PI * RL);
-  return { PL, PS, PT: PS - PL };
+  const PL = ua * ua / (2 * RL), PB = 2 * UB * ua / (Math.PI * RL);
+  return { PL, PB, PT: PB - PL };
 }
 
-/** Second route: PS and PL by integrating the supply and load power over one period of the sine (N steps). */
+/** Second route: PB and PL by integrating the supply and load power over one period of the sine (N steps). */
 export function classBPowersNumeric(ua, UB, RL, N = 20000) {
-  let PS = 0, PL = 0;
+  let PB = 0, PL = 0;
   for (let k = 0; k < N; k++) {
     const u = ua * Math.sin(2 * Math.PI * (k + 0.5) / N), i = u / RL;
-    PS += UB * Math.abs(i) / N; PL += u * i / N;
+    PB += UB * Math.abs(i) / N; PL += u * i / N;
   }
-  return { PL, PS, PT: PS - PL };
+  return { PL, PB, PT: PB - PL };
 }
 
 /** The complementary emitter follower's output for an input ue: the npn conducts Is e^((ue + Ubias/2 − ua)/UT), the pnp

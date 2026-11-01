@@ -101,7 +101,7 @@ export const fermi = (E, EF, T) => 1 / (1 + Math.exp((E - EF) / thermal(T)));
 export const boltzmann = (E, EF, T) => Math.exp(-(E - EF) / thermal(T));
 
 /** The intrinsic density against temperature: ni² = NC NV exp(−Eg/kT) (3.1.20) with NC, NV ∝ T^(3/2) (3.1.17),
- *  scaled to the table's ni at 300 K; Eg held at its 300 K value (the script notes it falls with T, p. 89). */
+ *  scaled to the table's ni at 300 K; Eg held at its 300 K value (the script shows it falls with T, figure 3.2.2, p. 90). */
 export const intrinsic = (T, m = SI) => m.ni * (T / 300) ** 1.5 * Math.exp(-m.Eg / (2 * K / Q) * (1 / T - 1 / 300));
 
 /** Electron and hole densities with all dopants ionised: mass action n p = ni² and neutrality (3.1.23). */
@@ -195,16 +195,16 @@ export function injectedNumeric(d0, L, W, n = 2000) {
 export const wavelength = Ev => H * C0 / (Ev * Q);
 
 /** Direct absorption with quasi-Fermi levels (4.2.8): α/σ ∝ √(ħω − Eg) (4.2.4) times fv(E1) − fc(E2), with E1, E2
- *  from (4.2.3). Energies in eV from the valence band edge; split = EFc − EC = EV − EFv (taken equal here). Returns a
+ *  from p. 114 (the script misprints E2 with a minus). Energies in eV from the valence band edge; split = EFc − EC = EV − EFv (taken equal here). Returns a
  *  relative absorption: negative is gain. */
 export function absorption(hw, { Eg, mn, mp, T, split }) {
   if (hw <= Eg) return 0;
   const mr = 1 / (1 / mn + 1 / mp), excess = hw - Eg;
-  const E1 = -mr / mp * excess, E2 = Eg + mr / mn * excess; // (4.2.3), EV = 0
+  const E1 = -mr / mp * excess, E2 = Eg + mr / mn * excess; // p. 114, EV = 0
   const fv = fermi(E1, -split, T), fc = fermi(E2, Eg + split, T);
   return Math.sqrt(excess) * (fv - fc);
 }
-/** The share of the photon's excess energy the electron takes, E2 − EC = (mr/mn)(ħω − Eg) (4.2.3). */
+/** The share of the photon's excess energy the electron takes, E2 − EC = (mr/mn)(ħω − Eg), p. 114. */
 export const electronShare = (hw, Eg, mn, mp) => 1 / (1 / mn + 1 / mp) / mn * (hw - Eg);
 
 // --- The pn junction (sections 5.2, 5.3, pp. 128–141) ---------------------------------------------------------------

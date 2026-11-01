@@ -38,7 +38,7 @@ export default {
       slider({ label: "Series resistance Rs", unit: "Ω", min: 0, max: 20, value: Rs, step: 0.5, format: v => `${v} Ω`, onInput: v => { Rs = v; update(); } }),
       slider({ label: "Temperature T", unit: "K", min: 250, max: 400, value: T, step: 5, format: v => `${v} K`, onInput: v => { T = v; update(); } }),
       rS.el, rI.el, rB.el,
-      h("p", { class: "hint" }, `Silicon p⁺n diode, NA = ${NA.toExponential(0)}, ND = ${ND.toExponential(0)} cm⁻³, τ = 1 µs, area 0.01 mm². On the logarithmic axis the ideal diode is a straight line, 60 mV a decade; the resistance bends it over at high current. Warm it 10 K: at fixed voltage the current rises by about half, at fixed current the voltage falls about 2 mV/K.`))));
+      h("p", { class: "hint" }, `Silicon p⁺n diode, NA = ${NA.toExponential(0)}, ND = ${ND.toExponential(0)} cm⁻³, τ = 1 µs, area 0.01 mm². On the logarithmic axis the ideal diode is a straight line, 60 mV a decade; the resistance bends it over at high current. Warm it 10 K: at fixed voltage the current nearly doubles (the script's 5 % per kelvin at 0.7 V, (5.3.17), and the T³ of ni² on top); at fixed current the voltage falls about 2 mV/K.`))));
     update();
   },
 };
