@@ -23,6 +23,7 @@
   .lab:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
   .lab h2 { margin: 0; font-size: 1.25rem; color: var(--accent); }
   .lab p { margin: 0; }
+  .note { margin: 0 0 8px; padding: 12px 16px; border-radius: 8px; background: var(--panel); border: 1px solid var(--line); border-left: 6px solid var(--accent); max-width: 80ch; }
   .lab .courses { color: var(--muted); font-size: 0.95rem; }
   .lab img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); }
   .lab .dark { display: none; }
@@ -34,11 +35,12 @@
 <header class="top">
   <div>
     <h1>Bachelor lectures aid kit</h1>
-    <p>Interactive labs for TU Wien Bachelor lectures. Each lab fuses two or three courses, so the same idea is met once.</p>
+    <p>An aid kit for the Bachelor programme Electrical Engineering and Information Technology (Elektrotechnik und Informationstechnik) at TU Wien: interactive labs built from the lecture notes, slides and exercises of courses taken from 2014 to 2019. Each lab fuses two or three courses, so the same idea is met once. Open a lab; its "← Aid kit home" link brings you back here.</p>
   </div>
   <button id="theme" type="button">Light or dark</button>
 </header>
 <main>
+  <p class="note" role="note"><strong>Please note:</strong> the material dates from 2014 to 2019. Courses, their content, their numbering and the curriculum may have changed since; check the current course pages at TU Wien. This is a personal learning aid, not official TU Wien material.</p>
   <div class="labs">
     <a class="lab" href="Electromagnetism/" data-family="waves">
       <h2>Electrodynamics Lab</h2>
