@@ -1,6 +1,6 @@
 # Electrodynamics Lab
 
-Twenty-six key equations of electrodynamics and wave propagation to play with in the browser, from Maxwell's equations to transmission lines,
+Twenty-eight key equations of electrodynamics and wave propagation to play with in the browser, from Maxwell's equations to transmission lines,
 each with its full equation set and its number in the lecture notes of Prechtl (2010), *Vorlesungen über
 Elektrodynamik*, TU Wien.
 
@@ -17,7 +17,7 @@ Elektrodynamik*, TU Wien.
 | 3 Static and stationary fields | point charge and potential, Laplace equation (solved on a grid), electric dipole, charge relaxation, Biot–Savart formula |
 | 4 Induction | skin effect |
 | 5 Electromagnetic waves | wave speed, plane wave, Hertz dipole, transmission line |
-| Wave propagation, after Lasser (2012) | polarisation, plane wave in a lossy medium, reflection and refraction (Fresnel, Brewster), rectangular waveguide, microstrip line, Fresnel zones, link budget, radar equation |
+| Wave propagation, after Lasser (2012) | polarisation, plane wave in a lossy medium, reflection and refraction (Fresnel, Brewster), rectangular waveguide, microstrip line, Fresnel zones, link budget, radar equation, fading in space, frequency-selective fading |
 
 The first four rows follow Prechtl (2010); the last follows the TU Wien wave propagation notes, *Wellenausbreitung*,
 which treat the engineering side more exactly: complex permittivity, reflection by polarisation, waveguide modes, link
@@ -63,4 +63,4 @@ Plain JavaScript modules, no build step. Layers and their tests: [ARCHITECTURE.m
   TU Wien from 2010, with their answers from its worked solutions.
 - The wave propagation labs add eight exercises from that course's exercise part, the Übungsteil of October 2011: six
   with the answers of its worked solutions, and two from the airport radar exercise, for which it prints no number,
-  worked by hand. Its other numerical exercises (multipath, a partly filled guide) fit no lab's model and are left out.
+  worked by hand. Five more (multipath, exercises 24 and 25) sit in the two fading labs; the partly filled guides (10, 27) fit no lab and are left out.

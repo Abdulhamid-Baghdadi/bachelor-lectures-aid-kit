@@ -92,4 +92,21 @@ export const fromdB = x => 10 ** (x / 10);
 export const radar = (Ps, G, sigma, f, d) => Ps * sigma * G * G * (C0 / f / (4 * Math.PI)) ** 2 / (4 * Math.PI * d ** 4);
 export const plateRCS = (A, lambda) => 4 * Math.PI * A * A / lambda ** 2;
 export const sphereRCS = r => Math.PI * r * r;
+/** Multipath, the two-path model (pp. 145–146): h(τ) = A1 δ(τ − τ1) + A2 δ(τ − τ2) (13.2), so
+ *  |H(jω)| = √(A1² + A2² + 2A1A2 cos ωΔτ) (13.4). Its notches repeat every 1/Δτ in frequency, and the deepest is
+ *  (A1 − A2)/(A1 + A2) of the peak. */
+export const twoPath = (A1, A2, f, dtau) => Math.sqrt(A1 * A1 + A2 * A2 + 2 * A1 * A2 * Math.cos(2 * Math.PI * f * dtau));
+export const fadeDepth = (A1, A2) => Math.abs(A1 - A2) / (A1 + A2);
+
+/** Doppler shift Δf_D = −(v/λ) cos γ (13.12), γ between the motion and the wave's direction of travel. */
+export const doppler = (f, v, gamma) => -f * v / C0 * Math.cos(gamma);
+/** Two plane waves meeting at an angle φ make a standing pattern; across it the fades lie λ/(2 sin(φ/2)) apart, and a
+ *  receiver moving at v through it fades at the difference of the two Doppler shifts (p. 151). */
+export const fadeSpacing = (lambda, phi) => lambda / (2 * Math.sin(phi / 2));
+/** The field of two plane waves at a point (x, y): one along +x, the other turned by φ; amplitudes A1, A2. */
+export function twoWaveField(A1, A2, lambda, phi, x, y) {
+  const k = 2 * Math.PI / lambda, p = k * (x * Math.cos(phi) + y * Math.sin(phi)) - k * x;
+  return Math.hypot(A1 + A2 * Math.cos(p), A2 * Math.sin(p));
+}
+
 export { deg };

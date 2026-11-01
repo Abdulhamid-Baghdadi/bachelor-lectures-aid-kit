@@ -83,6 +83,29 @@ test("link: L_ISO at 1 GHz over 1 km is 92.4 dB (12.10, hand-checked)", () => {
   near(F.dB(l.Pe), F.dB(10) + 30 + 30 - l.Liso, 1e-12);
 });
 
+test("two-path channel: notches every 1/Δτ, depth (A1 − A2)/(A1 + A2) (13.4)", () => {
+  const dtau = 20e-9;
+  near(F.twoPath(1, 0.7943, 1 / (2 * dtau), dtau), 1 - 0.7943, 1e-9);
+  near(F.twoPath(1, 0.7943, 1 / dtau, dtau), 1 + 0.7943, 1e-9);
+  near(20 * Math.log10(F.fadeDepth(1, 10 ** (-2 / 20))), -18.82, 1e-3);
+});
+
+test("Doppler: 900 MHz at 60 km/h shifts by 50 Hz, the notes' exercise (13.11, p. 150)", () => {
+  near(Math.abs(F.doppler(900e6, 60 / 3.6, 0)), 50.03, 1e-3);
+  assert.ok(Math.abs(F.doppler(900e6, 60 / 3.6, Math.PI / 2)) < 1e-12);
+});
+
+test("fading in space: the pattern's fades lie λ/(2 sin(φ/2)) apart, as its field says (p. 151)", () => {
+  const lam = F.C0 / 900e6, phi = 45 * deg, s = F.fadeSpacing(lam, phi);
+  near(s, 0.4352, 1e-3);
+  // Moving along the bisector's normal, the field repeats with that spacing: find two minima numerically.
+  const ux = -Math.sin(phi / 2), uy = Math.cos(phi / 2);
+  const along = t => F.twoWaveField(1, 0.8, lam, phi, t * ux, t * uy);
+  const mins = [];
+  for (let k = 1; k < 3000; k++) { const t = k * 1e-3; if (along(t) < along(t - 1e-3) && along(t) < along(t + 1e-3)) mins.push(t); }
+  near(mins[1] - mins[0], s, 5e-3);
+});
+
 test("radar: (12.16) with G_s = G_e is (12.17), and doubling d costs 12 dB (p. 143)", () => {
   const Ps = 1e3, G = 1000, s = 1, f = 3e9, d = 1e4, lam = F.C0 / f;
   const via16 = Ps * G * s / (4 * Math.PI * d * d) ** 2 * lam * lam / (4 * Math.PI) * G;

@@ -56,6 +56,13 @@ const LAWS = {
   },
   // One-way link (12.9) against the noise k T B: P_s = SNR + k T B − G_s − G_e + L_ISO, all in dB; returned in W.
   linkPower: q => P.fromdB(P.dB(q.snr * q.k * q.T * q.B) - q.Gs - q.Ge + P.link(1, 1, 1, q.f, q.d).Liso),
+  // Multipath, Lasser (2012) chapter 13.
+  fadeSpacing: q => P.fadeSpacing(F.C0 / q.f, q.phi * Math.PI / 180),
+  fadeRate: q => q.v / P.fadeSpacing(F.C0 / q.f, q.phi * Math.PI / 180),
+  fadeDepthdB: q => 20 * Math.log10(P.fadeDepth(1, 10 ** (-q.ddB / 20))),
+  dopplerShift: q => Math.abs(P.doppler(q.f, q.v, 0)),
+  notchSpacing: q => 1 / q.dtau,
+  isiRate: q => 1 / (2 * q.dtau),
   // Monostatic range from (12.17) where the echo meets SNR k T B.
   radarRange: q => {
     const Pmin = q.snr * q.k * q.T * q.B, Ps = P.fromdB(q.PsdBW), G = P.fromdB(q.GdBi);

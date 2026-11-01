@@ -26,6 +26,9 @@ import microstrip from "./microstrip.js";
 import fresnelzone from "./fresnelzone.js";
 import friis from "./friis.js";
 import radar from "./radar.js";
+import fading from "./fading.js";
+import delayspread from "./delayspread.js";
 
 export const labs = [gauss, monopole, faraday, ampere, continuity, materials, poynting, lorentz, coulomb, laplace, dipole,
-  relaxation, biotsavart, skin, speed, planewave, hertz, line, polarisation, lossy, fresnel, waveguide, microstrip, fresnelzone, friis, radar];
+  relaxation, biotsavart, skin, speed, planewave, hertz, line, polarisation, lossy, fresnel, waveguide, microstrip, fresnelzone, friis, radar,
+  fading, delayspread];

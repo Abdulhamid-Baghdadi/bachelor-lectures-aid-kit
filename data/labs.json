@@ -136,6 +136,17 @@
         "friis",
         "radar"
       ]
+    },
+    {
+      "course": "Wave propagation",
+      "number": 13,
+      "pages": "pp. 145–151",
+      "title": "Multipath propagation",
+      "family": "propagation",
+      "labs": [
+        "fading",
+        "delayspread"
+      ]
     }
   ],
   "labs": [
@@ -1655,6 +1666,163 @@
           },
           "solution": "Noise k T B = 3.2 × 10⁻¹³ W = −124.9 dBW, so the echo must reach −111.9 dBW. From (12.17) in dB: 40 log d = 44 + 80 + 20 + 20 log 0.107 − 30 log 4π + 111.9 = 203.5, d = 122 km.",
           "source": "Wave propagation exercise collection (Übungsteil, 5th edition, October 2011), exercise 26, p. 50; the collection prints no number, answer worked by hand"
+        }
+      ]
+    },
+    {
+      "id": "fading",
+      "title": "Fading in space",
+      "idea": "Two waves crossing at an angle build a pattern of strong and weak field; a moving receiver drives through its holes.",
+      "law": "λ_S = λ / (2 sin(φ/2))    depth (A1 − A2)/(A1 + A2)    Δf_D = −(v/λ) cos γ",
+      "lecture": "Lasser (2012), pp. 145–151",
+      "equations": [
+        {
+          "eq": "ℰ(t) = E0 cos(ωt − kd)",
+          "note": "the wave after a path d",
+          "ref": "(13.9)"
+        },
+        {
+          "eq": "ℰ(t) = E0 cos(2πt [f − v/λ] − kd0)",
+          "note": "the path grows at speed v",
+          "ref": "(13.10)"
+        },
+        {
+          "eq": "Δf_D = −v/λ = −f v/c",
+          "note": "Doppler shift, moving straight away",
+          "ref": "(13.11)"
+        },
+        {
+          "eq": "Δf_D = −(v/λ) cos γ",
+          "note": "moving at an angle γ to the wave",
+          "ref": "(13.12)"
+        },
+        {
+          "eq": "fade rate = |Δf_D,1 − Δf_D,2|",
+          "note": "the beat of two Doppler-shifted carriers",
+          "ref": "p. 151"
+        },
+        {
+          "eq": "λ_S = λ / (2 sin(φ/2))",
+          "note": "distance between fades across the pattern of two waves at angle φ (derived, as in exercise 24)",
+          "ref": ""
+        },
+        {
+          "eq": "(A1 − A2)/(A1 + A2)",
+          "note": "fade depth: the weakest field against the strongest (derived)",
+          "ref": ""
+        }
+      ],
+      "practice": [
+        {
+          "question": "Exercise 24: at 900 MHz the signal arrives from two directions 45° apart, 2 dB different. How far apart are the fades across the pattern?",
+          "answer": 0.435,
+          "unit": "m",
+          "compute": {
+            "law": "fadeSpacing",
+            "f": 900000000.0,
+            "phi": 45
+          },
+          "solution": "λ = c0/f = 0.333 m; λ_S = λ/(2 sin(φ/2)) = 0.333 m / (2 sin 22.5°) = 0.435 m.",
+          "source": "Wave propagation exercise collection (Übungsteil, 5th edition, October 2011), exercise 24; result from its worked solution, p. 46"
+        },
+        {
+          "question": "The car drives across the pattern at 60 km/h. How many fades per second?",
+          "answer": 38.3,
+          "unit": "1/s",
+          "compute": {
+            "law": "fadeRate",
+            "f": 900000000.0,
+            "phi": 45,
+            "v": 16.667
+          },
+          "solution": "v/λ_S = 16.67 m/s / 0.435 m = 38.3 per second; driving along the stripes it would be zero.",
+          "source": "Wave propagation exercise collection (Übungsteil, 5th edition, October 2011), exercise 24; result from its worked solution, p. 47"
+        },
+        {
+          "question": "How deep are the fades, in dB, when the two waves differ by 2 dB?",
+          "answer": -18.8,
+          "unit": "dB",
+          "compute": {
+            "law": "fadeDepthdB",
+            "ddB": 2
+          },
+          "solution": "E2 = 10^(−2/20) = 0.794 E1; (E1 − E2)/(E1 + E2) = 0.1146, which is −18.8 dB.",
+          "source": "Wave propagation exercise collection (Übungsteil, 5th edition, October 2011), exercise 24; result from its worked solution, p. 47"
+        },
+        {
+          "question": "The notes' exercise: how large is the Doppler shift at 900 MHz and 60 km/h?",
+          "answer": 50,
+          "unit": "Hz",
+          "compute": {
+            "law": "dopplerShift",
+            "f": 900000000.0,
+            "v": 16.667
+          },
+          "solution": "Δf_D = f v/c = 900 MHz × 16.67 m/s / 299 792 458 m/s = 50 Hz.",
+          "source": "Lasser (2012), exercise on p. 150; worked by hand from (13.11)"
+        }
+      ]
+    },
+    {
+      "id": "delayspread",
+      "title": "Frequency-selective fading",
+      "idea": "Echoes arriving later cut regular notches into the channel's spectrum; how far apart they lie decides whether a signal is narrowband or wideband.",
+      "law": "|H(jω)| = √(A1² + A2² + 2A1A2 cos ωΔτ)    notches every 1/Δτ",
+      "lecture": "Lasser (2012), pp. 145–146",
+      "equations": [
+        {
+          "eq": "τ1 = d1/c,  τ2 = d2/c",
+          "note": "the delays of the two paths",
+          "ref": "(13.1)"
+        },
+        {
+          "eq": "h(τ) = A1 δ(τ − τ1) + A2 δ(τ − τ2)",
+          "note": "impulse response",
+          "ref": "(13.2)"
+        },
+        {
+          "eq": "H(jω) = A1 e^(−jωτ1) + A2 e^(−jωτ2)",
+          "note": "transfer function",
+          "ref": "(13.3)"
+        },
+        {
+          "eq": "|H(jω)| = √(A1² + A2² + 2A1A2 cos ωΔτ),  Δτ = τ2 − τ1",
+          "note": "",
+          "ref": "(13.4)"
+        },
+        {
+          "eq": "ΔB = 1/Δτ",
+          "note": "distance between notches (derived from (13.4))",
+          "ref": ""
+        },
+        {
+          "eq": "symbol rate ≤ 1/(2Δτ)",
+          "note": "strong ISI from half a symbol of delay, the collection's working rule",
+          "ref": "Übungsteil, p. 48"
+        }
+      ],
+      "practice": [
+        {
+          "question": "Exercise 25: indoors the longest and shortest paths differ by Δτ = 20 ns. How far apart are the notches in frequency?",
+          "answer": 50000000.0,
+          "unit": "Hz",
+          "compute": {
+            "law": "notchSpacing",
+            "dtau": 2e-08
+          },
+          "solution": "ΔB = 1/Δτ = 1/20 ns = 50 MHz: a 10 MHz channel is five times narrower and sees at most one notch.",
+          "source": "Wave propagation exercise collection (Übungsteil, 5th edition, October 2011), exercise 25; result from its worked solution, p. 48"
+        },
+        {
+          "question": "Above what symbol rate must one expect strong intersymbol interference?",
+          "answer": 25000000.0,
+          "unit": "Bd",
+          "compute": {
+            "law": "isiRate",
+            "dtau": 2e-08
+          },
+          "solution": "Strong ISI from a delay of half a symbol: the shortest symbol is 2Δτ = 40 ns, so at most 25 MBd.",
+          "source": "Wave propagation exercise collection (Übungsteil, 5th edition, October 2011), exercise 25; result from its worked solution, p. 48"
         }
       ]
     }
