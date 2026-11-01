@@ -4,7 +4,7 @@ import { s } from "./kit.js";
 
 const W = 520, H = 270, L = 56, R = 12, T = 34, B = 50;
 
-/** lines: [{ x: [], y: [], name, cls }]; marks: [{ x, y, shape: "x" | "o" | "dot", name }]; ranges from the data
+/** lines: [{ x: [], y: [], name, cls, stem }]; marks: [{ x, y, shape: "x" | "o" | "dot", name }]; ranges from the data
  *  unless given. */
 export function lineChart({ lines, marks = [], xLabel, yLabel, xMin, xMax, yMin, yMax, label,
                             xFormat = v => v.toFixed(0), yFormat = v => String(Number(v.toFixed(2))) }) {
@@ -29,9 +29,16 @@ export function lineChart({ lines, marks = [], xLabel, yLabel, xMin, xMax, yMin,
     ...ticks, ...zeroX,
     s("line", { x1: L, y1: zeroY, x2: W - R, y2: zeroY, class: "axis" }),
     s("line", { x1: L, y1: T, x2: L, y2: H - B, class: "axis" }),
-    ...lines.map(l => s("polyline", { points: l.x.map((x, k) => [x, l.y[k]]).filter(([x, y]) => Number.isFinite(x) && Number.isFinite(y))
-                                                .map(([x, y]) => `${cx(x).toFixed(1)},${cy(y).toFixed(1)}`).join(" "),
-                                      class: `series ${l.cls ?? ""}`, fill: "none" })),
+    // A sequence (stem: true) is drawn as stems from zero with a dot on each, a signal as a line: the two never look alike.
+    ...lines.map(l => {
+      const points = l.x.map((x, k) => [x, l.y[k]]).filter(([x, y]) => Number.isFinite(x) && Number.isFinite(y));
+      return l.stem
+        ? s("g", { class: `stems ${l.cls ?? ""}` }, ...points.flatMap(([x, y]) => [
+            s("line", { x1: cx(x).toFixed(1), y1: py(Math.max(y0, Math.min(y1, 0))).toFixed(1), x2: cx(x).toFixed(1), y2: cy(y).toFixed(1) }),
+            s("circle", { cx: cx(x).toFixed(1), cy: cy(y).toFixed(1), r: 3.2 })]))
+        : s("polyline", { points: points.map(([x, y]) => `${cx(x).toFixed(1)},${cy(y).toFixed(1)}`).join(" "),
+                          class: `series ${l.cls ?? ""}`, fill: "none" });
+    }),
     ...marks.filter(m => Number.isFinite(m.x) && Number.isFinite(m.y)).map(m => mark(cx(m.x), cy(m.y), m.shape, m.cls)),
     s("text", { x: L, y: H - B + 18, class: "tick" }, xFormat(x0)),
     s("text", { x: W - R, y: H - B + 18, class: "tick", "text-anchor": "end" }, xFormat(x1)),

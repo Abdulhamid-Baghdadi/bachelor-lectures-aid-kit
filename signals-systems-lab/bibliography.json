@@ -1,0 +1,35 @@
+{
+  "format": "design-rules bibliography",
+  "version": 1,
+  "about": "The sources of this project's subject matter (signals and systems), apart from the design rules' bibliography, which keeps the design principles.",
+  "entries": [
+    {
+      "key": "prechtl2010",
+      "authors": [
+        "Prechtl, A."
+      ],
+      "year": 2010,
+      "title": "Vorlesungen über Signale und Systeme 1",
+      "venue": "Lecture notes, Institute of Electrodynamics, Microwave and Circuit Engineering, TU Wien",
+      "backs": "The continuous-time labs, by section and page; section titles and page numbers from its table of contents.",
+      "checked": {
+        "how": "record",
+        "date": "2026-11-01"
+      }
+    },
+    {
+      "key": "doblinger2015",
+      "authors": [
+        "Doblinger, G."
+      ],
+      "year": 2015,
+      "title": "Zeitdiskrete Signale und Systeme: Eine Einführung in die grundlegenden Methoden der digitalen Signalverarbeitung, 3rd edition",
+      "venue": "Book, the author, TU Wien",
+      "backs": "The discrete-time labs, by section and page; the windows, the bilinear transform and multirate.",
+      "checked": {
+        "how": "record",
+        "date": "2026-11-01"
+      }
+    }
+  ]
+}

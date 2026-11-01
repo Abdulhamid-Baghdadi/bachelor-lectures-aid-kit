@@ -289,3 +289,8 @@ table.eqs .ref { white-space: nowrap; font-variant-numeric: tabular-nums; color:
 /* A course heading above its chapters, where a lab fuses two courses. */
 .course-title { font-size: 1.35rem; margin: 26px 0 0; padding-bottom: 4px; border-bottom: 2px solid var(--line); }
 .course-title .source { color: var(--muted); font-weight: 400; font-size: 0.95rem; }
+
+/* Sequences: stems with a dot, in the series' colour (lineChart's stem: true). */
+.stems line { stroke: var(--accent); stroke-width: 2; } .stems circle { fill: var(--accent); }
+.stems.second line { stroke: var(--second); } .stems.second circle { fill: var(--second); }
+.stems.faint line { stroke: var(--muted); } .stems.faint circle { fill: var(--muted); }

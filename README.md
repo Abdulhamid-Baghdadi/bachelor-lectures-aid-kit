@@ -12,7 +12,7 @@ The main task in every lab, recorded from the Electrodynamics Lab: move a contro
 
 | Light | Dark |
 |---|---|
-| <img src="docs/light.png" alt="The start page in the light theme: two lab panels, Electrodynamics and Automation, each with its courses and a screenshot" width="420"> | <img src="docs/dark.png" alt="The start page in the dark theme: the same two lab panels" width="420"> |
+| <img src="docs/light.png" alt="The start page in the light theme: three lab panels, Electrodynamics, Automation and Signals and systems, each with its courses and a screenshot" width="420"> | <img src="docs/dark.png" alt="The start page in the dark theme: the same three lab panels" width="420"> |
 
 ## The labs
 
@@ -20,8 +20,7 @@ The main task in every lab, recorded from the Electrodynamics Lab: move a contro
 |---|---|---|
 | [Electrodynamics](Electromagnetism/README.md) | Elektrodynamik, Wellenausbreitung | Prechtl (2010); Lasser (2012) |
 | [Automation](Automation/README.md) | Automatisierung, Modellbildung | Kugi (2015); Kugi et al. (2015) |
-
-Signals and systems (SS1 and SS2) is being built and joins later (`PLAN.md`).
+| [Signals and systems](signals-systems-lab/README.md) | Signale und Systeme 1, 2 | Prechtl (2010); Doblinger (2015) |
 
 ## How to open it
 
@@ -32,7 +31,7 @@ python -m http.server 8771 --bind 127.0.0.1
 ```
 
 then <http://127.0.0.1:8771/>. The labs are ES modules, so opening `index.html` straight from the disk does not work.
-Tests, per folder: `node --test` in `kit`, `Electromagnetism` and `Automation`.
+Tests, per folder: `node --test` in `kit`, `Electromagnetism`, `Automation` and `signals-systems-lab`.
 
 ## Where your data stays
 
@@ -47,18 +46,24 @@ flowchart BT
   ku["kit/ui and kit/style.css: controls, charts, field maps, cards"]
   ec["Electromagnetism/src/core: the laws"]
   ac["Automation/src/core: LTI numerics and models"]
+  sc["signals-systems-lab/src/core: signals, transforms, filters"]
   el["Electrodynamics labs and page"]
   al["Automation labs and page"]
+  sl["Signals and systems labs and page"]
   start["index.html: start page"]
   ku --> kc
   ec --> kc
   ac --> kc
+  sc --> kc
   el --> ec
   el --> ku
   al --> ac
   al --> ku
+  sl --> sc
+  sl --> ku
   start -. links .-> el
   start -. links .-> al
+  start -. links .-> sl
 ```
 
 Arrows point from a part to what it uses. The kit is shared once; each lab imports it by relative path (`../kit/...`),

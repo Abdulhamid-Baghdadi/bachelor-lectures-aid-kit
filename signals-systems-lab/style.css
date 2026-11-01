@@ -1,0 +1,9 @@
+/* This lab's own look, after the kit's (../kit/style.css): its families' frame colours and the drawings only it has. */
+[data-family=frequency] { --frame: #6D28D9; }
+[data-family=digital] { --frame: #047857; }
+
+/* The z-plane and the FFT butterfly. */
+.chart.zplane { max-width: 280px; margin: 8px auto 0; }
+.zplane .unit { fill: none; stroke: var(--muted); stroke-width: 1.5; }
+.zplane .pole { stroke: var(--danger); stroke-width: 2.5; } .zplane .zero { fill: none; stroke: var(--accent); stroke-width: 2.5; }
+.fly { stroke: var(--muted); stroke-width: 1.2; fill: none; } .fly.on { stroke: var(--accent); stroke-width: 2.5; }
