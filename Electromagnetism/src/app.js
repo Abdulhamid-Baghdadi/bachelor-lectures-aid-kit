@@ -2,7 +2,7 @@
 // lab it teaches, a picture of the idea on each. A lab: its chapter above it, its field, its practice, and the previous
 // and next lab as small cards below. The address (#gauss) says which lab is open; none means the overview.
 // Reads the words from data/labs.json; a lab with no words there, or words with no lab, is reported, not skipped.
-import { h, practice } from "../../kit/ui/kit.js";
+import { h, practice, tabs } from "../../kit/ui/kit.js";
 import { math } from "../../kit/ui/math.js";
 import { parseSi } from "./core/index.js";
 import { labs } from "./labs/index.js";
@@ -61,27 +61,21 @@ async function start() {
     const w = words.get(id), { lecture } = order[at.get(id)];
     const prev = order[at.get(id) - 1], next = order[at.get(id) + 1];
     const body = h("div", { class: "lab" });
-    // The lab opens with its card, large: the same picture and frame as on the overview, so the two read as one.
-    const art = h("span", { class: "art", "aria-hidden": "true" });
-    art.innerHTML = code.get(id).art();
+    // The lab in tabs, so nothing waits below a long scroll. Explore first: the idea, the main law and the drawing it
+    // animates. Equations: the full set, each with what it is and where it comes from. Practise: the course's questions.
+    const items = [["Explore", h("div", {}, h("p", { class: "idea" }, w.idea),
+      h("p", { class: "law" }, w.lawTex ? math(w.lawTex, { display: true }) : w.law), body)],
+      ["Equations", h("div", {}, w.equations?.length ? h("table", { class: "eqs" }, h("tbody", {}, w.equations.map(e => h("tr", {},
+          h("td", { class: "eq" }, e.tex ? math(e.tex, { display: true }) : e.eq), h("td", { class: "note" }, e.note), h("td", { class: "ref" }, e.ref || "derived"))))) : null,
+        h("p", { class: "source" }, `Source: ${w.lecture}`))]];
+    if (w.practice.length) items.push(["Practise", h("div", { class: "practice-list" }, w.practice.map(q => practice({ ...q, parse: parseSi })))]);
+    // Previous and next as plain text links, no picture or motion: the lab's own drawing keeps the eye.
+    const step = (o, text) => o ? h("a", { href: `#${o.id}` }, text.replace("%", words.get(o.id).title)) : h("span");
     const section = h("section", { class: "panel", "data-family": lecture.family, "aria-labelledby": `title-${id}` },
       h("a", { href: "#", class: "back" }, "← All equations"),
-      h("header", { class: "hero" },
-        h("div", { class: "hero-card" }, art, h("span", { class: "plate" },
-          h("span", { class: "name" }, w.title), h("span", { class: "meta" }, `${chapterOf(lecture)} · ${family.get(lecture.family)}`))),
-        h("div", { class: "intro" },
-          h("p", { class: "eyebrow" }, `${chapterOf(lecture)} · ${lecture.pages} · ${lecture.title}`),
-          h("h2", { id: `title-${id}`, tabindex: "-1" }, w.title), h("p", { class: "idea" }, w.idea),
-          h("p", { class: "law" }, w.lawTex ? math(w.lawTex, { display: true }) : w.law), h("p", { class: "source" }, `Source: ${w.lecture}`))),
-      body,
-      // The full set for readers who know the subject: each equation with what it is and its number in the notes.
-      w.equations?.length ? h("section", { class: "equations" }, h("h3", {}, "The equations"),
-        h("table", { class: "eqs" }, h("tbody", {}, w.equations.map(e => h("tr", {},
-          h("td", { class: "eq" }, e.tex ? math(e.tex, { display: true }) : e.eq), h("td", { class: "note" }, e.note), h("td", { class: "ref" }, e.ref || "derived")))))) : null,
-      w.practice.length ? h("section", { class: "practice-list" }, h("h3", {}, "Practise"),
-        w.practice.map(q => practice({ ...q, parse: parseSi }))) : null,
-      h("nav", { class: "steps", "aria-label": "Previous and next lab" },
-        prev ? card(prev, true, "← Previous") : h("span"), next ? card(next, true, "Next →") : h("span")));
+      h("header", { class: "tab-head" }, h("p", { class: "eyebrow" }, `${chapterOf(lecture)} · ${lecture.pages} · ${lecture.title}`), h("h2", { id: `title-${id}`, tabindex: "-1" }, w.title)),
+      tabs(`${w.title}: views`, items),
+      h("nav", { class: "steps plain", "aria-label": "Previous and next lab" }, step(prev, "← %"), step(next, "% →")));
     code.get(id).mount(body);
     panels.set(id, section);
     return section;

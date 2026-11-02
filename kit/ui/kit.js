@@ -69,6 +69,36 @@ export function choice(label, options, value, onChange) {
       h("input", { type: "radio", name, value: v, checked: v === value, onchange: () => onChange(v) }), text)));
 }
 
+/** The tab a key moves to from tab i of n, after the WAI-ARIA tabs pattern: arrows wrap round, Home and End jump to
+ *  the ends; any other key leaves it where it is (null). */
+export function tabKey(key, i, n) {
+  if (key === "ArrowRight") return (i + 1) % n;
+  if (key === "ArrowLeft") return (i - 1 + n) % n;
+  if (key === "Home") return 0;
+  if (key === "End") return n - 1;
+  return null;
+}
+
+/** Tabs over one view: items [[label, content]], the first shown. Only the chosen panel is in the page's flow, so a
+ *  lab's equations and practice wait one click away instead of below a long scroll. */
+export function tabs(label, items) {
+  const id = `t${++uid}`;
+  const buttons = items.map(([text], i) => h("button", { type: "button", role: "tab", id: `${id}-tab${i}`,
+    "aria-controls": `${id}-panel${i}`, "aria-selected": i === 0 ? "true" : "false", tabindex: i === 0 ? "0" : "-1" }, text));
+  const panels = items.map(([, content], i) => h("div", { role: "tabpanel", id: `${id}-panel${i}`,
+    "aria-labelledby": `${id}-tab${i}`, class: "tabpanel", hidden: i !== 0 }, content));
+  const pick = (k, focus) => {
+    buttons.forEach((b, i) => { b.setAttribute("aria-selected", i === k ? "true" : "false"); b.tabIndex = i === k ? 0 : -1; });
+    panels.forEach((p, i) => { p.hidden = i !== k; });
+    if (focus) buttons[k].focus();
+  };
+  buttons.forEach((b, i) => {
+    b.addEventListener("click", () => pick(i, false));
+    b.addEventListener("keydown", e => { const k = tabKey(e.key, i, buttons.length); if (k !== null) { e.preventDefault(); pick(k, true); } });
+  });
+  return h("div", { class: "tabs" }, h("div", { role: "tablist", "aria-label": label, class: "tablist" }, buttons), panels);
+}
+
 /** A practice question from the course's exercise sheet: the student types an answer with its prefix ("22.5 m"),
  *  and it is right within the tolerance. The worked solution opens on request. */
 /** The placeholder of a practice answer: "Number in Hz", or "A number" when the answer has no unit ("" or "1"). */
