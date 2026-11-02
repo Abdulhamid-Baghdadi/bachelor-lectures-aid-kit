@@ -3,6 +3,7 @@
 [data-family=induction] { --frame: #047857; }
 [data-family=waves] { --frame: #6D28D9; }
 [data-family=propagation] { --frame: #92400E; }
+[data-family=example] { --frame: #334155; }
 
 /* Wave propagation labs. */
 .ray { stroke-linecap: round; } .ray.in { stroke: var(--ink); } .ray.reflected { stroke: var(--second); } .ray.transmitted { stroke: var(--neg); }

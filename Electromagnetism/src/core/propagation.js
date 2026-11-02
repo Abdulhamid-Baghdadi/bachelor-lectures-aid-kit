@@ -109,4 +109,51 @@ export function twoWaveField(A1, A2, lambda, phi, x, y) {
   return Math.hypot(A1 + A2 * Math.cos(p), A2 * Math.sin(p));
 }
 
+// --- The worked example: planning a radio link (chapters 10, 12, 13) ---
+
+/** The Fresnel integrals C(v) = ∫₀^v cos(πt²/2) dt and S(v) = ∫₀^v sin(πt²/2) dt (10.3), by Simpson's rule on steps
+ *  of at most 1/400: the integrand turns once per Δt ≈ 1/v, so this keeps every turn finely sampled up to |v| ≈ 20. */
+export function fresnelCS(v) {
+  const n = 2 * Math.max(50, Math.ceil(Math.abs(v) * 200)), h = v / n;
+  let c = 0, s = 0;
+  for (let k = 0; k <= n; k++) {
+    const t = k * h, w = k === 0 || k === n ? 1 : k % 2 ? 4 : 2, a = Math.PI * t * t / 2;
+    c += w * Math.cos(a); s += w * Math.sin(a);
+  }
+  return { C: c * h / 3, S: s * h / 3 };
+}
+/** The argument v = h √((2/λ)(1/ds + 1/de)) (10.4) of a screen edge h from the line of sight, ds from the sender and de
+ *  from the receiver. */
+export const knifeV = (h, lambda, ds, de) => h * Math.sqrt(2 / lambda * (1 / ds + 1 / de));
+/** The field behind a screen over the free-space field, E/E0 = 1/2 − e^(−jπ/4)(C(v) + jS(v))/√2 (10.2), as a complex
+ *  number. As printed, v → −∞ gives E = E0 (the path wide open) and v → +∞ the full shadow; Abb. 10.1 draws the
+ *  open side on the right, so read its axis as −v. */
+export function knifeEdge(v) {
+  const { C: c, S: s } = fresnelCS(v), r = Math.SQRT1_2;
+  // e^(−jπ/4) (C + jS) = (C + S)/√2 + j(S − C)/√2
+  return C(0.5 - r * (c + s) * r, -r * (s - c) * r);
+}
+/** The extra loss of an obstacle in dB for a clearance hc (metres, positive when the top is below the line of sight),
+ *  −20 log|E/E0| from (10.2) with v = −hc·√(…) (10.4): 6.02 dB when the top just touches the line, about 0 when the
+ *  first Fresnel zone is clear, negative where the field is slightly stronger than in free space. */
+export function obstacleLoss(hc, lambda, ds, de) {
+  const e = knifeEdge(-knifeV(hc, lambda, ds, de));
+  return -20 * Math.log10(Math.hypot(e[0], e[1]));
+}
+/** Thermal noise referred to the receiver's input, Pn = kB·290 K·B·F (12.13), in dBm: −174 dBm/Hz + B|dBHz + F|dB
+ *  (12.14) up to the rounding of kB·290 K = −173.98 dBm/Hz. */
+export const noiseDbm = (B, FdB) => 10 * Math.log10(1.38065e-23 * 290 * B * 1e3) + FdB;
+/** The level plan of 12.3 (Abb. 12.2): the transmit power needed for SNRmin at the receiver, in dBm, with the
+ *  free-space loss L_ISO (12.10), the gains and line losses (12.9), the noise (12.14), and any further losses in dB
+ *  (an obstacle, a fade margin) added to the path. kT = −174 dBm/Hz as the notes round it, unless exact is set. */
+export function levelPlan({ f, d, Gs, Ge, Lvs, Lve, F, B, SNR, extra = 0, exact = false }) {
+  const lambda = C0 / f, Liso = -20 * Math.log10(lambda / (4 * Math.PI * d));
+  const Pn = exact ? noiseDbm(B, F) : -174 + 10 * Math.log10(B) + F, PeMin = Pn + SNR;
+  const L = Lvs - Gs + Liso + extra - Ge + Lve;
+  return { lambda, Liso, Pn, PeMin, L, Ps: PeMin + L };
+}
+/** The fade margin for a second path of relative amplitude ρ = A2/A1 < 1: the deepest notch of (13.4),
+ *  |H| = A1 − A2, lies 20 log(1/(1 − ρ)) dB below the direct path alone. */
+export const fadeMargin = rho => -20 * Math.log10(1 - rho);
+
 export { deg };

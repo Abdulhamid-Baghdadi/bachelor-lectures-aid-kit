@@ -22,6 +22,10 @@
     {
       "id": "propagation",
       "name": "Wave propagation"
+    },
+    {
+      "id": "example",
+      "name": "Worked example"
     }
   ],
   "lectures": [
@@ -146,6 +150,17 @@
       "labs": [
         "fading",
         "delayspread"
+      ]
+    },
+    {
+      "course": "Wave propagation",
+      "number": "10–13",
+      "heading": "Worked example",
+      "pages": "pp. 105–108, 139–146",
+      "title": "Planning a radio link",
+      "family": "example",
+      "labs": [
+        "radiolink"
       ]
     }
   ],
@@ -1999,6 +2014,131 @@
           },
           "solution": "Strong ISI from a delay of half a symbol: the shortest symbol is 2Δτ = 40 ns, so at most 25 MBd.",
           "source": "Wave propagation exercise collection (Übungsteil, 5th edition, October 2011), exercise 25; result from its worked solution, p. 48"
+        }
+      ]
+    },
+    {
+      "id": "radiolink",
+      "title": "Planning a radio link",
+      "idea": "The course in one link: the notes' 2.4 GHz WLAN link, planned in decibels from the transmitter to the receiver's noise, then made real with a hill near the line of sight and a reflection off the ground. Each step adds its loss, and the last says how much power the link needs.",
+      "law": "Pe = Ps + Gs − L_ISO + Ge (dB)    Pn = −174 dBm/Hz + B + F    r = √(dλ/4)    E/E0 = 1/2 − e^(−jπ/4)(C(v) + jS(v))/√2",
+      "lawTex": "P_\\mathrm{s} = P_\\mathrm{e,min} + L_\\mathrm{v,s} - G_\\mathrm{s} + L_\\mathrm{ISO} - G_\\mathrm{e} + L_\\mathrm{v,e} \\qquad r = \\sqrt{\\frac{d\\lambda}{4}} \\qquad \\frac{E}{E_0} = \\frac{1}{2} - e^{-j\\frac{\\pi}{4}}\\frac{C(v) + jS(v)}{\\sqrt{2}}",
+      "lecture": "Lasser (2012), sections 10.2–10.3 (pp. 106–108), 12.2–12.3 (pp. 140–142) and 13.1 (pp. 145–146)",
+      "practice": [
+        {
+          "question": "A WLAN link at 2.4 GHz over 5.0 km of free space: antennas 15 dBi and 14 dBi, 2 dB of cable at each end, noise figure 7 dB, bandwidth 2 MHz, thermal noise only. What transmit power gives an SNR of at least 20 dB?",
+          "answer": 5,
+          "unit": "dBm",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "levelPlanPower",
+            "f": 2400000000,
+            "d": 5000,
+            "Gs": 15,
+            "Ge": 14,
+            "Lvs": 2,
+            "Lve": 2,
+            "F": 7,
+            "B": 2000000,
+            "SNR": 20
+          },
+          "solution": "L_ISO = −20 log(λ/(4πd)) = 114 dB (12.10). Pn = −174 dBm/Hz + 63 dBHz + 7 dB = −104 dBm (12.14), so Pe,min = −84 dBm. The transmission loss L = 2 − 15 + 114 − 14 + 2 = 89 dB, and Ps = −84 dBm + 89 dB = 5 dBm ≈ 3 mW.",
+          "source": "Lasser (2012), 12.3, p. 141"
+        },
+        {
+          "question": "How large is the largest diameter of the first Fresnel zone for a radio link of d = 50 km at λ = 5 cm (f = 6 GHz)?",
+          "answer": 50,
+          "unit": "m",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "fresnelMid",
+            "f": 6000000000,
+            "d": 50000
+          },
+          "solution": "At mid-path r = √(dλ/4) = √(50 000 m · 0.05 m/4) = 25 m (10.5), so D = 2r = 50 m.",
+          "source": "Lasser (2012), Aufgabe p. 107"
+        },
+        {
+          "question": "A sharp obstacle reaches exactly to the line of sight at mid-path. By how much does it lower the received power?",
+          "answer": 6,
+          "unit": "dB",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "obstacleLoss",
+            "hc": 0,
+            "f": 2400000000,
+            "d": 5000
+          },
+          "solution": "At h = 0, v = 0 (10.4) and C(0) = S(0) = 0, so E/E0 = 1/2 (10.2): the power drops by 20 log 2 = 6 dB.",
+          "source": "Lasser (2012), p. 108"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "E/E0 = 1/2 − e^(−jπ/4)(C(v) + jS(v))/√2",
+          "tex": "\\frac{E}{E_0} = \\frac{1}{2} - e^{-j\\frac{\\pi}{4}}\\frac{C(v) + jS(v)}{\\sqrt{2}}",
+          "note": "the field behind a screen",
+          "ref": "(10.2)"
+        },
+        {
+          "eq": "C(v) = ∫₀^v cos(πt²/2) dt, S(v) = ∫₀^v sin(πt²/2) dt",
+          "tex": "C(v) = \\int_0^v \\cos(\\pi t^2/2)\\,dt \\qquad S(v) = \\int_0^v \\sin(\\pi t^2/2)\\,dt",
+          "note": "the Fresnel integrals",
+          "ref": "(10.3)"
+        },
+        {
+          "eq": "v = h √((2/λ)(1/ds + 1/de))",
+          "tex": "v = h\\sqrt{\\frac{2}{\\lambda}\\left(\\frac{1}{d_s} + \\frac{1}{d_e}\\right)}",
+          "note": "the screen's distance from the line of sight, scaled",
+          "ref": "(10.4)"
+        },
+        {
+          "eq": "r = √(dλ/4)",
+          "tex": "r = \\sqrt{\\frac{d\\lambda}{4}}",
+          "note": "the first Fresnel zone at mid-path",
+          "ref": "(10.5)"
+        },
+        {
+          "eq": "Pe = Ps (λ/(4πd))² Gs Ge",
+          "tex": "P_\\mathrm{e} = P_\\mathrm{s}\\left(\\frac{\\lambda}{4\\pi d}\\right)^2 G_\\mathrm{s} G_\\mathrm{e}",
+          "note": "",
+          "ref": "(12.6)"
+        },
+        {
+          "eq": "Pe = Ps + Gs − L_ISO + Ge (in dB)",
+          "tex": "P_\\mathrm{e}|_\\mathrm{dBW} = P_\\mathrm{s}|_\\mathrm{dBW} + G_\\mathrm{s}|_\\mathrm{dBi} - L_\\mathrm{ISO}|_\\mathrm{dB} + G_\\mathrm{e}|_\\mathrm{dBi}",
+          "note": "",
+          "ref": "(12.9)"
+        },
+        {
+          "eq": "L_ISO = −20 log(λ/(4πd)) dB",
+          "tex": "L_\\mathrm{ISO}|_\\mathrm{dB} = -20\\log\\left(\\frac{\\lambda}{4\\pi d}\\right)",
+          "note": "114 dB at 2.4 GHz over 5 km",
+          "ref": "(12.10)"
+        },
+        {
+          "eq": "L_sys = L + SNR_min (dB)",
+          "tex": "L_\\mathrm{Sys}|_\\mathrm{dB} = L|_\\mathrm{dB} + SNR_\\mathrm{min}|_\\mathrm{dB}",
+          "note": "the system value",
+          "ref": "(12.11)"
+        },
+        {
+          "eq": "Pn = kB 290 K B F",
+          "tex": "P_\\mathrm{n} = k_\\mathrm{B}\\,290\\,\\mathrm{K}\\,B\\,F",
+          "note": "",
+          "ref": "(12.13)"
+        },
+        {
+          "eq": "Pn = −174 dBm/Hz + B + F (dB)",
+          "tex": "P_\\mathrm{n}|_\\mathrm{dBm} = -174|_\\mathrm{dBm/Hz} + B|_\\mathrm{dBHz} + F|_\\mathrm{dB}",
+          "note": "−104 dBm in the example",
+          "ref": "(12.14)"
+        },
+        {
+          "eq": "|H(jω)| = √(A1² + A2² + 2A1A2 cos ωΔτ)",
+          "tex": "|H(j\\omega)| = \\sqrt{A_1^2 + A_2^2 + 2A_1A_2\\cos\\omega\\Delta\\tau}",
+          "note": "two paths; the deepest notch is A1 − A2",
+          "ref": "(13.4)"
         }
       ]
     }

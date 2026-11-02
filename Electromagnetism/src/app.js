@@ -9,8 +9,10 @@ import { labs } from "./labs/index.js";
 
 const main = document.querySelector("main");
 
-/** "Chapter 3" for the electrodynamics notes; the other course's chapters carry its name, "Wave propagation 4". */
-const chapterOf = lecture => lecture.course ? `${lecture.course} ${lecture.number}` : `Chapter ${lecture.number}`;
+/** "Chapter 3" for the electrodynamics notes; the other course's chapters carry its name, "Wave propagation 4"; a
+ *  worked example its heading, "Wave propagation · Worked example". */
+const chapterOf = lecture => lecture.heading ? `${lecture.course ? `${lecture.course} · ` : ""}${lecture.heading}`
+  : lecture.course ? `${lecture.course} ${lecture.number}` : `Chapter ${lecture.number}`;
 
 function fail(message) {
   main.replaceChildren(h("p", { class: "error", role: "alert" }, message));

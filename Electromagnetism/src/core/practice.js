@@ -68,6 +68,10 @@ const LAWS = {
     const Pmin = q.snr * q.k * q.T * q.B, Ps = P.fromdB(q.PsdBW), G = P.fromdB(q.GdBi);
     return 1e3 * (P.radar(Ps, G, q.sigma, q.f, 1e3) / Pmin) ** 0.25;
   },
+  // The worked example: the level plan of 12.3, the first Fresnel zone (10.5), the screen (10.2).
+  levelPlanPower: q => P.levelPlan(q).Ps,
+  fresnelMid: q => P.fresnelRadius(F.C0 / q.f, q.d / 2, q.d / 2) * 2,
+  obstacleLoss: q => P.obstacleLoss(q.hc, F.C0 / q.f, q.d / 2, q.d / 2),
 };
 
 /** Boltzmann's constant, as the collection rounds it (1.38 × 10⁻²³ Ws/K); an exercise may give its own. */
