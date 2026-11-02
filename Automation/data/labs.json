@@ -184,6 +184,17 @@
         "transient",
         "fdm"
       ]
+    },
+    {
+      "course": "model",
+      "number": "3",
+      "heading": "Worked example",
+      "pages": "pp. 107–115",
+      "title": "Cooling a voltage regulator",
+      "family": "example",
+      "labs": [
+        "sink"
+      ]
     }
   ],
   "labs": [
@@ -2627,6 +2638,149 @@
           "tex": "\\Omega = \\frac{2}{T_a}\\tan\\left(\\frac{\\omega T_a}{2}\\right)",
           "note": "frequency warping",
           "ref": "(6.89)"
+        }
+      ]
+    },
+    {
+      "id": "sink",
+      "title": "Cooling a voltage regulator",
+      "idea": "The chapter in one device: a 5 V regulator heats up as it drops its input voltage, and its heat flows through a base plate, a layer of paste and a heat sink to the air. Model it as a thermal RC network, find the highest safe input voltage, watch it warm up, then let the input swing.",
+      "law": "P = (Ue − Ua)·Ia    Pmax = (TS,max − T∞)/Rges    G(s) = RSB + (RP(1 + sRKCK) + RK)/((1 + sRPCB)(1 + sRKCK) + sRKCB)",
+      "lawTex": "P = (U_e - U_a) I_a \\qquad P_\\mathrm{max} = \\frac{T_{S,\\mathrm{max}} - T_\\infty}{R_\\mathrm{ges}} \\qquad G(s) = R_\\mathrm{SB} + \\frac{R_P(1 + sR_KC_K) + R_K}{(1 + sR_PC_B)(1 + sR_KC_K) + sR_KC_B}",
+      "lecture": "Kugi et al. (2015), section 3.6.2 (pp. 107–113) and Beispiel 3.5 (pp. 113–115); eqs. (3.117), (3.118), (3.122)–(3.135)",
+      "practice": [
+        {
+          "question": "The paste is λ = 0.8 W/(m K) thick H = 30 µm on A = 150 mm². What is its thermal resistance RP?",
+          "answer": 0.25,
+          "unit": "K/W",
+          "compute": {
+            "law": "sinkPaste"
+          },
+          "solution": "RP = H/(λA) = 30·10⁻⁶ m/(0.8 W/(m K) · 150·10⁻⁶ m²) = 0.25 K/W (3.127).",
+          "source": "Worked by hand from (eq. 3.127)"
+        },
+        {
+          "question": "Without the heat sink (RSB = 5 K/W, RB = 60 K/W, TS,max = 403 K, T∞ = 323 K, Ua = 5 V, Ia = 0.5 A), what is the highest input voltage at steady state?",
+          "answer": 7.462,
+          "unit": "V",
+          "tolerance": 0.002,
+          "compute": {
+            "law": "sinkUeMax",
+            "withSink": false
+          },
+          "solution": "Pmax = (403 − 323) K/65 K/W = 1.231 W (3.124), Ue,max = 5 V + 1.231 W/0.5 A = 7.462 V (3.123).",
+          "source": "Kugi et al. (2015), Beispiel 3.5, p. 115"
+        },
+        {
+          "question": "With the heat sink (RK = 7 K/W) and the paste, what is the highest input voltage at steady state?",
+          "answer": 18.061,
+          "unit": "V",
+          "tolerance": 0.002,
+          "compute": {
+            "law": "sinkUeMax",
+            "withSink": true
+          },
+          "solution": "Rges = RSB + RP + RK = 12.25 K/W (3.126), Pmax = 80 K/12.25 K/W = 6.531 W, Ue,max = 5 V + 6.531 W/0.5 A = 18.061 V.",
+          "source": "Kugi et al. (2015), Beispiel 3.5, p. 115"
+        },
+        {
+          "question": "The input swings as Ue(t) = 13 V + 7 V·cos(2πft). What is the lowest frequency f that keeps the junction below TS,max with the heat sink?",
+          "answer": 0.001429,
+          "unit": "Hz",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "sinkMinFrequency",
+            "Umean": 13,
+            "Uamp": 7
+          },
+          "solution": "T̄S = 323 K + 4 W · 12.25 K/W = 372 K (3.131); the swing may add 31 K, so |G(I2πfmin)| = 31 K/3.5 W = 8.86 K/W (3.135). Solved numerically: fmin = 1.429·10⁻³ Hz.",
+          "source": "Kugi et al. (2015), Beispiel 3.5, p. 115"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "R = 1/(A k)",
+          "tex": "R = \\frac{1}{A k}",
+          "note": "a k-value as a thermal resistance",
+          "ref": "(3.117)"
+        },
+        {
+          "eq": "Ra = 1/(α A)",
+          "tex": "R_a = \\frac{1}{\\alpha A}",
+          "note": "a boundary of the third kind as a resistance",
+          "ref": "(3.118)"
+        },
+        {
+          "eq": "P = (Ue − Ua) Ia",
+          "tex": "P = (U_e - U_a) I_a",
+          "note": "the regulator's heating power",
+          "ref": "(3.122)"
+        },
+        {
+          "eq": "Ue,max = Ua + Pmax/Ia",
+          "tex": "U_{e,\\mathrm{max}} = U_a + \\frac{P_\\mathrm{max}}{I_a}",
+          "note": "",
+          "ref": "(3.123)"
+        },
+        {
+          "eq": "Pmax = (TS,max − T∞)/Rges",
+          "tex": "P_\\mathrm{max} = \\frac{T_{S,\\mathrm{max}} - T_\\infty}{R_\\mathrm{ges}}",
+          "note": "steady state: the capacities carry nothing",
+          "ref": "(3.124)"
+        },
+        {
+          "eq": "Rges = RSB + RB",
+          "tex": "R_\\mathrm{ges} = R_\\mathrm{SB} + R_B",
+          "note": "without the heat sink",
+          "ref": "(3.125)"
+        },
+        {
+          "eq": "Rges = RSB + RP + RK",
+          "tex": "R_\\mathrm{ges} = R_\\mathrm{SB} + R_P + R_K",
+          "note": "with the heat sink",
+          "ref": "(3.126)"
+        },
+        {
+          "eq": "RP = H/(λA)",
+          "tex": "R_P = \\frac{H}{\\lambda A}",
+          "note": "the paste as a plane wall; 0.25 K/W",
+          "ref": "(3.127)"
+        },
+        {
+          "eq": "CB = mB cB, CK = mK cK",
+          "tex": "C_B = m_B c_B, \\quad C_K = m_K c_K",
+          "note": "the thermal masses",
+          "ref": "(3.128)"
+        },
+        {
+          "eq": "P(t) = P̄ + P̂ cos(2πft)",
+          "tex": "P(t) = (\\bar{U}_e - U_a) I_a + \\hat{U}_e I_a \\cos(2\\pi f t)",
+          "note": "the input swinging 6 V to 20 V",
+          "ref": "(3.129)"
+        },
+        {
+          "eq": "T̄S = T∞ + P̄(RSB + RP + RK)",
+          "tex": "\\bar{T}_S = T_\\infty + \\bar{P}(R_\\mathrm{SB} + R_P + R_K)",
+          "note": "mean junction temperature",
+          "ref": "(3.131)"
+        },
+        {
+          "eq": "T̂S = |G(I2πf)| P̂",
+          "tex": "\\hat{T}_S = \\lvert G(\\mathrm{I}2\\pi f)\\rvert \\hat{P}",
+          "note": "its swing",
+          "ref": "(3.132)"
+        },
+        {
+          "eq": "G(s) = RSB + (RP(1 + sRKCK) + RK)/((1 + sRPCB)(1 + sRKCK) + sRKCB)",
+          "tex": "G(s) = R_\\mathrm{SB} + \\frac{R_P(1 + sR_KC_K) + R_K}{(1 + sR_PC_B)(1 + sR_KC_K) + sR_KC_B}",
+          "note": "from P to TS, read off Abbildung 3.24b",
+          "ref": "(3.134)"
+        },
+        {
+          "eq": "(TS,max − T̄S)/(Ûe Ia) = |G(I2πfmin)|",
+          "tex": "\\frac{T_{S,\\mathrm{max}} - \\bar{T}_S}{\\hat{U}_e I_a} = \\lvert G(\\mathrm{I}2\\pi f_\\mathrm{min})\\rvert",
+          "note": "fmin = 1.429 mHz",
+          "ref": "(3.135)"
         }
       ]
     }

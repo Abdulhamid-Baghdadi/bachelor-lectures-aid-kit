@@ -7,4 +7,5 @@ export * from "./loops.js";
 export * from "./mechanics.js";
 export * from "./heat.js";
 export * from "./drive.js";
+export * from "./sink.js";
 export { solve } from "./practice.js";
