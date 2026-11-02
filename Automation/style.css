@@ -5,6 +5,7 @@
 [data-family=state] { --frame: #A16207; }
 [data-family=mechanics] { --frame: #1E3A8A; }
 [data-family=heat] { --frame: #B91C1C; }
+[data-family=example] { --frame: #334155; }
 
 /* The Routh array. */
 .routh { border-collapse: collapse; margin: 8px 0; font-variant-numeric: tabular-nums; }

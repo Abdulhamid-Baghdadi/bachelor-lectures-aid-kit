@@ -33,7 +33,9 @@ async function start() {
   const at = new Map(order.map((entry, k) => [entry.id, k]));
   const family = new Map(data.families.map(f => [f.id, f.name]));
   const course = new Map(data.courses.map(c => [c.id, c]));
-  const where = lecture => `${course.get(lecture.course).short} ${lecture.number}`;
+  // A worked example spans chapters: it is named by its heading, not by a chapter number.
+  const chapter = lecture => lecture.heading ?? `Chapter ${lecture.number}`;
+  const where = lecture => lecture.heading ?? `${course.get(lecture.course).short} ${lecture.number}`;
 
   /** A card for a lab: its picture, its title, its lecture. The whole card is the link. */
   const card = ({ id, lecture }, small = false, label = "") => {
@@ -52,7 +54,7 @@ async function start() {
     data.courses.map(c => h("section", { class: "course" },
       h("h2", { class: "course-title" }, c.title, " ", h("span", { class: "source" }, c.source)),
       h("div", { class: "lecture-rows" }, data.lectures.filter(lecture => lecture.course === c.id && lecture.labs.some(id => at.has(id))).map(lecture => h("section", { class: "lecture-row" },
-        h("h3", {}, h("span", { class: "number" }, `Chapter ${lecture.number}`), " ", lecture.title,
+        h("h3", {}, h("span", { class: "number" }, chapter(lecture)), " ", lecture.title,
           h("span", { class: "date" }, lecture.pages)),
         h("div", { class: "cards" }, lecture.labs.filter(id => at.has(id)).map(id => card(order[at.get(id)])))))))));
 
@@ -74,7 +76,7 @@ async function start() {
     const step = (o, text) => o ? h("a", { href: `#${o.id}` }, text.replace("%", words.get(o.id).title)) : h("span");
     const section = h("section", { class: "panel", "data-family": lecture.family, "aria-labelledby": `title-${id}` },
       h("a", { href: "#", class: "back" }, "← All labs"),
-      h("header", { class: "tab-head" }, h("p", { class: "eyebrow" }, `${course.get(lecture.course).title} · Chapter ${lecture.number} · ${lecture.pages} · ${lecture.title}`), h("h2", { id: `title-${id}`, tabindex: "-1" }, w.title)),
+      h("header", { class: "tab-head" }, h("p", { class: "eyebrow" }, `${course.get(lecture.course).title} · ${chapter(lecture)} · ${lecture.pages} · ${lecture.title}`), h("h2", { id: `title-${id}`, tabindex: "-1" }, w.title)),
       tabs(`${w.title}: views`, items),
       h("nav", { class: "steps plain", "aria-label": "Previous and next lab" }, step(prev, "← %"), step(next, "% →")));
     code.get(id).mount(body);

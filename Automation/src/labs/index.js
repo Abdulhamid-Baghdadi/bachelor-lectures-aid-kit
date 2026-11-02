@@ -20,6 +20,7 @@ import tustin from "./tustin.js";
 import reach from "./reach.js";
 import placement from "./placement.js";
 import observer from "./observer.js";
+import drive from "./drive.js";
 import kinematics from "./kinematics.js";
 import collision from "./collision.js";
 import energy from "./energy.js";
@@ -34,4 +35,4 @@ import fin from "./fin.js";
 import transient from "./transient.js";
 import fdm from "./fdm.js";
 
-export const labs = [rlc, dcmotor, tank, phase, nyquistplot, bode, pt1, pt2, pid, deadtime, polezero, loop1dof, routh, nyquist, fkl, sampling, tustin, reach, placement, observer, kinematics, collision, energy, friction, smd, angular, lagrange, radiation, wall, cylinder, fin, transient, fdm];
+export const labs = [rlc, dcmotor, tank, phase, nyquistplot, bode, pt1, pt2, pid, deadtime, polezero, loop1dof, routh, nyquist, fkl, sampling, tustin, reach, placement, observer, drive, kinematics, collision, energy, friction, smd, angular, lagrange, radiation, wall, cylinder, fin, transient, fdm];

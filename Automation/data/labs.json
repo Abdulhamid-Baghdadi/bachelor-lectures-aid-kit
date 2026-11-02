@@ -44,6 +44,10 @@
     {
       "id": "heat",
       "name": "Heat transfer"
+    },
+    {
+      "id": "example",
+      "name": "Worked example"
     }
   ],
   "lectures": [
@@ -137,6 +141,17 @@
       "labs": [
         "placement",
         "observer"
+      ]
+    },
+    {
+      "course": "auto",
+      "number": "4–8",
+      "heading": "Worked example",
+      "pages": "pp. 94–97, 131–133",
+      "title": "The drive, from model to digital controller",
+      "family": "example",
+      "labs": [
+        "drive"
       ]
     },
     {
@@ -2492,6 +2507,126 @@
           "tex": "\\frac{a\\Delta t}{\\Delta x^2} \\le \\frac{1}{2}",
           "note": "stability of the explicit scheme",
           "ref": "(3.111)"
+        }
+      ]
+    },
+    {
+      "id": "drive",
+      "title": "The drive: from model to digital controller",
+      "idea": "One plant through the whole course: the notes' drive of a DC motor, a twisting shaft and a load. Model it, shape its open loop with a controller, close the loop within the actuator's range, then run the controller on a computer. The steps share one design: change ωC or Φ in step 2 and steps 3 and 4 follow.",
+      "law": "G(s) = 222.22/((1 + s/11.17)(1 + s/1321.66)(1 + 2·0.138 s/1.82 + s²/1.82²))    R(s) = VR(1 + 2·0.138 s/1.82 + s²/1.82²)/(s(1 + sTR)²)",
+      "lawTex": "G(s) = \\frac{222.22}{\\left(1 + \\frac{s}{11.17}\\right)\\left(1 + \\frac{s}{1321.66}\\right)\\left(1 + 2 \\times 0.138\\frac{s}{1.82} + \\frac{s^2}{1.82^2}\\right)} \\qquad R(s) = \\frac{V_\\mathrm{R}\\left(1 + 2 \\times 0.138\\frac{s}{1.82} + \\frac{s^2}{1.82^2}\\right)}{s(1 + sT_\\mathrm{R})^2}",
+      "lecture": "Kugi (2015), chapter 4 (pp. 94–97) and section 5.3 (pp. 131–133); eqs. (4.1)–(4.6), (5.37)–(5.45); the digital step uses (6.89), (6.90) of section 6.6",
+      "practice": [
+        {
+          "question": "The drive's model (4.3) with the parameters (4.5): what is the static gain of G from the normalised duty cycle uT,n to the load speed ω2?",
+          "answer": 222.22,
+          "unit": "rad/s",
+          "compute": {
+            "law": "driveGain"
+          },
+          "solution": "At rest the shaft carries no torque without load, so iA = 0 and uA = kA·ω: ω2 = uZW·uT,n/kA = 200/0.9 = 222.22 rad/s per unit duty cycle (4.6a).",
+          "source": "Kugi (2015), eq. (4.6a), p. 97"
+        },
+        {
+          "question": "In the design of section 5.3 the targets are ωC = 3 rad/s and Φ = 65°. What gain VR of the compensating controller (5.38) puts the crossover at ωC?",
+          "answer": 0.0141,
+          "unit": "",
+          "tolerance": 0.03,
+          "compute": {
+            "law": "driveVR",
+            "wc": 3,
+            "phi": 65
+          },
+          "solution": "VR = 1/|L2(IωC)| with L2 = 222.22/(s(1 + s/11.17)(1 + s/1321.66)(1 + sTR)²) (5.41): |L2(3I)| ≈ 222.22/(3 · 1.035 · 1.000 · 1.008) ≈ 71, so VR = 0.0141.",
+          "source": "Kugi (2015), eq. (5.41), p. 131"
+        },
+        {
+          "question": "Worked from (5.39), arg L1(3I) = −105.2°. By how much must (1 + sTR)² lower the phase, and so what is TR for Φ = 65° (in seconds)?",
+          "answer": 0.0287,
+          "unit": "s",
+          "tolerance": 0.03,
+          "compute": {
+            "law": "driveTR",
+            "wc": 3,
+            "phi": 65
+          },
+          "solution": "The loop needs Φ − 180° = −115°, so (1 + sTR)² must take 9.8°, each factor half: TR = tan(4.9°)/3 = 0.0287 s (5.40). The notes print −104.5° and so 10.5° and TR = 0.0306 s.",
+          "source": "Worked by hand from (eq. 5.39) and (eq. 5.40)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "uA = uZW·uT,n",
+          "tex": "u_A = u_\\mathrm{ZW}\\,u_{T,n}",
+          "note": "the converter as an actuator; −1 ≤ uT,n ≤ 1",
+          "ref": "(4.1), (4.2)"
+        },
+        {
+          "eq": "ẋ = A x + b uA + e ML, x = (iA, ω1, φ1 − φ2, ω2)",
+          "tex": "\\dot{\\mathbf{x}} = \\mathbf{A}\\mathbf{x} + \\mathbf{b}u_A + \\mathbf{e}M_L, \\quad \\mathbf{x} = (i_A, \\omega_1, \\varphi_1 - \\varphi_2, \\omega_2)",
+          "note": "motor, shaft of stiffness cT and load",
+          "ref": "(4.3)"
+        },
+        {
+          "eq": "G(s) = uZW kA(s dT + cT)/n(s)",
+          "tex": "G(s) = \\frac{u_\\mathrm{ZW} k_A (s d_T + c_T)}{n(s)}",
+          "note": "from the duty cycle to the load speed",
+          "ref": "(4.4b)"
+        },
+        {
+          "eq": "G(s) = 222.22/((1 + s/11.17)(1 + s/1321.66)(1 + 2·0.138 s/1.82 + s²/1.82²))",
+          "tex": "G(s) = \\frac{222.22}{\\left(1 + \\frac{s}{11.17}\\right)\\left(1 + \\frac{s}{1321.66}\\right)\\left(1 + 2 \\times 0.138\\frac{s}{1.82} + \\frac{s^2}{1.82^2}\\right)}",
+          "note": "with the parameters (4.5)",
+          "ref": "(4.6a)"
+        },
+        {
+          "eq": "ωC = 3 rad/s, Φ = 65°",
+          "tex": "\\omega_\\mathrm{C} = 3\\ \\mathrm{rad/s}, \\quad \\Phi = 65^\\circ",
+          "note": "from tr = 0.5 s and ü = 5 %",
+          "ref": "section 5.3 (B)"
+        },
+        {
+          "eq": "L1(s) = 222.22/(s(1 + s/11.17)(1 + s/1321.66))",
+          "tex": "L_1(s) = \\frac{222.22}{s\\left(1 + \\frac{s}{11.17}\\right)\\left(1 + \\frac{s}{1321.66}\\right)}",
+          "note": "the known terms of L once the pair is cancelled",
+          "ref": "(5.39)"
+        },
+        {
+          "eq": "TR = tan((arg L1(IωC) − Φ + 180°)/2)/ωC",
+          "tex": "T_\\mathrm{R} = \\frac{1}{\\omega_\\mathrm{C}}\\tan\\left(\\frac{\\arg L_1(\\mathrm{I}\\omega_\\mathrm{C}) - \\Phi + \\pi}{2}\\right)",
+          "note": "each of the two lags takes half the phase",
+          "ref": "(5.40)"
+        },
+        {
+          "eq": "VR = 1/|L2(IωC)|",
+          "tex": "V_\\mathrm{R} = \\frac{1}{\\lvert L_2(\\mathrm{I}\\omega_\\mathrm{C})\\rvert}",
+          "note": "sets the crossover; 0.0141",
+          "ref": "(5.41)"
+        },
+        {
+          "eq": "Gr,u = R/(1 + R G)",
+          "tex": "G_{r,u_{T,n}}(s) = \\frac{R(s)}{1 + R(s)G(s)}",
+          "note": "the duty cycle the reference asks for",
+          "ref": "(5.43)"
+        },
+        {
+          "eq": "F(s) = 1/(1 + 2·0.9 s/5 + s²/5²)",
+          "tex": "F(s) = \\frac{1}{1 + 2 \\times 0.9\\frac{s}{5} + \\frac{s^2}{5^2}}",
+          "note": "prefilter that keeps |uT,n| ≤ 1 for r = 100",
+          "ref": "(5.44)"
+        },
+        {
+          "eq": "s = (2/Ta)(z − 1)/(z + 1)",
+          "tex": "s = \\frac{2}{T_a}\\frac{z - 1}{z + 1}",
+          "note": "the controller as R(z); not in the notes' example",
+          "ref": "(6.90)"
+        },
+        {
+          "eq": "Ω = (2/Ta) tan(ωTa/2)",
+          "tex": "\\Omega = \\frac{2}{T_a}\\tan\\left(\\frac{\\omega T_a}{2}\\right)",
+          "note": "frequency warping",
+          "ref": "(6.89)"
         }
       ]
     }
