@@ -6,8 +6,9 @@ import { LAWS as MECHANICS } from "./mechanics.js";
 import { LAWS as HEAT } from "./heat.js";
 import { LAWS as DRIVE } from "./drive.js";
 import { LAWS as SINK } from "./sink.js";
+import { LAWS as COMPARE } from "./compare.js";
 
-const LAWS = { ...SYSTEMS, ...LOOPS, ...MECHANICS, ...HEAT, ...DRIVE, ...SINK };
+const LAWS = { ...SYSTEMS, ...LOOPS, ...MECHANICS, ...HEAT, ...DRIVE, ...SINK, ...COMPARE };
 
 /** The answer to a question's "compute" block; an unknown law is an error naming the ones there are. */
 export function solve(compute) {

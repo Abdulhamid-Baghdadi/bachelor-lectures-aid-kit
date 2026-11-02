@@ -151,7 +151,8 @@
       "title": "The drive, from model to digital controller",
       "family": "example",
       "labs": [
-        "drive"
+        "drive",
+        "compare"
       ]
     },
     {
@@ -2781,6 +2782,78 @@
           "tex": "\\frac{T_{S,\\mathrm{max}} - \\bar{T}_S}{\\hat{U}_e I_a} = \\lvert G(\\mathrm{I}2\\pi f_\\mathrm{min})\\rvert",
           "note": "fmin = 1.429 mHz",
           "ref": "(3.135)"
+        }
+      ]
+    },
+    {
+      "id": "compare",
+      "title": "Four controllers on one drive",
+      "idea": "The same drive, the same reference step, the same load step and the same actuator range, under four controllers from the course: a PI controller, the compensating controller of the worked design, a state controller with a Luenberger observer, and a PI state controller with the same observer. See which is slow, which asks the actuator for too much, which leaves an error under load, and which meets every target.",
+      "law": "R(s) = VI(1 + sTI)/s    R(s) = VR(1 + 2ξs/ω0 + s²/ω0²)/(s(1 + sTR)²)    u_k = kᵀx̂_k + g r_k    u_k = kxᵀx̂_k + kI xI,k + kP(r_k − y_k)",
+      "lawTex": "R_\\mathrm{PI}(s) = \\frac{V_I(1 + sT_I)}{s} \\qquad u_k = \\mathbf{k}^\\mathrm{T}\\hat{\\mathbf{x}}_k + g r_k \\qquad u_k = \\mathbf{k}_x^\\mathrm{T}\\hat{\\mathbf{x}}_k + k_I x_{I,k} + k_P(r_k - y_k)",
+      "lecture": "Kugi (2015), sections 5.1 (pp. 125–127), 5.3 (pp. 131–133), 8.1 (pp. 204–215), 8.2 (pp. 215–218) and 8.3.2–8.4 (pp. 220–224); the drive of Abbildung 4.2, pp. 94–97",
+      "practice": [
+        {
+          "question": "The PI state controller sets kP = 1/(cᵀ(E − Φ)⁻¹Γ) (8.58). For the sampled drive this is one over the plant's static gain V = 222.22 rad/s of (4.6a). What is kP?",
+          "answer": 0.0045,
+          "unit": "1/(rad/s)",
+          "tolerance": 0.002,
+          "compute": {
+            "law": "compareKP",
+            "Ta": 0.02
+          },
+          "solution": "cᵀ(E − Φ)⁻¹Γ is the sampled plant's gain at z = 1, which equals G(0) = V = 222.22 for any Ta. So kP = 1/222.22 = 0.0045.",
+          "source": "By definition, from (eq. 8.58) and (4.6a)"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "R(s) = VI(1 + sTI)/s",
+          "tex": "R(s) = \\frac{V_I(1 + sT_I)}{s}",
+          "note": "the PI controller; R = VI/s when the integrator alone leaves enough phase",
+          "ref": "(5.14)"
+        },
+        {
+          "eq": "R(s) = VR(1 + 2ξs/ω0 + s²/ω0²)/(s(1 + sTR)²)",
+          "tex": "R(s) = \\frac{V_R\\left(1 + 2\\xi\\frac{s}{\\omega_0} + \\frac{s^2}{\\omega_0^2}\\right)}{s(1 + sT_R)^2}",
+          "note": "the compensating controller",
+          "ref": "(5.38)"
+        },
+        {
+          "eq": "u_k = kᵀx̂_k + g r_k",
+          "tex": "u_k = \\mathbf{k}^\\mathrm{T}\\hat{\\mathbf{x}}_k + g r_k",
+          "note": "the state controller fed by the observer",
+          "ref": "(8.73)"
+        },
+        {
+          "eq": "lim e_k = −cᵀ(E − Φ − Γkᵀ)⁻¹Γv v0 ≠ 0",
+          "tex": "\\lim_{k\\to\\infty} e_k = -\\mathbf{c}^\\mathrm{T}\\left(\\mathbf{E} - \\boldsymbol{\\Phi} - \\boldsymbol{\\Gamma}\\mathbf{k}^\\mathrm{T}\\right)^{-1}\\boldsymbol{\\Gamma}_v v_0 \\neq 0",
+          "note": "the error a constant load leaves",
+          "ref": "(8.50)"
+        },
+        {
+          "eq": "xI,k+1 = xI,k + r_k − cᵀx_k",
+          "tex": "x_{I,k+1} = x_{I,k} + r_k - \\mathbf{c}^\\mathrm{T}\\mathbf{x}_k",
+          "note": "the integrator",
+          "ref": "(8.51a)"
+        },
+        {
+          "eq": "u_k = kxᵀx_k + kI xI,k + kP(r_k − cᵀx_k)",
+          "tex": "u_k = \\mathbf{k}_x^\\mathrm{T}\\mathbf{x}_k + k_I x_{I,k} + k_P(r_k - \\mathbf{c}^\\mathrm{T}\\mathbf{x}_k)",
+          "note": "the PI state controller",
+          "ref": "(8.51b)"
+        },
+        {
+          "eq": "kP = 1/(cᵀ(E − Φ)⁻¹Γ)",
+          "tex": "k_P = \\frac{1}{\\mathbf{c}^\\mathrm{T}(\\mathbf{E} - \\boldsymbol{\\Phi})^{-1}\\boldsymbol{\\Gamma}}",
+          "note": "",
+          "ref": "(8.58)"
+        },
+        {
+          "eq": "x̂_k+1 = Φx̂_k + Γu_k + k̂(ŷ_k − y_k)",
+          "tex": "\\hat{\\mathbf{x}}_{k+1} = \\boldsymbol{\\Phi}\\hat{\\mathbf{x}}_k + \\boldsymbol{\\Gamma}u_k + \\hat{\\mathbf{k}}(\\hat{y}_k - y_k)",
+          "note": "the full observer",
+          "ref": "(8.72a)"
         }
       ]
     }

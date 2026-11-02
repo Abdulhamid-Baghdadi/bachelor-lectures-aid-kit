@@ -13,6 +13,15 @@
 .routh td.pivot { font-weight: 600; border-left: 2px solid currentColor; border-right: 2px solid currentColor; }
 .routh caption { text-align: left; font-size: .9em; }
 
+/* The four controllers of the comparison: told apart by dash as well as colour; the PI state controller solid. */
+.series.c-pi { stroke: var(--muted); stroke-width: 2.5; stroke-dasharray: 12 4 2 4; }
+.series.c-comp { stroke: var(--danger); stroke-width: 2.5; stroke-dasharray: 2 4; }
+.series.c-state { stroke: var(--second); stroke-width: 2.5; stroke-dasharray: 8 4; }
+.series.c-pistate { stroke: var(--accent); stroke-width: 3; }
+table.method td.warn { color: var(--warn); font-weight: 600; }
+.compare-table { overflow-x: auto; }
+table.method.compare td { white-space: nowrap; }
+
 /* The thermal network of the heat-sink example: resistances on a wire, nodes with their temperatures. */
 .net-wire { stroke: var(--ink); stroke-width: 2; }
 .net-r { fill: var(--panel); stroke: var(--ink); stroke-width: 2; }
