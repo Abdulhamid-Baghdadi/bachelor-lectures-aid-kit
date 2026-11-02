@@ -3,16 +3,81 @@
   "version": 1,
   "about": "Energieversorgung (370.002) and Maschinen und Antriebe (370.015) at TU Wien. Equations and worked examples of Energieversorgung after the lecture notes of Gawlik (2015), Skriptum version of 4 Oct 2015, cited by equation number and printed page, read in the notes' text layer on 1 Nov 2026; the slide sets V01–V22 of the same course (2015/16) are named for each part. Machines after Schrödl (2012), a scan: its equations were read from the page images on 1 Nov 2026 and are cited by equation number and printed page. Practice questions are the notes' worked examples or the worked solutions of the machines exams of 24 June 2013 and 24 July 2013 (in the students' collection 'VO-370.015 Prüfungen, Beispiele, Hybrid', 1 April 2017), each named; the rest were worked by hand from the equations and say so. tests/unit/labs-data.test.js recomputes every answer with the core. Phasor arithmetic, Bode plots and control loops are the Automation lab's; harmonics and distortion power the Signals and systems lab's; waves on lines the Electrodynamics lab's.",
   "families": [
-    { "id": "threephase", "name": "Three-phase systems" },
-    { "id": "equipment", "name": "Lines and transformers" },
-    { "id": "operation", "name": "Faults and stability" },
-    { "id": "machines", "name": "Machines and drives" }
+    {
+      "id": "threephase",
+      "name": "Three-phase systems"
+    },
+    {
+      "id": "equipment",
+      "name": "Lines and transformers"
+    },
+    {
+      "id": "operation",
+      "name": "Faults and stability"
+    },
+    {
+      "id": "machines",
+      "name": "Machines and drives"
+    },
+    {
+      "id": "example",
+      "name": "Worked example"
+    }
   ],
   "lectures": [
-    { "number": 1, "pages": "V03–V06; notes ch. 3", "title": "Three-phase systems", "family": "threephase", "labs": ["threephase", "power"] },
-    { "number": 2, "pages": "V09–V12; notes ch. 4", "title": "Lines and transformers", "family": "equipment", "labs": ["transformer", "line"] },
-    { "number": 3, "pages": "V15–V20; notes ch. 6", "title": "Network operation, faults and stability", "family": "operation", "labs": ["transfer", "perunit", "shortcircuit", "stability"] },
-    { "number": 4, "pages": "Schrödl (2012)", "title": "Machines and drives", "family": "machines", "labs": ["rotatingfield", "dcmachine", "pmsm"] }
+    {
+      "number": 1,
+      "pages": "V03–V06; notes ch. 3",
+      "title": "Three-phase systems",
+      "family": "threephase",
+      "labs": [
+        "threephase",
+        "power"
+      ]
+    },
+    {
+      "number": 2,
+      "pages": "V09–V12; notes ch. 4",
+      "title": "Lines and transformers",
+      "family": "equipment",
+      "labs": [
+        "transformer",
+        "line"
+      ]
+    },
+    {
+      "number": 3,
+      "pages": "V15–V20; notes ch. 6",
+      "title": "Network operation, faults and stability",
+      "family": "operation",
+      "labs": [
+        "transfer",
+        "perunit",
+        "shortcircuit",
+        "stability"
+      ]
+    },
+    {
+      "number": 4,
+      "pages": "Schrödl (2012)",
+      "title": "Machines and drives",
+      "family": "machines",
+      "labs": [
+        "rotatingfield",
+        "dcmachine",
+        "pmsm"
+      ]
+    },
+    {
+      "number": 5,
+      "heading": "Worked example",
+      "pages": "notes sections 6.2 and 6.3.4, pp. 198–216",
+      "title": "A 30 kV feeder, from its load to its short circuit",
+      "family": "example",
+      "labs": [
+        "feeder"
+      ]
+    }
   ],
   "labs": [
     {
@@ -23,24 +88,69 @@
       "lawTex": "U_\\mathrm{L} = \\sqrt{3}\\,U_\\mathrm{Y}; \\qquad \\text{delta: } I_\\mathrm{L} = \\sqrt{3}\\,I_\\mathrm{branch}",
       "lecture": "Gawlik (2015), section 3.2, pp. 39–42; slides V05+06",
       "equations": [
-        { "eq": "u_aN = Û cos(ωt + φ_u), u_bN = Û cos(ωt + φ_u − 2π/3), u_cN = Û cos(ωt + φ_u − 4π/3)", "tex": "U_\\mathrm{aN}(t) = \\hat{U}\\cos(\\omega t + \\varphi_u), \\qquad U_\\mathrm{bN}(t) = \\hat{U}\\cos\\!\\Big(\\omega t + \\varphi_u - \\frac{2\\pi}{3}\\Big), \\qquad U_\\mathrm{cN}(t) = \\hat{U}\\cos\\!\\Big(\\omega t + \\varphi_u - \\frac{4\\pi}{3}\\Big)", "note": "a symmetric three-phase system", "ref": "(3-27), p. 39" },
-        { "eq": "a = e^(j2π/3) = −1/2 + j√3/2", "tex": "\\underline{a} = \\mathrm{e}^{\\mathrm{j}2\\pi/3} = -\\frac{1}{2} + \\mathrm{j}\\frac{\\sqrt{3}}{2}", "note": "the rotation operator", "ref": "(3-29), p. 41" },
-        { "eq": "U_bN = a² U_aN, U_cN = a U_aN", "tex": "\\underline{U}_\\mathrm{bN} = \\underline{a}^2\\,\\underline{U}_\\mathrm{aN}, \\qquad \\underline{U}_\\mathrm{cN} = \\underline{a}\\,\\underline{U}_\\mathrm{aN}", "note": "each phasor the one before turned by 120°", "ref": "(3-30), p. 41" },
-        { "eq": "1 + a + a² = 0, a − a² = j√3", "tex": "1 + \\underline{a} + \\underline{a}^2 = 0, \\qquad \\underline{a} - \\underline{a}^2 = \\mathrm{j}\\sqrt{3}", "note": "so the three voltages sum to zero; a line voltage is √3 a phase voltage", "ref": "(3-34), (3-35), p. 42" },
-        { "eq": "230 V line to neutral, 400 V line to line", "tex": "230\\,\\mathrm{V} \\text{ line to neutral}, \\qquad 400\\,\\mathrm{V} \\text{ line to line}", "note": "the Austrian low-voltage network, ±10 %", "ref": "table 3-2, p. 40" },
-        { "eq": "I_a = I_ab − I_ca", "tex": "\\underline{I}_\\mathrm{a} = \\underline{I}_\\mathrm{ab} - \\underline{I}_\\mathrm{ca}", "note": "a line current at a delta node, by Kirchhoff's current law", "ref": "" }
+        {
+          "eq": "u_aN = Û cos(ωt + φ_u), u_bN = Û cos(ωt + φ_u − 2π/3), u_cN = Û cos(ωt + φ_u − 4π/3)",
+          "tex": "U_\\mathrm{aN}(t) = \\hat{U}\\cos(\\omega t + \\varphi_u), \\qquad U_\\mathrm{bN}(t) = \\hat{U}\\cos\\!\\Big(\\omega t + \\varphi_u - \\frac{2\\pi}{3}\\Big), \\qquad U_\\mathrm{cN}(t) = \\hat{U}\\cos\\!\\Big(\\omega t + \\varphi_u - \\frac{4\\pi}{3}\\Big)",
+          "note": "a symmetric three-phase system",
+          "ref": "(3-27), p. 39"
+        },
+        {
+          "eq": "a = e^(j2π/3) = −1/2 + j√3/2",
+          "tex": "\\underline{a} = \\mathrm{e}^{\\mathrm{j}2\\pi/3} = -\\frac{1}{2} + \\mathrm{j}\\frac{\\sqrt{3}}{2}",
+          "note": "the rotation operator",
+          "ref": "(3-29), p. 41"
+        },
+        {
+          "eq": "U_bN = a² U_aN, U_cN = a U_aN",
+          "tex": "\\underline{U}_\\mathrm{bN} = \\underline{a}^2\\,\\underline{U}_\\mathrm{aN}, \\qquad \\underline{U}_\\mathrm{cN} = \\underline{a}\\,\\underline{U}_\\mathrm{aN}",
+          "note": "each phasor the one before turned by 120°",
+          "ref": "(3-30), p. 41"
+        },
+        {
+          "eq": "1 + a + a² = 0, a − a² = j√3",
+          "tex": "1 + \\underline{a} + \\underline{a}^2 = 0, \\qquad \\underline{a} - \\underline{a}^2 = \\mathrm{j}\\sqrt{3}",
+          "note": "so the three voltages sum to zero; a line voltage is √3 a phase voltage",
+          "ref": "(3-34), (3-35), p. 42"
+        },
+        {
+          "eq": "230 V line to neutral, 400 V line to line",
+          "tex": "230\\,\\mathrm{V} \\text{ line to neutral}, \\qquad 400\\,\\mathrm{V} \\text{ line to line}",
+          "note": "the Austrian low-voltage network, ±10 %",
+          "ref": "table 3-2, p. 40"
+        },
+        {
+          "eq": "I_a = I_ab − I_ca",
+          "tex": "\\underline{I}_\\mathrm{a} = \\underline{I}_\\mathrm{ab} - \\underline{I}_\\mathrm{ca}",
+          "note": "a line current at a delta node, by Kirchhoff's current law",
+          "ref": ""
+        }
       ],
       "practice": [
-        { "question": "Three branches of |Z| = 20 Ω are connected in delta to the 400 V network. What is the line current?",
-          "answer": 34.64, "unit": "A", "tolerance": 0.01,
-          "compute": { "law": "deltaLineCurrent", "UL": 400, "Z": 20 },
+        {
+          "question": "Three branches of |Z| = 20 Ω are connected in delta to the 400 V network. What is the line current?",
+          "answer": 34.64,
+          "unit": "A",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "deltaLineCurrent",
+            "UL": 400,
+            "Z": 20
+          },
           "solution": "Each branch sees 400 V and carries 400/20 = 20 A. The line current is the difference of two branch currents 120° apart: √3 · 20 = 34.6 A. In star the same branches would carry 230/20 = 11.5 A, a third.",
-          "source": "Worked by hand from Gawlik (2015), (3-30) and (3-35)" },
-        { "question": "A star-connected network has 230 V from line to neutral. What is the voltage between two lines?",
-          "answer": 398.4, "unit": "V", "tolerance": 0.005,
-          "compute": { "law": "lineFromPhase", "U": 230 },
+          "source": "Worked by hand from Gawlik (2015), (3-30) and (3-35)"
+        },
+        {
+          "question": "A star-connected network has 230 V from line to neutral. What is the voltage between two lines?",
+          "answer": 398.4,
+          "unit": "V",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "lineFromPhase",
+            "U": 230
+          },
           "solution": "√3 · 230 V = 398.4 V, which the network names 400 V (table 3-2): the nominal values are rounded.",
-          "source": "Gawlik (2015), table 3-2, p. 40" }
+          "source": "Gawlik (2015), table 3-2, p. 40"
+        }
       ]
     },
     {
@@ -51,25 +161,78 @@
       "lawTex": "\\underline{S} = 3\\,\\underline{U}\\,\\underline{I}^{*} = \\sqrt{3}\\,U_\\mathrm{n} I_\\mathrm{n} (\\cos\\varphi + \\mathrm{j}\\sin\\varphi)",
       "lecture": "Gawlik (2015), sections 3.1.3 and 3.2.3, pp. 36–43; slides V05+06",
       "equations": [
-        { "eq": "p(t) = U I [cos(φ_u − φ_i) + cos(2ωt + φ_u + φ_i)]", "tex": "p(t) = U I \\big[\\cos(\\varphi_u - \\varphi_i) + \\cos(2\\omega t + \\varphi_u + \\varphi_i)\\big]", "note": "one phase: a mean plus a pulse at twice the frequency", "ref": "(3-15), (3-26), pp. 37–38" },
-        { "eq": "P = U I cos(φ_u − φ_i), Q = U I sin(φ_u − φ_i), S = U I*", "tex": "P = U I \\cos(\\varphi_u - \\varphi_i), \\qquad Q = U I \\sin(\\varphi_u - \\varphi_i), \\qquad \\underline{S} = \\underline{U}\\,\\underline{I}^{*}", "note": "active, reactive and complex apparent power", "ref": "(3-17), (3-19), (3-21), pp. 37–38" },
-        { "eq": "S² = P² + Q²", "tex": "S^2 = P^2 + Q^2", "note": "", "ref": "(3-25), p. 38" },
-        { "eq": "p(t) = Σ u_k(t) i_k(t)", "tex": "p(t) = \\sum_k u_k(t)\\, i_k(t)", "note": "three phases", "ref": "(3-37), p. 42" },
-        { "eq": "P = 3 U I cos φ, Q = 3 U I sin φ, S = 3 U I", "tex": "P = 3 U I \\cos\\varphi, \\qquad Q = 3 U I \\sin\\varphi, \\qquad S = 3 U I", "note": "symmetric system, line-to-neutral U", "ref": "(3-40)–(3-42), p. 43" },
-        { "eq": "p̃(t) = Re{U_aN I_a (1 + a² + a) e^(j2ωt)} = 0", "tex": "\\tilde{p}(t) = \\operatorname{Re}\\big\\{\\underline{U}_\\mathrm{aN}\\,\\underline{I}_\\mathrm{a}\\,(1 + \\underline{a}^2 + \\underline{a})\\,\\mathrm{e}^{\\mathrm{j}2\\omega t}\\big\\} = 0", "note": "the pulsating part vanishes in a symmetric system", "ref": "(3-44), p. 43" },
-        { "eq": "S = √3 U_n I_n, P = √3 U_n I_n cos φ, Q = √3 U_n I_n sin φ", "tex": "S = \\sqrt{3}\\,U_\\mathrm{n} I_\\mathrm{n}, \\qquad P = \\sqrt{3}\\,U_\\mathrm{n} I_\\mathrm{n} \\cos\\varphi, \\qquad Q = \\sqrt{3}\\,U_\\mathrm{n} I_\\mathrm{n} \\sin\\varphi", "note": "with the line voltage U_n; φ is still between current and line-to-neutral voltage", "ref": "(3-45), p. 43" }
+        {
+          "eq": "p(t) = U I [cos(φ_u − φ_i) + cos(2ωt + φ_u + φ_i)]",
+          "tex": "p(t) = U I \\big[\\cos(\\varphi_u - \\varphi_i) + \\cos(2\\omega t + \\varphi_u + \\varphi_i)\\big]",
+          "note": "one phase: a mean plus a pulse at twice the frequency",
+          "ref": "(3-15), (3-26), pp. 37–38"
+        },
+        {
+          "eq": "P = U I cos(φ_u − φ_i), Q = U I sin(φ_u − φ_i), S = U I*",
+          "tex": "P = U I \\cos(\\varphi_u - \\varphi_i), \\qquad Q = U I \\sin(\\varphi_u - \\varphi_i), \\qquad \\underline{S} = \\underline{U}\\,\\underline{I}^{*}",
+          "note": "active, reactive and complex apparent power",
+          "ref": "(3-17), (3-19), (3-21), pp. 37–38"
+        },
+        {
+          "eq": "S² = P² + Q²",
+          "tex": "S^2 = P^2 + Q^2",
+          "note": "",
+          "ref": "(3-25), p. 38"
+        },
+        {
+          "eq": "p(t) = Σ u_k(t) i_k(t)",
+          "tex": "p(t) = \\sum_k u_k(t)\\, i_k(t)",
+          "note": "three phases",
+          "ref": "(3-37), p. 42"
+        },
+        {
+          "eq": "P = 3 U I cos φ, Q = 3 U I sin φ, S = 3 U I",
+          "tex": "P = 3 U I \\cos\\varphi, \\qquad Q = 3 U I \\sin\\varphi, \\qquad S = 3 U I",
+          "note": "symmetric system, line-to-neutral U",
+          "ref": "(3-40)–(3-42), p. 43"
+        },
+        {
+          "eq": "p̃(t) = Re{U_aN I_a (1 + a² + a) e^(j2ωt)} = 0",
+          "tex": "\\tilde{p}(t) = \\operatorname{Re}\\big\\{\\underline{U}_\\mathrm{aN}\\,\\underline{I}_\\mathrm{a}\\,(1 + \\underline{a}^2 + \\underline{a})\\,\\mathrm{e}^{\\mathrm{j}2\\omega t}\\big\\} = 0",
+          "note": "the pulsating part vanishes in a symmetric system",
+          "ref": "(3-44), p. 43"
+        },
+        {
+          "eq": "S = √3 U_n I_n, P = √3 U_n I_n cos φ, Q = √3 U_n I_n sin φ",
+          "tex": "S = \\sqrt{3}\\,U_\\mathrm{n} I_\\mathrm{n}, \\qquad P = \\sqrt{3}\\,U_\\mathrm{n} I_\\mathrm{n} \\cos\\varphi, \\qquad Q = \\sqrt{3}\\,U_\\mathrm{n} I_\\mathrm{n} \\sin\\varphi",
+          "note": "with the line voltage U_n; φ is still between current and line-to-neutral voltage",
+          "ref": "(3-45), p. 43"
+        }
       ],
       "practice": [
-        { "question": "A symmetric load takes 50 A from the 400 V network at φ = 30°. What active power does it take?",
-          "answer": 30000, "unit": "W", "tolerance": 0.005,
-          "compute": { "law": "threePhaseP", "UL": 400, "IL": 50, "phi": 30 },
+        {
+          "question": "A symmetric load takes 50 A from the 400 V network at φ = 30°. What active power does it take?",
+          "answer": 30000,
+          "unit": "W",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "threePhaseP",
+            "UL": 400,
+            "IL": 50,
+            "phi": 30
+          },
           "solution": "P = √3 · 400 V · 50 A · cos 30° = 34.64 kVA · 0.866 = 30.0 kW.",
-          "source": "Worked by hand from Gawlik (2015), (3-45)" },
-        { "question": "And its reactive power?",
-          "answer": 17320, "unit": "var", "tolerance": 0.005,
-          "compute": { "law": "threePhaseQ", "UL": 400, "IL": 50, "phi": 30 },
+          "source": "Worked by hand from Gawlik (2015), (3-45)"
+        },
+        {
+          "question": "And its reactive power?",
+          "answer": 17320,
+          "unit": "var",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "threePhaseQ",
+            "UL": 400,
+            "IL": 50,
+            "phi": 30
+          },
           "solution": "Q = √3 · 400 V · 50 A · sin 30° = 17.3 kvar; S = 34.6 kVA, and 30² + 17.3² = 34.6².",
-          "source": "Worked by hand from Gawlik (2015), (3-45)" }
+          "source": "Worked by hand from Gawlik (2015), (3-45)"
+        }
       ]
     },
     {
@@ -80,36 +243,111 @@
       "lawTex": "u_\\mathrm{k} = \\frac{Z_\\mathrm{k}}{Z_\\mathrm{rT}}, \\qquad u_\\mathrm{r} = \\frac{P_\\mathrm{k}}{S_\\mathrm{rT}}, \\qquad u_\\sigma = \\sqrt{u_\\mathrm{k}^2 - u_\\mathrm{r}^2}",
       "lecture": "Gawlik (2015), section 4.2.3, pp. 106–111; slides V11+12",
       "equations": [
-        { "eq": "ü = U_rTOS/U_rTUS", "tex": "\\ddot{u} = \\frac{U_\\mathrm{rTOS}}{U_\\mathrm{rTUS}}", "note": "the ideal transformer's ratio", "ref": "(4-70), p. 106" },
-        { "eq": "R_v = U_rTOS²/P_v, R_v ∥ ωL_h = U_rTOS/(√3 I_0)", "tex": "R_\\mathrm{v} = \\frac{U_\\mathrm{rTOS}^2}{P_\\mathrm{v}}, \\qquad R_\\mathrm{v} \\parallel \\omega L_\\mathrm{h} = \\frac{U_\\mathrm{rTOS}}{\\sqrt{3}\\, I_0}", "note": "open-circuit test: iron losses and magnetising current", "ref": "(4-75), (4-76), pp. 108–109" },
-        { "eq": "Z_k = U_kOS/(√3 I_rTOS), R = P_k/(3 I_rT²)", "tex": "Z_\\mathrm{k} = \\frac{U_\\mathrm{kOS}}{\\sqrt{3}\\, I_\\mathrm{rTOS}}, \\qquad R = \\frac{P_\\mathrm{k}}{3 I_\\mathrm{rT}^2}", "note": "short-circuit test, line voltages. The notes print (4-77) as R = U_kOS²/P_k, which (4-80) does not bear out; R here follows (4-80)", "ref": "(4-77), (4-78), (4-80), p. 109" },
-        { "eq": "u_r = P_k/S_rT = R/Z_rT, u_k = U_k/U_rT = Z_k/Z_rT", "tex": "u_\\mathrm{r} = \\frac{P_\\mathrm{k}}{S_\\mathrm{rT}} = \\frac{R}{Z_\\mathrm{rT}}, \\qquad u_\\mathrm{k} = \\frac{U_\\mathrm{k}}{U_\\mathrm{rT}} = \\frac{Z_\\mathrm{k}}{Z_\\mathrm{rT}}", "note": "per-unit winding losses and short-circuit voltage", "ref": "(4-80), (4-81), p. 109" },
-        { "eq": "u_σ = √(u_k² − u_r²) ≈ u_k", "tex": "u_\\sigma = \\sqrt{u_\\mathrm{k}^2 - u_\\mathrm{r}^2} \\approx u_\\mathrm{k}", "note": "the inductive part; large transformers are nearly pure reactance", "ref": "(4-82), (4-83), p. 109" },
-        { "eq": "100 kVA: u_k 4 %, u_r 1.3 % … 1000 MVA: u_k 10–15 %, u_r 0.15 %", "tex": "100\\,\\mathrm{kVA}\\!: u_\\mathrm{k} = 4\\,\\%,\\; u_\\mathrm{r} = 1.3\\,\\% \\quad \\ldots \\quad 1000\\,\\mathrm{MVA}\\!: u_\\mathrm{k} = 10\\text{–}15\\,\\%,\\; u_\\mathrm{r} = 0.15\\,\\%", "note": "typical values", "ref": "table 4-9, p. 110" },
-        { "eq": "U₁² = |U₂ + (u_r + j u_σ)(P − jQ)/U₂|²", "tex": "U_1^2 = \\Big|\\underline{U}_2 + (u_\\mathrm{r} + \\mathrm{j}u_\\sigma)\\frac{P - \\mathrm{j}Q}{U_2}\\Big|^2", "note": "the secondary voltage for a load P + jQ, a quadratic in U₂²; shunt branch neglected", "ref": "" },
-        { "eq": "ΔI/I″_k = |1 − e^(−jΔk·30°)|/2", "tex": "\\frac{\\Delta I}{I''_\\mathrm{k}} = \\frac{\\big|1 - \\mathrm{e}^{-\\mathrm{j}\\Delta k \\cdot 30^\\circ}\\big|}{2}", "note": "circulating current of two paralleled transformers whose vector-group numbers differ by Δk", "ref": "(4-89) and the example, p. 111" }
+        {
+          "eq": "ü = U_rTOS/U_rTUS",
+          "tex": "\\ddot{u} = \\frac{U_\\mathrm{rTOS}}{U_\\mathrm{rTUS}}",
+          "note": "the ideal transformer's ratio",
+          "ref": "(4-70), p. 106"
+        },
+        {
+          "eq": "R_v = U_rTOS²/P_v, R_v ∥ ωL_h = U_rTOS/(√3 I_0)",
+          "tex": "R_\\mathrm{v} = \\frac{U_\\mathrm{rTOS}^2}{P_\\mathrm{v}}, \\qquad R_\\mathrm{v} \\parallel \\omega L_\\mathrm{h} = \\frac{U_\\mathrm{rTOS}}{\\sqrt{3}\\, I_0}",
+          "note": "open-circuit test: iron losses and magnetising current",
+          "ref": "(4-75), (4-76), pp. 108–109"
+        },
+        {
+          "eq": "Z_k = U_kOS/(√3 I_rTOS), R = P_k/(3 I_rT²)",
+          "tex": "Z_\\mathrm{k} = \\frac{U_\\mathrm{kOS}}{\\sqrt{3}\\, I_\\mathrm{rTOS}}, \\qquad R = \\frac{P_\\mathrm{k}}{3 I_\\mathrm{rT}^2}",
+          "note": "short-circuit test, line voltages. The notes print (4-77) as R = U_kOS²/P_k, which (4-80) does not bear out; R here follows (4-80)",
+          "ref": "(4-77), (4-78), (4-80), p. 109"
+        },
+        {
+          "eq": "u_r = P_k/S_rT = R/Z_rT, u_k = U_k/U_rT = Z_k/Z_rT",
+          "tex": "u_\\mathrm{r} = \\frac{P_\\mathrm{k}}{S_\\mathrm{rT}} = \\frac{R}{Z_\\mathrm{rT}}, \\qquad u_\\mathrm{k} = \\frac{U_\\mathrm{k}}{U_\\mathrm{rT}} = \\frac{Z_\\mathrm{k}}{Z_\\mathrm{rT}}",
+          "note": "per-unit winding losses and short-circuit voltage",
+          "ref": "(4-80), (4-81), p. 109"
+        },
+        {
+          "eq": "u_σ = √(u_k² − u_r²) ≈ u_k",
+          "tex": "u_\\sigma = \\sqrt{u_\\mathrm{k}^2 - u_\\mathrm{r}^2} \\approx u_\\mathrm{k}",
+          "note": "the inductive part; large transformers are nearly pure reactance",
+          "ref": "(4-82), (4-83), p. 109"
+        },
+        {
+          "eq": "100 kVA: u_k 4 %, u_r 1.3 % … 1000 MVA: u_k 10–15 %, u_r 0.15 %",
+          "tex": "100\\,\\mathrm{kVA}\\!: u_\\mathrm{k} = 4\\,\\%,\\; u_\\mathrm{r} = 1.3\\,\\% \\quad \\ldots \\quad 1000\\,\\mathrm{MVA}\\!: u_\\mathrm{k} = 10\\text{–}15\\,\\%,\\; u_\\mathrm{r} = 0.15\\,\\%",
+          "note": "typical values",
+          "ref": "table 4-9, p. 110"
+        },
+        {
+          "eq": "U₁² = |U₂ + (u_r + j u_σ)(P − jQ)/U₂|²",
+          "tex": "U_1^2 = \\Big|\\underline{U}_2 + (u_\\mathrm{r} + \\mathrm{j}u_\\sigma)\\frac{P - \\mathrm{j}Q}{U_2}\\Big|^2",
+          "note": "the secondary voltage for a load P + jQ, a quadratic in U₂²; shunt branch neglected",
+          "ref": ""
+        },
+        {
+          "eq": "ΔI/I″_k = |1 − e^(−jΔk·30°)|/2",
+          "tex": "\\frac{\\Delta I}{I''_\\mathrm{k}} = \\frac{\\big|1 - \\mathrm{e}^{-\\mathrm{j}\\Delta k \\cdot 30^\\circ}\\big|}{2}",
+          "note": "circulating current of two paralleled transformers whose vector-group numbers differ by Δk",
+          "ref": "(4-89) and the example, p. 111"
+        }
       ],
       "practice": [
-        { "question": "A 110/30 kV transformer has S_rT = 31 MVA and u_k = 12 %. What is its short-circuit impedance on the 30 kV side?",
-          "answer": 3.48, "unit": "Ω", "tolerance": 0.005,
-          "compute": { "law": "transformerZ", "uk": 0.12, "Ur": 30000, "Sr": 31000000 },
+        {
+          "question": "A 110/30 kV transformer has S_rT = 31 MVA and u_k = 12 %. What is its short-circuit impedance on the 30 kV side?",
+          "answer": 3.48,
+          "unit": "Ω",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "transformerZ",
+            "uk": 0.12,
+            "Ur": 30000,
+            "Sr": 31000000
+          },
           "solution": "Z_T = u_k U_n²/S_n = 0.12 · (30 kV)²/31 MVA = 3.48 Ω.",
-          "source": "Worked example, Gawlik (2015), p. 215" },
-        { "question": "Its short-circuit losses are 0.14 MW. What is its winding resistance on the 30 kV side?",
-          "answer": 0.131, "unit": "Ω", "tolerance": 0.01,
-          "compute": { "law": "transformerR", "Pk": 140000, "Ur": 30000, "Sr": 31000000 },
+          "source": "Worked example, Gawlik (2015), p. 215"
+        },
+        {
+          "question": "Its short-circuit losses are 0.14 MW. What is its winding resistance on the 30 kV side?",
+          "answer": 0.131,
+          "unit": "Ω",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "transformerR",
+            "Pk": 140000,
+            "Ur": 30000,
+            "Sr": 31000000
+          },
           "solution": "R_T = P_k U_n²/S_n² = 0.14 MW · (30 kV)²/(31 MVA)² = 0.13 Ω; X_T = √(3.48² − 0.13²) = 3.48 Ω.",
-          "source": "Worked example, Gawlik (2015), p. 215" },
-        { "question": "A Yy0 and a Yd5 transformer of equal ratio and equal u_k are paralleled. How large is the circulating current, as a share of one transformer's short-circuit current?",
-          "answer": 0.966, "unit": "", "tolerance": 0.005,
-          "compute": { "law": "circulating", "dk": 5 },
+          "source": "Worked example, Gawlik (2015), p. 215"
+        },
+        {
+          "question": "A Yy0 and a Yd5 transformer of equal ratio and equal u_k are paralleled. How large is the circulating current, as a share of one transformer's short-circuit current?",
+          "answer": 0.966,
+          "unit": "",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "circulating",
+            "dk": 5
+          },
           "solution": "ΔI/I″k = (1 − e^(−j5·30°))/2 = (1.866 + j0.5)/2, of size 0.966: about the short-circuit current, not allowed for long.",
-          "source": "Worked example, Gawlik (2015), p. 111" },
-        { "question": "A 1 MVA transformer (u_k = 6 %, u_r = 0.7 %, table 4-9) carries its rated power at cos φ = 0.8 inductive. By how many per cent does its secondary voltage fall?",
-          "answer": 4.43, "unit": "%", "tolerance": 0.01,
-          "compute": { "law": "voltageDropPercent", "uk": 0.06, "ur": 0.007, "s": 1, "cos": 0.8 },
+          "source": "Worked example, Gawlik (2015), p. 111"
+        },
+        {
+          "question": "A 1 MVA transformer (u_k = 6 %, u_r = 0.7 %, table 4-9) carries its rated power at cos φ = 0.8 inductive. By how many per cent does its secondary voltage fall?",
+          "answer": 4.43,
+          "unit": "%",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "voltageDropPercent",
+            "uk": 0.06,
+            "ur": 0.007,
+            "s": 1,
+            "cos": 0.8
+          },
           "solution": "u_σ = √(6² − 0.7²) % = 5.96 %. The first-order estimate u_r cos φ + u_σ sin φ = 0.56 + 3.58 = 4.14 %; solving U₁² = |U₂ + z I|² exactly gives U₂ = 0.9557, a fall of 4.43 %.",
-          "source": "Worked by hand from Gawlik (2015), (4-82) and table 4-9" }
+          "source": "Worked by hand from Gawlik (2015), (4-82) and table 4-9"
+        }
       ]
     },
     {
@@ -120,34 +358,120 @@
       "lawTex": "\\underline{U}_2 = \\frac{\\underline{U}_1}{\\cosh \\underline{\\gamma} l + \\frac{\\underline{Z}_\\mathrm{w}}{\\underline{Z}_2} \\sinh \\underline{\\gamma} l}",
       "lecture": "Gawlik (2015), section 4.1.5, pp. 86–93; slides V09+10",
       "equations": [
-        { "eq": "γ = α + jβ = √((R' + jωL')(G' + jωC'))", "tex": "\\underline{\\gamma} = \\alpha + \\mathrm{j}\\beta = \\sqrt{(R' + \\mathrm{j}\\omega L')(G' + \\mathrm{j}\\omega C')}", "note": "propagation constant", "ref": "(4-9), (4-44), p. 86" },
-        { "eq": "Z_w = √((R' + jωL')/(G' + jωC')) ≈ √(L'/C')", "tex": "\\underline{Z}_\\mathrm{w} = \\sqrt{\\frac{R' + \\mathrm{j}\\omega L'}{G' + \\mathrm{j}\\omega C'}} \\approx \\sqrt{\\frac{L'}{C'}}", "note": "characteristic impedance, real for a lossless line", "ref": "(4-13), (4-48), p. 87" },
-        { "eq": "U₁ = U₂ cosh γl + Z_w I₂ sinh γl, I₁ = (U₂/Z_w) sinh γl + I₂ cosh γl", "tex": "\\underline{U}_1 = \\underline{U}_2 \\cosh \\underline{\\gamma} l + \\underline{Z}_\\mathrm{w} \\underline{I}_2 \\sinh \\underline{\\gamma} l, \\qquad \\underline{I}_1 = \\frac{\\underline{U}_2}{\\underline{Z}_\\mathrm{w}} \\sinh \\underline{\\gamma} l + \\underline{I}_2 \\cosh \\underline{\\gamma} l", "note": "the line equations", "ref": "(4-19), p. 77" },
-        { "eq": "U₂ = U₁ / cosh γl", "tex": "\\underline{U}_2 = \\frac{\\underline{U}_1}{\\cosh \\underline{\\gamma} l}", "note": "an open line (I₂ = 0): the Ferranti effect", "ref": "(4-54), p. 87" },
-        { "eq": "P_nat = U_n²/Z_w", "tex": "P_\\mathrm{nat} = \\frac{U_\\mathrm{n}^2}{Z_\\mathrm{w}}", "note": "natural load", "ref": "(4-25), (4-51), p. 87" },
-        { "eq": "R' = 0.03 Ω/km, L' = 0.8 mH/km, G' = 0.02 µS/km, C' = 14 nF/km", "tex": "R' = 0.03\\,\\Omega/\\mathrm{km}, \\quad L' = 0.8\\,\\mathrm{mH/km}, \\quad G' = 0.02\\,\\mu\\mathrm{S/km}, \\quad C' = 14\\,\\mathrm{nF/km}", "note": "the notes' 380 kV line", "ref": "p. 90" }
+        {
+          "eq": "γ = α + jβ = √((R' + jωL')(G' + jωC'))",
+          "tex": "\\underline{\\gamma} = \\alpha + \\mathrm{j}\\beta = \\sqrt{(R' + \\mathrm{j}\\omega L')(G' + \\mathrm{j}\\omega C')}",
+          "note": "propagation constant",
+          "ref": "(4-9), (4-44), p. 86"
+        },
+        {
+          "eq": "Z_w = √((R' + jωL')/(G' + jωC')) ≈ √(L'/C')",
+          "tex": "\\underline{Z}_\\mathrm{w} = \\sqrt{\\frac{R' + \\mathrm{j}\\omega L'}{G' + \\mathrm{j}\\omega C'}} \\approx \\sqrt{\\frac{L'}{C'}}",
+          "note": "characteristic impedance, real for a lossless line",
+          "ref": "(4-13), (4-48), p. 87"
+        },
+        {
+          "eq": "U₁ = U₂ cosh γl + Z_w I₂ sinh γl, I₁ = (U₂/Z_w) sinh γl + I₂ cosh γl",
+          "tex": "\\underline{U}_1 = \\underline{U}_2 \\cosh \\underline{\\gamma} l + \\underline{Z}_\\mathrm{w} \\underline{I}_2 \\sinh \\underline{\\gamma} l, \\qquad \\underline{I}_1 = \\frac{\\underline{U}_2}{\\underline{Z}_\\mathrm{w}} \\sinh \\underline{\\gamma} l + \\underline{I}_2 \\cosh \\underline{\\gamma} l",
+          "note": "the line equations",
+          "ref": "(4-19), p. 77"
+        },
+        {
+          "eq": "U₂ = U₁ / cosh γl",
+          "tex": "\\underline{U}_2 = \\frac{\\underline{U}_1}{\\cosh \\underline{\\gamma} l}",
+          "note": "an open line (I₂ = 0): the Ferranti effect",
+          "ref": "(4-54), p. 87"
+        },
+        {
+          "eq": "P_nat = U_n²/Z_w",
+          "tex": "P_\\mathrm{nat} = \\frac{U_\\mathrm{n}^2}{Z_\\mathrm{w}}",
+          "note": "natural load",
+          "ref": "(4-25), (4-51), p. 87"
+        },
+        {
+          "eq": "R' = 0.03 Ω/km, L' = 0.8 mH/km, G' = 0.02 µS/km, C' = 14 nF/km",
+          "tex": "R' = 0.03\\,\\Omega/\\mathrm{km}, \\quad L' = 0.8\\,\\mathrm{mH/km}, \\quad G' = 0.02\\,\\mu\\mathrm{S/km}, \\quad C' = 14\\,\\mathrm{nF/km}",
+          "note": "the notes' 380 kV line",
+          "ref": "p. 90"
+        }
       ],
       "practice": [
-        { "question": "What is the natural load of the notes' 380 kV line (Z_w = 239.5 − j13.7 Ω)?",
-          "answer": 602000000, "unit": "W", "tolerance": 0.005,
-          "compute": { "law": "naturalLoadMW", "Un": 380000, "line": { "R": 0.03, "L": 0.0008, "G": 2e-8, "Cap": 1.4e-8 } },
+        {
+          "question": "What is the natural load of the notes' 380 kV line (Z_w = 239.5 − j13.7 Ω)?",
+          "answer": 602000000,
+          "unit": "W",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "naturalLoadMW",
+            "Un": 380000,
+            "line": {
+              "R": 0.03,
+              "L": 0.0008,
+              "G": 2e-8,
+              "Cap": 1.4e-8
+            }
+          },
           "solution": "P_nat = U_n²/|Z_w| = (380 kV)²/239.9 Ω = 602 MW.",
-          "source": "Worked example, Gawlik (2015), pp. 90–92" },
-        { "question": "The line is 800 km long and open at its end; 380 kV are applied at its start. What voltage is at its end?",
-          "answer": 567000, "unit": "V", "tolerance": 0.01,
-          "compute": { "law": "lineEndKV", "line": { "R": 0.03, "L": 0.0008, "G": 2e-8, "Cap": 1.4e-8 }, "l": 800, "U1": 380000, "P": 0 },
+          "source": "Worked example, Gawlik (2015), pp. 90–92"
+        },
+        {
+          "question": "The line is 800 km long and open at its end; 380 kV are applied at its start. What voltage is at its end?",
+          "answer": 567000,
+          "unit": "V",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "lineEndKV",
+            "line": {
+              "R": 0.03,
+              "L": 0.0008,
+              "G": 2e-8,
+              "Cap": 1.4e-8
+            },
+            "l": 800,
+            "U1": 380000,
+            "P": 0
+          },
           "solution": "γl = (0.065 + j1.05)·10⁻³ · 800 = 0.052 + j0.84; U₂ = 380 kV / cosh γl = 567 kV, half again the start's voltage. (The notes print 152 %; 567/380 is 149 %.)",
-          "source": "Worked example, Gawlik (2015), p. 91" },
-        { "question": "The same 800 km line now feeds a resistance that takes 700 MW at 380 kV. What voltage is at its end?",
-          "answer": 322500, "unit": "V", "tolerance": 0.005,
-          "compute": { "law": "lineEndKV", "line": { "R": 0.03, "L": 0.0008, "G": 2e-8, "Cap": 1.4e-8 }, "l": 800, "U1": 380000, "P": 700000000 },
+          "source": "Worked example, Gawlik (2015), p. 91"
+        },
+        {
+          "question": "The same 800 km line now feeds a resistance that takes 700 MW at 380 kV. What voltage is at its end?",
+          "answer": 322500,
+          "unit": "V",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "lineEndKV",
+            "line": {
+              "R": 0.03,
+              "L": 0.0008,
+              "G": 2e-8,
+              "Cap": 1.4e-8
+            },
+            "l": 800,
+            "U1": 380000,
+            "P": 700000000
+          },
           "solution": "Z₂ = (380 kV)²/700 MW = 206.3 Ω; U₂ = U₁/(cosh γl + Z_w/Z₂ sinh γl) = 322.5 kV at −50°, 85 % of nominal: too low.",
-          "source": "Worked example, Gawlik (2015), p. 93" },
-        { "question": "By how many per cent does the voltage rise at the end of 200 km of this line, open?",
-          "answer": 2.3, "unit": "%", "tolerance": 0.03,
-          "compute": { "law": "ferrantiPercent", "line": { "R": 0.03, "L": 0.0008, "G": 2e-8, "Cap": 1.4e-8 }, "l": 200 },
+          "source": "Worked example, Gawlik (2015), p. 93"
+        },
+        {
+          "question": "By how many per cent does the voltage rise at the end of 200 km of this line, open?",
+          "answer": 2.3,
+          "unit": "%",
+          "tolerance": 0.03,
+          "compute": {
+            "law": "ferrantiPercent",
+            "line": {
+              "R": 0.03,
+              "L": 0.0008,
+              "G": 2e-8,
+              "Cap": 1.4e-8
+            },
+            "l": 200
+          },
           "solution": "1/|cosh γl| with γl = 0.013 + j0.21: 1.023, a rise of 2.3 %; at 500 km 16 %.",
-          "source": "Gawlik (2015), p. 87" }
+          "source": "Gawlik (2015), p. 87"
+        }
       ]
     },
     {
@@ -158,23 +482,66 @@
       "lawTex": "P = \\frac{U_1 U_2 \\sin\\delta}{X}",
       "lecture": "Gawlik (2015), section 6.2, pp. 198–202; slides V15+16",
       "equations": [
-        { "eq": "U₂ = U₁ − jX I₂, S₂ = 3 U₂ I₂*", "tex": "\\underline{U}_2 = \\underline{U}_1 - \\mathrm{j}X\\underline{I}_2, \\qquad \\underline{S}_2 = 3\\,\\underline{U}_2\\,\\underline{I}_2^{*}", "note": "two networks joined by a reactance", "ref": "(6-1), (6-2), p. 199" },
-        { "eq": "P = 3 U₁ U₂ sin δ / X; maximum 3 U₁ U₂/X at δ = 90°", "tex": "P = 3\\frac{U_1 U_2}{X}\\sin\\delta; \\qquad \\text{maximum } 3\\frac{U_1 U_2}{X} \\text{ at } \\delta = 90^\\circ", "note": "active power and the pull-out power", "ref": "(6-4), p. 199" },
-        { "eq": "Q = 3 (U₁ U₂ cos δ − U₂²)/X", "tex": "Q = 3\\,\\frac{U_1 U_2 \\cos\\delta - U_2^2}{X}", "note": "reactive power at the receiving end", "ref": "(6-5), p. 199" },
-        { "eq": "U₂⁴ + (2QX − U₁²) U₂² + X²(P² + Q²) = 0", "tex": "U_2^4 + (2QX - U_1^2)\\,U_2^2 + X^2(P^2 + Q^2) = 0", "note": "per unit, δ eliminated: the PV curve", "ref": "(6-6), (6-7), p. 200" },
-        { "eq": "P_max = 3 U₁²/(2X) at δ = 45°, U₂ = U₁/√2", "tex": "P_\\mathrm{max} = 3\\frac{U_1^2}{2X} \\text{ at } \\delta = 45^\\circ, \\qquad U_2 = \\frac{U_1}{\\sqrt{2}}", "note": "a purely resistive load", "ref": "(6-11)–(6-13), p. 202" }
+        {
+          "eq": "U₂ = U₁ − jX I₂, S₂ = 3 U₂ I₂*",
+          "tex": "\\underline{U}_2 = \\underline{U}_1 - \\mathrm{j}X\\underline{I}_2, \\qquad \\underline{S}_2 = 3\\,\\underline{U}_2\\,\\underline{I}_2^{*}",
+          "note": "two networks joined by a reactance",
+          "ref": "(6-1), (6-2), p. 199"
+        },
+        {
+          "eq": "P = 3 U₁ U₂ sin δ / X; maximum 3 U₁ U₂/X at δ = 90°",
+          "tex": "P = 3\\frac{U_1 U_2}{X}\\sin\\delta; \\qquad \\text{maximum } 3\\frac{U_1 U_2}{X} \\text{ at } \\delta = 90^\\circ",
+          "note": "active power and the pull-out power",
+          "ref": "(6-4), p. 199"
+        },
+        {
+          "eq": "Q = 3 (U₁ U₂ cos δ − U₂²)/X",
+          "tex": "Q = 3\\,\\frac{U_1 U_2 \\cos\\delta - U_2^2}{X}",
+          "note": "reactive power at the receiving end",
+          "ref": "(6-5), p. 199"
+        },
+        {
+          "eq": "U₂⁴ + (2QX − U₁²) U₂² + X²(P² + Q²) = 0",
+          "tex": "U_2^4 + (2QX - U_1^2)\\,U_2^2 + X^2(P^2 + Q^2) = 0",
+          "note": "per unit, δ eliminated: the PV curve",
+          "ref": "(6-6), (6-7), p. 200"
+        },
+        {
+          "eq": "P_max = 3 U₁²/(2X) at δ = 45°, U₂ = U₁/√2",
+          "tex": "P_\\mathrm{max} = 3\\frac{U_1^2}{2X} \\text{ at } \\delta = 45^\\circ, \\qquad U_2 = \\frac{U_1}{\\sqrt{2}}",
+          "note": "a purely resistive load",
+          "ref": "(6-11)–(6-13), p. 202"
+        }
       ],
       "practice": [
-        { "question": "A resistive load is fed over a reactance of 0.5 p.u. from a busbar held at 1 p.u. What is the most power it can draw?",
-          "answer": 1, "unit": "p.u.", "tolerance": 0.005,
-          "compute": { "law": "maxTransferResistive", "U1": 1, "X": 0.5 },
+        {
+          "question": "A resistive load is fed over a reactance of 0.5 p.u. from a busbar held at 1 p.u. What is the most power it can draw?",
+          "answer": 1,
+          "unit": "p.u.",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "maxTransferResistive",
+            "U1": 1,
+            "X": 0.5
+          },
           "solution": "P_max = U₁²/(2X) = 1/(2 · 0.5) = 1 p.u., at δ = 45° and U₂ = 0.707 p.u., far below the allowed 0.9 (p. 202).",
-          "source": "Worked by hand from Gawlik (2015), (6-11)–(6-13)" },
-        { "question": "Both ends are held at 1 p.u., X = 0.5 p.u., and the angle between them is 30°. What active power flows?",
-          "answer": 1, "unit": "p.u.", "tolerance": 0.005,
-          "compute": { "law": "transferPpu", "U1": 1, "U2": 1, "X": 0.5, "deltaDeg": 30 },
+          "source": "Worked by hand from Gawlik (2015), (6-11)–(6-13)"
+        },
+        {
+          "question": "Both ends are held at 1 p.u., X = 0.5 p.u., and the angle between them is 30°. What active power flows?",
+          "answer": 1,
+          "unit": "p.u.",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "transferPpu",
+            "U1": 1,
+            "U2": 1,
+            "X": 0.5,
+            "deltaDeg": 30
+          },
           "solution": "P = U₁ U₂ sin δ / X = sin 30°/0.5 = 1 p.u.; the pull-out power at 90° is 2 p.u.",
-          "source": "Worked by hand from Gawlik (2015), (6-4)" }
+          "source": "Worked by hand from Gawlik (2015), (6-4)"
+        }
       ]
     },
     {
@@ -185,24 +552,74 @@
       "lawTex": "z = \\frac{Z}{Z_\\mathrm{B}}, \\qquad Z_\\mathrm{B} = \\frac{U_\\mathrm{B}^2}{S_\\mathrm{B}}",
       "lecture": "Gawlik (2015), section 6.3.4, pp. 211–216; slides V17+18",
       "equations": [
-        { "eq": "u = U/U_B, i = I/I_B, z = Z/Z_B", "tex": "u = \\frac{U}{U_\\mathrm{B}}, \\qquad i = \\frac{I}{I_\\mathrm{B}}, \\qquad z = \\frac{Z}{Z_\\mathrm{B}}", "note": "per-unit values; only two bases are free. The notes write S_B = U_B I_B; with line voltages, as here, S_B = √3 U_B I_B", "ref": "(6-33), p. 213" },
-        { "eq": "X″_d = x″_d · U_B²/S_B", "tex": "X''_\\mathrm{d} = x''_\\mathrm{d}\\,\\frac{U_\\mathrm{B}^2}{S_\\mathrm{B}}", "note": "a generator's subtransient reactance from its per-unit value", "ref": "(6.34), p. 213" },
-        { "eq": "Z_Q = c U_n²/S″_kQ", "tex": "Z_\\mathrm{Q} = c\\,\\frac{U_\\mathrm{n}^2}{S''_\\mathrm{kQ}}", "note": "a feeding network from its short-circuit power", "ref": "(6-32), p. 212" },
-        { "eq": "Z_T = u_k U_n²/S_n, R_T = P_k U_n²/S_n²", "tex": "Z_\\mathrm{T} = u_\\mathrm{k}\\frac{U_\\mathrm{n}^2}{S_\\mathrm{n}}, \\qquad R_\\mathrm{T} = \\frac{P_\\mathrm{k} U_\\mathrm{n}^2}{S_\\mathrm{n}^2}", "note": "the transformer in the example", "ref": "p. 215" },
-        { "eq": "z_new = z_old · (S_B,new/S_B,old) · (U_B,old/U_B,new)²", "tex": "z_\\mathrm{new} = z_\\mathrm{old}\\,\\frac{S_\\mathrm{B,new}}{S_\\mathrm{B,old}} \\Big(\\frac{U_\\mathrm{B,old}}{U_\\mathrm{B,new}}\\Big)^2", "note": "a change of base, from the definitions", "ref": "" },
-        { "eq": "I″_k3 = c U_n/(√3 |Z_k|) = (c/|z_k|) · I_B", "tex": "I''_\\mathrm{k3} = \\frac{c\\,U_\\mathrm{n}}{\\sqrt{3}\\,|\\underline{Z}_\\mathrm{k}|} = \\frac{c}{|\\underline{z}_\\mathrm{k}|}\\, I_\\mathrm{B}", "note": "the fault current in amperes or per unit", "ref": "(6-31), p. 212" }
+        {
+          "eq": "u = U/U_B, i = I/I_B, z = Z/Z_B",
+          "tex": "u = \\frac{U}{U_\\mathrm{B}}, \\qquad i = \\frac{I}{I_\\mathrm{B}}, \\qquad z = \\frac{Z}{Z_\\mathrm{B}}",
+          "note": "per-unit values; only two bases are free. The notes write S_B = U_B I_B; with line voltages, as here, S_B = √3 U_B I_B",
+          "ref": "(6-33), p. 213"
+        },
+        {
+          "eq": "X″_d = x″_d · U_B²/S_B",
+          "tex": "X''_\\mathrm{d} = x''_\\mathrm{d}\\,\\frac{U_\\mathrm{B}^2}{S_\\mathrm{B}}",
+          "note": "a generator's subtransient reactance from its per-unit value",
+          "ref": "(6.34), p. 213"
+        },
+        {
+          "eq": "Z_Q = c U_n²/S″_kQ",
+          "tex": "Z_\\mathrm{Q} = c\\,\\frac{U_\\mathrm{n}^2}{S''_\\mathrm{kQ}}",
+          "note": "a feeding network from its short-circuit power",
+          "ref": "(6-32), p. 212"
+        },
+        {
+          "eq": "Z_T = u_k U_n²/S_n, R_T = P_k U_n²/S_n²",
+          "tex": "Z_\\mathrm{T} = u_\\mathrm{k}\\frac{U_\\mathrm{n}^2}{S_\\mathrm{n}}, \\qquad R_\\mathrm{T} = \\frac{P_\\mathrm{k} U_\\mathrm{n}^2}{S_\\mathrm{n}^2}",
+          "note": "the transformer in the example",
+          "ref": "p. 215"
+        },
+        {
+          "eq": "z_new = z_old · (S_B,new/S_B,old) · (U_B,old/U_B,new)²",
+          "tex": "z_\\mathrm{new} = z_\\mathrm{old}\\,\\frac{S_\\mathrm{B,new}}{S_\\mathrm{B,old}} \\Big(\\frac{U_\\mathrm{B,old}}{U_\\mathrm{B,new}}\\Big)^2",
+          "note": "a change of base, from the definitions",
+          "ref": ""
+        },
+        {
+          "eq": "I″_k3 = c U_n/(√3 |Z_k|) = (c/|z_k|) · I_B",
+          "tex": "I''_\\mathrm{k3} = \\frac{c\\,U_\\mathrm{n}}{\\sqrt{3}\\,|\\underline{Z}_\\mathrm{k}|} = \\frac{c}{|\\underline{z}_\\mathrm{k}|}\\, I_\\mathrm{B}",
+          "note": "the fault current in amperes or per unit",
+          "ref": "(6-31), p. 212"
+        }
       ],
       "practice": [
-        { "question": "A generator of 80 MVA, 20 kV has x″d = 25 %. What is its subtransient reactance in ohms?",
-          "answer": 1.25, "unit": "Ω", "tolerance": 0.005,
-          "compute": { "law": "ohmsFromPu", "z": 0.25, "Ur": 20000, "Sr": 80000000 },
+        {
+          "question": "A generator of 80 MVA, 20 kV has x″d = 25 %. What is its subtransient reactance in ohms?",
+          "answer": 1.25,
+          "unit": "Ω",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "ohmsFromPu",
+            "z": 0.25,
+            "Ur": 20000,
+            "Sr": 80000000
+          },
           "solution": "X″d = 0.25 · (20 kV)²/80 MVA = 0.25 · 5 Ω = 1.25 Ω.",
-          "source": "Worked example, Gawlik (2015), p. 213" },
-        { "question": "The 31 MVA transformer has u_k = 12 % on its own rating. What is its per-unit impedance on a 100 MVA base at the same voltage?",
-          "answer": 0.387, "unit": "p.u.", "tolerance": 0.005,
-          "compute": { "law": "changeBase", "z": 0.12, "Sold": 31000000, "Uold": 30000, "Snew": 100000000, "Unew": 30000 },
+          "source": "Worked example, Gawlik (2015), p. 213"
+        },
+        {
+          "question": "The 31 MVA transformer has u_k = 12 % on its own rating. What is its per-unit impedance on a 100 MVA base at the same voltage?",
+          "answer": 0.387,
+          "unit": "p.u.",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "changeBase",
+            "z": 0.12,
+            "Sold": 31000000,
+            "Uold": 30000,
+            "Snew": 100000000,
+            "Unew": 30000
+          },
           "solution": "z = 0.12 · 100/31 = 0.387 p.u. In ohms nothing changes: 0.387 · (30 kV)²/100 MVA = 3.48 Ω either way.",
-          "source": "Worked by hand from Gawlik (2015), (6-33) and p. 215" }
+          "source": "Worked by hand from Gawlik (2015), (6-33) and p. 215"
+        }
       ]
     },
     {
@@ -213,29 +630,90 @@
       "lawTex": "i_\\mathrm{p} = \\kappa \\sqrt{2}\\, I''_\\mathrm{k}, \\qquad \\kappa = 1 + \\mathrm{e}^{-\\pi R/X}",
       "lecture": "Gawlik (2015), sections 6.3.2–6.3.5, pp. 207–216; slides V17+18",
       "equations": [
-        { "eq": "L di/dt + R i = √2 U sin(ωt + α)", "tex": "L\\frac{\\mathrm{d}i}{\\mathrm{d}t} + R i = \\sqrt{2}\\,U \\sin(\\omega t + \\alpha)", "note": "the fault switched on at angle α", "ref": "(6-20), p. 207" },
-        { "eq": "i = √2 U/√(R² + ω²L²) [sin(ωt + α − φ) − sin(α − φ) e^(−t/T)]", "tex": "i = \\frac{\\sqrt{2}\\,U}{\\sqrt{R^2 + (\\omega L)^2}}\\Big[\\sin(\\omega t + \\alpha - \\varphi) - \\sin(\\alpha - \\varphi)\\,\\mathrm{e}^{-t/T}\\Big]", "note": "AC part plus decaying DC part", "ref": "(6-29), p. 208" },
-        { "eq": "tan φ = ωL/R, T = L/R", "tex": "\\tan\\varphi = \\frac{\\omega L}{R}, \\qquad T = \\frac{L}{R}", "note": "", "ref": "(6-23), (6-30), p. 208" },
-        { "eq": "I″_k3 = c U_n/(√3 Z_k), c = 1.1 above 1 kV", "tex": "I''_\\mathrm{k3} = \\frac{c\\,U_\\mathrm{n}}{\\sqrt{3}\\,Z_\\mathrm{k}}, \\qquad c = 1.1 \\text{ above } 1\\,\\mathrm{kV}", "note": "initial symmetrical short-circuit current", "ref": "(6-31), table 6-2, p. 212" },
-        { "eq": "i_p = √2 (1 + e^(−t R/L)) I″_k = κ √2 I″_k at t = 10 ms", "tex": "i_\\mathrm{p} = \\sqrt{2}\\,\\big(1 + \\mathrm{e}^{-tR/L}\\big) I''_\\mathrm{k} = \\kappa\\sqrt{2}\\, I''_\\mathrm{k} \\quad \\text{at } t = 10\\,\\mathrm{ms}", "note": "peak short-circuit current", "ref": "(6-42), (6-43), p. 214" },
-        { "eq": "κ = 2.0 (R/X = 0), 1.73 (0.1, overhead), 1.043 (1.0, cable)", "tex": "\\kappa = 2.0 \\;(R/X = 0), \\qquad 1.73 \\;(0.1,\\ \\text{overhead}), \\qquad 1.043 \\;(1.0,\\ \\text{cable})", "note": "", "ref": "table 6-3, p. 215" }
+        {
+          "eq": "L di/dt + R i = √2 U sin(ωt + α)",
+          "tex": "L\\frac{\\mathrm{d}i}{\\mathrm{d}t} + R i = \\sqrt{2}\\,U \\sin(\\omega t + \\alpha)",
+          "note": "the fault switched on at angle α",
+          "ref": "(6-20), p. 207"
+        },
+        {
+          "eq": "i = √2 U/√(R² + ω²L²) [sin(ωt + α − φ) − sin(α − φ) e^(−t/T)]",
+          "tex": "i = \\frac{\\sqrt{2}\\,U}{\\sqrt{R^2 + (\\omega L)^2}}\\Big[\\sin(\\omega t + \\alpha - \\varphi) - \\sin(\\alpha - \\varphi)\\,\\mathrm{e}^{-t/T}\\Big]",
+          "note": "AC part plus decaying DC part",
+          "ref": "(6-29), p. 208"
+        },
+        {
+          "eq": "tan φ = ωL/R, T = L/R",
+          "tex": "\\tan\\varphi = \\frac{\\omega L}{R}, \\qquad T = \\frac{L}{R}",
+          "note": "",
+          "ref": "(6-23), (6-30), p. 208"
+        },
+        {
+          "eq": "I″_k3 = c U_n/(√3 Z_k), c = 1.1 above 1 kV",
+          "tex": "I''_\\mathrm{k3} = \\frac{c\\,U_\\mathrm{n}}{\\sqrt{3}\\,Z_\\mathrm{k}}, \\qquad c = 1.1 \\text{ above } 1\\,\\mathrm{kV}",
+          "note": "initial symmetrical short-circuit current",
+          "ref": "(6-31), table 6-2, p. 212"
+        },
+        {
+          "eq": "i_p = √2 (1 + e^(−t R/L)) I″_k = κ √2 I″_k at t = 10 ms",
+          "tex": "i_\\mathrm{p} = \\sqrt{2}\\,\\big(1 + \\mathrm{e}^{-tR/L}\\big) I''_\\mathrm{k} = \\kappa\\sqrt{2}\\, I''_\\mathrm{k} \\quad \\text{at } t = 10\\,\\mathrm{ms}",
+          "note": "peak short-circuit current",
+          "ref": "(6-42), (6-43), p. 214"
+        },
+        {
+          "eq": "κ = 2.0 (R/X = 0), 1.73 (0.1, overhead), 1.043 (1.0, cable)",
+          "tex": "\\kappa = 2.0 \\;(R/X = 0), \\qquad 1.73 \\;(0.1,\\ \\text{overhead}), \\qquad 1.043 \\;(1.0,\\ \\text{cable})",
+          "note": "",
+          "ref": "table 6-3, p. 215"
+        }
       ],
       "practice": [
-        { "question": "In the notes' example the fault path at 30 kV has R_k = 4.95 Ω and X_k = 17.68 Ω, with c = 1.1. What is I″k3?",
-          "answer": 1038, "unit": "A", "tolerance": 0.005,
-          "compute": { "law": "exampleIk3", "c": 1.1, "Un": 30000, "SkQ": 5000000000, "RXQ": 0.1, "uk": 0.12, "ST": 31000000, "Pk": 140000, "Rl": 0.12, "Xl": 0.35, "len": 40 },
+        {
+          "question": "In the notes' example the fault path at 30 kV has R_k = 4.95 Ω and X_k = 17.68 Ω, with c = 1.1. What is I″k3?",
+          "answer": 1038,
+          "unit": "A",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "exampleIk3",
+            "c": 1.1,
+            "Un": 30000,
+            "SkQ": 5000000000,
+            "RXQ": 0.1,
+            "uk": 0.12,
+            "ST": 31000000,
+            "Pk": 140000,
+            "Rl": 0.12,
+            "Xl": 0.35,
+            "len": 40
+          },
           "solution": "Z_k = √(4.95² + 17.68²) = 18.36 Ω; I″k3 = 1.1 · 30 kV/(√3 · 18.36 Ω) = 1.038 kA.",
-          "source": "Worked example, Gawlik (2015), p. 216" },
-        { "question": "Its R/X is 0.28. What peak factor κ does (6-43) give?",
-          "answer": 1.415, "unit": "", "tolerance": 0.005,
-          "compute": { "law": "kappa", "RX": 0.28 },
+          "source": "Worked example, Gawlik (2015), p. 216"
+        },
+        {
+          "question": "Its R/X is 0.28. What peak factor κ does (6-43) give?",
+          "answer": 1.415,
+          "unit": "",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "kappa",
+            "RX": 0.28
+          },
           "solution": "κ = 1 + e^(−π · 0.28) = 1 + 0.415 = 1.415; the notes read 1.4 off figure 6-18.",
-          "source": "Worked example, Gawlik (2015), p. 216" },
-        { "question": "What peak short-circuit current i_p follows?",
-          "answer": 2077, "unit": "A", "tolerance": 0.01,
-          "compute": { "law": "peakCurrent", "RX": 0.28, "Ik": 1038 },
+          "source": "Worked example, Gawlik (2015), p. 216"
+        },
+        {
+          "question": "What peak short-circuit current i_p follows?",
+          "answer": 2077,
+          "unit": "A",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "peakCurrent",
+            "RX": 0.28,
+            "Ik": 1038
+          },
           "solution": "i_p = κ √2 I″k = 1.415 · 1.414 · 1.038 kA = 2.08 kA.",
-          "source": "Worked by hand from Gawlik (2015), (6-43) and p. 216" }
+          "source": "Worked by hand from Gawlik (2015), (6-43) and p. 216"
+        }
       ]
     },
     {
@@ -246,24 +724,72 @@
       "lawTex": "\\text{stable while } A_2 > A_1",
       "lecture": "Gawlik (2015), section 6.4.4, pp. 235–237; slides V19+20",
       "equations": [
-        { "eq": "P = 3 U_p U_N sin δ / X, X = X_G + X_T + X_L + X_N", "tex": "P = 3\\frac{U_\\mathrm{p} U_\\mathrm{N}}{X}\\sin\\delta, \\qquad X = X_\\mathrm{G} + X_\\mathrm{T} + X_\\mathrm{L} + X_\\mathrm{N}", "note": "the generator on the network", "ref": "(6-80), p. 235" },
-        { "eq": "stable on the rising side, δ < 90°; unstable on the falling side", "tex": "\\text{stable on the rising side, } \\delta < 90^\\circ; \\quad \\text{unstable on the falling side}", "note": "", "ref": "p. 236" },
-        { "eq": "A1 = ∫ from δ0 to δc of (P_m − P_fault(δ)) dδ", "tex": "A_1 = \\int_{\\delta_0}^{\\delta_\\mathrm{c}} \\big(P_\\mathrm{m} - P_\\mathrm{fault}(\\delta)\\big)\\,\\mathrm{d}\\delta", "note": "accelerating area", "ref": "figure 6-45, p. 236" },
-        { "eq": "A2 = ∫ from δc to δmax of (P_post(δ) − P_m) dδ", "tex": "A_2 = \\int_{\\delta_\\mathrm{c}}^{\\delta_\\mathrm{max}} \\big(P_\\mathrm{post}(\\delta) - P_\\mathrm{m}\\big)\\,\\mathrm{d}\\delta", "note": "braking area", "ref": "figure 6-45, p. 236" },
-        { "eq": "A2 > A1", "tex": "A_2 > A_1", "note": "the equal-area criterion; otherwise the generator slips", "ref": "p. 237" },
-        { "eq": "cos δcr = [P_m (δmax − δ0) + P_post cos δmax − P_fault cos δ0]/(P_post − P_fault)", "tex": "\\cos\\delta_\\mathrm{cr} = \\frac{P_\\mathrm{m}(\\delta_\\mathrm{max} - \\delta_0) + P_\\mathrm{post}\\cos\\delta_\\mathrm{max} - P_\\mathrm{fault}\\cos\\delta_0}{P_\\mathrm{post} - P_\\mathrm{fault}}", "note": "the critical clearing angle, from A1 = A2", "ref": "" }
+        {
+          "eq": "P = 3 U_p U_N sin δ / X, X = X_G + X_T + X_L + X_N",
+          "tex": "P = 3\\frac{U_\\mathrm{p} U_\\mathrm{N}}{X}\\sin\\delta, \\qquad X = X_\\mathrm{G} + X_\\mathrm{T} + X_\\mathrm{L} + X_\\mathrm{N}",
+          "note": "the generator on the network",
+          "ref": "(6-80), p. 235"
+        },
+        {
+          "eq": "stable on the rising side, δ < 90°; unstable on the falling side",
+          "tex": "\\text{stable on the rising side, } \\delta < 90^\\circ; \\quad \\text{unstable on the falling side}",
+          "note": "",
+          "ref": "p. 236"
+        },
+        {
+          "eq": "A1 = ∫ from δ0 to δc of (P_m − P_fault(δ)) dδ",
+          "tex": "A_1 = \\int_{\\delta_0}^{\\delta_\\mathrm{c}} \\big(P_\\mathrm{m} - P_\\mathrm{fault}(\\delta)\\big)\\,\\mathrm{d}\\delta",
+          "note": "accelerating area",
+          "ref": "figure 6-45, p. 236"
+        },
+        {
+          "eq": "A2 = ∫ from δc to δmax of (P_post(δ) − P_m) dδ",
+          "tex": "A_2 = \\int_{\\delta_\\mathrm{c}}^{\\delta_\\mathrm{max}} \\big(P_\\mathrm{post}(\\delta) - P_\\mathrm{m}\\big)\\,\\mathrm{d}\\delta",
+          "note": "braking area",
+          "ref": "figure 6-45, p. 236"
+        },
+        {
+          "eq": "A2 > A1",
+          "tex": "A_2 > A_1",
+          "note": "the equal-area criterion; otherwise the generator slips",
+          "ref": "p. 237"
+        },
+        {
+          "eq": "cos δcr = [P_m (δmax − δ0) + P_post cos δmax − P_fault cos δ0]/(P_post − P_fault)",
+          "tex": "\\cos\\delta_\\mathrm{cr} = \\frac{P_\\mathrm{m}(\\delta_\\mathrm{max} - \\delta_0) + P_\\mathrm{post}\\cos\\delta_\\mathrm{max} - P_\\mathrm{fault}\\cos\\delta_0}{P_\\mathrm{post} - P_\\mathrm{fault}}",
+          "note": "the critical clearing angle, from A1 = A2",
+          "ref": ""
+        }
       ],
       "practice": [
-        { "question": "A turbine delivers 0.8 of the rating; over both lines the curve peaks at 1.6. At what angle does the generator run?",
-          "answer": 30, "unit": "°", "tolerance": 0.005,
-          "compute": { "law": "initialAngleDeg", "Pm": 0.8, "Ppre": 1.6 },
+        {
+          "question": "A turbine delivers 0.8 of the rating; over both lines the curve peaks at 1.6. At what angle does the generator run?",
+          "answer": 30,
+          "unit": "°",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "initialAngleDeg",
+            "Pm": 0.8,
+            "Ppre": 1.6
+          },
           "solution": "sin δ0 = 0.8/1.6 = 0.5, δ0 = 30°, on the rising side.",
-          "source": "Worked by hand from Gawlik (2015), (6-80), with example peaks" },
-        { "question": "A fault at the busbar transfers nothing; after clearing, one line remains with a peak of 1.2. What is the critical clearing angle?",
-          "answer": 59.1, "unit": "°", "tolerance": 0.005,
-          "compute": { "law": "criticalAngleDeg", "Pm": 0.8, "Ppre": 1.6, "Pfault": 0, "Ppost": 1.2 },
+          "source": "Worked by hand from Gawlik (2015), (6-80), with example peaks"
+        },
+        {
+          "question": "A fault at the busbar transfers nothing; after clearing, one line remains with a peak of 1.2. What is the critical clearing angle?",
+          "answer": 59.1,
+          "unit": "°",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "criticalAngleDeg",
+            "Pm": 0.8,
+            "Ppre": 1.6,
+            "Pfault": 0,
+            "Ppost": 1.2
+          },
           "solution": "δ0 = 30° = 0.524 rad, δmax = 180° − asin(0.8/1.2) = 138.2° = 2.412 rad. cos δcr = [0.8 (2.412 − 0.524) + 1.2 cos 138.2°]/1.2 = (1.510 − 0.894)/1.2 = 0.513, δcr = 59.1°.",
-          "source": "Worked by hand from Gawlik (2015), figure 6-45, with example peaks" }
+          "source": "Worked by hand from Gawlik (2015), figure 6-45, with example peaks"
+        }
       ]
     },
     {
@@ -274,25 +800,77 @@
       "lawTex": "\\underline{i}_\\mathrm{s} = \\frac{2}{3}\\big(i_\\mathrm{u} + i_\\mathrm{v}\\,\\mathrm{e}^{\\mathrm{j}2\\pi/3} + i_\\mathrm{w}\\,\\mathrm{e}^{\\mathrm{j}4\\pi/3}\\big)",
       "lecture": "Schrödl (2012), pp. 11 and 149–155; Gawlik (2015), section 4.3, pp. 118–120",
       "equations": [
-        { "eq": "V_ges = const · J · N/2 in the real axis", "tex": "V_\\mathrm{ges} = \\mathrm{const}\\cdot J_\\mathrm{Nenn}\\cdot\\frac{N}{2} \\quad \\text{in the real axis}", "note": "N windings with sinusoidal currents: N/2 times one winding's field", "ref": "Schrödl (2012), (M.7), p. 11" },
-        { "eq": "i = (2/N) Σ i_k e^(j2π(k−1)/N), i_k = J_k/(√2 J_Nenn)", "tex": "\\underline{i} = \\frac{2}{N}\\sum_{k=1}^{N} i_k\\,\\mathrm{e}^{\\mathrm{j}\\frac{2\\pi}{N}(k-1)}, \\qquad i_k = \\frac{J_k}{\\sqrt{2}\\,J_\\mathrm{Nenn}}", "note": "the per-unit current space vector", "ref": "Schrödl (2012), (M.8), p. 11" },
-        { "eq": "i = ⅔ (i₁ + i₂ e^(j2π/3) + i₃ e^(j4π/3))", "tex": "\\underline{i} = \\frac{2}{3}\\big(i_1 + i_2\\,\\mathrm{e}^{\\mathrm{j}2\\pi/3} + i_3\\,\\mathrm{e}^{\\mathrm{j}4\\pi/3}\\big)", "note": "three phases", "ref": "Schrödl (2012), (M.9), p. 11" },
-        { "eq": "i_u = ½, i_v = −1, i_w = ½ gives i_s = 1 · e^(j300°)", "tex": "i_\\mathrm{u} = \\tfrac{1}{2},\\; i_\\mathrm{v} = -1,\\; i_\\mathrm{w} = \\tfrac{1}{2} \\;\\Rightarrow\\; \\underline{i}_\\mathrm{s} = 1\\cdot\\mathrm{e}^{\\mathrm{j}300^\\circ}", "note": "an instant of rated current", "ref": "Schrödl (2012), (A.2), p. 152" },
-        { "eq": "ψ_s = l_s i_s, l_s = 3/2 l_Strang", "tex": "\\underline{\\psi}_\\mathrm{s} = \\ell_\\mathrm{s}\\,\\underline{i}_\\mathrm{s}, \\qquad \\ell_\\mathrm{s} = \\frac{3}{2}\\,\\ell_\\mathrm{Strang}", "note": "the three-phase inductance is 3/2 the phase inductance; on PDF page 105, whose printed number the scan does not show", "ref": "Schrödl (2012), (A.28), (A.29)" },
-        { "eq": "n_synch = 60 f/p [1/min]", "tex": "n_\\mathrm{synch} = \\frac{60 f}{p} \\quad [1/\\mathrm{min}]", "note": "synchronous speed", "ref": "Gawlik (2015), (4-94), p. 118" },
-        { "eq": "s = (n_synch − n)/n_synch", "tex": "s = \\frac{n_\\mathrm{synch} - n}{n_\\mathrm{synch}}", "note": "slip of an induction machine", "ref": "Gawlik (2015), (4-95), p. 120" }
+        {
+          "eq": "V_ges = const · J · N/2 in the real axis",
+          "tex": "V_\\mathrm{ges} = \\mathrm{const}\\cdot J_\\mathrm{Nenn}\\cdot\\frac{N}{2} \\quad \\text{in the real axis}",
+          "note": "N windings with sinusoidal currents: N/2 times one winding's field",
+          "ref": "Schrödl (2012), (M.7), p. 11"
+        },
+        {
+          "eq": "i = (2/N) Σ i_k e^(j2π(k−1)/N), i_k = J_k/(√2 J_Nenn)",
+          "tex": "\\underline{i} = \\frac{2}{N}\\sum_{k=1}^{N} i_k\\,\\mathrm{e}^{\\mathrm{j}\\frac{2\\pi}{N}(k-1)}, \\qquad i_k = \\frac{J_k}{\\sqrt{2}\\,J_\\mathrm{Nenn}}",
+          "note": "the per-unit current space vector",
+          "ref": "Schrödl (2012), (M.8), p. 11"
+        },
+        {
+          "eq": "i = ⅔ (i₁ + i₂ e^(j2π/3) + i₃ e^(j4π/3))",
+          "tex": "\\underline{i} = \\frac{2}{3}\\big(i_1 + i_2\\,\\mathrm{e}^{\\mathrm{j}2\\pi/3} + i_3\\,\\mathrm{e}^{\\mathrm{j}4\\pi/3}\\big)",
+          "note": "three phases",
+          "ref": "Schrödl (2012), (M.9), p. 11"
+        },
+        {
+          "eq": "i_u = ½, i_v = −1, i_w = ½ gives i_s = 1 · e^(j300°)",
+          "tex": "i_\\mathrm{u} = \\tfrac{1}{2},\\; i_\\mathrm{v} = -1,\\; i_\\mathrm{w} = \\tfrac{1}{2} \\;\\Rightarrow\\; \\underline{i}_\\mathrm{s} = 1\\cdot\\mathrm{e}^{\\mathrm{j}300^\\circ}",
+          "note": "an instant of rated current",
+          "ref": "Schrödl (2012), (A.2), p. 152"
+        },
+        {
+          "eq": "ψ_s = l_s i_s, l_s = 3/2 l_Strang",
+          "tex": "\\underline{\\psi}_\\mathrm{s} = \\ell_\\mathrm{s}\\,\\underline{i}_\\mathrm{s}, \\qquad \\ell_\\mathrm{s} = \\frac{3}{2}\\,\\ell_\\mathrm{Strang}",
+          "note": "the three-phase inductance is 3/2 the phase inductance; on PDF page 105, whose printed number the scan does not show",
+          "ref": "Schrödl (2012), (A.28), (A.29)"
+        },
+        {
+          "eq": "n_synch = 60 f/p [1/min]",
+          "tex": "n_\\mathrm{synch} = \\frac{60 f}{p} \\quad [1/\\mathrm{min}]",
+          "note": "synchronous speed",
+          "ref": "Gawlik (2015), (4-94), p. 118"
+        },
+        {
+          "eq": "s = (n_synch − n)/n_synch",
+          "tex": "s = \\frac{n_\\mathrm{synch} - n}{n_\\mathrm{synch}}",
+          "note": "slip of an induction machine",
+          "ref": "Gawlik (2015), (4-95), p. 120"
+        }
       ],
       "practice": [
-        { "question": "A hydro generator on the 50 Hz network turns at 375 min⁻¹. How many pole pairs does it have?",
-          "answer": 8, "unit": "", "tolerance": 0.001,
-          "compute": { "law": "polePairs", "f": 50, "n": 375 },
+        {
+          "question": "A hydro generator on the 50 Hz network turns at 375 min⁻¹. How many pole pairs does it have?",
+          "answer": 8,
+          "unit": "",
+          "tolerance": 0.001,
+          "compute": {
+            "law": "polePairs",
+            "f": 50,
+            "n": 375
+          },
           "solution": "p = 60 f/n = 3000/375 = 8 pole pairs, 16 poles.",
-          "source": "Worked example, Gawlik (2015), p. 118" },
-        { "question": "A four-pole induction motor for 50 Hz runs at 1475 min⁻¹ at rated load. What is its slip?",
-          "answer": 0.0167, "unit": "", "tolerance": 0.005,
-          "compute": { "law": "slip", "f": 50, "p": 2, "n": 1475 },
+          "source": "Worked example, Gawlik (2015), p. 118"
+        },
+        {
+          "question": "A four-pole induction motor for 50 Hz runs at 1475 min⁻¹ at rated load. What is its slip?",
+          "answer": 0.0167,
+          "unit": "",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "slip",
+            "f": 50,
+            "p": 2,
+            "n": 1475
+          },
           "solution": "n_synch = 3000/2 = 1500 min⁻¹; s = (1500 − 1475)/1500 = 0.0167.",
-          "source": "Worked example, Gawlik (2015), p. 120" }
+          "source": "Worked example, Gawlik (2015), p. 120"
+        }
       ]
     },
     {
@@ -303,40 +881,122 @@
       "lawTex": "n = \\frac{U_\\mathrm{A} - J R_\\mathrm{A}}{k\\Phi}, \\qquad M_\\mathrm{i} = \\frac{k\\Phi J}{2\\pi}",
       "lecture": "Schrödl (2012), pp. 115–137",
       "equations": [
-        { "eq": "U_i,A = k Φ n, k = z p/a", "tex": "U_\\mathrm{i,A} = k\\,\\Phi\\, n, \\qquad k = \\frac{z\\,p}{a}", "note": "induced voltage, n in 1/s", "ref": "Schrödl (2012), (G.29), (G.30), p. 119" },
-        { "eq": "M_i = (k/2π) Φ J", "tex": "M_\\mathrm{i} = \\frac{k}{2\\pi}\\,\\Phi\\, J", "note": "internal torque", "ref": "Schrödl (2012), (G.33), (G.34), p. 120" },
-        { "eq": "U_A = J R_A + k Φ n + L_A dJ/dt", "tex": "U_\\mathrm{A} = J R_\\mathrm{A} + k\\,\\Phi\\, n + L_\\mathrm{A}\\frac{\\mathrm{d}J}{\\mathrm{d}t}", "note": "armature voltage equation, brush drop added to U_A", "ref": "Schrödl (2012), (G.38), p. 121" },
-        { "eq": "Θ_m dΩ_m/dt = k' Φ J + M_Last", "tex": "\\Theta_\\mathrm{m}\\frac{\\mathrm{d}\\Omega_\\mathrm{m}}{\\mathrm{d}t} = k'\\,\\Phi\\, J + M_\\mathrm{Last}", "note": "mechanical equation, k' = k/2π", "ref": "Schrödl (2012), (G.41), p. 121" },
-        { "eq": "n = Ω_m/2π = (U_A − J R_A)/(kΦ)", "tex": "n = \\frac{\\Omega_\\mathrm{m}}{2\\pi} = \\frac{U_\\mathrm{A} - J R_\\mathrm{A}}{k\\Phi}", "note": "steady state", "ref": "Schrödl (2012), (G.46), (G.49), pp. 123–124" },
-        { "eq": "(dω_m/di_A) = −r_A below rated speed, −r_A/φ in field weakening", "tex": "\\Big(\\frac{\\mathrm{d}\\omega_\\mathrm{m}}{\\mathrm{d}i_\\mathrm{A}}\\Big) = -r_\\mathrm{A} \\text{ below rated speed}, \\qquad -\\frac{r_\\mathrm{A}}{\\varphi} \\text{ in field weakening}", "note": "half the flux, twice the slope against current", "ref": "Schrödl (2012), (G.80), (G.81), p. 137" },
-        { "eq": "i_A(ω_m = 0) = u_A/r_A", "tex": "i_\\mathrm{A}(\\omega_\\mathrm{m} = 0) = \\frac{u_\\mathrm{A}}{r_\\mathrm{A}}", "note": "every field-weakening line meets at standstill on the current axis", "ref": "Schrödl (2012), (G.83), p. 137" }
+        {
+          "eq": "U_i,A = k Φ n, k = z p/a",
+          "tex": "U_\\mathrm{i,A} = k\\,\\Phi\\, n, \\qquad k = \\frac{z\\,p}{a}",
+          "note": "induced voltage, n in 1/s",
+          "ref": "Schrödl (2012), (G.29), (G.30), p. 119"
+        },
+        {
+          "eq": "M_i = (k/2π) Φ J",
+          "tex": "M_\\mathrm{i} = \\frac{k}{2\\pi}\\,\\Phi\\, J",
+          "note": "internal torque",
+          "ref": "Schrödl (2012), (G.33), (G.34), p. 120"
+        },
+        {
+          "eq": "U_A = J R_A + k Φ n + L_A dJ/dt",
+          "tex": "U_\\mathrm{A} = J R_\\mathrm{A} + k\\,\\Phi\\, n + L_\\mathrm{A}\\frac{\\mathrm{d}J}{\\mathrm{d}t}",
+          "note": "armature voltage equation, brush drop added to U_A",
+          "ref": "Schrödl (2012), (G.38), p. 121"
+        },
+        {
+          "eq": "Θ_m dΩ_m/dt = k' Φ J + M_Last",
+          "tex": "\\Theta_\\mathrm{m}\\frac{\\mathrm{d}\\Omega_\\mathrm{m}}{\\mathrm{d}t} = k'\\,\\Phi\\, J + M_\\mathrm{Last}",
+          "note": "mechanical equation, k' = k/2π",
+          "ref": "Schrödl (2012), (G.41), p. 121"
+        },
+        {
+          "eq": "n = Ω_m/2π = (U_A − J R_A)/(kΦ)",
+          "tex": "n = \\frac{\\Omega_\\mathrm{m}}{2\\pi} = \\frac{U_\\mathrm{A} - J R_\\mathrm{A}}{k\\Phi}",
+          "note": "steady state",
+          "ref": "Schrödl (2012), (G.46), (G.49), pp. 123–124"
+        },
+        {
+          "eq": "(dω_m/di_A) = −r_A below rated speed, −r_A/φ in field weakening",
+          "tex": "\\Big(\\frac{\\mathrm{d}\\omega_\\mathrm{m}}{\\mathrm{d}i_\\mathrm{A}}\\Big) = -r_\\mathrm{A} \\text{ below rated speed}, \\qquad -\\frac{r_\\mathrm{A}}{\\varphi} \\text{ in field weakening}",
+          "note": "half the flux, twice the slope against current",
+          "ref": "Schrödl (2012), (G.80), (G.81), p. 137"
+        },
+        {
+          "eq": "i_A(ω_m = 0) = u_A/r_A",
+          "tex": "i_\\mathrm{A}(\\omega_\\mathrm{m} = 0) = \\frac{u_\\mathrm{A}}{r_\\mathrm{A}}",
+          "note": "every field-weakening line meets at standstill on the current axis",
+          "ref": "Schrödl (2012), (G.83), p. 137"
+        }
       ],
       "practice": [
-        { "question": "A separately excited DC machine has I_N = 200 A, kΦ_N = 15 V·s, n_0 = 2000 min⁻¹ and n_N = 1960 min⁻¹. What is its armature resistance?",
-          "answer": 0.05, "unit": "Ω", "tolerance": 0.005,
-          "compute": { "law": "dcArmatureResistance", "kPhi": 15, "n0": 2000, "nN": 1960, "IN": 200 },
+        {
+          "question": "A separately excited DC machine has I_N = 200 A, kΦ_N = 15 V·s, n_0 = 2000 min⁻¹ and n_N = 1960 min⁻¹. What is its armature resistance?",
+          "answer": 0.05,
+          "unit": "Ω",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "dcArmatureResistance",
+            "kPhi": 15,
+            "n0": 2000,
+            "nN": 1960,
+            "IN": 200
+          },
           "solution": "U_A,N = kΦ n_0 = 15 V·s · 2000/60 s⁻¹ = 500 V. R_A = (U_A,N − kΦ n_N)/I_N = (500 − 490) V/200 A = 50 mΩ.",
-          "source": "Exam of 24 July 2013, worked solution, in VO-370.015 Prüfungen (2017)" },
-        { "question": "What is its rated torque?",
-          "answer": 477.46, "unit": "N·m", "tolerance": 0.005,
-          "compute": { "law": "dcTorque", "kPhi": 15, "phi": 1, "J": 200 },
+          "source": "Exam of 24 July 2013, worked solution, in VO-370.015 Prüfungen (2017)"
+        },
+        {
+          "question": "What is its rated torque?",
+          "answer": 477.46,
+          "unit": "N·m",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "dcTorque",
+            "kPhi": 15,
+            "phi": 1,
+            "J": 200
+          },
           "solution": "M_N = kΦ/(2π) · I_N = 15/(2π) · 200 = 477.46 N·m.",
-          "source": "Exam of 24 July 2013, worked solution, in VO-370.015 Prüfungen (2017)" },
-        { "question": "The field is set to half. What torque can rated current now make?",
-          "answer": 238.73, "unit": "N·m", "tolerance": 0.005,
-          "compute": { "law": "dcTorque", "kPhi": 15, "phi": 0.5, "J": 200 },
+          "source": "Exam of 24 July 2013, worked solution, in VO-370.015 Prüfungen (2017)"
+        },
+        {
+          "question": "The field is set to half. What torque can rated current now make?",
+          "answer": 238.73,
+          "unit": "N·m",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "dcTorque",
+            "kPhi": 15,
+            "phi": 0.5,
+            "J": 200
+          },
           "solution": "Half the flux, half the torque per ampere: 7.5/(2π) · 200 = 238.73 N·m.",
-          "source": "Exam of 24 July 2013, worked solution, in VO-370.015 Prüfungen (2017)" },
-        { "question": "At 300 V and half field, what is its no-load speed?",
-          "answer": 2400, "unit": "1/min", "tolerance": 0.005,
-          "compute": { "law": "dcNoLoadSpeed", "UA": 300, "kPhi": 15, "phi": 0.5 },
+          "source": "Exam of 24 July 2013, worked solution, in VO-370.015 Prüfungen (2017)"
+        },
+        {
+          "question": "At 300 V and half field, what is its no-load speed?",
+          "answer": 2400,
+          "unit": "1/min",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "dcNoLoadSpeed",
+            "UA": 300,
+            "kPhi": 15,
+            "phi": 0.5
+          },
           "solution": "n_0 = U_A/(kΦ) = 300 V/7.5 V·s = 40 s⁻¹ = 2400 min⁻¹. The line falls 0.335 min⁻¹ per N·m, four times as steep as at full field. (The worked solution prints 0.0559, and 2000 − 0.0837 M for full field at 300 V, whose 2000 belongs to 500 V; both slips are corrected here.)",
-          "source": "Exam of 24 July 2013, worked solution, in VO-370.015 Prüfungen (2017), checked by hand" },
-        { "question": "A permanent-magnet DC machine (48 V, 10 A, n_0 = 4000 min⁻¹ at 48 V, R_A = 0.3 Ω) runs at 3000 min⁻¹ with half its rated torque. What voltage must the converter supply?",
-          "answer": 37.5, "unit": "V", "tolerance": 0.005,
-          "compute": { "law": "dcVoltageFor", "J": 5, "RA": 0.3, "kPhi": 0.72, "n": 3000 },
+          "source": "Exam of 24 July 2013, worked solution, in VO-370.015 Prüfungen (2017), checked by hand"
+        },
+        {
+          "question": "A permanent-magnet DC machine (48 V, 10 A, n_0 = 4000 min⁻¹ at 48 V, R_A = 0.3 Ω) runs at 3000 min⁻¹ with half its rated torque. What voltage must the converter supply?",
+          "answer": 37.5,
+          "unit": "V",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "dcVoltageFor",
+            "J": 5,
+            "RA": 0.3,
+            "kPhi": 0.72,
+            "n": 3000
+          },
           "solution": "kΦ = 48 V/(4000/60 s⁻¹) = 0.72 V·s. Half torque is half current, 5 A. U_A = J R_A + kΦ n = 1.5 V + 0.72 · 50 V = 37.5 V.",
-          "source": "Exercise in Schrödl (2012), p. 123, worked by hand" }
+          "source": "Exercise in Schrödl (2012), p. 123, worked by hand"
+        }
       ]
     },
     {
@@ -347,29 +1007,199 @@
       "lawTex": "m = i_{\\mathrm{s}q}\\,|\\underline{\\psi}_\\mathrm{M}|, \\qquad \\underline{u}_\\mathrm{s} = r_\\mathrm{s}\\,\\underline{i}_\\mathrm{s} + \\mathrm{j}\\omega\\,\\underline{\\psi}_\\mathrm{s}",
       "lecture": "Schrödl (2012), pp. 218–232",
       "equations": [
-        { "eq": "u_s = r_s i_s + dψ_s/dτ + jω_K ψ_s", "tex": "\\underline{u}_\\mathrm{s} = r_\\mathrm{s}\\,\\underline{i}_\\mathrm{s} + \\frac{\\mathrm{d}\\underline{\\psi}_\\mathrm{s}}{\\mathrm{d}\\tau} + \\mathrm{j}\\omega_\\mathrm{K}\\,\\underline{\\psi}_\\mathrm{s}", "note": "stator voltage in coordinates turning at ω_K", "ref": "Schrödl (2012), (P.1), p. 224" },
-        { "eq": "ψ_s = l_s i_s + ψ_M", "tex": "\\underline{\\psi}_\\mathrm{s} = \\ell_\\mathrm{s}\\,\\underline{i}_\\mathrm{s} + \\underline{\\psi}_\\mathrm{M}", "note": "stator flux linkage", "ref": "Schrödl (2012), (P.2), p. 225" },
-        { "eq": "m = −Im(i_s* ψ_s)", "tex": "m = -\\operatorname{Im}\\big(\\underline{i}_\\mathrm{s}^{*}\\,\\underline{\\psi}_\\mathrm{s}\\big)", "note": "torque", "ref": "Schrödl (2012), (P.4), p. 226" },
-        { "eq": "m = i_sq ψ_Md − i_sd ψ_Mq = i_sq |ψ_M|", "tex": "m = i_{\\mathrm{S}q}\\,\\psi_{\\mathrm{M}d} - i_{\\mathrm{S}d}\\,\\psi_{\\mathrm{M}q} = i_{\\mathrm{S}q}\\,|\\underline{\\psi}_\\mathrm{M}|", "note": "in rotor coordinates; the d current makes no torque", "ref": "Schrödl (2012), (P.8), p. 226" },
-        { "eq": "u_Sd0 = i_Sd0 r_s, u_Sq0 = ω_U (l_s i_Sd0 + ψ_Md0)", "tex": "u_{\\mathrm{S}d0} = i_{\\mathrm{S}d0}\\, r_\\mathrm{s}, \\qquad u_{\\mathrm{S}q0} = \\omega_\\mathrm{U}\\,(\\ell_\\mathrm{s}\\, i_{\\mathrm{S}d0} + \\psi_{\\mathrm{M}d0})", "note": "steady no-load voltage", "ref": "Schrödl (2012), (P.18), (P.19), p. 230" },
-        { "eq": "i_k = Re{i_s e^(−j(k−1)·120°)}", "tex": "i_k = \\operatorname{Re}\\big\\{\\underline{i}_\\mathrm{s}\\,\\mathrm{e}^{-\\mathrm{j}(k-1)\\cdot 120^\\circ}\\big\\}", "note": "the phase currents of a space vector", "ref": "exam of 24 June 2013, worked solution" }
+        {
+          "eq": "u_s = r_s i_s + dψ_s/dτ + jω_K ψ_s",
+          "tex": "\\underline{u}_\\mathrm{s} = r_\\mathrm{s}\\,\\underline{i}_\\mathrm{s} + \\frac{\\mathrm{d}\\underline{\\psi}_\\mathrm{s}}{\\mathrm{d}\\tau} + \\mathrm{j}\\omega_\\mathrm{K}\\,\\underline{\\psi}_\\mathrm{s}",
+          "note": "stator voltage in coordinates turning at ω_K",
+          "ref": "Schrödl (2012), (P.1), p. 224"
+        },
+        {
+          "eq": "ψ_s = l_s i_s + ψ_M",
+          "tex": "\\underline{\\psi}_\\mathrm{s} = \\ell_\\mathrm{s}\\,\\underline{i}_\\mathrm{s} + \\underline{\\psi}_\\mathrm{M}",
+          "note": "stator flux linkage",
+          "ref": "Schrödl (2012), (P.2), p. 225"
+        },
+        {
+          "eq": "m = −Im(i_s* ψ_s)",
+          "tex": "m = -\\operatorname{Im}\\big(\\underline{i}_\\mathrm{s}^{*}\\,\\underline{\\psi}_\\mathrm{s}\\big)",
+          "note": "torque",
+          "ref": "Schrödl (2012), (P.4), p. 226"
+        },
+        {
+          "eq": "m = i_sq ψ_Md − i_sd ψ_Mq = i_sq |ψ_M|",
+          "tex": "m = i_{\\mathrm{S}q}\\,\\psi_{\\mathrm{M}d} - i_{\\mathrm{S}d}\\,\\psi_{\\mathrm{M}q} = i_{\\mathrm{S}q}\\,|\\underline{\\psi}_\\mathrm{M}|",
+          "note": "in rotor coordinates; the d current makes no torque",
+          "ref": "Schrödl (2012), (P.8), p. 226"
+        },
+        {
+          "eq": "u_Sd0 = i_Sd0 r_s, u_Sq0 = ω_U (l_s i_Sd0 + ψ_Md0)",
+          "tex": "u_{\\mathrm{S}d0} = i_{\\mathrm{S}d0}\\, r_\\mathrm{s}, \\qquad u_{\\mathrm{S}q0} = \\omega_\\mathrm{U}\\,(\\ell_\\mathrm{s}\\, i_{\\mathrm{S}d0} + \\psi_{\\mathrm{M}d0})",
+          "note": "steady no-load voltage",
+          "ref": "Schrödl (2012), (P.18), (P.19), p. 230"
+        },
+        {
+          "eq": "i_k = Re{i_s e^(−j(k−1)·120°)}",
+          "tex": "i_k = \\operatorname{Re}\\big\\{\\underline{i}_\\mathrm{s}\\,\\mathrm{e}^{-\\mathrm{j}(k-1)\\cdot 120^\\circ}\\big\\}",
+          "note": "the phase currents of a space vector",
+          "ref": "exam of 24 June 2013, worked solution"
+        }
       ],
       "practice": [
-        { "question": "The magnet's flux linkage is ψ_M = 1·e^(−j15°). In sine operation the machine is to give torque 1, motoring forwards. What is the per-unit current in lead u?",
-          "answer": 0.259, "unit": "", "tolerance": 0.005,
-          "compute": { "law": "pmsmPhaseCurrent", "m": 1, "psiM": 1, "gammaDeg": -15, "phase": 0 },
+        {
+          "question": "The magnet's flux linkage is ψ_M = 1·e^(−j15°). In sine operation the machine is to give torque 1, motoring forwards. What is the per-unit current in lead u?",
+          "answer": 0.259,
+          "unit": "",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "pmsmPhaseCurrent",
+            "m": 1,
+            "psiM": 1,
+            "gammaDeg": -15,
+            "phase": 0
+          },
           "solution": "m = i_q |ψ_M| = 1 needs i_q = 1, i_d = 0: i_s = 1 · e^(j(90° − 15°)) = e^(j75°). i_u = Re{i_s} = cos 75° = 0.259.",
-          "source": "Exam of 24 June 2013, worked solution, in VO-370.015 Prüfungen (2017)" },
-        { "question": "And the current in lead w?",
-          "answer": -0.966, "unit": "", "tolerance": 0.005,
-          "compute": { "law": "pmsmPhaseCurrent", "m": 1, "psiM": 1, "gammaDeg": -15, "phase": 2 },
+          "source": "Exam of 24 June 2013, worked solution, in VO-370.015 Prüfungen (2017)"
+        },
+        {
+          "question": "And the current in lead w?",
+          "answer": -0.966,
+          "unit": "",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "pmsmPhaseCurrent",
+            "m": 1,
+            "psiM": 1,
+            "gammaDeg": -15,
+            "phase": 2
+          },
           "solution": "i_w = Re{e^(j75°) e^(j120°)} = cos 195° = −0.966; i_v = cos(−45°) = 0.707, and the three sum to zero.",
-          "source": "Exam of 24 June 2013, worked solution, in VO-370.015 Prüfungen (2017)" },
-        { "question": "The machine runs unloaded with no current at speed 0.8. How large is its stator voltage?",
-          "answer": 0.8, "unit": "", "tolerance": 0.005,
-          "compute": { "law": "pmsmVoltage", "id": 0, "iq": 0, "w": 0.8, "rs": 0.03, "ls": 0.4 },
+          "source": "Exam of 24 June 2013, worked solution, in VO-370.015 Prüfungen (2017)"
+        },
+        {
+          "question": "The machine runs unloaded with no current at speed 0.8. How large is its stator voltage?",
+          "answer": 0.8,
+          "unit": "",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "pmsmVoltage",
+            "id": 0,
+            "iq": 0,
+            "w": 0.8,
+            "rs": 0.03,
+            "ls": 0.4
+          },
           "solution": "With i_s = 0, u_Sd = 0 and u_Sq = ω ψ_M = 0.8: the magnet induces a voltage in proportion to speed.",
-          "source": "Worked by hand from Schrödl (2012), (P.18), (P.19)" }
+          "source": "Worked by hand from Schrödl (2012), (P.18), (P.19)"
+        }
+      ]
+    },
+    {
+      "id": "feeder",
+      "title": "A 30 kV feeder, from its load to its short circuit",
+      "idea": "One feeder, the notes' own: a 110 kV network, a 110/30 kV transformer and 40 km of overhead line. The same impedances decide how much load reaches the line's end at a usable voltage and how much current flows when the line is short-circuited; the protection has to tell the two apart.",
+      "law": "U1² = |U2 + Zk I|²    I″k3 = c Un/(√3 Zk)    ip = κ √2 I″k,  κ = 1 + e^(−πR/X)",
+      "lawTex": "I''_\\mathrm{k3} = \\frac{c\\,U_n}{\\sqrt{3}\\,Z_k} \\qquad i_p = \\kappa\\sqrt{2}\\,I''_k",
+      "lecture": "Gawlik (2015), sections 6.2 and 6.3.4–6.3.5, pp. 198–216; slides V15–V18",
+      "practice": [
+        {
+          "question": "In the notes' network (Z_Q = 0.020 + j0.197 Ω, Z_T = 0.13 + j3.48 Ω, 40 km of line with R′ = 0.12 Ω/km, X′ = 0.35 Ω/km, all at 30 kV), a three-phase fault strikes the far end of the line. What is I″k3 with c = 1.1?",
+          "answer": 1038,
+          "unit": "A",
+          "tolerance": 0.002,
+          "compute": {
+            "law": "exampleIk3",
+            "c": 1.1,
+            "SkQ": 5000000000,
+            "RXQ": 0.1,
+            "uk": 0.12,
+            "ST": 31000000,
+            "Pk": 140000,
+            "Rl": 0.12,
+            "Xl": 0.35,
+            "len": 40,
+            "Un": 30000
+          },
+          "solution": "Rk = 0.0197 + 0.13 + 4.8 = 4.95 Ω, Xk = 0.197 + 3.48 + 14 = 17.68 Ω, Zk = 18.36 Ω; I″k3 = 1.1 · 30 kV/(√3 · 18.36 Ω) = 1.038 kA.",
+          "source": "Worked example, Gawlik (2015), p. 216"
+        },
+        {
+          "question": "The protection must still trip for the smallest current, with cmin = 1.0. What is I″k3 at the line's end then?",
+          "answer": 943.5,
+          "unit": "A",
+          "tolerance": 0.002,
+          "compute": {
+            "law": "exampleIk3",
+            "c": 1,
+            "SkQ": 5000000000,
+            "RXQ": 0.1,
+            "uk": 0.12,
+            "ST": 31000000,
+            "Pk": 140000,
+            "Rl": 0.12,
+            "Xl": 0.35,
+            "len": 40,
+            "Un": 30000
+          },
+          "solution": "I″k3,min = 1.0 · 30 kV/(√3 · 18.36 Ω) = 943 A, 1/1.1 of the largest.",
+          "source": "Worked by hand from Gawlik (2015), (6-31) and table 6-2"
+        },
+        {
+          "question": "The same feeder carries 5 MW at cos φ = 0.9 inductive at the line's end, the 110 kV side at nominal voltage. What voltage is left at the line's end, per unit of 30 kV?",
+          "answer": 0.9135,
+          "unit": "p.u.",
+          "tolerance": 0.002,
+          "compute": {
+            "law": "feederVoltage",
+            "P": 5000000,
+            "cos": 0.9
+          },
+          "solution": "On 31 MVA and 30 kV, Z_B = 29.0 Ω: r = 0.171, x = 0.609, p = 0.161, q = 0.078. U1² = |U2 + z I|² gives U2 = 0.913 p.u., 27.4 kV, just above 0.9.",
+          "source": "Worked by hand from Gawlik (2015), section 6.2, with the network of p. 215"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "Z_Q = c U_n²/S″_kQ",
+          "tex": "Z_Q = \\frac{c\\,U_n^2}{S''_\\mathrm{kQ}}",
+          "note": "0.198 Ω at 30 kV",
+          "ref": "(6-32), p. 212; p. 215"
+        },
+        {
+          "eq": "Z_T = u_k U_n²/S_n, R_T = P_k U_n²/S_n²",
+          "tex": "Z_T = u_k\\frac{U_n^2}{S_n} \\qquad R_T = P_k\\frac{U_n^2}{S_n^2}",
+          "note": "3.48 Ω and 0.13 Ω",
+          "ref": "p. 215"
+        },
+        {
+          "eq": "X_L = X′ l, R_L = R′ l",
+          "tex": "X_L = X'l \\qquad R_L = R'l",
+          "note": "14 Ω and 4.8 Ω for 40 km",
+          "ref": "p. 216"
+        },
+        {
+          "eq": "U1² = |U2 + (R + jX) I|², I = (P − jQ)/U2*",
+          "tex": "U_1^2 = \\left|U_2 + (R + jX)\\,\\underline{I}\\right|^2",
+          "note": "the upper root is the operating point",
+          "ref": "section 6.2, pp. 198–202"
+        },
+        {
+          "eq": "I″k3 = c U_n/(√3 Z_k)",
+          "tex": "I''_\\mathrm{k3} = \\frac{c\\,U_n}{\\sqrt{3}\\,Z_k}",
+          "note": "1.038 kA at the line's end",
+          "ref": "(6-31), p. 212; p. 216"
+        },
+        {
+          "eq": "c = 1.1 (largest), 1.0 (smallest) above 1 kV",
+          "tex": "c_\\mathrm{max} = 1.1 \\qquad c_\\mathrm{min} = 1.0",
+          "note": "",
+          "ref": "table 6-2, p. 212"
+        },
+        {
+          "eq": "ip = κ √2 I″k, κ = 1 + e^(−πR/X)",
+          "tex": "i_p = \\kappa\\sqrt{2}\\,I''_k \\qquad \\kappa = 1 + e^{-\\pi R/X}",
+          "note": "κ ≈ 1.4 for R/X = 0.28",
+          "ref": "(6-42), (6-43), p. 214; p. 216"
+        }
       ]
     }
   ]

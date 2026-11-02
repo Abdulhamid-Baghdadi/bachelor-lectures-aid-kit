@@ -11,5 +11,6 @@ import stability from "./stability.js";
 import rotatingfield from "./rotatingfield.js";
 import dcmachine from "./dcmachine.js";
 import pmsm from "./pmsm.js";
+import feeder from "./feeder.js";
 
-export const labs = [threephase, power, transformer, line, transfer, perunit, shortcircuit, stability, rotatingfield, dcmachine, pmsm];
+export const labs = [threephase, power, transformer, line, transfer, perunit, shortcircuit, stability, rotatingfield, dcmachine, pmsm, feeder];

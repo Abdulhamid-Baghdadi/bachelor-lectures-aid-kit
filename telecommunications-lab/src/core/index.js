@@ -8,5 +8,6 @@ export { information, entropy, huffman, meanLength, efficiency, prefixFree, deco
   repetitionError, repetitionCounted, G, H, encode, encodeByParity, syndrome, decodeHamming, minimumDistance } from "./coding.js";
 export { constellation, symbolError, receive, bpskPhaseError, qpskPhaseError, timingError, timingErrorCounted,
   K_BOLTZMANN, T0, thermalNoise, friis, cascadeTemperature, lossFactor, outputNoise } from "./carrier.js";
+export { RECEIVER, voiceLink, powerFor } from "./link.js";
 export { si, parseSi, isRight } from "../../../kit/core/index.js";
 export { solve } from "./practice.js";

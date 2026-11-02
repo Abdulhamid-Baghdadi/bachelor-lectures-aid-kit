@@ -5,6 +5,7 @@
 [data-family=coding] { --frame: #B45309; }
 [data-family=carrier] { --frame: #BE123C; }
 [data-family=receiver] { --frame: #047857; }
+[data-family=example] { --frame: #334155; }
 
 .series.trace { stroke: var(--accent); stroke-width: 1; opacity: 0.45; }
 .mark.dot.cloud { fill: var(--muted); }

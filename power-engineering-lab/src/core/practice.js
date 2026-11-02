@@ -5,6 +5,7 @@ import * as T from "./threephase.js";
 import * as N from "./network.js";
 import * as F from "./faults.js";
 import * as M from "./machines.js";
+import * as D from "./feeder.js";
 
 const LAWS = {
   lineFromPhase: q => q.U * Math.sqrt(3),
@@ -16,6 +17,7 @@ const LAWS = {
   changeBase: q => T.changeBase(q.z, q.Sold, q.Uold, q.Snew, q.Unew),
   exampleIk3: q => F.ik3(q.c, q.Un, cAbs(F.exampleNetwork(q, q.Un).total)),
   exampleRX: q => { const z = F.exampleNetwork(q, q.Un).total; return z[0] / z[1]; },
+  feederVoltage: q => D.feederLoad(q.P, q.P * Math.tan(Math.acos(q.cos))).u,
   transformerZ: q => N.shortCircuitImpedance(q.uk, q.Ur, q.Sr),
   transformerR: q => q.Pk * q.Ur * q.Ur / (q.Sr * q.Sr),
   circulating: q => N.circulatingRatio(q.dk),

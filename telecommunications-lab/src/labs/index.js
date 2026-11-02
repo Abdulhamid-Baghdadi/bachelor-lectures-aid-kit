@@ -10,5 +10,6 @@ import hamming from "./hamming.js";
 import constellation from "./constellation.js";
 import sync from "./sync.js";
 import noisefigure from "./noisefigure.js";
+import voicelink from "./voicelink.js";
 
-export const labs = [pcm, huffman, linecodes, nyquist, matched, repetition, hamming, constellation, sync, noisefigure];
+export const labs = [pcm, huffman, linecodes, nyquist, matched, repetition, hamming, constellation, sync, noisefigure, voicelink];

@@ -3,18 +3,92 @@
   "version": 1,
   "about": "Telekommunikation (389.138) at TU Wien after the lecture slides of Goiser (2016), thirteen sets, with the course formulary of March 2017 (Notation, Definitionen und Formelsammlung). Slide numbers are the printed ones, read in the slides' text layer on 1 Nov 2026; where the text layer garbled a formula, the reading was checked against a second route in tests/unit/core.test.js, and the note says so. No exercise collection or exam with worked solutions was at hand, so the practice questions are the slides' own worked examples (their slide named) or were worked by hand from the slides' equations, as each says. tests/unit/labs-data.test.js recomputes every answer with the core and fails if they disagree. Sampling, the Fourier transform and filters are the Signals and Systems lab's; free-space link budgets, fading and delay spread are the Electrodynamics lab's.",
   "families": [
-    { "id": "source", "name": "Digitising and source coding" },
-    { "id": "baseband", "name": "Baseband transmission" },
-    { "id": "coding", "name": "Channel coding" },
-    { "id": "carrier", "name": "Carrier modulation" },
-    { "id": "receiver", "name": "Noise in the receiver" }
+    {
+      "id": "source",
+      "name": "Digitising and source coding"
+    },
+    {
+      "id": "baseband",
+      "name": "Baseband transmission"
+    },
+    {
+      "id": "coding",
+      "name": "Channel coding"
+    },
+    {
+      "id": "carrier",
+      "name": "Carrier modulation"
+    },
+    {
+      "id": "receiver",
+      "name": "Noise in the receiver"
+    },
+    {
+      "id": "example",
+      "name": "Worked example"
+    }
   ],
   "lectures": [
-    { "number": 1, "pages": "sets 2 and 5", "title": "Digitising and source coding", "family": "source", "labs": ["pcm", "huffman"] },
-    { "number": 2, "pages": "sets 3 and 4", "title": "Baseband transmission", "family": "baseband", "labs": ["linecodes", "nyquist", "matched"] },
-    { "number": 3, "pages": "set 6", "title": "Channel coding", "family": "coding", "labs": ["repetition", "hamming"] },
-    { "number": 4, "pages": "sets 7, 8 and Synchronisation", "title": "Carrier modulation", "family": "carrier", "labs": ["constellation", "sync"] },
-    { "number": 5, "pages": "Rauschen und Link-Budget", "title": "Noise in the receiver", "family": "receiver", "labs": ["noisefigure"] }
+    {
+      "number": 1,
+      "pages": "sets 2 and 5",
+      "title": "Digitising and source coding",
+      "family": "source",
+      "labs": [
+        "pcm",
+        "huffman"
+      ]
+    },
+    {
+      "number": 2,
+      "pages": "sets 3 and 4",
+      "title": "Baseband transmission",
+      "family": "baseband",
+      "labs": [
+        "linecodes",
+        "nyquist",
+        "matched"
+      ]
+    },
+    {
+      "number": 3,
+      "pages": "set 6",
+      "title": "Channel coding",
+      "family": "coding",
+      "labs": [
+        "repetition",
+        "hamming"
+      ]
+    },
+    {
+      "number": 4,
+      "pages": "sets 7, 8 and Synchronisation",
+      "title": "Carrier modulation",
+      "family": "carrier",
+      "labs": [
+        "constellation",
+        "sync"
+      ]
+    },
+    {
+      "number": 5,
+      "pages": "Rauschen und Link-Budget",
+      "title": "Noise in the receiver",
+      "family": "receiver",
+      "labs": [
+        "noisefigure"
+      ]
+    },
+    {
+      "number": 6,
+      "heading": "Worked example",
+      "pages": "sets 2, 4, 6, 8; Rauschen, slides 59–65",
+      "title": "A telephone channel, from the voice to the receiver's noise",
+      "family": "example",
+      "labs": [
+        "voicelink"
+      ]
+    }
   ],
   "labs": [
     {
@@ -25,29 +99,83 @@
       "lawTex": "\\mathrm{SNQR} = \\frac{3 \\cdot 2^{2n}}{\\alpha}, \\qquad \\mathrm{SNQR}_\\mathrm{dB} = 4.8 + 6n - \\alpha_\\mathrm{dB}",
       "lecture": "Goiser (2016), set 2, slides 32–52",
       "equations": [
-        { "eq": "levels at ±Δ/2, ±3Δ/2, …, ±(M − 1)Δ/2; overload beyond ±MΔ/2", "tex": "\\text{levels } \\pm\\frac{\\Delta}{2}, \\pm\\frac{3\\Delta}{2}, \\dots, \\pm\\frac{(M-1)\\Delta}{2}, \\qquad A_\\mathrm{OL} = \\frac{M\\Delta}{2}", "note": "the uniform mid-rise quantiser", "ref": "set 2, slides 35–37" },
-        { "eq": "E[e_q²] = Δ²/12", "tex": "\\operatorname{E}[e_\\mathrm{q}^2] = \\frac{\\Delta^2}{12}", "note": "the error, uniform over one step", "ref": "set 2, slide 39" },
-        { "eq": "SNQR = E[m²]/E[e_q²] = M² − 1", "tex": "\\mathrm{SNQR} = \\frac{\\operatorname{E}[m^2]}{\\operatorname{E}[e_\\mathrm{q}^2]} = M^2 - 1", "note": "all levels equally likely", "ref": "set 2, slide 39" },
-        { "eq": "SNQR_dB = 4.8 + 6n − α_dB, α = m_max²/E[m²]", "tex": "\\mathrm{SNQR}_\\mathrm{dB} = 4.8 + 6n - \\alpha_\\mathrm{dB}, \\qquad \\alpha = \\frac{m_\\mathrm{max}^2}{\\operatorname{E}[m^2]}", "note": "linear PCM with n bits; α = 2 for a sine, 10 for speech, 16 for Gaussian noise", "ref": "set 2, slides 46–47" },
-        { "eq": "SNR_out = SNQR / (1 + 4 · SNQR · Pe)", "tex": "\\mathrm{SNR}_\\mathrm{out} = \\frac{\\mathrm{SNQR}}{1 + 4 \\cdot \\mathrm{SNQR} \\cdot P_\\mathrm{e}}", "note": "with bit errors of probability Pe, one per word at most", "ref": "set 2, slide 50" },
-        { "eq": "R_b = f_s · n; PCM30: 32 · 64 kbit/s = 2.048 Mbit/s", "tex": "R_\\mathrm{b} = f_\\mathrm{s}\\, n, \\qquad \\text{PCM30: } 32 \\cdot 64\\,\\mathrm{kbit/s} = 2.048\\,\\mathrm{Mbit/s}", "note": "bit rate; the European primary multiplex", "ref": "set 2, slides 60, 63" }
+        {
+          "eq": "levels at ±Δ/2, ±3Δ/2, …, ±(M − 1)Δ/2; overload beyond ±MΔ/2",
+          "tex": "\\text{levels } \\pm\\frac{\\Delta}{2}, \\pm\\frac{3\\Delta}{2}, \\dots, \\pm\\frac{(M-1)\\Delta}{2}, \\qquad A_\\mathrm{OL} = \\frac{M\\Delta}{2}",
+          "note": "the uniform mid-rise quantiser",
+          "ref": "set 2, slides 35–37"
+        },
+        {
+          "eq": "E[e_q²] = Δ²/12",
+          "tex": "\\operatorname{E}[e_\\mathrm{q}^2] = \\frac{\\Delta^2}{12}",
+          "note": "the error, uniform over one step",
+          "ref": "set 2, slide 39"
+        },
+        {
+          "eq": "SNQR = E[m²]/E[e_q²] = M² − 1",
+          "tex": "\\mathrm{SNQR} = \\frac{\\operatorname{E}[m^2]}{\\operatorname{E}[e_\\mathrm{q}^2]} = M^2 - 1",
+          "note": "all levels equally likely",
+          "ref": "set 2, slide 39"
+        },
+        {
+          "eq": "SNQR_dB = 4.8 + 6n − α_dB, α = m_max²/E[m²]",
+          "tex": "\\mathrm{SNQR}_\\mathrm{dB} = 4.8 + 6n - \\alpha_\\mathrm{dB}, \\qquad \\alpha = \\frac{m_\\mathrm{max}^2}{\\operatorname{E}[m^2]}",
+          "note": "linear PCM with n bits; α = 2 for a sine, 10 for speech, 16 for Gaussian noise",
+          "ref": "set 2, slides 46–47"
+        },
+        {
+          "eq": "SNR_out = SNQR / (1 + 4 · SNQR · Pe)",
+          "tex": "\\mathrm{SNR}_\\mathrm{out} = \\frac{\\mathrm{SNQR}}{1 + 4 \\cdot \\mathrm{SNQR} \\cdot P_\\mathrm{e}}",
+          "note": "with bit errors of probability Pe, one per word at most",
+          "ref": "set 2, slide 50"
+        },
+        {
+          "eq": "R_b = f_s · n; PCM30: 32 · 64 kbit/s = 2.048 Mbit/s",
+          "tex": "R_\\mathrm{b} = f_\\mathrm{s}\\, n, \\qquad \\text{PCM30: } 32 \\cdot 64\\,\\mathrm{kbit/s} = 2.048\\,\\mathrm{Mbit/s}",
+          "note": "bit rate; the European primary multiplex",
+          "ref": "set 2, slides 60, 63"
+        }
       ],
       "practice": [
-        { "question": "A full-scale sine is quantised by linear PCM with 8 bits. What signal-to-quantisation-noise ratio does the 6 dB rule give?",
-          "answer": 49.9, "unit": "dB", "tolerance": 0.01,
-          "compute": { "law": "snqrSineDB", "n": 8 },
+        {
+          "question": "A full-scale sine is quantised by linear PCM with 8 bits. What signal-to-quantisation-noise ratio does the 6 dB rule give?",
+          "answer": 49.9,
+          "unit": "dB",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "snqrSineDB",
+            "n": 8
+          },
           "solution": "SNQR_dB = 4.8 + 6 · 8 − 3 = 49.8 dB, with α = 2 (3 dB) for a sine. Exactly: 10 log(3 · 2¹⁶ / 2) = 49.9 dB.",
-          "source": "Worked by hand from Goiser (2016), set 2, slides 46–47" },
-        { "question": "PCM30 carries 32 channels, each sampled at 8 kHz with 8 bits. What is its bit rate?",
-          "answer": 2048000, "unit": "bit/s", "tolerance": 0.001,
-          "compute": { "law": "pcmRate", "fs": 8000, "n": 8, "channels": 32 },
+          "source": "Worked by hand from Goiser (2016), set 2, slides 46–47"
+        },
+        {
+          "question": "PCM30 carries 32 channels, each sampled at 8 kHz with 8 bits. What is its bit rate?",
+          "answer": 2048000,
+          "unit": "bit/s",
+          "tolerance": 0.001,
+          "compute": {
+            "law": "pcmRate",
+            "fs": 8000,
+            "n": 8,
+            "channels": 32
+          },
           "solution": "8 kHz · 8 bit = 64 kbit/s a channel; 32 · 64 kbit/s = 2.048 Mbit/s.",
-          "source": "Worked example, Goiser (2016), set 2, slide 63" },
-        { "question": "An 8-bit PCM link has a bit error probability of 10⁻⁵. What SNR is left after decoding?",
-          "answer": 42.6, "unit": "dB", "tolerance": 0.01,
-          "compute": { "law": "pcmOutputDB", "n": 8, "Pe": 1e-5 },
+          "source": "Worked example, Goiser (2016), set 2, slide 63"
+        },
+        {
+          "question": "An 8-bit PCM link has a bit error probability of 10⁻⁵. What SNR is left after decoding?",
+          "answer": 42.6,
+          "unit": "dB",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "pcmOutputDB",
+            "n": 8,
+            "Pe": 0.00001
+          },
           "solution": "SNQR = 2¹⁶ − 1 = 65 535 (48.2 dB). SNR_out = 65 535 / (1 + 4 · 65 535 · 10⁻⁵) = 65 535 / 3.62 = 18 100, or 42.6 dB: the bit errors cost 5.6 dB.",
-          "source": "Worked by hand from Goiser (2016), set 2, slide 50" }
+          "source": "Worked by hand from Goiser (2016), set 2, slide 50"
+        }
       ]
     },
     {
@@ -58,23 +186,74 @@
       "lawTex": "H = -\\sum_m p_m \\operatorname{ld} p_m \\le L = \\sum_m p_m l_m",
       "lecture": "Goiser (2016), set 5, slides 26–64",
       "equations": [
-        { "eq": "I = −ld p [bit]", "tex": "I = -\\operatorname{ld} p \\quad [\\mathrm{bit}]", "note": "information content of a symbol", "ref": "set 5, slide 30" },
-        { "eq": "H(X) = −Σ p_m ld p_m [bit/symbol], 0 ≤ H ≤ ld M", "tex": "H(X) = -\\sum_{m=1}^{M} p_m \\operatorname{ld} p_m \\quad [\\mathrm{bit/symbol}], \\qquad 0 \\le H(X) \\le \\operatorname{ld} M", "note": "entropy of a memoryless source; ld M for equal probabilities", "ref": "set 5, slides 32, 34" },
-        { "eq": "R = ld M − H(X)", "tex": "R = \\operatorname{ld} M - H(X)", "note": "redundancy", "ref": "set 5, slide 35" },
-        { "eq": "L = Σ p_m l_m, η = H/L", "tex": "L = \\sum_{m=1}^{M} p_m l_m, \\qquad \\eta = \\frac{H}{L}", "note": "mean codeword length and code efficiency", "ref": "set 5, slide 40" },
-        { "eq": "merge the two least likely, sort back in, label 0 above and 1 below", "tex": "\\text{merge the two least likely, sort back in; label 0 above, 1 below}", "note": "Huffman's algorithm", "ref": "set 5, slide 50" }
+        {
+          "eq": "I = −ld p [bit]",
+          "tex": "I = -\\operatorname{ld} p \\quad [\\mathrm{bit}]",
+          "note": "information content of a symbol",
+          "ref": "set 5, slide 30"
+        },
+        {
+          "eq": "H(X) = −Σ p_m ld p_m [bit/symbol], 0 ≤ H ≤ ld M",
+          "tex": "H(X) = -\\sum_{m=1}^{M} p_m \\operatorname{ld} p_m \\quad [\\mathrm{bit/symbol}], \\qquad 0 \\le H(X) \\le \\operatorname{ld} M",
+          "note": "entropy of a memoryless source; ld M for equal probabilities",
+          "ref": "set 5, slides 32, 34"
+        },
+        {
+          "eq": "R = ld M − H(X)",
+          "tex": "R = \\operatorname{ld} M - H(X)",
+          "note": "redundancy",
+          "ref": "set 5, slide 35"
+        },
+        {
+          "eq": "L = Σ p_m l_m, η = H/L",
+          "tex": "L = \\sum_{m=1}^{M} p_m l_m, \\qquad \\eta = \\frac{H}{L}",
+          "note": "mean codeword length and code efficiency",
+          "ref": "set 5, slide 40"
+        },
+        {
+          "eq": "merge the two least likely, sort back in, label 0 above and 1 below",
+          "tex": "\\text{merge the two least likely, sort back in; label 0 above, 1 below}",
+          "note": "Huffman's algorithm",
+          "ref": "set 5, slide 50"
+        }
       ],
       "practice": [
-        { "question": "A binary source sends A with probability 0.9 and B with 0.1. What is its entropy?",
-          "answer": 0.469, "unit": "bit", "tolerance": 0.01,
-          "compute": { "law": "entropy", "p": [0.9, 0.1] },
+        {
+          "question": "A binary source sends A with probability 0.9 and B with 0.1. What is its entropy?",
+          "answer": 0.469,
+          "unit": "bit",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "entropy",
+            "p": [
+              0.9,
+              0.1
+            ]
+          },
           "solution": "H = −0.9 ld 0.9 − 0.1 ld 0.1 = 0.137 + 0.332 = 0.469 bit per symbol; one bit per symbol is 47 % efficient.",
-          "source": "Worked example, Goiser (2016), set 5, slide 62" },
-        { "question": "Eight symbols have the probabilities 0.10, 0.18, 0.40, 0.05, 0.06, 0.10, 0.07, 0.04. What is the mean length of their Huffman code?",
-          "answer": 2.61, "unit": "bit", "tolerance": 0.005,
-          "compute": { "law": "huffmanLength", "p": [0.10, 0.18, 0.40, 0.05, 0.06, 0.10, 0.07, 0.04] },
+          "source": "Worked example, Goiser (2016), set 5, slide 62"
+        },
+        {
+          "question": "Eight symbols have the probabilities 0.10, 0.18, 0.40, 0.05, 0.06, 0.10, 0.07, 0.04. What is the mean length of their Huffman code?",
+          "answer": 2.61,
+          "unit": "bit",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "huffmanLength",
+            "p": [
+              0.1,
+              0.18,
+              0.4,
+              0.05,
+              0.06,
+              0.1,
+              0.07,
+              0.04
+            ]
+          },
           "solution": "Lengths 1 (0.40), 3 (0.18, 0.10), 4 (0.10, 0.07, 0.06), 5 (0.05, 0.04): L = 0.40 + 3 · 0.28 + 4 · 0.23 + 5 · 0.09 = 2.61. With H = 2.55, η = 97.7 %.",
-          "source": "Worked example, Goiser (2016), set 5, slides 52–57" }
+          "source": "Worked example, Goiser (2016), set 5, slides 52–57"
+        }
       ]
     },
     {
@@ -85,18 +264,50 @@
       "lawTex": "G(f) = \\frac{p(1-p)}{T_0} \\big|F_1(f) - F_0(f)\\big|^2 + \\text{lines at } n f_0",
       "lecture": "Goiser (2016), set 3, slides 45–62",
       "equations": [
-        { "eq": "G(f) = p(1 − p)/T0 |F1(f) − F0(f)|² + 1/T0² Σ |p F1(n/T0) + (1 − p) F0(n/T0)|² δ(f − n/T0)", "tex": "G(f) = \\frac{p(1-p)}{T_0} \\big|F_1(f) - F_0(f)\\big|^2 + \\frac{1}{T_0^2} \\sum_{n=-\\infty}^{\\infty} \\big|p F_1(n f_0) + (1-p) F_0(n f_0)\\big|^2 \\delta(f - n f_0), \\qquad f_0 = \\frac{1}{T_0}", "note": "power spectral density of independent binary symbols", "ref": "set 3, slide 47" },
-        { "eq": "NRZ: pulse for the whole bit; RZ: for half of it", "tex": "\\text{NRZ: } T_x = T_0, \\qquad \\text{RZ: } T_x = \\frac{T_0}{2}", "note": "RZ needs twice the bandwidth and has a line at the bit rate", "ref": "set 3, slides 51–52" },
-        { "eq": "polar: s0(t) = −s1(t)", "tex": "s_0(t) = -s_1(t)", "note": "no DC line; 3 dB better than unipolar at the same mean power", "ref": "set 3, slides 54–55" },
-        { "eq": "Manchester: 1 → +A then −A, 0 → −A then +A", "tex": "\\text{Manchester: } 1 \\mapsto \\{+A, -A\\}, \\quad 0 \\mapsto \\{-A, +A\\}", "note": "a null at f = 0", "ref": "set 3, slides 56–57" },
-        { "eq": "AMI: 0 → 0, each 1 alternately +A and −A", "tex": "\\text{AMI: } 0 \\mapsto 0, \\quad 1 \\mapsto +A \\text{ and } -A \\text{ alternately}", "note": "pseudo-ternary; a null at f = 0", "ref": "set 3, slides 58–59" }
+        {
+          "eq": "G(f) = p(1 − p)/T0 |F1(f) − F0(f)|² + 1/T0² Σ |p F1(n/T0) + (1 − p) F0(n/T0)|² δ(f − n/T0)",
+          "tex": "G(f) = \\frac{p(1-p)}{T_0} \\big|F_1(f) - F_0(f)\\big|^2 + \\frac{1}{T_0^2} \\sum_{n=-\\infty}^{\\infty} \\big|p F_1(n f_0) + (1-p) F_0(n f_0)\\big|^2 \\delta(f - n f_0), \\qquad f_0 = \\frac{1}{T_0}",
+          "note": "power spectral density of independent binary symbols",
+          "ref": "set 3, slide 47"
+        },
+        {
+          "eq": "NRZ: pulse for the whole bit; RZ: for half of it",
+          "tex": "\\text{NRZ: } T_x = T_0, \\qquad \\text{RZ: } T_x = \\frac{T_0}{2}",
+          "note": "RZ needs twice the bandwidth and has a line at the bit rate",
+          "ref": "set 3, slides 51–52"
+        },
+        {
+          "eq": "polar: s0(t) = −s1(t)",
+          "tex": "s_0(t) = -s_1(t)",
+          "note": "no DC line; 3 dB better than unipolar at the same mean power",
+          "ref": "set 3, slides 54–55"
+        },
+        {
+          "eq": "Manchester: 1 → +A then −A, 0 → −A then +A",
+          "tex": "\\text{Manchester: } 1 \\mapsto \\{+A, -A\\}, \\quad 0 \\mapsto \\{-A, +A\\}",
+          "note": "a null at f = 0",
+          "ref": "set 3, slides 56–57"
+        },
+        {
+          "eq": "AMI: 0 → 0, each 1 alternately +A and −A",
+          "tex": "\\text{AMI: } 0 \\mapsto 0, \\quad 1 \\mapsto +A \\text{ and } -A \\text{ alternately}",
+          "note": "pseudo-ternary; a null at f = 0",
+          "ref": "set 3, slides 58–59"
+        }
       ],
       "practice": [
-        { "question": "Polar NRZ reaches a bit error probability of 10⁻⁵ at E/N0 = 9.6 dB with a matched filter. What does unipolar NRZ reach at 9.6 dB of mean energy?",
-          "answer": 1.26e-3, "unit": "", "tolerance": 0.02,
-          "compute": { "law": "unipolarBER", "dB": 9.6 },
+        {
+          "question": "Polar NRZ reaches a bit error probability of 10⁻⁵ at E/N0 = 9.6 dB with a matched filter. What does unipolar NRZ reach at 9.6 dB of mean energy?",
+          "answer": 0.00126,
+          "unit": "",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "unipolarBER",
+            "dB": 9.6
+          },
           "solution": "Unipolar: ½ erfc(√(E/2N0)), with E/N0 = 10^0.96 = 9.12: ½ erfc(√4.56) = ½ erfc(2.135) = 1.26·10⁻³, over a hundred times worse. It needs 3 dB more, 12.6 dB, for 10⁻⁵.",
-          "source": "Worked by hand from the course formulary of March 2017, Table 2, and Goiser (2016), set 3, slide 55" }
+          "source": "Worked by hand from the course formulary of March 2017, Table 2, and Goiser (2016), set 3, slide 55"
+        }
       ]
     },
     {
@@ -107,20 +318,63 @@
       "lawTex": "B = \\frac{1+\\alpha}{2T_0}, \\qquad \\eta_\\mathrm{s} = \\frac{2}{1+\\alpha}",
       "lecture": "Goiser (2016), set 4, slides 7–26; set 3, slides 63–68",
       "equations": [
-        { "eq": "R_s ≤ 2B", "tex": "R_\\mathrm{s} \\le 2B", "note": "Nyquist's limit on the symbol rate", "ref": "set 4, slide 8" },
-        { "eq": "s(nT0) = 0 for n ≠ 0", "tex": "s(nT_0) = 0 \\quad \\text{for } n \\ne 0", "note": "free of intersymbol interference", "ref": "set 4, slide 14" },
-        { "eq": "h(t) = sinc(t/T0), H(f) rectangular to 1/(2T0)", "tex": "h(t) = \\operatorname{sinc}\\!\\left(\\frac{t}{T_0}\\right), \\qquad H(f) = T_0 \\quad \\text{for } |f| < \\frac{1}{2T_0}", "note": "the ideal, unrealisable Nyquist pulse", "ref": "set 4, slide 16" },
-        { "eq": "a half-cosine roll-off, odd-symmetric about f_χ = 1/(2T0), α = Δf/f_χ", "tex": "\\text{half-cosine roll-off, odd-symmetric about } f_\\chi = \\frac{R_\\mathrm{s}}{2} = \\frac{1}{2T_0}, \\qquad \\alpha = \\frac{\\Delta f}{f_\\chi}", "note": "the raised cosine, defined by its spectrum; its zeros stay those of the sinc", "ref": "set 4, slides 23–24" },
-        { "eq": "B = (1 + α)/(2T0), ηs = 2/(1 + α)", "tex": "B = \\frac{1+\\alpha}{2T_0}, \\qquad \\eta_\\mathrm{s} = \\frac{2}{1+\\alpha}", "note": "bandwidth and bandwidth efficiency", "ref": "set 4, slide 26" },
-        { "eq": "h(t) = 2 ∫ H(f) cos(2πft) df", "tex": "h(t) = 2 \\int_0^{f_\\chi(1+\\alpha)} H(f) \\cos(2\\pi f t) \\,\\mathrm{d}f", "note": "the pulse drawn here, from the spectrum by Simpson's rule", "ref": "derived from set 4, slide 24" },
-        { "eq": "vertical eye opening A_V, horizontal T_h", "tex": "A_\\mathrm{V}: \\text{vertical eye opening}, \\qquad T_\\mathrm{h}: \\text{horizontal eye opening}", "note": "noise lowers A_V; ISI spreads the amplitudes at the decision instant; jitter moves the zero crossings", "ref": "set 3, slides 66–68" }
+        {
+          "eq": "R_s ≤ 2B",
+          "tex": "R_\\mathrm{s} \\le 2B",
+          "note": "Nyquist's limit on the symbol rate",
+          "ref": "set 4, slide 8"
+        },
+        {
+          "eq": "s(nT0) = 0 for n ≠ 0",
+          "tex": "s(nT_0) = 0 \\quad \\text{for } n \\ne 0",
+          "note": "free of intersymbol interference",
+          "ref": "set 4, slide 14"
+        },
+        {
+          "eq": "h(t) = sinc(t/T0), H(f) rectangular to 1/(2T0)",
+          "tex": "h(t) = \\operatorname{sinc}\\!\\left(\\frac{t}{T_0}\\right), \\qquad H(f) = T_0 \\quad \\text{for } |f| < \\frac{1}{2T_0}",
+          "note": "the ideal, unrealisable Nyquist pulse",
+          "ref": "set 4, slide 16"
+        },
+        {
+          "eq": "a half-cosine roll-off, odd-symmetric about f_χ = 1/(2T0), α = Δf/f_χ",
+          "tex": "\\text{half-cosine roll-off, odd-symmetric about } f_\\chi = \\frac{R_\\mathrm{s}}{2} = \\frac{1}{2T_0}, \\qquad \\alpha = \\frac{\\Delta f}{f_\\chi}",
+          "note": "the raised cosine, defined by its spectrum; its zeros stay those of the sinc",
+          "ref": "set 4, slides 23–24"
+        },
+        {
+          "eq": "B = (1 + α)/(2T0), ηs = 2/(1 + α)",
+          "tex": "B = \\frac{1+\\alpha}{2T_0}, \\qquad \\eta_\\mathrm{s} = \\frac{2}{1+\\alpha}",
+          "note": "bandwidth and bandwidth efficiency",
+          "ref": "set 4, slide 26"
+        },
+        {
+          "eq": "h(t) = 2 ∫ H(f) cos(2πft) df",
+          "tex": "h(t) = 2 \\int_0^{f_\\chi(1+\\alpha)} H(f) \\cos(2\\pi f t) \\,\\mathrm{d}f",
+          "note": "the pulse drawn here, from the spectrum by Simpson's rule",
+          "ref": "derived from set 4, slide 24"
+        },
+        {
+          "eq": "vertical eye opening A_V, horizontal T_h",
+          "tex": "A_\\mathrm{V}: \\text{vertical eye opening}, \\qquad T_\\mathrm{h}: \\text{horizontal eye opening}",
+          "note": "noise lowers A_V; ISI spreads the amplitudes at the decision instant; jitter moves the zero crossings",
+          "ref": "set 3, slides 66–68"
+        }
       ],
       "practice": [
-        { "question": "Symbols at 1 Mbaud are shaped by a raised cosine of roll-off 0.35. What bandwidth do they need?",
-          "answer": 675000, "unit": "Hz", "tolerance": 0.001,
-          "compute": { "law": "rcBandwidth", "Rs": 1e6, "alpha": 0.35 },
+        {
+          "question": "Symbols at 1 Mbaud are shaped by a raised cosine of roll-off 0.35. What bandwidth do they need?",
+          "answer": 675000,
+          "unit": "Hz",
+          "tolerance": 0.001,
+          "compute": {
+            "law": "rcBandwidth",
+            "Rs": 1000000,
+            "alpha": 0.35
+          },
           "solution": "B = (1 + α)/(2T0) = 1.35 · 1 MHz / 2 = 675 kHz.",
-          "source": "Worked by hand from Goiser (2016), set 4, slide 26" }
+          "source": "Worked by hand from Goiser (2016), set 4, slide 26"
+        }
       ]
     },
     {
@@ -131,23 +385,63 @@
       "lawTex": "h(t) = k\\, s(T_0 - t), \\qquad \\mathrm{SNR} = \\frac{2E}{N_0}",
       "lecture": "Goiser (2016), set 4, slides 43–90; the course formulary of March 2017, section 3",
       "equations": [
-        { "eq": "H(f) = k V*(f) e^(−j2πfT0), h(t) = k v(T0 − t)", "tex": "H(f) = k\\, V^*(f)\\, \\mathrm{e}^{-\\mathrm{j}\\omega T_0}, \\qquad h(t) = k\\, v^*(T_0 - t)", "note": "the matched filter: the pulse reversed and delayed", "ref": "set 4, slides 53–56" },
-        { "eq": "Z = ∫ [s(t) + n(t)] s(t) dt over 0 … T0", "tex": "Z = \\int_0^{T_0} \\big[s(t) + n(t)\\big]\\, s(t) \\,\\mathrm{d}t", "note": "the correlator, the same filter at one instant", "ref": "set 4, slides 58–59" },
-        { "eq": "SNR_Z = E²/(N0 E/2) = 2E/N0", "tex": "\\mathrm{SNR}_Z = \\frac{E^2}{N_0 E/2} = \\frac{2E}{N_0}", "note": "noise of two-sided density N0/2", "ref": "set 4, slide 80" },
-        { "eq": "Pe = Q(V/(2σ)) = ½ erfc(V/(2√2 σ))", "tex": "P_\\mathrm{e} = Q\\left(\\frac{V}{2\\sigma}\\right) = \\frac{1}{2}\\operatorname{erfc}\\left(\\frac{V}{2\\sqrt{2}\\,\\sigma}\\right)", "note": "two symbols a distance V apart in Gaussian noise", "ref": "set 3, slide 33; formulary, eq. 6" },
-        { "eq": "polar ½ erfc(√(E/N0)); unipolar and orthogonal ½ erfc(√(E/2N0))", "tex": "\\text{polar: } \\frac{1}{2} \\operatorname{erfc}\\sqrt{\\frac{E}{N_0}}, \\qquad \\text{unipolar, orthogonal: } \\frac{1}{2} \\operatorname{erfc}\\sqrt{\\frac{E}{2N_0}}", "note": "binary error probabilities with the matched filter, E the mean pulse energy", "ref": "formulary, Table 2" }
+        {
+          "eq": "H(f) = k V*(f) e^(−j2πfT0), h(t) = k v(T0 − t)",
+          "tex": "H(f) = k\\, V^*(f)\\, \\mathrm{e}^{-\\mathrm{j}\\omega T_0}, \\qquad h(t) = k\\, v^*(T_0 - t)",
+          "note": "the matched filter: the pulse reversed and delayed",
+          "ref": "set 4, slides 53–56"
+        },
+        {
+          "eq": "Z = ∫ [s(t) + n(t)] s(t) dt over 0 … T0",
+          "tex": "Z = \\int_0^{T_0} \\big[s(t) + n(t)\\big]\\, s(t) \\,\\mathrm{d}t",
+          "note": "the correlator, the same filter at one instant",
+          "ref": "set 4, slides 58–59"
+        },
+        {
+          "eq": "SNR_Z = E²/(N0 E/2) = 2E/N0",
+          "tex": "\\mathrm{SNR}_Z = \\frac{E^2}{N_0 E/2} = \\frac{2E}{N_0}",
+          "note": "noise of two-sided density N0/2",
+          "ref": "set 4, slide 80"
+        },
+        {
+          "eq": "Pe = Q(V/(2σ)) = ½ erfc(V/(2√2 σ))",
+          "tex": "P_\\mathrm{e} = Q\\left(\\frac{V}{2\\sigma}\\right) = \\frac{1}{2}\\operatorname{erfc}\\left(\\frac{V}{2\\sqrt{2}\\,\\sigma}\\right)",
+          "note": "two symbols a distance V apart in Gaussian noise",
+          "ref": "set 3, slide 33; formulary, eq. 6"
+        },
+        {
+          "eq": "polar ½ erfc(√(E/N0)); unipolar and orthogonal ½ erfc(√(E/2N0))",
+          "tex": "\\text{polar: } \\frac{1}{2} \\operatorname{erfc}\\sqrt{\\frac{E}{N_0}}, \\qquad \\text{unipolar, orthogonal: } \\frac{1}{2} \\operatorname{erfc}\\sqrt{\\frac{E}{2N_0}}",
+          "note": "binary error probabilities with the matched filter, E the mean pulse energy",
+          "ref": "formulary, Table 2"
+        }
       ],
       "practice": [
-        { "question": "Polar signalling with a matched filter runs at E/N0 = 7 dB. What is the bit error probability?",
-          "answer": 7.7e-4, "unit": "", "tolerance": 0.03,
-          "compute": { "law": "polarBER", "dB": 7 },
+        {
+          "question": "Polar signalling with a matched filter runs at E/N0 = 7 dB. What is the bit error probability?",
+          "answer": 0.00077,
+          "unit": "",
+          "tolerance": 0.03,
+          "compute": {
+            "law": "polarBER",
+            "dB": 7
+          },
           "solution": "E/N0 = 10^0.7 = 5.01, Pe = ½ erfc(√5.01) = ½ erfc(2.239) = 7.7·10⁻⁴.",
-          "source": "Worked by hand from the course formulary of March 2017, Table 2" },
-        { "question": "A pulse of energy 2·10⁻⁹ J arrives in white noise of N0 = 10⁻¹⁰ W/Hz. What SNR does the matched filter give at its output?",
-          "answer": 16.0, "unit": "dB", "tolerance": 0.01,
-          "compute": { "law": "matchedSNRdB", "E": 2e-9, "N0": 1e-10 },
+          "source": "Worked by hand from the course formulary of March 2017, Table 2"
+        },
+        {
+          "question": "A pulse of energy 2·10⁻⁹ J arrives in white noise of N0 = 10⁻¹⁰ W/Hz. What SNR does the matched filter give at its output?",
+          "answer": 16,
+          "unit": "dB",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "matchedSNRdB",
+            "E": 2e-9,
+            "N0": 1e-10
+          },
           "solution": "SNR = 2E/N0 = 2 · 2·10⁻⁹ / 10⁻¹⁰ = 40, or 16.0 dB.",
-          "source": "Worked by hand from Goiser (2016), set 4, slide 80" }
+          "source": "Worked by hand from Goiser (2016), set 4, slide 80"
+        }
       ]
     },
     {
@@ -158,22 +452,59 @@
       "lawTex": "P_\\mathrm{e} = \\sum_{m > t} \\binom{n}{m} p^m (1-p)^{n-m}",
       "lecture": "Goiser (2016), set 6, slides 36–63",
       "equations": [
-        { "eq": "R = k/n", "tex": "R = \\frac{k}{n}", "note": "code rate", "ref": "set 6, slide 38" },
-        { "eq": "P(m) = C(n, m) p^m (1 − p)^(n − m)", "tex": "P(m) = \\binom{n}{m} p^m (1-p)^{n-m}", "note": "exactly m bit errors in n", "ref": "set 6, slides 40, 60" },
-        { "eq": "P_e = 1 − Σ_{m = 0}^{t} P(m)", "tex": "P_\\mathrm{e} = 1 - \\sum_{m=0}^{t} P(m)", "note": "more errors than the code corrects", "ref": "set 6, slide 60" },
-        { "eq": "t = (n − 1)/2", "tex": "t = \\frac{n-1}{2}", "note": "a repetition code of odd length n decided by majority", "ref": "set 6, slides 39–40" }
+        {
+          "eq": "R = k/n",
+          "tex": "R = \\frac{k}{n}",
+          "note": "code rate",
+          "ref": "set 6, slide 38"
+        },
+        {
+          "eq": "P(m) = C(n, m) p^m (1 − p)^(n − m)",
+          "tex": "P(m) = \\binom{n}{m} p^m (1-p)^{n-m}",
+          "note": "exactly m bit errors in n",
+          "ref": "set 6, slides 40, 60"
+        },
+        {
+          "eq": "P_e = 1 − Σ_{m = 0}^{t} P(m)",
+          "tex": "P_\\mathrm{e} = 1 - \\sum_{m=0}^{t} P(m)",
+          "note": "more errors than the code corrects",
+          "ref": "set 6, slide 60"
+        },
+        {
+          "eq": "t = (n − 1)/2",
+          "tex": "t = \\frac{n-1}{2}",
+          "note": "a repetition code of odd length n decided by majority",
+          "ref": "set 6, slides 39–40"
+        }
       ],
       "practice": [
-        { "question": "Each bit is sent three times over a channel of bit error probability 0.001 and decided by majority. What is the probability of a wrong decision?",
-          "answer": 3.0e-6, "unit": "", "tolerance": 0.01,
-          "compute": { "law": "repetition", "n": 3, "p": 0.001 },
+        {
+          "question": "Each bit is sent three times over a channel of bit error probability 0.001 and decided by majority. What is the probability of a wrong decision?",
+          "answer": 0.000003,
+          "unit": "",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "repetition",
+            "n": 3,
+            "p": 0.001
+          },
           "solution": "Wrong when two or three bits are: 3 p² (1 − p) + p³ = 3 · 10⁻⁶ · 0.999 + 10⁻⁹ ≈ 3·10⁻⁶.",
-          "source": "Worked example, Goiser (2016), set 6, slide 42" },
-        { "question": "A code corrects two errors in a word of 10 bits; the channel's bit error probability is 1 %. What is the residual word error probability?",
-          "answer": 1.14e-4, "unit": "", "tolerance": 0.02,
-          "compute": { "law": "wordError", "n": 10, "t": 2, "p": 0.01 },
+          "source": "Worked example, Goiser (2016), set 6, slide 42"
+        },
+        {
+          "question": "A code corrects two errors in a word of 10 bits; the channel's bit error probability is 1 %. What is the residual word error probability?",
+          "answer": 0.000114,
+          "unit": "",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "wordError",
+            "n": 10,
+            "t": 2,
+            "p": 0.01
+          },
           "solution": "P(0) = 0.99¹⁰ = 0.9044, P(1) = 10 · 0.01 · 0.99⁹ = 0.0914, P(2) = 45 · 10⁻⁴ · 0.99⁸ = 0.00415; 1 − 0.99989 = 1.14·10⁻⁴. The slide, subtracting rounded terms, prints 0.000116.",
-          "source": "Worked example, Goiser (2016), set 6, slides 61–63" }
+          "source": "Worked example, Goiser (2016), set 6, slides 61–63"
+        }
       ]
     },
     {
@@ -184,19 +515,64 @@
       "lawTex": "s = H r = H e",
       "lecture": "Goiser (2016), set 6, slides 64–99",
       "equations": [
-        { "eq": "d(c1, c2) = w(c1 ⊕ c2)", "tex": "d(c_1, c_2) = w(c_1 \\oplus c_2)", "note": "Hamming distance as the weight of the difference", "ref": "set 6, slide 37" },
-        { "eq": "detects d_min − 1, corrects ⌊(d_min − 1)/2⌋ errors", "tex": "\\text{detects } d_\\mathrm{min} - 1, \\quad \\text{corrects } \\Big\\lfloor \\frac{d_\\mathrm{min} - 1}{2} \\Big\\rfloor \\text{ errors}", "note": "", "ref": "set 6, slide 73" },
-        { "eq": "P1 = I1⊕I3⊕I4, P2 = I1⊕I2⊕I4, P3 = I1⊕I2⊕I3", "tex": "P_1 = I_1 \\oplus I_3 \\oplus I_4, \\quad P_2 = I_1 \\oplus I_2 \\oplus I_4, \\quad P_3 = I_1 \\oplus I_2 \\oplus I_3", "note": "the [7,4] code's parity bits, c = [I1 I2 I3 I4 P1 P2 P3]", "ref": "set 6, slide 85" },
-        { "eq": "G = [I4 | P], H = [Pᵀ | I3], G Hᵀ = 0", "tex": "G = [\\,I_4 \\mid P\\,], \\qquad H = [\\,P^\\mathrm{T} \\mid I_3\\,], \\qquad G H^\\mathrm{T} = 0", "note": "generator and parity-check matrix", "ref": "set 6, slides 86–92" },
-        { "eq": "s = H r = H (c ⊕ e) = H e", "tex": "s = H r = H (c \\oplus e) = H e", "note": "the syndrome depends on the error alone", "ref": "set 6, slide 89" },
-        { "eq": "2^k Σ_{i ≤ t} C(n, i) ≤ 2^n", "tex": "2^k \\sum_{i=0}^{t} \\binom{n}{i} \\le 2^n", "note": "the Hamming bound; equality for a perfect code such as [7,4]", "ref": "set 6, slides 81–82" }
+        {
+          "eq": "d(c1, c2) = w(c1 ⊕ c2)",
+          "tex": "d(c_1, c_2) = w(c_1 \\oplus c_2)",
+          "note": "Hamming distance as the weight of the difference",
+          "ref": "set 6, slide 37"
+        },
+        {
+          "eq": "detects d_min − 1, corrects ⌊(d_min − 1)/2⌋ errors",
+          "tex": "\\text{detects } d_\\mathrm{min} - 1, \\quad \\text{corrects } \\Big\\lfloor \\frac{d_\\mathrm{min} - 1}{2} \\Big\\rfloor \\text{ errors}",
+          "note": "",
+          "ref": "set 6, slide 73"
+        },
+        {
+          "eq": "P1 = I1⊕I3⊕I4, P2 = I1⊕I2⊕I4, P3 = I1⊕I2⊕I3",
+          "tex": "P_1 = I_1 \\oplus I_3 \\oplus I_4, \\quad P_2 = I_1 \\oplus I_2 \\oplus I_4, \\quad P_3 = I_1 \\oplus I_2 \\oplus I_3",
+          "note": "the [7,4] code's parity bits, c = [I1 I2 I3 I4 P1 P2 P3]",
+          "ref": "set 6, slide 85"
+        },
+        {
+          "eq": "G = [I4 | P], H = [Pᵀ | I3], G Hᵀ = 0",
+          "tex": "G = [\\,I_4 \\mid P\\,], \\qquad H = [\\,P^\\mathrm{T} \\mid I_3\\,], \\qquad G H^\\mathrm{T} = 0",
+          "note": "generator and parity-check matrix",
+          "ref": "set 6, slides 86–92"
+        },
+        {
+          "eq": "s = H r = H (c ⊕ e) = H e",
+          "tex": "s = H r = H (c \\oplus e) = H e",
+          "note": "the syndrome depends on the error alone",
+          "ref": "set 6, slide 89"
+        },
+        {
+          "eq": "2^k Σ_{i ≤ t} C(n, i) ≤ 2^n",
+          "tex": "2^k \\sum_{i=0}^{t} \\binom{n}{i} \\le 2^n",
+          "note": "the Hamming bound; equality for a perfect code such as [7,4]",
+          "ref": "set 6, slides 81–82"
+        }
       ],
       "practice": [
-        { "question": "The word r = 1001101 arrives. Which bit (1 … 7) does the syndrome say is wrong?",
-          "answer": 5, "unit": "", "tolerance": 0.001,
-          "compute": { "law": "hammingPosition", "r": [1, 0, 0, 1, 1, 0, 1] },
+        {
+          "question": "The word r = 1001101 arrives. Which bit (1 … 7) does the syndrome say is wrong?",
+          "answer": 5,
+          "unit": "",
+          "tolerance": 0.001,
+          "compute": {
+            "law": "hammingPosition",
+            "r": [
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1
+            ]
+          },
           "solution": "Row by row, H r = (1⊕1⊕1, 1⊕1, 1⊕1) = (1, 0, 0), the fifth column of H. Flip bit 5: c = 1001001, data 1001.",
-          "source": "Worked example, Goiser (2016), set 6, slides 98–99" }
+          "source": "Worked example, Goiser (2016), set 6, slides 98–99"
+        }
       ]
     },
     {
@@ -207,24 +583,70 @@
       "lawTex": "\\text{M-PSK: } P_\\mathrm{e} \\approx 2\\,Q\\left(\\sqrt{\\frac{2E_\\mathrm{s}}{N_0}} \\sin\\frac{\\pi}{M}\\right)",
       "lecture": "Goiser (2016), set 7, slides 13–63; set 8, slides 1–41",
       "equations": [
-        { "eq": "S = ld(M)/(T0 B) ≤ ld M", "tex": "S = \\frac{\\operatorname{ld} M}{T_0 B} \\le \\operatorname{ld} M", "note": "spectral efficiency in bit/s/Hz", "ref": "set 8, slide 3" },
-        { "eq": "BPSK: Pe = Q(√(2Eb/N0))", "tex": "P_\\mathrm{e} = Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}}\\right)", "note": "antipodal points ±√E", "ref": "set 7, slide 50" },
-        { "eq": "QPSK: Pb = Q(√(2Eb/N0)), Pe = 2Pb − Pb²", "tex": "P_\\mathrm{b} = Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}}\\right), \\qquad P_\\mathrm{e} = 2P_\\mathrm{b} - P_\\mathrm{b}^2", "note": "the same bit error rate as BPSK in half the bandwidth", "ref": "set 8, slide 18" },
-        { "eq": "φn = (π/M)(2n − 1); Pe ≈ 2 Q(√(2Es/N0) sin(π/M)), M > 4", "tex": "\\varphi_n = \\frac{\\pi}{M}(2n-1), \\qquad P_\\mathrm{e} \\approx 2\\,Q\\left(\\sqrt{\\frac{2E_\\mathrm{s}}{N_0}} \\sin\\frac{\\pi}{M}\\right), \\quad M > 4", "note": "M-PSK; the slide prints Q(·) without the factor 2, though its own assumption (two neighbours s2, s8) gives it; the seeded count backs 2 Q(·)", "ref": "set 8, slides 23–24" },
-        { "eq": "Pe ≈ 4 (√M − 1)/√M · Q(√(3Es/((M − 1)N0)))", "tex": "P_\\mathrm{e} \\approx 4\\,\\frac{\\sqrt{M}-1}{\\sqrt{M}}\\, Q\\left(\\sqrt{\\frac{3E_\\mathrm{s}}{(M-1)N_0}}\\right)", "note": "square M-QAM, M ≥ 4; the slide writes the argument as [3/(2(M − 1)) · 2Es/N0]^½; checked against seeded counts", "ref": "set 8, slide 37" },
-        { "eq": "Es = Eb ld M, Pb ≈ Pe / ld M with Gray coding", "tex": "E_\\mathrm{s} = E_\\mathrm{b} \\operatorname{ld} M, \\qquad P_\\mathrm{b} \\approx \\frac{P_\\mathrm{e}}{\\operatorname{ld} M}", "note": "neighbours differ in one bit", "ref": "set 8, slides 6, 24" }
+        {
+          "eq": "S = ld(M)/(T0 B) ≤ ld M",
+          "tex": "S = \\frac{\\operatorname{ld} M}{T_0 B} \\le \\operatorname{ld} M",
+          "note": "spectral efficiency in bit/s/Hz",
+          "ref": "set 8, slide 3"
+        },
+        {
+          "eq": "BPSK: Pe = Q(√(2Eb/N0))",
+          "tex": "P_\\mathrm{e} = Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}}\\right)",
+          "note": "antipodal points ±√E",
+          "ref": "set 7, slide 50"
+        },
+        {
+          "eq": "QPSK: Pb = Q(√(2Eb/N0)), Pe = 2Pb − Pb²",
+          "tex": "P_\\mathrm{b} = Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}}\\right), \\qquad P_\\mathrm{e} = 2P_\\mathrm{b} - P_\\mathrm{b}^2",
+          "note": "the same bit error rate as BPSK in half the bandwidth",
+          "ref": "set 8, slide 18"
+        },
+        {
+          "eq": "φn = (π/M)(2n − 1); Pe ≈ 2 Q(√(2Es/N0) sin(π/M)), M > 4",
+          "tex": "\\varphi_n = \\frac{\\pi}{M}(2n-1), \\qquad P_\\mathrm{e} \\approx 2\\,Q\\left(\\sqrt{\\frac{2E_\\mathrm{s}}{N_0}} \\sin\\frac{\\pi}{M}\\right), \\quad M > 4",
+          "note": "M-PSK; the slide prints Q(·) without the factor 2, though its own assumption (two neighbours s2, s8) gives it; the seeded count backs 2 Q(·)",
+          "ref": "set 8, slides 23–24"
+        },
+        {
+          "eq": "Pe ≈ 4 (√M − 1)/√M · Q(√(3Es/((M − 1)N0)))",
+          "tex": "P_\\mathrm{e} \\approx 4\\,\\frac{\\sqrt{M}-1}{\\sqrt{M}}\\, Q\\left(\\sqrt{\\frac{3E_\\mathrm{s}}{(M-1)N_0}}\\right)",
+          "note": "square M-QAM, M ≥ 4; the slide writes the argument as [3/(2(M − 1)) · 2Es/N0]^½; checked against seeded counts",
+          "ref": "set 8, slide 37"
+        },
+        {
+          "eq": "Es = Eb ld M, Pb ≈ Pe / ld M with Gray coding",
+          "tex": "E_\\mathrm{s} = E_\\mathrm{b} \\operatorname{ld} M, \\qquad P_\\mathrm{b} \\approx \\frac{P_\\mathrm{e}}{\\operatorname{ld} M}",
+          "note": "neighbours differ in one bit",
+          "ref": "set 8, slides 6, 24"
+        }
       ],
       "practice": [
-        { "question": "8-PSK runs at Es/N0 = 14 dB. What is its symbol error probability?",
-          "answer": 6.7e-3, "unit": "", "tolerance": 0.02,
-          "compute": { "law": "pskSER", "M": 8, "dB": 14 },
+        {
+          "question": "8-PSK runs at Es/N0 = 14 dB. What is its symbol error probability?",
+          "answer": 0.0067,
+          "unit": "",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "pskSER",
+            "M": 8,
+            "dB": 14
+          },
           "solution": "Es/N0 = 25.1, √(2 · 25.1) · sin(22.5°) = 7.09 · 0.383 = 2.71, Pe ≈ 2 Q(2.71) = 2 · 3.4·10⁻³ = 6.7·10⁻³.",
-          "source": "Worked by hand from Goiser (2016), set 8, slide 24" },
-        { "question": "16-QAM runs at Es/N0 = 16 dB. What is its symbol error probability?",
-          "answer": 7.2e-3, "unit": "", "tolerance": 0.02,
-          "compute": { "law": "qamSER", "M": 16, "dB": 16 },
+          "source": "Worked by hand from Goiser (2016), set 8, slide 24"
+        },
+        {
+          "question": "16-QAM runs at Es/N0 = 16 dB. What is its symbol error probability?",
+          "answer": 0.0072,
+          "unit": "",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "qamSER",
+            "M": 16,
+            "dB": 16
+          },
           "solution": "Es/N0 = 39.8, √(3 · 39.8/15) = 2.82, Pe ≈ 4 · 3/4 · Q(2.82) = 3 · 2.4·10⁻³ = 7.2·10⁻³.",
-          "source": "Worked by hand from Goiser (2016), set 8, slide 37" }
+          "source": "Worked by hand from Goiser (2016), set 8, slide 37"
+        }
       ]
     },
     {
@@ -235,23 +657,64 @@
       "lawTex": "P_\\mathrm{e} = Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} \\cos\\varphi\\right)",
       "lecture": "Goiser (2016), Synchronisation, slides 7–32",
       "equations": [
-        { "eq": "Pe = Q(√(2Eb/N0) cos φ)", "tex": "P_\\mathrm{e} = Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} \\cos\\varphi\\right)", "note": "BPSK with a carrier phase error φ", "ref": "Synchronisation, slide 9" },
-        { "eq": "Pe = ½ Q(√(2Eb/N0)(cos φ − sin φ)) + ½ Q(√(2Eb/N0)(cos φ + sin φ))", "tex": "P_\\mathrm{e} = \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} (\\cos\\varphi - \\sin\\varphi)\\right) + \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} (\\cos\\varphi + \\sin\\varphi)\\right)", "note": "QPSK, more sensitive to φ", "ref": "Synchronisation, slides 11–12" },
-        { "eq": "Pe = ½ Q(√(2Eb/N0)) + ½ Q(√(2Eb/N0)(1 − 2ε))", "tex": "P_\\mathrm{e} = \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}}\\right) + \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} (1 - 2\\varepsilon)\\right)", "note": "BPSK with a static timing error ε of a bit", "ref": "Synchronisation, slides 13–14" },
-        { "eq": "e = sin(φ − θ) after the low-pass", "tex": "e = \\sin(\\varphi - \\theta) \\quad \\text{after the low-pass}", "note": "the PLL's phase detector", "ref": "Synchronisation, slides 17–18" },
-        { "eq": "squaring gives a line at 2f0; Costas: error ∝ sin 2θ", "tex": "\\text{squaring: a line at } 2f_0, \\qquad \\text{Costas: error} \\propto \\sin 2\\theta", "note": "carrier recovery without the data", "ref": "Synchronisation, slides 24–27" }
+        {
+          "eq": "Pe = Q(√(2Eb/N0) cos φ)",
+          "tex": "P_\\mathrm{e} = Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} \\cos\\varphi\\right)",
+          "note": "BPSK with a carrier phase error φ",
+          "ref": "Synchronisation, slide 9"
+        },
+        {
+          "eq": "Pe = ½ Q(√(2Eb/N0)(cos φ − sin φ)) + ½ Q(√(2Eb/N0)(cos φ + sin φ))",
+          "tex": "P_\\mathrm{e} = \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} (\\cos\\varphi - \\sin\\varphi)\\right) + \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} (\\cos\\varphi + \\sin\\varphi)\\right)",
+          "note": "QPSK, more sensitive to φ",
+          "ref": "Synchronisation, slides 11–12"
+        },
+        {
+          "eq": "Pe = ½ Q(√(2Eb/N0)) + ½ Q(√(2Eb/N0)(1 − 2ε))",
+          "tex": "P_\\mathrm{e} = \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}}\\right) + \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} (1 - 2\\varepsilon)\\right)",
+          "note": "BPSK with a static timing error ε of a bit",
+          "ref": "Synchronisation, slides 13–14"
+        },
+        {
+          "eq": "e = sin(φ − θ) after the low-pass",
+          "tex": "e = \\sin(\\varphi - \\theta) \\quad \\text{after the low-pass}",
+          "note": "the PLL's phase detector",
+          "ref": "Synchronisation, slides 17–18"
+        },
+        {
+          "eq": "squaring gives a line at 2f0; Costas: error ∝ sin 2θ",
+          "tex": "\\text{squaring: a line at } 2f_0, \\qquad \\text{Costas: error} \\propto \\sin 2\\theta",
+          "note": "carrier recovery without the data",
+          "ref": "Synchronisation, slides 24–27"
+        }
       ],
       "practice": [
-        { "question": "BPSK runs at Eb/N0 = 9.6 dB, where it would reach 10⁻⁵, but the carrier is 30° off. What is the bit error probability?",
-          "answer": 1.08e-4, "unit": "", "tolerance": 0.03,
-          "compute": { "law": "bpskPhase", "dB": 9.6, "phiDeg": 30 },
+        {
+          "question": "BPSK runs at Eb/N0 = 9.6 dB, where it would reach 10⁻⁵, but the carrier is 30° off. What is the bit error probability?",
+          "answer": 0.000108,
+          "unit": "",
+          "tolerance": 0.03,
+          "compute": {
+            "law": "bpskPhase",
+            "dB": 9.6,
+            "phiDeg": 30
+          },
           "solution": "√(2Eb/N0) = √(2 · 9.12) = 4.27; cos 30° = 0.866, so Pe = Q(4.27 · 0.866) = Q(3.70) = 1.08·10⁻⁴, ten times worse: cos²φ costs 1.25 dB.",
-          "source": "Worked by hand from Goiser (2016), Synchronisation, slide 9" },
-        { "question": "The same BPSK link, at 9.6 dB with the carrier right, samples a quarter of a bit late (ε = 0.25). What is the bit error probability?",
-          "answer": 8.2e-3, "unit": "", "tolerance": 0.02,
-          "compute": { "law": "timing", "dB": 9.6, "eps": 0.25 },
+          "source": "Worked by hand from Goiser (2016), Synchronisation, slide 9"
+        },
+        {
+          "question": "The same BPSK link, at 9.6 dB with the carrier right, samples a quarter of a bit late (ε = 0.25). What is the bit error probability?",
+          "answer": 0.0082,
+          "unit": "",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "timing",
+            "dB": 9.6,
+            "eps": 0.25
+          },
           "solution": "Pe = ½ Q(4.27) + ½ Q(4.27 · (1 − 2 · 0.25)) = ½ · 10⁻⁵ + ½ Q(2.14) = 0.5·10⁻⁵ + ½ · 1.6·10⁻² = 8.2·10⁻³: the bits after a change of sign lose half their integral.",
-          "source": "Worked by hand from Goiser (2016), Synchronisation, slide 14" }
+          "source": "Worked by hand from Goiser (2016), Synchronisation, slide 14"
+        }
       ]
     },
     {
@@ -262,25 +725,212 @@
       "lawTex": "f = f_1 + \\frac{f_2 - 1}{G_1} + \\frac{f_3 - 1}{G_1 G_2} + \\dots",
       "lecture": "Goiser (2016), Rauschen und Link-Budget, slides 10–65",
       "equations": [
-        { "eq": "N = k T B, k = 1.38·10⁻²³ J/K", "tex": "N = kTB, \\qquad k = 1.38 \\cdot 10^{-23}\\,\\mathrm{J/K}", "note": "thermal noise power (Nyquist), f < 10¹² Hz", "ref": "Rauschen, slides 11, 15" },
-        { "eq": "k T0 = 4·10⁻²¹ W/Hz = −174 dBm/Hz, T0 = 290 K", "tex": "kT_0 = 4 \\cdot 10^{-21}\\,\\mathrm{W/Hz} \\;\\; (-174\\,\\mathrm{dBm/Hz}), \\qquad T_0 = 290\\,\\mathrm{K}", "note": "", "ref": "Rauschen, slide 30" },
-        { "eq": "f = SNR_in/SNR_out = 1 + Te/T0, F = 10 log f", "tex": "f = \\frac{\\mathrm{SNR}_\\mathrm{in}}{\\mathrm{SNR}_\\mathrm{out}} = 1 + \\frac{T_\\mathrm{e}}{T_0}, \\qquad F = 10 \\log f", "note": "noise factor and noise figure", "ref": "Rauschen, slides 51–55" },
-        { "eq": "f = f1 + (f2 − 1)/G1 + (f3 − 1)/(G1 G2) + …", "tex": "f = f_1 + \\frac{f_2 - 1}{G_1} + \\frac{f_3 - 1}{G_1 G_2} + \\dots", "note": "Friis's formula", "ref": "Rauschen, slide 53" },
-        { "eq": "Te = Te1 + Te2/G1 + Te3/(G1 G2) + …", "tex": "T_\\mathrm{e} = T_{\\mathrm{e}(1)} + \\frac{T_{\\mathrm{e}(2)}}{G_1} + \\frac{T_{\\mathrm{e}(3)}}{G_1 G_2} + \\dots", "note": "the same in temperatures, the second route", "ref": "Rauschen, slides 40–41" },
-        { "eq": "f = 1/G for a loss at T0", "tex": "f = \\frac{1}{G} \\quad \\text{for a loss at } T_0", "note": "a mixer of −6 dB: f = 4, F = 6 dB", "ref": "Rauschen, slides 53–57" },
-        { "eq": "N_out = G k B (Ts + Te)", "tex": "N_\\mathrm{out} = G k B (T_\\mathrm{S} + T_\\mathrm{e})", "note": "noise at the output", "ref": "Rauschen, slide 32" }
+        {
+          "eq": "N = k T B, k = 1.38·10⁻²³ J/K",
+          "tex": "N = kTB, \\qquad k = 1.38 \\cdot 10^{-23}\\,\\mathrm{J/K}",
+          "note": "thermal noise power (Nyquist), f < 10¹² Hz",
+          "ref": "Rauschen, slides 11, 15"
+        },
+        {
+          "eq": "k T0 = 4·10⁻²¹ W/Hz = −174 dBm/Hz, T0 = 290 K",
+          "tex": "kT_0 = 4 \\cdot 10^{-21}\\,\\mathrm{W/Hz} \\;\\; (-174\\,\\mathrm{dBm/Hz}), \\qquad T_0 = 290\\,\\mathrm{K}",
+          "note": "",
+          "ref": "Rauschen, slide 30"
+        },
+        {
+          "eq": "f = SNR_in/SNR_out = 1 + Te/T0, F = 10 log f",
+          "tex": "f = \\frac{\\mathrm{SNR}_\\mathrm{in}}{\\mathrm{SNR}_\\mathrm{out}} = 1 + \\frac{T_\\mathrm{e}}{T_0}, \\qquad F = 10 \\log f",
+          "note": "noise factor and noise figure",
+          "ref": "Rauschen, slides 51–55"
+        },
+        {
+          "eq": "f = f1 + (f2 − 1)/G1 + (f3 − 1)/(G1 G2) + …",
+          "tex": "f = f_1 + \\frac{f_2 - 1}{G_1} + \\frac{f_3 - 1}{G_1 G_2} + \\dots",
+          "note": "Friis's formula",
+          "ref": "Rauschen, slide 53"
+        },
+        {
+          "eq": "Te = Te1 + Te2/G1 + Te3/(G1 G2) + …",
+          "tex": "T_\\mathrm{e} = T_{\\mathrm{e}(1)} + \\frac{T_{\\mathrm{e}(2)}}{G_1} + \\frac{T_{\\mathrm{e}(3)}}{G_1 G_2} + \\dots",
+          "note": "the same in temperatures, the second route",
+          "ref": "Rauschen, slides 40–41"
+        },
+        {
+          "eq": "f = 1/G for a loss at T0",
+          "tex": "f = \\frac{1}{G} \\quad \\text{for a loss at } T_0",
+          "note": "a mixer of −6 dB: f = 4, F = 6 dB",
+          "ref": "Rauschen, slides 53–57"
+        },
+        {
+          "eq": "N_out = G k B (Ts + Te)",
+          "tex": "N_\\mathrm{out} = G k B (T_\\mathrm{S} + T_\\mathrm{e})",
+          "note": "noise at the output",
+          "ref": "Rauschen, slide 32"
+        }
       ],
       "practice": [
-        { "question": "A receiver has an LNA (12 dB, f = 1.17), a mixer (−6 dB, f = 4), and two amplifiers (20 dB and 30 dB, each f = 4.47). What is its noise factor?",
-          "answer": 2.25, "unit": "", "tolerance": 0.01,
-          "compute": { "law": "friis", "stages": [{ "G": 15.85, "f": 1.17 }, { "G": 0.25, "f": 4 }, { "G": 100, "f": 4.47 }, { "G": 1000, "f": 4.47 }] },
+        {
+          "question": "A receiver has an LNA (12 dB, f = 1.17), a mixer (−6 dB, f = 4), and two amplifiers (20 dB and 30 dB, each f = 4.47). What is its noise factor?",
+          "answer": 2.25,
+          "unit": "",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "friis",
+            "stages": [
+              {
+                "G": 15.85,
+                "f": 1.17
+              },
+              {
+                "G": 0.25,
+                "f": 4
+              },
+              {
+                "G": 100,
+                "f": 4.47
+              },
+              {
+                "G": 1000,
+                "f": 4.47
+              }
+            ]
+          },
           "solution": "f = 1.17 + 3/15.8 + 3.47/(15.8 · 0.25) + 3.47/(15.8 · 0.25 · 100) = 1.17 + 0.19 + 0.88 + 0.01 = 2.25, F = 3.5 dB.",
-          "source": "Worked example, Goiser (2016), Rauschen und Link-Budget, slides 59–64" },
-        { "question": "An amplifier of 20 dB gain and noise temperature 580 K is fed from a 290 K source over 1 MHz. What noise power comes out?",
-          "answer": -89.2, "unit": "dBm", "tolerance": 0.002,
-          "compute": { "law": "outputNoiseDBm", "stages": [{ "G": 100, "f": 3 }], "Ts": 290, "B": 1e6 },
+          "source": "Worked example, Goiser (2016), Rauschen und Link-Budget, slides 59–64"
+        },
+        {
+          "question": "An amplifier of 20 dB gain and noise temperature 580 K is fed from a 290 K source over 1 MHz. What noise power comes out?",
+          "answer": -89.2,
+          "unit": "dBm",
+          "tolerance": 0.002,
+          "compute": {
+            "law": "outputNoiseDBm",
+            "stages": [
+              {
+                "G": 100,
+                "f": 3
+              }
+            ],
+            "Ts": 290,
+            "B": 1000000
+          },
           "solution": "N = G k B (Ts + Te) = 100 · 1.38·10⁻²³ · 10⁶ · 870 = 1.2·10⁻¹² W = −89.2 dBm.",
-          "source": "Worked example, Goiser (2016), Rauschen und Link-Budget, slides 34–38" }
+          "source": "Worked example, Goiser (2016), Rauschen und Link-Budget, slides 34–38"
+        }
+      ]
+    },
+    {
+      "id": "voicelink",
+      "title": "A telephone channel, from the voice to the receiver's noise",
+      "idea": "One voice channel through the whole course: sampled and quantised, coded, put on QPSK symbols and raised-cosine pulses, received through the slides' superheterodyne receiver. Every step sets the rate of the next; the receiver's noise sets the bit errors, and they the voice's SNR.",
+      "law": "Rb = fs·n    Rc = Rb·n/k    Rs = Rc/ld M    B = (1 + α)Rs/2    Eb/N0 = S/(k Tsys Rb)    SNR = SNQR/(1 + 4(M² − 1)Pe)",
+      "lawTex": "\\frac{E_b}{N_0} = \\frac{S}{k\\,T_\\mathrm{sys}\\,R_b} \\qquad \\mathrm{SNR} = \\frac{\\mathrm{SNQR}}{1 + 4(M^2 - 1)P_e}",
+      "lecture": "Goiser (2016), set 2, slides 47–60; set 4, slide 26; set 6, slides 38–60; set 8, slides 6–18; Rauschen und Link-Budget, slides 30–65",
+      "practice": [
+        {
+          "question": "A voice channel is sampled at 8 kHz with 8 bit and protected by a Hamming (7,4) code. What is the bit rate on the channel?",
+          "answer": 112000,
+          "unit": "bit/s",
+          "tolerance": 0.5,
+          "compute": {
+            "law": "linkRate",
+            "n": 8,
+            "code": true,
+            "S": 1e-13
+          },
+          "solution": "Rb = 8 kHz · 8 bit = 64 kbit/s; the code sends 7 bits for every 4: Rc = 64 · 7/4 = 112 kbit/s.",
+          "source": "Goiser (2016), set 2, slide 60; set 6, slide 38"
+        },
+        {
+          "question": "The 112 kbit/s go out as QPSK on raised-cosine pulses with α = 0.5. What bandwidth do they need?",
+          "answer": 42000,
+          "unit": "Hz",
+          "tolerance": 0.5,
+          "compute": {
+            "law": "rcBandwidth",
+            "Rs": 56000,
+            "alpha": 0.5
+          },
+          "solution": "Rs = 112/2 = 56 kBd; B = (1 + α)Rs/2 = 1.5 · 56/2 = 42 kHz.",
+          "source": "Goiser (2016), set 8, slide 6; set 4, slide 26"
+        },
+        {
+          "question": "The slides' receiver (LNA, mixer, two amplifiers) sits behind an antenna at 100 K and receives 10⁻¹³ W of the uncoded 64 kbit/s. What is Eb/N0?",
+          "answer": 23.91,
+          "unit": "dB",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "linkEbN0dB",
+            "n": 8,
+            "code": false,
+            "S": 1e-13,
+            "Ts": 100
+          },
+          "solution": "f = 2.24 by Friis, Te = (f − 1)·290 K = 360 K, Tsys = 460 K; N0 = 1.38·10⁻²³ · 460 = 6.35·10⁻²¹ W/Hz; Eb/N0 = 10⁻¹³/(6.35·10⁻²¹ · 64 000) = 246, or 23.9 dB.",
+          "source": "worked by hand from Goiser (2016), Rauschen, slides 59–65"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "R_b = f_s · n; 8 kHz · 8 bit = 64 kbit/s",
+          "tex": "R_b = f_s\\,n",
+          "note": "companded PCM",
+          "ref": "set 2, slide 60"
+        },
+        {
+          "eq": "SNQR_dB = 4.8 + 6n − α_dB",
+          "tex": "\\mathrm{SNQR}_\\mathrm{dB} = 4.8 + 6n - \\alpha_\\mathrm{dB}",
+          "note": "α = 3 dB for a full-scale sine",
+          "ref": "set 2, slides 46–47"
+        },
+        {
+          "eq": "R = k/n",
+          "tex": "R = k/n",
+          "note": "4/7 for the Hamming (7,4) code",
+          "ref": "set 6, slide 38"
+        },
+        {
+          "eq": "P_e = 1 − Σ_{m ≤ t} C(n, m) p^m (1 − p)^(n − m)",
+          "tex": "P_e = 1 - \\sum_{m=0}^{t}\\binom{n}{m}p^m(1-p)^{n-m}",
+          "note": "t = 1 for the (7,4) code",
+          "ref": "set 6, slide 60"
+        },
+        {
+          "eq": "Es = Eb ld M",
+          "tex": "E_s = E_b \\operatorname{ld} M",
+          "note": "2 bit per QPSK symbol",
+          "ref": "set 8, slide 6"
+        },
+        {
+          "eq": "QPSK: Pb = Q(√(2Eb/N0))",
+          "tex": "P_b = Q\\!\\left(\\sqrt{2E_b/N_0}\\right)",
+          "note": "",
+          "ref": "set 8, slide 18"
+        },
+        {
+          "eq": "B = (1 + α)/(2T0)",
+          "tex": "B = \\frac{1 + \\alpha}{2T_0}",
+          "note": "",
+          "ref": "set 4, slide 26"
+        },
+        {
+          "eq": "f = f1 + (f2 − 1)/G1 + (f3 − 1)/(G1 G2) + …",
+          "tex": "f = f_1 + \\frac{f_2 - 1}{G_1} + \\frac{f_3 - 1}{G_1G_2} + \\dots",
+          "note": "2.25, 3.5 dB for the slides' receiver",
+          "ref": "Rauschen, slides 53, 64"
+        },
+        {
+          "eq": "Tsys = Ts + (f − 1) T0",
+          "tex": "T_\\mathrm{sys} = T_S + (f - 1)T_0",
+          "note": "462 K in the slides",
+          "ref": "Rauschen, slides 52, 65"
+        },
+        {
+          "eq": "SNR_out = SNQR / (1 + 4(M² − 1)Pe)",
+          "tex": "\\mathrm{SNR}_\\mathrm{out} = \\frac{\\mathrm{SNQR}}{1 + 4(M^2 - 1)P_e}",
+          "note": "M² − 1 is the SNQR of a uniform signal",
+          "ref": "set 2, slide 50"
+        }
       ]
     }
   ]

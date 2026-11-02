@@ -4,6 +4,7 @@ import * as M from "./maths.js";
 import * as B from "./baseband.js";
 import * as C from "./coding.js";
 import * as R from "./carrier.js";
+import * as L from "./link.js";
 
 const LAWS = {
   snqrSineDB: q => M.dB(B.snqr(q.n, 2)),
@@ -26,6 +27,8 @@ const LAWS = {
   friis: q => R.friis(q.stages),
   noiseFigure: q => M.dB(1 + q.Te / R.T0),
   outputNoiseDBm: q => M.dB(R.outputNoise(q.stages, q.Ts, q.B) / 1e-3),
+  linkEbN0dB: q => M.dB(L.voiceLink(q).EbN0),
+  linkRate: q => L.voiceLink(q).Rc,
 };
 
 /** The answer to a question's "compute" block; an unknown law is an error naming the ones there are. */

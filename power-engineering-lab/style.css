@@ -4,6 +4,7 @@
 [data-family=equipment] { --frame: #7C3AED; }
 [data-family=operation] { --frame: #BE123C; }
 [data-family=machines] { --frame: #047857; }
+[data-family=example] { --frame: #334155; }
 
 /* Phasors: told apart by colour and by dash, each named in the legend with the same stroke. */
 .vec.phasor line, .key { stroke: var(--ink); stroke-width: 2.5; }

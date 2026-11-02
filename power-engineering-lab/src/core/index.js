@@ -8,5 +8,6 @@ export { shortCircuitCurrent, acPart, dcPart, shortCircuitIntegrated, kappa, pea
   equalArea, criticalAngle, areasIntegrated } from "./faults.js";
 export { spaceVector, phaseValues, phaseCurrents, gapField, syncSpeed, slip, dcSpeed, dcCurrent, dcTorque, dcSlope,
   pmsm, toStator, currentFor } from "./machines.js";
+export { FEEDER, feederTo, feederLoad, feederFault } from "./feeder.js";
 export { si, parseSi, isRight } from "../../../kit/core/index.js";
 export { solve } from "./practice.js";
