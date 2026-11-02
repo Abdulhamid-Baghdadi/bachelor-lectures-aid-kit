@@ -1,6 +1,7 @@
 /* This lab's own look, after the kit's (../kit/style.css): its families' frame colours and the drawings only it has. */
 [data-family=frequency] { --frame: #6D28D9; }
 [data-family=digital] { --frame: #047857; }
+[data-family=example] { --frame: #334155; }
 
 /* The z-plane and the FFT butterfly. */
 .chart.zplane { max-width: 280px; margin: 8px auto 0; }

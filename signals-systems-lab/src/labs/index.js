@@ -11,5 +11,6 @@ import dft from "./dft.js";
 import sampling from "./sampling.js";
 import filters from "./filters.js";
 import multirate from "./multirate.js";
+import humfilter from "./humfilter.js";
 
-export const labs = [timeaxis, lti, convolution, random, series, transform, harmonics, dft, sampling, filters, multirate];
+export const labs = [timeaxis, lti, convolution, random, series, transform, harmonics, dft, sampling, filters, multirate, humfilter];

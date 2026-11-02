@@ -23,6 +23,9 @@ const LAWS = {
   prewarp: q => 2 * q.fs * Math.tan(Math.PI * q.fc / q.fs) / (2 * Math.PI),
   binSpacing: q => q.fs / q.N,
   antiAlias: q => q.fs / (2 * q.M),
+  // The worked example: the moving average (3.45) and its first notch fs/N (5.37).
+  maMagnitude: q => S.maMagnitude(q.N, 2 * Math.PI * q.f / q.fs),
+  maFirstNotch: q => S.maNotches(q.N, q.fs)[0],
 };
 
 /** The answer to a question's "compute" block; an unknown law is an error naming the ones there are. */

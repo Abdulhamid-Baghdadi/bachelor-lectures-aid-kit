@@ -245,3 +245,27 @@ export const downsample = (x, M) => x.filter((_, n) => n % M === 0);
 export const upsample = (x, L) => x.flatMap(v => [v, ...Array(L - 1).fill(0)]);
 /** Filter x with the FIR h (zero initial state). */
 export const fir = (x, h) => x.map((_, n) => h.reduce((s, c, k) => s + (n - k >= 0 ? c * x[n - k] : 0), 0));
+
+// --- The worked example: the moving average of Beispiele 3.7, 3.9 and 5.7 against mains hum ---
+
+/** The moving average h[n] = 1/N for 0 ≤ n ≤ N − 1 (3.45). */
+export const movingAverage = N => new Array(N).fill(1 / N);
+/** Its magnitude |H(e^jθ)| = |sin(Nθ/2)/(N sin(θ/2))| (3.48), 1 at θ = 0. */
+export const maMagnitude = (N, theta) => Math.abs(Math.sin(theta / 2)) < 1e-12 ? 1 : Math.abs(Math.sin(N * theta / 2) / (N * Math.sin(theta / 2)));
+/** The frequencies it blocks, θk = 2πk/N for k = 1 … N − 1: the zeros e^(j2πk/N) on the unit circle (5.37), in Hz
+ *  for a sampling rate fs, folded to 0 … fs/2. */
+export const maNotches = (N, fs) => [...new Set(Array.from({ length: N - 1 }, (_, k) => Math.round(alias((k + 1) * fs / N, fs) * 1e9) / 1e9))].sort((p, q) => p - q);
+
+/** A slow sensor signal with mains hum on it, sampled at fs for n samples: s(t) = 1 + 0.5 sin(2π·1 Hz·t) and the hum
+ *  as [f, amplitude] parts, each a sine. Example data, not a measurement. */
+export const HUM = [[50, 0.4], [100, 0.12], [250, 0.12]];
+export const sensor = t => 1 + 0.5 * Math.sin(2 * Math.PI * t);
+export function humSamples(fs, n, hum = HUM) {
+  const x = [], s = [];
+  for (let k = 0; k < n; k++) {
+    const t = k / fs;
+    s.push(sensor(t));
+    x.push(sensor(t) + hum.reduce((v, [f, A]) => v + A * Math.sin(2 * Math.PI * f * t), 0));
+  }
+  return { x, s };
+}

@@ -9,8 +9,8 @@ import { labs } from "./labs/index.js";
 
 const main = document.querySelector("main");
 
-/** "Part 2": the labs are grouped by idea, each part drawing on both courses. */
-const chapterOf = lecture => `Part ${lecture.number}`;
+/** "Part 2": the labs are grouped by idea, each part drawing on both courses; a worked example carries its heading. */
+const chapterOf = lecture => lecture.heading ?? `Part ${lecture.number}`;
 
 function fail(message) {
   main.replaceChildren(h("p", { class: "error", role: "alert" }, message));
