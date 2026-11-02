@@ -1,0 +1,10 @@
+/* This lab's own look, after the kit's (../kit/style.css): its families' frame colours and the drawings only it has. */
+[data-family=lines] { --frame: #B45309; }
+[data-family=theorems] { --frame: #0E7490; }
+
+/* The two paths of the line-integral lab: solid and dashed, so they differ by more than colour. */
+.path { fill: none; stroke-width: 3; }
+.path.one { stroke: var(--accent); }
+.path.two { stroke: var(--second); stroke-dasharray: 8 5; }
+.end { fill: var(--ink); }
+.axis.faint { stroke-width: 1; }

@@ -1,0 +1,21 @@
+{
+  "format": "design-rules bibliography",
+  "version": 1,
+  "about": "The sources of this project's subject matter (vector analysis), apart from the design rules' bibliography, which keeps the design principles.",
+  "entries": [
+    {
+      "key": "fritzsche2003",
+      "authors": [
+        "Fritzsche, K."
+      ],
+      "year": 2003,
+      "title": "Mathematik 3 für Elektrotechnik und IT",
+      "venue": "Lecture notes (Vorlesungsausarbeitung) for the winter term 2002/03, Fachbereich Mathematik, Bergische Universität Wuppertal, https://www2.math.uni-wuppertal.de/~fritzsch/lectures/met/",
+      "backs": "The vector calculus labs: line integrals (ch. 9 § 2, p. 19), the main theorem on line integrals (p. 22), the vortex example (pp. 21–24), Green's theorem (ch. 10 § 1, pp. 61, 63), Stokes' theorem (§ 3, p. 77), the vortex density (p. 79), Gauss's theorem and the divergence (§ 4, p. 85), the source density (p. 87), by printed page. Read from the page images of metkap9.pdf and metkap10.pdf, downloaded on 2 Nov 2026 with the user's approval.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-02"
+      }
+    }
+  ]
+}

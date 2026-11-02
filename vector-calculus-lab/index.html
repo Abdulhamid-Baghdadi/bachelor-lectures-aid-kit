@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vector Calculus Lab</title>
+<meta name="description" content="The integral theorems of vector analysis to play with: line integrals and potentials, circulation and curl (Green and Stokes), flux and divergence (Gauss).">
+<script>
+  // Before the page draws, so a chosen theme never flashes the other one.
+  try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+</script>
+<link rel="stylesheet" href="../kit/style.css">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="src/app.js"></script>
+</head>
+<body>
+<header class="top">
+  <div>
+    <p class="home"><a href="../">← Aid kit home</a></p>
+    <h1><a href="#">Vector Calculus Lab</a></h1>
+  </div>
+  <button id="theme" type="button">Light or dark</button>
+</header>
+<main></main>
+<footer>
+  <p>After the lecture notes of Fritzsche (2003), <i>Mathematik 3 für Elektrotechnik und IT</i>, Bergische Universität Wuppertal, chapters 9 and 10.</p>
+  <p>A learning aid for TU Wien's Mathematik 3 for electrical engineering. Taschner's own text for the course was not at hand, so every equation comes from Fritzsche (2003), by section and page; no text of it is reproduced. Integrals are sums on fixed grids, so both sides of each theorem are computed apart.
+    Maxwell's equations, where these theorems do their work, are in the <a href="../Electromagnetism/">Electrodynamics Lab</a>.</p>
+</footer>
+<noscript><p>Vector Calculus Lab needs JavaScript.</p></noscript>
+</body>
+</html>

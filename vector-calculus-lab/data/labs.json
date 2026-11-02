@@ -1,0 +1,172 @@
+{
+  "format": "vector-calculus-lab labs",
+  "version": 1,
+  "about": "The integral theorems of vector analysis for TU Wien's Mathematik 3 for electrical engineering. Taschner's own text for that course, Anwendungsorientierte Mathematik, Band 3 (Hanser), was not available; the labs follow the free lecture notes of Fritzsche (2003), Mathematik 3 für Elektrotechnik und IT, Bergische Universität Wuppertal, chapter 9 § 2 and chapter 10 §§ 1, 3 and 4, by section and printed page, read from the page images on 2 Nov 2026. Fritzsche numbers no equations, so each is cited by its page. Practice answers are worked by hand or taken from Fritzsche's examples; tests/unit/labs-data.test.js recomputes each with the core. Maxwell's equations are in the Electrodynamics Lab.",
+  "families": [
+    {
+      "id": "lines",
+      "name": "Line integrals"
+    },
+    {
+      "id": "theorems",
+      "name": "Integral theorems"
+    }
+  ],
+  "lectures": [
+    {
+      "number": "9 § 2",
+      "pages": "pp. 13–25",
+      "title": "Line integrals and potentials (Kurvenintegrale)",
+      "family": "lines",
+      "labs": [
+        "paths"
+      ]
+    },
+    {
+      "number": "10 §§ 1, 3, 4",
+      "pages": "pp. 58–91",
+      "title": "Green, Stokes and Gauss (Vektoranalysis)",
+      "family": "theorems",
+      "labs": [
+        "stokes",
+        "gauss"
+      ]
+    }
+  ],
+  "labs": [
+    {
+      "id": "paths",
+      "title": "Line integrals and potentials",
+      "idea": "Walk through a field from p to q and add up F along the way. In a gradient field every path gives the same, f(q) − f(p), and a closed loop gives zero; in a swirling field the path matters.",
+      "law": "∫α ∇f • dx = f(α(b)) − f(α(a))",
+      "lawTex": "\\int_\\alpha \\nabla f \\bullet d\\mathbf{x} = f(\\alpha(b)) - f(\\alpha(a))",
+      "lecture": "Fritzsche (2003), chapter 9 § 2, pp. 13–25",
+      "equations": [
+        {
+          "eq": "∫α F • dx = ∫ₐᵇ F(α(t)) • α'(t) dt",
+          "tex": "\\int_\\alpha \\mathbf{F} \\bullet d\\mathbf{x} = \\int_a^b \\mathbf{F}(\\alpha(t)) \\bullet \\alpha'(t)\\,dt",
+          "note": "the line integral of F along the path α: what the lab adds up, step by step",
+          "ref": "ch. 9 § 2, p. 19"
+        },
+        {
+          "eq": "F = ∇f  ⇔  ∫α F • dx path-independent  ⇔  ∮ F • dx = 0",
+          "tex": "\\mathbf{F} = \\nabla f \\;\\Leftrightarrow\\; \\int_\\alpha \\mathbf{F} \\bullet d\\mathbf{x} \\text{ independent of the path} \\;\\Leftrightarrow\\; \\oint \\mathbf{F} \\bullet d\\mathbf{x} = 0",
+          "note": "the main theorem on line integrals (Hauptsatz über Kurvenintegrale), on a domain G",
+          "ref": "ch. 9 § 2, p. 22"
+        },
+        {
+          "eq": "∫α ∇f • dx = f(α(b)) − f(α(a))",
+          "tex": "\\int_\\alpha (\\nabla f) \\bullet d\\mathbf{x} = f(\\alpha(b)) - f(\\alpha(a))",
+          "note": "a gradient field's integral is the difference of its potential f at the ends",
+          "ref": "ch. 9 § 2, p. 22"
+        },
+        {
+          "eq": "F = (−y, x, 0)/(x² + y²): ∮ round the origin = 2π",
+          "tex": "\\mathbf{F} = \\Big(\\frac{-y}{x^2+y^2}, \\frac{x}{x^2+y^2}, 0\\Big): \\quad \\oint_{|\\mathbf{x}|=1} \\mathbf{F} \\bullet d\\mathbf{x} = 2\\pi",
+          "note": "the vortex: curl-free, yet no gradient field on the plane without the origin",
+          "ref": "ch. 9 § 2, pp. 21–24"
+        }
+      ],
+      "practice": [
+        {
+          "question": "The vortex F = (−y, x, 0)/(x² + y²) is integrated once round the unit circle, counter-clockwise. What is ∮ F • dx?",
+          "source": "Fritzsche (2003), chapter 9 § 2, example 2, p. 21",
+          "answer": 6.2832,
+          "unit": "",
+          "compute": { "law": "circulation", "field": "vortex", "cx": 0, "cy": 0, "R": 1 },
+          "solution": "On α(t) = (cos t, sin t, 0), F(α(t)) • α'(t) = sin² t + cos² t = 1, so the integral is ∫₀^2π dt = 2π ≈ 6.283."
+        },
+        {
+          "question": "In the gradient field F = ∇f with f = x² − y², what is ∫ F • dx from p = (−1.2, −0.6) to q = (1.2, 0.9), on any path?",
+          "source": "Worked by hand from the main theorem, Fritzsche (2003), p. 22",
+          "answer": -0.45,
+          "unit": "",
+          "compute": { "law": "segmentIntegral", "field": "gradient", "p": [-1.2, -0.6], "q": [1.2, 0.9] },
+          "solution": "f(q) − f(p) = (1.44 − 0.81) − (1.44 − 0.36) = 0.63 − 1.08 = −0.45, whatever the path."
+        }
+      ]
+    },
+    {
+      "id": "stokes",
+      "title": "Circulation and curl: Green and Stokes",
+      "idea": "Run round the edge of a surface and add up F along it: the circulation. Stokes' theorem says it equals the curl added up over the surface inside. In the plane this is Green's theorem.",
+      "law": "∮∂G F • dx = ∫G (g_x − f_y) dx dy",
+      "lawTex": "\\oint_{\\partial G} \\mathbf{F} \\bullet d\\mathbf{x} = \\int_G (g_x - f_y)\\,dx\\,dy",
+      "lecture": "Fritzsche (2003), chapter 10 §§ 1 and 3, pp. 58–81",
+      "equations": [
+        {
+          "eq": "∮∂G F • dx = ∫G (g_x − f_y) dx dy,  F = (f, g)",
+          "tex": "\\int_{\\partial G} \\mathbf{F} \\bullet d\\mathbf{x} = \\int_G (g_x - f_y)\\,dx\\,dy, \\qquad \\mathbf{F} = (f, g)",
+          "note": "Green's theorem, for a Jordan domain G and F continuously differentiable round it; ∂G runs with G on its left",
+          "ref": "ch. 10 § 1, p. 61"
+        },
+        {
+          "eq": "∫S rot F • dO = ∫bS F • dx",
+          "tex": "\\int_S \\mathbf{rot}\\,F \\bullet d\\mathbf{O} = \\int_{bS} F \\bullet d\\mathbf{x}",
+          "note": "Stokes' theorem for a surface S in space with edge bS; for a flat S in the plane it is Green's theorem",
+          "ref": "ch. 10 § 3, p. 77"
+        },
+        {
+          "eq": "w_F(x0, n) = lim ε→0 (1/A(S_ε)) ∫bS_ε F • dx = rot F • n",
+          "tex": "w_F(\\mathbf{x}_0, \\mathbf{n}) = \\lim_{\\varepsilon \\to 0} \\frac{1}{A(S_\\varepsilon)} \\int_{bS_\\varepsilon} F \\bullet d\\mathbf{x} = \\mathbf{rot}\\,F \\bullet \\mathbf{n}",
+          "note": "the circulation of a small disc per area, the vortex density (Wirbeldichte), is the curl along its normal",
+          "ref": "ch. 10 § 3, p. 79"
+        },
+        {
+          "eq": "v₂(G) = ½ ∮∂G (x dy − y dx)",
+          "tex": "v_2(G) = \\frac{1}{2} \\int_{\\partial G} (x\\,dy - y\\,dx)",
+          "note": "Green's theorem gives the area of G from its edge alone: the rotation field (−y, x) has curl 2",
+          "ref": "ch. 10 § 1, p. 63"
+        }
+      ],
+      "practice": [
+        {
+          "question": "The rotation field F = (−y, x, 0) is integrated once round a circle of radius 1, counter-clockwise. What is ∮ F • dx?",
+          "source": "Worked by hand from Fritzsche (2003), p. 63, example 1: v₂ of the disc is πr²",
+          "answer": 6.2832,
+          "unit": "",
+          "compute": { "law": "circulation", "field": "rotation", "cx": 0, "cy": 0, "R": 1 },
+          "solution": "By Green, ∮ F • dx = ∫ (g_x − f_y) dx dy = ∫ 2 dx dy = 2 · π · 1² = 2π ≈ 6.283. Fritzsche's p. 63 has ½ ∮ (x dy − y dx) = πr²."
+        }
+      ]
+    },
+    {
+      "id": "gauss",
+      "title": "Flux and divergence: Gauss",
+      "idea": "Add up how much of F flows out through a closed surface: the flux. Gauss's theorem says it equals the divergence, the sources, added up over the volume inside.",
+      "law": "∫Ω div F dV₃ = ∫∂Ω F • dO",
+      "lawTex": "\\int_\\Omega \\mathbf{div}\\,F\\,dV_3 = \\int_{\\partial\\Omega} F \\bullet d\\mathbf{O}",
+      "lecture": "Fritzsche (2003), chapter 10 § 4, pp. 82–91",
+      "equations": [
+        {
+          "eq": "∫Ω div F dV₃ = ∫∂Ω F • dO",
+          "tex": "\\int_\\Omega \\mathbf{div}\\,F\\,dV_3 = \\int_{\\partial\\Omega} F \\bullet d\\mathbf{O}",
+          "note": "Gauss's theorem, for a domain Ω with piecewise smooth boundary and F continuously differentiable round it",
+          "ref": "ch. 10 § 4, p. 85"
+        },
+        {
+          "eq": "div F = ∂F1/∂x + ∂F2/∂y + ∂F3/∂z",
+          "tex": "\\mathbf{div}\\,F = \\frac{\\partial F_1}{\\partial x} + \\frac{\\partial F_2}{\\partial y} + \\frac{\\partial F_3}{\\partial z}",
+          "note": "the divergence of a field in space",
+          "ref": "ch. 10 § 4, p. 85"
+        },
+        {
+          "eq": "δ_F(x0) = lim ε→0 (1/v₃(B_ε)) ∫∂B_ε F • dO = div F(x0)",
+          "tex": "\\delta_F(\\mathbf{x}_0) = \\lim_{\\varepsilon \\to 0} \\frac{1}{v_3(B_\\varepsilon)} \\int_{\\partial B_\\varepsilon} F \\bullet d\\mathbf{O} = \\mathbf{div}\\,F(\\mathbf{x}_0)",
+          "note": "the flux out of a small ball per volume, the source density (Quelldichte), is the divergence",
+          "ref": "ch. 10 § 4, p. 87"
+        }
+      ],
+      "practice": [
+        {
+          "question": "The source field F = (x, y, 0) streams out of a sphere of radius 1 about the origin. What is the flux ∫ F • dO?",
+          "source": "Worked by hand from Gauss's theorem, Fritzsche (2003), p. 85",
+          "answer": 8.3776,
+          "unit": "",
+          "compute": { "law": "sphereFlux", "field": "source", "cx": 0, "cy": 0, "R": 1 },
+          "solution": "div F = 1 + 1 + 0 = 2 everywhere, so the flux is 2 times the volume of the ball: 2 · (4/3)π · 1³ = 8π/3 ≈ 8.378."
+        }
+      ]
+    }
+  ]
+}

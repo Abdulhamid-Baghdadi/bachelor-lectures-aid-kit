@@ -12,7 +12,7 @@ The main task in every lab, recorded from the Electrodynamics Lab: move a contro
 
 | Light | Dark |
 |---|---|
-| <img src="docs/light.png" alt="The start page in the light theme: eight lab panels, from Electrodynamics to Measurement, each with its courses and a screenshot" width="420"> | <img src="docs/dark.png" alt="The start page in the dark theme: the same eight lab panels" width="420"> |
+| <img src="docs/light.png" alt="The start page in the light theme: nine lab panels, from Electrodynamics to Vector calculus, each with its courses and a screenshot" width="420"> | <img src="docs/dark.png" alt="The start page in the dark theme: the same nine lab panels" width="420"> |
 
 ## The labs
 
@@ -26,6 +26,7 @@ The main task in every lab, recorded from the Electrodynamics Lab: move a contro
 | [Telecommunications](telecommunications-lab/README.md) | Telekommunikation | Goiser (2016) |
 | [Power engineering](power-engineering-lab/README.md) | Energieversorgung, Maschinen und Antriebe | Gawlik (2015); Schrödl (2012) |
 | [Measurement](measurement-lab/README.md) | Messtechnik, Messtechnik-Labor | Schrüfer et al. (2012); Schitter (2015) |
+| [Vector calculus](vector-calculus-lab/README.md) | Mathematik 3 (vector analysis) | Fritzsche (2003) |
 
 ## How to open it
 
@@ -36,7 +37,7 @@ python -m http.server 8771 --bind 127.0.0.1
 ```
 
 then <http://127.0.0.1:8771/>. The labs are ES modules, so opening `index.html` straight from the disk does not work.
-Tests, per folder: `node --test` in `kit`, `Electromagnetism`, `Automation`, `signals-systems-lab`, `semiconductors-lab`, `telecommunications-lab`, `power-engineering-lab` and `measurement-lab`.
+Tests, per folder: `node --test` in `kit`, `Electromagnetism`, `Automation`, `signals-systems-lab`, `semiconductors-lab`, `telecommunications-lab`, `power-engineering-lab`, `measurement-lab` and `vector-calculus-lab`.
 
 ## Where your data stays
 
@@ -56,6 +57,7 @@ flowchart BT
   tc["telecommunications-lab/src/core: coding, modulation, detection, noise"]
   pc["power-engineering-lab/src/core: three phases, lines, faults, machines"]
   mc["measurement-lab/src/core: uncertainty, meters, bridges, counters, converters"]
+  vc["vector-calculus-lab/src/core: fields, line, surface and volume integrals"]
   el["Electrodynamics labs and page"]
   al["Automation labs and page"]
   sl["Signals and systems labs and page"]
@@ -63,6 +65,7 @@ flowchart BT
   tl["Telecommunications labs and page"]
   pl["Power engineering labs and page"]
   ml["Measurement labs and page"]
+  vl["Vector calculus labs and page"]
   start["index.html: start page"]
   ku --> kc
   ec --> kc
@@ -86,6 +89,9 @@ flowchart BT
   ml --> mc
   ml --> ku
   mc --> kc
+  vl --> vc
+  vl --> ku
+  vc --> kc
   start -. links .-> el
   start -. links .-> al
   start -. links .-> sl
@@ -93,6 +99,7 @@ flowchart BT
   start -. links .-> tl
   start -. links .-> pl
   start -. links .-> ml
+  start -. links .-> vl
 ```
 
 Arrows point from a part to what it uses. The kit is shared once; each lab imports it by relative path (`../kit/...`),
