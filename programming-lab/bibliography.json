@@ -1,0 +1,44 @@
+{
+  "format": "design-rules bibliography",
+  "version": 1,
+  "about": "The sources of this project's subject matter (programming in C and memory management), apart from the design rules' bibliography, which keeps the design principles. The language documentation behind the last lab is web pages without a single author; it is listed in README.md under Sources with its address and the date it was read.",
+  "entries": [
+    {
+      "key": "klima2010",
+      "authors": [
+        "Klima, R.",
+        "Selberherr, S."
+      ],
+      "year": 2010,
+      "title": "Programmieren in C",
+      "venue": "3rd edition, Springer, Wien (© 2003, 2007 and 2010)",
+      "backs": "Searching (§ 13.7, pp. 173–174), bubble sort (§ 13.6.2, p. 172), pointers (ch. 14, pp. 179–187), the program stack and quicksort (§§ 18.2, 18.3.2, pp. 258–263, with the worked example on p. 262), heaps (§ 19.5, pp. 287–291), dynamic memory and its typical errors (ch. 20, pp. 303–310). Read from the text layer of the course copy on 2 Nov 2026.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-02"
+      }
+    },
+    {
+      "key": "ceric2015",
+      "authors": [
+        "Ceric, H.",
+        "Cervenka, J.",
+        "Grasser, T.",
+        "Grill, A.",
+        "Kosina, H.",
+        "Langer, E.",
+        "Rzepa, G.",
+        "Selberherr, S.",
+        "Waltl, M."
+      ],
+      "year": 2015,
+      "title": "Programmieren 1 (SS 2015) and Programmieren 2 (WS 2015), lecture slides",
+      "venue": "Institut für Mikroelektronik, TU Wien",
+      "backs": "The course's topics and order: searching and bubble sort (Programmieren 1, part 6), pointers (part 7), malloc, calloc, realloc and free (Programmieren 2, part 1), lists (part 2), recursion and quicksort (part 3), heaps (part 4). Read from the text layer on 2 Nov 2026.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-02"
+      }
+    }
+  ]
+}

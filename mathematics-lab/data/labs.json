@@ -1,0 +1,175 @@
+{
+  "format": "mathematics-lab labs",
+  "version": 1,
+  "about": "Ten ideas from Taschner's script for TU Wien's Mathematik 1 and 2 for electrical engineering (Taschner_Skr_mathe1-2.pdf, 505 pages, no title page, date or table of contents; it ends with Cauchy's integral theorem). Its text layer is scrambled, so every formula was read from the rendered pages on 2 Nov 2026 and is cited by printed page: printed page = PDF page up to p. 360 or so, PDF page − 12 near the end (p. 400 is PDF 412, p. 493 is PDF 505). The script has no exercises; practice answers are its own worked values where it gives them, otherwise worked by hand, and each says which. Laplace transforms and linear differential equations are in the Automation Lab, Fourier series in the Signals and Systems Lab.",
+  "families": [
+    { "id": "numbers", "name": "Numbers" },
+    { "id": "analysis", "name": "Analysis" },
+    { "id": "algebra", "name": "Linear algebra" },
+    { "id": "complexanalysis", "name": "Complex analysis" }
+  ],
+  "lectures": [
+    { "number": "1", "pages": "pp. 1–135", "title": "Numbers: roots, complex numbers, series", "family": "numbers", "labs": ["babylon", "complex", "series"] },
+    { "number": "2", "pages": "pp. 166–308", "title": "Analysis: integral, derivative, Newton, convergence", "family": "analysis", "labs": ["riemann", "tangent", "newton", "bumps"] },
+    { "number": "3", "pages": "pp. 336–410", "title": "Linear algebra: determinants, eigenvectors", "family": "algebra", "labs": ["lines", "eigen"] },
+    { "number": "4", "pages": "p. 493", "title": "Complex analysis: Cauchy's integral theorem", "family": "complexanalysis", "labs": ["cauchy"] }
+  ],
+  "labs": [
+    {
+      "id": "babylon",
+      "title": "The Babylonian square root",
+      "idea": "A rectangle of area a is made squarer by replacing its sides x and a/x by their mean. Step by step its side homes in on √a, the number of right digits about doubling each time.",
+      "law": "x_new = (x + a/x)/2",
+      "lawTex": "x_{\\text{new}} = \\frac{1}{2}\\Big(x + \\frac{a}{x}\\Big)",
+      "lecture": "Taschner, § 1, pp. 1–3",
+      "equations": [
+        { "eq": "(x + y)/2 = ½ (3 + 10/3) = 19/6", "tex": "\\frac{x + y}{2} = \\frac{1}{2}\\Big(3 + \\frac{10}{3}\\Big) = \\frac{19}{6}", "note": "the first step for a = 10 from x = 3: the mean of the sides 3 and 10/3", "ref": "p. 2" },
+        { "eq": "(19/6)² = 10 + 1/36", "tex": "\\Big(\\frac{19}{6}\\Big)^2 = 10 + \\frac{1}{36}", "note": "the new side is a little too long", "ref": "p. 2" },
+        { "eq": "x₁ = 19/6, y₁ = 60/19, (x₁ + y₁)/2 = 721/228", "tex": "x_1 = \\frac{19}{6}, \\quad y_1 = \\frac{60}{19}, \\quad \\frac{x_1 + y_1}{2} = \\frac{721}{228}", "note": "the second step; (721/228)² = 10 + 1/51984", "ref": "p. 2" }
+      ],
+      "practice": [
+        { "question": "Start the Babylonian method for a = 10 at x = 3. What is the side after two steps?", "source": "Taschner, p. 2: 721/228", "answer": 3.16228, "unit": "", "tolerance": 0.00001, "compute": { "law": "babylonian", "a": 10, "x0": 3, "n": 2 }, "solution": "Step 1: (3 + 10/3)/2 = 19/6. Step 2: (19/6 + 60/19)/2 = 721/228 = 3.162281." }
+      ]
+    },
+    {
+      "id": "complex",
+      "title": "Complex numbers: turn and stretch",
+      "idea": "Multiplying by a complex number z = r(cos φ + j sin φ) stretches by its modulus r and turns by its argument φ. So moduli multiply and arguments add, and powers turn round the circle.",
+      "law": "|zζ| = |z|·|ζ|,  arg zζ = arg z + arg ζ",
+      "lawTex": "|z\\zeta| = |z| \\cdot |\\zeta|, \\qquad \\arg z\\zeta = \\arg z + \\arg \\zeta",
+      "lecture": "Taschner, pp. 92–94",
+      "equations": [
+        { "eq": "z = r (cos φ + j sin φ)", "tex": "z = r(\\cos\\varphi + \\mathrm{j}\\sin\\varphi)", "note": "the polar form, with the modulus r = |z| and the argument φ = arg z", "ref": "p. 93" },
+        { "eq": "|zζ| = |z|·|ζ|,  arg zζ = arg z + arg ζ", "tex": "|z\\zeta| = |z| \\cdot |\\zeta|, \\qquad \\arg z\\zeta = \\arg z + \\arg\\zeta", "note": "Gauss's geometric reading of the product: a turn and a stretch", "ref": "p. 93" },
+        { "eq": "(a + bj)(c + dj) = (ac − bd) + j(ad + bc)", "tex": "(a + b\\mathrm{j})(c + d\\mathrm{j}) = (ac - bd) + \\mathrm{j}(ad + bc)", "note": "the same product in components", "ref": "p. 94" },
+        { "eq": "(cos φ + j sin φ)ⁿ = cos nφ + j sin nφ", "tex": "(\\cos\\varphi + \\mathrm{j}\\sin\\varphi)^n = \\cos n\\varphi + \\mathrm{j}\\sin n\\varphi", "note": "de Moivre's formula", "ref": "p. 94" }
+      ],
+      "practice": [
+        { "question": "z has modulus 1 and argument 50°. What is the argument of z⁸, between 0° and 360°?", "source": "Worked by hand from de Moivre's formula, Taschner p. 94", "answer": 40, "unit": "°", "compute": { "law": "powerArgDeg", "r": 1, "phiDeg": 50, "n": 8 }, "solution": "8 · 50° = 400° = 360° + 40°, so arg z⁸ = 40°." }
+      ]
+    },
+    {
+      "id": "series",
+      "title": "The geometric series",
+      "idea": "Adding 1 + q + q² + … term by term closes in on 1/(1 − q), but only when |q| < 1. Otherwise the same neat formula gives nonsense, which is why limits are needed.",
+      "law": "1 + q + q² + … = 1/(1 − q)   for |q| < 1",
+      "lawTex": "1 + q + q^2 + \\dots = \\frac{1}{1 - q} \\qquad \\text{for } |q| < 1",
+      "lecture": "Taschner, p. 126",
+      "equations": [
+        { "eq": "s = 1 + q + q² + …,  qs = s − 1  ⇒  s = 1/(1 − q)", "tex": "s = 1 + q + q^2 + \\dots, \\quad qs = s - 1 \\;\\Rightarrow\\; s = \\frac{1}{1 - q}", "note": "Leibniz's trick, which only holds when the series has a sum", "ref": "p. 126" },
+        { "eq": "1 + 2 + 4 + 8 + … ≠ −1", "tex": "1 + 2 + 4 + 8 + \\dots \\neq -1", "note": "the trick applied to q = 2: the script's warning", "ref": "p. 126" }
+      ],
+      "practice": [
+        { "question": "What is 1 + 0.6 + 0.6² + 0.6³ + …?", "source": "Worked by hand from Taschner p. 126", "answer": 2.5, "unit": "", "compute": { "law": "geometricSum", "q": 0.6 }, "solution": "1/(1 − 0.6) = 1/0.4 = 2.5." }
+      ]
+    },
+    {
+      "id": "riemann",
+      "title": "The integral as an area",
+      "idea": "Cover the area under a curve with bars as high as the least value on each part (the lower sum) and as high as the greatest (the upper sum). The area lies between the two, and finer parts squeeze them together.",
+      "law": "Σ p_m (x_m − x_{m−1}) ≤ ∫ₐᵇ f(x) dx ≤ Σ q_m (x_m − x_{m−1})",
+      "lawTex": "\\sum_{m=1}^{n} p_m (x_m - x_{m-1}) \\;\\le\\; \\int_a^b f(x)\\,dx \\;\\le\\; \\sum_{m=1}^{n} q_m (x_m - x_{m-1})",
+      "lecture": "Taschner, § 28, pp. 166–167",
+      "equations": [
+        { "eq": "Σ q_m (x_m − x_{m−1}), with p_m ≤ f(x) ≤ q_m on [x_{m−1}; x_m]", "tex": "\\sum_{m=1}^{n} q_m (x_m - x_{m-1}), \\qquad p_m \\le f(x) \\le q_m \\text{ on } [x_{m-1}; x_m]", "note": "the upper sum (Obersumme); with p_m the lower sum (Untersumme)", "ref": "p. 166" },
+        { "eq": "∫ₐᵇ y dx = ∫ₐᵇ f(x) dx", "tex": "\\int_a^b y\\,dx = \\int_a^b f(x)\\,dx", "note": "the area, at least the lower and at most the upper sum, after Riemann", "ref": "p. 167" }
+      ],
+      "practice": [
+        { "question": "Split [0, 1] into 10 equal parts. What is the upper sum of f(x) = x²?", "source": "Worked by hand from Taschner p. 166", "answer": 0.385, "unit": "", "compute": { "law": "riemannUpper", "n": 10 }, "solution": "f rises, so q_m = (m/10)²: Σ (m/10)² · 1/10 = (1 + 4 + … + 100)/1000 = 385/1000 = 0.385. The area is 1/3." }
+      ]
+    },
+    {
+      "id": "tangent",
+      "title": "From secant to tangent",
+      "idea": "The secant through two points of a curve cuts it twice. Slide the second point onto the first and the secant turns into the tangent, which only touches; its slope is the differential quotient dy/dx.",
+      "law": "dy/dx = lim Δx→0 Δy/Δx",
+      "lawTex": "\\frac{dy}{dx} = \\lim_{\\Delta x \\to 0} \\frac{\\Delta y}{\\Delta x}",
+      "lecture": "Taschner, pp. 204–205",
+      "equations": [
+        { "eq": "ΔX = (Δx, Δy) → dX = (dx, dy)", "tex": "\\Delta X = \\begin{pmatrix} \\Delta x \\\\ \\Delta y \\end{pmatrix} \\;\\to\\; dX = \\begin{pmatrix} dx \\\\ dy \\end{pmatrix}", "note": "the secant's direction ΔX becomes the tangent's dX; between them Leibniz's characteristic triangle", "ref": "p. 205" },
+        { "eq": "k = dy/dx = −x/y on the circle x² + y² = r²", "tex": "k = \\frac{dy}{dx} = -\\frac{x}{y}", "note": "the script's example: the tangent's slope on a circle", "ref": "p. 204" }
+      ],
+      "practice": [
+        { "question": "For f(x) = x³ − 2x, what is the slope of the secant from x = 0.6 to x = 0.61?", "source": "Worked by hand", "answer": -0.9019, "unit": "", "tolerance": 0.001, "compute": { "law": "secantSlope", "x": 0.6, "h": 0.01 }, "solution": "f(0.61) − f(0.6) = (0.226981 − 1.22) − (0.216 − 1.2) = −0.993019 + 0.984 = −0.009019; divided by 0.01: −0.9019. The tangent's slope is 3 · 0.36 − 2 = −0.92." }
+      ]
+    },
+    {
+      "id": "newton",
+      "title": "Newton's method",
+      "idea": "Follow the tangent at a guess down to the x-axis: where it lands is a better guess. Near a root the error roughly squares with every step.",
+      "law": "x* = x − f(x)/f'(x)",
+      "lawTex": "x^* = x - \\frac{f(x)}{f'(x)}",
+      "lecture": "Taschner, p. 308",
+      "equations": [
+        { "eq": "f(x)/(x − x*) = f'(x)", "tex": "\\frac{f(x)}{x - x^*} = f'(x)", "note": "the slope triangle of the tangent", "ref": "p. 308" },
+        { "eq": "x* = x − f(x)/f'(x)", "tex": "x^* = x - \\frac{f(x)}{f'(x)}", "note": "Newton's formula (Newtonformel)", "ref": "p. 308" },
+        { "eq": "x − (xⁿ − a)/(n xⁿ⁻¹) = ((n − 1) x + a/xⁿ⁻¹)/n", "tex": "x - \\frac{x^n - a}{n x^{n-1}} = \\frac{1}{n}\\Big((n-1)x + \\frac{a}{x^{n-1}}\\Big)", "note": "for n-th roots; n = 2 is the Babylonian method", "ref": "p. 308" }
+      ],
+      "practice": [
+        { "question": "Newton's formula for f(x) = x³ − 2, started at x = 1: what is the guess after two steps?", "source": "Taschner, p. 308: 91/72", "answer": 1.26389, "unit": "", "tolerance": 0.00001, "compute": { "law": "newtonCubeRoot", "a": 2, "x0": 1, "n": 2 }, "solution": "x* = (2x + 2/x²)/3. From 1: 4/3. From 4/3: (8/3 + 9/8)/3 = 91/72 = 1.26389." }
+      ]
+    },
+    {
+      "id": "bumps",
+      "title": "Pointwise, not uniform",
+      "idea": "Bumps that grow narrower and taller, each of area 1, go to zero at every point except 0. Yet their integrals stay 1: without uniform convergence the limit and the integral may not be swapped.",
+      "law": "lim n→∞ φₙ(t) = 0 for t ≠ 0,  but  ∫ φₙ(t) dt = 1",
+      "lawTex": "\\lim_{n \\to \\infty} \\varphi_n(t) = 0 \\text{ for } t \\neq 0, \\qquad \\int_{-\\infty}^{\\infty} \\varphi_n(t)\\,dt = 1",
+      "lecture": "Taschner, pp. 285–288",
+      "equations": [
+        { "eq": "φₙ(t) = cₙ e^(−n²/(1 − n²t²)) for |t| < 1/n, else 0", "tex": "\\varphi_n(t) = c_n\\, e^{-n^2/(1 - n^2 t^2)} \\text{ for } |t| < 1/n, \\quad 0 \\text{ otherwise}", "note": "the bump, smooth and zero outside ]−1/n; 1/n[; cₙ makes its integral 1", "ref": "pp. 285–286" },
+        { "eq": "|fₙ(x) − f(x)| < ε for all n ≥ n₀, n₀ independent of x", "tex": "|f_n(x) - f(x)| < \\varepsilon \\text{ for all } n \\ge n_0, \\; n_0 \\text{ independent of } x", "note": "uniform convergence; pointwise, n₀ may depend on x", "ref": "p. 288" },
+        { "eq": "∫ₐᵇ lim fₙ dx = lim ∫ₐᵇ fₙ dx  when fₙ → f uniformly", "tex": "\\int_a^b \\lim_{n\\to\\infty} f_n(x)\\,dx = \\lim_{n\\to\\infty} \\int_a^b f_n(x)\\,dx", "note": "the swap that uniform convergence allows", "ref": "p. 288" }
+      ],
+      "practice": [
+        { "question": "How high is the bump φ₂ at t = 0?", "source": "Taschner, p. 286: 2.605…", "answer": 2.605, "unit": "", "tolerance": 0.001, "compute": { "law": "bumpPeak", "n": 2 }, "solution": "φ₂(0) = c₂ e^(−4), with c₂ from ∫ φ₂ = 1; the script gives the maximum 2.605…, against 0.828… for φ₁ and 9.424… for φ₄." }
+      ]
+    },
+    {
+      "id": "lines",
+      "title": "Two equations, two lines",
+      "idea": "Each linear equation in x and y is a line. Two lines meet in one point exactly when the determinant is not zero; then Cramer's rule gives the point as quotients of determinants.",
+      "law": "x = det(b, a₂)/det(a₁, a₂),  y = det(a₁, b)/det(a₁, a₂)",
+      "lawTex": "x = \\frac{\\begin{vmatrix} b_1 & a_{12} \\\\ b_2 & a_{22} \\end{vmatrix}}{\\begin{vmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{vmatrix}}, \\qquad y = \\frac{\\begin{vmatrix} a_{11} & b_1 \\\\ a_{21} & b_2 \\end{vmatrix}}{\\begin{vmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{vmatrix}}",
+      "lecture": "Taschner, § 59, p. 336, and p. 400",
+      "equations": [
+        { "eq": "|a11 a12; a21 a22| = a11 a22 − a12 a21", "tex": "\\begin{vmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{vmatrix} = a_{11}a_{22} - a_{12}a_{21}", "note": "the two-row determinant, the sum over the two orders of 1, 2 with their signs", "ref": "§ 59, p. 336" },
+        { "eq": "x_m = vol(…, u_{m−1}, w, u_{m+1}, …)/vol(u₁, u₂, …, u_n)", "tex": "x_m = \\frac{\\operatorname{vol}(\\dots, u_{m-1}, w, u_{m+1}, \\dots)}{\\operatorname{vol}(u_1, u_2, \\dots, u_n)}", "note": "Cramer's rule: replace the m-th column by the right-hand side", "ref": "p. 400" }
+      ],
+      "practice": [
+        { "question": "Solve 2x + y = 5, x + 3y = 10. What is x?", "source": "Worked by hand with Cramer's rule, Taschner p. 400", "answer": 1, "unit": "", "compute": { "law": "cramerX", "A": [[2, 1], [1, 3]], "b": [5, 10] }, "solution": "det = 2·3 − 1·1 = 5; x = (5·3 − 1·10)/5 = 5/5 = 1, and y = (2·10 − 5·1)/5 = 3." }
+      ]
+    },
+    {
+      "id": "eigen",
+      "title": "Eigenvectors of a symmetric matrix",
+      "idea": "A symmetric matrix turns the unit circle into an ellipse. Along two directions at right angles, the eigenvectors, it does not turn at all, only stretches, by the eigenvalues.",
+      "law": "tan 2φ₀ = 2b/(a − c)",
+      "lawTex": "\\tan 2\\varphi_0 = \\frac{2b}{a - c}",
+      "lecture": "Taschner, p. 410",
+      "equations": [
+        { "eq": "Q(φ) = a cos²φ + 2b sin φ cos φ + c sin²φ", "tex": "Q(\\varphi) = a\\cos^2\\varphi + 2b\\sin\\varphi\\cos\\varphi + c\\sin^2\\varphi", "note": "the quadratic form on the unit vectors", "ref": "p. 410" },
+        { "eq": "∂Q/∂φ = 2b cos 2φ − (a − c) sin 2φ = 0  ⇒  tan 2φ₀ = 2b/(a − c)", "tex": "\\frac{\\partial Q}{\\partial\\varphi} = 2b\\cos 2\\varphi - (a - c)\\sin 2\\varphi = 0 \\;\\Rightarrow\\; \\tan 2\\varphi_0 = \\frac{2b}{a - c}", "note": "the stationary directions", "ref": "p. 410" },
+        { "eq": "λ = (f_Q(u)|u),  μ = (f_Q(w)|w),  w = u at 90°", "tex": "\\lambda = (f_Q(u) \\,|\\, u), \\qquad \\mu = (f_Q(w) \\,|\\, w)", "note": "the eigenvalues, with the eigenvectors u = cos φ₀ + j sin φ₀ and w at right angles", "ref": "p. 410" }
+      ],
+      "practice": [
+        { "question": "What is the larger eigenvalue of the matrix [[2, 1], [1, 2]]?", "source": "Worked by hand from Taschner p. 410", "answer": 3, "unit": "", "compute": { "law": "eigenLarger", "a": 2, "b": 1, "c": 2 }, "solution": "a = c, so φ₀ = 45°: Q(45°) = 2·½ + 2·1·½ + 2·½ = 3, and Q(135°) = 1." }
+      ]
+    },
+    {
+      "id": "cauchy",
+      "title": "Cauchy's integral theorem",
+      "idea": "Integrate a holomorphic function once round a closed curve and you get zero. Only a point where the function is not holomorphic, inside the curve, can change that.",
+      "law": "∮Γ f(z) dz = 0",
+      "lawTex": "\\oint_\\Gamma f(z)\\,dz = 0",
+      "lecture": "Taschner, p. 493",
+      "equations": [
+        { "eq": "f : G → ℂ holomorphic, G simply connected, Γ closed in G  ⇒  ∮Γ f(z) dz = 0", "tex": "f: G \\to \\mathbb{C} \\text{ holomorphic}, \\; G \\text{ simply connected}, \\; \\Gamma \\subset G \\text{ closed} \\;\\Rightarrow\\; \\oint_\\Gamma f(z)\\,dz = 0", "note": "Cauchy's integral theorem (Cauchyscher Integralsatz)", "ref": "p. 493" },
+        { "eq": "∮_{|z|=1} dz/z = 2πj", "tex": "\\oint_{|z|=1} \\frac{dz}{z} = 2\\pi\\mathrm{j}", "note": "round the pole of 1/z: z = e^(jt), dz = j e^(jt) dt", "ref": "derived" }
+      ],
+      "practice": [
+        { "question": "Integrate f(z) = 1/z once round the unit circle, counter-clockwise. What is the imaginary part of the result?", "source": "Worked by hand", "answer": 6.2832, "unit": "", "compute": { "law": "contourIm", "f": "inverse", "z0": [0, 0], "R": 1 }, "solution": "z = e^(jt), dz = j e^(jt) dt, so dz/z = j dt and the integral is j · 2π: imaginary part 2π ≈ 6.283." }
+      ]
+    }
+  ]
+}

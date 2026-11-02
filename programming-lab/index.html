@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programming Lab</title>
+<meta name="description" content="Programming in C to play with: searching, sorting, heaps, pointers, the stack, malloc and free, and how C, C++, Java, Python and JavaScript give memory back.">
+<script>
+  // Before the page draws, so a chosen theme never flashes the other one.
+  try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+</script>
+<link rel="stylesheet" href="../kit/style.css">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="src/app.js"></script>
+</head>
+<body>
+<header class="top">
+  <div>
+    <p class="home"><a href="../">← Aid kit home</a></p>
+    <h1><a href="#">Programming Lab</a></h1>
+  </div>
+  <button id="theme" type="button">Light or dark</button>
+</header>
+<main></main>
+<footer>
+  <p>After the course book of Klima and Selberherr (2010), <i>Programmieren in C</i>, and the language documentation named in each lab.</p>
+  <p>A learning aid for TU Wien's Programmieren 1 and 2 (2015): every algorithm follows the book, by section and page; no text of it is reproduced. The memory models are simplified to the rules their sources state; real runtimes do much more.</p>
+</footer>
+<noscript><p>Programming Lab needs JavaScript.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,373 @@
+{
+  "format": "programming-lab labs",
+  "version": 1,
+  "about": "Programming 1 and 2 of TU Wien's Institut für Mikroelektronik, taught in C in 2015 with the course book Klima and Selberherr (2010), Programmieren in C, 3rd edition, Springer, cited by section and printed page; the lecture slides of Ceric et al. (2015) follow the book. The last lab compares how C, C++, Java, Python and JavaScript give memory back; each rule there is quoted from that language's own documentation, checked on 2 Nov 2026 (bibliography.json). The course left question catalogues but no worked exercises: practice answers are the book's own worked examples where it gives them, otherwise worked by hand, and say which.",
+  "families": [
+    {
+      "id": "algorithms",
+      "name": "Searching and sorting"
+    },
+    {
+      "id": "memory",
+      "name": "Memory in C"
+    },
+    {
+      "id": "languages",
+      "name": "Across languages"
+    }
+  ],
+  "lectures": [
+    {
+      "number": "13, 18, 19",
+      "pages": "pp. 170–291",
+      "title": "Searching, sorting and the heap structure",
+      "family": "algorithms",
+      "labs": [
+        "search",
+        "sorting",
+        "heap"
+      ]
+    },
+    {
+      "number": "14, 18, 20",
+      "pages": "pp. 179–310",
+      "title": "Pointers, the stack and dynamic memory",
+      "family": "memory",
+      "labs": [
+        "pointers",
+        "stack",
+        "malloc"
+      ]
+    },
+    {
+      "number": "—",
+      "pages": "language documentation",
+      "title": "Who gives memory back: C, C++, Java, Python, JavaScript",
+      "family": "languages",
+      "labs": [
+        "languages"
+      ]
+    }
+  ],
+  "labs": [
+    {
+      "id": "search",
+      "title": "Sequential and binary search",
+      "idea": "To find a number, look at one element after another, or, if the array is sorted, look in the middle and throw away the half that cannot hold it. Halving needs only about log₂ N looks.",
+      "law": "m = ⌊(l + r)/2⌋;  l = m + 1 or r = m − 1, while r ≥ l",
+      "lawTex": "m = \\Big\\lfloor \\frac{l + r}{2} \\Big\\rfloor; \\qquad l = m + 1 \\;\\text{or}\\; r = m - 1, \\quad \\text{while } r \\ge l",
+      "lecture": "Klima and Selberherr (2010), § 13.7, pp. 173–174",
+      "equations": [
+        {
+          "eq": "l = 0, r = N − 1",
+          "tex": "l = 0, \\qquad r = N - 1",
+          "note": "the left and right bounds at the start",
+          "ref": "§ 13.7.2, p. 174"
+        },
+        {
+          "eq": "m = (l + r)/2 (integer division)",
+          "tex": "m = (l + r) / 2",
+          "note": "the middle; in C, long division rounds down",
+          "ref": "§ 13.7.2, p. 174"
+        },
+        {
+          "eq": "feld[m] < wert ⇒ l = m + 1, else r = m − 1",
+          "tex": "\\text{feld}[m] < \\text{wert} \\;\\Rightarrow\\; l = m + 1, \\quad \\text{else } r = m - 1",
+          "note": "keep the half that can hold the number; −1 means not found",
+          "ref": "§ 13.7.2, p. 174"
+        }
+      ],
+      "practice": [
+        {
+          "question": "Binary search for 11 in 1, 3, 5, 7, 9, 11, 13. How many elements does it look at?",
+          "source": "Worked by hand with the book's algorithm, § 13.7.2",
+          "answer": 2,
+          "unit": "",
+          "compute": {
+            "law": "binaryLooks",
+            "a": [
+              1,
+              3,
+              5,
+              7,
+              9,
+              11,
+              13
+            ],
+            "value": 11
+          },
+          "solution": "l = 0, r = 6: m = 3, 7 < 11, so l = 4. m = (4 + 6)/2 = 5: 11 found. Two looks."
+        }
+      ]
+    },
+    {
+      "id": "sorting",
+      "title": "Bubble sort and quicksort",
+      "idea": "Bubble sort compares neighbours and swaps them until no swap is left. Quicksort puts one element in its final place, smaller ones to its left and larger to its right, and sorts both sides the same way.",
+      "law": "QuickSort(l, r): pos = Positioniere(l, r); QuickSort(l, pos − 1); QuickSort(pos + 1, r)",
+      "lawTex": "\\text{QuickSort}(l, r):\\; pos = \\text{Positioniere}(l, r);\\; \\text{QuickSort}(l, pos - 1);\\; \\text{QuickSort}(pos + 1, r)",
+      "lecture": "Klima and Selberherr (2010), § 13.6.2, p. 172; § 18.3.2, pp. 261–263",
+      "equations": [
+        {
+          "eq": "feld[i] > feld[i + 1] ⇒ swap",
+          "tex": "\\text{feld}[i] > \\text{feld}[i + 1] \\;\\Rightarrow\\; \\text{swap}",
+          "note": "bubble sort's step; sorted when a pass makes no swap",
+          "ref": "§ 13.6.2, p. 172"
+        },
+        {
+          "eq": "6 4 7 9 1 5 2 8 3 → 2 1 3 9 4 5 6 8 7",
+          "tex": "6\\;4\\;7\\;9\\;1\\;5\\;2\\;8\\;3 \\;\\to\\; 2\\;1\\;3\\;9\\;4\\;5\\;6\\;8\\;7",
+          "note": "one pass of Positioniere with the rightmost element, 3, as the one placed",
+          "ref": "§ 18.3.2, p. 262"
+        },
+        {
+          "eq": "r ≤ l: stop",
+          "tex": "r \\le l: \\text{stop}",
+          "note": "an empty part or one of a single element is sorted",
+          "ref": "§ 18.3.2, p. 262"
+        }
+      ],
+      "practice": [
+        {
+          "question": "One pass of Positioniere on 6 4 7 9 1 5 2 8 3 places the 3. At which index (from 0) does it end up?",
+          "source": "Klima and Selberherr (2010), p. 262",
+          "answer": 2,
+          "unit": "",
+          "compute": {
+            "law": "pivotIndex",
+            "a": [
+              6,
+              4,
+              7,
+              9,
+              1,
+              5,
+              2,
+              8,
+              3
+            ]
+          },
+          "solution": "The pass gives 2 1 3 9 4 5 6 8 7: the 3 stands at index 2, with only 2 and 1 to its left."
+        },
+        {
+          "question": "After bubble sort's first pass over 6 4 8 3 2, which number stands last?",
+          "source": "Klima and Selberherr (2010), p. 172",
+          "answer": 8,
+          "unit": "",
+          "compute": {
+            "law": "bubbleFirstPassLast",
+            "a": [
+              6,
+              4,
+              8,
+              3,
+              2
+            ]
+          },
+          "solution": "The largest number rises to the end in the first pass: 4 6 3 2 8."
+        }
+      ]
+    },
+    {
+      "id": "heap",
+      "title": "The heap: a tree in an array",
+      "idea": "A heap keeps the largest key at the top of a complete binary tree stored in an array. A new key climbs up (UpHeap); after the top is removed, the last key sinks down (DownHeap). Removing the top again and again sorts.",
+      "law": "feld[(i − 1)/2] ≥ feld[i]",
+      "lawTex": "\\text{feld}\\big[\\lfloor (i - 1)/2 \\rfloor\\big] \\ge \\text{feld}[i]",
+      "lecture": "Klima and Selberherr (2010), § 19.5, pp. 287–291",
+      "equations": [
+        {
+          "eq": "children of i: 2i + 1 and 2i + 2",
+          "tex": "\\text{children of } i: \\; 2i + 1, \\; 2i + 2",
+          "note": "the tree is kept in an array without links; indices from 0 as in C",
+          "ref": "derived"
+        },
+        {
+          "eq": "key(parent) ≥ key(child)",
+          "tex": "\\text{key}(\\text{parent}) \\ge \\text{key}(\\text{child})",
+          "note": "the heap condition",
+          "ref": "§ 19.5, p. 287"
+        }
+      ],
+      "practice": [
+        {
+          "question": "Insert 5, 9, 3, 12 and 7, in this order, into an empty heap. Which key is at the top?",
+          "source": "Worked by hand with UpHeap, § 19.5.2.1",
+          "answer": 12,
+          "unit": "",
+          "compute": {
+            "law": "heapRootAfter",
+            "keys": [
+              5,
+              9,
+              3,
+              12,
+              7
+            ]
+          },
+          "solution": "Each new key climbs while its parent is smaller; the largest, 12, ends at the top: 12 9 3 5 7."
+        }
+      ]
+    },
+    {
+      "id": "pointers",
+      "title": "Pointers and pointer arithmetic",
+      "idea": "A pointer holds an address. Adding n moves it on by n elements, not n bytes: ptr + n is the address of feld[n].",
+      "law": "&feld[n] = ptr + n",
+      "lawTex": "\\&\\text{feld}[n] = \\text{ptr} + n",
+      "lecture": "Klima and Selberherr (2010), ch. 14, pp. 179–187",
+      "equations": [
+        {
+          "eq": "&feld[n] = ptr + n, with ptr = &feld[0]",
+          "tex": "\\&\\text{feld}[n] = \\text{ptr} + n, \\qquad \\text{ptr} = \\&\\text{feld}[0]",
+          "note": "pointer arithmetic counts in elements",
+          "ref": "§ 14.4, p. 186"
+        },
+        {
+          "eq": "ptr = ptr + 1 moves 4 bytes for long",
+          "tex": "\\text{ptr} = \\text{ptr} + 1: \\; +4 \\text{ bytes for long}",
+          "note": "on a 32-bit machine; the object's size is taken into account",
+          "ref": "§ 14.4, p. 186"
+        },
+        {
+          "eq": "[] on pointers, * on arrays",
+          "tex": "[\\,] \\text{ on pointers}, \\; * \\text{ on arrays}",
+          "note": "the duality of pointers and arrays; mixing the two makes programs hard to read",
+          "ref": "§ 14.3, p. 185"
+        }
+      ],
+      "practice": [
+        {
+          "question": "p points at address 1000 in an array of 4-byte long. At which address does p + 3 point?",
+          "source": "Worked by hand, § 14.4",
+          "answer": 1012,
+          "unit": "",
+          "compute": {
+            "law": "pointerAddress",
+            "base": 1000,
+            "k": 3,
+            "size": 4
+          },
+          "solution": "1000 + 3 · 4 = 1012."
+        }
+      ]
+    },
+    {
+      "id": "stack",
+      "title": "The program stack",
+      "idea": "Each call puts a frame with its own local variables on the stack; each return takes it off. A recursive function stacks one frame per open call.",
+      "law": "factorial(n) = n · factorial(n − 1),  factorial(1) = 1",
+      "lawTex": "\\text{factorial}(n) = n \\cdot \\text{factorial}(n - 1), \\qquad \\text{factorial}(1) = 1",
+      "lecture": "Klima and Selberherr (2010), § 18.2, pp. 258–259",
+      "equations": [
+        {
+          "eq": "call: push a frame; return: pop it",
+          "tex": "\\text{call: push a frame}; \\quad \\text{return: pop it}",
+          "note": "the program stack, managed by the operating system, holds the local variables of functions",
+          "ref": "§ 18.2, p. 259"
+        }
+      ],
+      "practice": [
+        {
+          "question": "How many frames of factorial are on the stack at most while factorial(5) runs?",
+          "source": "Worked by hand, § 18.2",
+          "answer": 5,
+          "unit": "",
+          "compute": {
+            "law": "maxFrames",
+            "n": 5
+          },
+          "solution": "factorial(5) calls 4, 3, 2 and 1 before any returns: five frames at once."
+        }
+      ]
+    },
+    {
+      "id": "malloc",
+      "title": "malloc, realloc and free",
+      "idea": "Memory from malloc lives on the heap until free gives it back; nobody frees it for you. Lose the last pointer and it leaks; free it twice or use it after free and the behaviour is undefined.",
+      "law": "zeiger = malloc(sizeof(datentyp)); … free(zeiger); zeiger = 0;",
+      "lawTex": "\\texttt{zeiger = malloc(sizeof(datentyp));} \\;\\dots\\; \\texttt{free(zeiger); zeiger = 0;}",
+      "lecture": "Klima and Selberherr (2010), ch. 20, pp. 303–310",
+      "equations": [
+        {
+          "eq": "malloc(n): n bytes or 0",
+          "tex": "\\texttt{malloc}(n): \\; n \\text{ bytes, or } 0",
+          "note": "the length is in bytes, not elements; 0 when no memory is free",
+          "ref": "§ 20.2, p. 304"
+        },
+        {
+          "eq": "2 bytes asked, 8 given",
+          "tex": "2 \\text{ bytes asked} \\;\\to\\; 8 \\text{ given}",
+          "note": "many systems round blocks up to a multiple of 8 bytes",
+          "ref": "§ 20.1, p. 303"
+        },
+        {
+          "eq": "realloc may move the block",
+          "tex": "\\texttt{realloc}: \\text{the block may move}",
+          "note": "other pointers into the old block become invalid",
+          "ref": "§ 20.3, pp. 307–308"
+        },
+        {
+          "eq": "free(p); p = 0;",
+          "tex": "\\texttt{free(p); p = 0;}",
+          "note": "freeing twice can crash the program; free(0) does nothing",
+          "ref": "§ 20.4, p. 308"
+        }
+      ],
+      "practice": [
+        {
+          "question": "On a system that rounds blocks up to multiples of 8 bytes, how many bytes does malloc(10) take?",
+          "source": "Worked by hand from § 20.1, p. 303",
+          "answer": 16,
+          "unit": "",
+          "compute": {
+            "law": "roundedBytes",
+            "n": 10
+          },
+          "solution": "The next multiple of 8 above 10 is 16."
+        }
+      ]
+    },
+    {
+      "id": "languages",
+      "title": "Who gives memory back",
+      "idea": "The same situations in five languages: C waits for free, C++ frees when the owner ends, CPython frees most objects as soon as nothing refers to them, Java and JavaScript free what is no longer reachable when their collector runs.",
+      "law": "manual (C) · ownership (C++) · reference counting (CPython) · tracing (Java, JavaScript)",
+      "lawTex": "\\text{manual (C)} \\cdot \\text{ownership (C++)} \\cdot \\text{reference counting (CPython)} \\cdot \\text{tracing (Java, JavaScript)}",
+      "lecture": "C: Klima and Selberherr (2010), ch. 20; C++: cppreference; Java: JVM Specification SE 21, § 2.5.3; Python: Language Reference, § 3.1; JavaScript: MDN",
+      "equations": [
+        {
+          "eq": "C: free returns the block; free twice is undefined",
+          "tex": "\\text{C}: \\texttt{free}",
+          "note": "deallocates space from malloc, calloc or realloc; a null pointer does nothing",
+          "ref": "cppreference, free; C17 § 7.22.3.3"
+        },
+        {
+          "eq": "C++: unique_ptr disposes of its object when destroyed or reset",
+          "tex": "\\text{C++}: \\texttt{std::unique\\_ptr}",
+          "note": "the object goes when its owner does",
+          "ref": "cppreference, std::unique_ptr"
+        },
+        {
+          "eq": "Java: never explicitly deallocated; reclaimed by a garbage collector",
+          "tex": "\\text{Java}: \\text{garbage collector}",
+          "note": "heap storage for objects is reclaimed by automatic storage management",
+          "ref": "JVMS SE 21, § 2.5.3"
+        },
+        {
+          "eq": "Python: reference counting with delayed detection of cycles (CPython)",
+          "tex": "\\text{CPython}: \\text{reference counting} + \\text{cycle detector}",
+          "note": "most objects go as soon as they are unreachable; cycles wait for the detector; other implementations differ",
+          "ref": "Python Language Reference, § 3.1"
+        },
+        {
+          "eq": "JavaScript: mark-and-sweep from the roots",
+          "tex": "\\text{JavaScript}: \\text{mark-and-sweep}",
+          "note": "unreachable means no longer needed; cycles are no problem; no modern engine uses reference counting",
+          "ref": "MDN, Memory management"
+        }
+      ],
+      "practice": []
+    }
+  ]
+}

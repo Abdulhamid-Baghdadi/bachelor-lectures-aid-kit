@@ -12,7 +12,7 @@ The main task in every lab, recorded from the Electrodynamics Lab: move a contro
 
 | Light | Dark |
 |---|---|
-| <img src="docs/light.png" alt="The start page in the light theme: nine lab panels, from Electrodynamics to Vector calculus, each with its courses and a screenshot" width="420"> | <img src="docs/dark.png" alt="The start page in the dark theme: the same nine lab panels" width="420"> |
+| <img src="docs/light.png" alt="The start page in the light theme: eleven lab panels, from Electrodynamics to Programming, each with its courses and a screenshot" width="420"> | <img src="docs/dark.png" alt="The start page in the dark theme: the same eleven lab panels" width="420"> |
 
 ## The labs
 
@@ -27,6 +27,8 @@ The main task in every lab, recorded from the Electrodynamics Lab: move a contro
 | [Power engineering](power-engineering-lab/README.md) | Energieversorgung, Maschinen und Antriebe | Gawlik (2015); Schrödl (2012) |
 | [Measurement](measurement-lab/README.md) | Messtechnik, Messtechnik-Labor | Schrüfer et al. (2012); Schitter (2015) |
 | [Vector calculus](vector-calculus-lab/README.md) | Mathematik 3 (vector analysis) | Fritzsche (2003) |
+| [Mathematics](mathematics-lab/README.md) | Mathematik 1, 2 | Taschner (2013) |
+| [Programming](programming-lab/README.md) | Programmieren 1, 2 (C) | Klima and Selberherr (2010) |
 
 ## How to open it
 
@@ -37,7 +39,7 @@ python -m http.server 8771 --bind 127.0.0.1
 ```
 
 then <http://127.0.0.1:8771/>. The labs are ES modules, so opening `index.html` straight from the disk does not work.
-Tests, per folder: `node --test` in `kit`, `Electromagnetism`, `Automation`, `signals-systems-lab`, `semiconductors-lab`, `telecommunications-lab`, `power-engineering-lab`, `measurement-lab` and `vector-calculus-lab`.
+Tests, per folder: `node --test` in `kit`, `Electromagnetism`, `Automation`, `signals-systems-lab`, `semiconductors-lab`, `telecommunications-lab`, `power-engineering-lab`, `measurement-lab`, `vector-calculus-lab`, `mathematics-lab` and `programming-lab`.
 
 ## Where your data stays
 
@@ -58,6 +60,8 @@ flowchart BT
   pc["power-engineering-lab/src/core: three phases, lines, faults, machines"]
   mc["measurement-lab/src/core: uncertainty, meters, bridges, counters, converters"]
   vc["vector-calculus-lab/src/core: fields, line, surface and volume integrals"]
+  qc["mathematics-lab/src/core: roots, complex numbers, sums, Newton, determinants, eigenvectors"]
+  gc["programming-lab/src/core: searching, sorting, heaps, the stack, malloc, languages"]
   el["Electrodynamics labs and page"]
   al["Automation labs and page"]
   sl["Signals and systems labs and page"]
@@ -66,6 +70,8 @@ flowchart BT
   pl["Power engineering labs and page"]
   ml["Measurement labs and page"]
   vl["Vector calculus labs and page"]
+  ql["Mathematics labs and page"]
+  gl["Programming labs and page"]
   start["index.html: start page"]
   ku --> kc
   ec --> kc
@@ -92,6 +98,12 @@ flowchart BT
   vl --> vc
   vl --> ku
   vc --> kc
+  ql --> qc
+  ql --> ku
+  qc --> kc
+  gl --> gc
+  gl --> ku
+  gc --> kc
   start -. links .-> el
   start -. links .-> al
   start -. links .-> sl
@@ -100,6 +112,8 @@ flowchart BT
   start -. links .-> pl
   start -. links .-> ml
   start -. links .-> vl
+  start -. links .-> ql
+  start -. links .-> gl
 ```
 
 Arrows point from a part to what it uses. The kit is shared once; each lab imports it by relative path (`../kit/...`),

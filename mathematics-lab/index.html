@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathematics Lab</title>
+<meta name="description" content="Ten ideas of Mathematics 1 and 2 to play with: Babylonian roots, complex numbers, series, the integral, the tangent, Newton's method, uniform convergence, determinants, eigenvectors and Cauchy's theorem.">
+<script>
+  // Before the page draws, so a chosen theme never flashes the other one.
+  try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+</script>
+<link rel="stylesheet" href="../kit/style.css">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="src/app.js"></script>
+</head>
+<body>
+<header class="top">
+  <div>
+    <p class="home"><a href="../">← Aid kit home</a></p>
+    <h1><a href="#">Mathematics Lab</a></h1>
+  </div>
+  <button id="theme" type="button">Light or dark</button>
+</header>
+<main></main>
+<footer>
+  <p>After Taschner's script for <i>Mathematik 1 und 2</i> for electrical engineering, TU Wien.</p>
+  <p>A learning aid for TU Wien's Mathematik 1 and 2: every equation comes from Taschner's script, by printed page; no text of it is reproduced.
+    Linear differential equations and the Laplace transform are in the <a href="../Automation/">Automation Lab</a>, Fourier series in the <a href="../signals-systems-lab/">Signals and Systems Lab</a>, vector analysis in the <a href="../vector-calculus-lab/">Vector Calculus Lab</a>.</p>
+</footer>
+<noscript><p>Mathematics Lab needs JavaScript.</p></noscript>
+</body>
+</html>

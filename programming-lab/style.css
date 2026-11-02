@@ -1,0 +1,29 @@
+/* This lab's own look, after the kit's (../kit/style.css): its families' frame colours and the drawings only it has. */
+[data-family=algorithms] { --frame: #1D4ED8; }
+[data-family=memory] { --frame: #B45309; }
+[data-family=languages] { --frame: #047857; }
+
+/* Array cells: their state shown by fill and by outline style, never by colour alone. */
+.cell { fill: var(--panel); stroke: var(--muted); stroke-width: 1.5; }
+.cell.probe { fill: var(--second); fill-opacity: 0.3; stroke: var(--second); stroke-width: 2.5; }
+.cell.hit, .cell.done { fill: var(--accent); fill-opacity: 0.45; stroke: var(--accent); stroke-width: 3; }
+.cell.swap { fill: var(--danger); fill-opacity: 0.35; stroke: var(--danger); stroke-width: 3; stroke-dasharray: 5 3; }
+.cell.out { opacity: 0.3; }
+.value-text { fill: var(--ink); font: 13px ui-monospace, monospace; }
+.index-text { fill: var(--muted); font: 11px system-ui, sans-serif; }
+
+/* The heap's tree, the stack's frames, the C heap's blocks and the pointers into them. */
+.edge { stroke: var(--muted); stroke-width: 1.5; }
+.node { fill: var(--panel); stroke: var(--ink); stroke-width: 2; } .node.moved { stroke: var(--accent); stroke-width: 3.5; }
+.frame { fill: var(--panel); stroke: var(--ink); stroke-width: 1.5; } .frame.top { stroke: var(--accent); stroke-width: 3; }
+.heap-strip { fill: none; stroke: var(--muted); stroke-dasharray: 4 3; }
+.block { fill: var(--accent); fill-opacity: 0.45; stroke: var(--accent); stroke-width: 2; }
+.block.leaked { fill: var(--danger); fill-opacity: 0.4; stroke: var(--danger); stroke-dasharray: 6 3; }
+.block.freed { fill: none; stroke: var(--muted); stroke-dasharray: 2 3; }
+.pointer { stroke: var(--ink); stroke-width: 2; marker-end: none; }
+.log { font: 13px ui-monospace, monospace; padding-left: 20px; margin: 8px 0 0; }
+.log li[data-tone=warn] { color: var(--warn, var(--ink)); } .log li[data-tone=warn]::before { content: "Warning: "; font-weight: 700; }
+.log li[data-tone=danger]::before { content: "Error: "; font-weight: 700; }
+.buttons { display: flex; flex-wrap: wrap; gap: 6px; }
+.stage.wide { grid-template-columns: 1fr; }
+.lang-table caption { text-align: left; font-weight: 700; padding: 4px 0 8px; }

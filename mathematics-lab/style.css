@@ -1,0 +1,30 @@
+/* This lab's own look, after the kit's (../kit/style.css): its families' frame colours and the drawings only it has. */
+[data-family=numbers] { --frame: #B45309; }
+[data-family=analysis] { --frame: #1D4ED8; }
+[data-family=algebra] { --frame: #047857; }
+[data-family=complexanalysis] { --frame: #9D174D; }
+
+/* Curves, tangents and secants: told apart by dash as well as colour. */
+.curve { fill: none; stroke: var(--ink); stroke-width: 2.5; }
+.curve.faint { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.tangent { stroke: var(--accent); stroke-width: 2.5; }
+.secant { stroke: var(--second); stroke-width: 2.5; stroke-dasharray: 8 5; }
+.drop { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.end { fill: var(--ink); } .end.two { fill: var(--second); }
+.pole { fill: none; stroke: var(--danger); stroke-width: 3; }
+.axis.faint { stroke-width: 1; }
+
+/* Rectangles of the Babylonian root and bars of the Riemann sums. */
+.rect { fill: none; stroke-width: 2.5; } .rect.now { stroke: var(--accent); } .rect.faint { stroke: var(--muted); stroke-dasharray: 4 3; }
+.sum.lower { fill: var(--accent); fill-opacity: 0.55; stroke: var(--accent); }
+.sum.upper { fill: var(--second); fill-opacity: 0.25; stroke: var(--second); stroke-dasharray: 4 3; }
+
+/* Arrows of the complex and eigenvector labs. */
+.vector line { stroke-width: 3; } .vector.one line { stroke: var(--accent); } .vector.one polygon { fill: var(--accent); }
+.vector.two line { stroke: var(--second); stroke-dasharray: 7 4; } .vector.two polygon { fill: var(--second); }
+.vector.three line { stroke: var(--ink); } .vector.three polygon { fill: var(--ink); }
+.vector.four line { stroke: var(--danger); stroke-dasharray: 2 3; } .vector.four polygon { fill: var(--danger); }
+.vector.faint line { stroke: var(--muted); stroke-width: 2; } .vector.faint polygon { fill: var(--muted); }
+
+/* The two lines of a linear system: solid and dashed. */
+.eqline { stroke-width: 2.5; } .eqline.one { stroke: var(--accent); } .eqline.two { stroke: var(--second); stroke-dasharray: 8 5; }

@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "mathematics-lab", "runtimeExecutable": "python", "runtimeArgs": ["-m", "http.server", "8776", "--bind", "127.0.0.1", "--directory", ".."], "port": 8776 }
+  ]
+}
