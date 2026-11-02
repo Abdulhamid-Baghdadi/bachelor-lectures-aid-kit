@@ -26,6 +26,10 @@ const LAWS = {
   sourceR: q => C.sourceR(q.Ia, q),
   classBAmplitude: q => Math.sqrt(2 * q.PL * q.RL),
   classBLossPerTransistor: q => q.UB * q.UB / (Math.PI * Math.PI * q.RL),
+  // The worked example, Rechenbeispiele Beispiel 1: the case and sink temperatures and the largest sink resistance.
+  heatSinkCase: q => C.heatSinkChain(q).case,
+  heatSinkLimit: q => C.heatSinkChain(q).RthSink,
+  abBias: q => C.abBias(q.UB0, q.twoUBE, q.R12),
   crossover: q => C.phaseMargin(q, q.beta).wc,
   phaseMargin: q => C.phaseMargin(q, q.beta).margin,
   powerBandwidth: q => C.powerBandwidth(q.SR, q.ua),

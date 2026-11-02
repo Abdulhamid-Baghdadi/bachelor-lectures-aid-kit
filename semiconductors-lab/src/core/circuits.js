@@ -70,6 +70,34 @@ export function pushPull(ue, { UB, RL, Ubias, Is = 1e-13, UT = 0.025 }) {
   return (lo + hi) / 2;
 }
 
+// --- The worked example: a 25 W amplifier from the supply to the heat sink (Rechenbeispiele, Beispiel 1) ------------
+
+/** One transistor's loss for a sine of amplitude Ûa: PvT = (1/RL)(UB Ûa/π − Ûa²/4) (B1/3), half of PB − PL (2.21);
+ *  its largest value UB²/(π² RL) at Ûa = 2UB/π (2.22)–(2.24). */
+export const classBLossOne = (ua, UB, RL) => (UB * ua / Math.PI - ua * ua / 4) / RL;
+/** The supply for a load power PL into RL: Ûa = √(2 PL RL) (2.17) plus the transistor's rest voltage UCE,Rest, which
+ *  the example takes as 2…3 V and rounds to UB = 22 V (B1/1). */
+export const classBSupply = (PL, RL, rest) => Math.sqrt(2 * PL * RL) + rest;
+/** The thermal chain of B1/4–B1/5, the "thermal Ohm's law" ΔT = P·Rth (2.25): case ϑG = Tj,max − P·RthJC, heat sink
+ *  ϑKB = ϑG − P·RthG-KB, and the largest sink resistance Rth,KB-U = (ϑKB − ϑU)/(n·P) for n transistors on it. */
+export function heatSinkChain({ P, Tj, RthJC, RthMount, Tamb, n = 2 }) {
+  const case_ = Tj - P * RthJC, sink = case_ - P * RthMount;
+  return { case: case_, sink, RthSink: (sink - Tamb) / (n * P) };
+}
+/** The junction's temperature for a chosen sink: ϑj = ϑU + n·P·RthKB-U + P(RthG-KB + RthJC). */
+export const junctionTemp = ({ P, RthJC, RthMount, Tamb, n = 2 }, RthSink) => Tamb + n * P * RthSink + P * (RthMount + RthJC);
+/** The AB bias of Bild 2.10: the current through R1 + R2 that takes up what the diodes' UB0 leaves over the two
+ *  base-emitter voltages, IC0 = (UB0 − 2UBE)/(R1 + R2) (p. 30); and the load power left, the factor (RL/(RL + R1))². */
+export const abBias = (UB0, twoUBE, R12) => (UB0 - twoUBE) / R12;
+export const emitterLoss = (RL, R1) => (RL / (RL + R1)) ** 2;
+/** The same bias once things warm: every forward voltage falls by about 2 mV/K at constant current (Strasser 2015,
+ *  p. 166), the two diodes by ΔTD over their 20 °C setting, the two base-emitter junctions by ΔTT; cold values
+ *  UB0 = 1.4 V and 2UBE = 1.35 V as on p. 30. */
+export function abBiasWarm(dTD, dTT, { UB0 = 1.4, twoUBE = 1.35, R12 = 1, tc = -2e-3 } = {}) {
+  const ub0 = UB0 + 2 * tc * dTD, ube2 = twoUBE + 2 * tc * dTT;
+  return { UB0: ub0, twoUBE: ube2, IC0: abBias(ub0, ube2, R12) };
+}
+
 // --- The op-amp in a feedback loop (section 4.1, pp. 69–77) ---------------------------------------------------------
 
 /** The open loop gain of two poles, vg = vg0 / ((1 + jω/ω1)(1 + jω/ω2)) (4.1 with a second pole, p. 72), as [re, im]. */

@@ -17,6 +17,7 @@ import poweramp from "./poweramp.js";
 import opamploop from "./opamploop.js";
 import slewrate from "./slewrate.js";
 import noise from "./noise.js";
+import amplifier from "./amplifier.js";
 
 export const labs = [bands, fermi, carriers, drift, recombination, absorption, junction, capacitance, diode, bjt, mosfet,
-  cestage, currentsource, poweramp, opamploop, slewrate, noise];
+  cestage, currentsource, poweramp, opamploop, slewrate, noise, amplifier];

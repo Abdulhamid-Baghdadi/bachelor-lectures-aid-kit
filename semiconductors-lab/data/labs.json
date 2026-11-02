@@ -3,20 +3,87 @@
   "version": 1,
   "about": "Three courses fused, grouped by idea: Halbleiterphysik after Strasser (2015), Skriptum Halbleiterphysik, TU Wien; Elektronische Bauelemente after its exercise collection, Hobler (2009); and Schaltungstechnik after Zimmermann (2010), Skriptum Schaltungstechnik, with the worked examples of Schneider & Zimmermann (2005). Pages of the Schaltungstechnik script (ST) are its printed pages, PDF page minus 6. Bode and Nyquist theory is left to the Automation lab. Every equation was read in the scripts on 1 Nov 2026; its section and printed page are given, with the equation number where the script prints one next to it. Practice questions come from the two courses' exercise sheets; those marked 'worked by hand' were solved here from the script's equations, the others agree with the course's worked solutions, whose page is named. tests/unit/labs-data.test.js recomputes each answer with the core and fails if they disagree.",
   "families": [
-    { "id": "carriers", "name": "Bands and carriers" },
-    { "id": "transport", "name": "Transport and light" },
-    { "id": "devices", "name": "Junctions and transistors" },
-    { "id": "circuits", "name": "Circuits" }
+    {
+      "id": "carriers",
+      "name": "Bands and carriers"
+    },
+    {
+      "id": "transport",
+      "name": "Transport and light"
+    },
+    {
+      "id": "devices",
+      "name": "Junctions and transistors"
+    },
+    {
+      "id": "circuits",
+      "name": "Circuits"
+    },
+    {
+      "id": "example",
+      "name": "Worked example"
+    }
   ],
   "lectures": [
-    { "number": 1, "pages": "HL ch. 2–3, pp. 41–85", "title": "Bands and carriers", "family": "carriers",
-      "labs": ["bands", "fermi", "carriers"] },
-    { "number": 2, "pages": "HL ch. 3–4, pp. 87–117", "title": "Transport and light", "family": "transport",
-      "labs": ["drift", "recombination", "absorption"] },
-    { "number": 3, "pages": "HL ch. 5–6, pp. 123–188; EB parts 1–3", "title": "Junctions and transistors", "family": "devices",
-      "labs": ["junction", "capacitance", "diode", "bjt", "mosfet"] },
-    { "number": 4, "pages": "ST ch. 1, 2, 4, 6, pp. 1–134", "title": "Circuits", "family": "circuits",
-      "labs": ["cestage", "currentsource", "poweramp", "opamploop", "slewrate", "noise"] }
+    {
+      "number": 1,
+      "pages": "HL ch. 2–3, pp. 41–85",
+      "title": "Bands and carriers",
+      "family": "carriers",
+      "labs": [
+        "bands",
+        "fermi",
+        "carriers"
+      ]
+    },
+    {
+      "number": 2,
+      "pages": "HL ch. 3–4, pp. 87–117",
+      "title": "Transport and light",
+      "family": "transport",
+      "labs": [
+        "drift",
+        "recombination",
+        "absorption"
+      ]
+    },
+    {
+      "number": 3,
+      "pages": "HL ch. 5–6, pp. 123–188; EB parts 1–3",
+      "title": "Junctions and transistors",
+      "family": "devices",
+      "labs": [
+        "junction",
+        "capacitance",
+        "diode",
+        "bjt",
+        "mosfet"
+      ]
+    },
+    {
+      "number": 4,
+      "pages": "ST ch. 1, 2, 4, 6, pp. 1–134",
+      "title": "Circuits",
+      "family": "circuits",
+      "labs": [
+        "cestage",
+        "currentsource",
+        "poweramp",
+        "opamploop",
+        "slewrate",
+        "noise"
+      ]
+    },
+    {
+      "number": 5,
+      "heading": "Worked example",
+      "pages": "ST section 2.2, pp. 16–31; Rechenbeispiele B1/1–B1/6",
+      "title": "A 25 W amplifier, from the supply to the heat sink",
+      "family": "example",
+      "labs": [
+        "amplifier"
+      ]
+    }
   ],
   "labs": [
     {
@@ -27,19 +94,58 @@
       "lawTex": "P\\,\\frac{\\sin(\\alpha a)}{\\alpha a} + \\cos(\\alpha a) = \\cos(ka)",
       "lecture": "Strasser (2015), sections 2.1 and 2.2.3, pp. 41–43 and 54–58",
       "equations": [
-        { "eq": "Ψ1,2 = ΨH(r1) ± ΨH(r2)", "tex": "\\Psi_{1,2} = \\Psi_\\mathrm{H}(r_1) \\pm \\Psi_\\mathrm{H}(r_2)", "note": "two coupled states, bonding and anti-bonding", "ref": "HL (2.1.2), p. 43" },
-        { "eq": "α² = 2mE/ħ², β² = 2m(V0 − E)/ħ²", "tex": "\\alpha^2 = \\frac{2m}{\\hbar^2}E, \\qquad \\beta^2 = \\frac{2m}{\\hbar^2}(V_0 - E)", "note": "wave numbers in the well and in the barrier", "ref": "HL (2.2.10), p. 56" },
-        { "eq": "(β² − α²)/(2αβ) sinh(βb) sin(αa) + cosh(βb) cos(αa) = cos(k(a + b))", "tex": "\\frac{\\beta^2 - \\alpha^2}{2\\alpha\\beta}\\sinh(\\beta b)\\sin(\\alpha a) + \\cosh(\\beta b)\\cos(\\alpha a) = \\cos\\big(k(a + b)\\big)", "note": "the Kronig–Penney condition", "ref": "HL (2.2.12), p. 56" },
-        { "eq": "P sin(αa)/(αa) + cos(αa) = cos(ka), P = m a V0 b/ħ²", "tex": "P\\,\\frac{\\sin(\\alpha a)}{\\alpha a} + \\cos(\\alpha a) = \\cos(ka), \\qquad P = \\frac{ma}{\\hbar^2}V_0 b", "note": "thin, high barriers; bands where the left side lies in [−1, 1]", "ref": "HL (2.2.13), p. 57" },
-        { "eq": "E = n²π²ħ²/(2ma²)", "tex": "E = \\frac{n^2\\pi^2\\hbar^2}{2ma^2}", "note": "P → ∞: the levels of the infinite well", "ref": "HL §2.2.3, p. 58" },
-        { "eq": "ψ′ jumps by (2P/a) ψ at each barrier", "tex": "\\psi'(x_0^+) - \\psi'(x_0^-) = \\frac{2P}{a}\\,\\psi(x_0)", "note": "the thin-barrier limit of (2.2.12), from the Schrödinger equation integrated across V0 b δ(x); the transfer matrix used for N wells and as the second route", "ref": "" }
+        {
+          "eq": "Ψ1,2 = ΨH(r1) ± ΨH(r2)",
+          "tex": "\\Psi_{1,2} = \\Psi_\\mathrm{H}(r_1) \\pm \\Psi_\\mathrm{H}(r_2)",
+          "note": "two coupled states, bonding and anti-bonding",
+          "ref": "HL (2.1.2), p. 43"
+        },
+        {
+          "eq": "α² = 2mE/ħ², β² = 2m(V0 − E)/ħ²",
+          "tex": "\\alpha^2 = \\frac{2m}{\\hbar^2}E, \\qquad \\beta^2 = \\frac{2m}{\\hbar^2}(V_0 - E)",
+          "note": "wave numbers in the well and in the barrier",
+          "ref": "HL (2.2.10), p. 56"
+        },
+        {
+          "eq": "(β² − α²)/(2αβ) sinh(βb) sin(αa) + cosh(βb) cos(αa) = cos(k(a + b))",
+          "tex": "\\frac{\\beta^2 - \\alpha^2}{2\\alpha\\beta}\\sinh(\\beta b)\\sin(\\alpha a) + \\cosh(\\beta b)\\cos(\\alpha a) = \\cos\\big(k(a + b)\\big)",
+          "note": "the Kronig–Penney condition",
+          "ref": "HL (2.2.12), p. 56"
+        },
+        {
+          "eq": "P sin(αa)/(αa) + cos(αa) = cos(ka), P = m a V0 b/ħ²",
+          "tex": "P\\,\\frac{\\sin(\\alpha a)}{\\alpha a} + \\cos(\\alpha a) = \\cos(ka), \\qquad P = \\frac{ma}{\\hbar^2}V_0 b",
+          "note": "thin, high barriers; bands where the left side lies in [−1, 1]",
+          "ref": "HL (2.2.13), p. 57"
+        },
+        {
+          "eq": "E = n²π²ħ²/(2ma²)",
+          "tex": "E = \\frac{n^2\\pi^2\\hbar^2}{2ma^2}",
+          "note": "P → ∞: the levels of the infinite well",
+          "ref": "HL §2.2.3, p. 58"
+        },
+        {
+          "eq": "ψ′ jumps by (2P/a) ψ at each barrier",
+          "tex": "\\psi'(x_0^+) - \\psi'(x_0^-) = \\frac{2P}{a}\\,\\psi(x_0)",
+          "note": "the thin-barrier limit of (2.2.12), from the Schrödinger equation integrated across V0 b δ(x); the transfer matrix used for N wells and as the second route",
+          "ref": ""
+        }
       ],
       "practice": [
-        { "question": "A GaAs layer 10 nm thick between AlAs is a quantum well for electrons, m* = 0.067 m0. In the infinite-well approximation, what is the lowest subband's energy above the band edge?",
-          "answer": 0.0561, "unit": "eV", "tolerance": 0.01,
-          "compute": { "law": "wellLevel", "n": 1, "a": 10e-9, "m": 0.067 },
+        {
+          "question": "A GaAs layer 10 nm thick between AlAs is a quantum well for electrons, m* = 0.067 m0. In the infinite-well approximation, what is the lowest subband's energy above the band edge?",
+          "answer": 0.0561,
+          "unit": "eV",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "wellLevel",
+            "n": 1,
+            "a": 1e-8,
+            "m": 0.067
+          },
           "solution": "E1 = π²ħ²/(2 m* a²) = 9.87 × (1.055·10⁻³⁴ J s)² / (2 × 0.067 × 9.11·10⁻³¹ kg × 10⁻¹⁶ m²) = 8.99·10⁻²¹ J = 56 meV. It is the P → ∞ limit of this lab, where each band shrinks onto n² E1.",
-          "source": "Worked by hand from Halbleiterphysik exercise sheet 10, problem 38 a (WS 2015/16), with Strasser (2015), section 2.2.3" }
+          "source": "Worked by hand from Halbleiterphysik exercise sheet 10, problem 38 a (WS 2015/16), with Strasser (2015), section 2.2.3"
+        }
       ]
     },
     {
@@ -50,16 +156,39 @@
       "lawTex": "f(E) = \\frac{1}{1 + \\exp\\big((E - E_\\mathrm{F})/kT\\big)}",
       "lecture": "Strasser (2015), section 3.1.2, pp. 79–82",
       "equations": [
-        { "eq": "n2/n1 = exp(−(E2 − E1)/kT)", "tex": "\\frac{n_2}{n_1} = \\exp\\!\\Big(-\\frac{E_2 - E_1}{kT}\\Big)", "note": "Maxwell–Boltzmann, two levels with equal numbers of states", "ref": "HL (3.1.4), p. 79" },
-        { "eq": "f(E) = 1/(1 + exp((E − EF)/kT)), f(EF) = 1/2", "tex": "f(E) = \\frac{1}{1 + \\exp\\big((E - E_\\mathrm{F})/kT\\big)}, \\qquad f(E_\\mathrm{F}) = \\frac{1}{2}", "note": "Fermi–Dirac occupation", "ref": "HL §3.1.2, p. 79" },
-        { "eq": "f(E) ≈ exp(−(E − EF)/kT)", "tex": "f(E) \\approx \\exp\\!\\Big(-\\frac{E - E_\\mathrm{F}}{kT}\\Big)", "note": "the non-degenerate approximation, for E − EF of several kT", "ref": "HL (3.1.16), p. 82" }
+        {
+          "eq": "n2/n1 = exp(−(E2 − E1)/kT)",
+          "tex": "\\frac{n_2}{n_1} = \\exp\\!\\Big(-\\frac{E_2 - E_1}{kT}\\Big)",
+          "note": "Maxwell–Boltzmann, two levels with equal numbers of states",
+          "ref": "HL (3.1.4), p. 79"
+        },
+        {
+          "eq": "f(E) = 1/(1 + exp((E − EF)/kT)), f(EF) = 1/2",
+          "tex": "f(E) = \\frac{1}{1 + \\exp\\big((E - E_\\mathrm{F})/kT\\big)}, \\qquad f(E_\\mathrm{F}) = \\frac{1}{2}",
+          "note": "Fermi–Dirac occupation",
+          "ref": "HL §3.1.2, p. 79"
+        },
+        {
+          "eq": "f(E) ≈ exp(−(E − EF)/kT)",
+          "tex": "f(E) \\approx \\exp\\!\\Big(-\\frac{E - E_\\mathrm{F}}{kT}\\Big)",
+          "note": "the non-degenerate approximation, for E − EF of several kT",
+          "ref": "HL (3.1.16), p. 82"
+        }
       ],
       "practice": [
-        { "question": "What is the probability that a state 0.1 eV above the Fermi level is occupied at 300 K?",
-          "answer": 0.0205, "unit": "", "tolerance": 0.01,
-          "compute": { "law": "occupation", "dE": 0.1, "T": 300 },
+        {
+          "question": "What is the probability that a state 0.1 eV above the Fermi level is occupied at 300 K?",
+          "answer": 0.0205,
+          "unit": "",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "occupation",
+            "dE": 0.1,
+            "T": 300
+          },
           "solution": "kT = 25.85 meV at 300 K, so (E − EF)/kT = 3.87 and f = 1/(1 + e^3.87) = 1/48.9 = 0.0205. The Boltzmann approximation gives e^−3.87 = 0.0209, already within 2 %.",
-          "source": "Worked by hand from Strasser (2015), section 3.1.2" }
+          "source": "Worked by hand from Strasser (2015), section 3.1.2"
+        }
       ]
     },
     {
@@ -70,24 +199,70 @@
       "lawTex": "np = n_\\mathrm{i}^2 = N_\\mathrm{C}N_\\mathrm{V}\\,\\mathrm{e}^{-E_\\mathrm{G}/kT}",
       "lecture": "Strasser (2015), sections 3.1.2–3.1.3, pp. 82–85; material data p. 73",
       "equations": [
-        { "eq": "n = NC exp(−(EC − EF)/kT), NC = 2(2π mn* kT)^(3/2)/h³", "tex": "n = N_\\mathrm{C}\\exp\\!\\Big(-\\frac{E_\\mathrm{C} - E_\\mathrm{F}}{kT}\\Big), \\qquad N_\\mathrm{C} = \\frac{2}{h^3}(2\\pi m_\\mathrm{n}^* kT)^{3/2}", "note": "electrons, non-degenerate", "ref": "HL (3.1.17), p. 82" },
-        { "eq": "ni² = n p = NC NV exp(−(EC − EV)/kT)", "tex": "n_\\mathrm{i}^2 = np = N_\\mathrm{C}N_\\mathrm{V}\\exp\\!\\Big(-\\frac{E_\\mathrm{C} - E_\\mathrm{V}}{kT}\\Big)", "note": "mass action; ni = 1.45·10¹⁰ cm⁻³ for Si at 300 K (table p. 73)", "ref": "HL (3.1.20), p. 83" },
-        { "eq": "Ei = (EC + EV)/2 + ½ kT ln(NV/NC)", "tex": "E_\\mathrm{i} = \\frac{E_\\mathrm{C} + E_\\mathrm{V}}{2} + \\frac{1}{2}kT\\ln\\frac{N_\\mathrm{V}}{N_\\mathrm{C}}", "note": "the intrinsic level", "ref": "HL (3.1.21), p. 84" },
-        { "eq": "n = ni exp((EF − Ei)/kT), p = ni exp((Ei − EF)/kT)", "tex": "n = n_\\mathrm{i}\\exp\\!\\Big(\\frac{E_\\mathrm{F} - E_\\mathrm{i}}{kT}\\Big), \\qquad p = n_\\mathrm{i}\\exp\\!\\Big(\\frac{E_\\mathrm{i} - E_\\mathrm{F}}{kT}\\Big)", "note": "densities against the intrinsic level", "ref": "HL (3.1.22), p. 84" },
-        { "eq": "n = ½(ND − NA) + √(¼(ND − NA)² + ni²)", "tex": "n = \\frac{1}{2}(N_\\mathrm{D} - N_\\mathrm{A}) + \\sqrt{\\tfrac{1}{4}(N_\\mathrm{D} - N_\\mathrm{A})^2 + n_\\mathrm{i}^2}", "note": "all dopants ionised, neutral sample", "ref": "HL (3.1.23), p. 84" },
-        { "eq": "ni(T) = ni(300 K) (T/300 K)^(3/2) exp(−Eg/2k (1/T − 1/300 K))", "tex": "n_\\mathrm{i}(T) = n_\\mathrm{i}(300\\,\\mathrm{K})\\Big(\\frac{T}{300\\,\\mathrm{K}}\\Big)^{3/2}\\exp\\!\\Big[-\\frac{E_\\mathrm{G}}{2k}\\Big(\\frac{1}{T} - \\frac{1}{300\\,\\mathrm{K}}\\Big)\\Big]", "note": "from (3.1.17) and (3.1.20) with Eg held constant", "ref": "" }
+        {
+          "eq": "n = NC exp(−(EC − EF)/kT), NC = 2(2π mn* kT)^(3/2)/h³",
+          "tex": "n = N_\\mathrm{C}\\exp\\!\\Big(-\\frac{E_\\mathrm{C} - E_\\mathrm{F}}{kT}\\Big), \\qquad N_\\mathrm{C} = \\frac{2}{h^3}(2\\pi m_\\mathrm{n}^* kT)^{3/2}",
+          "note": "electrons, non-degenerate",
+          "ref": "HL (3.1.17), p. 82"
+        },
+        {
+          "eq": "ni² = n p = NC NV exp(−(EC − EV)/kT)",
+          "tex": "n_\\mathrm{i}^2 = np = N_\\mathrm{C}N_\\mathrm{V}\\exp\\!\\Big(-\\frac{E_\\mathrm{C} - E_\\mathrm{V}}{kT}\\Big)",
+          "note": "mass action; ni = 1.45·10¹⁰ cm⁻³ for Si at 300 K (table p. 73)",
+          "ref": "HL (3.1.20), p. 83"
+        },
+        {
+          "eq": "Ei = (EC + EV)/2 + ½ kT ln(NV/NC)",
+          "tex": "E_\\mathrm{i} = \\frac{E_\\mathrm{C} + E_\\mathrm{V}}{2} + \\frac{1}{2}kT\\ln\\frac{N_\\mathrm{V}}{N_\\mathrm{C}}",
+          "note": "the intrinsic level",
+          "ref": "HL (3.1.21), p. 84"
+        },
+        {
+          "eq": "n = ni exp((EF − Ei)/kT), p = ni exp((Ei − EF)/kT)",
+          "tex": "n = n_\\mathrm{i}\\exp\\!\\Big(\\frac{E_\\mathrm{F} - E_\\mathrm{i}}{kT}\\Big), \\qquad p = n_\\mathrm{i}\\exp\\!\\Big(\\frac{E_\\mathrm{i} - E_\\mathrm{F}}{kT}\\Big)",
+          "note": "densities against the intrinsic level",
+          "ref": "HL (3.1.22), p. 84"
+        },
+        {
+          "eq": "n = ½(ND − NA) + √(¼(ND − NA)² + ni²)",
+          "tex": "n = \\frac{1}{2}(N_\\mathrm{D} - N_\\mathrm{A}) + \\sqrt{\\tfrac{1}{4}(N_\\mathrm{D} - N_\\mathrm{A})^2 + n_\\mathrm{i}^2}",
+          "note": "all dopants ionised, neutral sample",
+          "ref": "HL (3.1.23), p. 84"
+        },
+        {
+          "eq": "ni(T) = ni(300 K) (T/300 K)^(3/2) exp(−Eg/2k (1/T − 1/300 K))",
+          "tex": "n_\\mathrm{i}(T) = n_\\mathrm{i}(300\\,\\mathrm{K})\\Big(\\frac{T}{300\\,\\mathrm{K}}\\Big)^{3/2}\\exp\\!\\Big[-\\frac{E_\\mathrm{G}}{2k}\\Big(\\frac{1}{T} - \\frac{1}{300\\,\\mathrm{K}}\\Big)\\Big]",
+          "note": "from (3.1.17) and (3.1.20) with Eg held constant",
+          "ref": ""
+        }
       ],
       "practice": [
-        { "question": "Silicon at 300 K is doped with ND = 10¹⁶ cm⁻³ donors. What is the hole density p?",
-          "answer": 2.1e4, "unit": "cm⁻³", "tolerance": 0.02,
-          "compute": { "law": "minority", "ND": 1e16, "T": 300 },
+        {
+          "question": "Silicon at 300 K is doped with ND = 10¹⁶ cm⁻³ donors. What is the hole density p?",
+          "answer": 21000,
+          "unit": "cm⁻³",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "minority",
+            "ND": 10000000000000000,
+            "T": 300
+          },
           "solution": "n ≈ ND = 10¹⁶ cm⁻³ since ND ≫ ni; p = ni²/n = (1.45·10¹⁰)²/10¹⁶ = 2.1·10⁴ cm⁻³ (3.1.24).",
-          "source": "Worked by hand from Strasser (2015), section 3.1.3, with ni from the table on p. 73" },
-        { "question": "How far above the intrinsic level Ei does the Fermi level lie in that sample?",
-          "answer": 0.348, "unit": "eV", "tolerance": 0.01,
-          "compute": { "law": "fermiAboveIntrinsic", "ND": 1e16, "T": 300 },
+          "source": "Worked by hand from Strasser (2015), section 3.1.3, with ni from the table on p. 73"
+        },
+        {
+          "question": "How far above the intrinsic level Ei does the Fermi level lie in that sample?",
+          "answer": 0.348,
+          "unit": "eV",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "fermiAboveIntrinsic",
+            "ND": 10000000000000000,
+            "T": 300
+          },
           "solution": "EF − Ei = kT ln(n/ni) = 25.85 meV × ln(10¹⁶/1.45·10¹⁰) = 25.85 meV × 13.44 = 0.348 eV (3.1.22).",
-          "source": "Worked by hand from Strasser (2015), section 3.1.2" }
+          "source": "Worked by hand from Strasser (2015), section 3.1.2"
+        }
       ]
     },
     {
@@ -98,25 +273,80 @@
       "lawTex": "J_\\mathrm{p} = ep\\mu_\\mathrm{p}E - eD_\\mathrm{p}\\frac{\\mathrm{d}p}{\\mathrm{d}x}",
       "lecture": "Strasser (2015), sections 3.4.1–3.4.5, pp. 95–107",
       "equations": [
-        { "eq": "σ = e(n µn + p µp)", "tex": "\\sigma = e(n\\mu_\\mathrm{n} + p\\mu_\\mathrm{p})", "note": "conductivity from both carriers; the script writes q here and e elsewhere", "ref": "HL (3.4.13), p. 96" },
-        { "eq": "R = ρ L/A, ρ = 1/σ", "tex": "R = \\rho\\frac{L}{A}, \\qquad \\rho = \\frac{1}{\\sigma}", "note": "a bar's resistance", "ref": "HL (3.4.14), (3.4.15), p. 96" },
-        { "eq": "vn = −µn E, vp = +µp E", "tex": "v_\\mathrm{n} = -\\mu_\\mathrm{n}E, \\qquad v_\\mathrm{p} = +\\mu_\\mathrm{p}E", "note": "drift velocities", "ref": "HL (3.4.16), p. 97" },
-        { "eq": "D = UT µ, UT = kT/e", "tex": "D = U_\\mathrm{T}\\mu, \\qquad U_\\mathrm{T} = \\frac{k_\\mathrm{B}T}{e}", "note": "Einstein relation; 25.85 mV at 300 K", "ref": "HL §3.4.3, p. 103" },
-        { "eq": "Jp = e p µp E − e Dp dp/dx, Jn = e n µn E + e Dn dn/dx", "tex": "J_\\mathrm{p} = ep\\mu_\\mathrm{p}E - eD_\\mathrm{p}\\frac{\\mathrm{d}p}{\\mathrm{d}x}, \\qquad J_\\mathrm{n} = en\\mu_\\mathrm{n}E + eD_\\mathrm{n}\\frac{\\mathrm{d}n}{\\mathrm{d}x}", "note": "drift and diffusion currents", "ref": "HL (3.4.27), p. 103" },
-        { "eq": "∂p/∂t − Dp ∂²p/∂x² + µp E ∂p/∂x + (p − p0)/τL = 0", "tex": "\\frac{\\partial p}{\\partial t} - D_\\mathrm{p}\\frac{\\partial^2 p}{\\partial x^2} + \\mu_\\mathrm{p}E\\frac{\\partial p}{\\partial x} + \\frac{p - p_0}{\\tau_\\mathrm{L}} = 0", "note": "the pulse's equation", "ref": "HL (3.4.42), p. 107" },
-        { "eq": "p − p0 = const/√(4πDp t) · exp(−(x − µp E t)²/(4 Dp t)) · exp(−t/τL)", "tex": "p - p_0 = \\frac{\\mathrm{const}}{\\sqrt{4\\pi D_\\mathrm{p}t}}\\exp\\!\\Big(-\\frac{(x - \\mu_\\mathrm{p}Et)^2}{4D_\\mathrm{p}t}\\Big)\\exp\\!\\Big(-\\frac{t}{\\tau_\\mathrm{L}}\\Big)", "note": "its solution, a drifting Gaussian; the script prints both exponents without their minus signs, a misprint (its text says the area decays as exp(−t/τL))", "ref": "HL (3.4.43), p. 107" }
+        {
+          "eq": "σ = e(n µn + p µp)",
+          "tex": "\\sigma = e(n\\mu_\\mathrm{n} + p\\mu_\\mathrm{p})",
+          "note": "conductivity from both carriers; the script writes q here and e elsewhere",
+          "ref": "HL (3.4.13), p. 96"
+        },
+        {
+          "eq": "R = ρ L/A, ρ = 1/σ",
+          "tex": "R = \\rho\\frac{L}{A}, \\qquad \\rho = \\frac{1}{\\sigma}",
+          "note": "a bar's resistance",
+          "ref": "HL (3.4.14), (3.4.15), p. 96"
+        },
+        {
+          "eq": "vn = −µn E, vp = +µp E",
+          "tex": "v_\\mathrm{n} = -\\mu_\\mathrm{n}E, \\qquad v_\\mathrm{p} = +\\mu_\\mathrm{p}E",
+          "note": "drift velocities",
+          "ref": "HL (3.4.16), p. 97"
+        },
+        {
+          "eq": "D = UT µ, UT = kT/e",
+          "tex": "D = U_\\mathrm{T}\\mu, \\qquad U_\\mathrm{T} = \\frac{k_\\mathrm{B}T}{e}",
+          "note": "Einstein relation; 25.85 mV at 300 K",
+          "ref": "HL §3.4.3, p. 103"
+        },
+        {
+          "eq": "Jp = e p µp E − e Dp dp/dx, Jn = e n µn E + e Dn dn/dx",
+          "tex": "J_\\mathrm{p} = ep\\mu_\\mathrm{p}E - eD_\\mathrm{p}\\frac{\\mathrm{d}p}{\\mathrm{d}x}, \\qquad J_\\mathrm{n} = en\\mu_\\mathrm{n}E + eD_\\mathrm{n}\\frac{\\mathrm{d}n}{\\mathrm{d}x}",
+          "note": "drift and diffusion currents",
+          "ref": "HL (3.4.27), p. 103"
+        },
+        {
+          "eq": "∂p/∂t − Dp ∂²p/∂x² + µp E ∂p/∂x + (p − p0)/τL = 0",
+          "tex": "\\frac{\\partial p}{\\partial t} - D_\\mathrm{p}\\frac{\\partial^2 p}{\\partial x^2} + \\mu_\\mathrm{p}E\\frac{\\partial p}{\\partial x} + \\frac{p - p_0}{\\tau_\\mathrm{L}} = 0",
+          "note": "the pulse's equation",
+          "ref": "HL (3.4.42), p. 107"
+        },
+        {
+          "eq": "p − p0 = const/√(4πDp t) · exp(−(x − µp E t)²/(4 Dp t)) · exp(−t/τL)",
+          "tex": "p - p_0 = \\frac{\\mathrm{const}}{\\sqrt{4\\pi D_\\mathrm{p}t}}\\exp\\!\\Big(-\\frac{(x - \\mu_\\mathrm{p}Et)^2}{4D_\\mathrm{p}t}\\Big)\\exp\\!\\Big(-\\frac{t}{\\tau_\\mathrm{L}}\\Big)",
+          "note": "its solution, a drifting Gaussian; the script prints both exponents without their minus signs, a misprint (its text says the area decays as exp(−t/τL))",
+          "ref": "HL (3.4.43), p. 107"
+        }
       ],
       "practice": [
-        { "question": "A silicon photoconductor is doped n-type, ND = 5·10¹⁵ cm⁻³, 100 µm long, 100 µm wide and 1 µm thick. What is its resistance in the dark at 300 K?",
-          "answer": 8320, "unit": "Ω", "tolerance": 0.02,
-          "compute": { "law": "barResistance", "n": 5e15, "p": 0, "L": 100e-4, "w": 100e-4, "d": 1e-4 },
+        {
+          "question": "A silicon photoconductor is doped n-type, ND = 5·10¹⁵ cm⁻³, 100 µm long, 100 µm wide and 1 µm thick. What is its resistance in the dark at 300 K?",
+          "answer": 8320,
+          "unit": "Ω",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "barResistance",
+            "n": 5000000000000000,
+            "p": 0,
+            "L": 0.01,
+            "w": 0.01,
+            "d": 0.0001
+          },
           "solution": "σ = e ND µn = 1.602·10⁻¹⁹ × 5·10¹⁵ × 1500 = 1.20 S/cm; R = L/(σ w d) = 0.01 cm / (1.20 S/cm × 0.01 cm × 10⁻⁴ cm) = 8.32 kΩ. Mobility from the script's table, p. 73.",
-          "source": "Worked by hand from Halbleiterphysik exercise sheet 10, problem 37 a (WS 2015/16)" },
-        { "question": "Holes in n-silicon (µp = 450 cm²/(V s)) are injected and collected 5 mm further on, with a field of 10 V/cm. When does the pulse's peak arrive?",
-          "answer": 1.11e-4, "unit": "s", "tolerance": 0.01,
-          "compute": { "law": "driftTime", "distance": 0.5, "mu": 450, "E": 10 },
+          "source": "Worked by hand from Halbleiterphysik exercise sheet 10, problem 37 a (WS 2015/16)"
+        },
+        {
+          "question": "Holes in n-silicon (µp = 450 cm²/(V s)) are injected and collected 5 mm further on, with a field of 10 V/cm. When does the pulse's peak arrive?",
+          "answer": 0.000111,
+          "unit": "s",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "driftTime",
+            "distance": 0.5,
+            "mu": 450,
+            "E": 10
+          },
           "solution": "The peak moves at µp E = 450 × 10 = 4500 cm/s (3.4.43); 0.5 cm / 4500 cm/s = 111 µs.",
-          "source": "Worked by hand from Strasser (2015), section 3.4.5" }
+          "source": "Worked by hand from Strasser (2015), section 3.4.5"
+        }
       ]
     },
     {
@@ -127,24 +357,75 @@
       "lawTex": "\\frac{\\mathrm{d}\\Delta p}{\\mathrm{d}t} = G - \\frac{\\Delta p}{\\tau}",
       "lecture": "Strasser (2015), sections 3.2 and 3.4.4, pp. 87–90 and 103–106",
       "equations": [
-        { "eq": "∂p/∂t + (1/e) ∂Jp/∂x = G − R", "tex": "\\frac{\\partial p}{\\partial t} + \\frac{1}{e}\\frac{\\partial J_\\mathrm{p}}{\\partial x} = G - R", "note": "continuity for holes", "ref": "HL (3.4.29), p. 103" },
-        { "eq": "G − R = −(p − p0)/τL", "tex": "G - R = -\\frac{p - p_0}{\\tau_\\mathrm{L}}", "note": "the lifetime approximation", "ref": "HL (3.4.34), p. 104" },
-        { "eq": "Δp(t) = Gτ(1 − e^(−t/τ)), then Δp(toff) e^(−(t − toff)/τ)", "tex": "\\Delta p(t) = G\\tau\\big(1 - \\mathrm{e}^{-t/\\tau}\\big), \\quad \\text{then} \\quad \\Delta p(t_\\mathrm{off})\\,\\mathrm{e}^{-(t - t_\\mathrm{off})/\\tau}", "note": "uniform light switched on and off", "ref": "" },
-        { "eq": "pn(x) = pn0 + (pn(0) − pn0) e^(−x/Lp), Lp = √(Dp τL)", "tex": "p_\\mathrm{n}(x) = p_{\\mathrm{n}0} + \\big(p_\\mathrm{n}(0) - p_{\\mathrm{n}0}\\big)\\,\\mathrm{e}^{-x/L_\\mathrm{p}}, \\qquad L_\\mathrm{p} = \\sqrt{D_\\mathrm{p}\\tau_\\mathrm{L}}", "note": "injection into a long sample", "ref": "HL (3.4.35), p. 104" },
-        { "eq": "pn(x) = pn0 + (pn(0) − pn0) sinh((W − x)/Lp)/sinh(W/Lp)", "tex": "p_\\mathrm{n}(x) = p_{\\mathrm{n}0} + \\big(p_\\mathrm{n}(0) - p_{\\mathrm{n}0}\\big)\\frac{\\sinh\\big((W - x)/L_\\mathrm{p}\\big)}{\\sinh(W/L_\\mathrm{p})}", "note": "a sample of length W", "ref": "HL (3.4.37), p. 105" },
-        { "eq": "pn(x) = pn0 + (pn(0) − pn0)(W − x)/W", "tex": "p_\\mathrm{n}(x) = p_{\\mathrm{n}0} + \\big(p_\\mathrm{n}(0) - p_{\\mathrm{n}0}\\big)\\frac{W - x}{W}", "note": "a sample much shorter than Lp", "ref": "HL (3.4.38), p. 105" }
+        {
+          "eq": "∂p/∂t + (1/e) ∂Jp/∂x = G − R",
+          "tex": "\\frac{\\partial p}{\\partial t} + \\frac{1}{e}\\frac{\\partial J_\\mathrm{p}}{\\partial x} = G - R",
+          "note": "continuity for holes",
+          "ref": "HL (3.4.29), p. 103"
+        },
+        {
+          "eq": "G − R = −(p − p0)/τL",
+          "tex": "G - R = -\\frac{p - p_0}{\\tau_\\mathrm{L}}",
+          "note": "the lifetime approximation",
+          "ref": "HL (3.4.34), p. 104"
+        },
+        {
+          "eq": "Δp(t) = Gτ(1 − e^(−t/τ)), then Δp(toff) e^(−(t − toff)/τ)",
+          "tex": "\\Delta p(t) = G\\tau\\big(1 - \\mathrm{e}^{-t/\\tau}\\big), \\quad \\text{then} \\quad \\Delta p(t_\\mathrm{off})\\,\\mathrm{e}^{-(t - t_\\mathrm{off})/\\tau}",
+          "note": "uniform light switched on and off",
+          "ref": ""
+        },
+        {
+          "eq": "pn(x) = pn0 + (pn(0) − pn0) e^(−x/Lp), Lp = √(Dp τL)",
+          "tex": "p_\\mathrm{n}(x) = p_{\\mathrm{n}0} + \\big(p_\\mathrm{n}(0) - p_{\\mathrm{n}0}\\big)\\,\\mathrm{e}^{-x/L_\\mathrm{p}}, \\qquad L_\\mathrm{p} = \\sqrt{D_\\mathrm{p}\\tau_\\mathrm{L}}",
+          "note": "injection into a long sample",
+          "ref": "HL (3.4.35), p. 104"
+        },
+        {
+          "eq": "pn(x) = pn0 + (pn(0) − pn0) sinh((W − x)/Lp)/sinh(W/Lp)",
+          "tex": "p_\\mathrm{n}(x) = p_{\\mathrm{n}0} + \\big(p_\\mathrm{n}(0) - p_{\\mathrm{n}0}\\big)\\frac{\\sinh\\big((W - x)/L_\\mathrm{p}\\big)}{\\sinh(W/L_\\mathrm{p})}",
+          "note": "a sample of length W",
+          "ref": "HL (3.4.37), p. 105"
+        },
+        {
+          "eq": "pn(x) = pn0 + (pn(0) − pn0)(W − x)/W",
+          "tex": "p_\\mathrm{n}(x) = p_{\\mathrm{n}0} + \\big(p_\\mathrm{n}(0) - p_{\\mathrm{n}0}\\big)\\frac{W - x}{W}",
+          "note": "a sample much shorter than Lp",
+          "ref": "HL (3.4.38), p. 105"
+        }
       ],
       "practice": [
-        { "question": "The photoconductor of the drift lab (ND = 5·10¹⁵ cm⁻³, 100 µm × 100 µm × 1 µm) is lit uniformly with G = 8·10²¹ cm⁻³ s⁻¹; the lifetime is 10 µs. What is its resistance now?",
-          "answer": 382, "unit": "Ω", "tolerance": 0.02,
-          "compute": { "law": "photoResistance", "ND": 5e15, "G": 8e21, "tau": 10e-6, "L": 100e-4, "w": 100e-4, "d": 1e-4 },
+        {
+          "question": "The photoconductor of the drift lab (ND = 5·10¹⁵ cm⁻³, 100 µm × 100 µm × 1 µm) is lit uniformly with G = 8·10²¹ cm⁻³ s⁻¹; the lifetime is 10 µs. What is its resistance now?",
+          "answer": 382,
+          "unit": "Ω",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "photoResistance",
+            "ND": 5000000000000000,
+            "G": 8e+21,
+            "tau": 0.00001,
+            "L": 0.01,
+            "w": 0.01,
+            "d": 0.0001
+          },
           "solution": "Δn = Δp = Gτ = 8·10¹⁶ cm⁻³. σ = e[(ND + Δn) µn + Δp µp] = 1.602·10⁻¹⁹ × (8.5·10¹⁶ × 1500 + 8·10¹⁶ × 450) = 26.2 S/cm; R = L/(σ w d) = 382 Ω. Mobilities from the script's table, p. 73.",
-          "source": "Worked by hand from Halbleiterphysik exercise sheet 10, problem 37 b (WS 2015/16)" },
-        { "question": "Holes in silicon at 300 K (µp = 450 cm²/(V s)) live 10 µs. What is their diffusion length?",
-          "answer": 1.08e-4, "unit": "m", "tolerance": 0.02,
-          "compute": { "law": "diffusionLength", "mu": 450, "T": 300, "tau": 10e-6 },
+          "source": "Worked by hand from Halbleiterphysik exercise sheet 10, problem 37 b (WS 2015/16)"
+        },
+        {
+          "question": "Holes in silicon at 300 K (µp = 450 cm²/(V s)) live 10 µs. What is their diffusion length?",
+          "answer": 0.000108,
+          "unit": "m",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "diffusionLength",
+            "mu": 450,
+            "T": 300,
+            "tau": 0.00001
+          },
           "solution": "Dp = UT µp = 0.02585 V × 450 cm²/(V s) = 11.6 cm²/s; Lp = √(Dp τ) = √(11.6 × 10⁻⁵) cm = 0.0108 cm = 108 µm.",
-          "source": "Worked by hand from Strasser (2015), section 3.4.4" }
+          "source": "Worked by hand from Strasser (2015), section 3.4.4"
+        }
       ]
     },
     {
@@ -155,24 +436,71 @@
       "lawTex": "\\alpha(\\omega) = \\sigma Z_\\mathrm{j}(\\omega)\\big(f_\\mathrm{v}(E_1) - f_\\mathrm{c}(E_2)\\big), \\qquad Z_\\mathrm{j} \\propto \\sqrt{\\hbar\\omega - E_\\mathrm{G}}",
       "lecture": "Strasser (2015), section 4.2.1, pp. 113–117; material data p. 73",
       "equations": [
-        { "eq": "E2 − E1 = ħ²k²/(2mp*) + Eg + ħ²k²/(2mn*) = ħω", "tex": "E_2 - E_1 = \\frac{\\hbar^2k^2}{2m_\\mathrm{p}^*} + E_\\mathrm{G} + \\frac{\\hbar^2k^2}{2m_\\mathrm{n}^*} = \\hbar\\omega", "note": "a vertical transition, parabolic bands", "ref": "HL (4.2.2), p. 114" },
-        { "eq": "E1 = EV − (mr/mp*)(ħω − Eg), E2 = EC + (mr/mn*)(ħω − Eg), 1/mr = 1/mp* + 1/mn*", "tex": "E_1 = E_\\mathrm{V} - \\frac{m_\\mathrm{r}}{m_\\mathrm{p}^*}(\\hbar\\omega - E_\\mathrm{G}), \\qquad E_2 = E_\\mathrm{C} + \\frac{m_\\mathrm{r}}{m_\\mathrm{n}^*}(\\hbar\\omega - E_\\mathrm{G}), \\qquad \\frac{1}{m_\\mathrm{r}} = \\frac{1}{m_\\mathrm{p}^*} + \\frac{1}{m_\\mathrm{n}^*}", "note": "the states taking part; the script prints E2 = EC − …, a misprint: only + gives E2 − E1 = ħω of (4.2.2)", "ref": "HL §4.2.1, p. 114" },
-        { "eq": "Zj(ω) = (2mr)^(3/2)/(2π²ħ²) √(ħω − Eg)", "tex": "Z_\\mathrm{j}(\\omega) = \\frac{1}{2\\pi^2}\\frac{(2m_\\mathrm{r})^{3/2}}{\\hbar^2}\\sqrt{\\hbar\\omega - E_\\mathrm{G}}", "note": "the joint density of states", "ref": "HL (4.2.4), p. 114" },
-        { "eq": "α(ω) = σ(ω) Zj(ω) (fv(E1) − fc(E2))", "tex": "\\alpha(\\omega) = \\sigma(\\omega)Z_\\mathrm{j}(\\omega)\\big(f_\\mathrm{v}(E_1) - f_\\mathrm{c}(E_2)\\big)", "note": "absorption minus stimulated emission", "ref": "HL (4.2.8), p. 115" },
-        { "eq": "EFc − EFv > Eg", "tex": "E_{\\mathrm{F}_\\mathrm{C}} - E_{\\mathrm{F}_\\mathrm{V}} > E_\\mathrm{G}", "note": "the condition for gain", "ref": "HL (4.2.10), p. 115" },
-        { "eq": "λg = hc/Eg", "tex": "\\lambda_\\mathrm{g} = \\frac{hc}{E_\\mathrm{G}}", "note": "the longest wavelength absorbed", "ref": "" }
+        {
+          "eq": "E2 − E1 = ħ²k²/(2mp*) + Eg + ħ²k²/(2mn*) = ħω",
+          "tex": "E_2 - E_1 = \\frac{\\hbar^2k^2}{2m_\\mathrm{p}^*} + E_\\mathrm{G} + \\frac{\\hbar^2k^2}{2m_\\mathrm{n}^*} = \\hbar\\omega",
+          "note": "a vertical transition, parabolic bands",
+          "ref": "HL (4.2.2), p. 114"
+        },
+        {
+          "eq": "E1 = EV − (mr/mp*)(ħω − Eg), E2 = EC + (mr/mn*)(ħω − Eg), 1/mr = 1/mp* + 1/mn*",
+          "tex": "E_1 = E_\\mathrm{V} - \\frac{m_\\mathrm{r}}{m_\\mathrm{p}^*}(\\hbar\\omega - E_\\mathrm{G}), \\qquad E_2 = E_\\mathrm{C} + \\frac{m_\\mathrm{r}}{m_\\mathrm{n}^*}(\\hbar\\omega - E_\\mathrm{G}), \\qquad \\frac{1}{m_\\mathrm{r}} = \\frac{1}{m_\\mathrm{p}^*} + \\frac{1}{m_\\mathrm{n}^*}",
+          "note": "the states taking part; the script prints E2 = EC − …, a misprint: only + gives E2 − E1 = ħω of (4.2.2)",
+          "ref": "HL §4.2.1, p. 114"
+        },
+        {
+          "eq": "Zj(ω) = (2mr)^(3/2)/(2π²ħ²) √(ħω − Eg)",
+          "tex": "Z_\\mathrm{j}(\\omega) = \\frac{1}{2\\pi^2}\\frac{(2m_\\mathrm{r})^{3/2}}{\\hbar^2}\\sqrt{\\hbar\\omega - E_\\mathrm{G}}",
+          "note": "the joint density of states",
+          "ref": "HL (4.2.4), p. 114"
+        },
+        {
+          "eq": "α(ω) = σ(ω) Zj(ω) (fv(E1) − fc(E2))",
+          "tex": "\\alpha(\\omega) = \\sigma(\\omega)Z_\\mathrm{j}(\\omega)\\big(f_\\mathrm{v}(E_1) - f_\\mathrm{c}(E_2)\\big)",
+          "note": "absorption minus stimulated emission",
+          "ref": "HL (4.2.8), p. 115"
+        },
+        {
+          "eq": "EFc − EFv > Eg",
+          "tex": "E_{\\mathrm{F}_\\mathrm{C}} - E_{\\mathrm{F}_\\mathrm{V}} > E_\\mathrm{G}",
+          "note": "the condition for gain",
+          "ref": "HL (4.2.10), p. 115"
+        },
+        {
+          "eq": "λg = hc/Eg",
+          "tex": "\\lambda_\\mathrm{g} = \\frac{hc}{E_\\mathrm{G}}",
+          "note": "the longest wavelength absorbed",
+          "ref": ""
+        }
       ],
       "practice": [
-        { "question": "Silicon's band gap is 1.12 eV. What is the longest wavelength it absorbs across the gap?",
-          "answer": 1.107e-6, "unit": "m", "tolerance": 0.005,
-          "compute": { "law": "cutoff", "Eg": 1.12 },
+        {
+          "question": "Silicon's band gap is 1.12 eV. What is the longest wavelength it absorbs across the gap?",
+          "answer": 0.000001107,
+          "unit": "m",
+          "tolerance": 0.005,
+          "compute": {
+            "law": "cutoff",
+            "Eg": 1.12
+          },
           "solution": "λ = hc/Eg = 6.626·10⁻³⁴ J s × 2.998·10⁸ m/s / (1.12 × 1.602·10⁻¹⁹ J) = 1107 nm, as the script's table prints beside 1.12 eV (p. 73).",
-          "source": "Worked by hand; the script's table on p. 73 prints the same 1107 nm" },
-        { "question": "In GaAs (Eg = 1.42 eV, mn* = 0.067 m0, mp* = 0.5 m0) a photon of 1.52 eV is absorbed. How far above the conduction band edge does the electron land?",
-          "answer": 0.0882, "unit": "eV", "tolerance": 0.01,
-          "compute": { "law": "electronShare", "hw": 1.52, "Eg": 1.42, "mn": 0.067, "mp": 0.5 },
+          "source": "Worked by hand; the script's table on p. 73 prints the same 1107 nm"
+        },
+        {
+          "question": "In GaAs (Eg = 1.42 eV, mn* = 0.067 m0, mp* = 0.5 m0) a photon of 1.52 eV is absorbed. How far above the conduction band edge does the electron land?",
+          "answer": 0.0882,
+          "unit": "eV",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "electronShare",
+            "hw": 1.52,
+            "Eg": 1.42,
+            "mn": 0.067,
+            "mp": 0.5
+          },
           "solution": "1/mr = 1/0.067 + 1/0.5 = 16.93, mr = 0.0591 m0; E2 − EC = (mr/mn*)(ħω − Eg) = 0.882 × 0.1 eV = 88 meV. The hole takes the other 12 meV.",
-          "source": "Worked by hand from Halbleiterphysik exercise sheet 10, problem 39 (WS 2015/16), its GaAs data, with Strasser (2015), p. 114" }
+          "source": "Worked by hand from Halbleiterphysik exercise sheet 10, problem 39 (WS 2015/16), its GaAs data, with Strasser (2015), p. 114"
+        }
       ]
     },
     {
@@ -183,19 +511,58 @@
       "lawTex": "d = \\sqrt{\\frac{2\\varepsilon(U_\\mathrm{D} - U)}{eN_0}}, \\qquad \\frac{1}{N_0} = \\frac{1}{N_\\mathrm{A}} + \\frac{1}{N_\\mathrm{D}}",
       "lecture": "Strasser (2015), section 5.2.1, pp. 128–131; UD from section 5.3.4, p. 139",
       "equations": [
-        { "eq": "NA dp = ND dn", "tex": "N_\\mathrm{A}d_\\mathrm{p} = N_\\mathrm{D}d_\\mathrm{n}", "note": "equal charges on both sides", "ref": "HL (5.2.2), p. 129" },
-        { "eq": "dE/dx = ρ/ε", "tex": "\\frac{\\mathrm{d}E}{\\mathrm{d}x} = \\frac{\\rho}{\\varepsilon}", "note": "Poisson's equation", "ref": "HL (5.2.3), p. 129" },
-        { "eq": "Emax = e NA dp/ε = e ND dn/ε", "tex": "E_\\mathrm{max} = \\frac{eN_\\mathrm{A}d_\\mathrm{p}}{\\varepsilon} = \\frac{eN_\\mathrm{D}d_\\mathrm{n}}{\\varepsilon}", "note": "the peak field at the boundary, as a magnitude (the script drops its minus sign from p. 131 on)", "ref": "HL (5.2.4), p. 129" },
-        { "eq": "UD = (e/2ε)(NA dp² + ND dn²)", "tex": "U_\\mathrm{D} = \\frac{e}{2\\varepsilon}\\big(N_\\mathrm{A}d_\\mathrm{p}^2 + N_\\mathrm{D}d_\\mathrm{n}^2\\big)", "note": "the area under the field", "ref": "HL (5.2.6), p. 129" },
-        { "eq": "d = √(2ε(UD − U)/(e N0)), dn = d NA/(NA + ND), dp = d ND/(NA + ND), Emax = √(2eN0(UD − U)/ε)", "tex": "d = \\sqrt{\\frac{2\\varepsilon(U_\\mathrm{D} - U)}{eN_0}}, \\quad d_\\mathrm{n} = d\\,\\frac{N_\\mathrm{A}}{N_\\mathrm{A} + N_\\mathrm{D}}, \\quad d_\\mathrm{p} = d\\,\\frac{N_\\mathrm{D}}{N_\\mathrm{A} + N_\\mathrm{D}}, \\quad E_\\mathrm{max} = \\sqrt{\\frac{2eN_0(U_\\mathrm{D} - U)}{\\varepsilon}}", "note": "with bias U", "ref": "HL (5.2.13), p. 131" },
-        { "eq": "UD = UT ln(NA ND/ni²)", "tex": "U_\\mathrm{D} = U_\\mathrm{T}\\ln\\frac{N_\\mathrm{A}N_\\mathrm{D}}{n_\\mathrm{i}^2}", "note": "the diffusion voltage", "ref": "HL (5.3.19), p. 139" }
+        {
+          "eq": "NA dp = ND dn",
+          "tex": "N_\\mathrm{A}d_\\mathrm{p} = N_\\mathrm{D}d_\\mathrm{n}",
+          "note": "equal charges on both sides",
+          "ref": "HL (5.2.2), p. 129"
+        },
+        {
+          "eq": "dE/dx = ρ/ε",
+          "tex": "\\frac{\\mathrm{d}E}{\\mathrm{d}x} = \\frac{\\rho}{\\varepsilon}",
+          "note": "Poisson's equation",
+          "ref": "HL (5.2.3), p. 129"
+        },
+        {
+          "eq": "Emax = e NA dp/ε = e ND dn/ε",
+          "tex": "E_\\mathrm{max} = \\frac{eN_\\mathrm{A}d_\\mathrm{p}}{\\varepsilon} = \\frac{eN_\\mathrm{D}d_\\mathrm{n}}{\\varepsilon}",
+          "note": "the peak field at the boundary, as a magnitude (the script drops its minus sign from p. 131 on)",
+          "ref": "HL (5.2.4), p. 129"
+        },
+        {
+          "eq": "UD = (e/2ε)(NA dp² + ND dn²)",
+          "tex": "U_\\mathrm{D} = \\frac{e}{2\\varepsilon}\\big(N_\\mathrm{A}d_\\mathrm{p}^2 + N_\\mathrm{D}d_\\mathrm{n}^2\\big)",
+          "note": "the area under the field",
+          "ref": "HL (5.2.6), p. 129"
+        },
+        {
+          "eq": "d = √(2ε(UD − U)/(e N0)), dn = d NA/(NA + ND), dp = d ND/(NA + ND), Emax = √(2eN0(UD − U)/ε)",
+          "tex": "d = \\sqrt{\\frac{2\\varepsilon(U_\\mathrm{D} - U)}{eN_0}}, \\quad d_\\mathrm{n} = d\\,\\frac{N_\\mathrm{A}}{N_\\mathrm{A} + N_\\mathrm{D}}, \\quad d_\\mathrm{p} = d\\,\\frac{N_\\mathrm{D}}{N_\\mathrm{A} + N_\\mathrm{D}}, \\quad E_\\mathrm{max} = \\sqrt{\\frac{2eN_0(U_\\mathrm{D} - U)}{\\varepsilon}}",
+          "note": "with bias U",
+          "ref": "HL (5.2.13), p. 131"
+        },
+        {
+          "eq": "UD = UT ln(NA ND/ni²)",
+          "tex": "U_\\mathrm{D} = U_\\mathrm{T}\\ln\\frac{N_\\mathrm{A}N_\\mathrm{D}}{n_\\mathrm{i}^2}",
+          "note": "the diffusion voltage",
+          "ref": "HL (5.3.19), p. 139"
+        }
       ],
       "practice": [
-        { "question": "A silicon junction has NA = 10¹⁷ cm⁻³ and ND = 10¹⁵ cm⁻³ at 300 K, no bias. How wide is its space-charge zone? (εr = 11.9)",
-          "answer": 9.61e-7, "unit": "m", "tolerance": 0.02,
-          "compute": { "law": "depletionWidth", "NA": 1e17, "ND": 1e15, "U": 0 },
+        {
+          "question": "A silicon junction has NA = 10¹⁷ cm⁻³ and ND = 10¹⁵ cm⁻³ at 300 K, no bias. How wide is its space-charge zone? (εr = 11.9)",
+          "answer": 9.61e-7,
+          "unit": "m",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "depletionWidth",
+            "NA": 100000000000000000,
+            "ND": 1000000000000000,
+            "U": 0
+          },
           "solution": "UD = UT ln(NA ND/ni²) = 25.85 mV × ln(10³²/2.10·10²⁰) = 0.695 V. N0 = 1/(10⁻¹⁷ + 10⁻¹⁵) = 9.90·10¹⁴ cm⁻³. d = √(2 × 1.054·10⁻¹² F/cm × 0.695 V / (1.602·10⁻¹⁹ C × 9.90·10¹⁴ cm⁻³)) = 9.61·10⁻⁵ cm = 0.961 µm, 99 % of it on the n side.",
-          "source": "Worked by hand from Strasser (2015), section 5.2.1" }
+          "source": "Worked by hand from Strasser (2015), section 5.2.1"
+        }
       ]
     },
     {
@@ -206,17 +573,47 @@
       "lawTex": "C_\\mathrm{s} = \\frac{\\varepsilon A}{d} = A\\sqrt{\\frac{\\varepsilon eN_0}{2(U_\\mathrm{D} - U)}}",
       "lecture": "Strasser (2015), section 5.2.2, pp. 131–132; breakdown section 5.3.5, p. 140",
       "equations": [
-        { "eq": "I = dQ/dt = (dQ/dU)(dU/dt) = Cs dU/dt", "tex": "I = \\frac{\\mathrm{d}Q}{\\mathrm{d}t} = \\frac{\\mathrm{d}Q}{\\mathrm{d}U}\\frac{\\mathrm{d}U}{\\mathrm{d}t} = C_\\mathrm{s}\\frac{\\mathrm{d}U}{\\mathrm{d}t}", "note": "the capacitive current", "ref": "HL (5.2.14), p. 132" },
-        { "eq": "Cs = dQp/dU = εA/d = A √(ε e N0/(2(UD − U)))", "tex": "C_\\mathrm{s} = \\frac{\\mathrm{d}Q_\\mathrm{p}}{\\mathrm{d}U} = \\frac{\\varepsilon A}{d} = A\\sqrt{\\frac{\\varepsilon eN_0}{2(U_\\mathrm{D} - U)}}", "note": "the junction capacitance", "ref": "HL (5.2.15), p. 132" },
-        { "eq": "1/Cs² = 2(UD − U)/(A² ε e N0)", "tex": "\\frac{1}{C_\\mathrm{s}^2} = \\frac{2(U_\\mathrm{D} - U)}{A^2\\varepsilon eN_0}", "note": "a straight line in U; its slope gives N0", "ref": "" },
-        { "eq": "UB* ≈ ε Emax²/(2 e N0)", "tex": "U_\\mathrm{B}^* \\approx \\frac{\\varepsilon E_\\mathrm{max}^2}{2eN_0}", "note": "the breakdown estimate; Emax ≈ 300 kV/cm for Si", "ref": "HL (5.3.22), p. 140" }
+        {
+          "eq": "I = dQ/dt = (dQ/dU)(dU/dt) = Cs dU/dt",
+          "tex": "I = \\frac{\\mathrm{d}Q}{\\mathrm{d}t} = \\frac{\\mathrm{d}Q}{\\mathrm{d}U}\\frac{\\mathrm{d}U}{\\mathrm{d}t} = C_\\mathrm{s}\\frac{\\mathrm{d}U}{\\mathrm{d}t}",
+          "note": "the capacitive current",
+          "ref": "HL (5.2.14), p. 132"
+        },
+        {
+          "eq": "Cs = dQp/dU = εA/d = A √(ε e N0/(2(UD − U)))",
+          "tex": "C_\\mathrm{s} = \\frac{\\mathrm{d}Q_\\mathrm{p}}{\\mathrm{d}U} = \\frac{\\varepsilon A}{d} = A\\sqrt{\\frac{\\varepsilon eN_0}{2(U_\\mathrm{D} - U)}}",
+          "note": "the junction capacitance",
+          "ref": "HL (5.2.15), p. 132"
+        },
+        {
+          "eq": "1/Cs² = 2(UD − U)/(A² ε e N0)",
+          "tex": "\\frac{1}{C_\\mathrm{s}^2} = \\frac{2(U_\\mathrm{D} - U)}{A^2\\varepsilon eN_0}",
+          "note": "a straight line in U; its slope gives N0",
+          "ref": ""
+        },
+        {
+          "eq": "UB* ≈ ε Emax²/(2 e N0)",
+          "tex": "U_\\mathrm{B}^* \\approx \\frac{\\varepsilon E_\\mathrm{max}^2}{2eN_0}",
+          "note": "the breakdown estimate; Emax ≈ 300 kV/cm for Si",
+          "ref": "HL (5.3.22), p. 140"
+        }
       ],
       "practice": [
-        { "question": "A silicon p⁺n diode has NA = 10¹⁹ cm⁻³, ND = 10¹⁶ cm⁻³ and an area of 0.01 mm². What is its junction capacitance at 5 V reverse bias?",
-          "answer": 1.2e-12, "unit": "F", "tolerance": 0.02,
-          "compute": { "law": "capacitance", "NA": 1e19, "ND": 1e16, "U": -5, "area": 1e-4 },
+        {
+          "question": "A silicon p⁺n diode has NA = 10¹⁹ cm⁻³, ND = 10¹⁶ cm⁻³ and an area of 0.01 mm². What is its junction capacitance at 5 V reverse bias?",
+          "answer": 1.2e-12,
+          "unit": "F",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "capacitance",
+            "NA": 10000000000000000000,
+            "ND": 10000000000000000,
+            "U": -5,
+            "area": 0.0001
+          },
           "solution": "UD = UT ln(NA ND/ni²) = 0.874 V; N0 ≈ ND = 9.99·10¹⁵ cm⁻³. Cs/A = √(ε e N0/(2(UD − U))) = √(1.054·10⁻¹² × 1.602·10⁻¹⁹ × 9.99·10¹⁵ / (2 × 5.874)) = 1.198·10⁻⁸ F/cm²; with A = 10⁻⁴ cm², Cs = 1.20 pF.",
-          "source": "Worked by hand from Strasser (2015), section 5.2.2" }
+          "source": "Worked by hand from Strasser (2015), section 5.2.2"
+        }
       ]
     },
     {
@@ -227,26 +624,84 @@
       "lawTex": "I = I_\\mathrm{s}\\big(\\mathrm{e}^{U/(nU_\\mathrm{T})} - 1\\big)",
       "lecture": "Strasser (2015), section 5.3, pp. 133–141; Hobler (2009), part 1, p. 3",
       "equations": [
-        { "eq": "pn = pN exp(U/UT), np = nP exp(U/UT)", "tex": "p_\\mathrm{n} = p_\\mathrm{N}\\exp\\frac{U}{U_\\mathrm{T}}, \\qquad n_\\mathrm{p} = n_\\mathrm{P}\\exp\\frac{U}{U_\\mathrm{T}}", "note": "minority densities at the zone's edges", "ref": "HL (5.3.4), p. 134" },
-        { "eq": "Js = e ni² (Dp/(Lp ND) + Dn/(Ln NA))", "tex": "J_\\mathrm{s} = en_\\mathrm{i}^2\\Big(\\frac{D_\\mathrm{p}}{L_\\mathrm{p}N_\\mathrm{D}} + \\frac{D_\\mathrm{n}}{L_\\mathrm{n}N_\\mathrm{A}}\\Big)", "note": "the saturation current density, long diode", "ref": "HL (5.3.10), p. 136" },
-        { "eq": "I = Is (exp(U/UT) − 1)", "tex": "I = I_\\mathrm{s}\\Big(\\exp\\frac{U}{U_\\mathrm{T}} - 1\\Big)", "note": "the ideal characteristic", "ref": "HL (5.3.11), p. 136" },
-        { "eq": "(1/Js) dJs/dT = UG/(UT T)", "tex": "\\frac{1}{J_\\mathrm{s}}\\frac{\\mathrm{d}J_\\mathrm{s}}{\\mathrm{d}T} = \\frac{U_\\mathrm{G}}{U_\\mathrm{T}T}", "note": "0.15 /K for Si at 300 K", "ref": "HL (5.3.16), p. 139" },
-        { "eq": "dU/dT = −(UG − U)/T", "tex": "\\frac{\\mathrm{d}U}{\\mathrm{d}T} = -\\frac{U_\\mathrm{G} - U}{T}", "note": "about −2 mV/K at constant current", "ref": "HL (5.3.18), p. 139" },
-        { "eq": "(1/J) dJ/dT = (UG − U)/(UT T)", "tex": "\\frac{1}{J}\\frac{\\mathrm{d}J}{\\mathrm{d}T} = \\frac{U_\\mathrm{G} - U}{U_\\mathrm{T}T}", "note": "at fixed forward voltage; 0.05 /K for Si at 0.7 V", "ref": "HL (5.3.17), p. 139" },
-        { "eq": "I = Is (exp(Ud/(n UT)) − 1), U = Ud + I Rs", "tex": "I = I_\\mathrm{s}\\Big(\\exp\\frac{U_\\mathrm{d}}{nU_\\mathrm{T}} - 1\\Big), \\qquad U = U_\\mathrm{d} + IR_\\mathrm{s}", "note": "ideality factor n (the collection takes n = 2) and a series resistance; the script names both effects (p. 137)", "ref": "EB part 1, p. 3" },
-        { "eq": "UB* ≈ ε Emax²/(2 e N0)", "tex": "U_\\mathrm{B}^* \\approx \\frac{\\varepsilon E_\\mathrm{max}^2}{2eN_0}", "note": "breakdown, marked only", "ref": "HL (5.3.22), p. 140" }
+        {
+          "eq": "pn = pN exp(U/UT), np = nP exp(U/UT)",
+          "tex": "p_\\mathrm{n} = p_\\mathrm{N}\\exp\\frac{U}{U_\\mathrm{T}}, \\qquad n_\\mathrm{p} = n_\\mathrm{P}\\exp\\frac{U}{U_\\mathrm{T}}",
+          "note": "minority densities at the zone's edges",
+          "ref": "HL (5.3.4), p. 134"
+        },
+        {
+          "eq": "Js = e ni² (Dp/(Lp ND) + Dn/(Ln NA))",
+          "tex": "J_\\mathrm{s} = en_\\mathrm{i}^2\\Big(\\frac{D_\\mathrm{p}}{L_\\mathrm{p}N_\\mathrm{D}} + \\frac{D_\\mathrm{n}}{L_\\mathrm{n}N_\\mathrm{A}}\\Big)",
+          "note": "the saturation current density, long diode",
+          "ref": "HL (5.3.10), p. 136"
+        },
+        {
+          "eq": "I = Is (exp(U/UT) − 1)",
+          "tex": "I = I_\\mathrm{s}\\Big(\\exp\\frac{U}{U_\\mathrm{T}} - 1\\Big)",
+          "note": "the ideal characteristic",
+          "ref": "HL (5.3.11), p. 136"
+        },
+        {
+          "eq": "(1/Js) dJs/dT = UG/(UT T)",
+          "tex": "\\frac{1}{J_\\mathrm{s}}\\frac{\\mathrm{d}J_\\mathrm{s}}{\\mathrm{d}T} = \\frac{U_\\mathrm{G}}{U_\\mathrm{T}T}",
+          "note": "0.15 /K for Si at 300 K",
+          "ref": "HL (5.3.16), p. 139"
+        },
+        {
+          "eq": "dU/dT = −(UG − U)/T",
+          "tex": "\\frac{\\mathrm{d}U}{\\mathrm{d}T} = -\\frac{U_\\mathrm{G} - U}{T}",
+          "note": "about −2 mV/K at constant current",
+          "ref": "HL (5.3.18), p. 139"
+        },
+        {
+          "eq": "(1/J) dJ/dT = (UG − U)/(UT T)",
+          "tex": "\\frac{1}{J}\\frac{\\mathrm{d}J}{\\mathrm{d}T} = \\frac{U_\\mathrm{G} - U}{U_\\mathrm{T}T}",
+          "note": "at fixed forward voltage; 0.05 /K for Si at 0.7 V",
+          "ref": "HL (5.3.17), p. 139"
+        },
+        {
+          "eq": "I = Is (exp(Ud/(n UT)) − 1), U = Ud + I Rs",
+          "tex": "I = I_\\mathrm{s}\\Big(\\exp\\frac{U_\\mathrm{d}}{nU_\\mathrm{T}} - 1\\Big), \\qquad U = U_\\mathrm{d} + IR_\\mathrm{s}",
+          "note": "ideality factor n (the collection takes n = 2) and a series resistance; the script names both effects (p. 137)",
+          "ref": "EB part 1, p. 3"
+        },
+        {
+          "eq": "UB* ≈ ε Emax²/(2 e N0)",
+          "tex": "U_\\mathrm{B}^* \\approx \\frac{\\varepsilon E_\\mathrm{max}^2}{2eN_0}",
+          "note": "breakdown, marked only",
+          "ref": "HL (5.3.22), p. 140"
+        }
       ],
       "practice": [
-        { "question": "Exercise 1.6: a 1.5 V source drives a diode through 1 Ω, and 0.7 V falls across the diode. With n = 2 and UT = 25 mV, what is its saturation current Is?",
-          "answer": 6.65e-7, "unit": "A", "tolerance": 0.02,
-          "compute": { "law": "saturationFromPoint", "I": 0.8, "U": 0.7, "n": 2, "UT": 0.025 },
+        {
+          "question": "Exercise 1.6: a 1.5 V source drives a diode through 1 Ω, and 0.7 V falls across the diode. With n = 2 and UT = 25 mV, what is its saturation current Is?",
+          "answer": 6.65e-7,
+          "unit": "A",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "saturationFromPoint",
+            "I": 0.8,
+            "U": 0.7,
+            "n": 2,
+            "UT": 0.025
+          },
           "solution": "I = (1.5 V − 0.7 V)/1 Ω = 0.8 A. Is = I/(e^(U/(n UT)) − 1) = 0.8 A / (e^14 − 1) = 0.8 A / 1.20·10⁶ = 0.665 µA.",
-          "source": "Worked by hand from Hobler (2009), exercise 1.6 c, p. 6, with its diode data on p. 3; agrees with the collection's solutions, p. 8 (665 nA)" },
-        { "question": "With the collection's n = 2 and UT = 25 mV, by how much must the voltage rise for the forward current to grow tenfold?",
-          "answer": 0.115, "unit": "V", "tolerance": 0.01,
-          "compute": { "law": "decade", "n": 2, "UT": 0.025 },
+          "source": "Worked by hand from Hobler (2009), exercise 1.6 c, p. 6, with its diode data on p. 3; agrees with the collection's solutions, p. 8 (665 nA)"
+        },
+        {
+          "question": "With the collection's n = 2 and UT = 25 mV, by how much must the voltage rise for the forward current to grow tenfold?",
+          "answer": 0.115,
+          "unit": "V",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "decade",
+            "n": 2,
+            "UT": 0.025
+          },
           "solution": "I ∝ e^(U/(n UT)), so ΔU = n UT ln 10 = 2 × 25 mV × 2.303 = 115 mV a decade; the ideal diode (n = 1) needs about 60 mV.",
-          "source": "Worked by hand from Strasser (2015), p. 137, and Hobler (2009), p. 3" }
+          "source": "Worked by hand from Strasser (2015), p. 137, and Hobler (2009), p. 3"
+        }
       ]
     },
     {
@@ -257,24 +712,72 @@
       "lawTex": "I_\\mathrm{C} = I_\\mathrm{s}\\big(\\mathrm{e}^{U_\\mathrm{BE}/U_\\mathrm{T}} - \\mathrm{e}^{U_\\mathrm{BC}/U_\\mathrm{T}}\\big), \\qquad B = \\frac{I_\\mathrm{C}}{I_\\mathrm{B}}",
       "lecture": "Strasser (2015), section 6.1, pp. 161–168; Hobler (2009), part 2, p. 17",
       "equations": [
-        { "eq": "IC = e Dn np A/W", "tex": "I_\\mathrm{C} = eD_\\mathrm{n}\\Big|\\frac{\\partial n}{\\partial x}\\Big|A = \\frac{eD_\\mathrm{n}n_\\mathrm{p}}{W}A", "note": "diffusion across a thin base of width W", "ref": "HL (6.1.1), p. 161" },
-        { "eq": "IC = IT = Is exp(UBE/UT)", "tex": "I_\\mathrm{C} = I_\\mathrm{T} = I_\\mathrm{s}\\exp\\frac{U_\\mathrm{BE}}{U_\\mathrm{T}}", "note": "the transfer current, active region", "ref": "HL (6.1.2), p. 162" },
-        { "eq": "B = IC/IB", "tex": "B = \\frac{I_\\mathrm{C}}{I_\\mathrm{B}}", "note": "the current gain", "ref": "HL (6.1.3), p. 162" },
-        { "eq": "IC = Is (exp(UBE/UT) − exp(UBC/UT))", "tex": "I_\\mathrm{C} = I_\\mathrm{s}\\Big(\\exp\\frac{U_\\mathrm{BE}}{U_\\mathrm{T}} - \\exp\\frac{U_\\mathrm{BC}}{U_\\mathrm{T}}\\Big)", "note": "for small and medium currents", "ref": "HL (6.1.4), p. 164" },
-        { "eq": "gm = ∂IC/∂UBE = IC/UT", "tex": "g_\\mathrm{m} = \\frac{\\partial I_\\mathrm{C}}{\\partial U_\\mathrm{BE}} = \\frac{I_\\mathrm{C}}{U_\\mathrm{T}}", "note": "the transconductance, from (6.1.2)", "ref": "" },
-        { "eq": "vu = −gm RC", "tex": "v_\\mathrm{u} = -g_\\mathrm{m}R_\\mathrm{C}", "note": "the common-emitter stage's small-signal gain", "ref": "EB 2.1, solutions p. 12" }
+        {
+          "eq": "IC = e Dn np A/W",
+          "tex": "I_\\mathrm{C} = eD_\\mathrm{n}\\Big|\\frac{\\partial n}{\\partial x}\\Big|A = \\frac{eD_\\mathrm{n}n_\\mathrm{p}}{W}A",
+          "note": "diffusion across a thin base of width W",
+          "ref": "HL (6.1.1), p. 161"
+        },
+        {
+          "eq": "IC = IT = Is exp(UBE/UT)",
+          "tex": "I_\\mathrm{C} = I_\\mathrm{T} = I_\\mathrm{s}\\exp\\frac{U_\\mathrm{BE}}{U_\\mathrm{T}}",
+          "note": "the transfer current, active region",
+          "ref": "HL (6.1.2), p. 162"
+        },
+        {
+          "eq": "B = IC/IB",
+          "tex": "B = \\frac{I_\\mathrm{C}}{I_\\mathrm{B}}",
+          "note": "the current gain",
+          "ref": "HL (6.1.3), p. 162"
+        },
+        {
+          "eq": "IC = Is (exp(UBE/UT) − exp(UBC/UT))",
+          "tex": "I_\\mathrm{C} = I_\\mathrm{s}\\Big(\\exp\\frac{U_\\mathrm{BE}}{U_\\mathrm{T}} - \\exp\\frac{U_\\mathrm{BC}}{U_\\mathrm{T}}\\Big)",
+          "note": "for small and medium currents",
+          "ref": "HL (6.1.4), p. 164"
+        },
+        {
+          "eq": "gm = ∂IC/∂UBE = IC/UT",
+          "tex": "g_\\mathrm{m} = \\frac{\\partial I_\\mathrm{C}}{\\partial U_\\mathrm{BE}} = \\frac{I_\\mathrm{C}}{U_\\mathrm{T}}",
+          "note": "the transconductance, from (6.1.2)",
+          "ref": ""
+        },
+        {
+          "eq": "vu = −gm RC",
+          "tex": "v_\\mathrm{u} = -g_\\mathrm{m}R_\\mathrm{C}",
+          "note": "the common-emitter stage's small-signal gain",
+          "ref": "EB 2.1, solutions p. 12"
+        }
       ],
       "practice": [
-        { "question": "Exercise 2.1: a common-emitter stage on U0 = 5 V should carry IC0 = 10 mA with its output resting at Ua0 = 3 V. What collector resistor RC does it need?",
-          "answer": 200, "unit": "Ω", "tolerance": 0.01,
-          "compute": { "law": "collectorResistor", "U0": 5, "Ua0": 3, "IC": 0.01 },
+        {
+          "question": "Exercise 2.1: a common-emitter stage on U0 = 5 V should carry IC0 = 10 mA with its output resting at Ua0 = 3 V. What collector resistor RC does it need?",
+          "answer": 200,
+          "unit": "Ω",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "collectorResistor",
+            "U0": 5,
+            "Ua0": 3,
+            "IC": 0.01
+          },
           "solution": "RC = (U0 − Ua0)/IC0 = 2 V / 10 mA = 200 Ω.",
-          "source": "Hobler (2009), exercise 2.1 a, p. 17; agrees with the course's worked solutions (Lösungswege, p. 12)" },
-        { "question": "What is that stage's small-signal voltage gain vu, with UT = 25 mV?",
-          "answer": -80, "unit": "", "tolerance": 0.01,
-          "compute": { "law": "gain", "U0": 5, "Ua0": 3, "UT": 0.025 },
+          "source": "Hobler (2009), exercise 2.1 a, p. 17; agrees with the course's worked solutions (Lösungswege, p. 12)"
+        },
+        {
+          "question": "What is that stage's small-signal voltage gain vu, with UT = 25 mV?",
+          "answer": -80,
+          "unit": "",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "gain",
+            "U0": 5,
+            "Ua0": 3,
+            "UT": 0.025
+          },
           "solution": "gm = IC0/UT = 10 mA / 25 mV = 0.4 S; vu = −gm RC = −0.4 S × 200 Ω = −80.",
-          "source": "Hobler (2009), exercise 2.1 b, p. 17; agrees with the course's worked solutions (Lösungswege, p. 12)" }
+          "source": "Hobler (2009), exercise 2.1 b, p. 17; agrees with the course's worked solutions (Lösungswege, p. 12)"
+        }
       ]
     },
     {
@@ -285,24 +788,73 @@
       "lawTex": "I_\\mathrm{D} = \\beta\\Big((U_\\mathrm{GS} - U_\\mathrm{t})U_\\mathrm{DS} - \\frac{U_\\mathrm{DS}^2}{2}\\Big), \\quad \\text{then} \\quad I_\\mathrm{D} = \\frac{\\beta}{2}(U_\\mathrm{GS} - U_\\mathrm{t})^2",
       "lecture": "Strasser (2015), sections 6.2.2–6.2.3, pp. 174–188; Hobler (2009), part 3, pp. 47–48",
       "equations": [
-        { "eq": "ΦF = (kT/e) ln(NA/ni)", "tex": "\\Phi_\\mathrm{F} = \\frac{kT}{e}\\ln\\frac{N_\\mathrm{A}}{n_\\mathrm{i}}", "note": "the Fermi potential of the substrate; the script prints kBT/(q ln(NA/ni)), a misprint", "ref": "HL §6.2.2, p. 174" },
-        { "eq": "Ut = ΦMS − Qf/Cox − QB/Cox + 2ΦF", "tex": "U_\\mathrm{t} = \\Phi_\\mathrm{MS} - \\frac{Q_\\mathrm{f}}{C_\\mathrm{ox}} - \\frac{Q_\\mathrm{B}}{C_\\mathrm{ox}} + 2\\Phi_\\mathrm{F}", "note": "the threshold: work function, oxide charge, bulk charge, band bending", "ref": "HL §6.2.3, p. 183" },
-        { "eq": "QB = −√(2 εSi e NA (2ΦF + USB)), Cox = εox/dox", "tex": "Q_\\mathrm{B} = -\\sqrt{2\\varepsilon_\\mathrm{Si}eN_\\mathrm{A}(2\\Phi_\\mathrm{F} + U_\\mathrm{SB})}, \\qquad C_\\mathrm{ox} = \\frac{\\varepsilon_\\mathrm{ox}}{d_\\mathrm{ox}}", "note": "the bulk charge, with the substrate voltage; negative, as p. 183 says (p. 184 prints its magnitude)", "ref": "HL §6.2.3, p. 184" },
-        { "eq": "−QK = Cox (UGS − Ut)", "tex": "-Q_\\mathrm{K} = C_\\mathrm{ox}(U_\\mathrm{GS} - U_\\mathrm{t})", "note": "the channel charge", "ref": "HL (6.2.15), p. 185" },
-        { "eq": "ID = β((UGS − Ut)UDS − ½UDS²) for UDS ≤ UGS − Ut; ID = β/2 (UGS − Ut)² beyond", "tex": "I_\\mathrm{D} = \\beta\\Big((U_\\mathrm{GS} - U_\\mathrm{t})U_\\mathrm{DS} - \\tfrac{1}{2}U_\\mathrm{DS}^2\\Big) \\ \\text{for } U_\\mathrm{DS} \\le U_\\mathrm{GS} - U_\\mathrm{t}, \\qquad I_\\mathrm{D} = \\frac{\\beta}{2}(U_\\mathrm{GS} - U_\\mathrm{t})^2 \\ \\text{beyond}, \\qquad \\beta = \\frac{\\mu C_\\mathrm{ox}W}{L}", "note": "the output characteristics, β = µ Cox W/L", "ref": "HL (6.2.19), (6.2.22), pp. 185, 187" },
-        { "eq": "gm = β|UGS − Ut| = √(2β|ID|)", "tex": "g_\\mathrm{m} = \\beta\\,|U_\\mathrm{GS} - U_\\mathrm{t}| = \\sqrt{2\\beta|I_\\mathrm{D}|}", "note": "the transconductance in the current-source region", "ref": "HL §6.2.3, p. 188" }
+        {
+          "eq": "ΦF = (kT/e) ln(NA/ni)",
+          "tex": "\\Phi_\\mathrm{F} = \\frac{kT}{e}\\ln\\frac{N_\\mathrm{A}}{n_\\mathrm{i}}",
+          "note": "the Fermi potential of the substrate; the script prints kBT/(q ln(NA/ni)), a misprint",
+          "ref": "HL §6.2.2, p. 174"
+        },
+        {
+          "eq": "Ut = ΦMS − Qf/Cox − QB/Cox + 2ΦF",
+          "tex": "U_\\mathrm{t} = \\Phi_\\mathrm{MS} - \\frac{Q_\\mathrm{f}}{C_\\mathrm{ox}} - \\frac{Q_\\mathrm{B}}{C_\\mathrm{ox}} + 2\\Phi_\\mathrm{F}",
+          "note": "the threshold: work function, oxide charge, bulk charge, band bending",
+          "ref": "HL §6.2.3, p. 183"
+        },
+        {
+          "eq": "QB = −√(2 εSi e NA (2ΦF + USB)), Cox = εox/dox",
+          "tex": "Q_\\mathrm{B} = -\\sqrt{2\\varepsilon_\\mathrm{Si}eN_\\mathrm{A}(2\\Phi_\\mathrm{F} + U_\\mathrm{SB})}, \\qquad C_\\mathrm{ox} = \\frac{\\varepsilon_\\mathrm{ox}}{d_\\mathrm{ox}}",
+          "note": "the bulk charge, with the substrate voltage; negative, as p. 183 says (p. 184 prints its magnitude)",
+          "ref": "HL §6.2.3, p. 184"
+        },
+        {
+          "eq": "−QK = Cox (UGS − Ut)",
+          "tex": "-Q_\\mathrm{K} = C_\\mathrm{ox}(U_\\mathrm{GS} - U_\\mathrm{t})",
+          "note": "the channel charge",
+          "ref": "HL (6.2.15), p. 185"
+        },
+        {
+          "eq": "ID = β((UGS − Ut)UDS − ½UDS²) for UDS ≤ UGS − Ut; ID = β/2 (UGS − Ut)² beyond",
+          "tex": "I_\\mathrm{D} = \\beta\\Big((U_\\mathrm{GS} - U_\\mathrm{t})U_\\mathrm{DS} - \\tfrac{1}{2}U_\\mathrm{DS}^2\\Big) \\ \\text{for } U_\\mathrm{DS} \\le U_\\mathrm{GS} - U_\\mathrm{t}, \\qquad I_\\mathrm{D} = \\frac{\\beta}{2}(U_\\mathrm{GS} - U_\\mathrm{t})^2 \\ \\text{beyond}, \\qquad \\beta = \\frac{\\mu C_\\mathrm{ox}W}{L}",
+          "note": "the output characteristics, β = µ Cox W/L",
+          "ref": "HL (6.2.19), (6.2.22), pp. 185, 187"
+        },
+        {
+          "eq": "gm = β|UGS − Ut| = √(2β|ID|)",
+          "tex": "g_\\mathrm{m} = \\beta\\,|U_\\mathrm{GS} - U_\\mathrm{t}| = \\sqrt{2\\beta|I_\\mathrm{D}|}",
+          "note": "the transconductance in the current-source region",
+          "ref": "HL §6.2.3, p. 188"
+        }
       ],
       "practice": [
-        { "question": "A source follower: the gate rests at Ue0 = 4 V and the n-MOS (Ut = 1 V, β = 2.5 mA/V²) carries 1 mA in its current-source region. What is the output (source) voltage Ua0?",
-          "answer": 2.11, "unit": "V", "tolerance": 0.01,
-          "compute": { "law": "sourceFollower", "Ue0": 4, "Ut": 1, "ID": 1e-3, "beta": 2.5e-3 },
+        {
+          "question": "A source follower: the gate rests at Ue0 = 4 V and the n-MOS (Ut = 1 V, β = 2.5 mA/V²) carries 1 mA in its current-source region. What is the output (source) voltage Ua0?",
+          "answer": 2.11,
+          "unit": "V",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "sourceFollower",
+            "Ue0": 4,
+            "Ut": 1,
+            "ID": 0.001,
+            "beta": 0.0025
+          },
           "solution": "ID = β/2 (UGS − Ut)², so UGS = Ut + √(2ID/β) = 1 V + √0.8 V = 1.89 V; Ua0 = Ue0 − UGS = 2.11 V.",
-          "source": "Elektronische Bauelemente, Beispiel 5.1 (source follower), as in the course's worked solutions (Lösungswege, p. 47)" },
-        { "question": "Exercise 3.3: a self-conducting n-MOS (Ut = −3 V, β = 2 mA/V²) has its gate and source at 0 V and its drain through RD to U0 = 12 V. Which RD puts it exactly at the edge of the ohmic region?",
-          "answer": 1000, "unit": "Ω", "tolerance": 0.01,
-          "compute": { "law": "edgeOfOhmic", "U0": 12, "Ut": -3, "beta": 2e-3 },
+          "source": "Elektronische Bauelemente, Beispiel 5.1 (source follower), as in the course's worked solutions (Lösungswege, p. 47)"
+        },
+        {
+          "question": "Exercise 3.3: a self-conducting n-MOS (Ut = −3 V, β = 2 mA/V²) has its gate and source at 0 V and its drain through RD to U0 = 12 V. Which RD puts it exactly at the edge of the ohmic region?",
+          "answer": 1000,
+          "unit": "Ω",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "edgeOfOhmic",
+            "U0": 12,
+            "Ut": -3,
+            "beta": 0.002
+          },
           "solution": "UGS = 0, so ID = β/2 (0 − Ut)² = 1 mA/V² × 9 V² = 9 mA. The edge is UDS = UGS − Ut = 3 V, so RD = (12 V − 3 V)/9 mA = 1 kΩ.",
-          "source": "Worked by hand from Hobler (2009), exercise 3.3 a, p. 48; agrees with the collection's solutions, p. 56 (1 kΩ)" }
+          "source": "Worked by hand from Hobler (2009), exercise 3.3 a, p. 48; agrees with the collection's solutions, p. 56 (1 kΩ)"
+        }
       ]
     },
     {
@@ -313,17 +865,47 @@
       "lawTex": "A = -\\frac{SR_\\mathrm{C}}{1 + SR_\\mathrm{E}}, \\qquad S = \\frac{I_\\mathrm{C}}{U_\\mathrm{T}}",
       "lecture": "Zimmermann (2010), section 1.1.1, pp. 1–2",
       "equations": [
-        { "eq": "A = ua/ue ≈ −S (RC ∥ rCE) ≈ −S RC", "tex": "A = \\frac{u_\\mathrm{a}}{u_\\mathrm{e}} \\approx -S(R_\\mathrm{C} \\parallel r_\\mathrm{CE}) \\approx -SR_\\mathrm{C}", "note": "without emitter resistor", "ref": "ST (1.1), p. 1" },
-        { "eq": "A = −S RC/(1 + S RE) ≈ −RC/RE for S RE ≫ 1", "tex": "A = -\\frac{SR_\\mathrm{C}}{1 + SR_\\mathrm{E}} \\approx -\\frac{R_\\mathrm{C}}{R_\\mathrm{E}} \\quad \\text{for } SR_\\mathrm{E} \\gg 1", "note": "with current feedback", "ref": "ST (1.4), p. 2" },
-        { "eq": "S = IC/UT", "tex": "S = \\frac{I_\\mathrm{C}}{U_\\mathrm{T}}", "note": "the transconductance", "ref": "ST p. 7, below (1.19)" },
-        { "eq": "ue = UT ln(IC/Is) + IC RE, ua = U0 − IC RC", "tex": "u_\\mathrm{e} = U_\\mathrm{T}\\ln\\frac{I_\\mathrm{C}}{I_\\mathrm{s}} + I_\\mathrm{C}R_\\mathrm{E}, \\qquad u_\\mathrm{a} = U_0 - I_\\mathrm{C}R_\\mathrm{C}", "note": "the large-signal transfer, from HL (6.1.2)", "ref": "" }
+        {
+          "eq": "A = ua/ue ≈ −S (RC ∥ rCE) ≈ −S RC",
+          "tex": "A = \\frac{u_\\mathrm{a}}{u_\\mathrm{e}} \\approx -S(R_\\mathrm{C} \\parallel r_\\mathrm{CE}) \\approx -SR_\\mathrm{C}",
+          "note": "without emitter resistor",
+          "ref": "ST (1.1), p. 1"
+        },
+        {
+          "eq": "A = −S RC/(1 + S RE) ≈ −RC/RE for S RE ≫ 1",
+          "tex": "A = -\\frac{SR_\\mathrm{C}}{1 + SR_\\mathrm{E}} \\approx -\\frac{R_\\mathrm{C}}{R_\\mathrm{E}} \\quad \\text{for } SR_\\mathrm{E} \\gg 1",
+          "note": "with current feedback",
+          "ref": "ST (1.4), p. 2"
+        },
+        {
+          "eq": "S = IC/UT",
+          "tex": "S = \\frac{I_\\mathrm{C}}{U_\\mathrm{T}}",
+          "note": "the transconductance",
+          "ref": "ST p. 7, below (1.19)"
+        },
+        {
+          "eq": "ue = UT ln(IC/Is) + IC RE, ua = U0 − IC RC",
+          "tex": "u_\\mathrm{e} = U_\\mathrm{T}\\ln\\frac{I_\\mathrm{C}}{I_\\mathrm{s}} + I_\\mathrm{C}R_\\mathrm{E}, \\qquad u_\\mathrm{a} = U_0 - I_\\mathrm{C}R_\\mathrm{C}",
+          "note": "the large-signal transfer, from HL (6.1.2)",
+          "ref": ""
+        }
       ],
       "practice": [
-        { "question": "A common-emitter stage carries IC = 1 mA, with RC = 5 kΩ and RE = 1 kΩ. With UT = 25 mV, what is its small-signal gain?",
-          "answer": -4.88, "unit": "", "tolerance": 0.01,
-          "compute": { "law": "ceGain", "IC": 1e-3, "RC": 5e3, "RE": 1e3, "UT": 0.025 },
+        {
+          "question": "A common-emitter stage carries IC = 1 mA, with RC = 5 kΩ and RE = 1 kΩ. With UT = 25 mV, what is its small-signal gain?",
+          "answer": -4.88,
+          "unit": "",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "ceGain",
+            "IC": 0.001,
+            "RC": 5000,
+            "RE": 1000,
+            "UT": 0.025
+          },
           "solution": "S = IC/UT = 40 mS, S RE = 40, so A = −S RC/(1 + S RE) = −200/41 = −4.88; the approximation −RC/RE gives −5.",
-          "source": "Worked by hand from Zimmermann (2010), (1.4)" }
+          "source": "Worked by hand from Zimmermann (2010), (1.4)"
+        }
       ]
     },
     {
@@ -334,17 +916,48 @@
       "lawTex": "r_\\mathrm{a} = r_\\mathrm{CE}\\Big(1 + \\frac{\\beta R_\\mathrm{E}}{R_\\mathrm{E} + r_\\mathrm{BE}}\\Big), \\qquad r_\\mathrm{CE} = \\frac{U_\\mathrm{A}}{I_\\mathrm{a}}",
       "lecture": "Zimmermann (2010), sections 1.2.1–1.2.2, pp. 4–7",
       "equations": [
-        { "eq": "ra = UA/Ia", "tex": "r_\\mathrm{a} = \\frac{U_\\mathrm{A}}{I_\\mathrm{a}}", "note": "the plain transistor, by its Early voltage", "ref": "ST (1.13), p. 5" },
-        { "eq": "ra ≈ rCE (1 + S RE) for RE ≪ rBE; β rCE for RE ≫ rBE", "tex": "r_\\mathrm{a} \\approx \\begin{cases} r_\\mathrm{CE}(1 + SR_\\mathrm{E}) & \\text{for } R_\\mathrm{E} \\ll r_\\mathrm{BE} \\\\ \\beta r_\\mathrm{CE} & \\text{for } R_\\mathrm{E} \\gg r_\\mathrm{BE} \\end{cases}", "note": "with emitter feedback", "ref": "ST (1.19), p. 7" },
-        { "eq": "rBE = β/S = β UT/Ia", "tex": "r_\\mathrm{BE} = \\frac{\\beta}{S} = \\frac{\\beta U_\\mathrm{T}}{I_\\mathrm{a}}", "note": "the base–emitter resistance", "ref": "ST (1.18), p. 7; S = Ia/UT below (1.19)" },
-        { "eq": "ra = rCE (1 + β RE/(RE + rBE))", "tex": "r_\\mathrm{a} = r_\\mathrm{CE}\\Big(1 + \\frac{\\beta R_\\mathrm{E}}{R_\\mathrm{E} + r_\\mathrm{BE}}\\Big)", "note": "the small-signal circuit solved; its two limits are (1.19)", "ref": "" }
+        {
+          "eq": "ra = UA/Ia",
+          "tex": "r_\\mathrm{a} = \\frac{U_\\mathrm{A}}{I_\\mathrm{a}}",
+          "note": "the plain transistor, by its Early voltage",
+          "ref": "ST (1.13), p. 5"
+        },
+        {
+          "eq": "ra ≈ rCE (1 + S RE) for RE ≪ rBE; β rCE for RE ≫ rBE",
+          "tex": "r_\\mathrm{a} \\approx \\begin{cases} r_\\mathrm{CE}(1 + SR_\\mathrm{E}) & \\text{for } R_\\mathrm{E} \\ll r_\\mathrm{BE} \\\\ \\beta r_\\mathrm{CE} & \\text{for } R_\\mathrm{E} \\gg r_\\mathrm{BE} \\end{cases}",
+          "note": "with emitter feedback",
+          "ref": "ST (1.19), p. 7"
+        },
+        {
+          "eq": "rBE = β/S = β UT/Ia",
+          "tex": "r_\\mathrm{BE} = \\frac{\\beta}{S} = \\frac{\\beta U_\\mathrm{T}}{I_\\mathrm{a}}",
+          "note": "the base–emitter resistance",
+          "ref": "ST (1.18), p. 7; S = Ia/UT below (1.19)"
+        },
+        {
+          "eq": "ra = rCE (1 + β RE/(RE + rBE))",
+          "tex": "r_\\mathrm{a} = r_\\mathrm{CE}\\Big(1 + \\frac{\\beta R_\\mathrm{E}}{R_\\mathrm{E} + r_\\mathrm{BE}}\\Big)",
+          "note": "the small-signal circuit solved; its two limits are (1.19)",
+          "ref": ""
+        }
       ],
       "practice": [
-        { "question": "A current source delivers 1 mA through a transistor with UA = 100 V and β = 100, with RE = 100 kΩ, far above rBE. What is its output resistance? (UT = 25 mV)",
-          "answer": 9.86e6, "unit": "Ω", "tolerance": 0.02,
-          "compute": { "law": "sourceR", "Ia": 1e-3, "UA": 100, "beta": 100, "RE": 1e5, "UT": 0.025 },
+        {
+          "question": "A current source delivers 1 mA through a transistor with UA = 100 V and β = 100, with RE = 100 kΩ, far above rBE. What is its output resistance? (UT = 25 mV)",
+          "answer": 9860000,
+          "unit": "Ω",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "sourceR",
+            "Ia": 0.001,
+            "UA": 100,
+            "beta": 100,
+            "RE": 100000,
+            "UT": 0.025
+          },
           "solution": "rCE = UA/Ia = 100 kΩ, rBE = β UT/Ia = 2.5 kΩ; ra = rCE (1 + β RE/(RE + rBE)) = 100 kΩ × (1 + 100 × 0.976) = 9.86 MΩ, close to the limit β rCE = 10 MΩ of (1.19).",
-          "source": "Worked by hand from Zimmermann (2010), (1.13) and (1.19)" }
+          "source": "Worked by hand from Zimmermann (2010), (1.13) and (1.19)"
+        }
       ]
     },
     {
@@ -355,24 +968,70 @@
       "lawTex": "P_\\mathrm{L} = \\frac{\\hat{U}_\\mathrm{a}^2}{2R_\\mathrm{L}}, \\qquad P_\\mathrm{B} = \\frac{2U_\\mathrm{B}\\hat{U}_\\mathrm{a}}{\\pi R_\\mathrm{L}}, \\qquad \\eta = \\frac{\\pi}{4}\\frac{\\hat{U}_\\mathrm{a}}{U_\\mathrm{B}}",
       "lecture": "Zimmermann (2010), section 2.2, pp. 16–25; Schneider & Zimmermann (2005), example 1",
       "equations": [
-        { "eq": "η = PL/PB = 1/16 = 6.25 %", "tex": "\\eta = \\frac{P_\\mathrm{L}}{P_\\mathrm{B}} = \\frac{1}{16} = 6.25\\,\\%", "note": "class A emitter follower, RL = RE, swing to −UB/2", "ref": "ST (2.16), p. 22" },
-        { "eq": "PL = Ûa²/(2 RL)", "tex": "P_\\mathrm{L} = \\frac{\\hat{U}_\\mathrm{a}^2}{2R_\\mathrm{L}}", "note": "load power of a sine", "ref": "ST (2.17), p. 23" },
-        { "eq": "PB = 2 UB Ûa/(π RL)", "tex": "P_\\mathrm{B} = \\frac{2U_\\mathrm{B}\\hat{U}_\\mathrm{a}}{\\pi R_\\mathrm{L}}", "note": "drawn from both supplies", "ref": "ST (2.18), p. 23" },
-        { "eq": "η = PL/PB = (π/4) Ûa/UB, at most 78.5 %", "tex": "\\eta = \\frac{P_\\mathrm{L}}{P_\\mathrm{B}} = \\frac{\\pi}{4}\\frac{\\hat{U}_\\mathrm{a}}{U_\\mathrm{B}}, \\qquad \\eta_\\mathrm{max} = 78.5\\,\\%", "note": "class B efficiency", "ref": "ST (2.19), (2.20), p. 24" },
-        { "eq": "PT,max at Ûa = 2UB/π = 0.637 UB; PT,max = 0.32 PB,max", "tex": "P_\\mathrm{T,max} \\ \\text{at} \\ \\hat{U}_\\mathrm{a} = \\frac{2}{\\pi}U_\\mathrm{B} = 0.637\\,U_\\mathrm{B}, \\qquad P_\\mathrm{T,max} = 0.32\\,P_\\mathrm{B,max}", "note": "both transistors; the worst case for the heat sink", "ref": "ST (2.22), (2.23), p. 24" },
-        { "eq": "PT = UB²/(π² RL) ≈ 0.1 UB²/RL", "tex": "P_\\mathrm{T} = \\frac{U_\\mathrm{B}^2}{\\pi^2R_\\mathrm{L}} \\approx 0.1\\,\\frac{U_\\mathrm{B}^2}{R_\\mathrm{L}}", "note": "per transistor, at its worst amplitude", "ref": "ST (2.24), p. 24; Rechenbeispiele B1/3" }
+        {
+          "eq": "η = PL/PB = 1/16 = 6.25 %",
+          "tex": "\\eta = \\frac{P_\\mathrm{L}}{P_\\mathrm{B}} = \\frac{1}{16} = 6.25\\,\\%",
+          "note": "class A emitter follower, RL = RE, swing to −UB/2",
+          "ref": "ST (2.16), p. 22"
+        },
+        {
+          "eq": "PL = Ûa²/(2 RL)",
+          "tex": "P_\\mathrm{L} = \\frac{\\hat{U}_\\mathrm{a}^2}{2R_\\mathrm{L}}",
+          "note": "load power of a sine",
+          "ref": "ST (2.17), p. 23"
+        },
+        {
+          "eq": "PB = 2 UB Ûa/(π RL)",
+          "tex": "P_\\mathrm{B} = \\frac{2U_\\mathrm{B}\\hat{U}_\\mathrm{a}}{\\pi R_\\mathrm{L}}",
+          "note": "drawn from both supplies",
+          "ref": "ST (2.18), p. 23"
+        },
+        {
+          "eq": "η = PL/PB = (π/4) Ûa/UB, at most 78.5 %",
+          "tex": "\\eta = \\frac{P_\\mathrm{L}}{P_\\mathrm{B}} = \\frac{\\pi}{4}\\frac{\\hat{U}_\\mathrm{a}}{U_\\mathrm{B}}, \\qquad \\eta_\\mathrm{max} = 78.5\\,\\%",
+          "note": "class B efficiency",
+          "ref": "ST (2.19), (2.20), p. 24"
+        },
+        {
+          "eq": "PT,max at Ûa = 2UB/π = 0.637 UB; PT,max = 0.32 PB,max",
+          "tex": "P_\\mathrm{T,max} \\ \\text{at} \\ \\hat{U}_\\mathrm{a} = \\frac{2}{\\pi}U_\\mathrm{B} = 0.637\\,U_\\mathrm{B}, \\qquad P_\\mathrm{T,max} = 0.32\\,P_\\mathrm{B,max}",
+          "note": "both transistors; the worst case for the heat sink",
+          "ref": "ST (2.22), (2.23), p. 24"
+        },
+        {
+          "eq": "PT = UB²/(π² RL) ≈ 0.1 UB²/RL",
+          "tex": "P_\\mathrm{T} = \\frac{U_\\mathrm{B}^2}{\\pi^2R_\\mathrm{L}} \\approx 0.1\\,\\frac{U_\\mathrm{B}^2}{R_\\mathrm{L}}",
+          "note": "per transistor, at its worst amplitude",
+          "ref": "ST (2.24), p. 24; Rechenbeispiele B1/3"
+        }
       ],
       "practice": [
-        { "question": "A class B push-pull stage is to deliver 25 W of sine into 8 Ω. What output amplitude does that take?",
-          "answer": 20, "unit": "V", "tolerance": 0.01,
-          "compute": { "law": "classBAmplitude", "PL": 25, "RL": 8 },
+        {
+          "question": "A class B push-pull stage is to deliver 25 W of sine into 8 Ω. What output amplitude does that take?",
+          "answer": 20,
+          "unit": "V",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "classBAmplitude",
+            "PL": 25,
+            "RL": 8
+          },
           "solution": "PL = Ûa²/(2RL), so Ûa = √(2 × 25 W × 8 Ω) = 20 V; with 2–3 V left across the transistor the supply is UB = 22 V.",
-          "source": "Schneider & Zimmermann (2005), example 1, B1/1; agrees with its worked solution" },
-        { "question": "With UB = 22 V and RL = 8 Ω, what is the largest loss in one of the two transistors?",
-          "answer": 6.13, "unit": "W", "tolerance": 0.02,
-          "compute": { "law": "classBLossPerTransistor", "UB": 22, "RL": 8 },
+          "source": "Schneider & Zimmermann (2005), example 1, B1/1; agrees with its worked solution"
+        },
+        {
+          "question": "With UB = 22 V and RL = 8 Ω, what is the largest loss in one of the two transistors?",
+          "answer": 6.13,
+          "unit": "W",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "classBLossPerTransistor",
+            "UB": 22,
+            "RL": 8
+          },
           "solution": "The loss peaks at Ûa = 2UB/π; there PvT,max = UB²/(π² RL) = 484/(9.87 × 8) W = 6.13 W, about 6 W per transistor.",
-          "source": "Schneider & Zimmermann (2005), example 1, B1/3; agrees with its worked solution (about 6 W)" }
+          "source": "Schneider & Zimmermann (2005), example 1, B1/3; agrees with its worked solution (about 6 W)"
+        }
       ]
     },
     {
@@ -383,24 +1042,74 @@
       "lawTex": "v_\\mathrm{r} = \\frac{v_\\mathrm{g}}{1 + \\beta v_\\mathrm{g}}, \\qquad \\text{margin} = 180^\\circ + \\arg(\\beta v_\\mathrm{g}) \\ \\text{where } |\\beta v_\\mathrm{g}| = 1",
       "lecture": "Zimmermann (2010), section 4.1, pp. 69–77; Schneider & Zimmermann (2005), example 6",
       "equations": [
-        { "eq": "vg(ω) = vg0/(1 + jω/ωg)", "tex": "v_\\mathrm{g}(\\omega) = \\frac{v_\\mathrm{g0}}{1 + \\mathrm{j}\\omega/\\omega_\\mathrm{g}}", "note": "one pole; the lab adds a second", "ref": "ST (4.1), p. 69" },
-        { "eq": "vr = vg/(1 + β vg)", "tex": "v_\\mathrm{r} = \\frac{v_\\mathrm{g}}{1 + \\beta v_\\mathrm{g}}", "note": "the closed loop gain", "ref": "ST (4.4), p. 70" },
-        { "eq": "vs = β vg", "tex": "v_\\mathrm{s} = \\beta v_\\mathrm{g}", "note": "the loop gain", "ref": "ST (4.6), p. 71" },
-        { "eq": "vr0 ωr = vg0 ωg", "tex": "v_\\mathrm{r0}\\,\\omega_\\mathrm{r} = v_\\mathrm{g0}\\,\\omega_\\mathrm{G}", "note": "the gain-bandwidth product is kept", "ref": "ST (4.11), p. 72" },
-        { "eq": "phase margin ≥ 45°", "tex": "\\text{phase margin} \\ge 45^\\circ", "note": "for a usable amplifier", "ref": "ST §4.1, p. 76" },
-        { "eq": "vs = β vg0/((1 + jω/ω1)(1 + jω/ω2))", "tex": "v_\\mathrm{s} = \\frac{\\beta v_\\mathrm{g0}}{(1 + \\mathrm{j}\\omega/\\omega_1)(1 + \\mathrm{j}\\omega/\\omega_2)}", "note": "the lab's loop, two poles; its step solved in closed form, checked against a simulation", "ref": "Rechenbeispiele B6/4, p. 4" }
+        {
+          "eq": "vg(ω) = vg0/(1 + jω/ωg)",
+          "tex": "v_\\mathrm{g}(\\omega) = \\frac{v_\\mathrm{g0}}{1 + \\mathrm{j}\\omega/\\omega_\\mathrm{g}}",
+          "note": "one pole; the lab adds a second",
+          "ref": "ST (4.1), p. 69"
+        },
+        {
+          "eq": "vr = vg/(1 + β vg)",
+          "tex": "v_\\mathrm{r} = \\frac{v_\\mathrm{g}}{1 + \\beta v_\\mathrm{g}}",
+          "note": "the closed loop gain",
+          "ref": "ST (4.4), p. 70"
+        },
+        {
+          "eq": "vs = β vg",
+          "tex": "v_\\mathrm{s} = \\beta v_\\mathrm{g}",
+          "note": "the loop gain",
+          "ref": "ST (4.6), p. 71"
+        },
+        {
+          "eq": "vr0 ωr = vg0 ωg",
+          "tex": "v_\\mathrm{r0}\\,\\omega_\\mathrm{r} = v_\\mathrm{g0}\\,\\omega_\\mathrm{G}",
+          "note": "the gain-bandwidth product is kept",
+          "ref": "ST (4.11), p. 72"
+        },
+        {
+          "eq": "phase margin ≥ 45°",
+          "tex": "\\text{phase margin} \\ge 45^\\circ",
+          "note": "for a usable amplifier",
+          "ref": "ST §4.1, p. 76"
+        },
+        {
+          "eq": "vs = β vg0/((1 + jω/ω1)(1 + jω/ω2))",
+          "tex": "v_\\mathrm{s} = \\frac{\\beta v_\\mathrm{g0}}{(1 + \\mathrm{j}\\omega/\\omega_1)(1 + \\mathrm{j}\\omega/\\omega_2)}",
+          "note": "the lab's loop, two poles; its step solved in closed form, checked against a simulation",
+          "ref": "Rechenbeispiele B6/4, p. 4"
+        }
       ],
       "practice": [
-        { "question": "Example 6 b: a loop gain vs = 10⁴ × 0.1 / ((1 + jω/100 s⁻¹)(1 + jω/1111 s⁻¹)). At which angular frequency is |vs| = 1?",
-          "answer": 10530, "unit": "1/s", "tolerance": 0.01,
-          "compute": { "law": "crossover", "vg0": 1e4, "w1": 100, "w2": 1111.1, "beta": 0.1 },
+        {
+          "question": "Example 6 b: a loop gain vs = 10⁴ × 0.1 / ((1 + jω/100 s⁻¹)(1 + jω/1111 s⁻¹)). At which angular frequency is |vs| = 1?",
+          "answer": 10530,
+          "unit": "1/s",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "crossover",
+            "vg0": 10000,
+            "w1": 100,
+            "w2": 1111.1,
+            "beta": 0.1
+          },
           "solution": "1000 / √((1 + (ω/100)²)(1 + (ω/1111)²)) = 1 gives ω ≈ 10 500 s⁻¹.",
-          "source": "Schneider & Zimmermann (2005), example 6 c, B6/4; agrees with its worked solution (10 530 s⁻¹)" },
-        { "question": "What phase margin does that loop have?",
-          "answer": 6, "unit": "°", "tolerance": 0.15,
-          "compute": { "law": "phaseMargin", "vg0": 1e4, "w1": 100, "w2": 1111.1, "beta": 0.1 },
+          "source": "Schneider & Zimmermann (2005), example 6 c, B6/4; agrees with its worked solution (10 530 s⁻¹)"
+        },
+        {
+          "question": "What phase margin does that loop have?",
+          "answer": 6,
+          "unit": "°",
+          "tolerance": 0.15,
+          "compute": {
+            "law": "phaseMargin",
+            "vg0": 10000,
+            "w1": 100,
+            "w2": 1111.1,
+            "beta": 0.1
+          },
           "solution": "arg vs = −arctan(105) − arctan(9.5) ≈ −174°, so the margin is about 6°: the circuit rings strongly before it settles.",
-          "source": "Schneider & Zimmermann (2005), example 6 c, B6/4; agrees with its worked solution (about 6°)" }
+          "source": "Schneider & Zimmermann (2005), example 6 c, B6/4; agrees with its worked solution (about 6°)"
+        }
       ]
     },
     {
@@ -411,22 +1120,58 @@
       "lawTex": "f_\\mathrm{p} = \\frac{\\mathrm{SR}}{2\\pi\\hat{U}_\\mathrm{a}}",
       "lecture": "Zimmermann (2010), section 4.4, pp. 84–86",
       "equations": [
-        { "eq": "SR = dUa/dt max = I1max/Ck", "tex": "\\mathrm{SR} = \\frac{\\mathrm{d}U_\\mathrm{a}}{\\mathrm{d}t}\\Big|_\\mathrm{max} = \\frac{I_\\mathrm{1max}}{C_\\mathrm{k}} = \\frac{2I_0}{C_\\mathrm{k}} = \\frac{20\\,\\mu\\mathrm{A}}{30\\,\\mathrm{pF}} = 0.6\\,\\mathrm{V}/\\mu\\mathrm{s}", "note": "the compensation capacitor charged by the input stage's current; 0.6 V/µs for the 741", "ref": "ST §4.4, p. 85" },
-        { "eq": "dua/dt max = Ûa ω, at the zero crossing", "tex": "\\frac{\\mathrm{d}u_\\mathrm{a}}{\\mathrm{d}t}\\Big|_\\mathrm{max} = \\hat{U}_\\mathrm{a}\\,\\omega \\quad \\text{at the zero crossing}", "note": "a sine's steepest slope", "ref": "ST §4.4, p. 86" },
-        { "eq": "fp = SR/(2π Ûa)", "tex": "f_\\mathrm{p} = \\frac{\\mathrm{SR}}{2\\pi\\hat{U}_\\mathrm{a}}", "note": "the power bandwidth", "ref": "ST §4.4, p. 86" },
-        { "eq": "Ûa,max = SR/(2π f) for f > fp", "tex": "\\hat{U}_\\mathrm{a,max} = \\frac{\\mathrm{SR}}{2\\pi f} \\quad \\text{for } f > f_\\mathrm{p}", "note": "the largest clean amplitude", "ref": "ST §4.4, p. 86" }
+        {
+          "eq": "SR = dUa/dt max = I1max/Ck",
+          "tex": "\\mathrm{SR} = \\frac{\\mathrm{d}U_\\mathrm{a}}{\\mathrm{d}t}\\Big|_\\mathrm{max} = \\frac{I_\\mathrm{1max}}{C_\\mathrm{k}} = \\frac{2I_0}{C_\\mathrm{k}} = \\frac{20\\,\\mu\\mathrm{A}}{30\\,\\mathrm{pF}} = 0.6\\,\\mathrm{V}/\\mu\\mathrm{s}",
+          "note": "the compensation capacitor charged by the input stage's current; 0.6 V/µs for the 741",
+          "ref": "ST §4.4, p. 85"
+        },
+        {
+          "eq": "dua/dt max = Ûa ω, at the zero crossing",
+          "tex": "\\frac{\\mathrm{d}u_\\mathrm{a}}{\\mathrm{d}t}\\Big|_\\mathrm{max} = \\hat{U}_\\mathrm{a}\\,\\omega \\quad \\text{at the zero crossing}",
+          "note": "a sine's steepest slope",
+          "ref": "ST §4.4, p. 86"
+        },
+        {
+          "eq": "fp = SR/(2π Ûa)",
+          "tex": "f_\\mathrm{p} = \\frac{\\mathrm{SR}}{2\\pi\\hat{U}_\\mathrm{a}}",
+          "note": "the power bandwidth",
+          "ref": "ST §4.4, p. 86"
+        },
+        {
+          "eq": "Ûa,max = SR/(2π f) for f > fp",
+          "tex": "\\hat{U}_\\mathrm{a,max} = \\frac{\\mathrm{SR}}{2\\pi f} \\quad \\text{for } f > f_\\mathrm{p}",
+          "note": "the largest clean amplitude",
+          "ref": "ST §4.4, p. 86"
+        }
       ],
       "practice": [
-        { "question": "A 741 slews at 0.6 V/µs. Up to which frequency can it deliver an undistorted sine of 10 V amplitude?",
-          "answer": 9550, "unit": "Hz", "tolerance": 0.01,
-          "compute": { "law": "powerBandwidth", "SR": 0.6e6, "ua": 10 },
+        {
+          "question": "A 741 slews at 0.6 V/µs. Up to which frequency can it deliver an undistorted sine of 10 V amplitude?",
+          "answer": 9550,
+          "unit": "Hz",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "powerBandwidth",
+            "SR": 600000,
+            "ua": 10
+          },
           "solution": "fp = SR/(2π Ûa) = 0.6 V/µs / (2π × 10 V) = 9.5 kHz, which the script rounds to 10 kHz.",
-          "source": "Zimmermann (2010), section 4.4, p. 86, its worked example" },
-        { "question": "What amplitude can that op-amp still deliver undistorted at 100 kHz?",
-          "answer": 0.955, "unit": "V", "tolerance": 0.01,
-          "compute": { "law": "slewAmplitude", "SR": 0.6e6, "f": 1e5 },
+          "source": "Zimmermann (2010), section 4.4, p. 86, its worked example"
+        },
+        {
+          "question": "What amplitude can that op-amp still deliver undistorted at 100 kHz?",
+          "answer": 0.955,
+          "unit": "V",
+          "tolerance": 0.01,
+          "compute": {
+            "law": "slewAmplitude",
+            "SR": 600000,
+            "f": 100000
+          },
           "solution": "Ûa = SR/(2π f) = 0.6·10⁶ V/s / (2π × 10⁵ /s) = 0.95 V, which the script rounds to 1 V.",
-          "source": "Zimmermann (2010), section 4.4, p. 86, its worked example" }
+          "source": "Zimmermann (2010), section 4.4, p. 86, its worked example"
+        }
       ]
     },
     {
@@ -437,23 +1182,189 @@
       "lawTex": "\\overline{v^2} = 4k_\\mathrm{B}TR\\,\\Delta f, \\qquad \\overline{i^2} = 2qI\\,\\Delta f",
       "lecture": "Zimmermann (2010), sections 6.2–6.3, pp. 128–134",
       "equations": [
-        { "eq": "v² = 4 kB T R Δf", "tex": "\\overline{v^2} = 4k_\\mathrm{B}TR\\,\\Delta f", "note": "open-circuit thermal noise of a resistor", "ref": "ST (6.1), p. 128" },
-        { "eq": "i² = 4 kB T Δf / R", "tex": "\\overline{i^2} = 4k_\\mathrm{B}T\\,\\frac{1}{R}\\,\\Delta f", "note": "its short-circuit noise current", "ref": "ST (6.2), p. 128" },
-        { "eq": "kB T0 = 4·10⁻²¹ W/Hz at T0 = 290 K", "tex": "n_0 = k_\\mathrm{B}T_0 = 4\\cdot 10^{-21}\\,\\mathrm{W/Hz}, \\qquad T_0 = 290\\,\\mathrm{K}", "note": "the reference noise density", "ref": "ST §6.2, p. 130" },
-        { "eq": "i² = 2 q I Δf", "tex": "\\overline{i^2} = 2qI\\,\\Delta f", "note": "shot noise of a current", "ref": "ST (6.11), p. 132; σ = √(2qIΔf), (6.12), p. 133" },
-        { "eq": "2qI = 4kT/R where I R = 2kT/q", "tex": "2qI = \\frac{4kT}{R} \\quad \\text{where} \\quad IR = \\frac{2kT}{q}", "note": "where the two are equal; the script's example: 1 kΩ at 300 K matches the shot noise of 50 µA", "ref": "ST §6.2, p. 130" }
+        {
+          "eq": "v² = 4 kB T R Δf",
+          "tex": "\\overline{v^2} = 4k_\\mathrm{B}TR\\,\\Delta f",
+          "note": "open-circuit thermal noise of a resistor",
+          "ref": "ST (6.1), p. 128"
+        },
+        {
+          "eq": "i² = 4 kB T Δf / R",
+          "tex": "\\overline{i^2} = 4k_\\mathrm{B}T\\,\\frac{1}{R}\\,\\Delta f",
+          "note": "its short-circuit noise current",
+          "ref": "ST (6.2), p. 128"
+        },
+        {
+          "eq": "kB T0 = 4·10⁻²¹ W/Hz at T0 = 290 K",
+          "tex": "n_0 = k_\\mathrm{B}T_0 = 4\\cdot 10^{-21}\\,\\mathrm{W/Hz}, \\qquad T_0 = 290\\,\\mathrm{K}",
+          "note": "the reference noise density",
+          "ref": "ST §6.2, p. 130"
+        },
+        {
+          "eq": "i² = 2 q I Δf",
+          "tex": "\\overline{i^2} = 2qI\\,\\Delta f",
+          "note": "shot noise of a current",
+          "ref": "ST (6.11), p. 132; σ = √(2qIΔf), (6.12), p. 133"
+        },
+        {
+          "eq": "2qI = 4kT/R where I R = 2kT/q",
+          "tex": "2qI = \\frac{4kT}{R} \\quad \\text{where} \\quad IR = \\frac{2kT}{q}",
+          "note": "where the two are equal; the script's example: 1 kΩ at 300 K matches the shot noise of 50 µA",
+          "ref": "ST §6.2, p. 130"
+        }
       ],
       "practice": [
-        { "question": "A diode carries 1 mA. What is its shot-noise current (RMS) in a bandwidth of 1 MHz?",
-          "answer": 1.79e-8, "unit": "A", "tolerance": 0.02,
-          "compute": { "law": "shotNoise", "I": 1e-3, "B": 1e6 },
+        {
+          "question": "A diode carries 1 mA. What is its shot-noise current (RMS) in a bandwidth of 1 MHz?",
+          "answer": 1.79e-8,
+          "unit": "A",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "shotNoise",
+            "I": 0.001,
+            "B": 1000000
+          },
           "solution": "i² = 2 q I Δf = 2 × 1.6·10⁻¹⁹ C × 10⁻³ A × 10⁶ Hz = 3.2·10⁻¹⁶ A², so i = 1.8·10⁻⁸ A RMS.",
-          "source": "Zimmermann (2010), section 6.3, (6.12), p. 133, its worked example" },
-        { "question": "What is the thermal noise voltage (RMS) of a 1 kΩ resistor at 300 K in 10 kHz?",
-          "answer": 4.07e-7, "unit": "V", "tolerance": 0.02,
-          "compute": { "law": "thermalNoise", "R": 1e3, "T": 300, "B": 1e4 },
+          "source": "Zimmermann (2010), section 6.3, (6.12), p. 133, its worked example"
+        },
+        {
+          "question": "What is the thermal noise voltage (RMS) of a 1 kΩ resistor at 300 K in 10 kHz?",
+          "answer": 4.07e-7,
+          "unit": "V",
+          "tolerance": 0.02,
+          "compute": {
+            "law": "thermalNoise",
+            "R": 1000,
+            "T": 300,
+            "B": 10000
+          },
           "solution": "v = √(4 kT R Δf) = √(4 × 1.38·10⁻²³ × 300 × 10³ × 10⁴) V = 0.41 µV.",
-          "source": "Worked by hand from Zimmermann (2010), (6.1)" }
+          "source": "Worked by hand from Zimmermann (2010), (6.1)"
+        }
+      ]
+    },
+    {
+      "id": "amplifier",
+      "title": "A 25 W amplifier, from the supply to the heat sink",
+      "idea": "One amplifier, sized the way the worked example sizes it: the supply for 25 W into 8 Ω, the worst loss in each output transistor, the heat sink that keeps their junctions below 150 °C, and the class-AB bias that grows as the transistors heat up.",
+      "law": "Ûa = √(2 PL RL)    PvT,max = UB²/(π² RL) ≈ 0.1 UB²/RL    PT = (Tj − Tk)/(RthB + RthK)    IC0 = (UB0 − 2UBE)/(R1 + R2)",
+      "lawTex": "P_\\mathrm{vT,max} = \\frac{U_B^2}{\\pi^2 R_L} \\approx 0.1\\,\\frac{U_B^2}{R_L} \\qquad P_T = \\frac{T_j - T_k}{R_\\mathrm{thB} + R_\\mathrm{thK}}",
+      "lecture": "Zimmermann (2010), section 2.2, pp. 16–31; Schneider & Zimmermann (2005), Beispiel 1, B1/1–B1/6; Strasser (2015), section 6.1, p. 166",
+      "practice": [
+        {
+          "question": "A class-B stage drives 25 W into 8 Ω with UB = 22 V. Each BD243/BD244 loses at most 6 W; RthJC = 1.92 K/W, Tj,max = 150 °C. What may the case temperature be at most?",
+          "answer": 138.48,
+          "unit": "°C",
+          "tolerance": 0.001,
+          "compute": {
+            "law": "heatSinkCase",
+            "P": 6,
+            "Tj": 150,
+            "RthJC": 1.92,
+            "RthMount": 0.5,
+            "Tamb": 50
+          },
+          "solution": "ϑG,max = Tj,max − PTot·RthJC = 150 °C − 6 W · 1.92 K/W = 138.48 °C.",
+          "source": "Schneider & Zimmermann (2005), Beispiel 1, B1/4"
+        },
+        {
+          "question": "Each transistor sits on a mica washer of 0.5 K/W, both on one heat sink, in air at 50 °C. What thermal resistance may the heat sink have at most?",
+          "answer": 7.125,
+          "unit": "K/W",
+          "tolerance": 0.002,
+          "compute": {
+            "law": "heatSinkLimit",
+            "P": 6,
+            "Tj": 150,
+            "RthJC": 1.92,
+            "RthMount": 0.5,
+            "Tamb": 50
+          },
+          "solution": "ϑKB = 138.5 °C − 0.5 K/W · 6 W = 135.5 °C; the sink carries 12 W, so Rth,KB-U = (135.5 − 50) K/12 W = 7.125 K/W.",
+          "source": "Schneider & Zimmermann (2005), Beispiel 1, B1/5"
+        },
+        {
+          "question": "Two diodes give UB0 = 1.2 V between the bases, the hot transistors need 2UBE = 1.0 V, and R1 + R2 = 1 Ω. What quiescent current flows?",
+          "answer": 0.2,
+          "unit": "A",
+          "tolerance": 0.001,
+          "compute": {
+            "law": "abBias",
+            "UB0": 1.2,
+            "twoUBE": 1,
+            "R12": 1
+          },
+          "solution": "The 200 mV left over drive IC0 = 0.2 V/1 Ω = 200 mA, four times the 50 mA set cold.",
+          "source": "Zimmermann (2010), section 2.2, p. 30"
+        }
+      ],
+      "equations": [
+        {
+          "eq": "PL = Ûa²/(2 RL)",
+          "tex": "P_L = \\frac{\\hat{U}_a^2}{2R_L}",
+          "note": "Ûa = 20 V for 25 W into 8 Ω; UB = 22 V with 2 V to spare",
+          "ref": "ST (2.17), p. 23; Rechenbeispiele B1/1, p. 5"
+        },
+        {
+          "eq": "PB = 2 UB Ûa/(π RL)",
+          "tex": "P_B = \\frac{2U_B\\hat{U}_a}{\\pi R_L}",
+          "note": "",
+          "ref": "ST (2.18), p. 23"
+        },
+        {
+          "eq": "η = (π/4) Ûa/UB",
+          "tex": "\\eta = \\frac{\\pi}{4}\\frac{\\hat{U}_a}{U_B}",
+          "note": "at most 78.5 %",
+          "ref": "ST (2.19), (2.20), p. 24"
+        },
+        {
+          "eq": "PvT = (1/RL)(UB Ûa/π − Ûa²/4)",
+          "tex": "P_\\mathrm{vT} = \\frac{1}{R_L}\\left(\\frac{U_B\\hat{U}_a}{\\pi} - \\frac{\\hat{U}_a^2}{4}\\right)",
+          "note": "one transistor's loss",
+          "ref": "Rechenbeispiele B1/3, p. 7"
+        },
+        {
+          "eq": "PvT,max = UB²/(π² RL) ≈ 0.1 UB²/RL at Ûa = 2UB/π",
+          "tex": "P_\\mathrm{vT,max} = \\frac{U_B^2}{\\pi^2 R_L} \\approx 0.1\\,\\frac{U_B^2}{R_L}",
+          "note": "6 W for 22 V into 8 Ω",
+          "ref": "ST (2.24), p. 24; Rechenbeispiele B1/3, p. 7"
+        },
+        {
+          "eq": "PT = (Tj − Tk)/(RthB + RthK)",
+          "tex": "P_T = \\frac{T_j - T_k}{R_\\mathrm{thB} + R_\\mathrm{thK}}",
+          "note": "the thermal Ohm's law",
+          "ref": "ST (2.25), p. 27; Rechenbeispiele B1/5, p. 9"
+        },
+        {
+          "eq": "ϑG,max = Tj,max − PTot·RthJC",
+          "tex": "\\vartheta_\\mathrm{G,max} = T_\\mathrm{j,max} - P_\\mathrm{Tot}R_\\mathrm{thJC}",
+          "note": "138.48 °C",
+          "ref": "Rechenbeispiele B1/4, p. 8"
+        },
+        {
+          "eq": "Rth,KB-U = (ϑKB − ϑU)/(2 PT)",
+          "tex": "R_\\mathrm{th,KB\\text{-}U} = \\frac{\\vartheta_\\mathrm{KB} - \\vartheta_U}{2P_T}",
+          "note": "7.125 K/W",
+          "ref": "Rechenbeispiele B1/5, p. 9"
+        },
+        {
+          "eq": "IC0 = (UB0 − 2UBE)/(R1 + R2)",
+          "tex": "I_{C0} = \\frac{U_{B0} - 2U_\\mathrm{BE}}{R_1 + R_2}",
+          "note": "50 mA cold, 200 mA hot",
+          "ref": "ST section 2.2, p. 30"
+        },
+        {
+          "eq": "PL loss factor (RL/(RL + R1))²",
+          "tex": "\\left(\\frac{R_L}{R_L + R_1}\\right)^2",
+          "note": "the price of the emitter resistors",
+          "ref": "ST section 2.2, p. 30"
+        },
+        {
+          "eq": "dUBE/dT ≈ −2 mV/K at constant IC",
+          "tex": "\\frac{\\mathrm{d}U_\\mathrm{BE}}{\\mathrm{d}T} \\approx -2\\,\\mathrm{mV/K}",
+          "note": "between −1.7 and −2.4 mV/K; the cause of thermal runaway",
+          "ref": "HL section 6.1, Abb. 6.1.7, p. 166"
+        }
       ]
     }
   ]
