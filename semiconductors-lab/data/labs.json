@@ -1022,6 +1022,13 @@
           "tex": "P_\\mathrm{T} = \\frac{U_\\mathrm{B}^2}{\\pi^2R_\\mathrm{L}} \\approx 0.1\\,\\frac{U_\\mathrm{B}^2}{R_\\mathrm{L}}",
           "note": "per transistor, at its worst amplitude",
           "ref": "ST (2.24), p. 24; Rechenbeispiele B1/3"
+        },
+        {
+          "eq": "Is (e^((ue + Ub/2 − ua)/UT) − e^((ua − ue + Ub/2)/UT)) = ua/RL",
+          "tex": "I_s\\left(\\mathrm{e}^{(u_e + U_b/2 - u_a)/U_T} - \\mathrm{e}^{(u_a - u_e + U_b/2)/U_T}\\right) = \\frac{u_a}{R_L}",
+          "note": "the transfer curve: the npn's current less the pnp's flows into RL; Ub = 0 is class B",
+          "ref": "HL (6.1.2); ST p. 25",
+          "explore": true
         }
       ],
       "practice": [
@@ -1097,6 +1104,13 @@
           "note": "the lab's loop, two poles; its step solved in closed form, checked against a simulation",
           "ref": "Rechenbeispiele B6/4, p. 4",
           "explore": true
+        },
+        {
+          "eq": "vr = vg0 / (s²/(ω1ω2) + s(1/ω1 + 1/ω2) + 1 + β vg0)",
+          "tex": "v_r = \\frac{v_{g0}}{\\frac{s^2}{\\omega_1\\omega_2} + s\\left(\\frac{1}{\\omega_1} + \\frac{1}{\\omega_2}\\right) + 1 + \\beta v_{g0}}",
+          "note": "the closed loop (4.4) with two poles: the second-order system whose step response is plotted",
+          "ref": "ST (4.4), p. 70, with two poles",
+          "explore": true
         }
       ],
       "practice": [
@@ -1164,6 +1178,13 @@
           "tex": "\\hat{U}_\\mathrm{a,max} = \\frac{\\mathrm{SR}}{2\\pi f} \\quad \\text{for } f > f_\\mathrm{p}",
           "note": "the largest clean amplitude",
           "ref": "ST §4.4, p. 86"
+        },
+        {
+          "eq": "dua/dt = clip(2π fT (ue − ua), ±SR)",
+          "tex": "\\frac{\\mathrm{d}u_a}{\\mathrm{d}t} = \\operatorname{clip}\\left(2\\pi f_T\\,(u_e - u_a),\\ \\pm\\mathrm{SR}\\right)",
+          "note": "the lab's follower: its loop of bandwidth fT, its rate limited to SR",
+          "ref": "ST §4.4, p. 85",
+          "explore": true
         }
       ],
       "practice": [

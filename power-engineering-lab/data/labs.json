@@ -849,6 +849,13 @@
           "tex": "s = \\frac{n_\\mathrm{synch} - n}{n_\\mathrm{synch}}",
           "note": "slip of an induction machine",
           "ref": "Gawlik (2015), (4-95), p. 120"
+        },
+        {
+          "eq": "i_k = î_k cos(ωt − (k − 1)·120°)",
+          "tex": "i_k = \\hat{i}_k\\cos\\left(\\omega t - (k - 1)\\cdot 120^\\circ\\right)",
+          "note": "the three phase currents; 'swap' turns the sequence round",
+          "ref": "Gawlik (2015), (3-30), section 3.2",
+          "explore": true
         }
       ],
       "practice": [

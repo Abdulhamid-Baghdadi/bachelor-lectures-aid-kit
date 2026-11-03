@@ -36,3 +36,13 @@ test("the plotted curves the audit found missing are on Explore now", () => {
   shown("signals-systems-lab", "filters", /^\|Ha\(jω\)\|²/);
   shown("telecommunications-lab", "sync", /^Pe = ½ Q\(√\(2Eb\/N0\)\(cos φ − sin φ\)\)/);
 });
+
+test("the curves that had no equation at all now have one, with its source or marked derived", () => {
+  const need = { Electromagnetism: ["continuity", "line", "fading", "gauss", "monopole"], Automation: ["polezero", "lagrange", "sink", "fdm"],
+    "power-engineering-lab": ["rotatingfield"], "semiconductors-lab": ["poweramp", "opamploop", "slewrate"],
+    "telecommunications-lab": ["nyquist", "voicelink", "linecodes"], "signals-systems-lab": ["transform"] };
+  for (const [f, ids] of Object.entries(need)) for (const id of ids) {
+    const last = labs(f).find(l => l.id === id).equations.at(-1);
+    assert.ok(last.explore && last.tex, `${f}/${id}: its plotted equation is not on Explore`);
+  }
+});

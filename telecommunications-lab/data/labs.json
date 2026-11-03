@@ -295,6 +295,13 @@
           "tex": "\\text{AMI: } 0 \\mapsto 0, \\quad 1 \\mapsto +A \\text{ and } -A \\text{ alternately}",
           "note": "pseudo-ternary; a null at f = 0",
           "ref": "set 3, slides 58–59"
+        },
+        {
+          "eq": "F(f) = (T0/2) sinc(fT0/2) e^(−jπf(2t0 + T0/2)) per half-symbol; F1, F0 sum a code's two halves",
+          "tex": "F(f) = \\frac{T_0}{2}\\operatorname{sinc}\\left(\\frac{fT_0}{2}\\right)\\mathrm{e}^{-\\mathrm{j}\\pi f(2t_0 + T_0/2)}",
+          "note": "a half-symbol pulse starting at t0; F1 and F0 add each code's two half-symbols with their levels (AMI excepted)",
+          "ref": "derived for the codes of set 3, slides 51–58",
+          "explore": true
         }
       ],
       "practice": [
@@ -364,6 +371,13 @@
           "tex": "A_\\mathrm{V}: \\text{vertical eye opening}, \\qquad T_\\mathrm{h}: \\text{horizontal eye opening}",
           "note": "noise lowers A_V; ISI spreads the amplitudes at the decision instant; jitter moves the zero crossings",
           "ref": "set 3, slides 66–68"
+        },
+        {
+          "eq": "H(f) = 1 for |f| ≤ fχ(1 − α); ½(1 + cos(π(|f| − fχ(1 − α))/(2αfχ))) up to fχ(1 + α); 0 beyond",
+          "tex": "H(f) = \\begin{cases} 1, & |f| \\le f_\\chi(1 - \\alpha) \\\\ \\frac{1}{2}\\left(1 + \\cos\\frac{\\pi(|f| - f_\\chi(1 - \\alpha))}{2\\alpha f_\\chi}\\right), & |f| \\le f_\\chi(1 + \\alpha) \\\\ 0, & \\text{beyond} \\end{cases}",
+          "note": "the half-cosine roll-off written out, f_χ = 1/(2T0)",
+          "ref": "set 4, slides 23–24",
+          "explore": true
         }
       ],
       "practice": [
@@ -942,6 +956,13 @@
           "tex": "\\mathrm{SNR}_\\mathrm{out} = \\frac{\\mathrm{SNQR}}{1 + 4(M^2 - 1)P_e}",
           "note": "M² − 1 is the SNQR of a uniform signal",
           "ref": "set 2, slide 50"
+        },
+        {
+          "eq": "H(f) = 1 for |f| ≤ fχ(1 − α); ½(1 + cos(π(|f| − fχ(1 − α))/(2αfχ))) up to fχ(1 + α); 0 beyond",
+          "tex": "H(f) = \\begin{cases} 1, & |f| \\le f_\\chi(1 - \\alpha) \\\\ \\frac{1}{2}\\left(1 + \\cos\\frac{\\pi(|f| - f_\\chi(1 - \\alpha))}{2\\alpha f_\\chi}\\right), & |f| \\le f_\\chi(1 + \\alpha) \\\\ 0, & \\text{beyond} \\end{cases}",
+          "note": "the raised-cosine spectrum of step 1, f_χ = Rs/2",
+          "ref": "set 4, slides 23–24",
+          "explore": true
         }
       ]
     }

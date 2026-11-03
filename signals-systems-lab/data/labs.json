@@ -351,6 +351,13 @@
           "note": "Fourier transform of a sequence (DTFT)",
           "ref": "SS2 ch. 4, (4.1), p. 60",
           "explore": true
+        },
+        {
+          "eq": "X(e^j2πF) = sin(πF(2M + 1))/sin(πF)",
+          "tex": "X(\\mathrm{e}^{\\mathrm{j}2\\pi F}) = \\frac{\\sin\\left(\\pi F(2M + 1)\\right)}{\\sin(\\pi F)}",
+          "note": "the DTFT of the 2M + 1 samples, centred: the moving average's (3.47) with N = 2M + 1, times N, without its delay",
+          "ref": "SS2 (3.47), p. 48",
+          "explore": true
         }
       ],
       "practice": [

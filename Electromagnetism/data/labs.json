@@ -213,6 +213,13 @@
           "tex": "\\Psi(\\partial\\mathcal{V}) - Q(\\mathcal{V}) = \\int_{\\mathcal{V}'} (\\nabla\\cdot\\vec{D} - \\varrho)\\,\\mathrm{d}V + \\int_{\\mathcal{S}'} (\\vec{n}\\cdot[\\![\\vec{D}]\\!] - \\sigma)\\,\\mathrm{d}A = 0",
           "note": "from the global to the local form",
           "ref": "(2.21)"
+        },
+        {
+          "eq": "E = Σ Q_i e_R,i / (4πε R_i²)",
+          "tex": "\\vec{E} = \\sum_i \\frac{Q_i\\,\\vec{e}_{R,i}}{4\\pi\\varepsilon R_i^2}",
+          "note": "the field arrows: each charge's Coulomb field, added",
+          "ref": "from (3.13) with E = −∇ϕ (3.4), summed",
+          "explore": true
         }
       ]
     },
@@ -260,6 +267,13 @@
           "tex": "\\vec{B} = \\nabla\\times\\vec{A}",
           "note": "so B is a curl: a vector potential exists",
           "ref": "(5.5)"
+        },
+        {
+          "eq": "B = μ0 (3 e_r (e_r·m) − m)/(4π r³)",
+          "tex": "\\vec{B} = \\frac{\\mu_0}{4\\pi}\\,\\frac{3\\vec{e}_r(\\vec{e}_r\\cdot\\vec{m}) - \\vec{m}}{r^3}",
+          "note": "the field arrows of the small current loop: the magnetic counterpart of the electric dipole's field",
+          "ref": "by duality with (5.42), p. 127",
+          "explore": true
         }
       ]
     },
@@ -408,6 +422,13 @@
           "tex": "\\nabla\\cdot(\\nabla\\times\\vec{H}) = 0 \\;\\Rightarrow\\; \\nabla\\cdot\\vec{J} + \\partial_t \\nabla\\cdot\\vec{D} = 0",
           "note": "follows from the Ampère–Maxwell and Gauss laws (derived)",
           "ref": ""
+        },
+        {
+          "eq": "Q(t) = C U0 (1 − e^(−t/RC)),  I(t) = (U0/R) e^(−t/RC)",
+          "tex": "Q(t) = C U_0\\left(1 - \\mathrm{e}^{-t/RC}\\right), \\qquad I(t) = \\frac{U_0}{R}\\,\\mathrm{e}^{-t/RC}",
+          "note": "the capacitor charged through R that the lab plots; I = dQ/dt is the row's law",
+          "ref": "derived from Tab. 2.1, row 5, with Q = CU",
+          "explore": true
         }
       ]
     },
@@ -1239,6 +1260,13 @@
           "tex": "\\underline{Z}_\\mathrm{E} = -\\mathrm{j}Z_\\mathrm{W}\\cot(2\\pi l/\\lambda)",
           "note": "input impedance of an open lossless line",
           "ref": "(5.125)"
+        },
+        {
+          "eq": "r = (Z_A − Z_W)/(Z_A + Z_W),  λ = 2π/β",
+          "tex": "\\underline{r} = \\frac{\\underline{Z}_\\mathrm{A} - \\underline{Z}_\\mathrm{W}}{\\underline{Z}_\\mathrm{A} + \\underline{Z}_\\mathrm{W}}, \\qquad \\lambda = \\frac{2\\pi}{\\beta}",
+          "note": "the returning wave's share at the load, from the coefficients (5.120); the wavelength as λ = 2π/k, p. 125",
+          "ref": "(5.120), p. 142",
+          "explore": true
         }
       ]
     },
@@ -1909,6 +1937,13 @@
           "tex": "\\frac{A_1 - A_2}{A_1 + A_2}",
           "note": "fade depth: the weakest field against the strongest (derived)",
           "ref": ""
+        },
+        {
+          "eq": "|E| = |A1 + A2 e^(jk(x cos φ + y sin φ − x))|",
+          "tex": "|E| = \\left|A_1 + A_2\\,\\mathrm{e}^{\\mathrm{j}k(x\\cos\\varphi + y\\sin\\varphi - x)}\\right|",
+          "note": "two plane waves of (13.9) crossing at φ: the field the picture shades",
+          "ref": "derived from (13.9)",
+          "explore": true
         }
       ],
       "practice": [

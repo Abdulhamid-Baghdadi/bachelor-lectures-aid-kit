@@ -944,6 +944,13 @@
           "tex": "\\operatorname{Re}(s_i) = \\alpha_i < 0 \\quad \\text{for every pole } s_i",
           "note": "BIBO stability (Satz 3.8)",
           "ref": "(3.101)"
+        },
+        {
+          "eq": "G(s) = (1 − s/z)(α² + β²)/((s − α)² + β²)",
+          "tex": "G(s) = \\left(1 - \\frac{s}{z}\\right)\\frac{\\alpha^2 + \\beta^2}{(s - \\alpha)^2 + \\beta^2}",
+          "note": "the lab's transfer function: the pole pair of (3.165) and one zero, static gain 1",
+          "ref": "",
+          "explore": true
         }
       ]
     },
@@ -2133,6 +2140,13 @@
           "note": "equation for the beam",
           "ref": "(2.214b, c)",
           "explore": true
+        },
+        {
+          "eq": "τe = mK g r cos φ1 + 2(φref − φ1) − 0.6 φ̇1",
+          "tex": "\\tau_e = m_K g r\\cos\\varphi_1 + 2(\\varphi_\\mathrm{ref} - \\varphi_1) - 0.6\\,\\dot{\\varphi}_1",
+          "note": "the lab's own motor law, not the notes': it carries the ball's weight and steers the beam angle",
+          "ref": "",
+          "explore": true
         }
       ]
     },
@@ -2557,6 +2571,13 @@
           "tex": "\\frac{a\\Delta t}{\\Delta x^2} \\le \\frac{1}{2}",
           "note": "stability of the explicit scheme",
           "ref": "(3.111)"
+        },
+        {
+          "eq": "T = TL + (TA − TL) Σ 4(−1)ⁿ/((2n+1)π) cos(kn x) e^(−a kn² t), kn = (2n+1)π/(2L)",
+          "tex": "T = T_L + (T_A - T_L)\\sum_{n=0}^{\\infty}\\frac{4(-1)^n}{(2n+1)\\pi}\\cos(k_n x)\\,\\mathrm{e}^{-a k_n^2 t}, \\quad k_n = \\frac{(2n+1)\\pi}{2L}",
+          "note": "the exact curve, by separation of variables, to check the grid against",
+          "ref": "derived from (3.105)",
+          "explore": true
         }
       ]
     },
@@ -2827,6 +2848,13 @@
           "tex": "\\frac{T_{S,\\mathrm{max}} - \\bar{T}_S}{\\hat{U}_e I_a} = \\lvert G(\\mathrm{I}2\\pi f_\\mathrm{min})\\rvert",
           "note": "fmin = 1.429 mHz",
           "ref": "(3.135)",
+          "explore": true
+        },
+        {
+          "eq": "CB dTB/dt = P − (TB − TK)/RP,  CK dTK/dt = (TB − TK)/RP − (TK − T∞)/RK,  TS = TB + RSB P",
+          "tex": "C_B\\frac{\\mathrm{d}T_B}{\\mathrm{d}t} = P - \\frac{T_B - T_K}{R_P}, \\quad C_K\\frac{\\mathrm{d}T_K}{\\mathrm{d}t} = \\frac{T_B - T_K}{R_P} - \\frac{T_K - T_\\infty}{R_K}, \\quad T_S = T_B + R_\\mathrm{SB}P",
+          "note": "the warm-up curves: the network of Abbildung 3.24 with the capacities of (3.128); its transfer function is (3.134)",
+          "ref": "Abbildung 3.24, (3.128)",
           "explore": true
         }
       ]
