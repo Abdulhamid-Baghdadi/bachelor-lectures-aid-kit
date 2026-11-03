@@ -104,7 +104,8 @@
           "eq": "α² = 2mE/ħ², β² = 2m(V0 − E)/ħ²",
           "tex": "\\alpha^2 = \\frac{2m}{\\hbar^2}E, \\qquad \\beta^2 = \\frac{2m}{\\hbar^2}(V_0 - E)",
           "note": "wave numbers in the well and in the barrier",
-          "ref": "HL (2.2.10), p. 56"
+          "ref": "HL (2.2.10), p. 56",
+          "explore": true
         },
         {
           "eq": "(β² − α²)/(2αβ) sinh(βb) sin(αa) + cosh(βb) cos(αa) = cos(k(a + b))",
@@ -122,13 +123,15 @@
           "eq": "E = n²π²ħ²/(2ma²)",
           "tex": "E = \\frac{n^2\\pi^2\\hbar^2}{2ma^2}",
           "note": "P → ∞: the levels of the infinite well",
-          "ref": "HL §2.2.3, p. 58"
+          "ref": "HL §2.2.3, p. 58",
+          "explore": true
         },
         {
           "eq": "ψ′ jumps by (2P/a) ψ at each barrier",
           "tex": "\\psi'(x_0^+) - \\psi'(x_0^-) = \\frac{2P}{a}\\,\\psi(x_0)",
           "note": "the thin-barrier limit of (2.2.12), from the Schrödinger equation integrated across V0 b δ(x); the transfer matrix used for N wells and as the second route",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ],
       "practice": [
@@ -172,7 +175,8 @@
           "eq": "f(E) ≈ exp(−(E − EF)/kT)",
           "tex": "f(E) \\approx \\exp\\!\\Big(-\\frac{E - E_\\mathrm{F}}{kT}\\Big)",
           "note": "the non-degenerate approximation, for E − EF of several kT",
-          "ref": "HL (3.1.16), p. 82"
+          "ref": "HL (3.1.16), p. 82",
+          "explore": true
         }
       ],
       "practice": [
@@ -227,13 +231,15 @@
           "eq": "n = ½(ND − NA) + √(¼(ND − NA)² + ni²)",
           "tex": "n = \\frac{1}{2}(N_\\mathrm{D} - N_\\mathrm{A}) + \\sqrt{\\tfrac{1}{4}(N_\\mathrm{D} - N_\\mathrm{A})^2 + n_\\mathrm{i}^2}",
           "note": "all dopants ionised, neutral sample",
-          "ref": "HL (3.1.23), p. 84"
+          "ref": "HL (3.1.23), p. 84",
+          "explore": true
         },
         {
           "eq": "ni(T) = ni(300 K) (T/300 K)^(3/2) exp(−Eg/2k (1/T − 1/300 K))",
           "tex": "n_\\mathrm{i}(T) = n_\\mathrm{i}(300\\,\\mathrm{K})\\Big(\\frac{T}{300\\,\\mathrm{K}}\\Big)^{3/2}\\exp\\!\\Big[-\\frac{E_\\mathrm{G}}{2k}\\Big(\\frac{1}{T} - \\frac{1}{300\\,\\mathrm{K}}\\Big)\\Big]",
           "note": "from (3.1.17) and (3.1.20) with Eg held constant",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ],
       "practice": [
@@ -313,7 +319,8 @@
           "eq": "p − p0 = const/√(4πDp t) · exp(−(x − µp E t)²/(4 Dp t)) · exp(−t/τL)",
           "tex": "p - p_0 = \\frac{\\mathrm{const}}{\\sqrt{4\\pi D_\\mathrm{p}t}}\\exp\\!\\Big(-\\frac{(x - \\mu_\\mathrm{p}Et)^2}{4D_\\mathrm{p}t}\\Big)\\exp\\!\\Big(-\\frac{t}{\\tau_\\mathrm{L}}\\Big)",
           "note": "its solution, a drifting Gaussian; the script prints both exponents without their minus signs, a misprint (its text says the area decays as exp(−t/τL))",
-          "ref": "HL (3.4.43), p. 107"
+          "ref": "HL (3.4.43), p. 107",
+          "explore": true
         }
       ],
       "practice": [
@@ -373,7 +380,8 @@
           "eq": "Δp(t) = Gτ(1 − e^(−t/τ)), then Δp(toff) e^(−(t − toff)/τ)",
           "tex": "\\Delta p(t) = G\\tau\\big(1 - \\mathrm{e}^{-t/\\tau}\\big), \\quad \\text{then} \\quad \\Delta p(t_\\mathrm{off})\\,\\mathrm{e}^{-(t - t_\\mathrm{off})/\\tau}",
           "note": "uniform light switched on and off",
-          "ref": ""
+          "ref": "",
+          "explore": true
         },
         {
           "eq": "pn(x) = pn0 + (pn(0) − pn0) e^(−x/Lp), Lp = √(Dp τL)",
@@ -385,7 +393,8 @@
           "eq": "pn(x) = pn0 + (pn(0) − pn0) sinh((W − x)/Lp)/sinh(W/Lp)",
           "tex": "p_\\mathrm{n}(x) = p_{\\mathrm{n}0} + \\big(p_\\mathrm{n}(0) - p_{\\mathrm{n}0}\\big)\\frac{\\sinh\\big((W - x)/L_\\mathrm{p}\\big)}{\\sinh(W/L_\\mathrm{p})}",
           "note": "a sample of length W",
-          "ref": "HL (3.4.37), p. 105"
+          "ref": "HL (3.4.37), p. 105",
+          "explore": true
         },
         {
           "eq": "pn(x) = pn0 + (pn(0) − pn0)(W − x)/W",
@@ -446,7 +455,8 @@
           "eq": "E1 = EV − (mr/mp*)(ħω − Eg), E2 = EC + (mr/mn*)(ħω − Eg), 1/mr = 1/mp* + 1/mn*",
           "tex": "E_1 = E_\\mathrm{V} - \\frac{m_\\mathrm{r}}{m_\\mathrm{p}^*}(\\hbar\\omega - E_\\mathrm{G}), \\qquad E_2 = E_\\mathrm{C} + \\frac{m_\\mathrm{r}}{m_\\mathrm{n}^*}(\\hbar\\omega - E_\\mathrm{G}), \\qquad \\frac{1}{m_\\mathrm{r}} = \\frac{1}{m_\\mathrm{p}^*} + \\frac{1}{m_\\mathrm{n}^*}",
           "note": "the states taking part; the script prints E2 = EC − …, a misprint: only + gives E2 − E1 = ħω of (4.2.2)",
-          "ref": "HL §4.2.1, p. 114"
+          "ref": "HL §4.2.1, p. 114",
+          "explore": true
         },
         {
           "eq": "Zj(ω) = (2mr)^(3/2)/(2π²ħ²) √(ħω − Eg)",
@@ -470,7 +480,8 @@
           "eq": "λg = hc/Eg",
           "tex": "\\lambda_\\mathrm{g} = \\frac{hc}{E_\\mathrm{G}}",
           "note": "the longest wavelength absorbed",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ],
       "practice": [
@@ -521,7 +532,8 @@
           "eq": "dE/dx = ρ/ε",
           "tex": "\\frac{\\mathrm{d}E}{\\mathrm{d}x} = \\frac{\\rho}{\\varepsilon}",
           "note": "Poisson's equation",
-          "ref": "HL (5.2.3), p. 129"
+          "ref": "HL (5.2.3), p. 129",
+          "explore": true
         },
         {
           "eq": "Emax = e NA dp/ε = e ND dn/ε",
@@ -539,7 +551,8 @@
           "eq": "d = √(2ε(UD − U)/(e N0)), dn = d NA/(NA + ND), dp = d ND/(NA + ND), Emax = √(2eN0(UD − U)/ε)",
           "tex": "d = \\sqrt{\\frac{2\\varepsilon(U_\\mathrm{D} - U)}{eN_0}}, \\quad d_\\mathrm{n} = d\\,\\frac{N_\\mathrm{A}}{N_\\mathrm{A} + N_\\mathrm{D}}, \\quad d_\\mathrm{p} = d\\,\\frac{N_\\mathrm{D}}{N_\\mathrm{A} + N_\\mathrm{D}}, \\quad E_\\mathrm{max} = \\sqrt{\\frac{2eN_0(U_\\mathrm{D} - U)}{\\varepsilon}}",
           "note": "with bias U",
-          "ref": "HL (5.2.13), p. 131"
+          "ref": "HL (5.2.13), p. 131",
+          "explore": true
         },
         {
           "eq": "UD = UT ln(NA ND/ni²)",
@@ -634,7 +647,8 @@
           "eq": "Js = e ni² (Dp/(Lp ND) + Dn/(Ln NA))",
           "tex": "J_\\mathrm{s} = en_\\mathrm{i}^2\\Big(\\frac{D_\\mathrm{p}}{L_\\mathrm{p}N_\\mathrm{D}} + \\frac{D_\\mathrm{n}}{L_\\mathrm{n}N_\\mathrm{A}}\\Big)",
           "note": "the saturation current density, long diode",
-          "ref": "HL (5.3.10), p. 136"
+          "ref": "HL (5.3.10), p. 136",
+          "explore": true
         },
         {
           "eq": "I = Is (exp(U/UT) − 1)",
@@ -664,7 +678,8 @@
           "eq": "I = Is (exp(Ud/(n UT)) − 1), U = Ud + I Rs",
           "tex": "I = I_\\mathrm{s}\\Big(\\exp\\frac{U_\\mathrm{d}}{nU_\\mathrm{T}} - 1\\Big), \\qquad U = U_\\mathrm{d} + IR_\\mathrm{s}",
           "note": "ideality factor n (the collection takes n = 2) and a series resistance; the script names both effects (p. 137)",
-          "ref": "EB part 1, p. 3"
+          "ref": "EB part 1, p. 3",
+          "explore": true
         },
         {
           "eq": "UB* ≈ ε Emax²/(2 e N0)",
@@ -792,19 +807,22 @@
           "eq": "ΦF = (kT/e) ln(NA/ni)",
           "tex": "\\Phi_\\mathrm{F} = \\frac{kT}{e}\\ln\\frac{N_\\mathrm{A}}{n_\\mathrm{i}}",
           "note": "the Fermi potential of the substrate; the script prints kBT/(q ln(NA/ni)), a misprint",
-          "ref": "HL §6.2.2, p. 174"
+          "ref": "HL §6.2.2, p. 174",
+          "explore": true
         },
         {
           "eq": "Ut = ΦMS − Qf/Cox − QB/Cox + 2ΦF",
           "tex": "U_\\mathrm{t} = \\Phi_\\mathrm{MS} - \\frac{Q_\\mathrm{f}}{C_\\mathrm{ox}} - \\frac{Q_\\mathrm{B}}{C_\\mathrm{ox}} + 2\\Phi_\\mathrm{F}",
           "note": "the threshold: work function, oxide charge, bulk charge, band bending",
-          "ref": "HL §6.2.3, p. 183"
+          "ref": "HL §6.2.3, p. 183",
+          "explore": true
         },
         {
           "eq": "QB = −√(2 εSi e NA (2ΦF + USB)), Cox = εox/dox",
           "tex": "Q_\\mathrm{B} = -\\sqrt{2\\varepsilon_\\mathrm{Si}eN_\\mathrm{A}(2\\Phi_\\mathrm{F} + U_\\mathrm{SB})}, \\qquad C_\\mathrm{ox} = \\frac{\\varepsilon_\\mathrm{ox}}{d_\\mathrm{ox}}",
           "note": "the bulk charge, with the substrate voltage; negative, as p. 183 says (p. 184 prints its magnitude)",
-          "ref": "HL §6.2.3, p. 184"
+          "ref": "HL §6.2.3, p. 184",
+          "explore": true
         },
         {
           "eq": "−QK = Cox (UGS − Ut)",
@@ -887,7 +905,8 @@
           "eq": "ue = UT ln(IC/Is) + IC RE, ua = U0 − IC RC",
           "tex": "u_\\mathrm{e} = U_\\mathrm{T}\\ln\\frac{I_\\mathrm{C}}{I_\\mathrm{s}} + I_\\mathrm{C}R_\\mathrm{E}, \\qquad u_\\mathrm{a} = U_0 - I_\\mathrm{C}R_\\mathrm{C}",
           "note": "the large-signal transfer, from HL (6.1.2)",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ],
       "practice": [
@@ -1076,7 +1095,8 @@
           "eq": "vs = β vg0/((1 + jω/ω1)(1 + jω/ω2))",
           "tex": "v_\\mathrm{s} = \\frac{\\beta v_\\mathrm{g0}}{(1 + \\mathrm{j}\\omega/\\omega_1)(1 + \\mathrm{j}\\omega/\\omega_2)}",
           "note": "the lab's loop, two poles; its step solved in closed form, checked against a simulation",
-          "ref": "Rechenbeispiele B6/4, p. 4"
+          "ref": "Rechenbeispiele B6/4, p. 4",
+          "explore": true
         }
       ],
       "practice": [
@@ -1124,7 +1144,8 @@
           "eq": "SR = dUa/dt max = I1max/Ck",
           "tex": "\\mathrm{SR} = \\frac{\\mathrm{d}U_\\mathrm{a}}{\\mathrm{d}t}\\Big|_\\mathrm{max} = \\frac{I_\\mathrm{1max}}{C_\\mathrm{k}} = \\frac{2I_0}{C_\\mathrm{k}} = \\frac{20\\,\\mu\\mathrm{A}}{30\\,\\mathrm{pF}} = 0.6\\,\\mathrm{V}/\\mu\\mathrm{s}",
           "note": "the compensation capacitor charged by the input stage's current; 0.6 V/µs for the 741",
-          "ref": "ST §4.4, p. 85"
+          "ref": "ST §4.4, p. 85",
+          "explore": true
         },
         {
           "eq": "dua/dt max = Ûa ω, at the zero crossing",

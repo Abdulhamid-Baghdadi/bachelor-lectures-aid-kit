@@ -46,7 +46,8 @@
           "eq": "∫α F • dx = ∫ₐᵇ F(α(t)) • α'(t) dt",
           "tex": "\\int_\\alpha \\mathbf{F} \\bullet d\\mathbf{x} = \\int_a^b \\mathbf{F}(\\alpha(t)) \\bullet \\alpha'(t)\\,dt",
           "note": "the line integral of F along the path α: what the lab adds up, step by step",
-          "ref": "ch. 9 § 2, p. 19"
+          "ref": "ch. 9 § 2, p. 19",
+          "explore": true
         },
         {
           "eq": "F = ∇f  ⇔  ∫α F • dx path-independent  ⇔  ∮ F • dx = 0",
@@ -148,7 +149,8 @@
           "eq": "div F = ∂F1/∂x + ∂F2/∂y + ∂F3/∂z",
           "tex": "\\mathbf{div}\\,F = \\frac{\\partial F_1}{\\partial x} + \\frac{\\partial F_2}{\\partial y} + \\frac{\\partial F_3}{\\partial z}",
           "note": "the divergence of a field in space",
-          "ref": "ch. 10 § 4, p. 85"
+          "ref": "ch. 10 § 4, p. 85",
+          "explore": true
         },
         {
           "eq": "δ_F(x0) = lim ε→0 (1/v₃(B_ε)) ∫∂B_ε F • dO = div F(x0)",

@@ -165,7 +165,8 @@
           "eq": "p(t) = U I [cos(φ_u − φ_i) + cos(2ωt + φ_u + φ_i)]",
           "tex": "p(t) = U I \\big[\\cos(\\varphi_u - \\varphi_i) + \\cos(2\\omega t + \\varphi_u + \\varphi_i)\\big]",
           "note": "one phase: a mean plus a pulse at twice the frequency",
-          "ref": "(3-15), (3-26), pp. 37–38"
+          "ref": "(3-15), (3-26), pp. 37–38",
+          "explore": true
         },
         {
           "eq": "P = U I cos(φ_u − φ_i), Q = U I sin(φ_u − φ_i), S = U I*",
@@ -283,7 +284,8 @@
           "eq": "U₁² = |U₂ + (u_r + j u_σ)(P − jQ)/U₂|²",
           "tex": "U_1^2 = \\Big|\\underline{U}_2 + (u_\\mathrm{r} + \\mathrm{j}u_\\sigma)\\frac{P - \\mathrm{j}Q}{U_2}\\Big|^2",
           "note": "the secondary voltage for a load P + jQ, a quadratic in U₂²; shunt branch neglected",
-          "ref": ""
+          "ref": "",
+          "explore": true
         },
         {
           "eq": "ΔI/I″_k = |1 − e^(−jΔk·30°)|/2",
@@ -362,7 +364,8 @@
           "eq": "γ = α + jβ = √((R' + jωL')(G' + jωC'))",
           "tex": "\\underline{\\gamma} = \\alpha + \\mathrm{j}\\beta = \\sqrt{(R' + \\mathrm{j}\\omega L')(G' + \\mathrm{j}\\omega C')}",
           "note": "propagation constant",
-          "ref": "(4-9), (4-44), p. 86"
+          "ref": "(4-9), (4-44), p. 86",
+          "explore": true
         },
         {
           "eq": "Z_w = √((R' + jωL')/(G' + jωC')) ≈ √(L'/C')",
@@ -374,7 +377,8 @@
           "eq": "U₁ = U₂ cosh γl + Z_w I₂ sinh γl, I₁ = (U₂/Z_w) sinh γl + I₂ cosh γl",
           "tex": "\\underline{U}_1 = \\underline{U}_2 \\cosh \\underline{\\gamma} l + \\underline{Z}_\\mathrm{w} \\underline{I}_2 \\sinh \\underline{\\gamma} l, \\qquad \\underline{I}_1 = \\frac{\\underline{U}_2}{\\underline{Z}_\\mathrm{w}} \\sinh \\underline{\\gamma} l + \\underline{I}_2 \\cosh \\underline{\\gamma} l",
           "note": "the line equations",
-          "ref": "(4-19), p. 77"
+          "ref": "(4-19), p. 77",
+          "explore": true
         },
         {
           "eq": "U₂ = U₁ / cosh γl",
@@ -386,7 +390,8 @@
           "eq": "P_nat = U_n²/Z_w",
           "tex": "P_\\mathrm{nat} = \\frac{U_\\mathrm{n}^2}{Z_\\mathrm{w}}",
           "note": "natural load",
-          "ref": "(4-25), (4-51), p. 87"
+          "ref": "(4-25), (4-51), p. 87",
+          "explore": true
         },
         {
           "eq": "R' = 0.03 Ω/km, L' = 0.8 mH/km, G' = 0.02 µS/km, C' = 14 nF/km",
@@ -504,7 +509,8 @@
           "eq": "U₂⁴ + (2QX − U₁²) U₂² + X²(P² + Q²) = 0",
           "tex": "U_2^4 + (2QX - U_1^2)\\,U_2^2 + X^2(P^2 + Q^2) = 0",
           "note": "per unit, δ eliminated: the PV curve",
-          "ref": "(6-6), (6-7), p. 200"
+          "ref": "(6-6), (6-7), p. 200",
+          "explore": true
         },
         {
           "eq": "P_max = 3 U₁²/(2X) at δ = 45°, U₂ = U₁/√2",
@@ -640,7 +646,8 @@
           "eq": "i = √2 U/√(R² + ω²L²) [sin(ωt + α − φ) − sin(α − φ) e^(−t/T)]",
           "tex": "i = \\frac{\\sqrt{2}\\,U}{\\sqrt{R^2 + (\\omega L)^2}}\\Big[\\sin(\\omega t + \\alpha - \\varphi) - \\sin(\\alpha - \\varphi)\\,\\mathrm{e}^{-t/T}\\Big]",
           "note": "AC part plus decaying DC part",
-          "ref": "(6-29), p. 208"
+          "ref": "(6-29), p. 208",
+          "explore": true
         },
         {
           "eq": "tan φ = ωL/R, T = L/R",
@@ -758,7 +765,8 @@
           "eq": "cos δcr = [P_m (δmax − δ0) + P_post cos δmax − P_fault cos δ0]/(P_post − P_fault)",
           "tex": "\\cos\\delta_\\mathrm{cr} = \\frac{P_\\mathrm{m}(\\delta_\\mathrm{max} - \\delta_0) + P_\\mathrm{post}\\cos\\delta_\\mathrm{max} - P_\\mathrm{fault}\\cos\\delta_0}{P_\\mathrm{post} - P_\\mathrm{fault}}",
           "note": "the critical clearing angle, from A1 = A2",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ],
       "practice": [
@@ -1017,7 +1025,8 @@
           "eq": "ψ_s = l_s i_s + ψ_M",
           "tex": "\\underline{\\psi}_\\mathrm{s} = \\ell_\\mathrm{s}\\,\\underline{i}_\\mathrm{s} + \\underline{\\psi}_\\mathrm{M}",
           "note": "stator flux linkage",
-          "ref": "Schrödl (2012), (P.2), p. 225"
+          "ref": "Schrödl (2012), (P.2), p. 225",
+          "explore": true
         },
         {
           "eq": "m = −Im(i_s* ψ_s)",
@@ -1180,7 +1189,8 @@
           "eq": "U1² = |U2 + (R + jX) I|², I = (P − jQ)/U2*",
           "tex": "U_1^2 = \\left|U_2 + (R + jX)\\,\\underline{I}\\right|^2",
           "note": "the upper root is the operating point",
-          "ref": "section 6.2, pp. 198–202"
+          "ref": "section 6.2, pp. 198–202",
+          "explore": true
         },
         {
           "eq": "I″k3 = c U_n/(√3 Z_k)",

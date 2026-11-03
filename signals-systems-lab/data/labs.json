@@ -231,7 +231,8 @@
           "eq": "r_xy(τ) = lim (1/T) ∫ x(t) y(t + τ) dt",
           "tex": "r_{xy}(\\tau) = \\lim_{T \\to \\infty} \\frac{1}{T} \\int_{-T/2}^{T/2} x(t)\\, y(t + \\tau)\\,\\mathrm{d}t",
           "note": "cross-correlation of jointly ergodic signals",
-          "ref": "SS1 §4.6, (4.45), p. 105"
+          "ref": "SS1 §4.6, (4.45), p. 105",
+          "explore": true
         },
         {
           "eq": "R_yy(jω) = |H(jω)|² R_xx(jω)",
@@ -279,19 +280,22 @@
           "eq": "x(t) = Σₖ c_k e^(j2πkt/T),  c_k = (1/T) ∫_T x(t) e^(−j2πkt/T) dt",
           "tex": "x(t) = \\sum_k c_k\\, \\mathrm{e}^{\\mathrm{j}2\\pi k t/T}, \\qquad c_k = \\frac{1}{T} \\int_T x(t)\\, \\mathrm{e}^{-\\mathrm{j}2\\pi k t/T}\\,\\mathrm{d}t",
           "note": "Fourier series (Prechtl writes C_k, T₁)",
-          "ref": "SS1 §5.1, (5.2) and (5.4), p. 109"
+          "ref": "SS1 §5.1, (5.2) and (5.4), p. 109",
+          "explore": true
         },
         {
           "eq": "square wave ±1: x(t) = (4/π) Σ_odd sin(2πkt/T)/k",
           "tex": "\\text{square wave } {\\pm 1}\\colon\\quad x(t) = \\frac{4}{\\pi} \\sum_{k\\ \\text{odd}} \\frac{\\sin(2\\pi k t/T)}{k}",
           "note": "c_k = 2/(jπk) for odd k, so the sine amplitude is 4/(πk)",
-          "ref": "SS1 §5.1, (5.17), p. 113, with (5.43), p. 118"
+          "ref": "SS1 §5.1, (5.17), p. 113, with (5.43), p. 118",
+          "explore": true
         },
         {
           "eq": "x[n] = Σ_{k=0}^{N−1} c_k e^(j2πkn/N),  c_k = (1/N) Σ_{n=0}^{N−1} x[n] e^(−j2πkn/N)",
           "tex": "x[n] = \\sum_{k=0}^{N-1} c_k\\, \\mathrm{e}^{\\mathrm{j}2\\pi k n/N}, \\qquad c_k = \\frac{1}{N} \\sum_{n=0}^{N-1} x[n]\\, \\mathrm{e}^{-\\mathrm{j}2\\pi k n/N}",
           "note": "discrete Fourier series, period N; c_k = X[k]/N",
-          "ref": "SS2 §2.3, (2.45) and (2.46), p. 20"
+          "ref": "SS2 §2.3, (2.45) and (2.46), p. 20",
+          "explore": true
         },
         {
           "eq": "max of partial sum → 1 + 0.179 for a jump from −1 to 1",
@@ -345,7 +349,8 @@
           "eq": "X(e^jθ) = Σₙ x[n] e^(−jθn), period 2π",
           "tex": "X(\\mathrm{e}^{\\mathrm{j}\\theta}) = \\sum_n x[n]\\, \\mathrm{e}^{-\\mathrm{j}\\theta n}, \\qquad \\text{period } 2\\pi",
           "note": "Fourier transform of a sequence (DTFT)",
-          "ref": "SS2 ch. 4, (4.1), p. 60"
+          "ref": "SS2 ch. 4, (4.1), p. 60",
+          "explore": true
         }
       ],
       "practice": [
@@ -374,19 +379,22 @@
           "eq": "I = √(|I_1|² + |I_2|² + …)",
           "tex": "I = \\sqrt{|I_1|^2 + |I_2|^2 + |I_3|^2 + \\cdots}",
           "note": "RMS of a current with harmonics, each |I_k| an RMS value",
-          "ref": "SS1 §6.2, (6.10), p. 123"
+          "ref": "SS1 §6.2, (6.10), p. 123",
+          "explore": true
         },
         {
           "eq": "P = U |I_1| cos φ_1,  Q₁ = U |I_1| sin φ_1",
           "tex": "P = U |I_1| \\cos\\varphi_1, \\qquad Q_1 = U |I_1| \\sin\\varphi_1",
           "note": "with a sine voltage, only the fundamental carries P and the fundamental reactive power Q₁",
-          "ref": "SS1 §6.3, (6.24) and (6.26), p. 127"
+          "ref": "SS1 §6.3, (6.24) and (6.26), p. 127",
+          "explore": true
         },
         {
           "eq": "S = U I,  D = U √(|I_2|² + |I_3|² + …) = k_i S",
           "tex": "S = U I, \\qquad D = U \\sqrt{|I_2|^2 + |I_3|^2 + \\cdots} = k_i\\, S",
           "note": "apparent and distortion power; Prechtl's reactive power Q obeys Q² = Q₁² + D²",
-          "ref": "SS1 §6.3, (6.22), p. 125, (6.23) and (6.28), p. 127"
+          "ref": "SS1 §6.3, (6.22), p. 125, (6.23) and (6.28), p. 127",
+          "explore": true
         },
         {
           "eq": "λ = P/S = g_i cos φ_1",
@@ -472,7 +480,8 @@
           "eq": "X[k] = X(e^jθ) at θ = 2πk/N",
           "tex": "X[k] = X(\\mathrm{e}^{\\mathrm{j}\\theta}) \\big|_{\\theta = 2\\pi k/N}",
           "note": "the DFT samples the transform on the unit circle",
-          "ref": "SS2 §7.2, (7.27), p. 175"
+          "ref": "SS2 §7.2, (7.27), p. 175",
+          "explore": true
         },
         {
           "eq": "Δf = fs/N",
@@ -538,7 +547,8 @@
           "eq": "f_alias = |f − fs · round(f/fs)|",
           "tex": "f_\\mathrm{alias} = \\big|f - f_\\mathrm{s} \\cdot \\operatorname{round}(f/f_\\mathrm{s})\\big|",
           "note": "where a sine folds to",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ],
       "practice": [
@@ -579,7 +589,8 @@
           "eq": "|Ha(jω)|² = 1 / (1 + (ω/ωa)^(2N))",
           "tex": "|H_\\mathrm{a}(\\mathrm{j}\\omega)|^2 = \\frac{1}{1 + (\\omega/\\omega_\\mathrm{a})^{2N}}",
           "note": "Butterworth prototype; Doblinger writes it normalised to the 3 dB frequency, ω_a = 1",
-          "ref": "SS2 §6.3.2, (6.60), p. 150"
+          "ref": "SS2 §6.3.2, (6.60), p. 150",
+          "explore": true
         },
         {
           "eq": "s = 2fs (z − 1)/(z + 1)",
@@ -603,7 +614,8 @@
           "eq": "w[n] = a0 − a1 cos(2πn/(N−1)) + a2 cos(4πn/(N−1))",
           "tex": "w[n] = a_0 - a_1 \\cos\\frac{2\\pi n}{N - 1} + a_2 \\cos\\frac{4\\pi n}{N - 1}",
           "note": "Hann 0.5, 0.5; Hamming 0.54, 0.46; Blackman 0.42, 0.5, 0.08 (Tabelle 6.1, p. 140)",
-          "ref": "SS2 §6.2.1, (6.39), p. 139"
+          "ref": "SS2 §6.2.1, (6.39), p. 139",
+          "explore": true
         }
       ],
       "practice": [
@@ -670,13 +682,15 @@
           "eq": "y[n] = x[n/L] for n = 0, ±L, ±2L, …, else 0",
           "tex": "y[n] = \\begin{cases} x[n/L] & n = 0, \\pm L, \\pm 2L, \\ldots \\\\ 0 & \\text{else} \\end{cases}",
           "note": "upsampling: L − 1 zeros between samples",
-          "ref": "SS2 §8.2, (8.18), p. 197"
+          "ref": "SS2 §8.2, (8.18), p. 197",
+          "explore": true
         },
         {
           "eq": "Y(e^jθ) = X(e^(jθL))",
           "tex": "Y(\\mathrm{e}^{\\mathrm{j}\\theta}) = X(\\mathrm{e}^{\\mathrm{j}\\theta L})",
           "note": "its spectrum: images",
-          "ref": "SS2 §8.2, (8.20), p. 198"
+          "ref": "SS2 §8.2, (8.20), p. 198",
+          "explore": true
         }
       ],
       "practice": [

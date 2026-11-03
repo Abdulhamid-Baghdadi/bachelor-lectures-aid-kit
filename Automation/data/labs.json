@@ -250,7 +250,8 @@
           "eq": "τ = R/(2L),   ω = √(1/(CL) − (R/(2L))²)",
           "tex": "\\tau = \\frac{R}{2L}, \\qquad \\omega = \\sqrt{\\frac{1}{CL} - \\Big(\\frac{R}{2L}\\Big)^2}",
           "note": "decay rate τ and ringing frequency of the free response (1.10)",
-          "ref": "(1.11)"
+          "ref": "(1.11)",
+          "explore": true
         },
         {
           "eq": "1/√(CL) > R/(2L)",
@@ -385,7 +386,8 @@
           "eq": "h1,R = h2,R = qR²/(2g a²),   A = (a²g/(A qR)) [[−1, 0], [1, −1]],   B = [1/A, 0]",
           "tex": "h_{1,R} = h_{2,R} = \\frac{q_R^2}{2 g a^2}, \\qquad \\frac{\\mathrm{d}}{\\mathrm{d}t}\\begin{bmatrix} \\Delta h_1 \\\\ \\Delta h_2 \\end{bmatrix} = \\frac{a^2 g}{A q_R} \\begin{bmatrix} -1 & 0 \\\\ 1 & -1 \\end{bmatrix} \\begin{bmatrix} \\Delta h_1 \\\\ \\Delta h_2 \\end{bmatrix} + \\begin{bmatrix} \\frac{1}{A} \\\\ 0 \\end{bmatrix} \\Delta q",
           "note": "for the two tanks, Aufgabe 2.18",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ]
     },
@@ -579,7 +581,8 @@
           "eq": "G(s) = V z(s)/(s^r n(s)), with factors 1 + s/ωk and 1 + 2ξk s/ωk + s²/ωk²",
           "tex": "G(s) = \\frac{V}{s^r} \\frac{z(s)}{n(s)}, \\quad \\text{factors } 1 + \\frac{s}{\\omega_k} \\text{ and } 1 + 2\\xi_k \\frac{s}{\\omega_k} + \\Big(\\frac{s}{\\omega_k}\\Big)^2",
           "note": "normalised form",
-          "ref": "(3.119)"
+          "ref": "(3.119)",
+          "explore": true
         },
         {
           "eq": "|(Iω)^r|dB = 20 r log ω,   arg = 90° r",
@@ -603,7 +606,8 @@
           "eq": "G(s) = −10⁻²(s − 10)/(s(s² + 0.1s + 0.01))",
           "tex": "G(s) = -10^{-2} \\frac{s - 10}{s(s^2 + 0.1s + 0.01)}",
           "note": "the composite example",
-          "ref": "(3.128)"
+          "ref": "(3.128)",
+          "explore": true
         }
       ]
     },
@@ -712,7 +716,8 @@
           "eq": "h(t) = V[1 − (1/√(1 − ξ²))(ξ sin(√(1 − ξ²) t/T) + √(1 − ξ²) cos(√(1 − ξ²) t/T)) e^(−ξt/T)] σ(t)",
           "tex": "h(t) = V\\Bigg(1 - \\frac{1}{\\sqrt{1 - \\xi^2}}\\bigg(\\xi \\sin\\!\\Big(\\sqrt{1 - \\xi^2}\\,\\frac{t}{T}\\Big) + \\sqrt{1 - \\xi^2} \\cos\\!\\Big(\\sqrt{1 - \\xi^2}\\,\\frac{t}{T}\\Big)\\bigg) \\mathrm{e}^{-\\xi t/T}\\Bigg)\\,\\sigma(t)",
           "note": "step response",
-          "ref": "(3.138)"
+          "ref": "(3.138)",
+          "explore": true
         },
         {
           "eq": "g(t) = V/(T√(1 − ξ²)) e^(−ξt/T) sin(√(1 − ξ²) t/T) σ(t)",
@@ -730,7 +735,8 @@
           "eq": "s1,2 = (−ξ ± I√(1 − ξ²))/T",
           "tex": "s_{1,2} = \\frac{-\\xi \\pm \\mathrm{I}\\sqrt{1 - \\xi^2}}{T}",
           "note": "poles (derived from (3.137))",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ]
     },
@@ -773,19 +779,22 @@
           "eq": "G(s) = VP",
           "tex": "G(s) = V_\\mathrm{P}",
           "note": "P element",
-          "ref": "(3.141)"
+          "ref": "(3.141)",
+          "explore": true
         },
         {
           "eq": "G(s) = VI/s",
           "tex": "G(s) = \\frac{V_\\mathrm{I}}{s}",
           "note": "integrator (I element)",
-          "ref": "(3.143)"
+          "ref": "(3.143)",
+          "explore": true
         },
         {
           "eq": "G(s) = VI(1 + sTI)/s = VI/s + VI TI",
           "tex": "G(s) = \\frac{V_\\mathrm{I}(1 + sT_\\mathrm{I})}{s} = \\frac{V_\\mathrm{I}}{s} + V_\\mathrm{I} T_\\mathrm{I}",
           "note": "PI element",
-          "ref": "(3.145)"
+          "ref": "(3.145)",
+          "explore": true
         },
         {
           "eq": "G(s) = VD s",
@@ -797,25 +806,29 @@
           "eq": "GR(s) = VD s/(1 + TR s)",
           "tex": "G_\\mathrm{R}(s) = \\frac{V_\\mathrm{D}\\, s}{1 + T_\\mathrm{R} s}",
           "note": "D-T1 element",
-          "ref": "(3.148)"
+          "ref": "(3.148)",
+          "explore": true
         },
         {
           "eq": "G(s) = VP(1 + TD s)",
           "tex": "G(s) = V_\\mathrm{P}(1 + T_\\mathrm{D} s)",
           "note": "PD element, not realisable",
-          "ref": "(3.150)"
+          "ref": "(3.150)",
+          "explore": true
         },
         {
           "eq": "G(s) = V(1 + sT)/(1 + sηT),   0 < η < 1",
           "tex": "G(s) = V \\frac{1 + sT}{1 + s\\eta T}, \\qquad 0 < \\eta < 1",
           "note": "lead element (PD-T1)",
-          "ref": "(3.151)"
+          "ref": "(3.151)",
+          "explore": true
         },
         {
           "eq": "ωmax = 1/(√η T),   φmax = arctan(1/√η) − arctan(√η)",
           "tex": "\\omega_\\mathrm{max} = \\frac{1}{\\sqrt{\\eta}\\, T}, \\qquad \\varphi_\\mathrm{max} = \\arctan\\Big(\\frac{1}{\\sqrt{\\eta}}\\Big) - \\arctan\\big(\\sqrt{\\eta}\\big)",
           "note": "largest phase lift of the lead element",
-          "ref": "(3.155), (3.156)"
+          "ref": "(3.155), (3.156)",
+          "explore": true
         },
         {
           "eq": "G(s) = VP(1 + TI s)(1 + TD s)/(s(1 + TR s))",
@@ -911,7 +924,8 @@
           "eq": "n(s) = (s − α − Iβ)(s − α + Iβ) = 1/T² + 2ξ s/T + s²",
           "tex": "n(s) = (s - \\alpha - \\mathrm{I}\\beta)(s - \\alpha + \\mathrm{I}\\beta) = \\frac{1}{T^2} + 2\\xi\\frac{s}{T} + s^2",
           "note": "a pole pair as a P-T2 denominator",
-          "ref": "(3.165)"
+          "ref": "(3.165)",
+          "explore": true
         },
         {
           "eq": "ξ = −α/√(α² + β²)",
@@ -1136,7 +1150,8 @@
           "eq": "L(s) = zL(s)/nL(s),   Tr,y = zL/(zL + nL)",
           "tex": "L(s) = \\frac{z_L(s)}{n_L(s)}, \\qquad T_{r,y}(s) = \\frac{z_L(s)}{z_L(s) + n_L(s)}",
           "note": "open and closed loop",
-          "ref": "(4.44)"
+          "ref": "(4.44)",
+          "explore": true
         },
         {
           "eq": "Δarg(1 + L(Iω)) = (max(grad zL, grad nL) − N₋(nL) + N₊(nL))·π",
@@ -1160,7 +1175,8 @@
           "eq": "gain margin = 1/|L(Iω180)|,   arg L(Iω180) = −π",
           "tex": "\\text{gain margin} = \\frac{1}{\\lvert L(\\mathrm{I}\\omega_{180}) \\rvert}, \\qquad \\arg\\big(L(\\mathrm{I}\\omega_{180})\\big) = -\\pi",
           "note": "not defined in the notes; the usual reading of the same locus",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ]
     },
@@ -1218,7 +1234,8 @@
           "eq": "Tr,y = R G/(1 + R G) = L/(1 + L)",
           "tex": "T_{r,y}(s) = \\frac{R(s)G(s)}{1 + R(s)G(s)} = \\frac{L(s)}{1 + L(s)}",
           "note": "the closed loop to be shaped",
-          "ref": "(5.1)"
+          "ref": "(5.1)",
+          "explore": true
         },
         {
           "eq": "ωC·tr ≈ 1.5",
@@ -1248,13 +1265,15 @@
           "eq": "arg(1 + IωC TI) = arctan(ωC·TI) = Φ − 180° − arg L1(IωC)",
           "tex": "\\arg(1 + \\mathrm{I}\\omega_\\mathrm{C} T_\\mathrm{I}) = \\arctan(\\omega_\\mathrm{C} T_\\mathrm{I}) = \\Phi - \\pi - \\arg\\big(L_1(\\mathrm{I}\\omega_\\mathrm{C})\\big)",
           "note": "the zero lifts the phase; in the notes' case by 13.3°",
-          "ref": "(5.16)"
+          "ref": "(5.16)",
+          "explore": true
         },
         {
           "eq": "VI·|L1(IωC)·(1 + IωC TI)| = 1",
           "tex": "V_\\mathrm{I} \\big\\lvert L_1(\\mathrm{I}\\omega_\\mathrm{C})\\,(1 + \\mathrm{I}\\omega_\\mathrm{C} T_\\mathrm{I}) \\big\\rvert = 1",
           "note": "the gain sets the crossover",
-          "ref": "(5.17)"
+          "ref": "(5.17)",
+          "explore": true
         },
         {
           "eq": "R(s) = 0.1(1 + 0.47s)/s",
@@ -1332,7 +1351,8 @@
           "eq": "tr = T2·exp(arccos ξ / tan(arccos ξ))",
           "tex": "t_r = T_2 \\exp\\bigg(\\frac{\\arccos(\\xi)}{\\tan(\\arccos(\\xi))}\\bigg)",
           "note": "its rise time",
-          "ref": "(6.61)"
+          "ref": "(6.61)",
+          "explore": true
         },
         {
           "eq": "min(tr)/Ta ≈ 4 to 10",
@@ -1485,7 +1505,8 @@
           "eq": "G = ∫₀ᵀ e^{Aτ} B Bᵀ e^{Aᵀτ} dτ",
           "tex": "\\mathbf{G} = \\int_0^T \\mathrm{e}^{\\mathbf{A}\\tau} \\mathbf{B}\\mathbf{B}^\\mathrm{T} \\big(\\mathrm{e}^{\\mathbf{A}\\tau}\\big)^\\mathrm{T} \\,\\mathrm{d}\\tau",
           "note": "Gramian (Gramsche Matrix), regular for every T > 0 when reachable",
-          "ref": "(7.15)"
+          "ref": "(7.15)",
+          "explore": true
         },
         {
           "eq": "u(t) = Bᵀ e^{Aᵀ(T−t)} G⁻¹ x(T)",
@@ -1589,7 +1610,8 @@
           "eq": "x_{k+1} = (Φ + Γkᵀ)x_k + Γg r_k",
           "tex": "\\mathbf{x}_{k+1} = \\big(\\boldsymbol{\\Phi} + \\boldsymbol{\\Gamma}\\mathbf{k}^\\mathrm{T}\\big)\\mathbf{x}_k + \\boldsymbol{\\Gamma} g r_k",
           "note": "the closed loop",
-          "ref": "(8.5)"
+          "ref": "(8.5)",
+          "explore": true
         },
         {
           "eq": "e_nᵀ = v1ᵀ[Γ, ΦΓ, …, Φ^{n−1}Γ],   kᵀ = −v1ᵀ p_g,soll(Φ)",
@@ -1607,7 +1629,8 @@
           "eq": "g = 1/((cᵀ + dkᵀ)(E − Φ − Γkᵀ)⁻¹Γ + d)",
           "tex": "g = \\frac{1}{\\big(\\mathbf{c}^\\mathrm{T} + d\\mathbf{k}^\\mathrm{T}\\big)\\big(\\mathbf{E} - \\boldsymbol{\\Phi} - \\boldsymbol{\\Gamma}\\mathbf{k}^\\mathrm{T}\\big)^{-1}\\boldsymbol{\\Gamma} + d}",
           "note": "prefilter for y_k → r_0",
-          "ref": "(8.39)"
+          "ref": "(8.39)",
+          "explore": true
         },
         {
           "eq": "p_g,soll(z) = zⁿ   ⇒   x_k = Φ_gᵏ x_0 = 0 for k ≥ n",
@@ -1672,7 +1695,8 @@
           "eq": "k̂ = −p̂_g,soll(Φ) v̂1,   e_n = O(cᵀ, Φ) v̂1",
           "tex": "\\hat{\\mathbf{k}} = -\\hat{p}_{g,\\mathrm{soll}}(\\boldsymbol{\\Phi})\\,\\hat{\\mathbf{v}}_1, \\qquad \\mathbf{e}_n = \\mathcal{O}\\big(\\mathbf{c}^\\mathrm{T}, \\boldsymbol{\\Phi}\\big)\\,\\hat{\\mathbf{v}}_1",
           "note": "Ackermann's formula for the observer (Satz 8.5), needs complete observability",
-          "ref": "(8.66)"
+          "ref": "(8.66)",
+          "explore": true
         },
         {
           "eq": "Φᵀ for Φ,   c for Γ,   k̂ for k",
@@ -1684,7 +1708,8 @@
           "eq": "u_k = kᵀx̂_k + g r_k",
           "tex": "u_k = \\mathbf{k}^\\mathrm{T}\\hat{\\mathbf{x}}_k + g r_k",
           "note": "the controller fed by the estimate",
-          "ref": "(8.73)"
+          "ref": "(8.73)",
+          "explore": true
         },
         {
           "eq": "p_ges(z) = det(zE − Φ − Γkᵀ)·det(zE − Φ − k̂cᵀ)",
@@ -1740,13 +1765,15 @@
           "eq": "t3 = t2 − amax (t1 − t0) / amin",
           "tex": "t_3 = t_2 - \\frac{a_\\mathrm{max}}{a_\\mathrm{min}}(t_1 - t_0)",
           "note": "the stopping time, from v3(t3) = 0",
-          "ref": "(2.9)"
+          "ref": "(2.9)",
+          "explore": true
         },
         {
           "eq": "amin = −amax² (t1 − t0)² / (amax (t1 − t0)(t1 + t0 − 2 t2) + 2 xsoll)",
           "tex": "a_\\mathrm{min} = \\frac{-a_\\mathrm{max}^2 (t_1 - t_0)^2}{a_\\mathrm{max}(t_1 - t_0)(t_1 + t_0 - 2t_2) + 2x_\\mathrm{soll}}",
           "note": "the braking that stops at xsoll",
-          "ref": "(2.11)"
+          "ref": "(2.11)",
+          "explore": true
         }
       ]
     },
@@ -1813,7 +1840,8 @@
           "eq": "u1,2 = vS ∓ e m2,1 (v1 − v2) / (m1 + m2),   vS = (m1 v1 + m2 v2) / (m1 + m2)",
           "tex": "u_{1,2} = v_S \\mp e\\, m_{2,1} \\frac{v_1 - v_2}{m_1 + m_2}, \\qquad v_S = \\frac{m_1 v_1 + m_2 v_2}{m_1 + m_2}",
           "note": "velocities after a short impact with coefficient of restitution e (not in the notes)",
-          "ref": ""
+          "ref": "",
+          "explore": true
         },
         {
           "eq": "T = ½ m vᵀv",
@@ -1998,7 +2026,8 @@
           "eq": "ω0 = √(c/m),   ζ = d / (2√(cm)),   A = F / √((c − m ω²)² + (d ω)²)",
           "tex": "\\omega_0 = \\sqrt{\\frac{c}{m}}, \\qquad \\zeta = \\frac{d}{2\\sqrt{cm}}, \\qquad A = \\frac{F}{\\sqrt{(c - m\\omega^2)^2 + (d\\omega)^2}}",
           "note": "one mass: natural frequency, damping ratio, steady amplitude",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ]
     },
@@ -2095,13 +2124,15 @@
           "eq": "(mK + θK,zz/rK²) r̈ − (θK,zz/rK + mK rK) φ̈1 − mK r φ̇1² + mK g sin φ1 = 0",
           "tex": "\\Big(m_K + \\frac{\\theta_{K,zz}}{r_K^2}\\Big) \\ddot{r} - \\Big(\\frac{\\theta_{K,zz}}{r_K} + m_K r_K\\Big) \\ddot{\\varphi}_1 - m_K r \\dot{\\varphi}_1^2 + m_K g \\sin(\\varphi_1) = 0",
           "note": "equation for the ball",
-          "ref": "(2.214a)"
+          "ref": "(2.214a)",
+          "explore": true
         },
         {
           "eq": "−(mK rK + θK,zz/rK) r̈ + (θK,zz + θB,zz + mK (r² + rK²)) φ̈1 + 2 mK r ṙ φ̇1 + mK g (r cos φ1 − rK sin φ1) = τe(0)",
           "tex": "-\\Big(m_K r_K + \\frac{\\theta_{K,zz}}{r_K}\\Big) \\ddot{r} + \\Big(\\theta_{K,zz} + \\theta_{B,zz} + m_K\\big(r^2 + r_K^2\\big)\\Big) \\ddot{\\varphi}_1 + 2 m_K r \\dot{r} \\dot{\\varphi}_1 + m_K g \\big(r \\cos(\\varphi_1) - r_K \\sin(\\varphi_1)\\big) = \\tau_e^{(0)}",
           "note": "equation for the beam",
-          "ref": "(2.214b, c)"
+          "ref": "(2.214b, c)",
+          "explore": true
         }
       ]
     },
@@ -2170,7 +2201,8 @@
           "eq": "T1 = (T2⁴ + (1/ε1 + (d/D)(1/ε2 − 1)) q′/(πdσ))^(1/4)",
           "tex": "T_1 = \\bigg(T_2^4 + \\Big(\\frac{1}{\\varepsilon_1} + \\frac{d}{D}\\Big(\\frac{1}{\\varepsilon_2} - 1\\Big)\\Big) \\frac{\\dot{q}^\\circ}{\\pi d \\sigma}\\bigg)^{1/4}",
           "note": "inner tube temperature at full load",
-          "ref": "(3.67)"
+          "ref": "(3.67)",
+          "explore": true
         },
         {
           "eq": "αrad = εσ(T2² + T∞²)(T2 + T∞)",
@@ -2246,7 +2278,8 @@
           "eq": "q = α0(T∞,0 − T0) = (λ1/L1)(T0 − T1) = … = αL(TL − T∞,L)",
           "tex": "\\dot{q} = \\alpha_0 (T_{\\infty,0} - T_0) = \\frac{\\lambda_1}{L_1} (T_0 - T_1) = \\dots = \\alpha_L (T_L - T_{\\infty,L})",
           "note": "the same flux through every layer and film",
-          "ref": "(3.82)"
+          "ref": "(3.82)",
+          "explore": true
         },
         {
           "eq": "q = k(T∞,0 − T∞,L),  1/k = 1/α0 + Σ Li/λi + 1/αL",
@@ -2381,7 +2414,8 @@
           "eq": "m² = αP/(λA),  β = αL/(λm)",
           "tex": "m^2 = \\frac{\\alpha P}{\\lambda A}, \\qquad \\beta = \\frac{\\alpha_L}{\\lambda m}",
           "note": "fin parameter and tip number",
-          "ref": ""
+          "ref": "",
+          "explore": true
         },
         {
           "eq": "θ(x)/θ0 = (cosh m(L−x) + β sinh m(L−x))/(cosh mL + β sinh mL)",
@@ -2393,7 +2427,8 @@
           "eq": "Q(0) = λAmθ0 (sinh mL + β cosh mL)/(cosh mL + β sinh mL)",
           "tex": "\\dot{Q}(0) = \\lambda A m \\theta_0 \\frac{\\sinh mL + \\beta \\cosh mL}{\\cosh mL + \\beta \\sinh mL}",
           "note": "heat flow into the base",
-          "ref": ""
+          "ref": "",
+          "explore": true
         },
         {
           "eq": "ηf = Q(0)/Qmax ∈ [0, 1]",
@@ -2443,7 +2478,8 @@
           "eq": "k = 1/(1/αi + L/λ + 1/αa)",
           "tex": "k = \\frac{1}{\\frac{1}{\\alpha_i} + \\frac{L}{\\lambda} + \\frac{1}{\\alpha_a}}",
           "note": "heat transfer coefficient of the wall",
-          "ref": "(3.98)"
+          "ref": "(3.98)",
+          "explore": true
         },
         {
           "eq": "T(t) = T∞ + (P/(kA))(1 − e^(−kAt/(m0cp)))",
@@ -2461,7 +2497,8 @@
           "eq": "t = ts + (hvm0/(kA(Ts − T∞))) ln(P/(P − kA(Ts − T∞)))",
           "tex": "t = t_s + \\ln\\Big(\\frac{P}{P - kA(T_s - T_\\infty)}\\Big) \\frac{h_v m_0}{kA(T_s - T_\\infty)}",
           "note": "time when all the water has boiled away",
-          "ref": "(3.104)"
+          "ref": "(3.104)",
+          "explore": true
         }
       ]
     },
@@ -2512,7 +2549,8 @@
           "eq": "Ti^(j+1) = Ti^j + (aΔt/Δx²)(Ti−1^j − 2Ti^j + Ti+1^j),  T0^(j+1) = T0^j + (2aΔt/Δx²)(T1^j − T0^j)",
           "tex": "T_i^{j+1} = T_i^j + \\frac{a\\Delta t}{\\Delta x^2}\\big(T_{i-1}^j - 2T_i^j + T_{i+1}^j\\big), \\qquad T_0^{j+1} = T_0^j + \\frac{2a\\Delta t}{\\Delta x^2}\\big(T_1^j - T_0^j\\big)",
           "note": "explicit Euler scheme",
-          "ref": "(3.110)"
+          "ref": "(3.110)",
+          "explore": true
         },
         {
           "eq": "aΔt/Δx² ≤ 1/2",
@@ -2602,31 +2640,36 @@
           "eq": "L1(s) = 222.22/(s(1 + s/11.17)(1 + s/1321.66))",
           "tex": "L_1(s) = \\frac{222.22}{s\\left(1 + \\frac{s}{11.17}\\right)\\left(1 + \\frac{s}{1321.66}\\right)}",
           "note": "the known terms of L once the pair is cancelled",
-          "ref": "(5.39)"
+          "ref": "(5.39)",
+          "explore": true
         },
         {
           "eq": "TR = tan((arg L1(IωC) − Φ + 180°)/2)/ωC",
           "tex": "T_\\mathrm{R} = \\frac{1}{\\omega_\\mathrm{C}}\\tan\\left(\\frac{\\arg L_1(\\mathrm{I}\\omega_\\mathrm{C}) - \\Phi + \\pi}{2}\\right)",
           "note": "each of the two lags takes half the phase",
-          "ref": "(5.40)"
+          "ref": "(5.40)",
+          "explore": true
         },
         {
           "eq": "VR = 1/|L2(IωC)|",
           "tex": "V_\\mathrm{R} = \\frac{1}{\\lvert L_2(\\mathrm{I}\\omega_\\mathrm{C})\\rvert}",
           "note": "sets the crossover; 0.0141",
-          "ref": "(5.41)"
+          "ref": "(5.41)",
+          "explore": true
         },
         {
           "eq": "Gr,u = R/(1 + R G)",
           "tex": "G_{r,u_{T,n}}(s) = \\frac{R(s)}{1 + R(s)G(s)}",
           "note": "the duty cycle the reference asks for",
-          "ref": "(5.43)"
+          "ref": "(5.43)",
+          "explore": true
         },
         {
           "eq": "F(s) = 1/(1 + 2·0.9 s/5 + s²/5²)",
           "tex": "F(s) = \\frac{1}{1 + 2 \\times 0.9\\frac{s}{5} + \\frac{s^2}{5^2}}",
           "note": "prefilter that keeps |uT,n| ≤ 1 for r = 100",
-          "ref": "(5.44)"
+          "ref": "(5.44)",
+          "explore": true
         },
         {
           "eq": "s = (2/Ta)(z − 1)/(z + 1)",
@@ -2739,7 +2782,8 @@
           "eq": "Rges = RSB + RP + RK",
           "tex": "R_\\mathrm{ges} = R_\\mathrm{SB} + R_P + R_K",
           "note": "with the heat sink",
-          "ref": "(3.126)"
+          "ref": "(3.126)",
+          "explore": true
         },
         {
           "eq": "RP = H/(λA)",
@@ -2763,7 +2807,8 @@
           "eq": "T̄S = T∞ + P̄(RSB + RP + RK)",
           "tex": "\\bar{T}_S = T_\\infty + \\bar{P}(R_\\mathrm{SB} + R_P + R_K)",
           "note": "mean junction temperature",
-          "ref": "(3.131)"
+          "ref": "(3.131)",
+          "explore": true
         },
         {
           "eq": "T̂S = |G(I2πf)| P̂",
@@ -2781,7 +2826,8 @@
           "eq": "(TS,max − T̄S)/(Ûe Ia) = |G(I2πfmin)|",
           "tex": "\\frac{T_{S,\\mathrm{max}} - \\bar{T}_S}{\\hat{U}_e I_a} = \\lvert G(\\mathrm{I}2\\pi f_\\mathrm{min})\\rvert",
           "note": "fmin = 1.429 mHz",
-          "ref": "(3.135)"
+          "ref": "(3.135)",
+          "explore": true
         }
       ]
     },
@@ -2817,7 +2863,8 @@
           "eq": "R(s) = VR(1 + 2ξs/ω0 + s²/ω0²)/(s(1 + sTR)²)",
           "tex": "R(s) = \\frac{V_R\\left(1 + 2\\xi\\frac{s}{\\omega_0} + \\frac{s^2}{\\omega_0^2}\\right)}{s(1 + sT_R)^2}",
           "note": "the compensating controller",
-          "ref": "(5.38)"
+          "ref": "(5.38)",
+          "explore": true
         },
         {
           "eq": "u_k = kᵀx̂_k + g r_k",
@@ -2847,13 +2894,15 @@
           "eq": "kP = 1/(cᵀ(E − Φ)⁻¹Γ)",
           "tex": "k_P = \\frac{1}{\\mathbf{c}^\\mathrm{T}(\\mathbf{E} - \\boldsymbol{\\Phi})^{-1}\\boldsymbol{\\Gamma}}",
           "note": "",
-          "ref": "(8.58)"
+          "ref": "(8.58)",
+          "explore": true
         },
         {
           "eq": "x̂_k+1 = Φx̂_k + Γu_k + k̂(ŷ_k − y_k)",
           "tex": "\\hat{\\mathbf{x}}_{k+1} = \\boldsymbol{\\Phi}\\hat{\\mathbf{x}}_k + \\boldsymbol{\\Gamma}u_k + \\hat{\\mathbf{k}}(\\hat{y}_k - y_k)",
           "note": "the full observer",
-          "ref": "(8.72a)"
+          "ref": "(8.72a)",
+          "explore": true
         }
       ]
     }

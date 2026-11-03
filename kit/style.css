@@ -304,6 +304,10 @@ table.eqs .ref { white-space: nowrap; font-variant-numeric: tabular-nums; color:
 .math math { font-size: 1.1em; font-weight: normal; }
 .law .math-display { padding: 0; }
 .law:has(.math) { display: block; width: fit-content; max-width: 100%; font-family: inherit; white-space: normal; }
+.law.plotted { display: block; border-left-style: dashed; }
+.law.plotted .math-display + .math-display { margin-top: 6px; }
+/* Temml sets display: block math inline, which centres; these read better flush left, under the main law. */
+.law.plotted math[display=block] { display: inline math !important; }
 table.eqs td.eq:has(.math) { max-width: 0; width: 45%; }
 @media (max-width: 760px) { table.eqs td.eq:has(.math) { max-width: none; width: auto; } }
 .math-error code { font: 0.95rem ui-monospace, Consolas, monospace; overflow-wrap: anywhere; }

@@ -117,7 +117,7 @@
       "lawTex": "\\lim_{n \\to \\infty} \\varphi_n(t) = 0 \\text{ for } t \\neq 0, \\qquad \\int_{-\\infty}^{\\infty} \\varphi_n(t)\\,dt = 1",
       "lecture": "Taschner, pp. 285–288",
       "equations": [
-        { "eq": "φₙ(t) = cₙ e^(−n²/(1 − n²t²)) for |t| < 1/n, else 0", "tex": "\\varphi_n(t) = c_n\\, e^{-n^2/(1 - n^2 t^2)} \\text{ for } |t| < 1/n, \\quad 0 \\text{ otherwise}", "note": "the bump, smooth and zero outside ]−1/n; 1/n[; cₙ makes its integral 1", "ref": "pp. 285–286" },
+        { "eq": "φₙ(t) = cₙ e^(−n²/(1 − n²t²)) for |t| < 1/n, else 0", "tex": "\\varphi_n(t) = c_n\\, e^{-n^2/(1 - n^2 t^2)} \\text{ for } |t| < 1/n, \\quad 0 \\text{ otherwise}", "note": "the bump, smooth and zero outside ]−1/n; 1/n[; cₙ makes its integral 1", "ref": "pp. 285–286", "explore": true },
         { "eq": "|fₙ(x) − f(x)| < ε for all n ≥ n₀, n₀ independent of x", "tex": "|f_n(x) - f(x)| < \\varepsilon \\text{ for all } n \\ge n_0, \\; n_0 \\text{ independent of } x", "note": "uniform convergence; pointwise, n₀ may depend on x", "ref": "p. 288" },
         { "eq": "∫ₐᵇ lim fₙ dx = lim ∫ₐᵇ fₙ dx  when fₙ → f uniformly", "tex": "\\int_a^b \\lim_{n\\to\\infty} f_n(x)\\,dx = \\lim_{n\\to\\infty} \\int_a^b f_n(x)\\,dx", "note": "the swap that uniform convergence allows", "ref": "p. 288" }
       ],
@@ -150,7 +150,7 @@
       "equations": [
         { "eq": "Q(φ) = a cos²φ + 2b sin φ cos φ + c sin²φ", "tex": "Q(\\varphi) = a\\cos^2\\varphi + 2b\\sin\\varphi\\cos\\varphi + c\\sin^2\\varphi", "note": "the quadratic form on the unit vectors", "ref": "p. 410" },
         { "eq": "∂Q/∂φ = 2b cos 2φ − (a − c) sin 2φ = 0  ⇒  tan 2φ₀ = 2b/(a − c)", "tex": "\\frac{\\partial Q}{\\partial\\varphi} = 2b\\cos 2\\varphi - (a - c)\\sin 2\\varphi = 0 \\;\\Rightarrow\\; \\tan 2\\varphi_0 = \\frac{2b}{a - c}", "note": "the stationary directions", "ref": "p. 410" },
-        { "eq": "λ = (f_Q(u)|u),  μ = (f_Q(w)|w),  w = u at 90°", "tex": "\\lambda = (f_Q(u) \\,|\\, u), \\qquad \\mu = (f_Q(w) \\,|\\, w)", "note": "the eigenvalues, with the eigenvectors u = cos φ₀ + j sin φ₀ and w at right angles", "ref": "p. 410" }
+        { "eq": "λ = (f_Q(u)|u),  μ = (f_Q(w)|w),  w = u at 90°", "tex": "\\lambda = (f_Q(u) \\,|\\, u), \\qquad \\mu = (f_Q(w) \\,|\\, w)", "note": "the eigenvalues, with the eigenvectors u = cos φ₀ + j sin φ₀ and w at right angles", "ref": "p. 410", "explore": true }
       ],
       "practice": [
         { "question": "What is the larger eigenvalue of the matrix [[2, 1], [1, 2]]?", "source": "Worked by hand from Taschner p. 410", "answer": 3, "unit": "", "compute": { "law": "eigenLarger", "a": 2, "b": 1, "c": 2 }, "solution": "a = c, so φ₀ = 45°: Q(45°) = 2·½ + 2·1·½ + 2·½ = 3, and Q(135°) = 1." }

@@ -103,7 +103,8 @@
           "eq": "levels at ±Δ/2, ±3Δ/2, …, ±(M − 1)Δ/2; overload beyond ±MΔ/2",
           "tex": "\\text{levels } \\pm\\frac{\\Delta}{2}, \\pm\\frac{3\\Delta}{2}, \\dots, \\pm\\frac{(M-1)\\Delta}{2}, \\qquad A_\\mathrm{OL} = \\frac{M\\Delta}{2}",
           "note": "the uniform mid-rise quantiser",
-          "ref": "set 2, slides 35–37"
+          "ref": "set 2, slides 35–37",
+          "explore": true
         },
         {
           "eq": "E[e_q²] = Δ²/12",
@@ -127,7 +128,8 @@
           "eq": "SNR_out = SNQR / (1 + 4 · SNQR · Pe)",
           "tex": "\\mathrm{SNR}_\\mathrm{out} = \\frac{\\mathrm{SNQR}}{1 + 4 \\cdot \\mathrm{SNQR} \\cdot P_\\mathrm{e}}",
           "note": "with bit errors of probability Pe, one per word at most",
-          "ref": "set 2, slide 50"
+          "ref": "set 2, slide 50",
+          "explore": true
         },
         {
           "eq": "R_b = f_s · n; PCM30: 32 · 64 kbit/s = 2.048 Mbit/s",
@@ -334,13 +336,15 @@
           "eq": "h(t) = sinc(t/T0), H(f) rectangular to 1/(2T0)",
           "tex": "h(t) = \\operatorname{sinc}\\!\\left(\\frac{t}{T_0}\\right), \\qquad H(f) = T_0 \\quad \\text{for } |f| < \\frac{1}{2T_0}",
           "note": "the ideal, unrealisable Nyquist pulse",
-          "ref": "set 4, slide 16"
+          "ref": "set 4, slide 16",
+          "explore": true
         },
         {
           "eq": "a half-cosine roll-off, odd-symmetric about f_χ = 1/(2T0), α = Δf/f_χ",
           "tex": "\\text{half-cosine roll-off, odd-symmetric about } f_\\chi = \\frac{R_\\mathrm{s}}{2} = \\frac{1}{2T_0}, \\qquad \\alpha = \\frac{\\Delta f}{f_\\chi}",
           "note": "the raised cosine, defined by its spectrum; its zeros stay those of the sinc",
-          "ref": "set 4, slides 23–24"
+          "ref": "set 4, slides 23–24",
+          "explore": true
         },
         {
           "eq": "B = (1 + α)/(2T0), ηs = 2/(1 + α)",
@@ -352,7 +356,8 @@
           "eq": "h(t) = 2 ∫ H(f) cos(2πft) df",
           "tex": "h(t) = 2 \\int_0^{f_\\chi(1+\\alpha)} H(f) \\cos(2\\pi f t) \\,\\mathrm{d}f",
           "note": "the pulse drawn here, from the spectrum by Simpson's rule",
-          "ref": "derived from set 4, slide 24"
+          "ref": "derived from set 4, slide 24",
+          "explore": true
         },
         {
           "eq": "vertical eye opening A_V, horizontal T_h",
@@ -667,13 +672,15 @@
           "eq": "Pe = ½ Q(√(2Eb/N0)(cos φ − sin φ)) + ½ Q(√(2Eb/N0)(cos φ + sin φ))",
           "tex": "P_\\mathrm{e} = \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} (\\cos\\varphi - \\sin\\varphi)\\right) + \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} (\\cos\\varphi + \\sin\\varphi)\\right)",
           "note": "QPSK, more sensitive to φ",
-          "ref": "Synchronisation, slides 11–12"
+          "ref": "Synchronisation, slides 11–12",
+          "explore": true
         },
         {
           "eq": "Pe = ½ Q(√(2Eb/N0)) + ½ Q(√(2Eb/N0)(1 − 2ε))",
           "tex": "P_\\mathrm{e} = \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}}\\right) + \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} (1 - 2\\varepsilon)\\right)",
           "note": "BPSK with a static timing error ε of a bit",
-          "ref": "Synchronisation, slides 13–14"
+          "ref": "Synchronisation, slides 13–14",
+          "explore": true
         },
         {
           "eq": "e = sin(φ − θ) after the low-pass",
@@ -741,7 +748,8 @@
           "eq": "f = SNR_in/SNR_out = 1 + Te/T0, F = 10 log f",
           "tex": "f = \\frac{\\mathrm{SNR}_\\mathrm{in}}{\\mathrm{SNR}_\\mathrm{out}} = 1 + \\frac{T_\\mathrm{e}}{T_0}, \\qquad F = 10 \\log f",
           "note": "noise factor and noise figure",
-          "ref": "Rauschen, slides 51–55"
+          "ref": "Rauschen, slides 51–55",
+          "explore": true
         },
         {
           "eq": "f = f1 + (f2 − 1)/G1 + (f3 − 1)/(G1 G2) + …",
@@ -753,7 +761,8 @@
           "eq": "Te = Te1 + Te2/G1 + Te3/(G1 G2) + …",
           "tex": "T_\\mathrm{e} = T_{\\mathrm{e}(1)} + \\frac{T_{\\mathrm{e}(2)}}{G_1} + \\frac{T_{\\mathrm{e}(3)}}{G_1 G_2} + \\dots",
           "note": "the same in temperatures, the second route",
-          "ref": "Rauschen, slides 40–41"
+          "ref": "Rauschen, slides 40–41",
+          "explore": true
         },
         {
           "eq": "f = 1/G for a loss at T0",
@@ -893,7 +902,8 @@
           "eq": "P_e = 1 − Σ_{m ≤ t} C(n, m) p^m (1 − p)^(n − m)",
           "tex": "P_e = 1 - \\sum_{m=0}^{t}\\binom{n}{m}p^m(1-p)^{n-m}",
           "note": "t = 1 for the (7,4) code",
-          "ref": "set 6, slide 60"
+          "ref": "set 6, slide 60",
+          "explore": true
         },
         {
           "eq": "Es = Eb ld M",
@@ -917,13 +927,15 @@
           "eq": "f = f1 + (f2 − 1)/G1 + (f3 − 1)/(G1 G2) + …",
           "tex": "f = f_1 + \\frac{f_2 - 1}{G_1} + \\frac{f_3 - 1}{G_1G_2} + \\dots",
           "note": "2.25, 3.5 dB for the slides' receiver",
-          "ref": "Rauschen, slides 53, 64"
+          "ref": "Rauschen, slides 53, 64",
+          "explore": true
         },
         {
           "eq": "Tsys = Ts + (f − 1) T0",
           "tex": "T_\\mathrm{sys} = T_S + (f - 1)T_0",
           "note": "462 K in the slides",
-          "ref": "Rauschen, slides 52, 65"
+          "ref": "Rauschen, slides 52, 65",
+          "explore": true
         },
         {
           "eq": "SNR_out = SNQR / (1 + 4(M² − 1)Pe)",

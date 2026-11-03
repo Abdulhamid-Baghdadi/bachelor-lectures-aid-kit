@@ -225,7 +225,8 @@
           "eq": "E = Q γ r/(4πε0 (γ² x² + y² + z²)^{3/2}),  B = v × E/c0²",
           "tex": "\\mathbf{E} = \\frac{Q \\gamma\\, \\mathbf{r}}{4 \\pi \\varepsilon_0 \\big(\\gamma^2 x^2 + y^2 + z^2\\big)^{3/2}}, \\qquad \\mathbf{B} = \\frac{\\mathbf{v} \\times \\mathbf{E}}{c_0^2}",
           "note": "a charge passing the origin at v, at that moment: Coulomb's field from the potential of Prechtl (2010) (3.13), p. 61, carried over with p. 909",
-          "ref": "derived"
+          "ref": "derived",
+          "explore": true
         }
       ],
       "practice": [

@@ -64,7 +64,9 @@ async function start() {
     // The lab in tabs, so nothing waits below a long scroll. Explore first: the idea, the main law and the drawing it
     // animates. Equations: the full set, each with what it is and where it comes from. Practise: the course's questions.
     const items = [["Explore", h("div", {}, h("p", { class: "idea" }, w.idea),
-      h("p", { class: "law" }, w.lawTex ? math(w.lawTex, { display: true }) : w.law), body)],
+      h("p", { class: "law" }, w.lawTex ? math(w.lawTex, { display: true }) : w.law),
+      // The equations the view below plots, so a curve never shows without its formula; the rest stay on Equations.
+      ...[(w.equations ?? []).filter(e => e.explore)].filter(es => es.length).map(es => h("div", { class: "law plotted" }, ...es.map(e => e.tex ? math(e.tex, { display: true }) : h("p", {}, e.eq)))), body)],
       ["Equations", h("div", {}, w.equations?.length ? h("table", { class: "eqs" }, h("tbody", {}, w.equations.map(e => h("tr", {},
           h("td", { class: "eq" }, e.tex ? math(e.tex, { display: true }) : e.eq), h("td", { class: "note" }, e.note), h("td", { class: "ref" }, e.ref || "derived"))))) : null,
         h("p", { class: "source" }, `Source: ${w.lecture}`))]];

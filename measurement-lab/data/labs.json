@@ -67,13 +67,15 @@
           "eq": "x̄ = (1/N) Σ xᵢ",
           "tex": "\\bar{x} = \\frac{1}{N} \\sum_{i=1}^{N} x_i",
           "note": "the mean of N readings",
-          "ref": "eq. 1.46, p. 37"
+          "ref": "eq. 1.46, p. 37",
+          "explore": true
         },
         {
           "eq": "s = √( Σ (xᵢ − x̄)² / (N − 1) )",
           "tex": "s(x_i) = \\sqrt{\\frac{\\sum_{i=1}^{N} (x_i - \\bar{x})^2}{N - 1}} = u(x_i)",
           "note": "the empirical standard deviation of one reading, its standard uncertainty",
-          "ref": "eqs. 1.48–1.49, p. 38"
+          "ref": "eqs. 1.48–1.49, p. 38",
+          "explore": true
         },
         {
           "eq": "s(x̄) = s/√N",
@@ -170,7 +172,8 @@
           "eq": "sworst = Σ |∂f/∂xᵢ| s(xᵢ)",
           "tex": "s_\\mathrm{worst} = \\sum_{i} \\Big|\\frac{\\partial f}{\\partial x_i}\\Big|\\, s(x_i)",
           "note": "every contribution with the same sign: an upper bound",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ],
       "practice": [
@@ -380,13 +383,15 @@
           "eq": "|x̄| = (1/T) ∫₀ᵀ |x(t)| dt",
           "tex": "\\overline{|x(t)|} = \\frac{1}{T} \\int_0^T |x(t)|\\,\\mathrm{d}t",
           "note": "the rectified mean",
-          "ref": "eq. 2.37, p. 95"
+          "ref": "eq. 2.37, p. 95",
+          "explore": true
         },
         {
           "eq": "Xeff = √( (1/T) ∫₀ᵀ x²(t) dt )",
           "tex": "X_\\mathrm{eff} = \\sqrt{\\frac{1}{T} \\int_0^T x^2(t)\\,\\mathrm{d}t}",
           "note": "the RMS value",
-          "ref": "eqs. 2.38–2.39, p. 95"
+          "ref": "eqs. 2.38–2.39, p. 95",
+          "explore": true
         },
         {
           "eq": "|ū| = 2û/π = 0.637 û; U = û/√2 = 0.707 û",
@@ -441,7 +446,8 @@
           "eq": "U₁/U₂ = 1 + (R₁/R₂) · (1 + jωR₂C₂)/(1 + jωR₁C₁)",
           "tex": "\\frac{\\underline{U}_1}{\\underline{U}_2} = 1 + \\frac{R_1}{R_2}\\,\\frac{1 + \\mathrm{j}\\omega R_2 C_2}{1 + \\mathrm{j}\\omega R_1 C_1}",
           "note": "the frequency-compensated divider",
-          "ref": "eq. 2.96, p. 115"
+          "ref": "eq. 2.96, p. 115",
+          "explore": true
         },
         {
           "eq": "R₁C₁ = R₂C₂ ⇒ U₁/U₂ = 1 + R₁/R₂",
@@ -471,7 +477,8 @@
           "eq": "τ = (RT ‖ RE)(CT + C*E)",
           "tex": "\\tau = (R_\\mathrm{T} \\parallel R_\\mathrm{E})(C_\\mathrm{T} + C_\\mathrm{E}^{*})",
           "note": "how fast it settles between the two, from the node equation",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ],
       "practice": [
@@ -633,7 +640,8 @@
           "eq": "p(t) = U I [cos φ − cos(2ωt + φ)]",
           "tex": "p(t) = U I\\,[\\cos\\varphi - \\cos(2\\omega t + \\varphi)]",
           "note": "the instantaneous power",
-          "ref": "eqs. 2.62–2.63, p. 103"
+          "ref": "eqs. 2.62–2.63, p. 103",
+          "explore": true
         }
       ],
       "practice": [
@@ -690,7 +698,8 @@
           "eq": "G(jω) = Ω²/(1 − Ω² + j2DΩ), Ω = ω/ω₀",
           "tex": "G(\\mathrm{j}\\Omega) = \\frac{x_\\mathrm{a}}{x_\\mathrm{e}} = \\frac{\\Omega^2}{1 - \\Omega^2 + \\mathrm{j}2D\\Omega}, \\qquad \\Omega = \\frac{\\omega}{\\omega_0}",
           "note": "the frequency response",
-          "ref": "eq. 7.113, p. 369"
+          "ref": "eq. 7.113, p. 369",
+          "explore": true
         },
         {
           "eq": "|G| = Ω²/√((1 − Ω²)² + 4D²Ω²); D = 1: Ω²/(1 + Ω²)",
@@ -833,7 +842,8 @@
           "eq": "ua(t₂) = −(1/RC) ūx (t₂ − t₁)",
           "tex": "u_\\mathrm{a}(t_2) = -\\frac{1}{RC}\\,\\bar{u}_x\\,(t_2 - t_1)",
           "note": "the dual slope's run-down over a fixed time",
-          "ref": "eq. 6.11, p. 313"
+          "ref": "eq. 6.11, p. 313",
+          "explore": true
         },
         {
           "eq": "ūx Na/f = U₀ Nx/f ⇒ Nx = (Na/U₀) ūx",

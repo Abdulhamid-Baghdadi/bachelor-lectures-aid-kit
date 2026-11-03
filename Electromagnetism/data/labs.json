@@ -309,7 +309,8 @@
           "eq": "Û = N A B̂ ω",
           "tex": "\\hat{U} = N A \\hat{B} \\omega",
           "note": "for B = B̂ sin ωt through N turns of area A (derived)",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ]
     },
@@ -357,7 +358,8 @@
           "eq": "H = I / (2πr)",
           "tex": "H = \\frac{I}{2\\pi r}",
           "note": "long straight wire, static (derived)",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ]
     },
@@ -631,7 +633,8 @@
           "eq": "ϕ(r) = 1/(4πε) ∫V ϱ(r′)/|r − r′| dV′",
           "tex": "\\varphi(\\vec{r}) = \\frac{1}{4\\pi\\varepsilon} \\int_{\\mathcal{V}} \\frac{\\varrho(\\vec{r}')}{|\\vec{r} - \\vec{r}'|}\\,\\mathrm{d}V'",
           "note": "any charge distribution",
-          "ref": "(3.14)"
+          "ref": "(3.14)",
+          "explore": true
         }
       ]
     },
@@ -679,7 +682,8 @@
           "eq": "ϕi,j = ¼(ϕi−1,j + ϕi+1,j + ϕi,j−1 + ϕi,j+1)",
           "tex": "\\varphi_{i,j} = \\tfrac{1}{4}\\big(\\varphi_{i-1,j} + \\varphi_{i+1,j} + \\varphi_{i,j-1} + \\varphi_{i,j+1}\\big)",
           "note": "five-point difference form solved here (derived)",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ]
     },
@@ -824,7 +828,8 @@
           "eq": "B_z = μIa² / (2(a² + z²)^(3/2))",
           "tex": "B_z = \\frac{\\mu I a^2}{2(a^2 + z^2)^{3/2}}",
           "note": "on the axis of a circular loop (derived)",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ]
     },
@@ -1226,7 +1231,8 @@
           "eq": "U(z) = [Z_A cosh γ(l−z) + Z_W sinh γ(l−z)] / [Z_A cosh γl + Z_W sinh γl] · U(0)",
           "tex": "\\underline{U}(z) = \\frac{\\underline{Z}_\\mathrm{A}\\cosh[\\underline{\\gamma}(l - z)] + \\underline{Z}_\\mathrm{W}\\sinh[\\underline{\\gamma}(l - z)]}{\\underline{Z}_\\mathrm{A}\\cosh(\\underline{\\gamma} l) + \\underline{Z}_\\mathrm{W}\\sinh(\\underline{\\gamma} l)}\\,\\underline{U}(0)",
           "note": "voltage along the line",
-          "ref": "(5.121)"
+          "ref": "(5.121)",
+          "explore": true
         },
         {
           "eq": "Z_E = −jZ_W cot(2πl/λ)",
@@ -1266,7 +1272,8 @@
           "eq": "ellipticity = a/b  or  20 log(a/b) dB",
           "tex": "\\text{ellipticity} = \\frac{a}{b} \\quad \\text{or} \\quad 20\\log\\frac{a}{b}\\,\\mathrm{dB}",
           "note": "a, b the half axes of the ellipse",
-          "ref": "Fig. 3.4"
+          "ref": "Fig. 3.4",
+          "explore": true
         },
         {
           "eq": "e_x(z,0) = E cos kz,  e_y(z,0) = ±E sin kz",
@@ -1321,7 +1328,8 @@
           "eq": "E = Ê e^(−γ·r),  γ = α + jβ",
           "tex": "\\vec{E}(\\vec{r}) = \\hat{\\vec{E}}\\,\\mathrm{e}^{-\\vec{\\gamma}\\cdot\\vec{r}}, \\qquad \\vec{\\gamma} = \\vec{\\alpha} + \\mathrm{j}\\vec{\\beta}",
           "note": "plane wave with complex propagation constant",
-          "ref": "(3.20)"
+          "ref": "(3.20)",
+          "explore": true
         },
         {
           "eq": "γ × (γ × E) = ω²μδE",
@@ -1382,7 +1390,8 @@
           "eq": "Γ_TM = (n² cos Θ1 − √(n² − sin²Θ1)) / (n² cos Θ1 + √(n² − sin²Θ1))",
           "tex": "\\Gamma_\\mathrm{TM} = \\frac{n^2\\cos\\Theta_1 - \\sqrt{n^2 - \\sin^2\\Theta_1}}{n^2\\cos\\Theta_1 + \\sqrt{n^2 - \\sin^2\\Theta_1}}",
           "note": "Fresnel, TM case, n = n2/n1",
-          "ref": "p. 45"
+          "ref": "p. 45",
+          "explore": true
         },
         {
           "eq": "T_TM = 2n cos Θ1 / (n² cos Θ1 + √(n² − sin²Θ1))",
@@ -1394,7 +1403,8 @@
           "eq": "Γ_TE = (cos Θ1 − √(n² − sin²Θ1)) / (cos Θ1 + √(n² − sin²Θ1))",
           "tex": "\\Gamma_\\mathrm{TE} = \\frac{\\cos\\Theta_1 - \\sqrt{n^2 - \\sin^2\\Theta_1}}{\\cos\\Theta_1 + \\sqrt{n^2 - \\sin^2\\Theta_1}}",
           "note": "Fresnel, TE case",
-          "ref": "p. 45"
+          "ref": "p. 45",
+          "explore": true
         },
         {
           "eq": "T_TE = 2 cos Θ1 / (cos Θ1 + √(n² − sin²Θ1))",
@@ -1412,7 +1422,8 @@
           "eq": "sin Θ_c = n2/n1  (n2 < n1)",
           "tex": "\\sin\\Theta_\\mathrm{c} = \\frac{n_2}{n_1} \\quad (n_2 < n_1)",
           "note": "total reflection beyond Θ_c, from Snell's law with Θ2 = 90° (derived)",
-          "ref": ""
+          "ref": "",
+          "explore": true
         }
       ],
       "practice": [
@@ -1460,7 +1471,8 @@
           "eq": "λ_H = λ / √(1 − (λ/2a)²)",
           "tex": "\\lambda_\\mathrm{H} = \\frac{\\lambda}{\\sqrt{1 - \\big(\\frac{\\lambda}{2a}\\big)^2}}",
           "note": "guide wavelength of TE10",
-          "ref": "(6.8), p. 64"
+          "ref": "(6.8), p. 64",
+          "explore": true
         },
         {
           "eq": "Z_W = E_x/H_y = −E_y/H_x",
@@ -1472,7 +1484,8 @@
           "eq": "Z_W,TE = η / √(1 − (λ/λ_G)²),  η = √(μ/ε)",
           "tex": "Z_\\mathrm{W,TE} = \\frac{\\eta}{\\sqrt{1 - \\big(\\frac{\\lambda}{\\lambda_\\mathrm{G}}\\big)^2}}, \\qquad \\eta = \\sqrt{\\frac{\\mu}{\\varepsilon}}",
           "note": "for TE modes",
-          "ref": "p. 66"
+          "ref": "p. 66",
+          "explore": true
         },
         {
           "eq": "v_P/c = λ_H/λ,  v_P v_G = c²",
@@ -1597,7 +1610,8 @@
           "eq": "√(d1² + r²) + √(d2² + r²) − d = λ/2",
           "tex": "\\sqrt{d_1^2 + r^2} + \\sqrt{d_2^2 + r^2} - d = \\frac{\\lambda}{2}",
           "note": "the detour at height r above the line of sight (derived)",
-          "ref": ""
+          "ref": "",
+          "explore": true
         },
         {
           "eq": "r ≈ √(λ d1 d2 / d)",
@@ -1881,7 +1895,8 @@
           "eq": "fade rate = |Δf_D,1 − Δf_D,2|",
           "tex": "\\text{fade rate} = |\\Delta f_{\\mathrm{D},1} - \\Delta f_{\\mathrm{D},2}|",
           "note": "the beat of two Doppler-shifted carriers",
-          "ref": "p. 151"
+          "ref": "p. 151",
+          "explore": true
         },
         {
           "eq": "λ_S = λ / (2 sin(φ/2))",
@@ -2084,7 +2099,8 @@
           "eq": "C(v) = ∫₀^v cos(πt²/2) dt, S(v) = ∫₀^v sin(πt²/2) dt",
           "tex": "C(v) = \\int_0^v \\cos(\\pi t^2/2)\\,dt \\qquad S(v) = \\int_0^v \\sin(\\pi t^2/2)\\,dt",
           "note": "the Fresnel integrals",
-          "ref": "(10.3)"
+          "ref": "(10.3)",
+          "explore": true
         },
         {
           "eq": "v = h √((2/λ)(1/ds + 1/de))",
@@ -2114,7 +2130,8 @@
           "eq": "L_ISO = −20 log(λ/(4πd)) dB",
           "tex": "L_\\mathrm{ISO}|_\\mathrm{dB} = -20\\log\\left(\\frac{\\lambda}{4\\pi d}\\right)",
           "note": "114 dB at 2.4 GHz over 5 km",
-          "ref": "(12.10)"
+          "ref": "(12.10)",
+          "explore": true
         },
         {
           "eq": "L_sys = L + SNR_min (dB)",
