@@ -1,7 +1,7 @@
 {
   "format": "relativity-lab labs",
   "version": 1,
-  "about": "Special relativity for TU Wien's Relativitätstheorie course of summer 2017, which left no script and no exercises: the labs follow Einstein (1905), Zur Elektrodynamik bewegter Körper, by section and printed page, checked against the scanned original on 1 Nov 2026 (AUDIT.md). Notation is modern; each equation's note names Einstein's symbols. The low-speed field transformation is cross-checked with Prechtl (2010), Vorlesungen über Elektrodynamik, eq. (2.43); the point-charge potential with its eq. (3.13), p. 61, whose negative gradient is Coulomb's field. Maxwell's equations themselves are in the Electrodynamics Lab. Practice answers are worked by hand; tests/unit/labs-data.test.js recomputes each with the core and fails if they disagree.",
+  "about": "Special relativity for TU Wien's Relativitätstheorie course of summer 2017, which left no script and no exercises: the labs follow Einstein (1905), Zur Elektrodynamik bewegter Körper, by section and printed page, checked against the scanned original on 1 Nov 2026 (AUDIT.md). Notation is modern; each equation's note names Einstein's symbols. The low-speed field transformation is cross-checked with Prechtl (2010), Vorlesungen über Elektrodynamik, eq. (2.43); the point-charge potential with its eq. (3.13), p. 61, whose negative gradient is Coulomb's field. Free fall follows Einstein (1916), Die Grundlage der allgemeinen Relativitätstheorie, §§ 2, 21–22, checked against the scan on 8 Nov 2026. Maxwell's equations themselves are in the Electrodynamics Lab. Practice answers are worked by hand; tests/unit/labs-data.test.js recomputes each with the core and fails if they disagree.",
   "families": [
     {
       "id": "kinematics",
@@ -10,6 +10,10 @@
     {
       "id": "fields",
       "name": "Electrodynamics of moving bodies"
+    },
+    {
+      "id": "gravitation",
+      "name": "Gravitation"
     }
   ],
   "lectures": [
@@ -31,6 +35,15 @@
       "family": "fields",
       "labs": [
         "movingcharge"
+      ]
+    },
+    {
+      "number": "2, 21–22",
+      "pages": "Einstein (1916), pp. 771–773, 817–820",
+      "title": "Gravitation: the falling frame and the Newtonian limit",
+      "family": "gravitation",
+      "labs": [
+        "freefall"
       ]
     }
   ],
@@ -244,6 +257,74 @@
         }
       ],
       "lawTex": "E'_y = \\gamma (E_y - v B_z), \\qquad E'_z = \\gamma (E_z + v B_y), \\qquad B'_y = \\gamma \\Big(B_y + \\frac{v}{c_0^2} E_z\\Big), \\qquad B'_z = \\gamma \\Big(B_z - \\frac{v}{c_0^2} E_y\\Big)"
+    },
+    {
+      "id": "freefall",
+      "title": "Free fall and the falling frame",
+      "idea": "Gravity is not a force you feel in free fall: in a frame falling with a thrown ball, the ball moves in a straight line. Seen from the ground the same line, and the grid with it, bends into an arch.",
+      "law": "x = x_fall − g t²/2    d²x/dt² = −½ c0² ∂g44/∂x",
+      "lecture": "Einstein (1916), § 2, pp. 772–773; § 21, p. 817; § 22, p. 820",
+      "equations": [
+        {
+          "eq": "x = x_fall − g t²/2",
+          "tex": "x = x_{\\mathrm{fall}} - \\tfrac{1}{2} g t^2",
+          "note": "height on the ground of a point at x_fall in a frame falling from rest; Einstein's frame K' accelerated against K is equivalent to a field (pp. 772–773)",
+          "ref": "derived from pp. 772–773"
+        },
+        {
+          "eq": "d²x_τ/dt² = −½ ∂g44/∂x_τ  (τ = 1, 2, 3)",
+          "tex": "\\frac{d^2 x_\\tau}{dt^2} = -\\frac{1}{2}\\, \\frac{\\partial g_{44}}{\\partial x_\\tau} \\quad (\\tau = 1, 2, 3)",
+          "note": "the geodesic of slow motion in a weak static field: g44/2 plays the Newtonian potential, and only g44 enters; Einstein's units, c = 1",
+          "ref": "(67), p. 817"
+        },
+        {
+          "eq": "g44 = 1 + 2 g x/c0²",
+          "tex": "g_{44} = 1 + \\frac{2 g x}{c_0^2}",
+          "note": "a uniform field in SI, from (67) with the potential g x",
+          "ref": "derived from (67)"
+        },
+        {
+          "eq": "dx4 = 1/√g44",
+          "tex": "dx_4 = \\frac{1}{\\sqrt{g_{44}}}",
+          "note": "coordinate time per tick of a clock at rest: the clock runs slower near masses",
+          "ref": "(72), p. 820"
+        },
+        {
+          "eq": "x = v t − g t²/2,  x_max = v²/(2g),  t_flight = 2v/g",
+          "tex": "x = v t - \\tfrac{1}{2} g t^2, \\qquad x_{\\max} = \\frac{v^2}{2g}, \\qquad t_{\\mathrm{flight}} = \\frac{2v}{g}",
+          "note": "the thrown ball, the straight line x_fall = v t carried to the ground",
+          "ref": "derived",
+          "explore": true
+        }
+      ],
+      "practice": [
+        {
+          "question": "A ball is thrown straight up at 10 m/s where g = 9.81 m/s². How high does it rise?",
+          "answer": 5.097,
+          "unit": "m",
+          "compute": {
+            "law": "apexHeight",
+            "v": 10,
+            "g": 9.81
+          },
+          "solution": "x_max = v²/(2g) = 100/19.62 m = 5.097 m.",
+          "source": "Worked by hand from the falling-frame line of Einstein (1916), pp. 772–773; the course left no exercise collection"
+        },
+        {
+          "question": "A clock stands 1000 m above another in a field of 9.81 m/s². How much more does it show after one day (86 400 s)?",
+          "answer": 9.43e-09,
+          "unit": "s",
+          "compute": {
+            "law": "clockGainTime",
+            "h": 1000,
+            "g": 9.81,
+            "t": 86400
+          },
+          "solution": "√(g44(h)/g44(0)) − 1 ≈ g h/c0² = 9810/(8.988 × 10¹⁶) = 1.092 × 10⁻¹³; times 86 400 s gives 9.43 × 10⁻⁹ s, about 9 ns.",
+          "source": "Worked by hand from Einstein (1916), (72), p. 820; the course left no exercise collection"
+        }
+      ],
+      "lawTex": "x = x_{\\mathrm{fall}} - \\tfrac{1}{2} g t^2, \\qquad \\frac{d^2 x}{dt^2} = -\\frac{c_0^2}{2}\\, \\frac{\\partial g_{44}}{\\partial x}"
     }
   ]
 }

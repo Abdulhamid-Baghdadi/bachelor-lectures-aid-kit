@@ -19,7 +19,8 @@ lab's own `style.css` is linked after `../kit/style.css` and adds only its famil
 | app | `src/app.js` | kit-core, core, kit, labs | the page, `index.html` |
 
 The core is pure: no DOM, network, clock or randomness (`forbid` in `architecture.json`). `relativity.js` holds the
-Lorentz transformation, its consequences and the transformation of E and B, in SI. The kit draws and knows no law. A
+Lorentz transformation, its consequences and the transformation of E and B, in SI; `gravity.js` the free fall of
+Einstein (1916) in the Newtonian limit of a uniform field. The kit draws and knows no law. A
 lab holds one idea. The core names no lab.
 
 ## Data
@@ -27,7 +28,7 @@ lab holds one idea. The core names no lab.
 `data/labs.json` (`"format": "relativity-lab labs"`, version 1): the sections of Einstein (1905) that the labs follow
 (number, printed pages, a title in English after the section heading), then each lab's words, its `equations`
 (equation, what it is, its page, or empty for a derived step) and practice questions with a `compute` block that
-`src/core/practice.js` works out. `bibliography.json` holds Einstein (1905) and, for the cross-checks, Prechtl (2010).
+`src/core/practice.js` works out. `bibliography.json` holds Einstein (1905), Einstein (1916) and, for the cross-checks, Prechtl (2010).
 
 ## Held by tests
 
@@ -36,6 +37,8 @@ lab holds one idea. The core names no lab.
 - The laws: `tests/unit/core.test.js`, each against a second route: the invariant interval, the inverse boost, two
   boosts against velocity addition, the Galilean limit, Prechtl (2010) (2.43) at low speed, Gauss's law by a numerical
   integral.
+- Free fall: `tests/unit/gravity.test.js`, the falling frame's line against the parabola, eq. (67) integrated in time
+  against it, eq. (72) against g h/c0².
 - Practice answers: `tests/unit/labs-data.test.js`. Modules and data agree: `tests/unit/labs-modules.test.js`.
 - Citations: `tests/unit/design-citations.test.js`. README pictures: `tests/unit/readme.test.js`.
 

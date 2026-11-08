@@ -1,7 +1,7 @@
 {
   "format": "design-rules bibliography",
   "version": 1,
-  "about": "The sources of this project's subject matter (special relativity), apart from the design rules' bibliography, which keeps the design principles.",
+  "about": "The sources of this project's subject matter (special relativity, and gravitation in the Newtonian limit), apart from the design rules' bibliography, which keeps the design principles.",
   "entries": [
     {
       "key": "einstein1905",
@@ -29,6 +29,20 @@
       "checked": {
         "how": "full text",
         "date": "2026-11-01"
+      }
+    },
+    {
+      "key": "einstein1916",
+      "authors": [
+        "Einstein, A."
+      ],
+      "year": 1916,
+      "title": "Die Grundlage der allgemeinen Relativitätstheorie",
+      "venue": "Annalen der Physik 49 (354 in the continuous count), 769–822",
+      "backs": "The free-fall lab: the accelerated frame equivalent to a field (§ 2, pp. 772–773), the Newtonian limit of the motion, eq. (67), p. 817, and the slower clock, eq. (72), p. 820, by printed page. Checked against a scan of the journal pages from Zenodo record 1424302, saved as Einstein1916/1916_49_769-822.pdf; pp. 769–774 and 817–820 read page by page.",
+      "checked": {
+        "how": "full text",
+        "date": "2026-11-08"
       }
     }
   ]

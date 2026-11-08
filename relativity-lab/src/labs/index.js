@@ -4,5 +4,6 @@ import minkowski from "./minkowski.js";
 import dilation from "./dilation.js";
 import velocity from "./velocity.js";
 import movingcharge from "./movingcharge.js";
+import freefall from "./freefall.js";
 
-export const labs = [minkowski, dilation, velocity, movingcharge];
+export const labs = [minkowski, dilation, velocity, movingcharge, freefall];

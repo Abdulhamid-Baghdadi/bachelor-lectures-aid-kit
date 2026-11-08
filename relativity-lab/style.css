@@ -1,6 +1,7 @@
 /* This lab's own look, after the kit's (../kit/style.css): its families' frame colours and the drawings only it has. */
 [data-family=kinematics] { --frame: #1E40AF; }
 [data-family=fields] { --frame: #9F1239; }
+[data-family=gravitation] { --frame: #166534; }
 
 /* The light cone dashed, the moving frame's axes in the accent colour, thicker. */
 .light { stroke: var(--second); stroke-width: 1.5; stroke-dasharray: 6 4; }
