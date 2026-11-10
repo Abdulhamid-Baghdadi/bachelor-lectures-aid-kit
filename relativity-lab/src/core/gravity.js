@@ -29,3 +29,40 @@ export const g44Acceleration = (x, g, h = 1) => -0.5 * C0 * C0 * (g44Excess(x + 
  *  equation (72), p. 820, dx4 = 1/√g44 per tick ("Die Uhr läuft also langsamer, wenn sie in der Nähe ponderabler
  *  Massen aufgestellt ist"). About g h/c0²; worked without cancellation for heights of metres. */
 export const clockGain = (h, g) => Math.expm1(0.5 * Math.log1p(2 * g * h / (C0 * C0)));
+
+/** Newton's gravitational constant as Einstein quotes it on p. 818: K = 6,7 · 10⁻⁸ in cgs, here in SI (m³/(kg s²)). */
+export const K_GRAV = 6.7e-11;
+
+/** Acceleration at (x, y) m of a point mass M kg at the origin: −grad of the potential −K M/r, which (67), (68a) and
+ *  (69), pp. 817–818, give in the Newtonian limit. Einstein's (70a) is not used: by (68) its α comes out twice his
+ *  printed κM/8π, so the potential is taken from (68a) directly. */
+export function pointMassAcceleration(M, [x, y]) {
+  const r = Math.hypot(x, y), k = -K_GRAV * M / (r * r * r);
+  return [k * x, k * y];
+}
+
+/** Acceleration of a point at offset d = [radial, across] from a falling reference at distance R from the mass,
+ *  relative to that reference: the part no falling frame removes (exact difference). */
+export function tidalAcceleration(M, R, [dx, dy]) {
+  const a = pointMassAcceleration(M, [R + dx, dy]), a0 = pointMassAcceleration(M, [R, 0]);
+  return [a[0] - a0[0], a[1] - a0[1]];
+}
+
+/** Its first-order form for small d: stretch 2KM/R³ along the radius, squeeze KM/R³ across (derived). */
+export const tidalLinear = (M, R, [dx, dy]) => [2 * K_GRAV * M * dx / R ** 3, -K_GRAV * M * dy / R ** 3];
+
+/** A ring of n points of radius d around a reference at distance R0, all let go from rest, after time t: their
+ *  offsets from the reference, which falls with them. Velocity Verlet in steps of t/steps; deterministic. */
+export function fallingRing(M, R0, d, n, t, steps = 400) {
+  const pts = Array.from({ length: n }, (_, i) => { const a = 2 * Math.PI * i / n; return [R0 + d * Math.cos(a), d * Math.sin(a)]; });
+  const bodies = [[R0, 0], ...pts].map(p => ({ p, v: [0, 0], a: pointMassAcceleration(M, p) }));
+  const dt = t / steps;
+  for (let k = 0; k < steps; k++) for (const b of bodies) {
+    b.p = [b.p[0] + b.v[0] * dt + b.a[0] * dt * dt / 2, b.p[1] + b.v[1] * dt + b.a[1] * dt * dt / 2];
+    const a = pointMassAcceleration(M, b.p);
+    b.v = [b.v[0] + (b.a[0] + a[0]) * dt / 2, b.v[1] + (b.a[1] + a[1]) * dt / 2];
+    b.a = a;
+  }
+  const [ref, ...ring] = bodies;
+  return { reference: ref.p, offsets: ring.map(b => [b.p[0] - ref.p[0], b.p[1] - ref.p[1]]) };
+}

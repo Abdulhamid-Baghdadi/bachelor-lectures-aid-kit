@@ -40,10 +40,11 @@
     {
       "number": "2, 21–22",
       "pages": "Einstein (1916), pp. 771–773, 817–820",
-      "title": "Gravitation: the falling frame and the Newtonian limit",
+      "title": "Gravitation: the falling frame, the Newtonian limit and tides",
       "family": "gravitation",
       "labs": [
-        "freefall"
+        "freefall",
+        "tides"
       ]
     }
   ],
@@ -325,6 +326,69 @@
         }
       ],
       "lawTex": "x = x_{\\mathrm{fall}} - \\tfrac{1}{2} g t^2, \\qquad \\frac{d^2 x}{dt^2} = -\\frac{c_0^2}{2}\\, \\frac{\\partial g_{44}}{\\partial x}"
+    },
+    {
+      "id": "tides",
+      "title": "Tides: what no falling frame undoes",
+      "idea": "Ride with a falling ring of balls and the field at its centre is gone, but not its change across the ring: the ring stretches along the line to the mass and squeezes across it. A uniform field can be undone by one falling frame; a real mass cannot.",
+      "law": "Φ = −K M/r    a = −grad Φ    Δa ≈ (2KM/R³) d along the radius, −(KM/R³) d across",
+      "lecture": "Einstein (1916), § 21, pp. 817–818",
+      "equations": [
+        {
+          "eq": "d²x_τ/dt² = −½ ∂g44/∂x_τ",
+          "tex": "\\frac{d^2 x_\\tau}{dt^2} = -\\frac{1}{2}\\, \\frac{\\partial g_{44}}{\\partial x_\\tau}",
+          "note": "slow motion in a weak static field, g44/2 the potential; Einstein's units, c = 1",
+          "ref": "(67), p. 817"
+        },
+        {
+          "eq": "Δg44 = κ ρ",
+          "tex": "\\Delta g_{44} = \\kappa \\rho",
+          "note": "the field equation in this approximation; with (67) equivalent to Newton's law of gravitation",
+          "ref": "(68), p. 818"
+        },
+        {
+          "eq": "−(κ/8π) ∫ ρ dτ/r,  κ = 8πK/c²,  K = 6.7 · 10⁻⁸ (cgs)",
+          "tex": "-\\frac{\\kappa}{8\\pi} \\int \\frac{\\rho\\, d\\tau}{r}, \\qquad \\kappa = \\frac{8 \\pi K}{c^2}, \\qquad K = 6.7 \\cdot 10^{-8}\\ (\\mathrm{cgs})",
+          "note": "the gravitational potential and its constant; for a point mass Φ = −K M/r, with K = 6.7 × 10⁻¹¹ m³/(kg s²) in SI",
+          "ref": "(68a), (69), p. 818"
+        },
+        {
+          "eq": "Δa_r ≈ 2 K M d/R³,  Δa_⊥ ≈ −K M d/R³",
+          "tex": "\\Delta a_r \\approx \\frac{2 K M}{R^3}\\, d, \\qquad \\Delta a_\\perp \\approx -\\frac{K M}{R^3}\\, d",
+          "note": "relative acceleration of two balls d apart, along and across the radius; the first-order difference of −grad Φ",
+          "ref": "derived",
+          "explore": true
+        }
+      ],
+      "practice": [
+        {
+          "question": "Two balls fall 10 m apart along the line to a mass of 6 × 10²⁴ kg, 7000 km from its centre. How fast does their separation grow, as an acceleration? Use K = 6.7 × 10⁻¹¹ m³/(kg s²).",
+          "answer": 2.344e-05,
+          "unit": "m/s²",
+          "compute": {
+            "law": "tidalStretch",
+            "M": 6e+24,
+            "R": 7000000.0,
+            "d": 10
+          },
+          "solution": "K M/R³ = 6.7 × 10⁻¹¹ × 6 × 10²⁴/(7 × 10⁶)³ = 4.02 × 10¹⁴/3.43 × 10²⁰ = 1.172 × 10⁻⁶ s⁻²; along the radius 2 × 1.172 × 10⁻⁶ × 10 m = 2.344 × 10⁻⁵ m/s².",
+          "source": "Worked by hand from Einstein (1916), (68a) and (69), p. 818; the course left no exercise collection"
+        },
+        {
+          "question": "The same two balls, now 10 m apart side by side, across the line to the mass. How fast do they close in on each other?",
+          "answer": 1.172e-05,
+          "unit": "m/s²",
+          "compute": {
+            "law": "tidalSqueeze",
+            "M": 6e+24,
+            "R": 7000000.0,
+            "d": 10
+          },
+          "solution": "Across the radius both fall towards the same centre: K M d/R³ = 1.172 × 10⁻⁶ × 10 m = 1.172 × 10⁻⁵ m/s², half the stretch.",
+          "source": "Worked by hand from Einstein (1916), (68a) and (69), p. 818; the course left no exercise collection"
+        }
+      ],
+      "lawTex": "\\Phi = -\\frac{K M}{r}, \\qquad \\Delta a_r \\approx \\frac{2 K M}{R^3}\\, d, \\qquad \\Delta a_\\perp \\approx -\\frac{K M}{R^3}\\, d"
     }
   ]
 }

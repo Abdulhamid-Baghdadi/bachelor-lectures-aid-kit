@@ -1,7 +1,7 @@
 # Special Relativity Lab
 
-Five ideas of relativity to play with in the browser: frames, clocks, rods and fields seen from two frames at once,
-after Einstein (1905), *Zur Elektrodynamik bewegter Körper*, and free fall seen from a falling frame, after Einstein
+Six ideas of relativity to play with in the browser: frames, clocks, rods and fields seen from two frames at once,
+after Einstein (1905), *Zur Elektrodynamik bewegter Körper*, and free fall and tides seen from a falling frame, after Einstein
 (1916), *Die Grundlage der allgemeinen Relativitätstheorie*, for TU Wien's Relativitätstheorie course.
 
 <picture>
@@ -15,13 +15,13 @@ after Einstein (1905), *Zur Elektrodynamik bewegter Körper*, and free fall seen
 |---|---|
 | Einstein (1905) §§ 3–5 Kinematic part | Minkowski diagram (simultaneity and the interval), moving clocks and rods, adding velocities |
 | Einstein (1905) § 6 Electrodynamic part | the fields of a moving charge: E and B mixing under a boost |
-| Einstein (1916) §§ 2, 21–22 Gravitation | free fall: a thrown ball goes straight in the falling frame and bends into an arch on the ground; only g44, the rate of clocks, enters |
+| Einstein (1916) §§ 2, 21–22 Gravitation | free fall: a thrown ball goes straight in the falling frame and bends into an arch on the ground; only g44, the rate of clocks, enters; tides: a falling ring of balls stretches towards the mass, what no falling frame undoes |
 
 Each lab has a drawing to move, readouts worked by the core, a table of the equations behind it with their page in
 Einstein (1905) or (1916), and a practice question worked by hand. Maxwell's equations and the fields of resting charges are in
 the [Electrodynamics Lab](../Electromagnetism/).
 
-<img src="docs/light.png" alt="The overview in the light theme: Einstein's kinematic part with three lab cards, the electrodynamic part with one and gravitation with the free-fall lab" width="640">
+<img src="docs/light.png" alt="The overview in the light theme: Einstein's kinematic part with three lab cards, the electrodynamic part with one and gravitation with the free-fall and tides labs" width="640">
 <img src="docs/dark.png" alt="The moving charge lab in the dark theme: arrows of the electric field squeezed across the path, colour for the magnetic field above and below, and the readouts showing the factor γ" width="640">
 
 ## Open it
@@ -50,8 +50,8 @@ Plain JavaScript modules, no build step. Layers and their tests: [ARCHITECTURE.m
 ## Limits
 
 - A learning aid in one dimension of motion: every boost is along x.
-- Gravitation only in the Newtonian limit of a uniform field (Einstein 1916, § 21): no tides, no orbits, no field
-  equations.
+- Gravitation only in the Newtonian limit (Einstein 1916, § 21): a uniform field and the tides of a point mass, in a
+  plane; no orbits, no light bending, no field equations beyond their Newtonian form.
 - The course left no script and no exercises: every equation is from Einstein (1905) or (1916), checked against the
   scanned originals, and the practice answers are worked by hand.
 - Einstein's field equations use Gaussian units; the SI form shown beside them is derived and marked so.

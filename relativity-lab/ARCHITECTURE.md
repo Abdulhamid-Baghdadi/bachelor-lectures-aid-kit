@@ -19,8 +19,8 @@ lab's own `style.css` is linked after `../kit/style.css` and adds only its famil
 | app | `src/app.js` | kit-core, core, kit, labs | the page, `index.html` |
 
 The core is pure: no DOM, network, clock or randomness (`forbid` in `architecture.json`). `relativity.js` holds the
-Lorentz transformation, its consequences and the transformation of E and B, in SI; `gravity.js` the free fall of
-Einstein (1916) in the Newtonian limit of a uniform field. The kit draws and knows no law. A
+Lorentz transformation, its consequences and the transformation of E and B, in SI; `gravity.js` the free fall and the
+tides of Einstein (1916) in the Newtonian limit. The kit draws and knows no law. A
 lab holds one idea. The core names no lab.
 
 ## Data
@@ -38,7 +38,8 @@ lab holds one idea. The core names no lab.
   boosts against velocity addition, the Galilean limit, Prechtl (2010) (2.43) at low speed, Gauss's law by a numerical
   integral.
 - Free fall: `tests/unit/gravity.test.js`, the falling frame's line against the parabola, eq. (67) integrated in time
-  against it, eq. (72) against g h/c0².
+  against it, eq. (72) against g h/c0². Tides: `tests/unit/tides.test.js`, the exact field difference against its
+  first-order form, the falling ring against ½ Δa t².
 - Practice answers: `tests/unit/labs-data.test.js`. Modules and data agree: `tests/unit/labs-modules.test.js`.
 - Citations: `tests/unit/design-citations.test.js`. README pictures: `tests/unit/readme.test.js`.
 

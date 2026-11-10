@@ -13,6 +13,10 @@ const LAWS = {
   apexHeight: q => G.apexHeight(q.v, q.g),
   // Seconds a clock h metres up gains over one on the ground while t seconds pass.
   clockGainTime: q => G.clockGain(q.h, q.g) * q.t,
+  // Relative acceleration (m/s²) of two balls d metres apart along the radius, R metres from a mass M kg.
+  tidalStretch: q => G.tidalAcceleration(q.M, q.R, [q.d, 0])[0],
+  // The same, d metres apart across the radius: towards each other, so the magnitude.
+  tidalSqueeze: q => -G.tidalAcceleration(q.M, q.R, [0, q.d])[1],
 };
 
 /** The answer to a question's "compute" block; an unknown law is an error naming the ones there are. */
