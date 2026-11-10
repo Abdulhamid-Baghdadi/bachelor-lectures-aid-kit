@@ -21,7 +21,7 @@ Each lab has a drawing to move, readouts worked by the core, a table of the equa
 Einstein (1905) or (1916), and a practice question worked by hand. Maxwell's equations and the fields of resting charges are in
 the [Electrodynamics Lab](../Electromagnetism/).
 
-<img src="docs/light.png" alt="The overview in the light theme: Einstein's kinematic part with three lab cards and the electrodynamic part with one" width="640">
+<img src="docs/light.png" alt="The overview in the light theme: Einstein's kinematic part with three lab cards, the electrodynamic part with one and gravitation with the free-fall lab" width="640">
 <img src="docs/dark.png" alt="The moving charge lab in the dark theme: arrows of the electric field squeezed across the path, colour for the magnetic field above and below, and the readouts showing the factor γ" width="640">
 
 ## Open it

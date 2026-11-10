@@ -49,7 +49,7 @@ async function start() {
   };
 
   const overview = h("div", { class: "overview" },
-    h("p", { class: "lead" }, "Pick an idea. They follow Einstein (1905), section by section."),
+    h("p", { class: "lead" }, "Pick an idea. They follow Einstein (1905) and, for gravitation, Einstein (1916), section by section."),
     h("div", { class: "lecture-rows" }, data.lectures.filter(lecture => lecture.labs.some(id => at.has(id))).map(lecture => h("section", { class: "lecture-row" },
       h("h2", {}, h("span", { class: "number" }, `${chapterOf(lecture)}`), " ", lecture.title,
         h("span", { class: "date" }, lecture.pages)),
