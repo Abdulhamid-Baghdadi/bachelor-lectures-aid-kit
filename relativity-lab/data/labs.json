@@ -60,25 +60,47 @@
           "eq": "t' = γ (t − v x/c0²),  x' = γ (x − v t),  y' = y,  z' = z",
           "tex": "t' = \\gamma \\Big(t - \\frac{v}{c_0^2}\\, x\\Big), \\qquad x' = \\gamma (x - v t), \\qquad y' = y, \\qquad z' = z",
           "note": "the Lorentz transformation from K to k moving at v along x; Einstein writes τ, ξ, η, ζ for t', x', y', z', β for γ and V for c0",
-          "ref": "p. 902"
+          "ref": "p. 902",
+          "where": [
+            { "tex": "t',\\ x',\\ y',\\ z'", "means": "the same event in the moving system k; Einstein's τ, ξ, η, ζ (p. 902)" },
+            { "tex": "t,\\ x,\\ y,\\ z", "means": "time [s] and coordinates [m] of an event in the resting system K (p. 902)" },
+            { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" },
+            { "tex": "\\gamma", "means": "1/√(1 − (v/c₀)²); Einstein's β (p. 902)" }
+          ]
         },
         {
           "eq": "γ = 1/√(1 − (v/c0)²)",
           "tex": "\\gamma = \\frac{1}{\\sqrt{1 - (v/c_0)^2}}",
           "note": "Einstein's β, with V for c0",
-          "ref": "p. 902"
+          "ref": "p. 902",
+          "where": [
+            { "tex": "\\gamma", "means": "1/√(1 − (v/c₀)²); Einstein's β (p. 902)" },
+            { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         },
         {
           "eq": "x² + y² + z² = c0² t²  ⇒  x'² + y'² + z'² = c0² t'²",
           "tex": "x^2 + y^2 + z^2 = c_0^2 t^2 \\;\\Rightarrow\\; x'^2 + y'^2 + z'^2 = c_0^2 t'^2",
           "note": "a light sphere stays a light sphere; Einstein: ξ² + η² + ζ² = V² τ²",
-          "ref": "p. 901"
+          "ref": "p. 901",
+          "where": [
+            { "tex": "t,\\ x,\\ y,\\ z", "means": "time [s] and coordinates [m] of an event in the resting system K (p. 902)" },
+            { "tex": "t',\\ x',\\ y',\\ z'", "means": "the same event in the moving system k; Einstein's τ, ξ, η, ζ (p. 902)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         },
         {
           "eq": "(c0 t)² − x² = (c0 t')² − x'²",
           "tex": "(c_0 t)^2 - x^2 = (c_0 t')^2 - x'^2",
           "note": "the interval, for any event; Einstein shows it only for the light sphere",
-          "ref": "derived from p. 902"
+          "ref": "derived from p. 902",
+          "where": [
+            { "tex": "t,\\ x,\\ y,\\ z", "means": "time [s] and coordinates [m] of an event in the resting system K (p. 902)" },
+            { "tex": "t',\\ x',\\ y',\\ z'", "means": "the same event in the moving system k; Einstein's τ, ξ, η, ζ (p. 902)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         }
       ],
       "practice": [
@@ -94,7 +116,14 @@
           "source": "Worked by hand from Einstein (1905), p. 902; the course left no exercise collection"
         }
       ],
-      "lawTex": "t' = \\gamma \\Big(t - \\frac{v x}{c_0^2}\\Big), \\qquad x' = \\gamma (x - v t), \\qquad \\gamma = \\frac{1}{\\sqrt{1 - (v/c_0)^2}}"
+      "lawTex": "t' = \\gamma \\Big(t - \\frac{v x}{c_0^2}\\Big), \\qquad x' = \\gamma (x - v t), \\qquad \\gamma = \\frac{1}{\\sqrt{1 - (v/c_0)^2}}",
+      "lawWhere": [
+        { "tex": "t',\\ x',\\ y',\\ z'", "means": "the same event in the moving system k; Einstein's τ, ξ, η, ζ (p. 902)" },
+        { "tex": "t,\\ x,\\ y,\\ z", "means": "time [s] and coordinates [m] of an event in the resting system K (p. 902)" },
+        { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+        { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" },
+        { "tex": "\\gamma", "means": "1/√(1 − (v/c₀)²); Einstein's β (p. 902)" }
+      ]
     },
     {
       "id": "dilation",
@@ -107,19 +136,36 @@
           "eq": "R √(1 − (v/c0)²), R, R",
           "tex": "R \\sqrt{1 - (v/c_0)^2}, \\quad R, \\quad R",
           "note": "axes of a moving sphere of radius R, seen from K (Einstein: V for c0)",
-          "ref": "p. 903"
+          "ref": "p. 903",
+          "where": [
+            { "tex": "R", "means": "radius of a rigid sphere resting in k; seen from K its axes are R√(1 − (v/c₀)²), R, R (p. 903)" },
+            { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         },
         {
           "eq": "τ = t √(1 − (v/c0)²)",
           "tex": "\\tau = t \\sqrt{1 - (v/c_0)^2}",
           "note": "reading τ of a clock resting in k, at x = v t; Einstein's own symbol τ",
-          "ref": "p. 904"
+          "ref": "p. 904",
+          "where": [
+            { "tex": "\\tau", "means": "time shown by a clock at rest in k, at its origin [s] (p. 904)" },
+            { "tex": "t", "means": "time in the resting system K [s] (p. 904)" },
+            { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         },
         {
           "eq": "t − τ ≈ ½ t (v/c0)²",
           "tex": "t - \\tau \\approx \\tfrac{1}{2}\\, t\\, (v/c_0)^2",
           "note": "the moving clock's lag, up to terms of fourth and higher order",
-          "ref": "p. 904"
+          "ref": "p. 904",
+          "where": [
+            { "tex": "t", "means": "time in the resting system K [s] (p. 904)" },
+            { "tex": "\\tau", "means": "time shown by a clock at rest in k, at its origin [s] (p. 904)" },
+            { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         }
       ],
       "practice": [
@@ -148,7 +194,15 @@
           "source": "Worked by hand from Einstein (1905), p. 903; the course left no exercise collection"
         }
       ],
-      "lawTex": "\\tau = t \\sqrt{1 - (v/c_0)^2}, \\qquad L = L_0 \\sqrt{1 - (v/c_0)^2}"
+      "lawTex": "\\tau = t \\sqrt{1 - (v/c_0)^2}, \\qquad L = L_0 \\sqrt{1 - (v/c_0)^2}",
+      "lawWhere": [
+        { "tex": "\\tau", "means": "time shown by a clock at rest in k, at its origin [s] (p. 904)" },
+        { "tex": "t", "means": "time in the resting system K [s] (p. 904)" },
+        { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+        { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" },
+        { "tex": "L_0", "means": "length of a body at rest; Einstein's radius R of a sphere resting in k (p. 903)" },
+        { "tex": "L", "means": "the same length along the motion, seen from K (p. 903)" }
+      ]
     },
     {
       "id": "velocity",
@@ -161,25 +215,50 @@
           "eq": "x = (w_x' + v) t/(1 + v w_x'/c0²),  y = √(1 − (v/c0)²) w_y' t/(1 + v w_x'/c0²)",
           "tex": "x = \\frac{w_{x'} + v}{1 + v w_{x'}/c_0^2}\\, t, \\qquad y = \\frac{\\sqrt{1 - (v/c_0)^2}}{1 + v w_{x'}/c_0^2}\\, w_{y'}\\, t",
           "note": "motion of a point moving at (w_x', w_y') in k, seen from K; Einstein writes w_ξ, w_η",
-          "ref": "p. 905"
+          "ref": "p. 905",
+          "where": [
+            { "tex": "x,\\ y", "means": "position of the point in K [m] (p. 905)" },
+            { "tex": "w_{x'},\\ w_{y'}", "means": "constant velocity components of the point in k; Einstein's w_ξ, w_η [m/s] (p. 905)" },
+            { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" },
+            { "tex": "t", "means": "time in K [s] (p. 905)" }
+          ]
         },
         {
           "eq": "U = √((v² + w² + 2 v w cos α) − (v w sin α/c0)²)/(1 + v w cos α/c0²)",
           "tex": "U = \\frac{\\sqrt{(v^2 + w^2 + 2 v w \\cos\\alpha) - (v w \\sin\\alpha / c_0)^2}}{1 + v w \\cos\\alpha / c_0^2}",
           "note": "resulting speed, α the angle between v and w",
-          "ref": "p. 906"
+          "ref": "p. 906",
+          "where": [
+            { "tex": "U", "means": "resulting speed of the point, seen from K [m/s] (p. 905)" },
+            { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+            { "tex": "w", "means": "speed of the point relative to k [m/s] (p. 905)" },
+            { "tex": "\\alpha", "means": "angle between v and w (p. 906; p. 905 defines it as arctg w_y/w_x, writing y, x where the components were named w_ξ, w_η)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         },
         {
           "eq": "U = (v + w)/(1 + v w/c0²)",
           "tex": "U = \\frac{v + w}{1 + v w/c_0^2}",
           "note": "both along x",
-          "ref": "p. 906"
+          "ref": "p. 906",
+          "where": [
+            { "tex": "U", "means": "resulting speed of the point, seen from K [m/s] (p. 905)" },
+            { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+            { "tex": "w", "means": "speed of the point in k, along the same x-axis [m/s] (p. 906)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         },
         {
           "eq": "U = (c0 + w)/(1 + w/c0) = c0",
           "tex": "U = \\frac{c_0 + w}{1 + w/c_0} = c_0",
           "note": "light composed with any slower speed",
-          "ref": "p. 906"
+          "ref": "p. 906",
+          "where": [
+            { "tex": "U", "means": "resulting speed of the point, seen from K [m/s] (p. 905)" },
+            { "tex": "w", "means": "any speed below c₀ composed with light [m/s] (p. 906)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         }
       ],
       "practice": [
@@ -209,38 +288,85 @@
           "eq": "E'_x = E_x,  E'_y = γ (E_y − (v/c0) B_z),  E'_z = γ (E_z + (v/c0) B_y)",
           "tex": "E'_x = E_x, \\qquad E'_y = \\gamma \\Big(E_y - \\frac{v}{c_0} B_z\\Big), \\qquad E'_z = \\gamma \\Big(E_z + \\frac{v}{c_0} B_y\\Big)",
           "note": "electric force in k, in the paper's Gaussian units; Einstein writes X, Y, Z for E and L, M, N for B",
-          "ref": "p. 909"
+          "ref": "p. 909",
+          "where": [
+            { "tex": "E'_x,\\ E'_y,\\ E'_z", "means": "electric field in the moving system k; Einstein's X', Y', Z' (p. 909)" },
+            { "tex": "E_x,\\ E_y,\\ E_z", "means": "electric field in K; Einstein's X, Y, Z, the electric force on a unit charge (p. 909)" },
+            { "tex": "B_x,\\ B_y,\\ B_z", "means": "magnetic field in K; Einstein's L, M, N, the magnetic force (p. 909)" },
+            { "tex": "\\gamma", "means": "1/√(1 − (v/c₀)²); Einstein's β (p. 902)" },
+            { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         },
         {
           "eq": "B'_x = B_x,  B'_y = γ (B_y + (v/c0) E_z),  B'_z = γ (B_z − (v/c0) E_y)",
           "tex": "B'_x = B_x, \\qquad B'_y = \\gamma \\Big(B_y + \\frac{v}{c_0} E_z\\Big), \\qquad B'_z = \\gamma \\Big(B_z - \\frac{v}{c_0} E_y\\Big)",
           "note": "magnetic force in k, Gaussian units (Einstein's L', M', N')",
-          "ref": "p. 909"
+          "ref": "p. 909",
+          "where": [
+            { "tex": "B'_x,\\ B'_y,\\ B'_z", "means": "magnetic field in k; Einstein's L', M', N' (p. 909)" },
+            { "tex": "B_x,\\ B_y,\\ B_z", "means": "magnetic field in K; Einstein's L, M, N, the magnetic force (p. 909)" },
+            { "tex": "E_x,\\ E_y,\\ E_z", "means": "electric field in K; Einstein's X, Y, Z, the electric force on a unit charge (p. 909)" },
+            { "tex": "\\gamma", "means": "1/√(1 − (v/c₀)²); Einstein's β (p. 902)" },
+            { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         },
         {
           "eq": "E'_x = E_x,  E'_y = γ (E_y − v B_z),  E'_z = γ (E_z + v B_y)",
           "tex": "E'_x = E_x, \\qquad E'_y = \\gamma (E_y - v B_z), \\qquad E'_z = \\gamma (E_z + v B_y)",
           "note": "the same in SI: the Gaussian B becomes c0 B, a common unit factor cancels",
-          "ref": "derived from p. 909"
+          "ref": "derived from p. 909",
+          "where": [
+            { "tex": "E'_x,\\ E'_y,\\ E'_z", "means": "electric field in the moving system k; Einstein's X', Y', Z' (p. 909)" },
+            { "tex": "E_x,\\ E_y,\\ E_z", "means": "electric field in K; Einstein's X, Y, Z, the electric force on a unit charge (p. 909)" },
+            { "tex": "B_x,\\ B_y,\\ B_z", "means": "magnetic field in K; Einstein's L, M, N, the magnetic force (p. 909)" },
+            { "tex": "\\gamma", "means": "1/√(1 − (v/c₀)²); Einstein's β (p. 902)" },
+            { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         },
         {
           "eq": "B'_x = B_x,  B'_y = γ (B_y + v E_z/c0²),  B'_z = γ (B_z − v E_y/c0²)",
           "tex": "B'_x = B_x, \\qquad B'_y = \\gamma \\Big(B_y + \\frac{v}{c_0^2} E_z\\Big), \\qquad B'_z = \\gamma \\Big(B_z - \\frac{v}{c_0^2} E_y\\Big)",
           "note": "in SI",
-          "ref": "derived from p. 909"
+          "ref": "derived from p. 909",
+          "where": [
+            { "tex": "B'_x,\\ B'_y,\\ B'_z", "means": "magnetic field in k; Einstein's L', M', N' (p. 909)" },
+            { "tex": "B_x,\\ B_y,\\ B_z", "means": "magnetic field in K; Einstein's L, M, N, the magnetic force (p. 909)" },
+            { "tex": "E_x,\\ E_y,\\ E_z", "means": "electric field in K; Einstein's X, Y, Z, the electric force on a unit charge (p. 909)" },
+            { "tex": "\\gamma", "means": "1/√(1 − (v/c₀)²); Einstein's β (p. 902)" },
+            { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         },
         {
           "eq": "E' = E + v × B,  B' = B",
           "tex": "\\mathbf{E}' = \\mathbf{E} + \\mathbf{v} \\times \\mathbf{B}, \\qquad \\mathbf{B}' = \\mathbf{B}",
           "note": "the low-speed form, |v| ≪ c0, in Prechtl (2010), p. 38",
-          "ref": "(2.43)"
+          "ref": "(2.43)",
+          "where": [
+            { "tex": "\\mathbf{E}',\\ \\mathbf{B}'", "means": "electric field strength [V/m] and magnetic flux density [T] relative to the moving body point (Prechtl (2010), (2.43), p. 38)" },
+            { "tex": "\\mathbf{E},\\ \\mathbf{B}", "means": "the same fields in the laboratory system (Prechtl (2010), p. 38)" },
+            { "tex": "\\mathbf{v}", "means": "velocity of the body point, |v| ≪ c₀ [m/s] (Prechtl (2010), p. 38)" }
+          ]
         },
         {
           "eq": "E = Q γ r/(4πε0 (γ² x² + y² + z²)^{3/2}),  B = v × E/c0²",
           "tex": "\\mathbf{E} = \\frac{Q \\gamma\\, \\mathbf{r}}{4 \\pi \\varepsilon_0 \\big(\\gamma^2 x^2 + y^2 + z^2\\big)^{3/2}}, \\qquad \\mathbf{B} = \\frac{\\mathbf{v} \\times \\mathbf{E}}{c_0^2}",
           "note": "a charge passing the origin at v, at that moment: Coulomb's field from the potential of Prechtl (2010) (3.13), p. 61, carried over with p. 909",
           "ref": "derived",
-          "explore": true
+          "explore": true,
+          "where": [
+            { "tex": "\\mathbf{E},\\ \\mathbf{B}", "means": "electric field [V/m] and magnetic flux density [T] of the moving charge in K" },
+            { "tex": "Q", "means": "the point charge [C] (Prechtl (2010), (3.13), p. 61)" },
+            { "tex": "\\mathbf{r}", "means": "position from the charge to the field point [m] (Prechtl (2010), p. 61)" },
+            { "tex": "\\varepsilon_0", "means": "permittivity of vacuum [F/m] (Prechtl (2010), (3.13), writes ε)" },
+            { "tex": "x,\\ y,\\ z", "means": "components of r, x along the motion [m] (derived here)" },
+            { "tex": "\\gamma", "means": "1/√(1 − (v/c₀)²); Einstein's β (p. 902)" },
+            { "tex": "\\mathbf{v}", "means": "velocity of the charge [m/s] (p. 909)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         }
       ],
       "practice": [
@@ -257,7 +383,16 @@
           "source": "Worked by hand from Einstein (1905), p. 909; the course left no exercise collection"
         }
       ],
-      "lawTex": "E'_y = \\gamma (E_y - v B_z), \\qquad E'_z = \\gamma (E_z + v B_y), \\qquad B'_y = \\gamma \\Big(B_y + \\frac{v}{c_0^2} E_z\\Big), \\qquad B'_z = \\gamma \\Big(B_z - \\frac{v}{c_0^2} E_y\\Big)"
+      "lawTex": "E'_y = \\gamma (E_y - v B_z), \\qquad E'_z = \\gamma (E_z + v B_y), \\qquad B'_y = \\gamma \\Big(B_y + \\frac{v}{c_0^2} E_z\\Big), \\qquad B'_z = \\gamma \\Big(B_z - \\frac{v}{c_0^2} E_y\\Big)",
+      "lawWhere": [
+        { "tex": "E'_x,\\ E'_y,\\ E'_z", "means": "electric field in the moving system k; Einstein's X', Y', Z' (p. 909)" },
+        { "tex": "E_x,\\ E_y,\\ E_z", "means": "electric field in K; Einstein's X, Y, Z, the electric force on a unit charge (p. 909)" },
+        { "tex": "B'_x,\\ B'_y,\\ B'_z", "means": "magnetic field in k; Einstein's L', M', N' (p. 909)" },
+        { "tex": "B_x,\\ B_y,\\ B_z", "means": "magnetic field in K; Einstein's L, M, N, the magnetic force (p. 909)" },
+        { "tex": "\\gamma", "means": "1/√(1 − (v/c₀)²); Einstein's β (p. 902)" },
+        { "tex": "v", "means": "speed of the moving system k relative to the resting system K, along x [m/s] (p. 902)" },
+        { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+      ]
     },
     {
       "id": "freefall",
@@ -270,32 +405,62 @@
           "eq": "x = x_fall − g t²/2",
           "tex": "x = x_{\\mathrm{fall}} - \\tfrac{1}{2} g t^2",
           "note": "height on the ground of a point at x_fall in a frame falling from rest; Einstein's frame K' accelerated against K is equivalent to a field (pp. 772–773)",
-          "ref": "derived from pp. 772–773"
+          "ref": "derived from pp. 772–773",
+          "where": [
+            { "tex": "x", "means": "height of the point above the ground [m] (derived here)" },
+            { "tex": "x_{\\mathrm{fall}}", "means": "the point's height in the frame falling with it, from rest (not defined in the source)" },
+            { "tex": "g", "means": "acceleration the field gives all bodies alike [m/s²] (1916, p. 773)" },
+            { "tex": "t", "means": "time [s]" }
+          ]
         },
         {
           "eq": "d²x_τ/dt² = −½ ∂g44/∂x_τ  (τ = 1, 2, 3)",
           "tex": "\\frac{d^2 x_\\tau}{dt^2} = -\\frac{1}{2}\\, \\frac{\\partial g_{44}}{\\partial x_\\tau} \\quad (\\tau = 1, 2, 3)",
           "note": "the geodesic of slow motion in a weak static field: g44/2 plays the Newtonian potential, and only g44 enters; Einstein's units, c = 1",
-          "ref": "(67), p. 817"
+          "ref": "(67), p. 817",
+          "where": [
+            { "tex": "x_\\tau", "means": "space coordinates, τ = 1, 2, 3 (1916, (67), p. 817)" },
+            { "tex": "t", "means": "time; ds = dx₄ = dt in this approximation (1916, p. 817)" },
+            { "tex": "g_{44}", "means": "time–time component of the fundamental tensor; g₄₄/2 plays the Newtonian potential (1916, p. 817)" },
+            { "tex": "\\tau", "means": "index of the space coordinate, 1, 2 or 3 (1916, (67), p. 817)" }
+          ]
         },
         {
           "eq": "g44 = 1 + 2 g x/c0²",
           "tex": "g_{44} = 1 + \\frac{2 g x}{c_0^2}",
           "note": "a uniform field in SI, from (67) with the potential g x",
-          "ref": "derived from (67)"
+          "ref": "derived from (67)",
+          "where": [
+            { "tex": "g_{44}", "means": "time–time component of the fundamental tensor; g₄₄/2 plays the Newtonian potential (1916, p. 817)" },
+            { "tex": "g", "means": "acceleration of free fall [m/s²] (derived here)" },
+            { "tex": "x", "means": "height [m] (derived here)" },
+            { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" }
+          ]
         },
         {
           "eq": "dx4 = 1/√g44",
           "tex": "dx_4 = \\frac{1}{\\sqrt{g_{44}}}",
           "note": "coordinate time per tick of a clock at rest: the clock runs slower near masses",
-          "ref": "(72), p. 820"
+          "ref": "(72), p. 820",
+          "where": [
+            { "tex": "dx_4", "means": "coordinate time per tick of a unit clock at rest, ds = 1 (1916, (72), p. 820)" },
+            { "tex": "g_{44}", "means": "time–time component of the fundamental tensor; g₄₄/2 plays the Newtonian potential (1916, p. 817)" }
+          ]
         },
         {
           "eq": "x = v t − g t²/2,  x_max = v²/(2g),  t_flight = 2v/g",
           "tex": "x = v t - \\tfrac{1}{2} g t^2, \\qquad x_{\\max} = \\frac{v^2}{2g}, \\qquad t_{\\mathrm{flight}} = \\frac{2v}{g}",
           "note": "the thrown ball, the straight line x_fall = v t carried to the ground",
           "ref": "derived",
-          "explore": true
+          "explore": true,
+          "where": [
+            { "tex": "x", "means": "height of the ball [m] (derived here)" },
+            { "tex": "v", "means": "speed of the throw, upwards [m/s] (derived here)" },
+            { "tex": "g", "means": "acceleration of free fall [m/s²] (derived here)" },
+            { "tex": "t", "means": "time [s]" },
+            { "tex": "x_{\\max}", "means": "highest point of the throw [m] (derived here)" },
+            { "tex": "t_{\\mathrm{flight}}", "means": "time until the ball is back on the ground [s] (derived here)" }
+          ]
         }
       ],
       "practice": [
@@ -325,7 +490,15 @@
           "source": "Worked by hand from Einstein (1916), (72), p. 820; the course left no exercise collection"
         }
       ],
-      "lawTex": "x = x_{\\mathrm{fall}} - \\tfrac{1}{2} g t^2, \\qquad \\frac{d^2 x}{dt^2} = -\\frac{c_0^2}{2}\\, \\frac{\\partial g_{44}}{\\partial x}"
+      "lawTex": "x = x_{\\mathrm{fall}} - \\tfrac{1}{2} g t^2, \\qquad \\frac{d^2 x}{dt^2} = -\\frac{c_0^2}{2}\\, \\frac{\\partial g_{44}}{\\partial x}",
+      "lawWhere": [
+        { "tex": "x", "means": "height of the point above the ground [m] (derived here)" },
+        { "tex": "x_{\\mathrm{fall}}", "means": "the point's height in the frame falling with it, from rest (derived here from pp. 772–773; not defined in the source)" },
+        { "tex": "g", "means": "acceleration the field gives all bodies alike [m/s²] (1916, p. 773)" },
+        { "tex": "t", "means": "time [s]" },
+        { "tex": "c_0", "means": "speed of light in vacuum [m/s]; Einstein writes V (p. 901)" },
+        { "tex": "g_{44}", "means": "time–time component of the fundamental tensor; g₄₄/2 plays the Newtonian potential (1916, p. 817)" }
+      ]
     },
     {
       "id": "tides",
@@ -338,26 +511,53 @@
           "eq": "d²x_τ/dt² = −½ ∂g44/∂x_τ",
           "tex": "\\frac{d^2 x_\\tau}{dt^2} = -\\frac{1}{2}\\, \\frac{\\partial g_{44}}{\\partial x_\\tau}",
           "note": "slow motion in a weak static field, g44/2 the potential; Einstein's units, c = 1",
-          "ref": "(67), p. 817"
+          "ref": "(67), p. 817",
+          "where": [
+            { "tex": "x_\\tau", "means": "space coordinates, τ = 1, 2, 3 (1916, (67), p. 817)" },
+            { "tex": "t", "means": "time; ds = dx₄ = dt in this approximation (1916, p. 817)" },
+            { "tex": "g_{44}", "means": "time–time component of the fundamental tensor; g₄₄/2 plays the Newtonian potential (1916, p. 817)" },
+            { "tex": "\\tau", "means": "index of the space coordinate, 1, 2 or 3 (1916, (67), p. 817)" }
+          ]
         },
         {
           "eq": "Δg44 = κ ρ",
           "tex": "\\Delta g_{44} = \\kappa \\rho",
           "note": "the field equation in this approximation; with (67) equivalent to Newton's law of gravitation",
-          "ref": "(68), p. 818"
+          "ref": "(68), p. 818",
+          "where": [
+            { "tex": "\\Delta", "means": "Laplace operator: the sum of the three second derivatives (1916, p. 818)" },
+            { "tex": "g_{44}", "means": "time–time component of the fundamental tensor; g₄₄/2 plays the Newtonian potential (1916, p. 817)" },
+            { "tex": "\\kappa", "means": "Einstein's gravitational constant (1916, (68), p. 818)" },
+            { "tex": "\\rho", "means": "density of matter (1916, p. 817)" }
+          ]
         },
         {
           "eq": "−(κ/8π) ∫ ρ dτ/r,  κ = 8πK/c²,  K = 6.7 · 10⁻⁸ (cgs)",
           "tex": "-\\frac{\\kappa}{8\\pi} \\int \\frac{\\rho\\, d\\tau}{r}, \\qquad \\kappa = \\frac{8 \\pi K}{c^2}, \\qquad K = 6.7 \\cdot 10^{-8}\\ (\\mathrm{cgs})",
           "note": "the gravitational potential and its constant; for a point mass Φ = −K M/r, with K = 6.7 × 10⁻¹¹ m³/(kg s²) in SI",
-          "ref": "(68a), (69), p. 818"
+          "ref": "(68a), (69), p. 818",
+          "where": [
+            { "tex": "\\kappa", "means": "Einstein's gravitational constant, 1.87 · 10⁻²⁷ in cgs (1916, (69), p. 818)" },
+            { "tex": "\\rho", "means": "density of matter (1916, p. 817)" },
+            { "tex": "d\\tau", "means": "volume element (not defined in the source)" },
+            { "tex": "r", "means": "distance from the volume element (not defined in the source)" },
+            { "tex": "K", "means": "the gravitational constant, 6.7 · 10⁻⁸ in cgs units (1916, p. 818)" },
+            { "tex": "c", "means": "speed of light; Einstein keeps c here for Newton's time unit (1916, p. 818)" }
+          ]
         },
         {
           "eq": "Δa_r ≈ 2 K M d/R³,  Δa_⊥ ≈ −K M d/R³",
           "tex": "\\Delta a_r \\approx \\frac{2 K M}{R^3}\\, d, \\qquad \\Delta a_\\perp \\approx -\\frac{K M}{R^3}\\, d",
           "note": "relative acceleration of two balls d apart, along and across the radius; the first-order difference of −grad Φ",
           "ref": "derived",
-          "explore": true
+          "explore": true,
+          "where": [
+            { "tex": "\\Delta a_r,\\ \\Delta a_\\perp", "means": "difference in acceleration of the two balls, placed along and across the radius [m/s²] (derived here)" },
+            { "tex": "K", "means": "the gravitational constant, 6.7 · 10⁻⁸ in cgs units (1916, p. 818)" },
+            { "tex": "M", "means": "mass of the attracting body [kg] (not defined in the source: Einstein integrates the density ρ)" },
+            { "tex": "R", "means": "distance of the pair from the body's centre [m] (derived here; not in the source)" },
+            { "tex": "d", "means": "distance between the two balls [m] (derived here; not in the source)" }
+          ]
         }
       ],
       "practice": [
@@ -388,7 +588,16 @@
           "source": "Worked by hand from Einstein (1916), (68a) and (69), p. 818; the course left no exercise collection"
         }
       ],
-      "lawTex": "\\Phi = -\\frac{K M}{r}, \\qquad \\Delta a_r \\approx \\frac{2 K M}{R^3}\\, d, \\qquad \\Delta a_\\perp \\approx -\\frac{K M}{R^3}\\, d"
+      "lawTex": "\\Phi = -\\frac{K M}{r}, \\qquad \\Delta a_r \\approx \\frac{2 K M}{R^3}\\, d, \\qquad \\Delta a_\\perp \\approx -\\frac{K M}{R^3}\\, d",
+      "lawWhere": [
+        { "tex": "\\Phi", "means": "Newtonian gravitational potential [J/kg] (1916, p. 818, as −K/c² ∫ρ dτ/r with c = 1)" },
+        { "tex": "K", "means": "the gravitational constant, 6.7 · 10⁻⁸ in cgs units (1916, p. 818)" },
+        { "tex": "M", "means": "mass of the attracting body [kg] (not defined in the source: Einstein integrates the density ρ)" },
+        { "tex": "r", "means": "distance from the body's centre [m] (1916, (68a), p. 818)" },
+        { "tex": "\\Delta a_r,\\ \\Delta a_\\perp", "means": "difference in acceleration of the two balls, placed along and across the radius [m/s²] (derived here)" },
+        { "tex": "R", "means": "distance of the pair from the body's centre [m] (derived here; not in the source)" },
+        { "tex": "d", "means": "distance between the two balls [m] (derived here; not in the source)" }
+      ]
     }
   ]
 }

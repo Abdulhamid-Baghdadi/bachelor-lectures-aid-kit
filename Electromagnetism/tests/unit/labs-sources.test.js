@@ -31,3 +31,12 @@ test("relaxation: the electric Reynolds number is written R_e, as in Prechtl (20
   const e = eq("relaxation", "T_R = ε/γ");
   assert.match(e.eq, /R_e = εv0\/\(γL\)/);
 });
+
+// Checked 11 Nov 2026: (5.42) is printed on Prechtl p. 124 (PDF 129); (5.120) on p. 143 (PDF 148) gives only U1, U2,
+// so the reflection factor is derived from it; the ISI rule is exercise 25 of the Übungsteil, solution p. 48.
+test("the monopole, line and delay-spread refs name the page and source the rule is read from", () => {
+  const ref = (lab, starts) => eq(lab, starts).ref;
+  assert.equal(ref("monopole", "B = μ0 (3 e_r"), "by duality with (5.42), p. 124");
+  assert.match(ref("line", "r = (Z_A"), /^derived here from \(5\.120\), p\. 143/);
+  assert.match(ref("delayspread", "symbol rate"), /Übungsteil, 2011\), exercise 25, worked solution, p\. 48/);
+});

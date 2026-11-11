@@ -92,37 +92,100 @@
           "eq": "u_aN = Û cos(ωt + φ_u), u_bN = Û cos(ωt + φ_u − 2π/3), u_cN = Û cos(ωt + φ_u − 4π/3)",
           "tex": "U_\\mathrm{aN}(t) = \\hat{U}\\cos(\\omega t + \\varphi_u), \\qquad U_\\mathrm{bN}(t) = \\hat{U}\\cos\\!\\Big(\\omega t + \\varphi_u - \\frac{2\\pi}{3}\\Big), \\qquad U_\\mathrm{cN}(t) = \\hat{U}\\cos\\!\\Big(\\omega t + \\varphi_u - \\frac{4\\pi}{3}\\Big)",
           "note": "a symmetric three-phase system",
-          "ref": "(3-27), p. 39"
+          "ref": "(3-27), p. 39",
+          "where": [
+            {
+              "tex": "U_\\mathrm{aN}(t),\\ U_\\mathrm{bN}(t),\\ U_\\mathrm{cN}(t)",
+              "means": "the three phase-to-neutral voltages [V] (Gawlik (2015), (3-27), p. 39)"
+            },
+            {
+              "tex": "\\hat{U}",
+              "means": "amplitude [V] (Gawlik (2015), (3-5), p. 34)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency, 2πf [1/s] (Gawlik (2015), (3-3), p. 34)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Gawlik (2015), p. 34)"
+            },
+            {
+              "tex": "\\varphi_u",
+              "means": "zero phase of the voltage (Gawlik (2015), (3-10), p. 34)"
+            }
+          ]
         },
         {
           "eq": "a = e^(j2π/3) = −1/2 + j√3/2",
           "tex": "\\underline{a} = \\mathrm{e}^{\\mathrm{j}2\\pi/3} = -\\frac{1}{2} + \\mathrm{j}\\frac{\\sqrt{3}}{2}",
           "note": "the rotation operator",
-          "ref": "(3-29), p. 41"
+          "ref": "(3-29), p. 41",
+          "where": [
+            {
+              "tex": "\\underline{a}",
+              "means": "rotation operator e^{j2π/3} (Gawlik (2015), (3-29), p. 41)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "U_bN = a² U_aN, U_cN = a U_aN",
           "tex": "\\underline{U}_\\mathrm{bN} = \\underline{a}^2\\,\\underline{U}_\\mathrm{aN}, \\qquad \\underline{U}_\\mathrm{cN} = \\underline{a}\\,\\underline{U}_\\mathrm{aN}",
           "note": "each phasor the one before turned by 120°",
-          "ref": "(3-30), p. 41"
+          "ref": "(3-30), p. 41",
+          "where": [
+            {
+              "tex": "\\underline{U}_\\mathrm{aN},\\ \\underline{U}_\\mathrm{bN},\\ \\underline{U}_\\mathrm{cN}",
+              "means": "RMS phasors of the three phase-to-neutral voltages [V] (Gawlik (2015), (3-28), p. 41)"
+            },
+            {
+              "tex": "\\underline{a}",
+              "means": "rotation operator e^{j2π/3} (Gawlik (2015), (3-29), p. 41)"
+            }
+          ]
         },
         {
           "eq": "1 + a + a² = 0, a − a² = j√3",
           "tex": "1 + \\underline{a} + \\underline{a}^2 = 0, \\qquad \\underline{a} - \\underline{a}^2 = \\mathrm{j}\\sqrt{3}",
           "note": "so the three voltages sum to zero; a line voltage is √3 a phase voltage",
-          "ref": "(3-34), (3-35), p. 42"
+          "ref": "(3-34), (3-35), p. 42",
+          "where": [
+            {
+              "tex": "\\underline{a}",
+              "means": "rotation operator e^{j2π/3} (Gawlik (2015), (3-29), p. 41)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "230 V line to neutral, 400 V line to line",
           "tex": "230\\,\\mathrm{V} \\text{ line to neutral}, \\qquad 400\\,\\mathrm{V} \\text{ line to line}",
           "note": "the Austrian low-voltage network, ±10 %",
-          "ref": "table 3-2, p. 40"
+          "ref": "table 3-2, p. 40",
+          "where": []
         },
         {
           "eq": "I_a = I_ab − I_ca",
           "tex": "\\underline{I}_\\mathrm{a} = \\underline{I}_\\mathrm{ab} - \\underline{I}_\\mathrm{ca}",
           "note": "a line current at a delta node, by Kirchhoff's current law",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "\\underline{I}_\\mathrm{a}",
+              "means": "line current in line a [A] (not defined in the source)"
+            },
+            {
+              "tex": "\\underline{I}_\\mathrm{ab},\\ \\underline{I}_\\mathrm{ca}",
+              "means": "currents in the delta branches a–b and c–a [A] (not defined in the source)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -151,6 +214,24 @@
           "solution": "√3 · 230 V = 398.4 V, which the network names 400 V (table 3-2): the nominal values are rounded.",
           "source": "Gawlik (2015), table 3-2, p. 40"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "U_\\mathrm{L}",
+          "means": "line-to-line voltage [V] (Gawlik (2015), p. 40)"
+        },
+        {
+          "tex": "U_\\mathrm{Y}",
+          "means": "line-to-neutral (star) voltage [V] (Gawlik (2015), p. 40)"
+        },
+        {
+          "tex": "I_\\mathrm{L}",
+          "means": "line current [A] (not defined in the source)"
+        },
+        {
+          "tex": "I_\\mathrm{branch}",
+          "means": "current in one branch of a delta [A] (not defined in the source)"
+        }
       ]
     },
     {
@@ -166,43 +247,181 @@
           "tex": "p(t) = U I \\big[\\cos(\\varphi_u - \\varphi_i) + \\cos(2\\omega t + \\varphi_u + \\varphi_i)\\big]",
           "note": "one phase: a mean plus a pulse at twice the frequency",
           "ref": "(3-15), (3-26), pp. 37–38",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "p(t)",
+              "means": "instantaneous power [W] (Gawlik (2015), (3-15), p. 37)"
+            },
+            {
+              "tex": "U,\\ I",
+              "means": "RMS voltage [V] and current [A] (Gawlik (2015), (3-17), p. 37)"
+            },
+            {
+              "tex": "\\varphi_u,\\ \\varphi_i",
+              "means": "zero phases of voltage and current (Gawlik (2015), pp. 34–35)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency, 2πf [1/s] (Gawlik (2015), (3-3), p. 34)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Gawlik (2015), p. 34)"
+            }
+          ]
         },
         {
           "eq": "P = U I cos(φ_u − φ_i), Q = U I sin(φ_u − φ_i), S = U I*",
           "tex": "P = U I \\cos(\\varphi_u - \\varphi_i), \\qquad Q = U I \\sin(\\varphi_u - \\varphi_i), \\qquad \\underline{S} = \\underline{U}\\,\\underline{I}^{*}",
           "note": "active, reactive and complex apparent power",
-          "ref": "(3-17), (3-19), (3-21), pp. 37–38"
+          "ref": "(3-17), (3-19), (3-21), pp. 37–38",
+          "where": [
+            {
+              "tex": "P",
+              "means": "active power, the mean of p(t) [W] (Gawlik (2015), (3-16)–(3-17), p. 37)"
+            },
+            {
+              "tex": "Q",
+              "means": "reactive power [var] (Gawlik (2015), (3-21), p. 38)"
+            },
+            {
+              "tex": "\\underline{S}",
+              "means": "complex apparent power [VA] (Gawlik (2015), (3-19), p. 37)"
+            },
+            {
+              "tex": "U,\\ I",
+              "means": "RMS voltage [V] and current [A] (p. 37)"
+            },
+            {
+              "tex": "\\varphi_u,\\ \\varphi_i",
+              "means": "zero phases of voltage and current (pp. 34–35)"
+            },
+            {
+              "tex": "\\underline{U},\\ \\underline{I}^{*}",
+              "means": "RMS voltage phasor and conjugate current phasor (Gawlik (2015), (3-18)–(3-19), p. 37)"
+            }
+          ]
         },
         {
           "eq": "S² = P² + Q²",
           "tex": "S^2 = P^2 + Q^2",
           "note": "",
-          "ref": "(3-25), p. 38"
+          "ref": "(3-25), p. 38",
+          "where": [
+            {
+              "tex": "S",
+              "means": "apparent power, U·I [VA] (Gawlik (2015), (3-24), p. 38)"
+            },
+            {
+              "tex": "P",
+              "means": "active power [W] (p. 37)"
+            },
+            {
+              "tex": "Q",
+              "means": "reactive power [var] (p. 38)"
+            }
+          ]
         },
         {
           "eq": "p(t) = Σ u_k(t) i_k(t)",
           "tex": "p(t) = \\sum_k u_k(t)\\, i_k(t)",
           "note": "three phases",
-          "ref": "(3-37), p. 42"
+          "ref": "(3-37), p. 42",
+          "where": [
+            {
+              "tex": "p(t)",
+              "means": "instantaneous three-phase power [W] (Gawlik (2015), (3-37), p. 42)"
+            },
+            {
+              "tex": "u_k(t),\\ i_k(t)",
+              "means": "phase-to-neutral voltage [V] and current [A] of phase k (Gawlik (2015), (3-37), p. 42)"
+            },
+            {
+              "tex": "k",
+              "means": "index of the phase, a, b, c (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "P = 3 U I cos φ, Q = 3 U I sin φ, S = 3 U I",
           "tex": "P = 3 U I \\cos\\varphi, \\qquad Q = 3 U I \\sin\\varphi, \\qquad S = 3 U I",
           "note": "symmetric system, line-to-neutral U",
-          "ref": "(3-40)–(3-42), p. 43"
+          "ref": "(3-40)–(3-42), p. 43",
+          "where": [
+            {
+              "tex": "P,\\ Q,\\ S",
+              "means": "three-phase active [W], reactive [var] and apparent [VA] power (Gawlik (2015), (3-40)–(3-42), p. 43)"
+            },
+            {
+              "tex": "U,\\ I",
+              "means": "RMS line-to-neutral voltage [V] and line current [A] (Gawlik (2015), (3-39), p. 42)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "angle between current and line-to-neutral voltage, φ_u − φ_i (Gawlik (2015), (3-40), p. 43)"
+            }
+          ]
         },
         {
           "eq": "p̃(t) = Re{U_aN I_a (1 + a² + a) e^(j2ωt)} = 0",
           "tex": "\\tilde{p}(t) = \\operatorname{Re}\\big\\{\\underline{U}_\\mathrm{aN}\\,\\underline{I}_\\mathrm{a}\\,(1 + \\underline{a}^2 + \\underline{a})\\,\\mathrm{e}^{\\mathrm{j}2\\omega t}\\big\\} = 0",
           "note": "the pulsating part vanishes in a symmetric system",
-          "ref": "(3-44), p. 43"
+          "ref": "(3-44), p. 43",
+          "where": [
+            {
+              "tex": "\\tilde{p}(t)",
+              "means": "pulsating part of the instantaneous power [W] (Gawlik (2015), (3-38), (3-44), pp. 42–43)"
+            },
+            {
+              "tex": "\\underline{U}_\\mathrm{aN}",
+              "means": "RMS phasor of the voltage from phase a to neutral [V] (Gawlik (2015), (3-28), p. 41)"
+            },
+            {
+              "tex": "\\underline{I}_\\mathrm{a}",
+              "means": "RMS phasor of the current in phase a [A] (Gawlik (2015), (3-39), p. 42)"
+            },
+            {
+              "tex": "\\underline{a}",
+              "means": "rotation operator e^{j2π/3} (Gawlik (2015), (3-29), p. 41)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency, 2πf [1/s] (Gawlik (2015), (3-3), p. 34)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Gawlik (2015), p. 34)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "S = √3 U_n I_n, P = √3 U_n I_n cos φ, Q = √3 U_n I_n sin φ",
           "tex": "S = \\sqrt{3}\\,U_\\mathrm{n} I_\\mathrm{n}, \\qquad P = \\sqrt{3}\\,U_\\mathrm{n} I_\\mathrm{n} \\cos\\varphi, \\qquad Q = \\sqrt{3}\\,U_\\mathrm{n} I_\\mathrm{n} \\sin\\varphi",
           "note": "with the line voltage U_n; φ is still between current and line-to-neutral voltage",
-          "ref": "(3-45), p. 43"
+          "ref": "(3-45), p. 43",
+          "where": [
+            {
+              "tex": "S,\\ P,\\ Q",
+              "means": "three-phase apparent [VA], active [W] and reactive [var] power (Gawlik (2015), (3-45), p. 43)"
+            },
+            {
+              "tex": "U_\\mathrm{n}",
+              "means": "nominal voltage, the line-to-line voltage [V] (Gawlik (2015), p. 43)"
+            },
+            {
+              "tex": "I_\\mathrm{n}",
+              "means": "nominal line current [A] (Gawlik (2015), p. 43)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "angle between current and line-to-neutral voltage, φ_u − φ_i (Gawlik (2015), (3-40), p. 43)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -234,6 +453,36 @@
           "solution": "Q = √3 · 400 V · 50 A · sin 30° = 17.3 kvar; S = 34.6 kVA, and 30² + 17.3² = 34.6².",
           "source": "Worked by hand from Gawlik (2015), (3-45)"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\underline{S}",
+          "means": "complex apparent power of the three phases [VA] (Gawlik (2015), (3-41), p. 43)"
+        },
+        {
+          "tex": "\\underline{U}",
+          "means": "RMS phasor of the line-to-neutral voltage [V] (Gawlik (2015), (3-39), p. 42)"
+        },
+        {
+          "tex": "\\underline{I}^{*}",
+          "means": "complex conjugate of the line current's RMS phasor [A] (Gawlik (2015), (3-19), p. 37)"
+        },
+        {
+          "tex": "U_\\mathrm{n}",
+          "means": "nominal voltage, the line-to-line voltage [V] (Gawlik (2015), p. 43)"
+        },
+        {
+          "tex": "I_\\mathrm{n}",
+          "means": "nominal line current [A] (Gawlik (2015), p. 43)"
+        },
+        {
+          "tex": "\\varphi",
+          "means": "angle between current and line-to-neutral voltage, φ_u − φ_i (Gawlik (2015), (3-40), p. 43)"
+        },
+        {
+          "tex": "\\mathrm{j}",
+          "means": "imaginary unit (not defined in the source)"
+        }
       ]
     },
     {
@@ -248,50 +497,214 @@
           "eq": "ü = U_rTOS/U_rTUS",
           "tex": "\\ddot{u} = \\frac{U_\\mathrm{rTOS}}{U_\\mathrm{rTUS}}",
           "note": "the ideal transformer's ratio",
-          "ref": "(4-70), p. 106"
+          "ref": "(4-70), p. 106",
+          "where": [
+            {
+              "tex": "\\ddot{u}",
+              "means": "transformation ratio of the ideal transformer (Gawlik (2015), (4-70), p. 106)"
+            },
+            {
+              "tex": "U_\\mathrm{rTOS},\\ U_\\mathrm{rTUS}",
+              "means": "rated voltage on the high-voltage (OS) and low-voltage (US) side [V] (Gawlik (2015), p. 106)"
+            }
+          ]
         },
         {
           "eq": "R_v = U_rTOS²/P_v, R_v ∥ ωL_h = U_rTOS/(√3 I_0)",
           "tex": "R_\\mathrm{v} = \\frac{U_\\mathrm{rTOS}^2}{P_\\mathrm{v}}, \\qquad R_\\mathrm{v} \\parallel \\omega L_\\mathrm{h} = \\frac{U_\\mathrm{rTOS}}{\\sqrt{3}\\, I_0}",
           "note": "open-circuit test: iron losses and magnetising current",
-          "ref": "(4-75), (4-76), pp. 108–109"
+          "ref": "(4-75), (4-76), pp. 108–109",
+          "where": [
+            {
+              "tex": "R_\\mathrm{v}",
+              "means": "resistor that models the iron losses [Ω] (Gawlik (2015), p. 108)"
+            },
+            {
+              "tex": "U_\\mathrm{rTOS}",
+              "means": "rated (line-to-line) voltage applied on the OS side [V] (Gawlik (2015), p. 108)"
+            },
+            {
+              "tex": "P_\\mathrm{v}",
+              "means": "iron losses measured in the open-circuit test [W] (Gawlik (2015), p. 108)"
+            },
+            {
+              "tex": "L_\\mathrm{h}",
+              "means": "main-field (magnetising) inductance [H] (Gawlik (2015), p. 108)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency, 2πf [1/s] (Gawlik (2015), (3-3), p. 34)"
+            },
+            {
+              "tex": "I_0",
+              "means": "no-load current [A] (Gawlik (2015), p. 108)"
+            }
+          ]
         },
         {
           "eq": "Z_k = U_kOS/(√3 I_rTOS), R = P_k/(3 I_rT²)",
           "tex": "Z_\\mathrm{k} = \\frac{U_\\mathrm{kOS}}{\\sqrt{3}\\, I_\\mathrm{rTOS}}, \\qquad R = \\frac{P_\\mathrm{k}}{3 I_\\mathrm{rT}^2}",
           "note": "short-circuit test, line voltages. The notes print (4-77) as R = U_kOS²/P_k, which (4-80) does not bear out; R here follows (4-80)",
-          "ref": "(4-77), (4-78), (4-80), p. 109"
+          "ref": "(4-77), (4-78), (4-80), p. 109",
+          "where": [
+            {
+              "tex": "Z_\\mathrm{k}",
+              "means": "short-circuit impedance [Ω] (Gawlik (2015), (4-78), p. 109)"
+            },
+            {
+              "tex": "U_\\mathrm{kOS}",
+              "means": "line-to-line voltage that drives rated current with the other side short-circuited [V] (Gawlik (2015), p. 109)"
+            },
+            {
+              "tex": "I_\\mathrm{rTOS}",
+              "means": "rated current on the OS side [A] (Gawlik (2015), p. 109)"
+            },
+            {
+              "tex": "R",
+              "means": "winding resistance R_OS + R'_US [Ω] (Gawlik (2015), (4-77), p. 109); the notes print (4-77) as U_kOS²/P_k, which (4-80) contradicts"
+            },
+            {
+              "tex": "P_\\mathrm{k}",
+              "means": "short-circuit losses [W] (Gawlik (2015), p. 109)"
+            },
+            {
+              "tex": "I_\\mathrm{rT}",
+              "means": "rated current [A] (Gawlik (2015), (4-79), p. 109)"
+            }
+          ]
         },
         {
           "eq": "u_r = P_k/S_rT = R/Z_rT, u_k = U_k/U_rT = Z_k/Z_rT",
           "tex": "u_\\mathrm{r} = \\frac{P_\\mathrm{k}}{S_\\mathrm{rT}} = \\frac{R}{Z_\\mathrm{rT}}, \\qquad u_\\mathrm{k} = \\frac{U_\\mathrm{k}}{U_\\mathrm{rT}} = \\frac{Z_\\mathrm{k}}{Z_\\mathrm{rT}}",
           "note": "per-unit winding losses and short-circuit voltage",
-          "ref": "(4-80), (4-81), p. 109"
+          "ref": "(4-80), (4-81), p. 109",
+          "where": [
+            {
+              "tex": "u_\\mathrm{r}",
+              "means": "per-unit winding losses (Gawlik (2015), (4-80), p. 109)"
+            },
+            {
+              "tex": "P_\\mathrm{k}",
+              "means": "short-circuit losses [W] (p. 109)"
+            },
+            {
+              "tex": "S_\\mathrm{rT}",
+              "means": "rated apparent power [VA] (Gawlik (2015), (4-79), p. 109)"
+            },
+            {
+              "tex": "R",
+              "means": "winding resistance [Ω] (p. 109)"
+            },
+            {
+              "tex": "Z_\\mathrm{rT}",
+              "means": "rated impedance [Ω] (Gawlik (2015), p. 109)"
+            },
+            {
+              "tex": "u_\\mathrm{k}",
+              "means": "per-unit short-circuit voltage (Gawlik (2015), (4-81), p. 109)"
+            },
+            {
+              "tex": "U_\\mathrm{k}",
+              "means": "short-circuit voltage; the notes write U_kOS [V] (p. 109)"
+            },
+            {
+              "tex": "U_\\mathrm{rT}",
+              "means": "rated voltage [V] (p. 109)"
+            },
+            {
+              "tex": "Z_\\mathrm{k}",
+              "means": "short-circuit impedance [Ω] (p. 109)"
+            }
+          ]
         },
         {
           "eq": "u_σ = √(u_k² − u_r²) ≈ u_k",
           "tex": "u_\\sigma = \\sqrt{u_\\mathrm{k}^2 - u_\\mathrm{r}^2} \\approx u_\\mathrm{k}",
           "note": "the inductive part; large transformers are nearly pure reactance",
-          "ref": "(4-82), (4-83), p. 109"
+          "ref": "(4-82), (4-83), p. 109",
+          "where": [
+            {
+              "tex": "u_\\sigma",
+              "means": "inductive part of the per-unit short-circuit impedance (Gawlik (2015), (4-82), p. 109)"
+            },
+            {
+              "tex": "u_\\mathrm{k}",
+              "means": "per-unit short-circuit voltage (p. 109)"
+            },
+            {
+              "tex": "u_\\mathrm{r}",
+              "means": "per-unit winding losses (p. 109)"
+            }
+          ]
         },
         {
           "eq": "100 kVA: u_k 4 %, u_r 1.3 % … 1000 MVA: u_k 10–15 %, u_r 0.15 %",
           "tex": "100\\,\\mathrm{kVA}\\!: u_\\mathrm{k} = 4\\,\\%,\\; u_\\mathrm{r} = 1.3\\,\\% \\quad \\ldots \\quad 1000\\,\\mathrm{MVA}\\!: u_\\mathrm{k} = 10\\text{–}15\\,\\%,\\; u_\\mathrm{r} = 0.15\\,\\%",
           "note": "typical values",
-          "ref": "table 4-9, p. 110"
+          "ref": "table 4-9, p. 110",
+          "where": [
+            {
+              "tex": "u_\\mathrm{k}",
+              "means": "per-unit short-circuit voltage (Gawlik (2015), table 4-9, p. 110)"
+            },
+            {
+              "tex": "u_\\mathrm{r}",
+              "means": "per-unit winding losses (Gawlik (2015), table 4-9, p. 110)"
+            }
+          ]
         },
         {
           "eq": "U₁² = |U₂ + (u_r + j u_σ)(P − jQ)/U₂|²",
           "tex": "U_1^2 = \\Big|\\underline{U}_2 + (u_\\mathrm{r} + \\mathrm{j}u_\\sigma)\\frac{P - \\mathrm{j}Q}{U_2}\\Big|^2",
           "note": "the secondary voltage for a load P + jQ, a quadratic in U₂²; shunt branch neglected",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "U_1",
+              "means": "primary voltage, per unit (not defined in the source)"
+            },
+            {
+              "tex": "\\underline{U}_2,\\ U_2",
+              "means": "secondary voltage phasor and its magnitude, per unit (not defined in the source)"
+            },
+            {
+              "tex": "u_\\mathrm{r},\\ u_\\sigma",
+              "means": "per-unit resistive and inductive parts of the short-circuit impedance (Gawlik (2015), (4-80), (4-82), p. 109)"
+            },
+            {
+              "tex": "P,\\ Q",
+              "means": "active and reactive power of the load, per unit (not defined in the source)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "ΔI/I″_k = |1 − e^(−jΔk·30°)|/2",
           "tex": "\\frac{\\Delta I}{I''_\\mathrm{k}} = \\frac{\\big|1 - \\mathrm{e}^{-\\mathrm{j}\\Delta k \\cdot 30^\\circ}\\big|}{2}",
           "note": "circulating current of two paralleled transformers whose vector-group numbers differ by Δk",
-          "ref": "(4-89) and the example, p. 111"
+          "ref": "(4-89) and the example, p. 111",
+          "where": [
+            {
+              "tex": "\\Delta I",
+              "means": "circulating current between two paralleled transformers [A]; the notes write I_Δ (Gawlik (2015), (4-89), p. 111)"
+            },
+            {
+              "tex": "I''_\\mathrm{k}",
+              "means": "short-circuit current through one transformer [A] (Gawlik (2015), example, p. 111)"
+            },
+            {
+              "tex": "\\Delta k",
+              "means": "difference of the two vector-group numbers k (Gawlik (2015), (4-72), (4-87), pp. 106, 111)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -350,6 +763,36 @@
           "solution": "u_σ = √(6² − 0.7²) % = 5.96 %. The first-order estimate u_r cos φ + u_σ sin φ = 0.56 + 3.58 = 4.14 %; solving U₁² = |U₂ + z I|² exactly gives U₂ = 0.9557, a fall of 4.43 %.",
           "source": "Worked by hand from Gawlik (2015), (4-82) and table 4-9"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "u_\\mathrm{k}",
+          "means": "per-unit short-circuit voltage (Gawlik (2015), (4-81), p. 109)"
+        },
+        {
+          "tex": "Z_\\mathrm{k}",
+          "means": "short-circuit impedance [Ω] (Gawlik (2015), (4-78), p. 109)"
+        },
+        {
+          "tex": "Z_\\mathrm{rT}",
+          "means": "rated impedance of the transformer [Ω] (Gawlik (2015), p. 109)"
+        },
+        {
+          "tex": "u_\\mathrm{r}",
+          "means": "per-unit winding losses (Gawlik (2015), (4-80), p. 109)"
+        },
+        {
+          "tex": "P_\\mathrm{k}",
+          "means": "short-circuit (winding) losses [W] (Gawlik (2015), p. 109)"
+        },
+        {
+          "tex": "S_\\mathrm{rT}",
+          "means": "rated apparent power, √3 U_rT I_rT [VA] (Gawlik (2015), (4-79), p. 109)"
+        },
+        {
+          "tex": "u_\\sigma",
+          "means": "inductive part of the per-unit short-circuit impedance (Gawlik (2015), (4-82), p. 109)"
+        }
       ]
     },
     {
@@ -365,39 +808,139 @@
           "tex": "\\underline{\\gamma} = \\alpha + \\mathrm{j}\\beta = \\sqrt{(R' + \\mathrm{j}\\omega L')(G' + \\mathrm{j}\\omega C')}",
           "note": "propagation constant",
           "ref": "(4-9), (4-44), p. 86",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\underline{\\gamma}",
+              "means": "propagation constant [1/km] (Gawlik (2015), (4-9), p. 76)"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "attenuation constant, the real part [1/km] (Gawlik (2015), p. 76)"
+            },
+            {
+              "tex": "\\beta",
+              "means": "phase constant, the imaginary part [rad/km] (Gawlik (2015), p. 76)"
+            },
+            {
+              "tex": "R',\\ L',\\ G',\\ C'",
+              "means": "resistance [Ω/km], inductance [H/km], conductance [S/km] and capacitance [F/km] per unit length (Gawlik (2015), p. 74)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency, 2πf [1/s] (Gawlik (2015), (3-3), p. 34)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "Z_w = √((R' + jωL')/(G' + jωC')) ≈ √(L'/C')",
           "tex": "\\underline{Z}_\\mathrm{w} = \\sqrt{\\frac{R' + \\mathrm{j}\\omega L'}{G' + \\mathrm{j}\\omega C'}} \\approx \\sqrt{\\frac{L'}{C'}}",
           "note": "characteristic impedance, real for a lossless line",
-          "ref": "(4-13), (4-48), p. 87"
+          "ref": "(4-13), (4-48), p. 87",
+          "where": [
+            {
+              "tex": "\\underline{Z}_\\mathrm{w}",
+              "means": "characteristic impedance of the line [Ω] (Gawlik (2015), (4-13), p. 76)"
+            },
+            {
+              "tex": "R',\\ L',\\ G',\\ C'",
+              "means": "resistance [Ω/km], inductance [H/km], conductance [S/km] and capacitance [F/km] per unit length (Gawlik (2015), p. 74)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency, 2πf [1/s] (Gawlik (2015), (3-3), p. 34)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "U₁ = U₂ cosh γl + Z_w I₂ sinh γl, I₁ = (U₂/Z_w) sinh γl + I₂ cosh γl",
           "tex": "\\underline{U}_1 = \\underline{U}_2 \\cosh \\underline{\\gamma} l + \\underline{Z}_\\mathrm{w} \\underline{I}_2 \\sinh \\underline{\\gamma} l, \\qquad \\underline{I}_1 = \\frac{\\underline{U}_2}{\\underline{Z}_\\mathrm{w}} \\sinh \\underline{\\gamma} l + \\underline{I}_2 \\cosh \\underline{\\gamma} l",
           "note": "the line equations",
           "ref": "(4-19), p. 77",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\underline{U}_1,\\ \\underline{I}_1",
+              "means": "voltage [V] and current [A] at the start of the line (Gawlik (2015), p. 76)"
+            },
+            {
+              "tex": "\\underline{U}_2,\\ \\underline{I}_2",
+              "means": "voltage [V] and current [A] at the end of the line; the notes write U(l), I(l) (Gawlik (2015), (4-19), p. 77)"
+            },
+            {
+              "tex": "\\underline{\\gamma}",
+              "means": "propagation constant [1/km] (Gawlik (2015), (4-9), p. 76)"
+            },
+            {
+              "tex": "l",
+              "means": "length of the line [km] (Gawlik (2015), p. 77)"
+            },
+            {
+              "tex": "\\underline{Z}_\\mathrm{w}",
+              "means": "characteristic impedance of the line [Ω] (Gawlik (2015), (4-13), p. 76)"
+            }
+          ]
         },
         {
           "eq": "U₂ = U₁ / cosh γl",
           "tex": "\\underline{U}_2 = \\frac{\\underline{U}_1}{\\cosh \\underline{\\gamma} l}",
           "note": "an open line (I₂ = 0): the Ferranti effect",
-          "ref": "(4-54), p. 87"
+          "ref": "(4-54), p. 87",
+          "where": [
+            {
+              "tex": "\\underline{U}_1,\\ \\underline{U}_2",
+              "means": "voltage at the start and at the end of the open line [V] (Gawlik (2015), (4-52)–(4-54), p. 87)"
+            },
+            {
+              "tex": "\\underline{\\gamma}",
+              "means": "propagation constant [1/km] (Gawlik (2015), (4-9), p. 76)"
+            },
+            {
+              "tex": "l",
+              "means": "length of the line [km] (Gawlik (2015), p. 77)"
+            }
+          ]
         },
         {
           "eq": "P_nat = U_n²/Z_w",
           "tex": "P_\\mathrm{nat} = \\frac{U_\\mathrm{n}^2}{Z_\\mathrm{w}}",
           "note": "natural load",
           "ref": "(4-25), (4-51), p. 87",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "P_\\mathrm{nat}",
+              "means": "natural load: the power of a line at rated voltage terminated in Z_w [W] (Gawlik (2015), (4-25), p. 78)"
+            },
+            {
+              "tex": "U_\\mathrm{n}",
+              "means": "rated (line-to-line) voltage [V] (Gawlik (2015), (4-25), p. 78)"
+            },
+            {
+              "tex": "Z_\\mathrm{w}",
+              "means": "characteristic impedance, its magnitude [Ω] (Gawlik (2015), p. 78)"
+            }
+          ]
         },
         {
           "eq": "R' = 0.03 Ω/km, L' = 0.8 mH/km, G' = 0.02 µS/km, C' = 14 nF/km",
           "tex": "R' = 0.03\\,\\Omega/\\mathrm{km}, \\quad L' = 0.8\\,\\mathrm{mH/km}, \\quad G' = 0.02\\,\\mu\\mathrm{S/km}, \\quad C' = 14\\,\\mathrm{nF/km}",
           "note": "the notes' 380 kV line",
-          "ref": "p. 90"
+          "ref": "p. 90",
+          "where": [
+            {
+              "tex": "R',\\ L',\\ G',\\ C'",
+              "means": "resistance [Ω/km], inductance [H/km], conductance [S/km] and capacitance [F/km] per unit length (Gawlik (2015), p. 74)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -477,6 +1020,28 @@
           "solution": "1/|cosh γl| with γl = 0.013 + j0.21: 1.023, a rise of 2.3 %; at 500 km 16 %.",
           "source": "Gawlik (2015), p. 87"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\underline{U}_1,\\ \\underline{U}_2",
+          "means": "voltage at the start and at the end of the line [V] (Gawlik (2015), (4-14), p. 76)"
+        },
+        {
+          "tex": "\\underline{\\gamma}",
+          "means": "propagation constant [1/km] (Gawlik (2015), (4-9), p. 76)"
+        },
+        {
+          "tex": "l",
+          "means": "length of the line [km] (Gawlik (2015), p. 77)"
+        },
+        {
+          "tex": "\\underline{Z}_\\mathrm{w}",
+          "means": "characteristic impedance of the line [Ω] (Gawlik (2015), (4-13), p. 76)"
+        },
+        {
+          "tex": "\\underline{Z}_2",
+          "means": "load impedance at the line's end [Ω] (not defined in the source)"
+        }
       ]
     },
     {
@@ -491,32 +1056,122 @@
           "eq": "U₂ = U₁ − jX I₂, S₂ = 3 U₂ I₂*",
           "tex": "\\underline{U}_2 = \\underline{U}_1 - \\mathrm{j}X\\underline{I}_2, \\qquad \\underline{S}_2 = 3\\,\\underline{U}_2\\,\\underline{I}_2^{*}",
           "note": "two networks joined by a reactance",
-          "ref": "(6-1), (6-2), p. 199"
+          "ref": "(6-1), (6-2), p. 199",
+          "where": [
+            {
+              "tex": "\\underline{U}_1,\\ \\underline{U}_2",
+              "means": "voltage phasors at the sending and receiving end, U_1 e^{jδ} and U_2 [V] (Gawlik (2015), p. 199)"
+            },
+            {
+              "tex": "X",
+              "means": "reactance of the connection [Ω] (Gawlik (2015), p. 199)"
+            },
+            {
+              "tex": "\\underline{I}_2,\\ \\underline{I}_2^{*}",
+              "means": "current at the receiving end and its conjugate [A] (Gawlik (2015), (6-1)–(6-2), p. 199)"
+            },
+            {
+              "tex": "\\underline{S}_2",
+              "means": "complex power at the receiving end [VA] (Gawlik (2015), (6-2), p. 199)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "P = 3 U₁ U₂ sin δ / X; maximum 3 U₁ U₂/X at δ = 90°",
           "tex": "P = 3\\frac{U_1 U_2}{X}\\sin\\delta; \\qquad \\text{maximum } 3\\frac{U_1 U_2}{X} \\text{ at } \\delta = 90^\\circ",
           "note": "active power and the pull-out power",
-          "ref": "(6-4), p. 199"
+          "ref": "(6-4), p. 199",
+          "where": [
+            {
+              "tex": "P",
+              "means": "active power at the receiving end; the notes write P_2 [W] (Gawlik (2015), (6-4), p. 199)"
+            },
+            {
+              "tex": "U_1,\\ U_2",
+              "means": "voltage magnitudes [V] (p. 199)"
+            },
+            {
+              "tex": "X",
+              "means": "reactance [Ω] (p. 199)"
+            },
+            {
+              "tex": "\\delta",
+              "means": "line angle (p. 199)"
+            }
+          ]
         },
         {
           "eq": "Q = 3 (U₁ U₂ cos δ − U₂²)/X",
           "tex": "Q = 3\\,\\frac{U_1 U_2 \\cos\\delta - U_2^2}{X}",
           "note": "reactive power at the receiving end",
-          "ref": "(6-5), p. 199"
+          "ref": "(6-5), p. 199",
+          "where": [
+            {
+              "tex": "Q",
+              "means": "reactive power at the receiving end; the notes write Q_2 [var] (Gawlik (2015), (6-5), p. 199)"
+            },
+            {
+              "tex": "U_1,\\ U_2",
+              "means": "voltage magnitudes [V] (p. 199)"
+            },
+            {
+              "tex": "X",
+              "means": "reactance [Ω] (p. 199)"
+            },
+            {
+              "tex": "\\delta",
+              "means": "line angle (p. 199)"
+            }
+          ]
         },
         {
           "eq": "U₂⁴ + (2QX − U₁²) U₂² + X²(P² + Q²) = 0",
           "tex": "U_2^4 + (2QX - U_1^2)\\,U_2^2 + X^2(P^2 + Q^2) = 0",
           "note": "per unit, δ eliminated: the PV curve",
           "ref": "(6-6), (6-7), p. 200",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "U_1,\\ U_2",
+              "means": "voltage magnitudes, per unit here; the notes carry the factors 3 and 9 (Gawlik (2015), (6-6), p. 200)"
+            },
+            {
+              "tex": "P,\\ Q",
+              "means": "active and reactive power at the receiving end, per unit (Gawlik (2015), (6-6), p. 200)"
+            },
+            {
+              "tex": "X",
+              "means": "reactance, per unit (p. 200)"
+            }
+          ]
         },
         {
           "eq": "P_max = 3 U₁²/(2X) at δ = 45°, U₂ = U₁/√2",
           "tex": "P_\\mathrm{max} = 3\\frac{U_1^2}{2X} \\text{ at } \\delta = 45^\\circ, \\qquad U_2 = \\frac{U_1}{\\sqrt{2}}",
           "note": "a purely resistive load",
-          "ref": "(6-11)–(6-13), p. 202"
+          "ref": "(6-11)–(6-13), p. 202",
+          "where": [
+            {
+              "tex": "P_\\mathrm{max}",
+              "means": "largest power to a purely resistive load [W] (Gawlik (2015), (6-11), p. 202)"
+            },
+            {
+              "tex": "U_1,\\ U_2",
+              "means": "sending and receiving voltage [V] (p. 202)"
+            },
+            {
+              "tex": "X",
+              "means": "reactance [Ω] (p. 202)"
+            },
+            {
+              "tex": "\\delta",
+              "means": "line angle, 45° at the maximum (Gawlik (2015), (6-12), p. 202)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -548,6 +1203,24 @@
           "solution": "P = U₁ U₂ sin δ / X = sin 30°/0.5 = 1 p.u.; the pull-out power at 90° is 2 p.u.",
           "source": "Worked by hand from Gawlik (2015), (6-4)"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "P",
+          "means": "active power transferred, per phase written 3·… in the notes [W] (Gawlik (2015), (6-4), p. 199)"
+        },
+        {
+          "tex": "U_1,\\ U_2",
+          "means": "voltage magnitudes at the sending and receiving end [V] (Gawlik (2015), p. 199)"
+        },
+        {
+          "tex": "\\delta",
+          "means": "angle between the two voltages, the line angle (Gawlik (2015), p. 199)"
+        },
+        {
+          "tex": "X",
+          "means": "reactance of the connecting line [Ω] (Gawlik (2015), p. 199)"
+        }
       ]
     },
     {
@@ -562,37 +1235,145 @@
           "eq": "u = U/U_B, i = I/I_B, z = Z/Z_B",
           "tex": "u = \\frac{U}{U_\\mathrm{B}}, \\qquad i = \\frac{I}{I_\\mathrm{B}}, \\qquad z = \\frac{Z}{Z_\\mathrm{B}}",
           "note": "per-unit values; only two bases are free. The notes write S_B = U_B I_B; with line voltages, as here, S_B = √3 U_B I_B",
-          "ref": "(6-33), p. 213"
+          "ref": "(6-33), p. 213",
+          "where": [
+            {
+              "tex": "u,\\ i,\\ z",
+              "means": "per-unit voltage, current and impedance; small letters for related quantities (Gawlik (2015), (6-33), p. 213)"
+            },
+            {
+              "tex": "U,\\ I,\\ Z",
+              "means": "the quantities in volts, amperes and ohms (p. 213)"
+            },
+            {
+              "tex": "U_\\mathrm{B},\\ I_\\mathrm{B},\\ Z_\\mathrm{B}",
+              "means": "base voltage [V], current [A] and impedance [Ω] (Gawlik (2015), p. 213)"
+            }
+          ]
         },
         {
           "eq": "X″_d = x″_d · U_B²/S_B",
           "tex": "X''_\\mathrm{d} = x''_\\mathrm{d}\\,\\frac{U_\\mathrm{B}^2}{S_\\mathrm{B}}",
           "note": "a generator's subtransient reactance from its per-unit value",
-          "ref": "(6.34), p. 213"
+          "ref": "(6.34), p. 213",
+          "where": [
+            {
+              "tex": "X''_\\mathrm{d}",
+              "means": "a generator's subtransient reactance [Ω] (Gawlik (2015), (6.34), p. 213)"
+            },
+            {
+              "tex": "x''_\\mathrm{d}",
+              "means": "the same, per unit of the generator's ratings (Gawlik (2015), p. 213)"
+            },
+            {
+              "tex": "U_\\mathrm{B},\\ S_\\mathrm{B}",
+              "means": "base voltage [V] and base power [VA] (p. 213)"
+            }
+          ]
         },
         {
           "eq": "Z_Q = c U_n²/S″_kQ",
           "tex": "Z_\\mathrm{Q} = c\\,\\frac{U_\\mathrm{n}^2}{S''_\\mathrm{kQ}}",
           "note": "a feeding network from its short-circuit power",
-          "ref": "(6-32), p. 212"
+          "ref": "(6-32), p. 212",
+          "where": [
+            {
+              "tex": "Z_\\mathrm{Q}",
+              "means": "impedance of the feeding network; the notes write Z_N in (6-32) and Z_Q in the example [Ω] (Gawlik (2015), pp. 212, 215)"
+            },
+            {
+              "tex": "c",
+              "means": "voltage factor: 1.1 for the largest current above 1 kV (Gawlik (2015), table 6-2, p. 212)"
+            },
+            {
+              "tex": "U_\\mathrm{n}",
+              "means": "nominal voltage [V] (Gawlik (2015), p. 212)"
+            },
+            {
+              "tex": "S''_\\mathrm{kQ}",
+              "means": "short-circuit power of the network [VA] (Gawlik (2015), (6-32), p. 212)"
+            }
+          ]
         },
         {
           "eq": "Z_T = u_k U_n²/S_n, R_T = P_k U_n²/S_n²",
           "tex": "Z_\\mathrm{T} = u_\\mathrm{k}\\frac{U_\\mathrm{n}^2}{S_\\mathrm{n}}, \\qquad R_\\mathrm{T} = \\frac{P_\\mathrm{k} U_\\mathrm{n}^2}{S_\\mathrm{n}^2}",
           "note": "the transformer in the example",
-          "ref": "p. 215"
+          "ref": "p. 215",
+          "where": [
+            {
+              "tex": "Z_\\mathrm{T},\\ R_\\mathrm{T}",
+              "means": "transformer impedance and resistance [Ω] (Gawlik (2015), example, p. 215)"
+            },
+            {
+              "tex": "u_\\mathrm{k}",
+              "means": "per-unit short-circuit voltage (p. 215)"
+            },
+            {
+              "tex": "U_\\mathrm{n}",
+              "means": "nominal voltage of the side the impedance is referred to [V] (p. 215)"
+            },
+            {
+              "tex": "S_\\mathrm{n}",
+              "means": "rated power of the transformer [VA] (p. 215)"
+            },
+            {
+              "tex": "P_\\mathrm{k}",
+              "means": "short-circuit losses [W] (p. 215)"
+            }
+          ]
         },
         {
           "eq": "z_new = z_old · (S_B,new/S_B,old) · (U_B,old/U_B,new)²",
           "tex": "z_\\mathrm{new} = z_\\mathrm{old}\\,\\frac{S_\\mathrm{B,new}}{S_\\mathrm{B,old}} \\Big(\\frac{U_\\mathrm{B,old}}{U_\\mathrm{B,new}}\\Big)^2",
           "note": "a change of base, from the definitions",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "z_\\mathrm{new},\\ z_\\mathrm{old}",
+              "means": "per-unit impedance on the new and the old base (not defined in the source)"
+            },
+            {
+              "tex": "S_\\mathrm{B,new},\\ S_\\mathrm{B,old}",
+              "means": "new and old base power [VA] (not defined in the source)"
+            },
+            {
+              "tex": "U_\\mathrm{B,new},\\ U_\\mathrm{B,old}",
+              "means": "new and old base voltage [V] (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "I″_k3 = c U_n/(√3 |Z_k|) = (c/|z_k|) · I_B",
           "tex": "I''_\\mathrm{k3} = \\frac{c\\,U_\\mathrm{n}}{\\sqrt{3}\\,|\\underline{Z}_\\mathrm{k}|} = \\frac{c}{|\\underline{z}_\\mathrm{k}|}\\, I_\\mathrm{B}",
           "note": "the fault current in amperes or per unit",
-          "ref": "(6-31), p. 212"
+          "ref": "(6-31), p. 212",
+          "where": [
+            {
+              "tex": "I''_\\mathrm{k3}",
+              "means": "initial symmetrical three-phase short-circuit current [A] (Gawlik (2015), (6-31), p. 212)"
+            },
+            {
+              "tex": "c",
+              "means": "voltage factor: 1.1 for the largest current above 1 kV (Gawlik (2015), table 6-2, p. 212)"
+            },
+            {
+              "tex": "U_\\mathrm{n}",
+              "means": "nominal voltage [V] (p. 212)"
+            },
+            {
+              "tex": "\\underline{Z}_\\mathrm{k}",
+              "means": "impedance of the short-circuit path [Ω] (Gawlik (2015), p. 212)"
+            },
+            {
+              "tex": "\\underline{z}_\\mathrm{k}",
+              "means": "the same, per unit (not defined in the source)"
+            },
+            {
+              "tex": "I_\\mathrm{B}",
+              "means": "base current [A] (Gawlik (2015), p. 213)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -626,6 +1407,28 @@
           "solution": "z = 0.12 · 100/31 = 0.387 p.u. In ohms nothing changes: 0.387 · (30 kV)²/100 MVA = 3.48 Ω either way.",
           "source": "Worked by hand from Gawlik (2015), (6-33) and p. 215"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "z",
+          "means": "per-unit impedance (Gawlik (2015), (6-33), p. 213)"
+        },
+        {
+          "tex": "Z",
+          "means": "impedance [Ω] (p. 213)"
+        },
+        {
+          "tex": "Z_\\mathrm{B}",
+          "means": "base impedance [Ω] (Gawlik (2015), p. 213)"
+        },
+        {
+          "tex": "U_\\mathrm{B}",
+          "means": "base voltage [V] (Gawlik (2015), p. 213)"
+        },
+        {
+          "tex": "S_\\mathrm{B}",
+          "means": "base power [VA] (Gawlik (2015), p. 213)"
+        }
       ]
     },
     {
@@ -640,38 +1443,170 @@
           "eq": "L di/dt + R i = √2 U sin(ωt + α)",
           "tex": "L\\frac{\\mathrm{d}i}{\\mathrm{d}t} + R i = \\sqrt{2}\\,U \\sin(\\omega t + \\alpha)",
           "note": "the fault switched on at angle α",
-          "ref": "(6-20), p. 207"
+          "ref": "(6-20), p. 207",
+          "where": [
+            {
+              "tex": "L",
+              "means": "inductance of the circuit [H] (Gawlik (2015), figure 6-12, p. 207)"
+            },
+            {
+              "tex": "R",
+              "means": "resistance of the circuit [Ω] (p. 207)"
+            },
+            {
+              "tex": "i",
+              "means": "short-circuit current [A] (p. 207)"
+            },
+            {
+              "tex": "U",
+              "means": "RMS driving voltage [V] (Gawlik (2015), (6-20), p. 207)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency, 2πf [1/s] (Gawlik (2015), (3-3), p. 34)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Gawlik (2015), p. 34)"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "switching angle of the voltage at t = 0 (Gawlik (2015), p. 207)"
+            }
+          ]
         },
         {
           "eq": "i = √2 U/√(R² + ω²L²) [sin(ωt + α − φ) − sin(α − φ) e^(−t/T)]",
           "tex": "i = \\frac{\\sqrt{2}\\,U}{\\sqrt{R^2 + (\\omega L)^2}}\\Big[\\sin(\\omega t + \\alpha - \\varphi) - \\sin(\\alpha - \\varphi)\\,\\mathrm{e}^{-t/T}\\Big]",
           "note": "AC part plus decaying DC part",
           "ref": "(6-29), p. 208",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "i",
+              "means": "short-circuit current: AC part plus decaying DC part [A] (Gawlik (2015), (6-29), p. 208)"
+            },
+            {
+              "tex": "U",
+              "means": "RMS driving voltage [V] (p. 207)"
+            },
+            {
+              "tex": "R,\\ L",
+              "means": "resistance [Ω] and inductance [H] (p. 207)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency, 2πf [1/s] (Gawlik (2015), (3-3), p. 34)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Gawlik (2015), p. 34)"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "switching angle (p. 207)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "impedance angle, tan φ = ωL/R (Gawlik (2015), (6-23), p. 208)"
+            },
+            {
+              "tex": "T",
+              "means": "decay time constant L/R [s] (Gawlik (2015), (6-30), p. 208)"
+            }
+          ]
         },
         {
           "eq": "tan φ = ωL/R, T = L/R",
           "tex": "\\tan\\varphi = \\frac{\\omega L}{R}, \\qquad T = \\frac{L}{R}",
           "note": "",
-          "ref": "(6-23), (6-30), p. 208"
+          "ref": "(6-23), (6-30), p. 208",
+          "where": [
+            {
+              "tex": "\\varphi",
+              "means": "impedance angle (Gawlik (2015), (6-23), p. 208)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency, 2πf [1/s] (Gawlik (2015), (3-3), p. 34)"
+            },
+            {
+              "tex": "L,\\ R",
+              "means": "inductance [H] and resistance [Ω] (p. 207)"
+            },
+            {
+              "tex": "T",
+              "means": "decay time constant of the DC part [s] (Gawlik (2015), (6-30), p. 208)"
+            }
+          ]
         },
         {
           "eq": "I″_k3 = c U_n/(√3 Z_k), c = 1.1 above 1 kV",
           "tex": "I''_\\mathrm{k3} = \\frac{c\\,U_\\mathrm{n}}{\\sqrt{3}\\,Z_\\mathrm{k}}, \\qquad c = 1.1 \\text{ above } 1\\,\\mathrm{kV}",
           "note": "initial symmetrical short-circuit current",
-          "ref": "(6-31), table 6-2, p. 212"
+          "ref": "(6-31), table 6-2, p. 212",
+          "where": [
+            {
+              "tex": "I''_\\mathrm{k3}",
+              "means": "initial symmetrical three-phase short-circuit current [A] (Gawlik (2015), (6-31), p. 212)"
+            },
+            {
+              "tex": "c",
+              "means": "voltage factor: 1.1 for the largest current above 1 kV (Gawlik (2015), table 6-2, p. 212)"
+            },
+            {
+              "tex": "U_\\mathrm{n}",
+              "means": "nominal voltage [V] (p. 212)"
+            },
+            {
+              "tex": "Z_\\mathrm{k}",
+              "means": "impedance of the short-circuit path, series and parallel of the equipment on it [Ω] (Gawlik (2015), p. 212)"
+            }
+          ]
         },
         {
           "eq": "i_p = √2 (1 + e^(−t R/L)) I″_k = κ √2 I″_k at t = 10 ms",
           "tex": "i_\\mathrm{p} = \\sqrt{2}\\,\\big(1 + \\mathrm{e}^{-tR/L}\\big) I''_\\mathrm{k} = \\kappa\\sqrt{2}\\, I''_\\mathrm{k} \\quad \\text{at } t = 10\\,\\mathrm{ms}",
           "note": "peak short-circuit current",
-          "ref": "(6-42), (6-43), p. 214"
+          "ref": "(6-42), (6-43), p. 214",
+          "where": [
+            {
+              "tex": "i_\\mathrm{p}",
+              "means": "peak short-circuit current [A] (Gawlik (2015), (6-42)–(6-43), p. 214)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Gawlik (2015), p. 34)"
+            },
+            {
+              "tex": "R,\\ L",
+              "means": "resistance [Ω] and inductance [H] of the short-circuit path (Gawlik (2015), (6-41), p. 214)"
+            },
+            {
+              "tex": "I''_\\mathrm{k}",
+              "means": "initial symmetrical short-circuit current [A] (Gawlik (2015), p. 214)"
+            },
+            {
+              "tex": "\\kappa",
+              "means": "peak factor, from the path's R/X (Gawlik (2015), (6-43), figure 6-18, p. 214)"
+            }
+          ]
         },
         {
           "eq": "κ = 2.0 (R/X = 0), 1.73 (0.1, overhead), 1.043 (1.0, cable)",
           "tex": "\\kappa = 2.0 \\;(R/X = 0), \\qquad 1.73 \\;(0.1,\\ \\text{overhead}), \\qquad 1.043 \\;(1.0,\\ \\text{cable})",
           "note": "",
-          "ref": "table 6-3, p. 215"
+          "ref": "table 6-3, p. 215",
+          "where": [
+            {
+              "tex": "\\kappa",
+              "means": "peak factor, from the path's R/X (Gawlik (2015), (6-43), figure 6-18, p. 214)"
+            },
+            {
+              "tex": "R/X",
+              "means": "ratio of resistance to reactance of the network (Gawlik (2015), table 6-3, p. 215)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -721,6 +1656,24 @@
           "solution": "i_p = κ √2 I″k = 1.415 · 1.414 · 1.038 kA = 2.08 kA.",
           "source": "Worked by hand from Gawlik (2015), (6-43) and p. 216"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "i_\\mathrm{p}",
+          "means": "peak short-circuit current [A] (Gawlik (2015), (6-42)–(6-43), p. 214)"
+        },
+        {
+          "tex": "\\kappa",
+          "means": "peak factor, from the path's R/X (Gawlik (2015), (6-43), figure 6-18, p. 214)"
+        },
+        {
+          "tex": "I''_\\mathrm{k}",
+          "means": "initial symmetrical short-circuit current [A] (Gawlik (2015), p. 214)"
+        },
+        {
+          "tex": "R,\\ X",
+          "means": "resistance and reactance of the short-circuit path [Ω] (Gawlik (2015), table 6-3, p. 215)"
+        }
       ]
     },
     {
@@ -735,38 +1688,134 @@
           "eq": "P = 3 U_p U_N sin δ / X, X = X_G + X_T + X_L + X_N",
           "tex": "P = 3\\frac{U_\\mathrm{p} U_\\mathrm{N}}{X}\\sin\\delta, \\qquad X = X_\\mathrm{G} + X_\\mathrm{T} + X_\\mathrm{L} + X_\\mathrm{N}",
           "note": "the generator on the network",
-          "ref": "(6-80), p. 235"
+          "ref": "(6-80), p. 235",
+          "where": [
+            {
+              "tex": "P",
+              "means": "active power the generator delivers to the network [W] (Gawlik (2015), (6-80), p. 235)"
+            },
+            {
+              "tex": "U_\\mathrm{p},\\ U_\\mathrm{N}",
+              "means": "generator's internal voltage and network voltage [V] (not defined in the text; δ = φ_p − φ_N, p. 235)"
+            },
+            {
+              "tex": "\\delta",
+              "means": "angle between the two voltages, φ_p − φ_N (Gawlik (2015), p. 235)"
+            },
+            {
+              "tex": "X",
+              "means": "total reactance X_G + X_T + X_L + X_N [Ω] (Gawlik (2015), p. 235)"
+            },
+            {
+              "tex": "X_\\mathrm{G},\\ X_\\mathrm{T},\\ X_\\mathrm{L},\\ X_\\mathrm{N}",
+              "means": "reactances of generator, transformer, line and network [Ω] (named only in figure 6-44 and the sum, p. 235)"
+            }
+          ]
         },
         {
           "eq": "stable on the rising side, δ < 90°; unstable on the falling side",
           "tex": "\\text{stable on the rising side, } \\delta < 90^\\circ; \\quad \\text{unstable on the falling side}",
           "note": "",
-          "ref": "p. 236"
+          "ref": "p. 236",
+          "where": [
+            {
+              "tex": "\\delta",
+              "means": "angle between generator and network voltage (Gawlik (2015), pp. 235–236)"
+            }
+          ]
         },
         {
           "eq": "A1 = ∫ from δ0 to δc of (P_m − P_fault(δ)) dδ",
           "tex": "A_1 = \\int_{\\delta_0}^{\\delta_\\mathrm{c}} \\big(P_\\mathrm{m} - P_\\mathrm{fault}(\\delta)\\big)\\,\\mathrm{d}\\delta",
           "note": "accelerating area",
-          "ref": "figure 6-45, p. 236"
+          "ref": "figure 6-45, p. 236",
+          "where": [
+            {
+              "tex": "A_1",
+              "means": "accelerating area (Gawlik (2015), figure 6-45, p. 236)"
+            },
+            {
+              "tex": "\\delta_0",
+              "means": "angle before the fault (not defined in the source)"
+            },
+            {
+              "tex": "\\delta_\\mathrm{c}",
+              "means": "angle when the fault is cleared (not defined in the source)"
+            },
+            {
+              "tex": "P_\\mathrm{m}",
+              "means": "turbine power, held constant (80 % of S_r in the notes, p. 236) [W] (not defined in the source; the symbol is the lab's)"
+            },
+            {
+              "tex": "P_\\mathrm{fault}(\\delta)",
+              "means": "power the generator can deliver during the fault, zero for a fault near a busbar (p. 236) [W]; the symbol is the lab's (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "A2 = ∫ from δc to δmax of (P_post(δ) − P_m) dδ",
           "tex": "A_2 = \\int_{\\delta_\\mathrm{c}}^{\\delta_\\mathrm{max}} \\big(P_\\mathrm{post}(\\delta) - P_\\mathrm{m}\\big)\\,\\mathrm{d}\\delta",
           "note": "braking area",
-          "ref": "figure 6-45, p. 236"
+          "ref": "figure 6-45, p. 236",
+          "where": [
+            {
+              "tex": "A_2",
+              "means": "braking area (Gawlik (2015), figure 6-45, p. 237)"
+            },
+            {
+              "tex": "\\delta_\\mathrm{c}",
+              "means": "angle when the fault is cleared (not defined in the source)"
+            },
+            {
+              "tex": "\\delta_\\mathrm{max}",
+              "means": "largest angle the swing may reach, where the post-fault curve falls back to P_m (not defined in the source)"
+            },
+            {
+              "tex": "P_\\mathrm{post}(\\delta)",
+              "means": "power over the remaining single line after clearing, the lower sine of figure 6-45 (p. 236) [W]; the symbol is the lab's (not defined in the source)"
+            },
+            {
+              "tex": "P_\\mathrm{m}",
+              "means": "turbine power [W]; the symbol is the lab's (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "A2 > A1",
           "tex": "A_2 > A_1",
           "note": "the equal-area criterion; otherwise the generator slips",
-          "ref": "p. 237"
+          "ref": "p. 237",
+          "where": [
+            {
+              "tex": "A_1,\\ A_2",
+              "means": "accelerating and braking area (Gawlik (2015), p. 237)"
+            }
+          ]
         },
         {
           "eq": "cos δcr = [P_m (δmax − δ0) + P_post cos δmax − P_fault cos δ0]/(P_post − P_fault)",
           "tex": "\\cos\\delta_\\mathrm{cr} = \\frac{P_\\mathrm{m}(\\delta_\\mathrm{max} - \\delta_0) + P_\\mathrm{post}\\cos\\delta_\\mathrm{max} - P_\\mathrm{fault}\\cos\\delta_0}{P_\\mathrm{post} - P_\\mathrm{fault}}",
           "note": "the critical clearing angle, from A1 = A2",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\delta_\\mathrm{cr}",
+              "means": "critical clearing angle, where A_1 = A_2 (not defined in the source)"
+            },
+            {
+              "tex": "P_\\mathrm{m}",
+              "means": "turbine power [W] (not defined in the source)"
+            },
+            {
+              "tex": "\\delta_0,\\ \\delta_\\mathrm{max}",
+              "means": "angle before the fault and largest angle of the swing (not defined in the source)"
+            },
+            {
+              "tex": "P_\\mathrm{post},\\ P_\\mathrm{fault}",
+              "means": "amplitudes of the power curves after clearing and during the fault [W] (not defined in the source)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -798,6 +1847,16 @@
           "solution": "δ0 = 30° = 0.524 rad, δmax = 180° − asin(0.8/1.2) = 138.2° = 2.412 rad. cos δcr = [0.8 (2.412 − 0.524) + 1.2 cos 138.2°]/1.2 = (1.510 − 0.894)/1.2 = 0.513, δcr = 59.1°.",
           "source": "Worked by hand from Gawlik (2015), figure 6-45, with example peaks"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "A_1",
+          "means": "accelerating area, energy taken up by the shaft during the fault (Gawlik (2015), p. 236)"
+        },
+        {
+          "tex": "A_2",
+          "means": "braking area, energy that can be given back after clearing (Gawlik (2015), p. 237)"
+        }
       ]
     },
     {
@@ -812,50 +1871,194 @@
           "eq": "V_ges = const · J · N/2 in the real axis",
           "tex": "V_\\mathrm{ges} = \\mathrm{const}\\cdot J_\\mathrm{Nenn}\\cdot\\frac{N}{2} \\quad \\text{in the real axis}",
           "note": "N windings with sinusoidal currents: N/2 times one winding's field",
-          "ref": "Schrödl (2012), (M.7), p. 11"
+          "ref": "Schrödl (2012), (M.7), p. 11",
+          "where": [
+            {
+              "tex": "V_\\mathrm{ges}",
+              "means": "total magnetic voltage (magnetomotive force) in the real axis, phase 1 [A] (Schrödl (2012), (M.7), p. 11)"
+            },
+            {
+              "tex": "\\mathrm{const}",
+              "means": "constant of the winding; the notes write const1 (Schrödl (2012), (M.7), p. 11)"
+            },
+            {
+              "tex": "J_\\mathrm{Nenn}",
+              "means": "rated current; the text calls it I_N,eff, the RMS rated current [A] (Schrödl (2012), p. 11)"
+            },
+            {
+              "tex": "N",
+              "means": "number of phases (Schrödl (2012), (M.7)–(M.8), p. 11)"
+            }
+          ]
         },
         {
           "eq": "i = (2/N) Σ i_k e^(j2π(k−1)/N), i_k = J_k/(√2 J_Nenn)",
           "tex": "\\underline{i} = \\frac{2}{N}\\sum_{k=1}^{N} i_k\\,\\mathrm{e}^{\\mathrm{j}\\frac{2\\pi}{N}(k-1)}, \\qquad i_k = \\frac{J_k}{\\sqrt{2}\\,J_\\mathrm{Nenn}}",
           "note": "the per-unit current space vector",
-          "ref": "Schrödl (2012), (M.8), p. 11"
+          "ref": "Schrödl (2012), (M.8), p. 11",
+          "where": [
+            {
+              "tex": "\\underline{i}",
+              "means": "per-unit current space vector: V_ges over the rated magnetic voltage (Schrödl (2012), (M.8), p. 11)"
+            },
+            {
+              "tex": "N",
+              "means": "number of phases (p. 11)"
+            },
+            {
+              "tex": "k",
+              "means": "index of the phase, 1 to N (Schrödl (2012), p. 11)"
+            },
+            {
+              "tex": "i_k",
+              "means": "instantaneous current of phase k, per unit of the rated peak √2 J_Nenn (Schrödl (2012), (M.8), p. 11)"
+            },
+            {
+              "tex": "J_k",
+              "means": "instantaneous current of phase k [A] (Schrödl (2012), (M.8), p. 11)"
+            },
+            {
+              "tex": "J_\\mathrm{Nenn}",
+              "means": "rated RMS current [A] (Schrödl (2012), p. 11)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "i = ⅔ (i₁ + i₂ e^(j2π/3) + i₃ e^(j4π/3))",
           "tex": "\\underline{i} = \\frac{2}{3}\\big(i_1 + i_2\\,\\mathrm{e}^{\\mathrm{j}2\\pi/3} + i_3\\,\\mathrm{e}^{\\mathrm{j}4\\pi/3}\\big)",
           "note": "three phases",
-          "ref": "Schrödl (2012), (M.9), p. 11"
+          "ref": "Schrödl (2012), (M.9), p. 11",
+          "where": [
+            {
+              "tex": "\\underline{i}",
+              "means": "per-unit current space vector (Schrödl (2012), (M.9), p. 11)"
+            },
+            {
+              "tex": "i_1,\\ i_2,\\ i_3",
+              "means": "per-unit currents of the three phases (Schrödl (2012), p. 11)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "i_u = ½, i_v = −1, i_w = ½ gives i_s = 1 · e^(j300°)",
           "tex": "i_\\mathrm{u} = \\tfrac{1}{2},\\; i_\\mathrm{v} = -1,\\; i_\\mathrm{w} = \\tfrac{1}{2} \\;\\Rightarrow\\; \\underline{i}_\\mathrm{s} = 1\\cdot\\mathrm{e}^{\\mathrm{j}300^\\circ}",
           "note": "an instant of rated current",
-          "ref": "Schrödl (2012), (A.2), p. 152"
+          "ref": "Schrödl (2012), (A.2), p. 152",
+          "where": [
+            {
+              "tex": "i_\\mathrm{u},\\ i_\\mathrm{v},\\ i_\\mathrm{w}",
+              "means": "per-unit phase currents of a rated three-phase system at one instant (Schrödl (2012), (A.1), p. 152)"
+            },
+            {
+              "tex": "\\underline{i}_\\mathrm{s}",
+              "means": "per-unit stator current space vector (Schrödl (2012), (A.2), p. 152)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "ψ_s = l_s i_s, l_s = 3/2 l_Strang",
           "tex": "\\underline{\\psi}_\\mathrm{s} = \\ell_\\mathrm{s}\\,\\underline{i}_\\mathrm{s}, \\qquad \\ell_\\mathrm{s} = \\frac{3}{2}\\,\\ell_\\mathrm{Strang}",
           "note": "the three-phase inductance is 3/2 the phase inductance; on PDF page 105, whose printed number the scan does not show",
-          "ref": "Schrödl (2012), (A.28), (A.29)"
+          "ref": "Schrödl (2012), (A.28), (A.29)",
+          "where": [
+            {
+              "tex": "\\underline{\\psi}_\\mathrm{s}",
+              "means": "flux-linkage space vector (Schrödl (2012), (A.29), PDF p. 105)"
+            },
+            {
+              "tex": "\\underline{i}_\\mathrm{s}",
+              "means": "current space vector (Schrödl (2012), (A.29), PDF p. 105)"
+            },
+            {
+              "tex": "\\ell_\\mathrm{s}",
+              "means": "three-phase (rotating-field) inductance (Schrödl (2012), (A.29), PDF p. 105)"
+            },
+            {
+              "tex": "\\ell_\\mathrm{Strang}",
+              "means": "self-inductance of one phase winding (Schrödl (2012), (A.24)–(A.29), PDF p. 105)"
+            }
+          ]
         },
         {
           "eq": "n_synch = 60 f/p [1/min]",
           "tex": "n_\\mathrm{synch} = \\frac{60 f}{p} \\quad [1/\\mathrm{min}]",
           "note": "synchronous speed",
-          "ref": "Gawlik (2015), (4-94), p. 118"
+          "ref": "Gawlik (2015), (4-94), p. 118",
+          "where": [
+            {
+              "tex": "n_\\mathrm{synch}",
+              "means": "synchronous speed [1/min] (Gawlik (2015), (4-94), p. 118)"
+            },
+            {
+              "tex": "f",
+              "means": "network frequency [Hz] (Gawlik (2015), p. 118)"
+            },
+            {
+              "tex": "p",
+              "means": "number of pole pairs (Gawlik (2015), p. 118)"
+            }
+          ]
         },
         {
           "eq": "s = (n_synch − n)/n_synch",
           "tex": "s = \\frac{n_\\mathrm{synch} - n}{n_\\mathrm{synch}}",
           "note": "slip of an induction machine",
-          "ref": "Gawlik (2015), (4-95), p. 120"
+          "ref": "Gawlik (2015), (4-95), p. 120",
+          "where": [
+            {
+              "tex": "s",
+              "means": "slip of an induction machine (Gawlik (2015), (4-95), p. 120)"
+            },
+            {
+              "tex": "n_\\mathrm{synch}",
+              "means": "synchronous speed [1/min] (Gawlik (2015), p. 118)"
+            },
+            {
+              "tex": "n",
+              "means": "speed of the rotor [1/min] (Gawlik (2015), p. 120)"
+            }
+          ]
         },
         {
           "eq": "i_k = î_k cos(ωt − (k − 1)·120°)",
           "tex": "i_k = \\hat{i}_k\\cos\\left(\\omega t - (k - 1)\\cdot 120^\\circ\\right)",
           "note": "the three phase currents; 'swap' turns the sequence round",
           "ref": "Gawlik (2015), (3-30), section 3.2",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "i_k",
+              "means": "current of phase k (not defined in the source)"
+            },
+            {
+              "tex": "\\hat{i}_k",
+              "means": "its amplitude (not defined in the source)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency, 2πf [1/s] (Gawlik (2015), (3-3), p. 34)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Gawlik (2015), p. 34)"
+            },
+            {
+              "tex": "k",
+              "means": "index of the phase, 1 to 3 (not defined in the source)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -886,6 +2089,20 @@
           "solution": "n_synch = 3000/2 = 1500 min⁻¹; s = (1500 − 1475)/1500 = 0.0167.",
           "source": "Worked example, Gawlik (2015), p. 120"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\underline{i}_\\mathrm{s}",
+          "means": "per-unit stator current space vector (Schrödl (2012), (M.8)–(M.9), p. 11)"
+        },
+        {
+          "tex": "i_\\mathrm{u},\\ i_\\mathrm{v},\\ i_\\mathrm{w}",
+          "means": "per-unit currents of phases u, v, w (Schrödl (2012), (A.1)–(A.2), p. 152)"
+        },
+        {
+          "tex": "\\mathrm{j}",
+          "means": "imaginary unit (not defined in the source)"
+        }
       ]
     },
     {
@@ -900,43 +2117,217 @@
           "eq": "U_i,A = k Φ n, k = z p/a",
           "tex": "U_\\mathrm{i,A} = k\\,\\Phi\\, n, \\qquad k = \\frac{z\\,p}{a}",
           "note": "induced voltage, n in 1/s",
-          "ref": "Schrödl (2012), (G.29), (G.30), p. 119"
+          "ref": "Schrödl (2012), (G.29), (G.30), p. 119",
+          "where": [
+            {
+              "tex": "U_\\mathrm{i,A}",
+              "means": "voltage induced in the armature winding [V] (Schrödl (2012), (G.29), p. 119)"
+            },
+            {
+              "tex": "k",
+              "means": "machine constant (Schrödl (2012), (G.30), p. 119)"
+            },
+            {
+              "tex": "\\Phi",
+              "means": "flux per pole [Wb] (Schrödl (2012), (G.26), p. 119)"
+            },
+            {
+              "tex": "n",
+              "means": "speed [1/s] (Schrödl (2012), (G.24), (G.32), p. 119)"
+            },
+            {
+              "tex": "z",
+              "means": "number of armature conductors (Schrödl (2012), (G.23), p. 119)"
+            },
+            {
+              "tex": "p",
+              "means": "number of pole pairs (Schrödl (2012), (G.23), p. 119)"
+            },
+            {
+              "tex": "a",
+              "means": "half the number of parallel conductor groups, 2a in parallel (Schrödl (2012), p. 119)"
+            }
+          ]
         },
         {
           "eq": "M_i = (k/2π) Φ J",
           "tex": "M_\\mathrm{i} = \\frac{k}{2\\pi}\\,\\Phi\\, J",
           "note": "internal torque",
-          "ref": "Schrödl (2012), (G.33), (G.34), p. 120"
+          "ref": "Schrödl (2012), (G.33), (G.34), p. 120",
+          "where": [
+            {
+              "tex": "M_\\mathrm{i}",
+              "means": "internal torque [N·m] (Schrödl (2012), (G.33)–(G.34), p. 120)"
+            },
+            {
+              "tex": "k",
+              "means": "machine constant (p. 119)"
+            },
+            {
+              "tex": "\\Phi",
+              "means": "flux per pole [Wb] (p. 119)"
+            },
+            {
+              "tex": "J",
+              "means": "armature current; (G.31) writes it J_A [A] (Schrödl (2012), pp. 119–120)"
+            }
+          ]
         },
         {
           "eq": "U_A = J R_A + k Φ n + L_A dJ/dt",
           "tex": "U_\\mathrm{A} = J R_\\mathrm{A} + k\\,\\Phi\\, n + L_\\mathrm{A}\\frac{\\mathrm{d}J}{\\mathrm{d}t}",
           "note": "armature voltage equation, brush drop added to U_A",
-          "ref": "Schrödl (2012), (G.38), p. 121"
+          "ref": "Schrödl (2012), (G.38), p. 121",
+          "where": [
+            {
+              "tex": "U_\\mathrm{A}",
+              "means": "armature voltage with the brush drop added [V] (Schrödl (2012), (G.38), p. 121)"
+            },
+            {
+              "tex": "J",
+              "means": "armature current [A] (p. 120)"
+            },
+            {
+              "tex": "R_\\mathrm{A}",
+              "means": "armature resistance [Ω] (Abb. G.32, p. 120)"
+            },
+            {
+              "tex": "k",
+              "means": "machine constant (p. 119)"
+            },
+            {
+              "tex": "\\Phi",
+              "means": "flux per pole [Wb] (p. 119)"
+            },
+            {
+              "tex": "n",
+              "means": "speed [1/s] (p. 119)"
+            },
+            {
+              "tex": "L_\\mathrm{A}",
+              "means": "armature inductance [H] (Schrödl (2012), (G.36), p. 120)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Gawlik (2015), p. 34)"
+            }
+          ]
         },
         {
           "eq": "Θ_m dΩ_m/dt = k' Φ J + M_Last",
           "tex": "\\Theta_\\mathrm{m}\\frac{\\mathrm{d}\\Omega_\\mathrm{m}}{\\mathrm{d}t} = k'\\,\\Phi\\, J + M_\\mathrm{Last}",
           "note": "mechanical equation, k' = k/2π",
-          "ref": "Schrödl (2012), (G.41), p. 121"
+          "ref": "Schrödl (2012), (G.41), p. 121",
+          "where": [
+            {
+              "tex": "\\Theta_\\mathrm{m}",
+              "means": "moment of inertia of the rotating parts [kg·m²] (not defined on pp. 119–121)"
+            },
+            {
+              "tex": "\\Omega_\\mathrm{m}",
+              "means": "mechanical angular speed, 2πn [1/s] (Schrödl (2012), (G.32), p. 119)"
+            },
+            {
+              "tex": "k'",
+              "means": "k/2π (Schrödl (2012), (G.33), p. 120)"
+            },
+            {
+              "tex": "\\Phi",
+              "means": "flux per pole [Wb] (p. 119)"
+            },
+            {
+              "tex": "J",
+              "means": "armature current [A] (p. 120)"
+            },
+            {
+              "tex": "M_\\mathrm{Last}",
+              "means": "load torque, positive in the mathematically positive direction [N·m] (Schrödl (2012), (G.40), p. 121)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Gawlik (2015), p. 34)"
+            }
+          ]
         },
         {
           "eq": "n = Ω_m/2π = (U_A − J R_A)/(kΦ)",
           "tex": "n = \\frac{\\Omega_\\mathrm{m}}{2\\pi} = \\frac{U_\\mathrm{A} - J R_\\mathrm{A}}{k\\Phi}",
           "note": "steady state",
-          "ref": "Schrödl (2012), (G.46), (G.49), pp. 123–124"
+          "ref": "Schrödl (2012), (G.46), (G.49), pp. 123–124",
+          "where": [
+            {
+              "tex": "n",
+              "means": "speed [1/s] (p. 119)"
+            },
+            {
+              "tex": "\\Omega_\\mathrm{m}",
+              "means": "mechanical angular speed [1/s] (p. 119)"
+            },
+            {
+              "tex": "U_\\mathrm{A}",
+              "means": "armature voltage [V] (p. 121)"
+            },
+            {
+              "tex": "J",
+              "means": "armature current [A] (p. 120)"
+            },
+            {
+              "tex": "R_\\mathrm{A}",
+              "means": "armature resistance [Ω] (p. 120)"
+            },
+            {
+              "tex": "k\\Phi",
+              "means": "machine constant times flux per pole [V·s] (pp. 119, 123)"
+            }
+          ]
         },
         {
           "eq": "(dω_m/di_A) = −r_A below rated speed, −r_A/φ in field weakening",
           "tex": "\\Big(\\frac{\\mathrm{d}\\omega_\\mathrm{m}}{\\mathrm{d}i_\\mathrm{A}}\\Big) = -r_\\mathrm{A} \\text{ below rated speed}, \\qquad -\\frac{r_\\mathrm{A}}{\\varphi} \\text{ in field weakening}",
           "note": "half the flux, twice the slope against current",
-          "ref": "Schrödl (2012), (G.80), (G.81), p. 137"
+          "ref": "Schrödl (2012), (G.80), (G.81), p. 137",
+          "where": [
+            {
+              "tex": "\\omega_\\mathrm{m}",
+              "means": "per-unit speed (Schrödl (2012), (G.79)–(G.81), pp. 136–137)"
+            },
+            {
+              "tex": "i_\\mathrm{A}",
+              "means": "per-unit armature current (Schrödl (2012), p. 136)"
+            },
+            {
+              "tex": "r_\\mathrm{A}",
+              "means": "per-unit armature resistance (Schrödl (2012), p. 136)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "per-unit flux, 1 below rated speed (Schrödl (2012), (G.77)–(G.81), pp. 136–137)"
+            }
+          ]
         },
         {
           "eq": "i_A(ω_m = 0) = u_A/r_A",
           "tex": "i_\\mathrm{A}(\\omega_\\mathrm{m} = 0) = \\frac{u_\\mathrm{A}}{r_\\mathrm{A}}",
           "note": "every field-weakening line meets at standstill on the current axis",
-          "ref": "Schrödl (2012), (G.83), p. 137"
+          "ref": "Schrödl (2012), (G.83), p. 137",
+          "where": [
+            {
+              "tex": "i_\\mathrm{A}",
+              "means": "per-unit armature current (Schrödl (2012), (G.83), p. 137)"
+            },
+            {
+              "tex": "\\omega_\\mathrm{m}",
+              "means": "per-unit speed (p. 136)"
+            },
+            {
+              "tex": "u_\\mathrm{A}",
+              "means": "per-unit armature voltage (Schrödl (2012), (G.77), p. 136)"
+            },
+            {
+              "tex": "r_\\mathrm{A}",
+              "means": "per-unit armature resistance (p. 136)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1012,6 +2403,36 @@
           "solution": "kΦ = 48 V/(4000/60 s⁻¹) = 0.72 V·s. Half torque is half current, 5 A. U_A = J R_A + kΦ n = 1.5 V + 0.72 · 50 V = 37.5 V.",
           "source": "Exercise in Schrödl (2012), p. 123, worked by hand"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "n",
+          "means": "speed [1/s] (Schrödl (2012), (G.32), p. 119)"
+        },
+        {
+          "tex": "U_\\mathrm{A}",
+          "means": "armature voltage, brush drop included [V] (Schrödl (2012), (G.38), p. 121)"
+        },
+        {
+          "tex": "J",
+          "means": "armature current [A] (Schrödl (2012), (G.31), p. 119)"
+        },
+        {
+          "tex": "R_\\mathrm{A}",
+          "means": "armature resistance [Ω] (Schrödl (2012), Abb. G.32, p. 120)"
+        },
+        {
+          "tex": "k",
+          "means": "machine constant z·p/a (Schrödl (2012), (G.30), p. 119)"
+        },
+        {
+          "tex": "\\Phi",
+          "means": "flux per pole [Wb] (Schrödl (2012), (G.26), p. 119)"
+        },
+        {
+          "tex": "M_\\mathrm{i}",
+          "means": "internal torque [N·m] (Schrödl (2012), (G.34), p. 120)"
+        }
       ]
     },
     {
@@ -1026,38 +2447,154 @@
           "eq": "u_s = r_s i_s + dψ_s/dτ + jω_K ψ_s",
           "tex": "\\underline{u}_\\mathrm{s} = r_\\mathrm{s}\\,\\underline{i}_\\mathrm{s} + \\frac{\\mathrm{d}\\underline{\\psi}_\\mathrm{s}}{\\mathrm{d}\\tau} + \\mathrm{j}\\omega_\\mathrm{K}\\,\\underline{\\psi}_\\mathrm{s}",
           "note": "stator voltage in coordinates turning at ω_K",
-          "ref": "Schrödl (2012), (P.1), p. 224"
+          "ref": "Schrödl (2012), (P.1), p. 224",
+          "where": [
+            {
+              "tex": "\\underline{u}_\\mathrm{s},\\ \\underline{i}_\\mathrm{s},\\ \\underline{\\psi}_\\mathrm{s}",
+              "means": "stator voltage, current and flux-linkage space vectors (Schrödl (2012), (P.1), p. 224)"
+            },
+            {
+              "tex": "r_\\mathrm{s}",
+              "means": "per-unit stator resistance (not defined on p. 224)"
+            },
+            {
+              "tex": "\\tau",
+              "means": "per-unit time (not defined on p. 224)"
+            },
+            {
+              "tex": "\\omega_\\mathrm{K}",
+              "means": "angular speed of the coordinate system the equation is written in (Schrödl (2012), p. 224)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "ψ_s = l_s i_s + ψ_M",
           "tex": "\\underline{\\psi}_\\mathrm{s} = \\ell_\\mathrm{s}\\,\\underline{i}_\\mathrm{s} + \\underline{\\psi}_\\mathrm{M}",
           "note": "stator flux linkage",
           "ref": "Schrödl (2012), (P.2), p. 225",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\underline{\\psi}_\\mathrm{s}",
+              "means": "stator flux-linkage space vector (Schrödl (2012), (P.2), p. 225)"
+            },
+            {
+              "tex": "\\ell_\\mathrm{s}",
+              "means": "stator self-inductance, per unit (Schrödl (2012), (P.2), p. 225)"
+            },
+            {
+              "tex": "\\underline{i}_\\mathrm{s}",
+              "means": "stator current space vector (p. 225)"
+            },
+            {
+              "tex": "\\underline{\\psi}_\\mathrm{M}",
+              "means": "flux linkage of the permanent magnets, on the rotor's d axis (Schrödl (2012), Abb. P.8, p. 225)"
+            }
+          ]
         },
         {
           "eq": "m = −Im(i_s* ψ_s)",
           "tex": "m = -\\operatorname{Im}\\big(\\underline{i}_\\mathrm{s}^{*}\\,\\underline{\\psi}_\\mathrm{s}\\big)",
           "note": "torque",
-          "ref": "Schrödl (2012), (P.4), p. 226"
+          "ref": "Schrödl (2012), (P.4), p. 226",
+          "where": [
+            {
+              "tex": "m",
+              "means": "per-unit torque; the notes write m_R (Schrödl (2012), (P.4), p. 226)"
+            },
+            {
+              "tex": "\\underline{i}_\\mathrm{s}^{*}",
+              "means": "conjugate of the stator current space vector (p. 226)"
+            },
+            {
+              "tex": "\\underline{\\psi}_\\mathrm{s}",
+              "means": "stator flux-linkage space vector (p. 226)"
+            }
+          ]
         },
         {
           "eq": "m = i_sq ψ_Md − i_sd ψ_Mq = i_sq |ψ_M|",
           "tex": "m = i_{\\mathrm{S}q}\\,\\psi_{\\mathrm{M}d} - i_{\\mathrm{S}d}\\,\\psi_{\\mathrm{M}q} = i_{\\mathrm{S}q}\\,|\\underline{\\psi}_\\mathrm{M}|",
           "note": "in rotor coordinates; the d current makes no torque",
-          "ref": "Schrödl (2012), (P.8), p. 226"
+          "ref": "Schrödl (2012), (P.8), p. 226",
+          "where": [
+            {
+              "tex": "m",
+              "means": "per-unit torque (Schrödl (2012), (P.8), p. 226)"
+            },
+            {
+              "tex": "i_{\\mathrm{S}d},\\ i_{\\mathrm{S}q}",
+              "means": "d and q components of the stator current in rotor coordinates (Schrödl (2012), p. 226)"
+            },
+            {
+              "tex": "\\psi_{\\mathrm{M}d},\\ \\psi_{\\mathrm{M}q}",
+              "means": "d and q components of the magnets' flux linkage; ψ_Mq = 0 by the choice of axes (Schrödl (2012), p. 226)"
+            },
+            {
+              "tex": "|\\underline{\\psi}_\\mathrm{M}|",
+              "means": "magnitude of the magnets' flux linkage (p. 226)"
+            }
+          ]
         },
         {
           "eq": "u_Sd0 = i_Sd0 r_s, u_Sq0 = ω_U (l_s i_Sd0 + ψ_Md0)",
           "tex": "u_{\\mathrm{S}d0} = i_{\\mathrm{S}d0}\\, r_\\mathrm{s}, \\qquad u_{\\mathrm{S}q0} = \\omega_\\mathrm{U}\\,(\\ell_\\mathrm{s}\\, i_{\\mathrm{S}d0} + \\psi_{\\mathrm{M}d0})",
           "note": "steady no-load voltage",
-          "ref": "Schrödl (2012), (P.18), (P.19), p. 230"
+          "ref": "Schrödl (2012), (P.18), (P.19), p. 230",
+          "where": [
+            {
+              "tex": "u_{\\mathrm{S}d0},\\ u_{\\mathrm{S}q0}",
+              "means": "d and q stator voltage at the steady no-load point (Schrödl (2012), (P.18)–(P.19), p. 230)"
+            },
+            {
+              "tex": "i_{\\mathrm{S}d0}",
+              "means": "chosen d current at no load; i_Sq0 = 0 (Schrödl (2012), (P.17), p. 230)"
+            },
+            {
+              "tex": "r_\\mathrm{s}",
+              "means": "per-unit stator resistance (not defined on p. 230)"
+            },
+            {
+              "tex": "\\omega_\\mathrm{U}",
+              "means": "per-unit speed at the operating point (not defined on p. 230)"
+            },
+            {
+              "tex": "\\ell_\\mathrm{s}",
+              "means": "stator inductance (p. 225)"
+            },
+            {
+              "tex": "\\psi_{\\mathrm{M}d0}",
+              "means": "magnets' d flux linkage at the operating point (p. 230)"
+            }
+          ]
         },
         {
           "eq": "i_k = Re{i_s e^(−j(k−1)·120°)}",
           "tex": "i_k = \\operatorname{Re}\\big\\{\\underline{i}_\\mathrm{s}\\,\\mathrm{e}^{-\\mathrm{j}(k-1)\\cdot 120^\\circ}\\big\\}",
           "note": "the phase currents of a space vector",
-          "ref": "exam of 24 June 2013, worked solution"
+          "ref": "exam of 24 June 2013, worked solution",
+          "where": [
+            {
+              "tex": "i_k",
+              "means": "current of phase k, per unit; as the lab uses it (the exam's worked solution was not reread for this list)"
+            },
+            {
+              "tex": "\\underline{i}_\\mathrm{s}",
+              "means": "stator current space vector; as the lab uses it"
+            },
+            {
+              "tex": "k",
+              "means": "index of the phase, 1 to 3; as the lab uses it"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1106,6 +2643,36 @@
           },
           "solution": "With i_s = 0, u_Sd = 0 and u_Sq = ω ψ_M = 0.8: the magnet induces a voltage in proportion to speed.",
           "source": "Worked by hand from Schrödl (2012), (P.18), (P.19)"
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "m",
+          "means": "per-unit torque; the notes write m_R (Schrödl (2012), (P.8), p. 226)"
+        },
+        {
+          "tex": "i_{\\mathrm{s}q}",
+          "means": "q component of the stator current in rotor coordinates (Schrödl (2012), (P.8), p. 226)"
+        },
+        {
+          "tex": "\\underline{\\psi}_\\mathrm{M}",
+          "means": "flux-linkage space vector of the permanent magnets, along the d axis (Schrödl (2012), (P.2), Abb. P.8, p. 225)"
+        },
+        {
+          "tex": "\\underline{u}_\\mathrm{s},\\ \\underline{i}_\\mathrm{s},\\ \\underline{\\psi}_\\mathrm{s}",
+          "means": "stator voltage, current and flux-linkage space vectors (Schrödl (2012), (P.1)–(P.2), pp. 224–225)"
+        },
+        {
+          "tex": "r_\\mathrm{s}",
+          "means": "per-unit stator resistance (not defined on pp. 224–226)"
+        },
+        {
+          "tex": "\\omega",
+          "means": "per-unit speed of the steady rotating system (not defined on pp. 224–226)"
+        },
+        {
+          "tex": "\\mathrm{j}",
+          "means": "imaginary unit (not defined in the source)"
         }
       ]
     },
@@ -1178,44 +2745,192 @@
           "eq": "Z_Q = c U_n²/S″_kQ",
           "tex": "Z_Q = \\frac{c\\,U_n^2}{S''_\\mathrm{kQ}}",
           "note": "0.198 Ω at 30 kV",
-          "ref": "(6-32), p. 212; p. 215"
+          "ref": "(6-32), p. 212; p. 215",
+          "where": [
+            {
+              "tex": "Z_Q",
+              "means": "impedance of the feeding network, referred to the fault's 30 kV side [Ω] (Gawlik (2015), (6-32), p. 212; example, p. 215)"
+            },
+            {
+              "tex": "c",
+              "means": "voltage factor: 1.1 for the largest current above 1 kV (Gawlik (2015), table 6-2, p. 212)"
+            },
+            {
+              "tex": "U_n",
+              "means": "nominal voltage at the fault [V] (p. 215)"
+            },
+            {
+              "tex": "S''_\\mathrm{kQ}",
+              "means": "short-circuit power of the feeding network [VA] (Gawlik (2015), p. 215)"
+            }
+          ]
         },
         {
           "eq": "Z_T = u_k U_n²/S_n, R_T = P_k U_n²/S_n²",
           "tex": "Z_T = u_k\\frac{U_n^2}{S_n} \\qquad R_T = P_k\\frac{U_n^2}{S_n^2}",
           "note": "3.48 Ω and 0.13 Ω",
-          "ref": "p. 215"
+          "ref": "p. 215",
+          "where": [
+            {
+              "tex": "Z_T,\\ R_T",
+              "means": "transformer impedance and resistance [Ω] (Gawlik (2015), p. 215)"
+            },
+            {
+              "tex": "u_k",
+              "means": "per-unit short-circuit voltage (p. 215)"
+            },
+            {
+              "tex": "U_n",
+              "means": "nominal voltage of the fault side [V] (p. 215)"
+            },
+            {
+              "tex": "S_n",
+              "means": "rated power of the transformer [VA] (p. 215)"
+            },
+            {
+              "tex": "P_k",
+              "means": "short-circuit losses [W] (p. 215)"
+            }
+          ]
         },
         {
           "eq": "X_L = X′ l, R_L = R′ l",
           "tex": "X_L = X'l \\qquad R_L = R'l",
           "note": "14 Ω and 4.8 Ω for 40 km",
-          "ref": "p. 216"
+          "ref": "p. 216",
+          "where": [
+            {
+              "tex": "X_L,\\ R_L",
+              "means": "reactance and resistance of the line [Ω] (Gawlik (2015), p. 216)"
+            },
+            {
+              "tex": "X',\\ R'",
+              "means": "reactance and resistance per unit length [Ω/km] (p. 216)"
+            },
+            {
+              "tex": "l",
+              "means": "length of the line [km] (p. 216)"
+            }
+          ]
         },
         {
           "eq": "U1² = |U2 + (R + jX) I|², I = (P − jQ)/U2*",
           "tex": "U_1^2 = \\left|U_2 + (R + jX)\\,\\underline{I}\\right|^2",
           "note": "the upper root is the operating point",
           "ref": "section 6.2, pp. 198–202",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "U_1,\\ U_2",
+              "means": "voltage at the sending end and at the load [V] (not defined in the source)"
+            },
+            {
+              "tex": "R,\\ X",
+              "means": "resistance and reactance of the whole feeder [Ω] (not defined in the source)"
+            },
+            {
+              "tex": "\\underline{I}",
+              "means": "load current, (P − jQ)/U_2* [A] (not defined in the source)"
+            },
+            {
+              "tex": "j",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "I″k3 = c U_n/(√3 Z_k)",
           "tex": "I''_\\mathrm{k3} = \\frac{c\\,U_n}{\\sqrt{3}\\,Z_k}",
           "note": "1.038 kA at the line's end",
-          "ref": "(6-31), p. 212; p. 216"
+          "ref": "(6-31), p. 212; p. 216",
+          "where": [
+            {
+              "tex": "I''_\\mathrm{k3}",
+              "means": "initial symmetrical three-phase short-circuit current [A] (Gawlik (2015), (6-31), p. 212)"
+            },
+            {
+              "tex": "c",
+              "means": "voltage factor: 1.1 for the largest current above 1 kV (Gawlik (2015), table 6-2, p. 212)"
+            },
+            {
+              "tex": "U_n",
+              "means": "nominal voltage at the fault [V] (p. 212)"
+            },
+            {
+              "tex": "Z_k",
+              "means": "impedance of the short-circuit path [Ω] (Gawlik (2015), p. 216)"
+            }
+          ]
         },
         {
           "eq": "c = 1.1 (largest), 1.0 (smallest) above 1 kV",
           "tex": "c_\\mathrm{max} = 1.1 \\qquad c_\\mathrm{min} = 1.0",
           "note": "",
-          "ref": "table 6-2, p. 212"
+          "ref": "table 6-2, p. 212",
+          "where": [
+            {
+              "tex": "c_\\mathrm{max},\\ c_\\mathrm{min}",
+              "means": "voltage factor for the largest and the smallest short-circuit current (Gawlik (2015), table 6-2, p. 212)"
+            }
+          ]
         },
         {
           "eq": "ip = κ √2 I″k, κ = 1 + e^(−πR/X)",
           "tex": "i_p = \\kappa\\sqrt{2}\\,I''_k \\qquad \\kappa = 1 + e^{-\\pi R/X}",
           "note": "κ ≈ 1.4 for R/X = 0.28",
-          "ref": "(6-42), (6-43), p. 214; p. 216"
+          "ref": "(6-42), (6-43), p. 214; p. 216",
+          "where": [
+            {
+              "tex": "i_p",
+              "means": "peak short-circuit current [A] (p. 214)"
+            },
+            {
+              "tex": "\\kappa",
+              "means": "peak factor, from the path's R/X (Gawlik (2015), (6-43), figure 6-18, p. 214)"
+            },
+            {
+              "tex": "I''_k",
+              "means": "initial symmetrical short-circuit current [A] (p. 214)"
+            },
+            {
+              "tex": "R/X",
+              "means": "ratio of resistance to reactance of the short-circuit path (Gawlik (2015), p. 216)"
+            },
+            {
+              "tex": "e",
+              "means": "Euler's number (not defined in the source)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "I''_\\mathrm{k3}",
+          "means": "initial symmetrical three-phase short-circuit current [A] (Gawlik (2015), (6-31), p. 212)"
+        },
+        {
+          "tex": "c",
+          "means": "voltage factor: 1.1 for the largest current above 1 kV (Gawlik (2015), table 6-2, p. 212)"
+        },
+        {
+          "tex": "U_n",
+          "means": "nominal voltage at the fault [V] (Gawlik (2015), p. 212)"
+        },
+        {
+          "tex": "Z_k",
+          "means": "impedance of the short-circuit path [Ω] (Gawlik (2015), p. 212)"
+        },
+        {
+          "tex": "i_p",
+          "means": "peak short-circuit current [A] (Gawlik (2015), (6-43), p. 214)"
+        },
+        {
+          "tex": "\\kappa",
+          "means": "peak factor, from the path's R/X (Gawlik (2015), (6-43), figure 6-18, p. 214)"
+        },
+        {
+          "tex": "I''_k",
+          "means": "initial symmetrical short-circuit current [A] (p. 214)"
         }
       ]
     }

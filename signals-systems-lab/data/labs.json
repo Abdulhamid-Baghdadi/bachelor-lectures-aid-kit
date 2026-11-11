@@ -74,31 +74,145 @@
       "idea": "Shift, reverse and scale the time axis: a signal only moves and stretches, a sequence scaled by M loses samples.",
       "law": "y(t) = x(at − t0)    y[n] = x[Mn + n0]",
       "lawTex": "y(t) = x(at - t_0) \\qquad y[n] = x[Mn + n_0]",
+      "lawWhere": [
+        {
+          "tex": "y(t)",
+          "means": "the signal on the changed time axis"
+        },
+        {
+          "tex": "x(t)",
+          "means": "input signal over time t (Prechtl writes x(τ) or u(τ), SS1 §1.2, p. 9)"
+        },
+        {
+          "tex": "t",
+          "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+        },
+        {
+          "tex": "a",
+          "means": "time-scaling factor: |a| > 1 compresses, |a| < 1 stretches, a < 0 reverses (Prechtl substitutes τ → (τ − τ0)/b, SS1 (1.16), p. 9)"
+        },
+        {
+          "tex": "t_0",
+          "means": "time shift [s] (Prechtl's τ0, SS1 (1.16), p. 9)"
+        },
+        {
+          "tex": "y[n]",
+          "means": "the sequence on the changed index axis"
+        },
+        {
+          "tex": "x[n]",
+          "means": "input sequence, defined at whole n (SS2 §2.2, p. 15)"
+        },
+        {
+          "tex": "n",
+          "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+        },
+        {
+          "tex": "M",
+          "means": "downsampling factor, a whole number: every M-th sample is kept (SS2 (8.26), p. 201)"
+        },
+        {
+          "tex": "n_0",
+          "means": "shift in samples, a whole number (Doblinger writes k, SS2 §2.2, p. 15)"
+        }
+      ],
       "lecture": "Prechtl (2010), section 1.2, pp. 5–12; Doblinger (2015), section 2.2, pp. 15–18, and (8.26), p. 201",
       "equations": [
         {
           "eq": "y(t) = x(at − t0)",
           "tex": "y(t) = x(at - t_0)",
           "note": "scaled by a, shifted to start at t = t0/a",
-          "ref": "SS1 §1.2, after (1.16), p. 9"
+          "ref": "SS1 §1.2, after (1.16), p. 9",
+          "where": [
+            {
+              "tex": "y(t)",
+              "means": "the signal on the changed time axis"
+            },
+            {
+              "tex": "x(t)",
+              "means": "input signal over time t (Prechtl writes x(τ) or u(τ), SS1 §1.2, p. 9)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+            },
+            {
+              "tex": "a",
+              "means": "time-scaling factor: |a| > 1 compresses, |a| < 1 stretches, a < 0 reverses (Prechtl substitutes τ → (τ − τ0)/b, SS1 (1.16), p. 9)"
+            },
+            {
+              "tex": "t_0",
+              "means": "time shift [s]; the signal now starts at t = t_0/a (Prechtl's τ0, SS1 (1.16), p. 9)"
+            }
+          ]
         },
         {
           "eq": "y(t) = x(−t)",
           "tex": "y(t) = x(-t)",
           "note": "reversed in time",
-          "ref": "SS1 §1.2, after (1.16), p. 9"
+          "ref": "SS1 §1.2, after (1.16), p. 9",
+          "where": [
+            {
+              "tex": "y(t)",
+              "means": "the time-reversed signal"
+            },
+            {
+              "tex": "x(t)",
+              "means": "input signal over time t (Prechtl writes x(τ) or u(τ), SS1 §1.2, p. 9)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+            }
+          ]
         },
         {
           "eq": "y[n] = x[n − n0]",
           "tex": "y[n] = x[n - n_0]",
           "note": "shift by a whole number of samples",
-          "ref": "SS2 §2.2, p. 15"
+          "ref": "SS2 §2.2, p. 15",
+          "where": [
+            {
+              "tex": "y[n]",
+              "means": "the shifted sequence"
+            },
+            {
+              "tex": "x[n]",
+              "means": "input sequence, defined at whole n (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "n_0",
+              "means": "shift in samples, a whole number; a delay for n_0 > 0 (Doblinger writes k, SS2 §2.2, p. 15)"
+            }
+          ]
         },
         {
           "eq": "y[n] = x[Mn]",
           "tex": "y[n] = x[Mn]",
           "note": "keep every M-th sample (M a whole number)",
-          "ref": "SS2 §8.2, (8.26), p. 201"
+          "ref": "SS2 §8.2, (8.26), p. 201",
+          "where": [
+            {
+              "tex": "y[n]",
+              "means": "the downsampled sequence (Doblinger: y[n] = w[nM], SS2 (8.26), p. 201)"
+            },
+            {
+              "tex": "x[n]",
+              "means": "input sequence, defined at whole n (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "M",
+              "means": "downsampling factor, a whole number: every M-th sample is kept (SS2 (8.26), p. 201)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -126,25 +240,113 @@
       "idea": "Test a system: does the output of a sum equal the sum of the outputs, and does a delayed input give a delayed output?",
       "law": "S{a x1 + b x2} = a S{x1} + b S{x2}    S{x(t − t0)} = y(t − t0)",
       "lawTex": "S\\{a x_1 + b x_2\\} = a\\,S\\{x_1\\} + b\\,S\\{x_2\\} \\qquad S\\{x(t - t_0)\\} = y(t - t_0)",
+      "lawWhere": [
+        {
+          "tex": "S",
+          "means": "the system: the map from input signal to output signal (Prechtl's S, SS1 (1.50), p. 22; Doblinger writes T{·}, SS2 (3.2), p. 31)"
+        },
+        {
+          "tex": "x_1,\\ x_2",
+          "means": "any two input signals (Prechtl u1, u2, SS1 (1.51), p. 22)"
+        },
+        {
+          "tex": "a,\\ b",
+          "means": "any two constants, real or complex (Prechtl c1, c2, SS1 (1.51), p. 22)"
+        },
+        {
+          "tex": "x(t)",
+          "means": "input signal over time t (Prechtl writes x(τ) or u(τ), SS1 §1.2, p. 9)"
+        },
+        {
+          "tex": "y(t)",
+          "means": "output signal (Prechtl y(τ), SS1 §1.4, p. 22)"
+        },
+        {
+          "tex": "t",
+          "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+        },
+        {
+          "tex": "t_0",
+          "means": "any time shift [s] (Prechtl's λ, SS1 (1.55), p. 24)"
+        }
+      ],
       "lecture": "Prechtl (2010), section 1.4, pp. 18–23; Doblinger (2015), section 3.1, pp. 30–44",
       "equations": [
         {
           "eq": "S{a x1 + b x2} = a S{x1} + b S{x2}",
           "tex": "S\\{a x_1 + b x_2\\} = a\\,S\\{x_1\\} + b\\,S\\{x_2\\}",
           "note": "linear: superposition holds (from rest)",
-          "ref": "SS1 §1.4, (1.51), p. 22; SS2 §3.1, (3.2), p. 31"
+          "ref": "SS1 §1.4, (1.51), p. 22; SS2 §3.1, (3.2), p. 31",
+          "where": [
+            {
+              "tex": "S",
+              "means": "the system, from rest: Prechtl's zero-state map S[u; 0] (SS1 (1.51), p. 22); Doblinger's T{·} (SS2 (3.2), p. 31)"
+            },
+            {
+              "tex": "x_1,\\ x_2",
+              "means": "any two input signals (Prechtl u1, u2, SS1 (1.51), p. 22)"
+            },
+            {
+              "tex": "a,\\ b",
+              "means": "any two constants, real or complex (Prechtl c1, c2; Doblinger a, b, SS2 (3.2), p. 31)"
+            }
+          ]
         },
         {
           "eq": "y(t) = S{x(t)} ⇒ y(t − t0) = S{x(t − t0)}",
           "tex": "y(t) = S\\{x(t)\\} \\;\\Rightarrow\\; y(t - t_0) = S\\{x(t - t_0)\\}",
           "note": "time-invariant",
-          "ref": "SS1 §1.4, (1.55), p. 24"
+          "ref": "SS1 §1.4, (1.55), p. 24",
+          "where": [
+            {
+              "tex": "S",
+              "means": "the system (Prechtl's S, SS1 (1.55), p. 24)"
+            },
+            {
+              "tex": "x(t)",
+              "means": "input signal over time t (Prechtl writes x(τ) or u(τ), SS1 §1.2, p. 9)"
+            },
+            {
+              "tex": "y(t)",
+              "means": "output signal (Prechtl y(τ), SS1 §1.4, p. 22)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+            },
+            {
+              "tex": "t_0",
+              "means": "any time shift [s] (Prechtl's λ, SS1 (1.55), p. 24)"
+            }
+          ]
         },
         {
           "eq": "y[n] = S{x[n]} ⇒ y[n − n0] = S{x[n − n0]}",
           "tex": "y[n] = S\\{x[n]\\} \\;\\Rightarrow\\; y[n - n_0] = S\\{x[n - n_0]\\}",
           "note": "shift-invariant sequence system",
-          "ref": "SS2 §3.1, p. 31"
+          "ref": "SS2 §3.1, p. 31",
+          "where": [
+            {
+              "tex": "S",
+              "means": "the system (Doblinger's T{·}, SS2 §3.1, p. 31)"
+            },
+            {
+              "tex": "x[n]",
+              "means": "input sequence, defined at whole n (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "y[n]",
+              "means": "output sequence (SS2 §3.1, p. 31)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "n_0",
+              "means": "any shift in samples (Doblinger's k, SS2 (3.6), p. 31)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -169,31 +371,137 @@
       "idea": "Flip the impulse response, slide it, multiply and add up: the output of any LTI system, integral or sum.",
       "law": "y(t) = ∫ x(τ) h(t − τ) dτ    y[n] = Σ x[k] h[n − k]",
       "lawTex": "y(t) = \\int x(\\tau)\\, h(t - \\tau)\\,\\mathrm{d}\\tau \\qquad y[n] = \\sum_k x[k]\\, h[n - k]",
+      "lawWhere": [
+        {
+          "tex": "y(t)",
+          "means": "output signal (Prechtl y(τ), SS1 §1.4, p. 22)"
+        },
+        {
+          "tex": "x(\\tau)",
+          "means": "input at time τ (Prechtl u(τ'), SS1 (1.62), p. 27)"
+        },
+        {
+          "tex": "h",
+          "means": "impulse response: the zero-state response to a Dirac impulse at time 0 (Prechtl's g, SS1 (1.60), p. 27; Doblinger h[n], SS2 (3.6), p. 31)"
+        },
+        {
+          "tex": "t",
+          "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+        },
+        {
+          "tex": "\\tau",
+          "means": "integration variable: the time of the impulse [s] (Prechtl τ', SS1 (1.62), p. 27)"
+        },
+        {
+          "tex": "y[n]",
+          "means": "output sequence (SS2 §3.1, p. 31)"
+        },
+        {
+          "tex": "x[k]",
+          "means": "input sample k"
+        },
+        {
+          "tex": "n",
+          "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+        },
+        {
+          "tex": "k",
+          "means": "summation index (SS2 (3.7), p. 32)"
+        }
+      ],
       "lecture": "Prechtl (2010), section 1.5, pp. 24–28; Doblinger (2015), section 3.1, pp. 30–44",
       "equations": [
         {
           "eq": "y(t) = ∫ x(τ) h(t − τ) dτ = (x ∗ h)(t)",
           "tex": "y(t) = \\int x(\\tau)\\, h(t - \\tau)\\,\\mathrm{d}\\tau = (x * h)(t)",
           "note": "convolution integral",
-          "ref": "SS1 §1.5, (1.62), p. 27"
+          "ref": "SS1 §1.5, (1.62), p. 27",
+          "where": [
+            {
+              "tex": "y(t)",
+              "means": "output of the LTI system (Prechtl y(τ), SS1 (1.62), p. 27)"
+            },
+            {
+              "tex": "x(\\tau)",
+              "means": "input at time τ (Prechtl u(τ'), SS1 (1.62), p. 27)"
+            },
+            {
+              "tex": "h",
+              "means": "impulse response: the zero-state response to a Dirac impulse at time 0 (Prechtl's g, SS1 (1.60), p. 27)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+            },
+            {
+              "tex": "\\tau",
+              "means": "integration variable: the time of the impulse [s] (Prechtl τ', SS1 (1.62), p. 27)"
+            },
+            {
+              "tex": "x * h",
+              "means": "convolution of x and h, the integral itself (SS1 (1.62), p. 27)"
+            }
+          ]
         },
         {
           "eq": "x ∗ h = h ∗ x",
           "tex": "x * h = h * x",
           "note": "commutative",
-          "ref": "SS1 §1.5, (1.62), p. 27; §3.4, (3.66), p. 81"
+          "ref": "SS1 §1.5, (1.62), p. 27; §3.4, (3.66), p. 81",
+          "where": [
+            {
+              "tex": "x,\\ h",
+              "means": "input signal and impulse response (SS1 (1.62), p. 27)"
+            },
+            {
+              "tex": "*",
+              "means": "convolution (SS1 (1.62), p. 27; §3.4, (3.66), p. 81)"
+            }
+          ]
         },
         {
           "eq": "y[n] = Σₖ x[k] h[n − k]",
           "tex": "y[n] = \\sum_k x[k]\\, h[n - k]",
           "note": "convolution sum",
-          "ref": "SS2 §3.1, (3.7), p. 32"
+          "ref": "SS2 §3.1, (3.7), p. 32",
+          "where": [
+            {
+              "tex": "y[n]",
+              "means": "output sequence (SS2 (3.7), p. 32)"
+            },
+            {
+              "tex": "x[k]",
+              "means": "input sample k"
+            },
+            {
+              "tex": "h",
+              "means": "impulse response, h[n] = T{δ[n]} (SS2 (3.6), p. 31)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "k",
+              "means": "summation index (SS2 (3.7), p. 32)"
+            }
+          ]
         },
         {
           "eq": "length(x ∗ h) = Nx + Nh − 1",
           "tex": "\\operatorname{length}(x * h) = N_x + N_h - 1",
           "note": "for finite sequences; follows from (3.7), counted by hand",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "x * h",
+              "means": "convolution of the two finite sequences (SS2 (3.7), p. 32)"
+            },
+            {
+              "tex": "N_x,\\ N_h",
+              "means": "number of samples of x and of h (not defined in the source)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -219,38 +527,170 @@
       "idea": "White noise forgets at once; a low-pass gives it memory. Cross-correlation finds an echo buried in noise.",
       "law": "r_xx[k] = E[x[n] x[n + k]]    σy² = σx² (1 − a)/(1 + a)",
       "lawTex": "r_{xx}[k] = \\operatorname{E}\\big[x[n]\\, x[n + k]\\big] \\qquad \\sigma_y^2 = \\sigma_x^2\\, \\frac{1 - a}{1 + a}",
+      "lawWhere": [
+        {
+          "tex": "r_{xx}[k]",
+          "means": "autocorrelation of the stationary random sequence x at lag k: the discrete form of Prechtl's (1.39), SS1 p. 18 (not defined in the source)"
+        },
+        {
+          "tex": "\\operatorname{E}",
+          "means": "expected value, the ensemble mean (SS1 (1.32), p. 16)"
+        },
+        {
+          "tex": "x[n]",
+          "means": "stationary random input sequence, white noise in the lab"
+        },
+        {
+          "tex": "n",
+          "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+        },
+        {
+          "tex": "k",
+          "means": "lag in samples"
+        },
+        {
+          "tex": "\\sigma_y^2,\\ \\sigma_x^2",
+          "means": "variance of the output and of the input (SS1 (1.33), p. 16)"
+        },
+        {
+          "tex": "a",
+          "means": "feedback coefficient of the lab's first-order low-pass, 0 ≤ a < 1 (not defined in the source)"
+        }
+      ],
       "lecture": "Prechtl (2010), sections 1.3 and 4.6, pp. 13–17, 101–106; the discrete forms are the lab's own (Doblinger (2015) has no section on random signals)",
       "equations": [
         {
           "eq": "r_xx(τ) = E[x(t) x(t + τ)]",
           "tex": "r_{xx}(\\tau) = \\operatorname{E}\\big[x(t)\\, x(t + \\tau)\\big]",
           "note": "autocorrelation of a stationary process",
-          "ref": "SS1 §1.3, (1.39), p. 15"
+          "ref": "SS1 §1.3, (1.39), p. 18",
+          "where": [
+            {
+              "tex": "r_{xx}(\\tau)",
+              "means": "autocorrelation function of the stationary random signal x (SS1 (1.39), p. 18)"
+            },
+            {
+              "tex": "\\operatorname{E}",
+              "means": "expected value, the ensemble mean (SS1 (1.32), p. 16)"
+            },
+            {
+              "tex": "x(t)",
+              "means": "stationary random signal (Prechtl x(τ), SS1 p. 18)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+            },
+            {
+              "tex": "\\tau",
+              "means": "lag between the two observation times [s] (SS1 (1.39), p. 18)"
+            }
+          ]
         },
         {
           "eq": "r_xy(τ) = lim (1/T) ∫ x(t) y(t + τ) dt",
           "tex": "r_{xy}(\\tau) = \\lim_{T \\to \\infty} \\frac{1}{T} \\int_{-T/2}^{T/2} x(t)\\, y(t + \\tau)\\,\\mathrm{d}t",
           "note": "cross-correlation of jointly ergodic signals",
           "ref": "SS1 §4.6, (4.45), p. 105",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "r_{xy}(\\tau)",
+              "means": "cross-correlation function of x and y (SS1 (4.45), p. 105)"
+            },
+            {
+              "tex": "T",
+              "means": "length of the averaging interval [s], let grow without limit (SS1 (4.45), p. 105)"
+            },
+            {
+              "tex": "x(t),\\ y(t)",
+              "means": "two real, jointly ergodic random signals; Prechtl writes realisations x_k, y_k (SS1 p. 105)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+            },
+            {
+              "tex": "\\tau",
+              "means": "lag [s] (SS1 (4.45), p. 105)"
+            }
+          ]
         },
         {
           "eq": "R_yy(jω) = |H(jω)|² R_xx(jω)",
           "tex": "R_{yy}(\\mathrm{j}\\omega) = |H(\\mathrm{j}\\omega)|^2\\, R_{xx}(\\mathrm{j}\\omega)",
           "note": "noise through an LTI system: power spectra (Prechtl writes G for H)",
-          "ref": "SS1 §4.6, (4.38), p. 104"
+          "ref": "SS1 §4.6, (4.38), p. 104",
+          "where": [
+            {
+              "tex": "R_{yy}(\\mathrm{j}\\omega)",
+              "means": "power spectrum of the output: Fourier transform of r_yy (SS1 (4.35), (4.38), p. 104)"
+            },
+            {
+              "tex": "R_{xx}(\\mathrm{j}\\omega)",
+              "means": "power spectrum of the input (Prechtl R_uu, SS1 (4.38), p. 104)"
+            },
+            {
+              "tex": "H(\\mathrm{j}\\omega)",
+              "means": "frequency response of the LTI system (Prechtl G(jν), SS1 (4.38), p. 104)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [rad/s] (Prechtl uses normalised ν)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit, j² = −1 (SS2 p. 15)"
+            }
+          ]
         },
         {
           "eq": "y[n] = a y[n − 1] + (1 − a) x[n]",
           "tex": "y[n] = a\\, y[n - 1] + (1 - a)\\, x[n]",
           "note": "the lab's low-pass",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "y[n]",
+              "means": "output of the lab's first-order low-pass (not defined in the source)"
+            },
+            {
+              "tex": "x[n]",
+              "means": "input sequence, white noise in the lab (not defined in the source)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "a",
+              "means": "feedback coefficient, 0 ≤ a < 1 (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "σy² = σx² (1 − a)/(1 + a), r_yy[k]/r_yy[0] = a^|k|",
           "tex": "\\sigma_y^2 = \\sigma_x^2\\, \\frac{1 - a}{1 + a}, \\qquad \\frac{r_{yy}[k]}{r_{yy}[0]} = a^{|k|}",
           "note": "its output for white input",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "\\sigma_y^2,\\ \\sigma_x^2",
+              "means": "variance of the output and of the input (SS1 (1.33), p. 16)"
+            },
+            {
+              "tex": "a",
+              "means": "feedback coefficient of the low-pass, 0 ≤ a < 1 (not defined in the source)"
+            },
+            {
+              "tex": "r_{yy}[k]",
+              "means": "autocorrelation of the output at lag k; r_yy[0] = σ_y² for zero mean (not defined in the source)"
+            },
+            {
+              "tex": "k",
+              "means": "lag in samples"
+            }
+          ]
         }
       ],
       "practice": [
@@ -274,6 +714,48 @@
       "idea": "A periodic signal is a sum of harmonics; at a jump, the partial sums always overshoot. A periodic sequence needs only N.",
       "law": "x(t) = Σ c_k e^(j2πkt/T)    x[n] = Σ_{k=0}^{N−1} c_k e^(j2πkn/N)",
       "lawTex": "x(t) = \\sum_k c_k\\, \\mathrm{e}^{\\mathrm{j}2\\pi k t/T} \\qquad x[n] = \\sum_{k=0}^{N-1} c_k\\, \\mathrm{e}^{\\mathrm{j}2\\pi k n/N}",
+      "lawWhere": [
+        {
+          "tex": "x(t)",
+          "means": "T-periodic signal (Prechtl u(t), SS1 (5.2), p. 109)"
+        },
+        {
+          "tex": "c_k",
+          "means": "complex Fourier coefficient of harmonic k (Prechtl C_k, SS1 (5.4), p. 109; Doblinger c_k, SS2 (2.46), p. 20)"
+        },
+        {
+          "tex": "k",
+          "means": "harmonic number: any whole number for x(t), 0 … N − 1 for x[n]"
+        },
+        {
+          "tex": "T",
+          "means": "period [s] (Prechtl T_1 = 1/f_1, SS1 p. 109)"
+        },
+        {
+          "tex": "t",
+          "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+        },
+        {
+          "tex": "x[n]",
+          "means": "N-periodic sequence (SS2 (2.45), p. 20)"
+        },
+        {
+          "tex": "n",
+          "means": "sample index"
+        },
+        {
+          "tex": "N",
+          "means": "period in samples (SS2 (2.45), p. 20)"
+        },
+        {
+          "tex": "\\mathrm{e}",
+          "means": "Euler's number, base of the natural exponential"
+        },
+        {
+          "tex": "\\mathrm{j}",
+          "means": "imaginary unit, j² = −1 (SS2 p. 15)"
+        }
+      ],
       "lecture": "Prechtl (2010), chapter 5, pp. 108–121; Doblinger (2015), section 2.3, pp. 19–28",
       "equations": [
         {
@@ -281,21 +763,103 @@
           "tex": "x(t) = \\sum_k c_k\\, \\mathrm{e}^{\\mathrm{j}2\\pi k t/T}, \\qquad c_k = \\frac{1}{T} \\int_T x(t)\\, \\mathrm{e}^{-\\mathrm{j}2\\pi k t/T}\\,\\mathrm{d}t",
           "note": "Fourier series (Prechtl writes C_k, T₁)",
           "ref": "SS1 §5.1, (5.2) and (5.4), p. 109",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "x(t)",
+              "means": "T-periodic signal (Prechtl u(t), SS1 (5.2), p. 109)"
+            },
+            {
+              "tex": "c_k",
+              "means": "complex Fourier coefficient of harmonic k (Prechtl C_k, SS1 (5.4), p. 109)"
+            },
+            {
+              "tex": "k",
+              "means": "harmonic number, any whole number (SS1 (5.2), p. 109)"
+            },
+            {
+              "tex": "T",
+              "means": "period [s] (Prechtl T_1 = 1/f_1, SS1 p. 109)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+            },
+            {
+              "tex": "\\int_T",
+              "means": "integral over one period (Prechtl from 0 to T_1, SS1 (5.4), p. 109)"
+            },
+            {
+              "tex": "\\mathrm{e}",
+              "means": "Euler's number, base of the natural exponential"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit, j² = −1 (SS2 p. 15)"
+            }
+          ]
         },
         {
           "eq": "square wave ±1: x(t) = (4/π) Σ_odd sin(2πkt/T)/k",
           "tex": "\\text{square wave } {\\pm 1}\\colon\\quad x(t) = \\frac{4}{\\pi} \\sum_{k\\ \\text{odd}} \\frac{\\sin(2\\pi k t/T)}{k}",
           "note": "c_k = 2/(jπk) for odd k, so the sine amplitude is 4/(πk)",
           "ref": "SS1 §5.1, (5.17), p. 113, with (5.43), p. 118",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "x(t)",
+              "means": "square wave of values ±1 and period T (SS1 Abb. 5.1 b, (5.17), p. 113)"
+            },
+            {
+              "tex": "k",
+              "means": "odd harmonic number (SS1 (5.17), p. 113)"
+            },
+            {
+              "tex": "T",
+              "means": "period [s]"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+            }
+          ]
         },
         {
           "eq": "x[n] = Σ_{k=0}^{N−1} c_k e^(j2πkn/N),  c_k = (1/N) Σ_{n=0}^{N−1} x[n] e^(−j2πkn/N)",
           "tex": "x[n] = \\sum_{k=0}^{N-1} c_k\\, \\mathrm{e}^{\\mathrm{j}2\\pi k n/N}, \\qquad c_k = \\frac{1}{N} \\sum_{n=0}^{N-1} x[n]\\, \\mathrm{e}^{-\\mathrm{j}2\\pi k n/N}",
           "note": "discrete Fourier series, period N; c_k = X[k]/N",
           "ref": "SS2 §2.3, (2.45) and (2.46), p. 20",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "x[n]",
+              "means": "N-periodic sequence (SS2 (2.45), p. 20)"
+            },
+            {
+              "tex": "c_k",
+              "means": "Fourier series coefficient, k = 0 … N − 1 (SS2 (2.46), p. 20)"
+            },
+            {
+              "tex": "k",
+              "means": "coefficient index, 0 … N − 1"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, 0 … N − 1"
+            },
+            {
+              "tex": "N",
+              "means": "period in samples (SS2 (2.45), p. 20)"
+            },
+            {
+              "tex": "\\mathrm{e}",
+              "means": "Euler's number, base of the natural exponential"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit, j² = −1 (SS2 p. 15)"
+            }
+          ]
         },
         {
           "eq": "max of partial sum → 1 + 0.179 for a jump from −1 to 1",
@@ -325,39 +889,199 @@
       "idea": "Shorter in time is wider in frequency. A sequence has the same spectrum near zero, but repeated every sampling rate.",
       "law": "X(f) = ∫ x(t) e^(−j2πft) dt    X(e^jθ) = Σ x[n] e^(−jθn)",
       "lawTex": "X(f) = \\int x(t)\\, \\mathrm{e}^{-\\mathrm{j}2\\pi f t}\\,\\mathrm{d}t \\qquad X(\\mathrm{e}^{\\mathrm{j}\\theta}) = \\sum_n x[n]\\, \\mathrm{e}^{-\\mathrm{j}\\theta n}",
+      "lawWhere": [
+        {
+          "tex": "X(f)",
+          "means": "Fourier transform (spectrum) over frequency f (Prechtl U(jf), SS1 (3.12), p. 69)"
+        },
+        {
+          "tex": "x(t)",
+          "means": "input signal over time t (Prechtl writes x(τ) or u(τ), SS1 §1.2, p. 9)"
+        },
+        {
+          "tex": "f",
+          "means": "frequency [Hz] (SS1 (3.12), p. 69)"
+        },
+        {
+          "tex": "t",
+          "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+        },
+        {
+          "tex": "X(\\mathrm{e}^{\\mathrm{j}\\theta})",
+          "means": "Fourier transform of the sequence x[n], 2π-periodic in θ (SS2 (4.1), p. 60)"
+        },
+        {
+          "tex": "x[n]",
+          "means": "absolutely summable sequence (SS2 (4.3), p. 60)"
+        },
+        {
+          "tex": "n",
+          "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+        },
+        {
+          "tex": "\\theta",
+          "means": "normalised angular frequency [rad]: θ = ωT = 2πf/f_s, period 2π (SS2 (4.53), p. 76)"
+        },
+        {
+          "tex": "\\mathrm{e}",
+          "means": "Euler's number, base of the natural exponential"
+        },
+        {
+          "tex": "\\mathrm{j}",
+          "means": "imaginary unit, j² = −1 (SS2 p. 15)"
+        }
+      ],
       "lecture": "Prechtl (2010), sections 3.1–3.3, pp. 65–79; Doblinger (2015), chapter 4 and section 4.1, pp. 59–73",
       "equations": [
         {
           "eq": "X(f) = ∫ x(t) e^(−j2πft) dt",
           "tex": "X(f) = \\int x(t)\\, \\mathrm{e}^{-\\mathrm{j}2\\pi f t}\\,\\mathrm{d}t",
           "note": "Fourier transform over f (Prechtl writes U(jf))",
-          "ref": "SS1 §3.1, (3.12), p. 69"
+          "ref": "SS1 §3.1, (3.12), p. 69",
+          "where": [
+            {
+              "tex": "X(f)",
+              "means": "Fourier transform (spectrum) over frequency f (Prechtl U(jf), SS1 (3.12), p. 69)"
+            },
+            {
+              "tex": "x(t)",
+              "means": "input signal over time t (Prechtl writes x(τ) or u(τ), SS1 §1.2, p. 9)"
+            },
+            {
+              "tex": "f",
+              "means": "frequency [Hz] (SS1 (3.12), p. 69)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+            },
+            {
+              "tex": "\\mathrm{e}",
+              "means": "Euler's number, base of the natural exponential"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit, j² = −1 (SS2 p. 15)"
+            }
+          ]
         },
         {
           "eq": "rect(t/T) ↔ T sinc(fT)",
           "tex": "\\operatorname{rect}(t/T) \\leftrightarrow T \\operatorname{sinc}(fT)",
           "note": "pulse and its spectrum; sinc x = sin(πx)/(πx), Prechtl's rect(τ) ↔ si(ω/2) with si x = sin x / x",
-          "ref": "SS1 §3.1, (3.22), p. 71, with (3.31)"
+          "ref": "SS1 §3.1, (3.22), p. 71, with (3.31)",
+          "where": [
+            {
+              "tex": "\\operatorname{rect}(t/T)",
+              "means": "rectangular pulse of height 1 and duration T, centred on t = 0 (Prechtl's rect, SS1 Abb. 1.6, p. 9)"
+            },
+            {
+              "tex": "T",
+              "means": "pulse duration [s]"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+            },
+            {
+              "tex": "f",
+              "means": "frequency [Hz]"
+            },
+            {
+              "tex": "\\operatorname{sinc}",
+              "means": "sinc x = sin(πx)/(πx), the lab's convention; Prechtl's footnote 4 (SS1 p. 71) equates sinc with si x = sin x / x"
+            },
+            {
+              "tex": "\\leftrightarrow",
+              "means": "Fourier pair (Prechtl ○—●, SS1 p. 74)"
+            }
+          ]
         },
         {
           "eq": "x(at) ↔ (1/|a|) X(f/a)",
           "tex": "x(at) \\leftrightarrow \\frac{1}{|a|}\\, X(f/a)",
           "note": "time scaling (Prechtl: Zeitdehnung), written over f",
-          "ref": "SS1 §3.2, (3.31), p. 74"
+          "ref": "SS1 §3.2, (3.31), p. 74",
+          "where": [
+            {
+              "tex": "x(at)",
+              "means": "the signal on a scaled time axis (SS1 (3.31), p. 74)"
+            },
+            {
+              "tex": "X(f/a)",
+              "means": "the spectrum X of x(t) at f/a"
+            },
+            {
+              "tex": "a",
+              "means": "real scaling factor, a ≠ 0: |a| < 1 stretches time and compresses frequency (SS1 p. 74)"
+            },
+            {
+              "tex": "f",
+              "means": "frequency [Hz]"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+            },
+            {
+              "tex": "\\leftrightarrow",
+              "means": "Fourier pair (Prechtl ○—●, SS1 p. 74)"
+            }
+          ]
         },
         {
           "eq": "X(e^jθ) = Σₙ x[n] e^(−jθn), period 2π",
           "tex": "X(\\mathrm{e}^{\\mathrm{j}\\theta}) = \\sum_n x[n]\\, \\mathrm{e}^{-\\mathrm{j}\\theta n}, \\qquad \\text{period } 2\\pi",
           "note": "Fourier transform of a sequence (DTFT)",
           "ref": "SS2 ch. 4, (4.1), p. 60",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "X(\\mathrm{e}^{\\mathrm{j}\\theta})",
+              "means": "Fourier transform of the sequence x[n], 2π-periodic in θ (SS2 (4.1), p. 60)"
+            },
+            {
+              "tex": "x[n]",
+              "means": "absolutely summable sequence (SS2 (4.3), p. 60)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "\\theta",
+              "means": "normalised angular frequency [rad]: θ = ωT = 2πf/f_s, period 2π (SS2 (4.53), p. 76)"
+            },
+            {
+              "tex": "\\mathrm{e}",
+              "means": "Euler's number, base of the natural exponential"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit, j² = −1 (SS2 p. 15)"
+            }
+          ]
         },
         {
           "eq": "X(e^j2πF) = sin(πF(2M + 1))/sin(πF)",
           "tex": "X(\\mathrm{e}^{\\mathrm{j}2\\pi F}) = \\frac{\\sin\\left(\\pi F(2M + 1)\\right)}{\\sin(\\pi F)}",
           "note": "the DTFT of the 2M + 1 samples, centred: the moving average's (3.47) with N = 2M + 1, times N, without its delay",
           "ref": "SS2 (3.47), p. 48",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "X(\\mathrm{e}^{\\mathrm{j}2\\pi F})",
+              "means": "transform of the centred pulse of 2M + 1 ones (SS2 (3.47), p. 48, with N = 2M + 1 and its delay removed)"
+            },
+            {
+              "tex": "F",
+              "means": "normalised frequency f/f_s, so θ = 2πF (not defined in the source)"
+            },
+            {
+              "tex": "M",
+              "means": "the pulse runs from n = −M to n = M (not defined in the source)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -380,6 +1104,40 @@
       "idea": "Harmonics in the current add RMS current and apparent power but no active power: they are distortion power.",
       "law": "S² = P² + Q₁² + D²    k_i = √(Σ_{k>1} |I_k|²) / I",
       "lawTex": "S^2 = P^2 + Q_1^2 + D^2 \\qquad k_i = \\frac{\\sqrt{\\sum_{k>1} |I_k|^2}}{I}",
+      "lawWhere": [
+        {
+          "tex": "S",
+          "means": "apparent power [VA], S = U I (SS1 (6.18), p. 125)"
+        },
+        {
+          "tex": "P",
+          "means": "active power [W] (SS1 (6.24), p. 127)"
+        },
+        {
+          "tex": "Q_1",
+          "means": "fundamental reactive power [var] (SS1 (6.26), p. 127)"
+        },
+        {
+          "tex": "D",
+          "means": "distortion power [var] (SS1 (6.22), p. 125; (6.28), p. 127)"
+        },
+        {
+          "tex": "k_i",
+          "means": "harmonic content (Oberschwingungsgehalt) of the current (SS1 (6.13), p. 124)"
+        },
+        {
+          "tex": "I_k",
+          "means": "RMS value of harmonic k of the current [A] (SS1 p. 123)"
+        },
+        {
+          "tex": "k",
+          "means": "harmonic number; k > 1 the harmonics above the fundamental"
+        },
+        {
+          "tex": "I",
+          "means": "RMS value of the current [A] (SS1 (6.23), p. 127)"
+        }
+      ],
       "lecture": "Prechtl (2010), chapter 6, pp. 122–133",
       "equations": [
         {
@@ -387,27 +1145,107 @@
           "tex": "I = \\sqrt{|I_1|^2 + |I_2|^2 + |I_3|^2 + \\cdots}",
           "note": "RMS of a current with harmonics, each |I_k| an RMS value",
           "ref": "SS1 §6.2, (6.10), p. 123",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "I",
+              "means": "RMS value of a current with harmonics and no DC part [A] (Prechtl writes it for U, SS1 (6.10), p. 123)"
+            },
+            {
+              "tex": "|I_1|,\\ |I_2|,\\ |I_3|",
+              "means": "RMS values of the fundamental and of the harmonics [A] (SS1 p. 123)"
+            }
+          ]
         },
         {
           "eq": "P = U |I_1| cos φ_1,  Q₁ = U |I_1| sin φ_1",
           "tex": "P = U |I_1| \\cos\\varphi_1, \\qquad Q_1 = U |I_1| \\sin\\varphi_1",
           "note": "with a sine voltage, only the fundamental carries P and the fundamental reactive power Q₁",
           "ref": "SS1 §6.3, (6.24) and (6.26), p. 127",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "P",
+              "means": "active power [W] (SS1 (6.24), p. 127)"
+            },
+            {
+              "tex": "Q_1",
+              "means": "fundamental reactive power [var] (SS1 (6.26), p. 127)"
+            },
+            {
+              "tex": "U",
+              "means": "RMS value of the sine voltage [V] (SS1 (6.23), p. 127)"
+            },
+            {
+              "tex": "|I_1|",
+              "means": "RMS value of the current's fundamental [A]"
+            },
+            {
+              "tex": "\\varphi_1",
+              "means": "phase angle between the sine voltage and the current's fundamental (SS1 p. 127)"
+            }
+          ]
         },
         {
           "eq": "S = U I,  D = U √(|I_2|² + |I_3|² + …) = k_i S",
           "tex": "S = U I, \\qquad D = U \\sqrt{|I_2|^2 + |I_3|^2 + \\cdots} = k_i\\, S",
           "note": "apparent and distortion power; Prechtl's reactive power Q obeys Q² = Q₁² + D²",
           "ref": "SS1 §6.3, (6.22), p. 125, (6.23) and (6.28), p. 127",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "S",
+              "means": "apparent power [VA] (SS1 (6.18), p. 125; (6.23), p. 127)"
+            },
+            {
+              "tex": "U",
+              "means": "RMS value of the sine voltage [V]"
+            },
+            {
+              "tex": "I",
+              "means": "RMS value of the current [A]"
+            },
+            {
+              "tex": "D",
+              "means": "distortion power [var] (SS1 (6.28), p. 127)"
+            },
+            {
+              "tex": "|I_2|,\\ |I_3|",
+              "means": "RMS values of the current's harmonics [A]"
+            },
+            {
+              "tex": "k_i",
+              "means": "harmonic content (Oberschwingungsgehalt) of the current (SS1 (6.13), p. 124)"
+            }
+          ]
         },
         {
           "eq": "λ = P/S = g_i cos φ_1",
           "tex": "\\lambda = \\frac{P}{S} = g_i \\cos\\varphi_1",
           "note": "power factor; g_i = |I_1|/I is the fundamental content (6.12)",
-          "ref": "SS1 §6.3, (6.27), p. 127"
+          "ref": "SS1 §6.3, (6.27), p. 127",
+          "where": [
+            {
+              "tex": "\\lambda",
+              "means": "power factor (SS1 (6.27), p. 127)"
+            },
+            {
+              "tex": "P",
+              "means": "active power [W]"
+            },
+            {
+              "tex": "S",
+              "means": "apparent power [VA]"
+            },
+            {
+              "tex": "g_i",
+              "means": "fundamental content |I_1|/I of the current (SS1 (6.12), p. 124)"
+            },
+            {
+              "tex": "\\varphi_1",
+              "means": "phase angle between the sine voltage and the current's fundamental (SS1 p. 127)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -475,32 +1313,142 @@
       "idea": "N samples give N lines that sample the spectrum; a sine between lines leaks, a window tames it, the FFT gets there fast.",
       "law": "X[k] = Σ_{n=0}^{N−1} x[n] e^(−j2πkn/N)    Δf = fs/N",
       "lawTex": "X[k] = \\sum_{n=0}^{N-1} x[n]\\, \\mathrm{e}^{-\\mathrm{j}2\\pi k n/N} \\qquad \\Delta f = \\frac{f_\\mathrm{s}}{N}",
+      "lawWhere": [
+        {
+          "tex": "X[k]",
+          "means": "DFT: the discrete spectrum of the N-point signal (SS2 (7.10), p. 169)"
+        },
+        {
+          "tex": "x[n]",
+          "means": "N-point signal, n = 0 … N − 1"
+        },
+        {
+          "tex": "n",
+          "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+        },
+        {
+          "tex": "k",
+          "means": "frequency index of the DFT, 0 … N − 1 (SS2 (7.10), p. 169)"
+        },
+        {
+          "tex": "N",
+          "means": "number of points of the signal and of the DFT (SS2 (7.10), p. 169)"
+        },
+        {
+          "tex": "\\mathrm{e}",
+          "means": "Euler's number, base of the natural exponential"
+        },
+        {
+          "tex": "\\mathrm{j}",
+          "means": "imaginary unit, j² = −1 (SS2 p. 15)"
+        },
+        {
+          "tex": "\\Delta f",
+          "means": "spacing of the DFT lines [Hz] (from SS2 (7.27), p. 175, with (4.53), p. 76; not named there)"
+        },
+        {
+          "tex": "f_\\mathrm{s}",
+          "means": "sampling frequency [Hz], f_s = 1/T (SS2 (4.53), p. 76)"
+        }
+      ],
       "lecture": "Doblinger (2015), chapter 7 and sections 7.1, 7.2, 7.4 and 7.6, pp. 165–175, 180, 186–190",
       "equations": [
         {
           "eq": "X[k] = Σ_{n=0}^{N−1} x[n] e^(−j2πkn/N)",
           "tex": "X[k] = \\sum_{n=0}^{N-1} x[n]\\, \\mathrm{e}^{-\\mathrm{j}2\\pi k n/N}",
           "note": "DFT",
-          "ref": "SS2 ch. 7, (7.10), p. 169"
+          "ref": "SS2 ch. 7, (7.10), p. 169",
+          "where": [
+            {
+              "tex": "X[k]",
+              "means": "DFT: the discrete spectrum (SS2 (7.10), p. 169)"
+            },
+            {
+              "tex": "x[n]",
+              "means": "N-point signal, n = 0 … N − 1 (SS2 p. 169)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "k",
+              "means": "frequency index of the DFT, 0 … N − 1 (SS2 (7.10), p. 169)"
+            },
+            {
+              "tex": "N",
+              "means": "number of points of the signal and of the DFT (SS2 (7.10), p. 169)"
+            },
+            {
+              "tex": "\\mathrm{e}",
+              "means": "Euler's number, base of the natural exponential"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit, j² = −1 (SS2 p. 15)"
+            }
+          ]
         },
         {
           "eq": "X[k] = X(e^jθ) at θ = 2πk/N",
           "tex": "X[k] = X(\\mathrm{e}^{\\mathrm{j}\\theta}) \\big|_{\\theta = 2\\pi k/N}",
           "note": "the DFT samples the transform on the unit circle",
           "ref": "SS2 §7.2, (7.27), p. 175",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "X[k]",
+              "means": "DFT of the N-point signal (SS2 (7.10), p. 169)"
+            },
+            {
+              "tex": "X(\\mathrm{e}^{\\mathrm{j}\\theta})",
+              "means": "Fourier transform of the sequence x[n], 2π-periodic in θ (SS2 (4.1), p. 60)"
+            },
+            {
+              "tex": "\\theta",
+              "means": "normalised angular frequency [rad]: θ = ωT = 2πf/f_s, period 2π (SS2 (4.53), p. 76)"
+            },
+            {
+              "tex": "k",
+              "means": "frequency index of the DFT, 0 … N − 1 (SS2 (7.10), p. 169)"
+            },
+            {
+              "tex": "N",
+              "means": "number of points of the signal and of the DFT (SS2 (7.10), p. 169)"
+            }
+          ]
         },
         {
           "eq": "Δf = fs/N",
           "tex": "\\Delta f = \\frac{f_\\mathrm{s}}{N}",
           "note": "line spacing: θ = 2πk/N with θ = 2πf/fs (4.53)",
-          "ref": "SS2 (7.27), p. 175, with (4.53), p. 76"
+          "ref": "SS2 (7.27), p. 175, with (4.53), p. 76",
+          "where": [
+            {
+              "tex": "\\Delta f",
+              "means": "spacing of the DFT lines [Hz] (from SS2 (7.27), p. 175, with (4.53), p. 76; not named there)"
+            },
+            {
+              "tex": "f_\\mathrm{s}",
+              "means": "sampling frequency [Hz], f_s = 1/T (SS2 (4.53), p. 76)"
+            },
+            {
+              "tex": "N",
+              "means": "number of points of the signal and of the DFT (SS2 (7.10), p. 169)"
+            }
+          ]
         },
         {
           "eq": "(N/2) log₂ N butterflies",
           "tex": "\\frac{N}{2} \\log_2 N \\ \\text{butterflies}",
           "note": "radix-2 FFT, one complex product each; Doblinger counts N log₂ N operations against N² (p. 189)",
-          "ref": "SS2 §7.6, Abb. 7.8 and 7.10, pp. 187–189"
+          "ref": "SS2 §7.6, Abb. 7.8 and 7.10, pp. 187–189",
+          "where": [
+            {
+              "tex": "N",
+              "means": "number of points, a power of two for the radix-2 FFT (SS2 §7.6, p. 189)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -524,38 +1472,186 @@
       "idea": "Sample fast enough and sincs rebuild the signal exactly; too slowly, and the samples fit a slower sine instead.",
       "law": "x(t) = Σ x[n] sinc((t − nT)/T)    fs > 2 f_g",
       "lawTex": "x(t) = \\sum_n x[n] \\operatorname{sinc}\\!\\Big(\\frac{t - nT}{T}\\Big) \\qquad f_\\mathrm{s} > 2 f_\\mathrm{g}",
+      "lawWhere": [
+        {
+          "tex": "x(t)",
+          "means": "the reconstructed analogue signal (Doblinger x_a(t), SS2 (4.61), p. 78)"
+        },
+        {
+          "tex": "x[n]",
+          "means": "the samples, x[n] = x_a(nT) (SS2 (4.52), p. 76)"
+        },
+        {
+          "tex": "n",
+          "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+        },
+        {
+          "tex": "T",
+          "means": "sampling interval [s], T = 1/f_s"
+        },
+        {
+          "tex": "t",
+          "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+        },
+        {
+          "tex": "\\operatorname{sinc}",
+          "means": "sinc x = sin(πx)/(πx), the lab's convention; Prechtl's footnote 4 (SS1 p. 71) equates sinc with si x = sin x / x"
+        },
+        {
+          "tex": "f_\\mathrm{s}",
+          "means": "sampling frequency [Hz], f_s = 1/T (SS2 (4.53), p. 76)"
+        },
+        {
+          "tex": "f_\\mathrm{g}",
+          "means": "highest frequency of the band-limited signal [Hz] (SS2 (4.54)–(4.55), p. 77)"
+        }
+      ],
       "lecture": "Doblinger (2015), section 4.2, pp. 74–86",
       "equations": [
         {
           "eq": "x[n] = x_a(nT),  θ = ωT = 2πf/fs",
           "tex": "x[n] = x_\\mathrm{a}(nT), \\qquad \\theta = \\omega T = 2\\pi \\frac{f}{f_\\mathrm{s}}",
           "note": "ideal sampling, fs = 1/T",
-          "ref": "SS2 §4.2, (4.52) and (4.53), p. 76"
+          "ref": "SS2 §4.2, (4.52) and (4.53), p. 76",
+          "where": [
+            {
+              "tex": "x[n]",
+              "means": "sequence of samples (SS2 (4.52), p. 76)"
+            },
+            {
+              "tex": "x_\\mathrm{a}",
+              "means": "the analogue signal x_a(t) (SS2 (4.52), p. 76)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "T",
+              "means": "sampling interval [s], T = 1/f_s (SS2 p. 76)"
+            },
+            {
+              "tex": "\\theta",
+              "means": "normalised angular frequency [rad]: θ = ωT = 2πf/f_s, period 2π (SS2 (4.53), p. 76)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency of the analogue signal [rad/s]"
+            },
+            {
+              "tex": "f",
+              "means": "frequency [Hz]"
+            },
+            {
+              "tex": "f_\\mathrm{s}",
+              "means": "sampling frequency [Hz], f_s = 1/T (SS2 (4.53), p. 76)"
+            }
+          ]
         },
         {
           "eq": "X(e^jθ) = (1/T) Σ_k X_a(j(θ/T + 2πk/T))",
           "tex": "X(\\mathrm{e}^{\\mathrm{j}\\theta}) = \\frac{1}{T} \\sum_k X_\\mathrm{a}\\Big(\\mathrm{j}\\Big(\\frac{\\theta}{T} + \\frac{2\\pi}{T} k\\Big)\\Big)",
           "note": "the spectrum repeats every fs",
-          "ref": "SS2 §4.2, (4.52), p. 76"
+          "ref": "SS2 §4.2, (4.52), p. 76",
+          "where": [
+            {
+              "tex": "X(\\mathrm{e}^{\\mathrm{j}\\theta})",
+              "means": "Fourier transform of the sequence x[n], 2π-periodic in θ (SS2 (4.1), p. 60)"
+            },
+            {
+              "tex": "X_\\mathrm{a}",
+              "means": "spectrum X_a(jω) of the analogue signal (SS2 (4.52), p. 76)"
+            },
+            {
+              "tex": "T",
+              "means": "sampling interval [s]"
+            },
+            {
+              "tex": "\\theta",
+              "means": "normalised angular frequency [rad]: θ = ωT = 2πf/f_s, period 2π (SS2 (4.53), p. 76)"
+            },
+            {
+              "tex": "k",
+              "means": "index of the spectral copy, any whole number (SS2 (4.52), p. 76)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit, j² = −1 (SS2 p. 15)"
+            }
+          ]
         },
         {
           "eq": "fs > 2 f_g",
           "tex": "f_\\mathrm{s} > 2 f_\\mathrm{g}",
           "note": "sampling theorem, for a signal band-limited to f_g",
-          "ref": "SS2 §4.2, (4.54), p. 77"
+          "ref": "SS2 §4.2, (4.54), p. 77",
+          "where": [
+            {
+              "tex": "f_\\mathrm{s}",
+              "means": "sampling frequency [Hz], f_s = 1/T (SS2 (4.53), p. 76)"
+            },
+            {
+              "tex": "f_\\mathrm{g}",
+              "means": "highest frequency of the band-limited signal [Hz] (SS2 (4.54)–(4.55), p. 77)"
+            }
+          ]
         },
         {
           "eq": "x(t) = Σₙ x[n] sinc((t − nT)/T)",
           "tex": "x(t) = \\sum_n x[n] \\operatorname{sinc}\\!\\Big(\\frac{t - nT}{T}\\Big)",
           "note": "ideal reconstruction; Doblinger writes sin(ω_g(t − nT))/(ω_g(t − nT)) with ω_g = π/T",
-          "ref": "SS2 §4.2, (4.61), p. 78"
+          "ref": "SS2 §4.2, (4.61), p. 78",
+          "where": [
+            {
+              "tex": "x(t)",
+              "means": "the reconstructed analogue signal (Doblinger x_a(t), SS2 (4.61), p. 78)"
+            },
+            {
+              "tex": "x[n]",
+              "means": "the samples (SS2 (4.61), p. 78)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "T",
+              "means": "sampling interval [s]"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (Prechtl works in normalised time τ = t/T_B, SS1 (3.10), p. 69)"
+            },
+            {
+              "tex": "\\operatorname{sinc}",
+              "means": "sinc x = sin(πx)/(πx); Doblinger writes sin(ω_g(t − nT))/(ω_g(t − nT)) with ω_g = π/T (SS2 (4.61), p. 78)"
+            }
+          ]
         },
         {
           "eq": "f_alias = |f − fs · round(f/fs)|",
           "tex": "f_\\mathrm{alias} = \\big|f - f_\\mathrm{s} \\cdot \\operatorname{round}(f/f_\\mathrm{s})\\big|",
           "note": "where a sine folds to",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "f_\\mathrm{alias}",
+              "means": "the frequency a sampled sine appears at [Hz] (not defined in the source)"
+            },
+            {
+              "tex": "f",
+              "means": "frequency of the sine [Hz]"
+            },
+            {
+              "tex": "f_\\mathrm{s}",
+              "means": "sampling frequency [Hz], f_s = 1/T (SS2 (4.53), p. 76)"
+            },
+            {
+              "tex": "\\operatorname{round}",
+              "means": "nearest whole number (not defined in the source)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -590,6 +1686,48 @@
       "idea": "An IIR filter from an analogue Butterworth by the bilinear transform, or an FIR filter from a windowed sinc.",
       "law": "s = 2fs (z − 1)/(z + 1)    ωa = 2fs tan(π fc / fs)    h[n] = 2Fc sinc(2Fc (n − (N−1)/2)) w[n]",
       "lawTex": "s = 2 f_\\mathrm{s}\\, \\frac{z - 1}{z + 1} \\qquad \\omega_\\mathrm{a} = 2 f_\\mathrm{s} \\tan\\frac{\\pi f_\\mathrm{c}}{f_\\mathrm{s}} \\qquad h[n] = 2F_\\mathrm{c} \\operatorname{sinc}\\!\\Big(2F_\\mathrm{c}\\Big(n - \\frac{N - 1}{2}\\Big)\\Big)\\, w[n]",
+      "lawWhere": [
+        {
+          "tex": "s",
+          "means": "Laplace variable of the analogue filter (SS2 (6.57), p. 149)"
+        },
+        {
+          "tex": "z",
+          "means": "z-transform variable of the digital filter (SS2 (6.57), p. 149)"
+        },
+        {
+          "tex": "f_\\mathrm{s}",
+          "means": "sampling frequency [Hz], f_s = 1/T (SS2 (4.53), p. 76)"
+        },
+        {
+          "tex": "\\omega_\\mathrm{a}",
+          "means": "pre-warped cut-off of the analogue filter [rad/s] (SS2 (6.58), p. 149)"
+        },
+        {
+          "tex": "f_\\mathrm{c}",
+          "means": "cut-off frequency of the digital filter [Hz] (SS2 (6.61), p. 150)"
+        },
+        {
+          "tex": "h[n]",
+          "means": "impulse response of the FIR filter designed (SS2 (6.37), p. 138)"
+        },
+        {
+          "tex": "F_\\mathrm{c}",
+          "means": "normalised cut-off f_c/f_s; Doblinger uses θ_g = 2πF_c (SS2 (6.2), p. 120) (not defined in the source)"
+        },
+        {
+          "tex": "n",
+          "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+        },
+        {
+          "tex": "N",
+          "means": "filter length (SS2 (6.37)–(6.38), pp. 138–139)"
+        },
+        {
+          "tex": "w[n]",
+          "means": "window function (SS2 (6.37), (6.39), pp. 138–139)"
+        }
+      ],
       "lecture": "Doblinger (2015), sections 6.1–6.3, pp. 119–157",
       "equations": [
         {
@@ -597,32 +1735,118 @@
           "tex": "|H_\\mathrm{a}(\\mathrm{j}\\omega)|^2 = \\frac{1}{1 + (\\omega/\\omega_\\mathrm{a})^{2N}}",
           "note": "Butterworth prototype; Doblinger writes it normalised to the 3 dB frequency, ω_a = 1",
           "ref": "SS2 §6.3.2, (6.60), p. 150",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "H_\\mathrm{a}(\\mathrm{j}\\omega)",
+              "means": "frequency response of the analogue Butterworth prototype (Doblinger writes |H_a(ω)|², SS2 (6.60), p. 150, and |H(jω)|² in Abb. 6.12)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [rad/s]"
+            },
+            {
+              "tex": "\\omega_\\mathrm{a}",
+              "means": "3 dB cut-off of the analogue filter [rad/s]; Doblinger normalises it to 1 (SS2 p. 150)"
+            },
+            {
+              "tex": "N",
+              "means": "filter order (SS2 (6.60), p. 150)"
+            }
+          ]
         },
         {
           "eq": "s = 2fs (z − 1)/(z + 1)",
           "tex": "s = 2 f_\\mathrm{s}\\, \\frac{z - 1}{z + 1}",
           "note": "bilinear transform, 2/T with T = 1/fs",
-          "ref": "SS2 §6.3.2, (6.57), p. 149"
+          "ref": "SS2 §6.3.2, (6.57), p. 149",
+          "where": [
+            {
+              "tex": "s",
+              "means": "Laplace variable of the analogue filter (SS2 (6.57), p. 149)"
+            },
+            {
+              "tex": "z",
+              "means": "z-transform variable of the digital filter (SS2 (6.57), p. 149)"
+            },
+            {
+              "tex": "f_\\mathrm{s}",
+              "means": "sampling frequency [Hz], f_s = 1/T (SS2 (4.53), p. 76)"
+            }
+          ]
         },
         {
           "eq": "ωa = 2fs tan(π fc / fs)",
           "tex": "\\omega_\\mathrm{a} = 2 f_\\mathrm{s} \\tan\\frac{\\pi f_\\mathrm{c}}{f_\\mathrm{s}}",
           "note": "pre-warping: (6.58), ω = (2/T) tan(θ/2), at θ_c = 2π fc/fs",
-          "ref": "SS2 §6.3.2, (6.58), p. 149"
+          "ref": "SS2 §6.3.2, (6.58), p. 149",
+          "where": [
+            {
+              "tex": "\\omega_\\mathrm{a}",
+              "means": "pre-warped cut-off of the analogue filter [rad/s] (SS2 (6.58), p. 149)"
+            },
+            {
+              "tex": "f_\\mathrm{c}",
+              "means": "cut-off frequency of the digital filter [Hz] (SS2 (6.61), p. 150)"
+            },
+            {
+              "tex": "f_\\mathrm{s}",
+              "means": "sampling frequency [Hz], f_s = 1/T (SS2 (4.53), p. 76)"
+            }
+          ]
         },
         {
           "eq": "h[n] = h_d[n] w[n],  0 ≤ n ≤ N − 1",
           "tex": "h[n] = h_\\mathrm{d}[n]\\, w[n], \\qquad 0 \\le n \\le N - 1",
           "note": "window method; h_d the ideal filter, for a low-pass (6.2) delayed by n0 = (N − 1)/2 (6.38, N odd)",
-          "ref": "SS2 §6.2.1, (6.37), p. 138"
+          "ref": "SS2 §6.2.1, (6.37), p. 138",
+          "where": [
+            {
+              "tex": "h[n]",
+              "means": "impulse response of the FIR filter designed (SS2 (6.37), p. 138)"
+            },
+            {
+              "tex": "h_\\mathrm{d}[n]",
+              "means": "the ideal (reference) impulse response, delayed by n_0 (SS2 p. 138)"
+            },
+            {
+              "tex": "w[n]",
+              "means": "window function of finite length (SS2 (6.37), p. 138)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "N",
+              "means": "filter length (SS2 (6.37), p. 138)"
+            }
+          ]
         },
         {
           "eq": "w[n] = a0 − a1 cos(2πn/(N−1)) + a2 cos(4πn/(N−1))",
           "tex": "w[n] = a_0 - a_1 \\cos\\frac{2\\pi n}{N - 1} + a_2 \\cos\\frac{4\\pi n}{N - 1}",
           "note": "Hann 0.5, 0.5; Hamming 0.54, 0.46; Blackman 0.42, 0.5, 0.08 (Tabelle 6.1, p. 140)",
           "ref": "SS2 §6.2.1, (6.39), p. 139",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "w[n]",
+              "means": "generalised cosine window (SS2 (6.39), p. 139)"
+            },
+            {
+              "tex": "a_0,\\ a_1,\\ a_2",
+              "means": "window coefficients (SS2 Tabelle 6.1, p. 140)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "N",
+              "means": "window length (SS2 (6.39), p. 139)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -671,33 +1895,167 @@
       "idea": "Keep every M-th sample and what lay above fs/(2M) folds into the band; filter first. Insert zeros, filter after.",
       "law": "y[n] = x[Mn]    Y(e^jθ) = (1/M) Σ_{k=0}^{M−1} X(e^(j(θ − 2πk)/M))",
       "lawTex": "y[n] = x[Mn] \\qquad Y(\\mathrm{e}^{\\mathrm{j}\\theta}) = \\frac{1}{M} \\sum_{k=0}^{M-1} X\\big(\\mathrm{e}^{\\mathrm{j}(\\theta - 2\\pi k)/M}\\big)",
+      "lawWhere": [
+        {
+          "tex": "y[n]",
+          "means": "the downsampled sequence (SS2 (8.26), p. 201)"
+        },
+        {
+          "tex": "x[n]",
+          "means": "input sequence, defined at whole n (SS2 §2.2, p. 15)"
+        },
+        {
+          "tex": "n",
+          "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+        },
+        {
+          "tex": "M",
+          "means": "downsampling factor, a whole number: every M-th sample is kept (SS2 (8.26), p. 201)"
+        },
+        {
+          "tex": "Y(\\mathrm{e}^{\\mathrm{j}\\theta})",
+          "means": "spectrum of the downsampled sequence (SS2 (8.29), p. 202)"
+        },
+        {
+          "tex": "X",
+          "means": "spectrum of the input (Doblinger W, of the filtered signal, SS2 (8.29), p. 202)"
+        },
+        {
+          "tex": "k",
+          "means": "index of the folded copy, 0 … M − 1 (SS2 (8.29), p. 202)"
+        },
+        {
+          "tex": "\\theta",
+          "means": "normalised angular frequency [rad]: θ = ωT = 2πf/f_s, period 2π (SS2 (4.53), p. 76)"
+        },
+        {
+          "tex": "\\mathrm{j}",
+          "means": "imaginary unit, j² = −1 (SS2 p. 15)"
+        },
+        {
+          "tex": "\\mathrm{e}",
+          "means": "Euler's number, base of the natural exponential"
+        }
+      ],
       "lecture": "Doblinger (2015), section 8.2, pp. 196–206",
       "equations": [
         {
           "eq": "y[n] = x[Mn]",
           "tex": "y[n] = x[Mn]",
           "note": "downsampling (Doblinger: y[n] = w[nM], after the filter)",
-          "ref": "SS2 §8.2, (8.26), p. 201"
+          "ref": "SS2 §8.2, (8.26), p. 201",
+          "where": [
+            {
+              "tex": "y[n]",
+              "means": "the downsampled sequence (Doblinger y[n] = w[nM], SS2 (8.26), p. 201)"
+            },
+            {
+              "tex": "x[n]",
+              "means": "input sequence, defined at whole n (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "M",
+              "means": "downsampling factor, a whole number: every M-th sample is kept (SS2 (8.26), p. 201)"
+            }
+          ]
         },
         {
           "eq": "Y(e^jθ) = (1/M) Σₖ X(e^(j(θ − 2πk)/M))",
           "tex": "Y(\\mathrm{e}^{\\mathrm{j}\\theta}) = \\frac{1}{M} \\sum_{k=0}^{M-1} X\\big(\\mathrm{e}^{\\mathrm{j}(\\theta - 2\\pi k)/M}\\big)",
           "note": "its spectrum: stretched and folded",
-          "ref": "SS2 §8.2, (8.29), p. 202"
+          "ref": "SS2 §8.2, (8.29), p. 202",
+          "where": [
+            {
+              "tex": "Y(\\mathrm{e}^{\\mathrm{j}\\theta})",
+              "means": "spectrum of the downsampled sequence (SS2 (8.29), p. 202)"
+            },
+            {
+              "tex": "X",
+              "means": "spectrum of the input (Doblinger W, of the filtered signal, SS2 (8.29), p. 202)"
+            },
+            {
+              "tex": "M",
+              "means": "downsampling factor, a whole number: every M-th sample is kept (SS2 (8.26), p. 201)"
+            },
+            {
+              "tex": "k",
+              "means": "index of the folded copy, 0 … M − 1 (SS2 (8.29), p. 202)"
+            },
+            {
+              "tex": "\\theta",
+              "means": "normalised angular frequency [rad]: θ = ωT = 2πf/f_s, period 2π (SS2 (4.53), p. 76)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit, j² = −1 (SS2 p. 15)"
+            },
+            {
+              "tex": "\\mathrm{e}",
+              "means": "Euler's number, base of the natural exponential"
+            }
+          ]
         },
         {
           "eq": "y[n] = x[n/L] for n = 0, ±L, ±2L, …, else 0",
           "tex": "y[n] = \\begin{cases} x[n/L] & n = 0, \\pm L, \\pm 2L, \\ldots \\\\ 0 & \\text{else} \\end{cases}",
           "note": "upsampling: L − 1 zeros between samples",
           "ref": "SS2 §8.2, (8.18), p. 197",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "y[n]",
+              "means": "the upsampled sequence (Doblinger w[n], SS2 (8.18), p. 197)"
+            },
+            {
+              "tex": "x",
+              "means": "input sequence"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "L",
+              "means": "upsampling factor, a whole number: L − 1 zeros between samples (SS2 p. 197)"
+            }
+          ]
         },
         {
           "eq": "Y(e^jθ) = X(e^(jθL))",
           "tex": "Y(\\mathrm{e}^{\\mathrm{j}\\theta}) = X(\\mathrm{e}^{\\mathrm{j}\\theta L})",
           "note": "its spectrum: images",
           "ref": "SS2 §8.2, (8.20), p. 198",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "Y(\\mathrm{e}^{\\mathrm{j}\\theta})",
+              "means": "spectrum of the upsampled sequence (Doblinger W, SS2 (8.20), p. 198)"
+            },
+            {
+              "tex": "X",
+              "means": "spectrum of the input (SS2 (8.20), p. 198)"
+            },
+            {
+              "tex": "\\theta",
+              "means": "normalised angular frequency [rad]: θ = ωT = 2πf/f_s, period 2π (SS2 (4.53), p. 76)"
+            },
+            {
+              "tex": "L",
+              "means": "upsampling factor (SS2 p. 197)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit, j² = −1 (SS2 p. 15)"
+            },
+            {
+              "tex": "\\mathrm{e}",
+              "means": "Euler's number, base of the natural exponential"
+            }
+          ]
         }
       ],
       "practice": [
@@ -721,6 +2079,44 @@
       "idea": "The course in one small filter: a slow sensor signal with mains hum on it is sampled, averaged over N samples and looked at in its spectrum. The moving average the notes study in three Beispiele turns out to remove 50 Hz hum and all its harmonics, but only when N fits the sampling rate.",
       "law": "y[n] = (1/N) Σ x[n − k], k = 0 … N − 1    |H(e^jθ)| = |sin(Nθ/2)/(N sin(θ/2))|    notches at θk = 2πk/N",
       "lawTex": "y[n] = \\frac{1}{N}\\sum_{k=0}^{N-1} x[n-k] \\qquad \\left|H\\left(e^{j\\theta}\\right)\\right| = \\frac{1}{N}\\left|\\frac{\\sin\\left(\\frac{N\\theta}{2}\\right)}{\\sin\\left(\\frac{\\theta}{2}\\right)}\\right|",
+      "lawWhere": [
+        {
+          "tex": "y[n]",
+          "means": "output, the running mean (SS2 (3.46), p. 48)"
+        },
+        {
+          "tex": "x",
+          "means": "input sequence"
+        },
+        {
+          "tex": "N",
+          "means": "number of samples averaged (SS2 (3.45), p. 48)"
+        },
+        {
+          "tex": "k",
+          "means": "summation index (SS2 (3.46), p. 48)"
+        },
+        {
+          "tex": "n",
+          "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+        },
+        {
+          "tex": "H",
+          "means": "frequency response of the moving average (SS2 (3.47)–(3.48), p. 48)"
+        },
+        {
+          "tex": "e",
+          "means": "Euler's number"
+        },
+        {
+          "tex": "j",
+          "means": "imaginary unit"
+        },
+        {
+          "tex": "\\theta",
+          "means": "normalised angular frequency [rad]: θ = ωT = 2πf/f_s, period 2π (SS2 (4.53), p. 76)"
+        }
+      ],
       "lecture": "Doblinger (2015), Beispiel 3.7 (p. 48), Beispiel 3.9 (p. 55), Beispiel 5.7 (p. 104), section 4.2 (pp. 74–86) and (7.27), p. 175",
       "practice": [
         {
@@ -756,43 +2152,185 @@
           "eq": "h[n] = 1/N for 0 ≤ n ≤ N − 1, else 0",
           "tex": "h[n] = \\begin{cases}\\frac{1}{N} & 0 \\le n \\le N-1\\\\ 0 & \\text{sonst}\\end{cases}",
           "note": "the moving average",
-          "ref": "SS2 (3.45), p. 48"
+          "ref": "SS2 (3.45), p. 48",
+          "where": [
+            {
+              "tex": "h[n]",
+              "means": "impulse response of the moving average (SS2 (3.45), p. 48)"
+            },
+            {
+              "tex": "N",
+              "means": "number of samples averaged (SS2 (3.45), p. 48)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            }
+          ]
         },
         {
           "eq": "y[n] = (1/N) Σ_{k=n−N+1}^{n} x[k]",
           "tex": "y[n] = \\frac{1}{N}\\sum_{k=0}^{N-1} x[n-k] = \\frac{1}{N}\\sum_{k=n-N+1}^{n} x[k]",
           "note": "the running mean",
-          "ref": "SS2 (3.46), p. 48"
+          "ref": "SS2 (3.46), p. 48",
+          "where": [
+            {
+              "tex": "y[n]",
+              "means": "output, the running mean (SS2 (3.46), p. 48)"
+            },
+            {
+              "tex": "x",
+              "means": "input sequence"
+            },
+            {
+              "tex": "N",
+              "means": "number of samples averaged"
+            },
+            {
+              "tex": "k",
+              "means": "summation index (SS2 (3.46), p. 48)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            }
+          ]
         },
         {
           "eq": "H(e^jθ) = (1/N)·sin(Nθ/2)/sin(θ/2)·e^(−jθ(N−1)/2)",
           "tex": "H\\left(e^{j\\theta}\\right) = \\frac{1}{N}\\frac{\\sin\\left(\\frac{N\\theta}{2}\\right)}{\\sin\\left(\\frac{\\theta}{2}\\right)}e^{-j\\theta\\frac{N-1}{2}}",
           "note": "linear phase: a delay of (N − 1)/2 samples",
-          "ref": "SS2 (3.47), p. 48"
+          "ref": "SS2 (3.47), p. 48",
+          "where": [
+            {
+              "tex": "H",
+              "means": "frequency response of the moving average (SS2 (3.47), p. 48)"
+            },
+            {
+              "tex": "N",
+              "means": "number of samples averaged"
+            },
+            {
+              "tex": "e",
+              "means": "Euler's number"
+            },
+            {
+              "tex": "j",
+              "means": "imaginary unit"
+            },
+            {
+              "tex": "\\theta",
+              "means": "normalised angular frequency [rad]: θ = ωT = 2πf/f_s, period 2π (SS2 (4.53), p. 76)"
+            }
+          ]
         },
         {
           "eq": "|H(e^jθ)| = |sin(Nθ/2)/(N sin(θ/2))|",
           "tex": "\\left|H\\left(e^{j\\theta}\\right)\\right| = \\frac{1}{N}\\left|\\frac{\\sin\\left(\\frac{N\\theta}{2}\\right)}{\\sin\\left(\\frac{\\theta}{2}\\right)}\\right|",
           "note": "",
-          "ref": "SS2 (3.48), p. 48"
+          "ref": "SS2 (3.48), p. 48",
+          "where": [
+            {
+              "tex": "H",
+              "means": "frequency response; its magnitude (SS2 (3.48), p. 48)"
+            },
+            {
+              "tex": "N",
+              "means": "number of samples averaged"
+            },
+            {
+              "tex": "e",
+              "means": "Euler's number"
+            },
+            {
+              "tex": "j",
+              "means": "imaginary unit"
+            },
+            {
+              "tex": "\\theta",
+              "means": "normalised angular frequency [rad]: θ = ωT = 2πf/f_s, period 2π (SS2 (4.53), p. 76)"
+            }
+          ]
         },
         {
           "eq": "X(z) = (1/N)(1 − z^−N)/(1 − z^−1)",
           "tex": "X(z) = \\frac{1}{N}\\frac{1 - z^{-N}}{1 - z^{-1}}",
           "note": "zeros e^(j2πk/N), k = 1 … N − 1, on the unit circle",
-          "ref": "SS2 (5.37), p. 104"
+          "ref": "SS2 (5.37), p. 104",
+          "where": [
+            {
+              "tex": "X(z)",
+              "means": "z-transform of the moving average's impulse response; Doblinger names that response x[n] (SS2 (5.36)–(5.37), p. 104)"
+            },
+            {
+              "tex": "z",
+              "means": "complex variable of the z-transform"
+            },
+            {
+              "tex": "N",
+              "means": "number of samples averaged"
+            }
+          ]
         },
         {
           "eq": "x[n] = x_a(nT),  θ = ωT = 2πf/fs",
           "tex": "x[n] = x_a(nT), \\qquad \\theta = \\omega T = \\frac{2\\pi f}{f_s}",
           "note": "",
-          "ref": "SS2 §4.2, (4.52) and (4.53), p. 76"
+          "ref": "SS2 §4.2, (4.52) and (4.53), p. 76",
+          "where": [
+            {
+              "tex": "x[n]",
+              "means": "sequence of samples (SS2 (4.52), p. 76)"
+            },
+            {
+              "tex": "x_a",
+              "means": "the analogue signal x_a(t) (SS2 (4.52), p. 76)"
+            },
+            {
+              "tex": "n",
+              "means": "sample index, a whole number (SS2 §2.2, p. 15)"
+            },
+            {
+              "tex": "T",
+              "means": "sampling interval [s], T = 1/f_s"
+            },
+            {
+              "tex": "\\theta",
+              "means": "normalised angular frequency [rad]: θ = ωT = 2πf/f_s, period 2π (SS2 (4.53), p. 76)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [rad/s]"
+            },
+            {
+              "tex": "f",
+              "means": "frequency [Hz]"
+            },
+            {
+              "tex": "f_s",
+              "means": "sampling frequency [Hz] (SS2 (4.53), p. 76)"
+            }
+          ]
         },
         {
           "eq": "Δf = fs/N",
           "tex": "\\Delta f = \\frac{f_s}{N}",
           "note": "the DFT's bin spacing; 1 Hz for one second at 300 Hz",
-          "ref": "SS2 (7.27), p. 175, with (4.53), p. 76"
+          "ref": "SS2 (7.27), p. 175, with (4.53), p. 76",
+          "where": [
+            {
+              "tex": "\\Delta f",
+              "means": "spacing of the DFT lines [Hz] (from SS2 (7.27), p. 175, with (4.53), p. 76)"
+            },
+            {
+              "tex": "f_s",
+              "means": "sampling frequency [Hz]"
+            },
+            {
+              "tex": "N",
+              "means": "number of samples in the DFT"
+            }
+          ]
         }
       ]
     }

@@ -23,10 +23,14 @@ test("the meter-loading laws cite eqs. 2.28 and 2.24", () => {
   assert.match(refs[1], /eq\. 2\.24, p\. 89/);
 });
 
-// The K factor is defined by eq. 3.68, p. 235; eqs. 3.75–3.76, p. 238, are σ = F/A and σ = E·ε only.
-test("the strain gauge's K factor cites eq. 3.68", () => {
+// The K factor is defined by eq. 3.68, p. 235; ΔR/R ≈ ΔR/R0 = K·ε is eq. 3.74, p. 236 (checked 11 Nov 2026 in
+// 3-Ohm-Brücken.pdf, PDF p. 42); eqs. 3.75–3.76, p. 238, are σ = F/A and σ = E·ε only.
+test("the strain gauge's K factor cites eq. 3.68 and ΔR/R0 = Kε eq. 3.74, p. 236", () => {
   const e = lab("bridge").equations.find(q => q.eq.includes("K ε"));
-  assert.match(e.ref, /eqs\. 3\.68, 3\.75–3\.76, pp\. 235–238/);
+  assert.match(e.ref, /eqs\. 3\.68, 3\.74, 3\.75–3\.76, pp\. 235–238/);
+  const means = Object.fromEntries(e.where.map(w => [w.tex, w.means]));
+  assert.match(means["\\frac{\\Delta R}{R_0}"], /eq\. 3\.74, p\. 236\)/);
+  assert.match(means.K, /eq\. 3\.68, p\. 235\)/);
 });
 
 // Bild 3.9, p. 203: arrangement d (two arms in opposite positions, both +ΔR) is only approximately linear,

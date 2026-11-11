@@ -21,11 +21,22 @@
       "idea": "A rectangle of area a is made squarer by replacing its sides x and a/x by their mean. Step by step its side homes in on √a, the number of right digits about doubling each time.",
       "law": "x_new = (x + a/x)/2",
       "lawTex": "x_{\\text{new}} = \\frac{1}{2}\\Big(x + \\frac{a}{x}\\Big)",
+      "lawWhere": [
+        { "tex": "x_{\\text{new}}", "means": "the next side: the arithmetic mean of the two sides x and a/x (p. 2; the script writes x₁, the name x_new is the lab's)" },
+        { "tex": "x", "means": "one side of the rectangle, the present guess (p. 2)" },
+        { "tex": "a", "means": "area of the rectangle, the number whose square root is sought; 10 on p. 2 (the script writes the number, not a: not defined in the source)" }
+      ],
       "lecture": "Taschner, § 1, pp. 1–3",
       "equations": [
-        { "eq": "(x + y)/2 = ½ (3 + 10/3) = 19/6", "tex": "\\frac{x + y}{2} = \\frac{1}{2}\\Big(3 + \\frac{10}{3}\\Big) = \\frac{19}{6}", "note": "the first step for a = 10 from x = 3: the mean of the sides 3 and 10/3", "ref": "p. 2" },
+        { "eq": "(x + y)/2 = ½ (3 + 10/3) = 19/6", "tex": "\\frac{x + y}{2} = \\frac{1}{2}\\Big(3 + \\frac{10}{3}\\Big) = \\frac{19}{6}", "note": "the first step for a = 10 from x = 3: the mean of the sides 3 and 10/3", "ref": "p. 2",
+          "where": [
+            { "tex": "x,\\ y", "means": "the two sides of a rectangle of area x · y = 10: x = 3, y = 10/3 (p. 2)" }
+          ] },
         { "eq": "(19/6)² = 10 + 1/36", "tex": "\\Big(\\frac{19}{6}\\Big)^2 = 10 + \\frac{1}{36}", "note": "the new side is a little too long", "ref": "p. 2" },
-        { "eq": "x₁ = 19/6, y₁ = 60/19, (x₁ + y₁)/2 = 721/228", "tex": "x_1 = \\frac{19}{6}, \\quad y_1 = \\frac{60}{19}, \\quad \\frac{x_1 + y_1}{2} = \\frac{721}{228}", "note": "the second step; (721/228)² = 10 + 1/51984", "ref": "p. 2" }
+        { "eq": "x₁ = 19/6, y₁ = 60/19, (x₁ + y₁)/2 = 721/228", "tex": "x_1 = \\frac{19}{6}, \\quad y_1 = \\frac{60}{19}, \\quad \\frac{x_1 + y_1}{2} = \\frac{721}{228}", "note": "the second step; (721/228)² = 10 + 1/51984", "ref": "p. 2",
+          "where": [
+            { "tex": "x_1,\\ y_1", "means": "sides of the second rectangle, x₁ · y₁ = 10 (p. 2)" }
+          ] }
       ],
       "practice": [
         { "question": "Start the Babylonian method for a = 10 at x = 3. What is the side after two steps?", "source": "Taschner, p. 2: 721/228", "answer": 3.16228, "unit": "", "tolerance": 0.00001, "compute": { "law": "babylonian", "a": 10, "x0": 3, "n": 2 }, "solution": "Step 1: (3 + 10/3)/2 = 19/6. Step 2: (19/6 + 60/19)/2 = 721/228 = 3.162281." }
@@ -37,12 +48,39 @@
       "idea": "Multiplying by a complex number z = r(cos φ + j sin φ) stretches by its modulus r and turns by its argument φ. So moduli multiply and arguments add, and powers turn round the circle.",
       "law": "|zζ| = |z|·|ζ|,  arg zζ = arg z + arg ζ",
       "lawTex": "|z\\zeta| = |z| \\cdot |\\zeta|, \\qquad \\arg z\\zeta = \\arg z + \\arg \\zeta",
+      "lawWhere": [
+        { "tex": "z", "means": "complex number z = a + bj = r(cos φ + j sin φ) (p. 93)" },
+        { "tex": "\\zeta", "means": "second complex number ζ = c + dj = s(cos ψ + j sin ψ) (p. 93)" },
+        { "tex": "|z|,\\ |\\zeta|", "means": "absolute value (Betrag) of z and of ζ, its distance from 0 (p. 93)" },
+        { "tex": "\\arg", "means": "argument of a complex number: the angle from the positive real axis to the ray through it (p. 93)" }
+      ],
       "lecture": "Taschner, pp. 92–94",
       "equations": [
-        { "eq": "z = r (cos φ + j sin φ)", "tex": "z = r(\\cos\\varphi + \\mathrm{j}\\sin\\varphi)", "note": "the polar form, with the modulus r = |z| and the argument φ = arg z", "ref": "p. 93" },
-        { "eq": "|zζ| = |z|·|ζ|,  arg zζ = arg z + arg ζ", "tex": "|z\\zeta| = |z| \\cdot |\\zeta|, \\qquad \\arg z\\zeta = \\arg z + \\arg\\zeta", "note": "Gauss's geometric reading of the product: a turn and a stretch", "ref": "p. 93" },
-        { "eq": "(a + bj)(c + dj) = (ac − bd) + j(ad + bc)", "tex": "(a + b\\mathrm{j})(c + d\\mathrm{j}) = (ac - bd) + \\mathrm{j}(ad + bc)", "note": "the same product in components", "ref": "p. 94" },
-        { "eq": "(cos φ + j sin φ)ⁿ = cos nφ + j sin nφ", "tex": "(\\cos\\varphi + \\mathrm{j}\\sin\\varphi)^n = \\cos n\\varphi + \\mathrm{j}\\sin n\\varphi", "note": "de Moivre's formula", "ref": "p. 94" }
+        { "eq": "z = r (cos φ + j sin φ)", "tex": "z = r(\\cos\\varphi + \\mathrm{j}\\sin\\varphi)", "note": "the polar form, with the modulus r = |z| and the argument φ = arg z", "ref": "p. 93",
+          "where": [
+            { "tex": "z", "means": "complex number z = a + bj = r(cos φ + j sin φ) (p. 93)" },
+            { "tex": "r", "means": "absolute value r = |z| (p. 93)" },
+            { "tex": "\\varphi", "means": "argument of z, the angle φ = arg z (p. 93)" },
+            { "tex": "\\mathrm{j}", "means": "imaginary unit, j² = −1 (p. 94)" }
+          ] },
+        { "eq": "|zζ| = |z|·|ζ|,  arg zζ = arg z + arg ζ", "tex": "|z\\zeta| = |z| \\cdot |\\zeta|, \\qquad \\arg z\\zeta = \\arg z + \\arg\\zeta", "note": "Gauss's geometric reading of the product: a turn and a stretch", "ref": "p. 93",
+          "where": [
+            { "tex": "z", "means": "complex number z = a + bj = r(cos φ + j sin φ) (p. 93)" },
+            { "tex": "\\zeta", "means": "second complex number ζ = c + dj = s(cos ψ + j sin ψ) (p. 93)" },
+            { "tex": "|z|,\\ |\\zeta|", "means": "absolute value (Betrag) of z and of ζ, its distance from 0 (p. 93)" },
+            { "tex": "\\arg", "means": "argument of a complex number: the angle from the positive real axis to the ray through it (p. 93)" }
+          ] },
+        { "eq": "(a + bj)(c + dj) = (ac − bd) + j(ad + bc)", "tex": "(a + b\\mathrm{j})(c + d\\mathrm{j}) = (ac - bd) + \\mathrm{j}(ad + bc)", "note": "the same product in components", "ref": "p. 94",
+          "where": [
+            { "tex": "a,\\ b,\\ c,\\ d", "means": "real and imaginary parts of z = a + bj and ζ = c + dj (p. 93)" },
+            { "tex": "\\mathrm{j}", "means": "imaginary unit, j² = −1 (p. 94)" }
+          ] },
+        { "eq": "(cos φ + j sin φ)ⁿ = cos nφ + j sin nφ", "tex": "(\\cos\\varphi + \\mathrm{j}\\sin\\varphi)^n = \\cos n\\varphi + \\mathrm{j}\\sin n\\varphi", "note": "de Moivre's formula", "ref": "p. 94",
+          "where": [
+            { "tex": "\\varphi", "means": "argument of z, the angle φ = arg z (p. 93)" },
+            { "tex": "n", "means": "any number (irgendeine Zahl), the power (p. 94)" },
+            { "tex": "\\mathrm{j}", "means": "imaginary unit, j² = −1 (p. 94)" }
+          ] }
       ],
       "practice": [
         { "question": "z has modulus 1 and argument 50°. What is the argument of z⁸, between 0° and 360°?", "source": "Worked by hand from de Moivre's formula, Taschner p. 94", "answer": 40, "unit": "°", "compute": { "law": "powerArgDeg", "r": 1, "phiDeg": 50, "n": 8 }, "solution": "8 · 50° = 400° = 360° + 40°, so arg z⁸ = 40°." }
@@ -54,9 +92,16 @@
       "idea": "Adding 1 + q + q² + … term by term closes in on 1/(1 − q), but only when |q| < 1. Otherwise the same neat formula gives nonsense, which is why limits are needed.",
       "law": "1 + q + q² + … = 1/(1 − q)   for |q| < 1",
       "lawTex": "1 + q + q^2 + \\dots = \\frac{1}{1 - q} \\qquad \\text{for } |q| < 1",
+      "lawWhere": [
+        { "tex": "q", "means": "the quotient of the geometric series, |q| < 1 (p. 126; q = 2 shows the formula fails outside)" }
+      ],
       "lecture": "Taschner, p. 126",
       "equations": [
-        { "eq": "s = 1 + q + q² + …,  qs = s − 1  ⇒  s = 1/(1 − q)", "tex": "s = 1 + q + q^2 + \\dots, \\quad qs = s - 1 \\;\\Rightarrow\\; s = \\frac{1}{1 - q}", "note": "Leibniz's trick, which only holds when the series has a sum", "ref": "p. 126" },
+        { "eq": "s = 1 + q + q² + …,  qs = s − 1  ⇒  s = 1/(1 − q)", "tex": "s = 1 + q + q^2 + \\dots, \\quad qs = s - 1 \\;\\Rightarrow\\; s = \\frac{1}{1 - q}", "note": "Leibniz's trick, which only holds when the series has a sum", "ref": "p. 126",
+          "where": [
+            { "tex": "s", "means": "the sum of the series 1 + q + q² + … (p. 126)" },
+            { "tex": "q", "means": "the quotient of the geometric series (p. 126)" }
+          ] },
         { "eq": "1 + 2 + 4 + 8 + … ≠ −1", "tex": "1 + 2 + 4 + 8 + \\dots \\neq -1", "note": "the trick applied to q = 2: the script's warning", "ref": "p. 126" }
       ],
       "practice": [
@@ -69,10 +114,28 @@
       "idea": "Cover the area under a curve with bars as high as the least value on each part (the lower sum) and as high as the greatest (the upper sum). The area lies between the two, and finer parts squeeze them together.",
       "law": "Σ p_m (x_m − x_{m−1}) ≤ ∫ₐᵇ f(x) dx ≤ Σ q_m (x_m − x_{m−1})",
       "lawTex": "\\sum_{m=1}^{n} p_m (x_m - x_{m-1}) \\;\\le\\; \\int_a^b f(x)\\,dx \\;\\le\\; \\sum_{m=1}^{n} q_m (x_m - x_{m-1})",
+      "lawWhere": [
+        { "tex": "m,\\ n", "means": "index of the sub-interval, 1 to n, and their number (p. 166)" },
+        { "tex": "p_m,\\ q_m", "means": "lower and upper bound of f on the sub-interval [x_{m−1}; x_m]: p_m ≤ f(x) ≤ q_m (p. 166)" },
+        { "tex": "x_m,\\ x_{m-1}", "means": "division points a = x₀ < x₁ < … < xₙ = b of the interval [a; b] (p. 166)" },
+        { "tex": "a,\\ b", "means": "ends of the interval [a; b] (p. 166)" },
+        { "tex": "f(x)", "means": "real function f: A → ℝ being integrated (p. 166)" }
+      ],
       "lecture": "Taschner, § 28, pp. 166–167",
       "equations": [
-        { "eq": "Σ q_m (x_m − x_{m−1}), with p_m ≤ f(x) ≤ q_m on [x_{m−1}; x_m]", "tex": "\\sum_{m=1}^{n} q_m (x_m - x_{m-1}), \\qquad p_m \\le f(x) \\le q_m \\text{ on } [x_{m-1}; x_m]", "note": "the upper sum (Obersumme); with p_m the lower sum (Untersumme)", "ref": "p. 166" },
-        { "eq": "∫ₐᵇ y dx = ∫ₐᵇ f(x) dx", "tex": "\\int_a^b y\\,dx = \\int_a^b f(x)\\,dx", "note": "the area, at least the lower and at most the upper sum, after Riemann", "ref": "p. 167" }
+        { "eq": "Σ q_m (x_m − x_{m−1}), with p_m ≤ f(x) ≤ q_m on [x_{m−1}; x_m]", "tex": "\\sum_{m=1}^{n} q_m (x_m - x_{m-1}), \\qquad p_m \\le f(x) \\le q_m \\text{ on } [x_{m-1}; x_m]", "note": "the upper sum (Obersumme); with p_m the lower sum (Untersumme)", "ref": "p. 166",
+          "where": [
+            { "tex": "m,\\ n", "means": "index of the sub-interval, 1 to n, and their number (p. 166)" },
+            { "tex": "p_m,\\ q_m", "means": "lower and upper bound of f on the sub-interval [x_{m−1}; x_m]: p_m ≤ f(x) ≤ q_m (p. 166)" },
+            { "tex": "x_m,\\ x_{m-1}", "means": "division points a = x₀ < x₁ < … < xₙ = b of the interval [a; b] (p. 166)" },
+            { "tex": "f(x)", "means": "real function f: A → ℝ being integrated (p. 166)" }
+          ] },
+        { "eq": "∫ₐᵇ y dx = ∫ₐᵇ f(x) dx", "tex": "\\int_a^b y\\,dx = \\int_a^b f(x)\\,dx", "note": "the area, at least the lower and at most the upper sum, after Riemann", "ref": "p. 167",
+          "where": [
+            { "tex": "a,\\ b", "means": "ends of the interval [a; b] (p. 166)" },
+            { "tex": "y", "means": "height of the curve, y = f(x) (p. 167)" },
+            { "tex": "f(x)", "means": "real function f: A → ℝ being integrated (p. 166)" }
+          ] }
       ],
       "practice": [
         { "question": "Split [0, 1] into 10 equal parts. What is the upper sum of f(x) = x²?", "source": "Worked by hand from Taschner p. 166", "answer": 0.385, "unit": "", "compute": { "law": "riemannUpper", "n": 10 }, "solution": "f rises, so q_m = (m/10)²: Σ (m/10)² · 1/10 = (1 + 4 + … + 100)/1000 = 385/1000 = 0.385. The area is 1/3." }
@@ -84,10 +147,25 @@
       "idea": "The secant through two points of a curve cuts it twice. Slide the second point onto the first and the secant turns into the tangent, which only touches; its slope is the differential quotient dy/dx.",
       "law": "dy/dx = lim Δx→0 Δy/Δx",
       "lawTex": "\\frac{dy}{dx} = \\lim_{\\Delta x \\to 0} \\frac{\\Delta y}{\\Delta x}",
+      "lawWhere": [
+        { "tex": "\\Delta x,\\ \\Delta y", "means": "components of the displacement vector ΔX from X to a second point X + ΔX on the curve (p. 205)" },
+        { "tex": "dx,\\ dy", "means": "differentials, components of the momentary displacement vector dX (p. 204)" }
+      ],
       "lecture": "Taschner, pp. 204–205",
       "equations": [
-        { "eq": "ΔX = (Δx, Δy) → dX = (dx, dy)", "tex": "\\Delta X = \\begin{pmatrix} \\Delta x \\\\ \\Delta y \\end{pmatrix} \\;\\to\\; dX = \\begin{pmatrix} dx \\\\ dy \\end{pmatrix}", "note": "the secant's direction ΔX becomes the tangent's dX; between them Leibniz's characteristic triangle", "ref": "p. 205" },
-        { "eq": "k = dy/dx = −x/y on the circle x² + y² = r²", "tex": "k = \\frac{dy}{dx} = -\\frac{x}{y}", "note": "the script's example: the tangent's slope on a circle", "ref": "p. 204" }
+        { "eq": "ΔX = (Δx, Δy) → dX = (dx, dy)", "tex": "\\Delta X = \\begin{pmatrix} \\Delta x \\\\ \\Delta y \\end{pmatrix} \\;\\to\\; dX = \\begin{pmatrix} dx \\\\ dy \\end{pmatrix}", "note": "the secant's direction ΔX becomes the tangent's dX; between them Leibniz's characteristic triangle", "ref": "p. 205",
+          "where": [
+            { "tex": "\\Delta X", "means": "displacement vector from X to X + ΔX, direction of a secant (p. 205)" },
+            { "tex": "dX", "means": "momentary displacement vector, direction of the tangent at X (p. 204)" },
+            { "tex": "\\Delta x,\\ \\Delta y", "means": "components of ΔX (p. 205)" },
+            { "tex": "dx,\\ dy", "means": "the differentials, components of dX (p. 204)" }
+          ] },
+        { "eq": "k = dy/dx = −x/y on the circle x² + y² = r²", "tex": "k = \\frac{dy}{dx} = -\\frac{x}{y}", "note": "the script's example: the tangent's slope on a circle", "ref": "p. 204",
+          "where": [
+            { "tex": "k", "means": "slope of the tangent to the circle at X (p. 204)" },
+            { "tex": "x,\\ y", "means": "coordinates of the point X on the circle around the origin, y ≠ 0 (p. 204)" },
+            { "tex": "dx,\\ dy", "means": "the differentials (p. 204)" }
+          ] }
       ],
       "practice": [
         { "question": "For f(x) = x³ − 2x, what is the slope of the secant from x = 0.6 to x = 0.61?", "source": "Worked by hand", "answer": -0.9019, "unit": "", "tolerance": 0.001, "compute": { "law": "secantSlope", "x": 0.6, "h": 0.01 }, "solution": "f(0.61) − f(0.6) = (0.226981 − 1.22) − (0.216 − 1.2) = −0.993019 + 0.984 = −0.009019; divided by 0.01: −0.9019. The tangent's slope is 3 · 0.36 − 2 = −0.92." }
@@ -101,9 +179,24 @@
       "lawTex": "x^* = x - \\frac{f(x)}{f'(x)}",
       "lecture": "Taschner, p. 308",
       "equations": [
-        { "eq": "f(x)/(x − x*) = f'(x)", "tex": "\\frac{f(x)}{x - x^*} = f'(x)", "note": "the slope triangle of the tangent", "ref": "p. 308" },
-        { "eq": "x* = x − f(x)/f'(x)", "tex": "x^* = x - \\frac{f(x)}{f'(x)}", "note": "Newton's formula (Newtonformel)", "ref": "p. 308" },
-        { "eq": "x − (xⁿ − a)/(n xⁿ⁻¹) = ((n − 1) x + a/xⁿ⁻¹)/n", "tex": "x - \\frac{x^n - a}{n x^{n-1}} = \\frac{1}{n}\\Big((n-1)x + \\frac{a}{x^{n-1}}\\Big)", "note": "for n-th roots; n = 2 is the Babylonian method", "ref": "p. 308" }
+        { "eq": "f(x)/(x − x*) = f'(x)", "tex": "\\frac{f(x)}{x - x^*} = f'(x)", "note": "the slope triangle of the tangent", "ref": "p. 308",
+          "where": [
+            { "tex": "f(x),\\ f'(x)", "means": "the function whose zero is sought and its derivative, the slope of the tangent (p. 308)" },
+            { "tex": "x", "means": "present approximation to the zero of f (p. 308)" },
+            { "tex": "x^*", "means": "next approximation: where the tangent at x meets the x-axis (p. 308)" }
+          ] },
+        { "eq": "x* = x − f(x)/f'(x)", "tex": "x^* = x - \\frac{f(x)}{f'(x)}", "note": "Newton's formula (Newtonformel)", "ref": "p. 308",
+          "where": [
+            { "tex": "x", "means": "present approximation to the zero of f (p. 308)" },
+            { "tex": "x^*", "means": "next approximation: where the tangent at x meets the x-axis (p. 308)" },
+            { "tex": "f(x),\\ f'(x)", "means": "the function whose zero is sought and its derivative, the slope of the tangent (p. 308)" }
+          ] },
+        { "eq": "x − (xⁿ − a)/(n xⁿ⁻¹) = ((n − 1) x + a/xⁿ⁻¹)/n", "tex": "x - \\frac{x^n - a}{n x^{n-1}} = \\frac{1}{n}\\Big((n-1)x + \\frac{a}{x^{n-1}}\\Big)", "note": "for n-th roots; n = 2 is the Babylonian method", "ref": "p. 308",
+          "where": [
+            { "tex": "x", "means": "present approximation to the zero of f (p. 308)" },
+            { "tex": "a", "means": "positive number whose n-th root is sought, f(x) = xⁿ − a (p. 308)" },
+            { "tex": "n", "means": "the root's order, n > 1 (p. 308)" }
+          ] }
       ],
       "practice": [
         { "question": "Newton's formula for f(x) = x³ − 2, started at x = 1: what is the guess after two steps?", "source": "Taschner, p. 308: 91/72", "answer": 1.26389, "unit": "", "tolerance": 0.00001, "compute": { "law": "newtonCubeRoot", "a": 2, "x0": 1, "n": 2 }, "solution": "x* = (2x + 2/x²)/3. From 1: 4/3. From 4/3: (8/3 + 9/8)/3 = 91/72 = 1.26389." }
@@ -115,11 +208,35 @@
       "idea": "Bumps that grow narrower and taller, each of area 1, go to zero at every point except 0. Yet their integrals stay 1: without uniform convergence the limit and the integral may not be swapped.",
       "law": "lim n→∞ φₙ(t) = 0 for t ≠ 0,  but  ∫ φₙ(t) dt = 1",
       "lawTex": "\\lim_{n \\to \\infty} \\varphi_n(t) = 0 \\text{ for } t \\neq 0, \\qquad \\int_{-\\infty}^{\\infty} \\varphi_n(t)\\,dt = 1",
+      "lawWhere": [
+        { "tex": "\\varphi_n(t)", "means": "the n-th bump function on the t-axis (p. 285)" },
+        { "tex": "n", "means": "the index of the function, a number (Zahl) (p. 285)" },
+        { "tex": "t", "means": "real argument on the t-axis (p. 285)" }
+      ],
       "lecture": "Taschner, pp. 285–288",
       "equations": [
-        { "eq": "φₙ(t) = cₙ e^(−n²/(1 − n²t²)) for |t| < 1/n, else 0", "tex": "\\varphi_n(t) = c_n\\, e^{-n^2/(1 - n^2 t^2)} \\text{ for } |t| < 1/n, \\quad 0 \\text{ otherwise}", "note": "the bump, smooth and zero outside ]−1/n; 1/n[; cₙ makes its integral 1", "ref": "pp. 285–286", "explore": true },
-        { "eq": "|fₙ(x) − f(x)| < ε for all n ≥ n₀, n₀ independent of x", "tex": "|f_n(x) - f(x)| < \\varepsilon \\text{ for all } n \\ge n_0, \\; n_0 \\text{ independent of } x", "note": "uniform convergence; pointwise, n₀ may depend on x", "ref": "p. 288" },
-        { "eq": "∫ₐᵇ lim fₙ dx = lim ∫ₐᵇ fₙ dx  when fₙ → f uniformly", "tex": "\\int_a^b \\lim_{n\\to\\infty} f_n(x)\\,dx = \\lim_{n\\to\\infty} \\int_a^b f_n(x)\\,dx", "note": "the swap that uniform convergence allows", "ref": "p. 288" }
+        { "eq": "φₙ(t) = cₙ e^(−n²/(1 − n²t²)) for |t| < 1/n, else 0", "tex": "\\varphi_n(t) = c_n\\, e^{-n^2/(1 - n^2 t^2)} \\text{ for } |t| < 1/n, \\quad 0 \\text{ otherwise}", "note": "the bump, smooth and zero outside ]−1/n; 1/n[; cₙ makes its integral 1", "ref": "pp. 285–286", "explore": true,
+          "where": [
+            { "tex": "\\varphi_n(t)", "means": "the n-th bump function on the t-axis (p. 285)" },
+            { "tex": "c_n", "means": "positive constant chosen so that the integral of φₙ is 1 (pp. 285–286)" },
+            { "tex": "n", "means": "the index of the function, a number (Zahl) (p. 285)" },
+            { "tex": "t", "means": "real argument on the t-axis (p. 285)" }
+          ] },
+        { "eq": "|fₙ(x) − f(x)| < ε for all n ≥ n₀, n₀ independent of x", "tex": "|f_n(x) - f(x)| < \\varepsilon \\text{ for all } n \\ge n_0, \\; n_0 \\text{ independent of } x", "note": "uniform convergence; pointwise, n₀ may depend on x", "ref": "p. 288",
+          "where": [
+            { "tex": "f_n,\\ f", "means": "functions f₁, f₂, … on a common domain A and their limit function f (p. 288)" },
+            { "tex": "x", "means": "any argument value in A (p. 288)" },
+            { "tex": "\\varepsilon", "means": "any given positive number (p. 288)" },
+            { "tex": "n_0", "means": "number beyond which the inequality holds; for uniform convergence chosen without knowing x (p. 288)" },
+            { "tex": "n", "means": "index of the function (p. 288)" }
+          ] },
+        { "eq": "∫ₐᵇ lim fₙ dx = lim ∫ₐᵇ fₙ dx  when fₙ → f uniformly", "tex": "\\int_a^b \\lim_{n\\to\\infty} f_n(x)\\,dx = \\lim_{n\\to\\infty} \\int_a^b f_n(x)\\,dx", "note": "the swap that uniform convergence allows", "ref": "p. 288",
+          "where": [
+            { "tex": "f_n,\\ f", "means": "functions f₁, f₂, … on a common domain A and their limit function f (p. 288)" },
+            { "tex": "a,\\ b", "means": "integration limits in A (p. 288)" },
+            { "tex": "x", "means": "argument value (p. 288)" },
+            { "tex": "n", "means": "index of the function (p. 288)" }
+          ] }
       ],
       "practice": [
         { "question": "How high is the bump φ₂ at t = 0?", "source": "Taschner, p. 286: 2.605…", "answer": 2.605, "unit": "", "tolerance": 0.001, "compute": { "law": "bumpPeak", "n": 2 }, "solution": "φ₂(0) = c₂ e^(−4), with c₂ from ∫ φ₂ = 1; the script gives the maximum 2.605…, against 0.828… for φ₁ and 9.424… for φ₄." }
@@ -131,10 +248,24 @@
       "idea": "Each linear equation in x and y is a line. Two lines meet in one point exactly when the determinant is not zero; then Cramer's rule gives the point as quotients of determinants.",
       "law": "x = det(b, a₂)/det(a₁, a₂),  y = det(a₁, b)/det(a₁, a₂)",
       "lawTex": "x = \\frac{\\begin{vmatrix} b_1 & a_{12} \\\\ b_2 & a_{22} \\end{vmatrix}}{\\begin{vmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{vmatrix}}, \\qquad y = \\frac{\\begin{vmatrix} a_{11} & b_1 \\\\ a_{21} & b_2 \\end{vmatrix}}{\\begin{vmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{vmatrix}}",
+      "lawWhere": [
+        { "tex": "x,\\ y", "means": "the two unknowns of a system of two linear equations (§ 59; the system itself is not on p. 336: not defined in the source page cited)" },
+        { "tex": "a_{11},\\ a_{12},\\ a_{21},\\ a_{22}", "means": "entries of the determinant; a_{km} is read \"a-one-two\", row k and column m (p. 336)" },
+        { "tex": "b_1,\\ b_2", "means": "right-hand sides of the two equations (not defined in the source; Cramer's rule p. 400 writes w)" }
+      ],
       "lecture": "Taschner, § 59, p. 336, and p. 400",
       "equations": [
-        { "eq": "|a11 a12; a21 a22| = a11 a22 − a12 a21", "tex": "\\begin{vmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{vmatrix} = a_{11}a_{22} - a_{12}a_{21}", "note": "the two-row determinant, the sum over the two orders of 1, 2 with their signs", "ref": "§ 59, p. 336" },
-        { "eq": "x_m = vol(…, u_{m−1}, w, u_{m+1}, …)/vol(u₁, u₂, …, u_n)", "tex": "x_m = \\frac{\\operatorname{vol}(\\dots, u_{m-1}, w, u_{m+1}, \\dots)}{\\operatorname{vol}(u_1, u_2, \\dots, u_n)}", "note": "Cramer's rule: replace the m-th column by the right-hand side", "ref": "p. 400" }
+        { "eq": "|a11 a12; a21 a22| = a11 a22 − a12 a21", "tex": "\\begin{vmatrix} a_{11} & a_{12} \\\\ a_{21} & a_{22} \\end{vmatrix} = a_{11}a_{22} - a_{12}a_{21}", "note": "the two-row determinant, the sum over the two orders of 1, 2 with their signs", "ref": "§ 59, p. 336",
+          "where": [
+            { "tex": "a_{11},\\ a_{12},\\ a_{21},\\ a_{22}", "means": "entries of the determinant; a_{km} is read \"a-one-two\", row k and column m (p. 336)" }
+          ] },
+        { "eq": "x_m = vol(…, u_{m−1}, w, u_{m+1}, …)/vol(u₁, u₂, …, u_n)", "tex": "x_m = \\frac{\\operatorname{vol}(\\dots, u_{m-1}, w, u_{m+1}, \\dots)}{\\operatorname{vol}(u_1, u_2, \\dots, u_n)}", "note": "Cramer's rule: replace the m-th column by the right-hand side", "ref": "p. 400",
+          "where": [
+            { "tex": "x_m", "means": "m-th component of w in the basis u₁, …, uₙ, for m from 1 to n (p. 400)" },
+            { "tex": "\\operatorname{vol}", "means": "oriented volume (orientierter Inhalt) of n vectors (p. 400)" },
+            { "tex": "u_1,\\ u_2,\\ \\dots,\\ u_n", "means": "the basis of the vector space (p. 400)" },
+            { "tex": "w", "means": "the vector whose components are sought, w = x₁u₁ + … + xₙuₙ; it replaces u_m (p. 400)" }
+          ] }
       ],
       "practice": [
         { "question": "Solve 2x + y = 5, x + 3y = 10. What is x?", "source": "Worked by hand with Cramer's rule, Taschner p. 400", "answer": 1, "unit": "", "compute": { "law": "cramerX", "A": [[2, 1], [1, 3]], "b": [5, 10] }, "solution": "det = 2·3 − 1·1 = 5; x = (5·3 − 1·10)/5 = 5/5 = 1, and y = (2·10 − 5·1)/5 = 3." }
@@ -146,11 +277,32 @@
       "idea": "A symmetric matrix turns the unit circle into an ellipse. Along two directions at right angles, the eigenvectors, it does not turn at all, only stretches, by the eigenvalues.",
       "law": "tan 2φ₀ = 2b/(a − c)",
       "lawTex": "\\tan 2\\varphi_0 = \\frac{2b}{a - c}",
+      "lawWhere": [
+        { "tex": "\\varphi_0", "means": "the acute angle that solves tan 2φ = 2b/(a − c), direction of the first eigenvector (p. 410)" },
+        { "tex": "a,\\ b,\\ c", "means": "coefficients of the quadratic form Q = aΔx² + 2bΔxΔy + cΔy² (p. 410)" }
+      ],
       "lecture": "Taschner, p. 410",
       "equations": [
-        { "eq": "Q(φ) = a cos²φ + 2b sin φ cos φ + c sin²φ", "tex": "Q(\\varphi) = a\\cos^2\\varphi + 2b\\sin\\varphi\\cos\\varphi + c\\sin^2\\varphi", "note": "the quadratic form on the unit vectors", "ref": "p. 410" },
-        { "eq": "∂Q/∂φ = 2b cos 2φ − (a − c) sin 2φ = 0  ⇒  tan 2φ₀ = 2b/(a − c)", "tex": "\\frac{\\partial Q}{\\partial\\varphi} = 2b\\cos 2\\varphi - (a - c)\\sin 2\\varphi = 0 \\;\\Rightarrow\\; \\tan 2\\varphi_0 = \\frac{2b}{a - c}", "note": "the stationary directions", "ref": "p. 410" },
-        { "eq": "λ = (f_Q(u)|u),  μ = (f_Q(w)|w),  w = u at 90°", "tex": "\\lambda = (f_Q(u) \\,|\\, u), \\qquad \\mu = (f_Q(w) \\,|\\, w)", "note": "the eigenvalues, with the eigenvectors u = cos φ₀ + j sin φ₀ and w at right angles", "ref": "p. 410", "explore": true }
+        { "eq": "Q(φ) = a cos²φ + 2b sin φ cos φ + c sin²φ", "tex": "Q(\\varphi) = a\\cos^2\\varphi + 2b\\sin\\varphi\\cos\\varphi + c\\sin^2\\varphi", "note": "the quadratic form on the unit vectors", "ref": "p. 410",
+          "where": [
+            { "tex": "Q(\\varphi)", "means": "the quadratic form on the unit vector v = cos φ + j sin φ (p. 410)" },
+            { "tex": "a,\\ b,\\ c", "means": "coefficients of the quadratic form Q = aΔx² + 2bΔxΔy + cΔy² (p. 410)" },
+            { "tex": "\\varphi", "means": "angle of the unit vector (p. 410)" }
+          ] },
+        { "eq": "∂Q/∂φ = 2b cos 2φ − (a − c) sin 2φ = 0  ⇒  tan 2φ₀ = 2b/(a − c)", "tex": "\\frac{\\partial Q}{\\partial\\varphi} = 2b\\cos 2\\varphi - (a - c)\\sin 2\\varphi = 0 \\;\\Rightarrow\\; \\tan 2\\varphi_0 = \\frac{2b}{a - c}", "note": "the stationary directions", "ref": "p. 410",
+          "where": [
+            { "tex": "\\frac{\\partial Q}{\\partial\\varphi}", "means": "derivative of Q with respect to φ, zero at the stationary values (p. 410)" },
+            { "tex": "a,\\ b,\\ c", "means": "coefficients of the quadratic form Q = aΔx² + 2bΔxΔy + cΔy² (p. 410)" },
+            { "tex": "\\varphi", "means": "angle of the unit vector (p. 410)" },
+            { "tex": "\\varphi_0", "means": "the acute angle that solves tan 2φ = 2b/(a − c), direction of the first eigenvector (p. 410)" }
+          ] },
+        { "eq": "λ = (f_Q(u)|u),  μ = (f_Q(w)|w),  w = u at 90°", "tex": "\\lambda = (f_Q(u) \\,|\\, u), \\qquad \\mu = (f_Q(w) \\,|\\, w)", "note": "the eigenvalues, with the eigenvectors u = cos φ₀ + j sin φ₀ and w at right angles", "ref": "p. 410", "explore": true,
+          "where": [
+            { "tex": "\\lambda,\\ \\mu", "means": "the eigenvalues (p. 410)" },
+            { "tex": "f_Q", "means": "the linear function belonging to the quadratic form Q (p. 410)" },
+            { "tex": "u,\\ w", "means": "the eigenvectors u = cos φ₀ + j sin φ₀ and w = u⊥ (p. 410)" },
+            { "tex": "(\\cdot \\,|\\, \\cdot)", "means": "scalar product, Q = (f_Q(v) | v) (p. 410)" }
+          ] }
       ],
       "practice": [
         { "question": "What is the larger eigenvalue of the matrix [[2, 1], [1, 2]]?", "source": "Worked by hand from Taschner p. 410", "answer": 3, "unit": "", "compute": { "law": "eigenLarger", "a": 2, "b": 1, "c": 2 }, "solution": "a = c, so φ₀ = 45°: Q(45°) = 2·½ + 2·1·½ + 2·½ = 3, and Q(135°) = 1." }
@@ -162,10 +314,26 @@
       "idea": "Integrate a holomorphic function once round a closed curve and you get zero. Only a point where the function is not holomorphic, inside the curve, can change that.",
       "law": "∮Γ f(z) dz = 0",
       "lawTex": "\\oint_\\Gamma f(z)\\,dz = 0",
+      "lawWhere": [
+        { "tex": "\\Gamma", "means": "closed curve in the simply connected region G (p. 493)" },
+        { "tex": "f(z)", "means": "function holomorphic on G (p. 493)" },
+        { "tex": "z", "means": "complex variable on Γ (p. 493)" }
+      ],
       "lecture": "Taschner, p. 493",
       "equations": [
-        { "eq": "f : G → ℂ holomorphic, G simply connected, Γ closed in G  ⇒  ∮Γ f(z) dz = 0", "tex": "f: G \\to \\mathbb{C} \\text{ holomorphic}, \\; G \\text{ simply connected}, \\; \\Gamma \\subset G \\text{ closed} \\;\\Rightarrow\\; \\oint_\\Gamma f(z)\\,dz = 0", "note": "Cauchy's integral theorem (Cauchyscher Integralsatz)", "ref": "p. 493" },
-        { "eq": "∮_{|z|=1} dz/z = 2πj", "tex": "\\oint_{|z|=1} \\frac{dz}{z} = 2\\pi\\mathrm{j}", "note": "round the pole of 1/z: z = e^(jt), dz = j e^(jt) dt", "ref": "derived" }
+        { "eq": "f : G → ℂ holomorphic, G simply connected, Γ closed in G  ⇒  ∮Γ f(z) dz = 0", "tex": "f: G \\to \\mathbb{C} \\text{ holomorphic}, \\; G \\text{ simply connected}, \\; \\Gamma \\subset G \\text{ closed} \\;\\Rightarrow\\; \\oint_\\Gamma f(z)\\,dz = 0", "note": "Cauchy's integral theorem (Cauchyscher Integralsatz)", "ref": "p. 493",
+          "where": [
+            { "tex": "f", "means": "holomorphic function f: G → ℂ (p. 493)" },
+            { "tex": "G", "means": "simply connected region (einfach zusammenhängendes Gebiet) (p. 493)" },
+            { "tex": "\\Gamma", "means": "closed curve lying in G (p. 493)" },
+            { "tex": "\\mathbb{C}", "means": "the complex numbers (p. 493 prints a plain C)" },
+            { "tex": "z", "means": "complex variable on Γ (p. 493)" }
+          ] },
+        { "eq": "∮_{|z|=1} dz/z = 2πj", "tex": "\\oint_{|z|=1} \\frac{dz}{z} = 2\\pi\\mathrm{j}", "note": "round the pole of 1/z: z = e^(jt), dz = j e^(jt) dt", "ref": "derived",
+          "where": [
+            { "tex": "z", "means": "complex variable on the unit circle |z| = 1 (derived here; Γ does not lie in a simply connected region where 1/z is holomorphic)" },
+            { "tex": "\\mathrm{j}", "means": "imaginary unit, j² = −1 (p. 94)" }
+          ] }
       ],
       "practice": [
         { "question": "Integrate f(z) = 1/z once round the unit circle, counter-clockwise. What is the imaginary part of the result?", "source": "Worked by hand", "answer": 6.2832, "unit": "", "compute": { "law": "contourIm", "f": "inverse", "z0": [0, 0], "R": 1 }, "solution": "z = e^(jt), dz = j e^(jt) dt, so dz/z = j dt and the integral is j · 2π: imaginary part 2π ≈ 6.283." }

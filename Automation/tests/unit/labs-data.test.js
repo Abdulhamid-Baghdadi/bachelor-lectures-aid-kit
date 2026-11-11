@@ -4,6 +4,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { solve, isRight } from "../../src/core/index.js";
+import { typeset } from "../../../kit/ui/math.js";
 
 const data = JSON.parse(readFileSync(new URL("../../data/labs.json", import.meta.url), "utf8"));
 
@@ -34,3 +35,19 @@ for (const lab of data.labs) {
     });
   }
 }
+
+// Under every equation, what each symbol means, from the lecture notes (asked for 11 Nov 2026). Right result by
+// definition: each entry names its symbol in LaTeX that typesets, and says what it means.
+test("every equation and main law lists its symbols, each typesetting and explained", () => {
+  for (const lab of data.labs) {
+    const lists = (lab.equations ?? []).filter(e => e.tex).map(e => [e.tex, e.where]);
+    if (lab.lawTex && !lab.equations?.some(e => e.tex === lab.lawTex)) lists.push([lab.lawTex, lab.lawWhere]);
+    for (const [tex, where] of lists) {
+      assert.ok(Array.isArray(where) && where.length, `${lab.id}: ${tex} has a where list`);
+      for (const s of where) {
+        assert.ok(s.tex && s.means, `${lab.id}: an entry under ${tex} has tex and means`);
+        assert.equal(typeset(s.tex).error, "", `${lab.id}: ${s.tex} typesets`);
+      }
+    }
+  }
+});

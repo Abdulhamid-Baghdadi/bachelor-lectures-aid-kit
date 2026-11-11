@@ -32,3 +32,21 @@ for (const lab of data.labs) {
     });
   }
 }
+
+// Under every equation a list of what its symbols mean (asked for 11 Nov 2026): each entry names its symbol in LaTeX
+// that typesets, and says what it means.
+test("every equation and every main law has a symbol list whose entries typeset", async () => {
+  const { typeset } = await import("../../../kit/ui/math.js");
+  for (const lab of data.labs) {
+    const lists = (lab.equations ?? []).map(e => [e.tex ?? e.eq, e.where]);
+    if (lab.lawWhere) lists.push([lab.lawTex, lab.lawWhere]);
+    else assert.ok((lab.equations ?? []).some(e => e.tex === lab.lawTex), `${lab.id}: the main law needs lawWhere or an equation that repeats it`);
+    for (const [tex, where] of lists) {
+      assert.ok(Array.isArray(where) && where.length, `${lab.id}: ${tex} has a "where" list`);
+      for (const s of where) {
+        assert.ok(s.tex && s.means, `${lab.id}: ${tex}: an entry has tex and means`);
+        assert.equal(typeset(s.tex).error, "", `${lab.id}: ${s.tex} typesets`);
+      }
+    }
+  }
+});

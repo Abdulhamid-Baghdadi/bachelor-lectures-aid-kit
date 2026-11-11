@@ -36,6 +36,27 @@ const watcher = typeof ResizeObserver === "function" ? new ResizeObserver(entrie
   }
 }) : null;
 
+/** Under an equation, what each of its symbols means (asked for 11 Nov 2026): "where", then each symbol typeset as in
+ *  the equation beside its meaning in plain words. list: [{ tex, means }]; none or empty gives null, so a caller can
+ *  pass an equation's list as it is. */
+export function symbolList(list) {
+  if (!Array.isArray(list) || !list.length) return null;
+  const dl = document.createElement("dl");
+  dl.className = "where";
+  const head = document.createElement("span");
+  head.className = "where-head";
+  head.textContent = "where";
+  dl.append(head);
+  for (const s of list) {
+    const row = document.createElement("div"), dt = document.createElement("dt"), dd = document.createElement("dd");
+    dt.append(math(s.tex));
+    dd.textContent = s.means;
+    row.append(dt, dd);
+    dl.append(row);
+  }
+  return dl;
+}
+
 /** An element showing tex as typeset mathematics. Inline it is a span; display: true sets it on its own line. A long
  *  equation scrolls inside its own box, never the page. If the LaTeX does not parse, the source is shown as it is with
  *  a note saying why, so a typo is seen and fixed rather than hidden. */

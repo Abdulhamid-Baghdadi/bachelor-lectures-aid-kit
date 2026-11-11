@@ -45,3 +45,24 @@ by me.
 - Left out of the Programming Lab:
   - Lists, binary search trees and hash tables are in the book but have no lab yet.
   - C++ `shared_ptr` and generational collectors are not covered, because none of the sources read covers them.
+
+## 11 Nov 2026: what each symbol means
+
+You asked for a list under every equation saying what each symbol means, the symbol typeset as in the equation (in
+the library labs and both lecture kits). `kit/ui/math.js` gained `symbolList` (the same file as the library's and the
+Master kit's); `kit/style.css` styles `.where`. In each lab: `where` on every equation, `lawWhere` where no equation
+repeats the main law, shown under the law, the Explore equations and in the Equations tab; one test per lab checks
+every entry has a meaning and typesets. Definitions from the lecture notes with pages; symbols they never define say
+"(not defined in the source)"; equations made only of words or numbers have no list.
+
+- All eleven labs done (Automation 222 equations, Electromagnetism 164, Semiconductors 98, Power 77, Telecommunications
+  68, Measurement 60, Signals 53, Relativity 26, Mathematics 23, Programming 14, Vector calculus 11). Every suite
+  passes; every lab checked in the browser (lists shown, nothing fails to typeset).
+- Fixed on the way, each checked against the page: monopole ref p. 124 (was p. 127); line lab's reflection factor now
+  "derived here from (5.120), p. 143"; delay-spread ref names the Übungsteil (exercise 25, p. 48); strain gauge eq.
+  3.74 p. 236 added; random lab (1.39) p. 18 (was p. 15); drive (6.90) uses the notes' q; telecommunications
+  CLAUDE.md gives the formulary's full path. Schrödl's page offset was already right.
+- New `SOURCE-ERRORS.md` at the kit root: 17 confirmed slips in the notes, 5 notation differences, one reported slip
+  (Gawlik p. 111) not confirmed.
+- Open: the heap lab counts from 0 and the factorial lab stops at 1! (the book: from 1, and at 0! = 1, pp. 288, 257).
+  Nothing committed.

@@ -4,6 +4,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { solve, isRight } from "../../src/core/index.js";
+import { typeset } from "../../../kit/ui/math.js";
 
 const data = JSON.parse(readFileSync(new URL("../../data/labs.json", import.meta.url), "utf8"));
 
@@ -32,3 +33,20 @@ for (const lab of data.labs) {
     });
   }
 }
+
+// Every equation and main law carries its "where" list (brief: kit where-brief), each symbol with a meaning taken from
+// the lecture notes and LaTeX that typesets. Right result by definition: a list entry without tex or means is incomplete.
+test("every equation's symbols are listed, and every listed symbol typesets", () => {
+  for (const lab of data.labs) {
+    const eqs = (lab.equations ?? []).filter(e => e.tex);
+    const lists = [...eqs.map(e => [e.tex, e.where]),
+      ...(eqs.some(e => e.tex === lab.lawTex) || !lab.lawTex ? [] : [["main law", lab.lawWhere]])];
+    for (const [where, list] of lists) {
+      assert.ok(Array.isArray(list) && list.length, `${lab.id}: ${where} has a where list`);
+      for (const s of list) {
+        assert.ok(s.tex && s.means, `${lab.id}: an entry under ${where} has tex and means`);
+        assert.equal(typeset(s.tex).error, "", `${lab.id}: ${s.tex} typesets`);
+      }
+    }
+  }
+});

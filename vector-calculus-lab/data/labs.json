@@ -47,25 +47,133 @@
           "tex": "\\int_\\alpha \\mathbf{F} \\bullet d\\mathbf{x} = \\int_a^b \\mathbf{F}(\\alpha(t)) \\bullet \\alpha'(t)\\,dt",
           "note": "the line integral of F along the path α: what the lab adds up, step by step",
           "ref": "ch. 9 § 2, p. 19",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\alpha",
+              "means": "integration path α : [a, b] → B, continuously differentiable (ch. 9 § 2, p. 19)"
+            },
+            {
+              "tex": "a,\\ b",
+              "means": "ends of the parameter interval [a, b] of the path α (p. 19)"
+            },
+            {
+              "tex": "t",
+              "means": "parameter of the path, running from a to b (p. 19)"
+            },
+            {
+              "tex": "\\mathbf{F}",
+              "means": "continuous vector field F : B → ℝⁿ on an open set B (p. 19)"
+            },
+            {
+              "tex": "d\\mathbf{x}",
+              "means": "formal line element dx = (dx₁, …, dxₙ), so F • dx = F₁ dx₁ + … + Fₙ dxₙ (ch. 9, p. 25)"
+            },
+            {
+              "tex": "\\bullet",
+              "means": "scalar product of two vectors (p. 19)"
+            },
+            {
+              "tex": "\\alpha'(t)",
+              "means": "tangent (velocity) vector of the path at t (p. 19)"
+            }
+          ]
         },
         {
           "eq": "F = ∇f  ⇔  ∫α F • dx path-independent  ⇔  ∮ F • dx = 0",
           "tex": "\\mathbf{F} = \\nabla f \\;\\Leftrightarrow\\; \\int_\\alpha \\mathbf{F} \\bullet d\\mathbf{x} \\text{ independent of the path} \\;\\Leftrightarrow\\; \\oint \\mathbf{F} \\bullet d\\mathbf{x} = 0",
           "note": "the main theorem on line integrals (Hauptsatz über Kurvenintegrale), on a domain G",
-          "ref": "ch. 9 § 2, p. 22"
+          "ref": "ch. 9 § 2, p. 22",
+          "where": [
+            {
+              "tex": "\\mathbf{F}",
+              "means": "continuous vector field F : B → ℝⁿ on an open set B (p. 19)"
+            },
+            {
+              "tex": "f",
+              "means": "continuously differentiable function with F = ∇f (p. 22)"
+            },
+            {
+              "tex": "\\nabla f",
+              "means": "gradient of f (ch. 9, p. 15)"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "integration path α : [a, b] → B, continuously differentiable (ch. 9 § 2, p. 19)"
+            },
+            {
+              "tex": "d\\mathbf{x}",
+              "means": "formal line element dx = (dx₁, …, dxₙ), so F • dx = F₁ dx₁ + … + Fₙ dxₙ (ch. 9, p. 25)"
+            },
+            {
+              "tex": "\\bullet",
+              "means": "scalar product of two vectors (p. 19)"
+            },
+            {
+              "tex": "\\oint",
+              "means": "line integral over a closed path, α(a) = α(b) (p. 22)"
+            }
+          ]
         },
         {
           "eq": "∫α ∇f • dx = f(α(b)) − f(α(a))",
           "tex": "\\int_\\alpha (\\nabla f) \\bullet d\\mathbf{x} = f(\\alpha(b)) - f(\\alpha(a))",
           "note": "a gradient field's integral is the difference of its potential f at the ends",
-          "ref": "ch. 9 § 2, p. 22"
+          "ref": "ch. 9 § 2, p. 22",
+          "where": [
+            {
+              "tex": "\\alpha",
+              "means": "integration path α : [a, b] → B, continuously differentiable (ch. 9 § 2, p. 19)"
+            },
+            {
+              "tex": "\\nabla f",
+              "means": "gradient of f, the vector of its partial derivatives; (df)ₓ(v) = ∇f(x) • v (ch. 9, p. 15)"
+            },
+            {
+              "tex": "d\\mathbf{x}",
+              "means": "formal line element dx = (dx₁, …, dxₙ), so F • dx = F₁ dx₁ + … + Fₙ dxₙ (ch. 9, p. 25)"
+            },
+            {
+              "tex": "\\bullet",
+              "means": "scalar product of two vectors (p. 19)"
+            },
+            {
+              "tex": "f",
+              "means": "continuously differentiable function on G whose gradient is F (main theorem on line integrals, p. 22)"
+            },
+            {
+              "tex": "a,\\ b",
+              "means": "ends of the parameter interval [a, b] of the path α (p. 19)"
+            }
+          ]
         },
         {
           "eq": "F = (−y, x, 0)/(x² + y²): ∮ round the origin = 2π",
           "tex": "\\mathbf{F} = \\Big(\\frac{-y}{x^2+y^2}, \\frac{x}{x^2+y^2}, 0\\Big): \\quad \\oint_{|\\mathbf{x}|=1} \\mathbf{F} \\bullet d\\mathbf{x} = 2\\pi",
           "note": "the vortex: curl-free, yet no gradient field on the plane without the origin",
-          "ref": "ch. 9 § 2, pp. 21–24"
+          "ref": "ch. 9 § 2, pp. 21–24",
+          "where": [
+            {
+              "tex": "\\mathbf{F}",
+              "means": "continuous vector field F : B → ℝⁿ on an open set B (p. 19)"
+            },
+            {
+              "tex": "x,\\ y",
+              "means": "Cartesian coordinates in the plane (p. 61)"
+            },
+            {
+              "tex": "d\\mathbf{x}",
+              "means": "formal line element dx = (dx₁, …, dxₙ), so F • dx = F₁ dx₁ + … + Fₙ dxₙ (ch. 9, p. 25)"
+            },
+            {
+              "tex": "\\bullet",
+              "means": "scalar product of two vectors (p. 19)"
+            },
+            {
+              "tex": "|\\mathbf{x}|=1",
+              "means": "the unit circle, run once anticlockwise: α(t) = (cos t, sin t, 0), 0 ≤ t ≤ 2π (p. 21)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -74,7 +182,13 @@
           "source": "Fritzsche (2003), chapter 9 § 2, example 2, p. 21",
           "answer": 6.2832,
           "unit": "",
-          "compute": { "law": "circulation", "field": "vortex", "cx": 0, "cy": 0, "R": 1 },
+          "compute": {
+            "law": "circulation",
+            "field": "vortex",
+            "cx": 0,
+            "cy": 0,
+            "R": 1
+          },
           "solution": "On α(t) = (cos t, sin t, 0), F(α(t)) • α'(t) = sin² t + cos² t = 1, so the integral is ∫₀^2π dt = 2π ≈ 6.283."
         },
         {
@@ -82,8 +196,45 @@
           "source": "Worked by hand from the main theorem, Fritzsche (2003), p. 22",
           "answer": -0.45,
           "unit": "",
-          "compute": { "law": "segmentIntegral", "field": "gradient", "p": [-1.2, -0.6], "q": [1.2, 0.9] },
+          "compute": {
+            "law": "segmentIntegral",
+            "field": "gradient",
+            "p": [
+              -1.2,
+              -0.6
+            ],
+            "q": [
+              1.2,
+              0.9
+            ]
+          },
           "solution": "f(q) − f(p) = (1.44 − 0.81) − (1.44 − 0.36) = 0.63 − 1.08 = −0.45, whatever the path."
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\alpha",
+          "means": "integration path α : [a, b] → B, continuously differentiable (ch. 9 § 2, p. 19)"
+        },
+        {
+          "tex": "\\nabla f",
+          "means": "gradient of f, the vector of its partial derivatives; (df)ₓ(v) = ∇f(x) • v (ch. 9, p. 15)"
+        },
+        {
+          "tex": "d\\mathbf{x}",
+          "means": "formal line element dx = (dx₁, …, dxₙ), so F • dx = F₁ dx₁ + … + Fₙ dxₙ (ch. 9, p. 25)"
+        },
+        {
+          "tex": "\\bullet",
+          "means": "scalar product of two vectors (p. 19)"
+        },
+        {
+          "tex": "f",
+          "means": "continuously differentiable function on G whose gradient is F (main theorem on line integrals, p. 22)"
+        },
+        {
+          "tex": "a,\\ b",
+          "means": "ends of the parameter interval [a, b] of the path α (p. 19)"
         }
       ]
     },
@@ -99,25 +250,157 @@
           "eq": "∮∂G F • dx = ∫G (g_x − f_y) dx dy,  F = (f, g)",
           "tex": "\\int_{\\partial G} \\mathbf{F} \\bullet d\\mathbf{x} = \\int_G (g_x - f_y)\\,dx\\,dy, \\qquad \\mathbf{F} = (f, g)",
           "note": "Green's theorem, for a Jordan domain G and F continuously differentiable round it; ∂G runs with G on its left",
-          "ref": "ch. 10 § 1, p. 61"
+          "ref": "ch. 10 § 1, p. 61",
+          "where": [
+            {
+              "tex": "\\partial G",
+              "means": "boundary of G, run through so that G always lies on the left (p. 61)"
+            },
+            {
+              "tex": "\\mathbf{F}",
+              "means": "continuous vector field F : B → ℝⁿ on an open set B (p. 19)"
+            },
+            {
+              "tex": "d\\mathbf{x}",
+              "means": "formal line element dx = (dx₁, …, dxₙ), so F • dx = F₁ dx₁ + … + Fₙ dxₙ (ch. 9, p. 25)"
+            },
+            {
+              "tex": "\\bullet",
+              "means": "scalar product of two vectors (p. 19)"
+            },
+            {
+              "tex": "G",
+              "means": "Jordan domain in ℝ²: a bounded domain whose boundary is a closed piecewise smooth curve (pp. 59–61)"
+            },
+            {
+              "tex": "g_x,\\ f_y",
+              "means": "partial derivatives ∂g/∂x and ∂f/∂y (p. 61)"
+            },
+            {
+              "tex": "f,\\ g",
+              "means": "components of the plane vector field F = (f, g) (p. 61)"
+            },
+            {
+              "tex": "x,\\ y",
+              "means": "Cartesian coordinates in the plane (p. 61)"
+            }
+          ]
         },
         {
           "eq": "∫S rot F • dO = ∫bS F • dx",
           "tex": "\\int_S \\mathbf{rot}\\,F \\bullet d\\mathbf{O} = \\int_{bS} F \\bullet d\\mathbf{x}",
           "note": "Stokes' theorem for a surface S in space with edge bS; for a flat S in the plane it is Green's theorem",
-          "ref": "ch. 10 § 3, p. 77"
+          "ref": "ch. 10 § 3, p. 77",
+          "where": [
+            {
+              "tex": "S",
+              "means": "(semi-regular) surface piece in ℝ³ with piecewise smooth boundary (p. 77)"
+            },
+            {
+              "tex": "\\mathbf{rot}\\,F",
+              "means": "rotation (curl) ∇ × F = ((F₃)_y − (F₂)_z, (F₁)_z − (F₃)_x, (F₂)_x − (F₁)_y) (ch. 9, p. 3)"
+            },
+            {
+              "tex": "\\bullet",
+              "means": "scalar product of two vectors (p. 19)"
+            },
+            {
+              "tex": "d\\mathbf{O}",
+              "means": "oriented surface element: ∫ F • dO = ∫_G F(φ(u, v)) • (φ_u × φ_v) du dv, the flux of F through S (p. 70)"
+            },
+            {
+              "tex": "bS",
+              "means": "boundary of the surface piece S: the image of ∂G under its parametrisation, without degenerate parts (pp. 75–76)"
+            },
+            {
+              "tex": "F",
+              "means": "continuously differentiable vector field on an open neighbourhood of S (p. 77)"
+            },
+            {
+              "tex": "d\\mathbf{x}",
+              "means": "formal line element dx = (dx₁, …, dxₙ), so F • dx = F₁ dx₁ + … + Fₙ dxₙ (ch. 9, p. 25)"
+            }
+          ]
         },
         {
           "eq": "w_F(x0, n) = lim ε→0 (1/A(S_ε)) ∫bS_ε F • dx = rot F • n",
           "tex": "w_F(\\mathbf{x}_0, \\mathbf{n}) = \\lim_{\\varepsilon \\to 0} \\frac{1}{A(S_\\varepsilon)} \\int_{bS_\\varepsilon} F \\bullet d\\mathbf{x} = \\mathbf{rot}\\,F \\bullet \\mathbf{n}",
           "note": "the circulation of a small disc per area, the vortex density (Wirbeldichte), is the curl along its normal",
-          "ref": "ch. 10 § 3, p. 79"
+          "ref": "ch. 10 § 3, p. 79",
+          "where": [
+            {
+              "tex": "w_F(\\mathbf{x}_0, \\mathbf{n})",
+              "means": "vortex density (Wirbeldichte) of F at x₀ with respect to n (p. 79)"
+            },
+            {
+              "tex": "\\mathbf{x}_0",
+              "means": "point at which the density is taken (pp. 79, 87)"
+            },
+            {
+              "tex": "\\mathbf{n}",
+              "means": "unit vector, normal to the small disc S_ε (p. 79)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "radius of the small disc or ball, shrunk to 0 (pp. 79, 87)"
+            },
+            {
+              "tex": "S_\\varepsilon",
+              "means": "disc of radius ε about x₀, perpendicular to n (p. 79)"
+            },
+            {
+              "tex": "A(S_\\varepsilon)",
+              "means": "area of S_ε, here ε²π (pp. 68, 80)"
+            },
+            {
+              "tex": "bS_\\varepsilon",
+              "means": "boundary circle of S_ε, run positively (p. 79)"
+            },
+            {
+              "tex": "F",
+              "means": "continuously differentiable vector field on an open neighbourhood of S (p. 77)"
+            },
+            {
+              "tex": "d\\mathbf{x}",
+              "means": "formal line element dx = (dx₁, …, dxₙ), so F • dx = F₁ dx₁ + … + Fₙ dxₙ (ch. 9, p. 25)"
+            },
+            {
+              "tex": "\\bullet",
+              "means": "scalar product of two vectors (p. 19)"
+            },
+            {
+              "tex": "\\mathbf{rot}\\,F",
+              "means": "rotation (curl) ∇ × F = ((F₃)_y − (F₂)_z, (F₁)_z − (F₃)_x, (F₂)_x − (F₁)_y) (ch. 9, p. 3)"
+            }
+          ]
         },
         {
           "eq": "v₂(G) = ½ ∮∂G (x dy − y dx)",
           "tex": "v_2(G) = \\frac{1}{2} \\int_{\\partial G} (x\\,dy - y\\,dx)",
           "note": "Green's theorem gives the area of G from its edge alone: the rotation field (−y, x) has curl 2",
-          "ref": "ch. 10 § 1, p. 63"
+          "ref": "ch. 10 § 1, p. 63",
+          "where": [
+            {
+              "tex": "v_2(G)",
+              "means": "area (two-dimensional Jordan content) of G (ch. 9, p. 27; ch. 10, p. 63)"
+            },
+            {
+              "tex": "G",
+              "means": "Jordan domain in ℝ²: a bounded domain whose boundary is a closed piecewise smooth curve (pp. 59–61)"
+            },
+            {
+              "tex": "\\partial G",
+              "means": "boundary of G, run through so that G always lies on the left (p. 61)"
+            },
+            {
+              "tex": "x,\\ y",
+              "means": "Cartesian coordinates in the plane (p. 61)"
+            },
+            {
+              "tex": "dx,\\ dy",
+              "means": "differentials of the coordinates: the 1-form x dy − y dx (p. 63)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -126,8 +409,48 @@
           "source": "Worked by hand from Fritzsche (2003), p. 63, example 1: v₂ of the disc is πr²",
           "answer": 6.2832,
           "unit": "",
-          "compute": { "law": "circulation", "field": "rotation", "cx": 0, "cy": 0, "R": 1 },
+          "compute": {
+            "law": "circulation",
+            "field": "rotation",
+            "cx": 0,
+            "cy": 0,
+            "R": 1
+          },
           "solution": "By Green, ∮ F • dx = ∫ (g_x − f_y) dx dy = ∫ 2 dx dy = 2 · π · 1² = 2π ≈ 6.283. Fritzsche's p. 63 has ½ ∮ (x dy − y dx) = πr²."
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\partial G",
+          "means": "boundary of G, run through so that G always lies on the left (p. 61)"
+        },
+        {
+          "tex": "\\mathbf{F}",
+          "means": "continuous vector field F : B → ℝⁿ on an open set B (p. 19)"
+        },
+        {
+          "tex": "d\\mathbf{x}",
+          "means": "formal line element dx = (dx₁, …, dxₙ), so F • dx = F₁ dx₁ + … + Fₙ dxₙ (ch. 9, p. 25)"
+        },
+        {
+          "tex": "\\bullet",
+          "means": "scalar product of two vectors (p. 19)"
+        },
+        {
+          "tex": "G",
+          "means": "Jordan domain in ℝ²: a bounded domain whose boundary is a closed piecewise smooth curve (pp. 59–61)"
+        },
+        {
+          "tex": "g_x,\\ f_y",
+          "means": "partial derivatives ∂g/∂x and ∂f/∂y (p. 61)"
+        },
+        {
+          "tex": "f,\\ g",
+          "means": "components of the plane vector field F = (f, g) (p. 61)"
+        },
+        {
+          "tex": "x,\\ y",
+          "means": "Cartesian coordinates in the plane (p. 61)"
         }
       ]
     },
@@ -143,20 +466,106 @@
           "eq": "∫Ω div F dV₃ = ∫∂Ω F • dO",
           "tex": "\\int_\\Omega \\mathbf{div}\\,F\\,dV_3 = \\int_{\\partial\\Omega} F \\bullet d\\mathbf{O}",
           "note": "Gauss's theorem, for a domain Ω with piecewise smooth boundary and F continuously differentiable round it",
-          "ref": "ch. 10 § 4, p. 85"
+          "ref": "ch. 10 § 4, p. 85",
+          "where": [
+            {
+              "tex": "\\Omega",
+              "means": "bounded domain in ℝ³ with piecewise smooth boundary (pp. 82, 85)"
+            },
+            {
+              "tex": "\\mathbf{div}\\,F",
+              "means": "divergence ∂F₁/∂x + ∂F₂/∂y + ∂F₃/∂z (p. 85)"
+            },
+            {
+              "tex": "dV_3",
+              "means": "volume element of the triple integral over Ω (ch. 9, p. 31)"
+            },
+            {
+              "tex": "\\partial\\Omega",
+              "means": "closed boundary surface of Ω, ∂Ω = S₁ ∪ … ∪ S_N, normals pointing outwards (p. 85)"
+            },
+            {
+              "tex": "F",
+              "means": "continuously differentiable vector field on an open neighbourhood of S (p. 77)"
+            },
+            {
+              "tex": "\\bullet",
+              "means": "scalar product of two vectors (p. 19)"
+            },
+            {
+              "tex": "d\\mathbf{O}",
+              "means": "oriented surface element: ∫ F • dO = ∫_G F(φ(u, v)) • (φ_u × φ_v) du dv, the flux of F through S (p. 70)"
+            }
+          ]
         },
         {
           "eq": "div F = ∂F1/∂x + ∂F2/∂y + ∂F3/∂z",
           "tex": "\\mathbf{div}\\,F = \\frac{\\partial F_1}{\\partial x} + \\frac{\\partial F_2}{\\partial y} + \\frac{\\partial F_3}{\\partial z}",
           "note": "the divergence of a field in space",
           "ref": "ch. 10 § 4, p. 85",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\mathbf{div}\\,F",
+              "means": "divergence ∂F₁/∂x + ∂F₂/∂y + ∂F₃/∂z (p. 85)"
+            },
+            {
+              "tex": "F_1,\\ F_2,\\ F_3",
+              "means": "components of the vector field F in ℝ³ (p. 85)"
+            },
+            {
+              "tex": "x,\\ y,\\ z",
+              "means": "Cartesian coordinates in ℝ³ (p. 85)"
+            }
+          ]
         },
         {
           "eq": "δ_F(x0) = lim ε→0 (1/v₃(B_ε)) ∫∂B_ε F • dO = div F(x0)",
           "tex": "\\delta_F(\\mathbf{x}_0) = \\lim_{\\varepsilon \\to 0} \\frac{1}{v_3(B_\\varepsilon)} \\int_{\\partial B_\\varepsilon} F \\bullet d\\mathbf{O} = \\mathbf{div}\\,F(\\mathbf{x}_0)",
           "note": "the flux out of a small ball per volume, the source density (Quelldichte), is the divergence",
-          "ref": "ch. 10 § 4, p. 87"
+          "ref": "ch. 10 § 4, p. 87",
+          "where": [
+            {
+              "tex": "\\delta_F(\\mathbf{x}_0)",
+              "means": "source density (Quelldichte) of F at x₀ (p. 87)"
+            },
+            {
+              "tex": "\\mathbf{x}_0",
+              "means": "point at which the density is taken (pp. 79, 87)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "radius of the small disc or ball, shrunk to 0 (pp. 79, 87)"
+            },
+            {
+              "tex": "B_\\varepsilon",
+              "means": "ball of radius ε about x₀ (p. 87)"
+            },
+            {
+              "tex": "v_3(B_\\varepsilon)",
+              "means": "volume (three-dimensional Jordan content) of B_ε (ch. 9, p. 27; p. 87)"
+            },
+            {
+              "tex": "\\partial B_\\varepsilon",
+              "means": "sphere bounding B_ε, normals outwards (p. 87)"
+            },
+            {
+              "tex": "F",
+              "means": "continuously differentiable vector field on an open neighbourhood of S (p. 77)"
+            },
+            {
+              "tex": "d\\mathbf{O}",
+              "means": "oriented surface element: ∫ F • dO = ∫_G F(φ(u, v)) • (φ_u × φ_v) du dv, the flux of F through S (p. 70)"
+            },
+            {
+              "tex": "\\bullet",
+              "means": "scalar product of two vectors (p. 19)"
+            },
+            {
+              "tex": "\\mathbf{div}\\,F",
+              "means": "divergence ∂F₁/∂x + ∂F₂/∂y + ∂F₃/∂z (p. 85)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -165,7 +574,13 @@
           "source": "Worked by hand from Gauss's theorem, Fritzsche (2003), p. 85",
           "answer": 8.3776,
           "unit": "",
-          "compute": { "law": "sphereFlux", "field": "source", "cx": 0, "cy": 0, "R": 1 },
+          "compute": {
+            "law": "sphereFlux",
+            "field": "source",
+            "cx": 0,
+            "cy": 0,
+            "R": 1
+          },
           "solution": "div F = 1 + 1 + 0 = 2 everywhere, so the flux is 2 times the volume of the ball: 2 · (4/3)π · 1³ = 8π/3 ≈ 8.378."
         }
       ]

@@ -103,7 +103,7 @@ export default {
     const s4 = h("div", { class: "stage" }, c4, h("div", { class: "controls" },
       slider({ label: "Sample time Ta", unit: "s", min: 0.001, max: 0.4, value: st.Ta, log: true, format: ms, onInput: v => { st.Ta = v; digital(); } }),
       rW.el, rGap.el,
-      h("p", { class: "hint" }, "Beyond the notes' example: the controller (5.42) and the prefilter become R(z) and F(z) by s = (2/Ta)(z − 1)/(z + 1) (6.90), run every Ta and held in between, on the continuous drive. A few milliseconds change nothing; near Ta = 0.1 s the loop starts to ring. Compare the warped crossover with ωC: it drifts as ωTa grows.")));
+      h("p", { class: "hint" }, "Beyond the notes' example: the controller (5.42) and the prefilter become R(z) and F(z) by putting q = (2/Ta)(z − 1)/(z + 1) (6.90) in place of s, run every Ta and held in between, on the continuous drive. A few milliseconds change nothing; near Ta = 0.1 s the loop starts to ring. Compare the warped crossover with ωC: it drifts as ωTa grows.")));
 
     const all = () => { shape(); loop(); digital(); };
     root.append(tabs("Steps of the worked example", [["1 · Plant", s1], ["2 · Controller", s2], ["3 · Closed loop", s3], ["4 · Digital", s4]]));

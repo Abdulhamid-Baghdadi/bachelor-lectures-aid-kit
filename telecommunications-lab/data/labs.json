@@ -97,6 +97,28 @@
       "idea": "A sample rounded to one of M = 2ⁿ levels carries an error of up to half a step; each extra bit halves the step and buys 6 dB of signal-to-quantisation-noise ratio, until bit errors in the channel take over.",
       "law": "SNQR = 3 · 2²ⁿ / α, i.e. 4.8 + 6n − α_dB",
       "lawTex": "\\mathrm{SNQR} = \\frac{3 \\cdot 2^{2n}}{\\alpha}, \\qquad \\mathrm{SNQR}_\\mathrm{dB} = 4.8 + 6n - \\alpha_\\mathrm{dB}",
+      "lawWhere": [
+        {
+          "tex": "\\mathrm{SNQR}",
+          "means": "signal-to-quantisation-noise ratio, signal power over quantisation-noise power (set 2, slide 35)"
+        },
+        {
+          "tex": "n",
+          "means": "bits per codeword, n = ld M (set 2, slide 46)"
+        },
+        {
+          "tex": "\\alpha",
+          "means": "ratio of peak to mean signal power, m_max²/E[m²] (set 2, slide 46)"
+        },
+        {
+          "tex": "\\mathrm{SNQR}_\\mathrm{dB}",
+          "means": "SNQR in decibels, 10 log SNQR (set 2, slide 46)"
+        },
+        {
+          "tex": "\\alpha_\\mathrm{dB}",
+          "means": "α in decibels: 3 dB for a sine, 10 dB for speech (set 2, slide 47)"
+        }
+      ],
       "lecture": "Goiser (2016), set 2, slides 32–52",
       "equations": [
         {
@@ -104,38 +126,146 @@
           "tex": "\\text{levels } \\pm\\frac{\\Delta}{2}, \\pm\\frac{3\\Delta}{2}, \\dots, \\pm\\frac{(M-1)\\Delta}{2}, \\qquad A_\\mathrm{OL} = \\frac{M\\Delta}{2}",
           "note": "the uniform mid-rise quantiser",
           "ref": "set 2, slides 35–37",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\Delta",
+              "means": "step between quantisation thresholds [V] (set 2, slide 35)"
+            },
+            {
+              "tex": "M",
+              "means": "number of quantisation levels (set 2, slide 35)"
+            },
+            {
+              "tex": "A_\\mathrm{OL}",
+              "means": "overload amplitude, the end of the quantiser's range [V] (set 2, slide 37)"
+            }
+          ]
         },
         {
           "eq": "E[e_q²] = Δ²/12",
           "tex": "\\operatorname{E}[e_\\mathrm{q}^2] = \\frac{\\Delta^2}{12}",
           "note": "the error, uniform over one step",
-          "ref": "set 2, slide 39"
+          "ref": "set 2, slide 39",
+          "where": [
+            {
+              "tex": "\\operatorname{E}",
+              "means": "expected value, the mean"
+            },
+            {
+              "tex": "e_\\mathrm{q}",
+              "means": "quantisation error, e_q = s − s_q [V] (set 2, slides 35–36)"
+            },
+            {
+              "tex": "\\Delta",
+              "means": "step between quantisation thresholds [V] (set 2, slide 35)"
+            }
+          ]
         },
         {
           "eq": "SNQR = E[m²]/E[e_q²] = M² − 1",
           "tex": "\\mathrm{SNQR} = \\frac{\\operatorname{E}[m^2]}{\\operatorname{E}[e_\\mathrm{q}^2]} = M^2 - 1",
           "note": "all levels equally likely",
-          "ref": "set 2, slide 39"
+          "ref": "set 2, slide 39",
+          "where": [
+            {
+              "tex": "\\mathrm{SNQR}",
+              "means": "signal-to-quantisation-noise ratio, signal power over quantisation-noise power (set 2, slide 35)"
+            },
+            {
+              "tex": "\\operatorname{E}",
+              "means": "expected value, the mean"
+            },
+            {
+              "tex": "m",
+              "means": "quantised signal level [V] (set 2, slide 37; slide 35 calls m the value of a threshold)"
+            },
+            {
+              "tex": "e_\\mathrm{q}",
+              "means": "quantisation error [V] (set 2, slide 36)"
+            },
+            {
+              "tex": "M",
+              "means": "number of quantisation levels (set 2, slide 35)"
+            }
+          ]
         },
         {
           "eq": "SNQR_dB = 4.8 + 6n − α_dB, α = m_max²/E[m²]",
           "tex": "\\mathrm{SNQR}_\\mathrm{dB} = 4.8 + 6n - \\alpha_\\mathrm{dB}, \\qquad \\alpha = \\frac{m_\\mathrm{max}^2}{\\operatorname{E}[m^2]}",
           "note": "linear PCM with n bits; α = 2 for a sine, 10 for speech, 16 for Gaussian noise",
-          "ref": "set 2, slides 46–47"
+          "ref": "set 2, slides 46–47",
+          "where": [
+            {
+              "tex": "\\mathrm{SNQR}_\\mathrm{dB}",
+              "means": "SNQR in decibels, 10 log SNQR (set 2, slide 46)"
+            },
+            {
+              "tex": "n",
+              "means": "bits per codeword, n = ld M (set 2, slide 46)"
+            },
+            {
+              "tex": "\\alpha_\\mathrm{dB}",
+              "means": "α in decibels (set 2, slide 47)"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "ratio of peak to mean signal power (set 2, slide 46)"
+            },
+            {
+              "tex": "m_\\mathrm{max}",
+              "means": "peak signal level [V] (set 2, slide 46)"
+            },
+            {
+              "tex": "m",
+              "means": "quantised signal level [V] (set 2, slide 37)"
+            },
+            {
+              "tex": "\\operatorname{E}",
+              "means": "expected value, the mean"
+            }
+          ]
         },
         {
           "eq": "SNR_out = SNQR / (1 + 4 · SNQR · Pe)",
           "tex": "\\mathrm{SNR}_\\mathrm{out} = \\frac{\\mathrm{SNQR}}{1 + 4 \\cdot \\mathrm{SNQR} \\cdot P_\\mathrm{e}}",
           "note": "with bit errors of probability Pe, one per word at most",
           "ref": "set 2, slide 50",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\mathrm{SNR}_\\mathrm{out}",
+              "means": "signal-to-noise ratio after decoding, quantisation and bit-error noise together (set 2, slide 50)"
+            },
+            {
+              "tex": "\\mathrm{SNQR}",
+              "means": "signal-to-quantisation-noise ratio, signal power over quantisation-noise power (set 2, slide 35)"
+            },
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "bit error probability of the channel (set 2, slide 50)"
+            }
+          ]
         },
         {
           "eq": "R_b = f_s · n; PCM30: 32 · 64 kbit/s = 2.048 Mbit/s",
           "tex": "R_\\mathrm{b} = f_\\mathrm{s}\\, n, \\qquad \\text{PCM30: } 32 \\cdot 64\\,\\mathrm{kbit/s} = 2.048\\,\\mathrm{Mbit/s}",
           "note": "bit rate; the European primary multiplex",
-          "ref": "set 2, slides 60, 63"
+          "ref": "set 2, slides 60, 63",
+          "where": [
+            {
+              "tex": "R_\\mathrm{b}",
+              "means": "bit rate [bit/s] (set 2, slide 60)"
+            },
+            {
+              "tex": "f_\\mathrm{s}",
+              "means": "sampling frequency [Hz], 8 kHz for speech (set 2, slide 60)"
+            },
+            {
+              "tex": "n",
+              "means": "bits per sample (set 2, slide 60)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -186,31 +316,141 @@
       "idea": "A rare symbol tells more than a common one. Give the common symbols short codewords and the rare ones long: Huffman's code comes within one bit of the entropy, the least any code can average.",
       "law": "H = −Σ p ld p ≤ L = Σ p l",
       "lawTex": "H = -\\sum_m p_m \\operatorname{ld} p_m \\le L = \\sum_m p_m l_m",
+      "lawWhere": [
+        {
+          "tex": "H",
+          "means": "entropy of the source, H(X) [bit/symbol] (set 5, slide 32)"
+        },
+        {
+          "tex": "p_m",
+          "means": "probability of symbol m (set 5, slide 32)"
+        },
+        {
+          "tex": "\\operatorname{ld}",
+          "means": "logarithm to base 2 (set 5, slide 30)"
+        },
+        {
+          "tex": "L",
+          "means": "mean codeword length [binary digits/symbol] (set 5, slide 40)"
+        },
+        {
+          "tex": "l_m",
+          "means": "length of the codeword of symbol m [binary digits]; slide 40 uses it without defining it"
+        },
+        {
+          "tex": "m",
+          "means": "symbol index, 1 … M"
+        }
+      ],
       "lecture": "Goiser (2016), set 5, slides 26–64",
       "equations": [
         {
           "eq": "I = −ld p [bit]",
           "tex": "I = -\\operatorname{ld} p \\quad [\\mathrm{bit}]",
           "note": "information content of a symbol",
-          "ref": "set 5, slide 30"
+          "ref": "set 5, slide 30",
+          "where": [
+            {
+              "tex": "I",
+              "means": "information content of a symbol [bit] (set 5, slide 30, I_m(X))"
+            },
+            {
+              "tex": "p",
+              "means": "probability of the symbol (set 5, slide 30, p_m)"
+            },
+            {
+              "tex": "\\operatorname{ld}",
+              "means": "logarithm to base 2 (set 5, slide 30)"
+            }
+          ]
         },
         {
           "eq": "H(X) = −Σ p_m ld p_m [bit/symbol], 0 ≤ H ≤ ld M",
           "tex": "H(X) = -\\sum_{m=1}^{M} p_m \\operatorname{ld} p_m \\quad [\\mathrm{bit/symbol}], \\qquad 0 \\le H(X) \\le \\operatorname{ld} M",
           "note": "entropy of a memoryless source; ld M for equal probabilities",
-          "ref": "set 5, slides 32, 34"
+          "ref": "set 5, slides 32, 34",
+          "where": [
+            {
+              "tex": "H(X)",
+              "means": "entropy: the mean information content of the memoryless source X [bit/symbol] (set 5, slide 32)"
+            },
+            {
+              "tex": "p_m",
+              "means": "probability of symbol m (set 5, slide 32)"
+            },
+            {
+              "tex": "m",
+              "means": "symbol index, 1 … M"
+            },
+            {
+              "tex": "M",
+              "means": "number of symbols of the source (set 5, slide 34)"
+            },
+            {
+              "tex": "\\operatorname{ld}",
+              "means": "logarithm to base 2 (set 5, slide 30)"
+            }
+          ]
         },
         {
           "eq": "R = ld M − H(X)",
           "tex": "R = \\operatorname{ld} M - H(X)",
           "note": "redundancy",
-          "ref": "set 5, slide 35"
+          "ref": "set 5, slide 35",
+          "where": [
+            {
+              "tex": "R",
+              "means": "redundancy [bit/symbol] (set 5, slide 35)"
+            },
+            {
+              "tex": "M",
+              "means": "number of symbols of the source"
+            },
+            {
+              "tex": "H(X)",
+              "means": "entropy of the source [bit/symbol] (set 5, slide 32)"
+            },
+            {
+              "tex": "\\operatorname{ld}",
+              "means": "logarithm to base 2 (set 5, slide 30)"
+            }
+          ]
         },
         {
           "eq": "L = Σ p_m l_m, η = H/L",
           "tex": "L = \\sum_{m=1}^{M} p_m l_m, \\qquad \\eta = \\frac{H}{L}",
           "note": "mean codeword length and code efficiency",
-          "ref": "set 5, slide 40"
+          "ref": "set 5, slide 40",
+          "where": [
+            {
+              "tex": "L",
+              "means": "mean codeword length [binary digits/symbol] (set 5, slide 40)"
+            },
+            {
+              "tex": "p_m",
+              "means": "probability of symbol m"
+            },
+            {
+              "tex": "l_m",
+              "means": "length of the codeword of symbol m [binary digits]; slide 40 uses it without defining it"
+            },
+            {
+              "tex": "m",
+              "means": "symbol index, 1 … M"
+            },
+            {
+              "tex": "M",
+              "means": "number of symbols"
+            },
+            {
+              "tex": "\\eta",
+              "means": "code efficiency H/L (set 5, slide 40, which first writes η = H/H_max)"
+            },
+            {
+              "tex": "H",
+              "means": "entropy H(X) [bit/symbol]"
+            }
+          ]
         },
         {
           "eq": "merge the two least likely, sort back in, label 0 above and 1 below",
@@ -264,44 +504,170 @@
       "idea": "How bits become a voltage decides the spectrum: unipolar codes waste power in a DC line, return-to-zero doubles the bandwidth but gives a clock line, and Manchester and AMI put a null at DC so the line can be AC-coupled.",
       "law": "G(f) = p(1 − p)/T0 · |F1(f) − F0(f)|² + lines at n/T0",
       "lawTex": "G(f) = \\frac{p(1-p)}{T_0} \\big|F_1(f) - F_0(f)\\big|^2 + \\text{lines at } n f_0",
+      "lawWhere": [
+        {
+          "tex": "G(f)",
+          "means": "power spectral density of the line signal (set 3, slide 47)"
+        },
+        {
+          "tex": "p",
+          "means": "probability of the symbol \"1\" (set 3, slide 47)"
+        },
+        {
+          "tex": "T_0",
+          "means": "symbol duration [s], R_s = 1/T_0 (set 4, slide 24)"
+        },
+        {
+          "tex": "F_1(f),\\ F_0(f)",
+          "means": "amplitude spectra of the pulses for \"1\" and \"0\" (set 3, slide 47)"
+        },
+        {
+          "tex": "n",
+          "means": "index of a spectral line, any whole number"
+        },
+        {
+          "tex": "f_0",
+          "means": "symbol rate 1/T_0 [Hz] (set 3, slide 47)"
+        },
+        {
+          "tex": "f",
+          "means": "frequency [Hz]"
+        }
+      ],
       "lecture": "Goiser (2016), set 3, slides 45–62",
       "equations": [
         {
           "eq": "G(f) = p(1 − p)/T0 |F1(f) − F0(f)|² + 1/T0² Σ |p F1(n/T0) + (1 − p) F0(n/T0)|² δ(f − n/T0)",
           "tex": "G(f) = \\frac{p(1-p)}{T_0} \\big|F_1(f) - F_0(f)\\big|^2 + \\frac{1}{T_0^2} \\sum_{n=-\\infty}^{\\infty} \\big|p F_1(n f_0) + (1-p) F_0(n f_0)\\big|^2 \\delta(f - n f_0), \\qquad f_0 = \\frac{1}{T_0}",
           "note": "power spectral density of independent binary symbols",
-          "ref": "set 3, slide 47"
+          "ref": "set 3, slide 47",
+          "where": [
+            {
+              "tex": "G(f)",
+              "means": "power spectral density of the line signal (set 3, slide 47)"
+            },
+            {
+              "tex": "p",
+              "means": "probability of the symbol \"1\" (set 3, slide 47)"
+            },
+            {
+              "tex": "T_0",
+              "means": "symbol duration [s] (set 3, slide 51)"
+            },
+            {
+              "tex": "F_1(f),\\ F_0(f)",
+              "means": "amplitude spectra of the pulses for \"1\" and \"0\" (set 3, slide 47)"
+            },
+            {
+              "tex": "n",
+              "means": "index of a spectral line, any whole number"
+            },
+            {
+              "tex": "f_0",
+              "means": "symbol rate 1/T_0 [Hz] (set 3, slide 47)"
+            },
+            {
+              "tex": "\\delta",
+              "means": "Dirac impulse (formulary, eq. 1)"
+            },
+            {
+              "tex": "f",
+              "means": "frequency [Hz]"
+            }
+          ]
         },
         {
           "eq": "NRZ: pulse for the whole bit; RZ: for half of it",
           "tex": "\\text{NRZ: } T_x = T_0, \\qquad \\text{RZ: } T_x = \\frac{T_0}{2}",
           "note": "RZ needs twice the bandwidth and has a line at the bit rate",
-          "ref": "set 3, slides 51–52"
+          "ref": "set 3, slides 51–52",
+          "where": [
+            {
+              "tex": "T_x",
+              "means": "duration of the pulse within a symbol [s]; T_x/T_0 is the duty cycle (set 3, slide 51)"
+            },
+            {
+              "tex": "T_0",
+              "means": "symbol duration [s] (set 3, slide 51)"
+            }
+          ]
         },
         {
           "eq": "polar: s0(t) = −s1(t)",
           "tex": "s_0(t) = -s_1(t)",
           "note": "no DC line; 3 dB better than unipolar at the same mean power",
-          "ref": "set 3, slides 54–55"
+          "ref": "set 3, slides 54–55",
+          "where": [
+            {
+              "tex": "s_0(t),\\ s_1(t)",
+              "means": "pulse sent for \"0\" and for \"1\" (set 3, slide 54)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s]"
+            }
+          ]
         },
         {
           "eq": "Manchester: 1 → +A then −A, 0 → −A then +A",
           "tex": "\\text{Manchester: } 1 \\mapsto \\{+A, -A\\}, \\quad 0 \\mapsto \\{-A, +A\\}",
           "note": "a null at f = 0",
-          "ref": "set 3, slides 56–57"
+          "ref": "set 3, slides 56–57",
+          "where": [
+            {
+              "tex": "A",
+              "means": "pulse amplitude [V] (set 3, slide 56)"
+            }
+          ]
         },
         {
           "eq": "AMI: 0 → 0, each 1 alternately +A and −A",
           "tex": "\\text{AMI: } 0 \\mapsto 0, \\quad 1 \\mapsto +A \\text{ and } -A \\text{ alternately}",
           "note": "pseudo-ternary; a null at f = 0",
-          "ref": "set 3, slides 58–59"
+          "ref": "set 3, slides 58–59",
+          "where": [
+            {
+              "tex": "A",
+              "means": "pulse amplitude [V] (set 3, slide 58)"
+            }
+          ]
         },
         {
           "eq": "F(f) = (T0/2) sinc(fT0/2) e^(−jπf(2t0 + T0/2)) per half-symbol; F1, F0 sum a code's two halves",
           "tex": "F(f) = \\frac{T_0}{2}\\operatorname{sinc}\\left(\\frac{fT_0}{2}\\right)\\mathrm{e}^{-\\mathrm{j}\\pi f(2t_0 + T_0/2)}",
           "note": "a half-symbol pulse starting at t0; F1 and F0 add each code's two half-symbols with their levels (AMI excepted)",
           "ref": "derived for the codes of set 3, slides 51–58",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "F(f)",
+              "means": "spectrum of one half-symbol rectangular pulse of height 1 (not defined in the source)"
+            },
+            {
+              "tex": "T_0",
+              "means": "symbol duration [s] (set 3, slide 51)"
+            },
+            {
+              "tex": "f",
+              "means": "frequency [Hz]"
+            },
+            {
+              "tex": "t_0",
+              "means": "time the half-symbol pulse starts [s] (not defined in the source)"
+            },
+            {
+              "tex": "\\operatorname{sinc}",
+              "means": "sinc x = sin(πx)/(πx), the lab's convention; the formulary (sec. 2.2.1) defines sinc x = sin x / x"
+            },
+            {
+              "tex": "\\mathrm{e}",
+              "means": "Euler's number"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit"
+            }
+          ]
         }
       ],
       "practice": [
@@ -331,53 +697,197 @@
           "eq": "R_s ≤ 2B",
           "tex": "R_\\mathrm{s} \\le 2B",
           "note": "Nyquist's limit on the symbol rate",
-          "ref": "set 4, slide 8"
+          "ref": "set 4, slide 8",
+          "where": [
+            {
+              "tex": "R_\\mathrm{s}",
+              "means": "symbol rate [symbols/s] (set 4, slide 8)"
+            },
+            {
+              "tex": "B",
+              "means": "available bandwidth [Hz] (set 4, slide 8)"
+            }
+          ]
         },
         {
           "eq": "s(nT0) = 0 for n ≠ 0",
           "tex": "s(nT_0) = 0 \\quad \\text{for } n \\ne 0",
           "note": "free of intersymbol interference",
-          "ref": "set 4, slide 14"
+          "ref": "set 4, slide 14",
+          "where": [
+            {
+              "tex": "s",
+              "means": "the received pulse s(t), free of intersymbol interference (set 4, slide 14)"
+            },
+            {
+              "tex": "n",
+              "means": "index of the decision instant, a whole number"
+            },
+            {
+              "tex": "T_0",
+              "means": "symbol duration [s], R_s = 1/T_0 (set 4, slide 24)"
+            }
+          ]
         },
         {
           "eq": "h(t) = sinc(t/T0), H(f) rectangular to 1/(2T0)",
           "tex": "h(t) = \\operatorname{sinc}\\!\\left(\\frac{t}{T_0}\\right), \\qquad H(f) = T_0 \\quad \\text{for } |f| < \\frac{1}{2T_0}",
           "note": "the ideal, unrealisable Nyquist pulse",
           "ref": "set 4, slide 16",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "h(t)",
+              "means": "impulse response of the ideal low-pass (set 4, slide 16)"
+            },
+            {
+              "tex": "H(f)",
+              "means": "its transfer function (set 4, slide 16)"
+            },
+            {
+              "tex": "T_0",
+              "means": "symbol duration [s], R_s = 1/T_0 (set 4, slide 24)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s]"
+            },
+            {
+              "tex": "f",
+              "means": "frequency [Hz]"
+            },
+            {
+              "tex": "\\operatorname{sinc}",
+              "means": "sinc x = sin(πx)/(πx): slide 16 needs sinc(n) = 0, which the formulary's sinc x = sin x / x (sec. 2.2.1) does not give"
+            }
+          ]
         },
         {
           "eq": "a half-cosine roll-off, odd-symmetric about f_χ = 1/(2T0), α = Δf/f_χ",
           "tex": "\\text{half-cosine roll-off, odd-symmetric about } f_\\chi = \\frac{R_\\mathrm{s}}{2} = \\frac{1}{2T_0}, \\qquad \\alpha = \\frac{\\Delta f}{f_\\chi}",
           "note": "the raised cosine, defined by its spectrum; its zeros stay those of the sinc",
           "ref": "set 4, slides 23–24",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "f_\\chi",
+              "means": "corner frequency of the reference low-pass, f_χ = R_s/2 = 1/(2T_0) [Hz] (set 4, slide 24)"
+            },
+            {
+              "tex": "R_\\mathrm{s}",
+              "means": "symbol rate [symbols/s] (set 4, slide 24)"
+            },
+            {
+              "tex": "T_0",
+              "means": "symbol duration [s], R_s = 1/T_0 (set 4, slide 24)"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "roll-off factor, α = Δf/f_χ, 0 … 1 (set 4, slides 24, 26)"
+            },
+            {
+              "tex": "\\Delta f",
+              "means": "width of the roll-off on each side of f_χ [Hz] (set 4, slide 24)"
+            }
+          ]
         },
         {
           "eq": "B = (1 + α)/(2T0), ηs = 2/(1 + α)",
           "tex": "B = \\frac{1+\\alpha}{2T_0}, \\qquad \\eta_\\mathrm{s} = \\frac{2}{1+\\alpha}",
           "note": "bandwidth and bandwidth efficiency",
-          "ref": "set 4, slide 26"
+          "ref": "set 4, slide 26",
+          "where": [
+            {
+              "tex": "B",
+              "means": "bandwidth of the raised-cosine signal [Hz] (set 4, slide 26)"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "roll-off factor, α = Δf/f_χ, 0 … 1 (set 4, slides 24, 26)"
+            },
+            {
+              "tex": "T_0",
+              "means": "symbol duration [s], R_s = 1/T_0 (set 4, slide 24)"
+            },
+            {
+              "tex": "\\eta_\\mathrm{s}",
+              "means": "bandwidth efficiency [bit/s/Hz] for binary symbols, R_s H/B (set 4, slides 8, 26)"
+            }
+          ]
         },
         {
           "eq": "h(t) = 2 ∫ H(f) cos(2πft) df",
           "tex": "h(t) = 2 \\int_0^{f_\\chi(1+\\alpha)} H(f) \\cos(2\\pi f t) \\,\\mathrm{d}f",
           "note": "the pulse drawn here, from the spectrum by Simpson's rule",
           "ref": "derived from set 4, slide 24",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "h(t)",
+              "means": "impulse response of the raised-cosine filter"
+            },
+            {
+              "tex": "H(f)",
+              "means": "raised-cosine transfer function (set 4, slide 24)"
+            },
+            {
+              "tex": "f_\\chi",
+              "means": "corner frequency of the reference low-pass, f_χ = R_s/2 = 1/(2T_0) [Hz] (set 4, slide 24)"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "roll-off factor, α = Δf/f_χ, 0 … 1 (set 4, slides 24, 26)"
+            },
+            {
+              "tex": "f",
+              "means": "frequency [Hz]"
+            },
+            {
+              "tex": "t",
+              "means": "time [s]"
+            }
+          ]
         },
         {
           "eq": "vertical eye opening A_V, horizontal T_h",
           "tex": "A_\\mathrm{V}: \\text{vertical eye opening}, \\qquad T_\\mathrm{h}: \\text{horizontal eye opening}",
           "note": "noise lowers A_V; ISI spreads the amplitudes at the decision instant; jitter moves the zero crossings",
-          "ref": "set 3, slides 66–68"
+          "ref": "set 3, slides 66–68",
+          "where": [
+            {
+              "tex": "A_\\mathrm{V}",
+              "means": "vertical eye opening (set 3, slides 67–68)"
+            },
+            {
+              "tex": "T_\\mathrm{h}",
+              "means": "horizontal eye opening (set 3, slides 67–68)"
+            }
+          ]
         },
         {
           "eq": "H(f) = 1 for |f| ≤ fχ(1 − α); ½(1 + cos(π(|f| − fχ(1 − α))/(2αfχ))) up to fχ(1 + α); 0 beyond",
           "tex": "H(f) = \\begin{cases} 1, & |f| \\le f_\\chi(1 - \\alpha) \\\\ \\frac{1}{2}\\left(1 + \\cos\\frac{\\pi(|f| - f_\\chi(1 - \\alpha))}{2\\alpha f_\\chi}\\right), & |f| \\le f_\\chi(1 + \\alpha) \\\\ 0, & \\text{beyond} \\end{cases}",
           "note": "the half-cosine roll-off written out, f_χ = 1/(2T0)",
           "ref": "set 4, slides 23–24",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "H(f)",
+              "means": "raised-cosine transfer function (set 4, slide 24)"
+            },
+            {
+              "tex": "f",
+              "means": "frequency [Hz]"
+            },
+            {
+              "tex": "f_\\chi",
+              "means": "corner frequency of the reference low-pass, f_χ = R_s/2 = 1/(2T_0) [Hz] (set 4, slide 24)"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "roll-off factor, α = Δf/f_χ, 0 … 1 (set 4, slides 24, 26)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -402,37 +912,185 @@
       "idea": "Correlate the received signal with the pulse you expect: the filter matched to it gives the largest SNR at the decision instant, 2E/N0, whatever the pulse's shape. Only the energy counts, and from it the bit error probability.",
       "law": "h(t) = k s(T0 − t), SNR = 2E/N0",
       "lawTex": "h(t) = k\\, s(T_0 - t), \\qquad \\mathrm{SNR} = \\frac{2E}{N_0}",
+      "lawWhere": [
+        {
+          "tex": "h(t)",
+          "means": "impulse response of the matched filter (set 4, slide 55)"
+        },
+        {
+          "tex": "k",
+          "means": "any constant gain (set 4, slide 53)"
+        },
+        {
+          "tex": "s",
+          "means": "the pulse the filter is matched to (slides 53–56 write v, slide 59 s)"
+        },
+        {
+          "tex": "T_0",
+          "means": "symbol duration [s], R_s = 1/T_0 (set 4, slide 24)"
+        },
+        {
+          "tex": "t",
+          "means": "time [s]"
+        },
+        {
+          "tex": "\\mathrm{SNR}",
+          "means": "signal-to-noise power ratio at the decision instant (set 4, slide 80)"
+        },
+        {
+          "tex": "E",
+          "means": "pulse energy [J] (set 4, slide 80: E_s)"
+        },
+        {
+          "tex": "N_0",
+          "means": "noise power density [W/Hz]; the two-sided density is N_0/2 (set 4, slide 80; Rauschen, slide 15)"
+        }
+      ],
       "lecture": "Goiser (2016), set 4, slides 43–90; the course formulary of March 2017, section 3",
       "equations": [
         {
           "eq": "H(f) = k V*(f) e^(−j2πfT0), h(t) = k v(T0 − t)",
           "tex": "H(f) = k\\, V^*(f)\\, \\mathrm{e}^{-\\mathrm{j}\\omega T_0}, \\qquad h(t) = k\\, v^*(T_0 - t)",
           "note": "the matched filter: the pulse reversed and delayed",
-          "ref": "set 4, slides 53–56"
+          "ref": "set 4, slides 53–56",
+          "where": [
+            {
+              "tex": "H(f)",
+              "means": "transfer function of the matched filter (set 4, slide 53)"
+            },
+            {
+              "tex": "k",
+              "means": "any constant gain (set 4, slide 53)"
+            },
+            {
+              "tex": "V^*(f)",
+              "means": "complex conjugate of the pulse spectrum V(f) (set 4, slide 53)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency 2πf [rad/s]; slide 53 mixes ω and 2πf"
+            },
+            {
+              "tex": "T_0",
+              "means": "pulse duration, the decision instant [s] (set 4, slide 56)"
+            },
+            {
+              "tex": "h(t)",
+              "means": "impulse response (set 4, slide 55; slide 56 drops k and the conjugate)"
+            },
+            {
+              "tex": "v^*",
+              "means": "complex conjugate of the pulse v(t) (set 4, slide 55)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s]"
+            },
+            {
+              "tex": "\\mathrm{e}",
+              "means": "Euler's number"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit"
+            }
+          ]
         },
         {
           "eq": "Z = ∫ [s(t) + n(t)] s(t) dt over 0 … T0",
           "tex": "Z = \\int_0^{T_0} \\big[s(t) + n(t)\\big]\\, s(t) \\,\\mathrm{d}t",
           "note": "the correlator, the same filter at one instant",
-          "ref": "set 4, slides 58–59"
+          "ref": "set 4, slides 58–59",
+          "where": [
+            {
+              "tex": "Z",
+              "means": "correlator output at the decision instant (set 4, slide 59)"
+            },
+            {
+              "tex": "s(t)",
+              "means": "the pulse, used as reference (set 4, slides 58–59)"
+            },
+            {
+              "tex": "n(t)",
+              "means": "white Gaussian noise (set 4, slide 58)"
+            },
+            {
+              "tex": "T_0",
+              "means": "symbol duration [s]"
+            },
+            {
+              "tex": "t",
+              "means": "time [s]"
+            }
+          ]
         },
         {
           "eq": "SNR_Z = E²/(N0 E/2) = 2E/N0",
           "tex": "\\mathrm{SNR}_Z = \\frac{E^2}{N_0 E/2} = \\frac{2E}{N_0}",
           "note": "noise of two-sided density N0/2",
-          "ref": "set 4, slide 80"
+          "ref": "set 4, slide 80",
+          "where": [
+            {
+              "tex": "\\mathrm{SNR}_Z",
+              "means": "signal-to-noise power ratio at the decision instant (set 4, slide 80)"
+            },
+            {
+              "tex": "E",
+              "means": "pulse energy [J] (set 4, slide 80: E_s)"
+            },
+            {
+              "tex": "N_0",
+              "means": "noise power density [W/Hz]; the two-sided density is N_0/2 (set 4, slide 80; Rauschen, slide 15)"
+            }
+          ]
         },
         {
           "eq": "Pe = Q(V/(2σ)) = ½ erfc(V/(2√2 σ))",
           "tex": "P_\\mathrm{e} = Q\\left(\\frac{V}{2\\sigma}\\right) = \\frac{1}{2}\\operatorname{erfc}\\left(\\frac{V}{2\\sqrt{2}\\,\\sigma}\\right)",
           "note": "two symbols a distance V apart in Gaussian noise",
-          "ref": "set 3, slide 33; formulary, eq. 6"
+          "ref": "set 3, slide 33; formulary, eq. 6",
+          "where": [
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "bit error probability (set 3, slide 33; formulary, eq. 6)"
+            },
+            {
+              "tex": "Q",
+              "means": "Gaussian Q-function, Q(x) = ½ erfc(x/√2) (formulary, sec. 2.2.1; set 3, slide 33 calls it the Marcum Q-function, which it is not)"
+            },
+            {
+              "tex": "V",
+              "means": "distance between the two symbol values at the decision instant [V] (ΔV on set 3, slide 33)"
+            },
+            {
+              "tex": "\\sigma",
+              "means": "RMS value of the noise [V] (σ_n on set 3, slide 33)"
+            },
+            {
+              "tex": "\\operatorname{erfc}",
+              "means": "complementary error function (formulary, sec. 2.2.1)"
+            }
+          ]
         },
         {
           "eq": "polar ½ erfc(√(E/N0)); unipolar and orthogonal ½ erfc(√(E/2N0))",
           "tex": "\\text{polar: } \\frac{1}{2} \\operatorname{erfc}\\sqrt{\\frac{E}{N_0}}, \\qquad \\text{unipolar, orthogonal: } \\frac{1}{2} \\operatorname{erfc}\\sqrt{\\frac{E}{2N_0}}",
           "note": "binary error probabilities with the matched filter, E the mean pulse energy",
-          "ref": "formulary, Table 2"
+          "ref": "formulary, Table 2",
+          "where": [
+            {
+              "tex": "\\operatorname{erfc}",
+              "means": "complementary error function (formulary, sec. 2.2.1)"
+            },
+            {
+              "tex": "E",
+              "means": "mean pulse energy [J] (formulary, sec. 3.2, Table 2)"
+            },
+            {
+              "tex": "N_0",
+              "means": "noise power density [W/Hz]; the two-sided density is N_0/2 (set 4, slide 80; Rauschen, slide 15)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -469,31 +1127,121 @@
       "idea": "Send each bit n times and let the majority decide: a word goes wrong only when more than half its bits do. The binomial law says how fast that becomes rare, and what the extra bits cost in rate.",
       "law": "P_e = Σ_{m > t} C(n, m) p^m (1 − p)^(n − m)",
       "lawTex": "P_\\mathrm{e} = \\sum_{m > t} \\binom{n}{m} p^m (1-p)^{n-m}",
+      "lawWhere": [
+        {
+          "tex": "P_\\mathrm{e}",
+          "means": "probability that a codeword holds more errors than the code corrects (set 6, slide 60)"
+        },
+        {
+          "tex": "m",
+          "means": "number of bit errors in the codeword"
+        },
+        {
+          "tex": "t",
+          "means": "number of errors the code corrects (set 6, slide 60)"
+        },
+        {
+          "tex": "\\binom{n}{m}",
+          "means": "binomial coefficient n!/(m!(n − m)!) (set 6, slide 60)"
+        },
+        {
+          "tex": "n",
+          "means": "bits per codeword"
+        },
+        {
+          "tex": "p",
+          "means": "bit error probability of the channel (p on set 6, slide 40; P_b on slide 60)"
+        }
+      ],
       "lecture": "Goiser (2016), set 6, slides 36–63",
       "equations": [
         {
           "eq": "R = k/n",
           "tex": "R = \\frac{k}{n}",
           "note": "code rate",
-          "ref": "set 6, slide 38"
+          "ref": "set 6, slide 38",
+          "where": [
+            {
+              "tex": "R",
+              "means": "code rate (set 6, slide 38)"
+            },
+            {
+              "tex": "k",
+              "means": "information bits per codeword (set 6, slide 38)"
+            },
+            {
+              "tex": "n",
+              "means": "bits per codeword (set 6, slide 38)"
+            }
+          ]
         },
         {
           "eq": "P(m) = C(n, m) p^m (1 − p)^(n − m)",
           "tex": "P(m) = \\binom{n}{m} p^m (1-p)^{n-m}",
           "note": "exactly m bit errors in n",
-          "ref": "set 6, slides 40, 60"
+          "ref": "set 6, slides 40, 60",
+          "where": [
+            {
+              "tex": "P(m)",
+              "means": "probability of exactly m bit errors among n (set 6, slide 60)"
+            },
+            {
+              "tex": "\\binom{n}{m}",
+              "means": "binomial coefficient n!/(m!(n − m)!) (set 6, slide 60)"
+            },
+            {
+              "tex": "p",
+              "means": "bit error probability of the channel (p on set 6, slide 40; P_b on slide 60)"
+            },
+            {
+              "tex": "m",
+              "means": "number of bit errors"
+            },
+            {
+              "tex": "n",
+              "means": "bits per codeword"
+            }
+          ]
         },
         {
           "eq": "P_e = 1 − Σ_{m = 0}^{t} P(m)",
           "tex": "P_\\mathrm{e} = 1 - \\sum_{m=0}^{t} P(m)",
           "note": "more errors than the code corrects",
-          "ref": "set 6, slide 60"
+          "ref": "set 6, slide 60",
+          "where": [
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "probability of more than t errors in the codeword (set 6, slide 60)"
+            },
+            {
+              "tex": "t",
+              "means": "number of errors the code corrects (set 6, slide 60)"
+            },
+            {
+              "tex": "P(m)",
+              "means": "probability of exactly m bit errors"
+            },
+            {
+              "tex": "m",
+              "means": "number of bit errors"
+            }
+          ]
         },
         {
           "eq": "t = (n − 1)/2",
           "tex": "t = \\frac{n-1}{2}",
           "note": "a repetition code of odd length n decided by majority",
-          "ref": "set 6, slides 39–40"
+          "ref": "set 6, slides 39–40",
+          "where": [
+            {
+              "tex": "t",
+              "means": "number of errors corrected by majority vote"
+            },
+            {
+              "tex": "n",
+              "means": "odd codeword length (set 6, slide 39)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -532,43 +1280,169 @@
       "idea": "Three parity bits guard four data bits so that any two codewords differ in at least three places. A single flipped bit leaves a syndrome that is the column of H at that position: it names the bit to flip back.",
       "law": "s = H r = H e",
       "lawTex": "s = H r = H e",
+      "lawWhere": [
+        {
+          "tex": "s",
+          "means": "syndrome vector (set 6, slide 89)"
+        },
+        {
+          "tex": "H",
+          "means": "parity-check matrix (set 6, slide 86)"
+        },
+        {
+          "tex": "r",
+          "means": "received word, r = c + e (set 6, slide 89)"
+        },
+        {
+          "tex": "e",
+          "means": "error pattern (set 6, slide 89)"
+        }
+      ],
       "lecture": "Goiser (2016), set 6, slides 64–99",
       "equations": [
         {
           "eq": "d(c1, c2) = w(c1 ⊕ c2)",
           "tex": "d(c_1, c_2) = w(c_1 \\oplus c_2)",
           "note": "Hamming distance as the weight of the difference",
-          "ref": "set 6, slide 37"
+          "ref": "set 6, slide 37",
+          "where": [
+            {
+              "tex": "d(c_1, c_2)",
+              "means": "Hamming distance: the number of places where two codewords differ (set 6, slide 37)"
+            },
+            {
+              "tex": "c_1,\\ c_2",
+              "means": "two codewords"
+            },
+            {
+              "tex": "w",
+              "means": "weight: the number of ones in a binary word (set 6, slide 37)"
+            },
+            {
+              "tex": "\\oplus",
+              "means": "addition modulo 2 (slide 37 writes +)"
+            }
+          ]
         },
         {
           "eq": "detects d_min − 1, corrects ⌊(d_min − 1)/2⌋ errors",
           "tex": "\\text{detects } d_\\mathrm{min} - 1, \\quad \\text{corrects } \\Big\\lfloor \\frac{d_\\mathrm{min} - 1}{2} \\Big\\rfloor \\text{ errors}",
           "note": "",
-          "ref": "set 6, slide 73"
+          "ref": "set 6, slide 73",
+          "where": [
+            {
+              "tex": "d_\\mathrm{min}",
+              "means": "smallest Hamming distance between two codewords of the code (set 6, slide 73)"
+            }
+          ]
         },
         {
           "eq": "P1 = I1⊕I3⊕I4, P2 = I1⊕I2⊕I4, P3 = I1⊕I2⊕I3",
           "tex": "P_1 = I_1 \\oplus I_3 \\oplus I_4, \\quad P_2 = I_1 \\oplus I_2 \\oplus I_4, \\quad P_3 = I_1 \\oplus I_2 \\oplus I_3",
           "note": "the [7,4] code's parity bits, c = [I1 I2 I3 I4 P1 P2 P3]",
-          "ref": "set 6, slide 85"
+          "ref": "set 6, slide 85",
+          "where": [
+            {
+              "tex": "P_1,\\ P_2,\\ P_3",
+              "means": "parity bits, even parity (set 6, slide 85)"
+            },
+            {
+              "tex": "I_1,\\ I_2,\\ I_3,\\ I_4",
+              "means": "information bits (set 6, slide 85)"
+            },
+            {
+              "tex": "\\oplus",
+              "means": "addition modulo 2"
+            }
+          ]
         },
         {
           "eq": "G = [I4 | P], H = [Pᵀ | I3], G Hᵀ = 0",
           "tex": "G = [\\,I_4 \\mid P\\,], \\qquad H = [\\,P^\\mathrm{T} \\mid I_3\\,], \\qquad G H^\\mathrm{T} = 0",
           "note": "generator and parity-check matrix",
-          "ref": "set 6, slides 86–92"
+          "ref": "set 6, slides 86–92",
+          "where": [
+            {
+              "tex": "G",
+              "means": "generator matrix, k × n (set 6, slides 89, 92)"
+            },
+            {
+              "tex": "H",
+              "means": "parity-check matrix, (n − k) × n (set 6, slide 86)"
+            },
+            {
+              "tex": "I_4,\\ I_3",
+              "means": "identity matrices of size k = 4 and n − k = 3 (set 6, slides 86, 89)"
+            },
+            {
+              "tex": "P",
+              "means": "parity matrix; its transpose gives the parity equations (set 6, slide 86)"
+            },
+            {
+              "tex": "\\mathrm{T}",
+              "means": "transpose"
+            }
+          ]
         },
         {
           "eq": "s = H r = H (c ⊕ e) = H e",
           "tex": "s = H r = H (c \\oplus e) = H e",
           "note": "the syndrome depends on the error alone",
-          "ref": "set 6, slide 89"
+          "ref": "set 6, slide 89",
+          "where": [
+            {
+              "tex": "s",
+              "means": "syndrome vector (set 6, slide 89)"
+            },
+            {
+              "tex": "H",
+              "means": "parity-check matrix (set 6, slide 86)"
+            },
+            {
+              "tex": "r",
+              "means": "received word (set 6, slide 89)"
+            },
+            {
+              "tex": "c",
+              "means": "codeword sent (set 6, slide 89)"
+            },
+            {
+              "tex": "e",
+              "means": "error pattern (set 6, slide 89)"
+            },
+            {
+              "tex": "\\oplus",
+              "means": "addition modulo 2"
+            }
+          ]
         },
         {
           "eq": "2^k Σ_{i ≤ t} C(n, i) ≤ 2^n",
           "tex": "2^k \\sum_{i=0}^{t} \\binom{n}{i} \\le 2^n",
           "note": "the Hamming bound; equality for a perfect code such as [7,4]",
-          "ref": "set 6, slides 81–82"
+          "ref": "set 6, slides 81–82",
+          "where": [
+            {
+              "tex": "k",
+              "means": "information bits per codeword"
+            },
+            {
+              "tex": "n",
+              "means": "bits per codeword"
+            },
+            {
+              "tex": "t",
+              "means": "number of errors the code corrects (set 6, slide 81)"
+            },
+            {
+              "tex": "\\binom{n}{i}",
+              "means": "number of error patterns with i errors among n bits (set 6, slides 81–82)"
+            },
+            {
+              "tex": "i",
+              "means": "number of errors in a pattern"
+            }
+          ]
         }
       ],
       "practice": [
@@ -600,43 +1474,205 @@
       "idea": "Each symbol is a point; noise blurs it into a cloud, and the receiver picks the nearest point. More points carry more bits per symbol in the same bandwidth, but stand closer together, so they need more energy for the same error rate.",
       "law": "M-PSK: Pe ≈ 2 Q(√(2Es/N0) sin(π/M))",
       "lawTex": "\\text{M-PSK: } P_\\mathrm{e} \\approx 2\\,Q\\left(\\sqrt{\\frac{2E_\\mathrm{s}}{N_0}} \\sin\\frac{\\pi}{M}\\right)",
+      "lawWhere": [
+        {
+          "tex": "P_\\mathrm{e}",
+          "means": "symbol error probability of M-PSK (set 8, slide 24)"
+        },
+        {
+          "tex": "Q",
+          "means": "Gaussian Q-function, Q(x) = ½ erfc(x/√2) (formulary, sec. 2.2.1; set 3, slide 33 calls it the Marcum Q-function, which it is not)"
+        },
+        {
+          "tex": "E_\\mathrm{s}",
+          "means": "mean energy per symbol [J] (set 8, slides 24, 37)"
+        },
+        {
+          "tex": "N_0",
+          "means": "noise power density [W/Hz]; the two-sided density is N_0/2 (set 4, slide 80; Rauschen, slide 15)"
+        },
+        {
+          "tex": "M",
+          "means": "number of phase states (set 8, slide 24)"
+        }
+      ],
       "lecture": "Goiser (2016), set 7, slides 13–63; set 8, slides 1–41",
       "equations": [
         {
           "eq": "S = ld(M)/(T0 B) ≤ ld M",
           "tex": "S = \\frac{\\operatorname{ld} M}{T_0 B} \\le \\operatorname{ld} M",
           "note": "spectral efficiency in bit/s/Hz",
-          "ref": "set 8, slide 3"
+          "ref": "set 8, slide 3",
+          "where": [
+            {
+              "tex": "S",
+              "means": "spectral efficiency [bit/s/Hz] (η_S on set 8, slide 3)"
+            },
+            {
+              "tex": "M",
+              "means": "number of signal states of the modulation (set 8, slide 6)"
+            },
+            {
+              "tex": "T_0",
+              "means": "symbol duration [s] (set 8, slide 3)"
+            },
+            {
+              "tex": "B",
+              "means": "bandwidth [Hz] (set 8, slide 3)"
+            },
+            {
+              "tex": "\\operatorname{ld}",
+              "means": "logarithm to base 2 (set 5, slide 30)"
+            }
+          ]
         },
         {
           "eq": "BPSK: Pe = Q(√(2Eb/N0))",
           "tex": "P_\\mathrm{e} = Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}}\\right)",
           "note": "antipodal points ±√E",
-          "ref": "set 7, slide 50"
+          "ref": "set 7, slide 50",
+          "where": [
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "bit error probability of BPSK (set 7, slide 50)"
+            },
+            {
+              "tex": "Q",
+              "means": "Gaussian Q-function, Q(x) = ½ erfc(x/√2) (formulary, sec. 2.2.1; set 3, slide 33 calls it the Marcum Q-function, which it is not)"
+            },
+            {
+              "tex": "E_\\mathrm{b}",
+              "means": "energy per bit [J] (set 7, slide 50; set 8, slide 24)"
+            },
+            {
+              "tex": "N_0",
+              "means": "noise power density [W/Hz]; the two-sided density is N_0/2 (set 4, slide 80; Rauschen, slide 15)"
+            }
+          ]
         },
         {
           "eq": "QPSK: Pb = Q(√(2Eb/N0)), Pe = 2Pb − Pb²",
           "tex": "P_\\mathrm{b} = Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}}\\right), \\qquad P_\\mathrm{e} = 2P_\\mathrm{b} - P_\\mathrm{b}^2",
           "note": "the same bit error rate as BPSK in half the bandwidth",
-          "ref": "set 8, slide 18"
+          "ref": "set 8, slide 18",
+          "where": [
+            {
+              "tex": "P_\\mathrm{b}",
+              "means": "bit error probability (set 8, slide 18)"
+            },
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "symbol error probability (set 8, slides 18, 24)"
+            },
+            {
+              "tex": "Q",
+              "means": "Gaussian Q-function, Q(x) = ½ erfc(x/√2) (formulary, sec. 2.2.1; set 3, slide 33 calls it the Marcum Q-function, which it is not)"
+            },
+            {
+              "tex": "E_\\mathrm{b}",
+              "means": "energy per bit [J] (set 7, slide 50; set 8, slide 24)"
+            },
+            {
+              "tex": "N_0",
+              "means": "noise power density [W/Hz]; the two-sided density is N_0/2 (set 4, slide 80; Rauschen, slide 15)"
+            }
+          ]
         },
         {
           "eq": "φn = (π/M)(2n − 1); Pe ≈ 2 Q(√(2Es/N0) sin(π/M)), M > 4",
           "tex": "\\varphi_n = \\frac{\\pi}{M}(2n-1), \\qquad P_\\mathrm{e} \\approx 2\\,Q\\left(\\sqrt{\\frac{2E_\\mathrm{s}}{N_0}} \\sin\\frac{\\pi}{M}\\right), \\quad M > 4",
           "note": "M-PSK; the slide prints Q(·) without the factor 2, though its own assumption (two neighbours s2, s8) gives it; the seeded count backs 2 Q(·)",
-          "ref": "set 8, slides 23–24"
+          "ref": "set 8, slides 23–24",
+          "where": [
+            {
+              "tex": "\\varphi_n",
+              "means": "carrier phase of state n (set 8, slide 23, for M = 8)"
+            },
+            {
+              "tex": "n",
+              "means": "state number, 1 … M"
+            },
+            {
+              "tex": "M",
+              "means": "number of phase states"
+            },
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "symbol error probability (set 8, slides 18, 24)"
+            },
+            {
+              "tex": "Q",
+              "means": "Gaussian Q-function, Q(x) = ½ erfc(x/√2) (formulary, sec. 2.2.1; set 3, slide 33 calls it the Marcum Q-function, which it is not)"
+            },
+            {
+              "tex": "E_\\mathrm{s}",
+              "means": "mean energy per symbol [J] (set 8, slides 24, 37)"
+            },
+            {
+              "tex": "N_0",
+              "means": "noise power density [W/Hz]; the two-sided density is N_0/2 (set 4, slide 80; Rauschen, slide 15)"
+            }
+          ]
         },
         {
           "eq": "Pe ≈ 4 (√M − 1)/√M · Q(√(3Es/((M − 1)N0)))",
           "tex": "P_\\mathrm{e} \\approx 4\\,\\frac{\\sqrt{M}-1}{\\sqrt{M}}\\, Q\\left(\\sqrt{\\frac{3E_\\mathrm{s}}{(M-1)N_0}}\\right)",
           "note": "square M-QAM, M ≥ 4; the slide writes the argument as [3/(2(M − 1)) · 2Es/N0]^½; checked against seeded counts",
-          "ref": "set 8, slide 37"
+          "ref": "set 8, slide 37",
+          "where": [
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "symbol error probability (set 8, slides 18, 24)"
+            },
+            {
+              "tex": "M",
+              "means": "number of QAM states, a square number ≥ 4 (set 8, slide 37)"
+            },
+            {
+              "tex": "E_\\mathrm{s}",
+              "means": "mean energy of a QAM symbol [J] (set 8, slide 37)"
+            },
+            {
+              "tex": "N_0",
+              "means": "noise power density [W/Hz]; the two-sided density is N_0/2 (set 4, slide 80; Rauschen, slide 15)"
+            },
+            {
+              "tex": "Q",
+              "means": "Gaussian Q-function, Q(x) = ½ erfc(x/√2) (formulary, sec. 2.2.1; set 3, slide 33 calls it the Marcum Q-function, which it is not)"
+            }
+          ]
         },
         {
           "eq": "Es = Eb ld M, Pb ≈ Pe / ld M with Gray coding",
           "tex": "E_\\mathrm{s} = E_\\mathrm{b} \\operatorname{ld} M, \\qquad P_\\mathrm{b} \\approx \\frac{P_\\mathrm{e}}{\\operatorname{ld} M}",
           "note": "neighbours differ in one bit",
-          "ref": "set 8, slides 6, 24"
+          "ref": "set 8, slides 6, 24",
+          "where": [
+            {
+              "tex": "E_\\mathrm{s}",
+              "means": "mean energy per symbol [J] (set 8, slides 24, 37)"
+            },
+            {
+              "tex": "E_\\mathrm{b}",
+              "means": "energy per bit [J] (set 7, slide 50; set 8, slide 24)"
+            },
+            {
+              "tex": "M",
+              "means": "number of signal states of the modulation (set 8, slide 6)"
+            },
+            {
+              "tex": "P_\\mathrm{b}",
+              "means": "bit error probability (set 8, slide 18)"
+            },
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "symbol error probability (set 8, slides 18, 24)"
+            },
+            {
+              "tex": "\\operatorname{ld}",
+              "means": "logarithm to base 2 (set 5, slide 30)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -680,33 +1716,123 @@
           "eq": "Pe = Q(√(2Eb/N0) cos φ)",
           "tex": "P_\\mathrm{e} = Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} \\cos\\varphi\\right)",
           "note": "BPSK with a carrier phase error φ",
-          "ref": "Synchronisation, slide 9"
+          "ref": "Synchronisation, slide 9",
+          "where": [
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "bit error probability of BPSK (Synchronisation, slide 9)"
+            },
+            {
+              "tex": "Q",
+              "means": "Gaussian Q-function, Q(x) = ½ erfc(x/√2) (formulary, sec. 2.2.1; set 3, slide 33 calls it the Marcum Q-function, which it is not)"
+            },
+            {
+              "tex": "E_\\mathrm{b}",
+              "means": "energy per bit [J] (set 7, slide 50; set 8, slide 24)"
+            },
+            {
+              "tex": "N_0",
+              "means": "noise power density [W/Hz]; the two-sided density is N_0/2 (set 4, slide 80; Rauschen, slide 15)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "carrier phase error at the receiver (the slides' α, Synchronisation, slides 9, 11)"
+            }
+          ]
         },
         {
           "eq": "Pe = ½ Q(√(2Eb/N0)(cos φ − sin φ)) + ½ Q(√(2Eb/N0)(cos φ + sin φ))",
           "tex": "P_\\mathrm{e} = \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} (\\cos\\varphi - \\sin\\varphi)\\right) + \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} (\\cos\\varphi + \\sin\\varphi)\\right)",
           "note": "QPSK, more sensitive to φ",
           "ref": "Synchronisation, slides 11–12",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "bit error probability of QPSK (Synchronisation, slide 11)"
+            },
+            {
+              "tex": "Q",
+              "means": "Gaussian Q-function, Q(x) = ½ erfc(x/√2) (formulary, sec. 2.2.1; set 3, slide 33 calls it the Marcum Q-function, which it is not)"
+            },
+            {
+              "tex": "E_\\mathrm{b}",
+              "means": "energy per bit [J] (set 7, slide 50; set 8, slide 24)"
+            },
+            {
+              "tex": "N_0",
+              "means": "noise power density [W/Hz]; the two-sided density is N_0/2 (set 4, slide 80; Rauschen, slide 15)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "carrier phase error at the receiver (the slides' α, Synchronisation, slides 9, 11)"
+            }
+          ]
         },
         {
           "eq": "Pe = ½ Q(√(2Eb/N0)) + ½ Q(√(2Eb/N0)(1 − 2ε))",
           "tex": "P_\\mathrm{e} = \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}}\\right) + \\frac{1}{2} Q\\left(\\sqrt{\\frac{2E_\\mathrm{b}}{N_0}} (1 - 2\\varepsilon)\\right)",
           "note": "BPSK with a static timing error ε of a bit",
           "ref": "Synchronisation, slides 13–14",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "bit error probability of BPSK with a timing error (Synchronisation, slide 14)"
+            },
+            {
+              "tex": "Q",
+              "means": "Gaussian Q-function, Q(x) = ½ erfc(x/√2) (formulary, sec. 2.2.1; set 3, slide 33 calls it the Marcum Q-function, which it is not)"
+            },
+            {
+              "tex": "E_\\mathrm{b}",
+              "means": "energy per bit [J] (set 7, slide 50; set 8, slide 24)"
+            },
+            {
+              "tex": "N_0",
+              "means": "noise power density [W/Hz]; the two-sided density is N_0/2 (set 4, slide 80; Rauschen, slide 15)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "static timing error as a fraction of the bit, 0 ≤ ε ≤ 0.5 (the slides' Δ, Synchronisation, slide 13)"
+            }
+          ]
         },
         {
           "eq": "e = sin(φ − θ) after the low-pass",
           "tex": "e = \\sin(\\varphi - \\theta) \\quad \\text{after the low-pass}",
           "note": "the PLL's phase detector",
-          "ref": "Synchronisation, slides 17–18"
+          "ref": "Synchronisation, slides 17–18",
+          "where": [
+            {
+              "tex": "e",
+              "means": "output of the PLL's phase detector after the low-pass (e(t), Synchronisation, slides 17–18)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "phase of the received carrier (the slides' α, slide 17)"
+            },
+            {
+              "tex": "\\theta",
+              "means": "phase of the VCO's reference (the slides' β, slide 17)"
+            }
+          ]
         },
         {
           "eq": "squaring gives a line at 2f0; Costas: error ∝ sin 2θ",
           "tex": "\\text{squaring: a line at } 2f_0, \\qquad \\text{Costas: error} \\propto \\sin 2\\theta",
           "note": "carrier recovery without the data",
-          "ref": "Synchronisation, slides 24–27"
+          "ref": "Synchronisation, slides 24–27",
+          "where": [
+            {
+              "tex": "f_0",
+              "means": "carrier frequency [Hz] (Synchronisation, slides 24–25)"
+            },
+            {
+              "tex": "\\theta",
+              "means": "phase error between VCO and carrier (the slides' α; the Costas error is ∝ sin 2α, slide 27)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -750,45 +1876,163 @@
           "eq": "N = k T B, k = 1.38·10⁻²³ J/K",
           "tex": "N = kTB, \\qquad k = 1.38 \\cdot 10^{-23}\\,\\mathrm{J/K}",
           "note": "thermal noise power (Nyquist), f < 10¹² Hz",
-          "ref": "Rauschen, slides 11, 15"
+          "ref": "Rauschen, slides 11, 15",
+          "where": [
+            {
+              "tex": "N",
+              "means": "thermal noise power [W] (Rauschen, slide 15)"
+            },
+            {
+              "tex": "k",
+              "means": "Boltzmann constant, 1.38·10⁻²³ J/K (Rauschen, slide 11)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature [K]"
+            },
+            {
+              "tex": "B",
+              "means": "bandwidth [Hz]"
+            }
+          ]
         },
         {
           "eq": "k T0 = 4·10⁻²¹ W/Hz = −174 dBm/Hz, T0 = 290 K",
           "tex": "kT_0 = 4 \\cdot 10^{-21}\\,\\mathrm{W/Hz} \\;\\; (-174\\,\\mathrm{dBm/Hz}), \\qquad T_0 = 290\\,\\mathrm{K}",
           "note": "",
-          "ref": "Rauschen, slide 30"
+          "ref": "Rauschen, slide 30",
+          "where": [
+            {
+              "tex": "k",
+              "means": "Boltzmann constant [J/K] (Rauschen, slide 11)"
+            },
+            {
+              "tex": "T_0",
+              "means": "reference temperature, 290 K (Rauschen, slides 30, 51)"
+            }
+          ]
         },
         {
           "eq": "f = SNR_in/SNR_out = 1 + Te/T0, F = 10 log f",
           "tex": "f = \\frac{\\mathrm{SNR}_\\mathrm{in}}{\\mathrm{SNR}_\\mathrm{out}} = 1 + \\frac{T_\\mathrm{e}}{T_0}, \\qquad F = 10 \\log f",
           "note": "noise factor and noise figure",
           "ref": "Rauschen, slides 51–55",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "f",
+              "means": "noise factor (Rauschen, slide 51)"
+            },
+            {
+              "tex": "\\mathrm{SNR}_\\mathrm{in},\\ \\mathrm{SNR}_\\mathrm{out}",
+              "means": "signal-to-noise ratio at the input, with the source at 290 K, and at the output (Rauschen, slides 51–52)"
+            },
+            {
+              "tex": "T_\\mathrm{e}",
+              "means": "equivalent noise temperature of the system [K] (Rauschen, slide 52)"
+            },
+            {
+              "tex": "T_0",
+              "means": "reference temperature, 290 K; the slides write 290"
+            },
+            {
+              "tex": "F",
+              "means": "noise figure [dB] (Rauschen, slide 55)"
+            }
+          ]
         },
         {
           "eq": "f = f1 + (f2 − 1)/G1 + (f3 − 1)/(G1 G2) + …",
           "tex": "f = f_1 + \\frac{f_2 - 1}{G_1} + \\frac{f_3 - 1}{G_1 G_2} + \\dots",
           "note": "Friis's formula",
-          "ref": "Rauschen, slide 53"
+          "ref": "Rauschen, slide 53",
+          "where": [
+            {
+              "tex": "f",
+              "means": "noise factor of the whole cascade (Rauschen, slide 53)"
+            },
+            {
+              "tex": "f_1,\\ f_2,\\ f_3",
+              "means": "noise factors of stages 1, 2 and 3 (Rauschen, slide 53)"
+            },
+            {
+              "tex": "G_1,\\ G_2",
+              "means": "power gains of stages 1 and 2, linear (Rauschen, slide 53)"
+            }
+          ]
         },
         {
           "eq": "Te = Te1 + Te2/G1 + Te3/(G1 G2) + …",
           "tex": "T_\\mathrm{e} = T_{\\mathrm{e}(1)} + \\frac{T_{\\mathrm{e}(2)}}{G_1} + \\frac{T_{\\mathrm{e}(3)}}{G_1 G_2} + \\dots",
           "note": "the same in temperatures, the second route",
           "ref": "Rauschen, slides 40–41",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "T_\\mathrm{e}",
+              "means": "equivalent noise temperature of the cascade [K] (Rauschen, slide 41)"
+            },
+            {
+              "tex": "T_{\\mathrm{e}(1)},\\ T_{\\mathrm{e}(2)},\\ T_{\\mathrm{e}(3)}",
+              "means": "equivalent noise temperatures of stages 1, 2 and 3 [K] (Rauschen, slide 40)"
+            },
+            {
+              "tex": "G_1,\\ G_2",
+              "means": "power gains of stages 1 and 2, linear"
+            }
+          ]
         },
         {
           "eq": "f = 1/G for a loss at T0",
           "tex": "f = \\frac{1}{G} \\quad \\text{for a loss at } T_0",
           "note": "a mixer of −6 dB: f = 4, F = 6 dB",
-          "ref": "Rauschen, slides 53–57"
+          "ref": "Rauschen, slides 53–57",
+          "where": [
+            {
+              "tex": "f",
+              "means": "noise factor of the lossy stage (Rauschen, slide 53)"
+            },
+            {
+              "tex": "G",
+              "means": "its gain, below 1 (G_ℓ on Rauschen, slide 53)"
+            },
+            {
+              "tex": "T_0",
+              "means": "reference temperature, 290 K"
+            }
+          ]
         },
         {
           "eq": "N_out = G k B (Ts + Te)",
           "tex": "N_\\mathrm{out} = G k B (T_\\mathrm{S} + T_\\mathrm{e})",
           "note": "noise at the output",
-          "ref": "Rauschen, slide 32"
+          "ref": "Rauschen, slide 32",
+          "where": [
+            {
+              "tex": "N_\\mathrm{out}",
+              "means": "noise power at the amplifier's output [W] (Rauschen, slide 32)"
+            },
+            {
+              "tex": "G",
+              "means": "power gain, linear"
+            },
+            {
+              "tex": "k",
+              "means": "Boltzmann constant [J/K]"
+            },
+            {
+              "tex": "B",
+              "means": "bandwidth [Hz]"
+            },
+            {
+              "tex": "T_\\mathrm{S}",
+              "means": "noise temperature of the source [K] (Rauschen, slide 32)"
+            },
+            {
+              "tex": "T_\\mathrm{e}",
+              "means": "equivalent noise temperature of the amplifier [K] (Rauschen, slide 32)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -848,6 +2092,48 @@
       "idea": "One voice channel through the whole course: sampled and quantised, coded, put on QPSK symbols and raised-cosine pulses, received through the slides' superheterodyne receiver. Every step sets the rate of the next; the receiver's noise sets the bit errors, and they the voice's SNR.",
       "law": "Rb = fs·n    Rc = Rb·n/k    Rs = Rc/ld M    B = (1 + α)Rs/2    Eb/N0 = S/(k Tsys Rb)    SNR = SNQR/(1 + 4(M² − 1)Pe)",
       "lawTex": "\\frac{E_b}{N_0} = \\frac{S}{k\\,T_\\mathrm{sys}\\,R_b} \\qquad \\mathrm{SNR} = \\frac{\\mathrm{SNQR}}{1 + 4(M^2 - 1)P_e}",
+      "lawWhere": [
+        {
+          "tex": "E_b",
+          "means": "energy per bit [J]; E_b = S/R_b with N_0 = k T_sys is not printed as one line on the slides (not defined in the source)"
+        },
+        {
+          "tex": "N_0",
+          "means": "noise power density, k T (Rauschen, slide 15) [W/Hz]"
+        },
+        {
+          "tex": "S",
+          "means": "received signal power [W] (the slides' carrier power C, Rauschen, slide 94)"
+        },
+        {
+          "tex": "k",
+          "means": "Boltzmann constant [J/K] (Rauschen, slide 11)"
+        },
+        {
+          "tex": "T_\\mathrm{sys}",
+          "means": "system noise temperature at the receiver input [K] (T_sys(in), Rauschen, slides 65, 94)"
+        },
+        {
+          "tex": "R_b",
+          "means": "bit rate on the channel [bit/s]"
+        },
+        {
+          "tex": "\\mathrm{SNR}",
+          "means": "signal-to-noise ratio of the decoded voice (set 2, slide 50)"
+        },
+        {
+          "tex": "\\mathrm{SNQR}",
+          "means": "signal-to-quantisation-noise ratio, signal power over quantisation-noise power (set 2, slide 35)"
+        },
+        {
+          "tex": "M",
+          "means": "number of quantisation levels (set 2, slide 50)"
+        },
+        {
+          "tex": "P_e",
+          "means": "bit error probability after decoding (set 2, slide 50)"
+        }
+      ],
       "lecture": "Goiser (2016), set 2, slides 47–60; set 4, slide 26; set 6, slides 38–60; set 8, slides 6–18; Rauschen und Link-Budget, slides 30–65",
       "practice": [
         {
@@ -898,71 +2184,257 @@
           "eq": "R_b = f_s · n; 8 kHz · 8 bit = 64 kbit/s",
           "tex": "R_b = f_s\\,n",
           "note": "companded PCM",
-          "ref": "set 2, slide 60"
+          "ref": "set 2, slide 60",
+          "where": [
+            {
+              "tex": "R_b",
+              "means": "bit rate [bit/s] (set 2, slide 60)"
+            },
+            {
+              "tex": "f_s",
+              "means": "sampling frequency [Hz] (set 2, slide 60)"
+            },
+            {
+              "tex": "n",
+              "means": "bits per sample"
+            }
+          ]
         },
         {
           "eq": "SNQR_dB = 4.8 + 6n − α_dB",
           "tex": "\\mathrm{SNQR}_\\mathrm{dB} = 4.8 + 6n - \\alpha_\\mathrm{dB}",
           "note": "α = 3 dB for a full-scale sine",
-          "ref": "set 2, slides 46–47"
+          "ref": "set 2, slides 46–47",
+          "where": [
+            {
+              "tex": "\\mathrm{SNQR}_\\mathrm{dB}",
+              "means": "SNQR in decibels (set 2, slide 46)"
+            },
+            {
+              "tex": "n",
+              "means": "bits per codeword (set 2, slide 46)"
+            },
+            {
+              "tex": "\\alpha_\\mathrm{dB}",
+              "means": "ratio of peak to mean signal power in decibels (set 2, slides 46–47)"
+            }
+          ]
         },
         {
           "eq": "R = k/n",
           "tex": "R = k/n",
           "note": "4/7 for the Hamming (7,4) code",
-          "ref": "set 6, slide 38"
+          "ref": "set 6, slide 38",
+          "where": [
+            {
+              "tex": "R",
+              "means": "code rate (set 6, slide 38)"
+            },
+            {
+              "tex": "k",
+              "means": "information bits per codeword"
+            },
+            {
+              "tex": "n",
+              "means": "bits per codeword"
+            }
+          ]
         },
         {
           "eq": "P_e = 1 − Σ_{m ≤ t} C(n, m) p^m (1 − p)^(n − m)",
           "tex": "P_e = 1 - \\sum_{m=0}^{t}\\binom{n}{m}p^m(1-p)^{n-m}",
           "note": "t = 1 for the (7,4) code",
           "ref": "set 6, slide 60",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "P_e",
+              "means": "probability of more than t errors in a codeword (set 6, slide 60)"
+            },
+            {
+              "tex": "t",
+              "means": "number of errors the code corrects"
+            },
+            {
+              "tex": "m",
+              "means": "number of bit errors"
+            },
+            {
+              "tex": "n",
+              "means": "bits per codeword"
+            },
+            {
+              "tex": "p",
+              "means": "bit error probability of the channel (P_b on set 6, slide 60)"
+            },
+            {
+              "tex": "\\binom{n}{m}",
+              "means": "binomial coefficient n!/(m!(n − m)!) (set 6, slide 60)"
+            }
+          ]
         },
         {
           "eq": "Es = Eb ld M",
           "tex": "E_s = E_b \\operatorname{ld} M",
           "note": "2 bit per QPSK symbol",
-          "ref": "set 8, slide 6"
+          "ref": "set 8, slide 6",
+          "where": [
+            {
+              "tex": "E_s",
+              "means": "energy per symbol [J] (set 8, slide 24)"
+            },
+            {
+              "tex": "E_b",
+              "means": "energy per bit [J]"
+            },
+            {
+              "tex": "M",
+              "means": "number of signal states, 4 for QPSK"
+            },
+            {
+              "tex": "\\operatorname{ld}",
+              "means": "logarithm to base 2 (set 5, slide 30)"
+            }
+          ]
         },
         {
           "eq": "QPSK: Pb = Q(√(2Eb/N0))",
           "tex": "P_b = Q\\!\\left(\\sqrt{2E_b/N_0}\\right)",
           "note": "",
-          "ref": "set 8, slide 18"
+          "ref": "set 8, slide 18",
+          "where": [
+            {
+              "tex": "P_b",
+              "means": "bit error probability of QPSK (set 8, slide 18)"
+            },
+            {
+              "tex": "Q",
+              "means": "Gaussian Q-function, Q(x) = ½ erfc(x/√2) (formulary, sec. 2.2.1; set 3, slide 33 calls it the Marcum Q-function, which it is not)"
+            },
+            {
+              "tex": "E_b",
+              "means": "energy per bit [J]"
+            },
+            {
+              "tex": "N_0",
+              "means": "noise power density [W/Hz]"
+            }
+          ]
         },
         {
           "eq": "B = (1 + α)/(2T0)",
           "tex": "B = \\frac{1 + \\alpha}{2T_0}",
           "note": "",
-          "ref": "set 4, slide 26"
+          "ref": "set 4, slide 26",
+          "where": [
+            {
+              "tex": "B",
+              "means": "bandwidth [Hz] (set 4, slide 26)"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "roll-off factor, α = Δf/f_χ, 0 … 1 (set 4, slides 24, 26)"
+            },
+            {
+              "tex": "T_0",
+              "means": "symbol duration [s], R_s = 1/T_0 (set 4, slide 24)"
+            }
+          ]
         },
         {
           "eq": "f = f1 + (f2 − 1)/G1 + (f3 − 1)/(G1 G2) + …",
           "tex": "f = f_1 + \\frac{f_2 - 1}{G_1} + \\frac{f_3 - 1}{G_1G_2} + \\dots",
           "note": "2.25, 3.5 dB for the slides' receiver",
           "ref": "Rauschen, slides 53, 64",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "f",
+              "means": "noise factor of the whole cascade (Rauschen, slide 53)"
+            },
+            {
+              "tex": "f_1,\\ f_2,\\ f_3",
+              "means": "noise factors of stages 1, 2 and 3 (Rauschen, slide 53)"
+            },
+            {
+              "tex": "G_1,\\ G_2",
+              "means": "power gains of stages 1 and 2, linear (Rauschen, slide 53)"
+            }
+          ]
         },
         {
           "eq": "Tsys = Ts + (f − 1) T0",
           "tex": "T_\\mathrm{sys} = T_S + (f - 1)T_0",
           "note": "462 K in the slides",
           "ref": "Rauschen, slides 52, 65",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "T_\\mathrm{sys}",
+              "means": "system noise temperature at the input [K] (T_sys(in), Rauschen, slide 65)"
+            },
+            {
+              "tex": "T_S",
+              "means": "noise temperature of the source, the antenna [K] (Rauschen, slide 65: 100 K)"
+            },
+            {
+              "tex": "f",
+              "means": "noise factor of the receiver"
+            },
+            {
+              "tex": "T_0",
+              "means": "reference temperature, 290 K (Rauschen, slide 52)"
+            }
+          ]
         },
         {
           "eq": "SNR_out = SNQR / (1 + 4(M² − 1)Pe)",
           "tex": "\\mathrm{SNR}_\\mathrm{out} = \\frac{\\mathrm{SNQR}}{1 + 4(M^2 - 1)P_e}",
           "note": "M² − 1 is the SNQR of a uniform signal",
-          "ref": "set 2, slide 50"
+          "ref": "set 2, slide 50",
+          "where": [
+            {
+              "tex": "\\mathrm{SNR}_\\mathrm{out}",
+              "means": "signal-to-noise ratio after decoding (set 2, slide 50)"
+            },
+            {
+              "tex": "\\mathrm{SNQR}",
+              "means": "signal-to-quantisation-noise ratio, signal power over quantisation-noise power (set 2, slide 35)"
+            },
+            {
+              "tex": "M",
+              "means": "number of quantisation levels"
+            },
+            {
+              "tex": "P_e",
+              "means": "bit error probability (set 2, slide 50)"
+            }
+          ]
         },
         {
           "eq": "H(f) = 1 for |f| ≤ fχ(1 − α); ½(1 + cos(π(|f| − fχ(1 − α))/(2αfχ))) up to fχ(1 + α); 0 beyond",
           "tex": "H(f) = \\begin{cases} 1, & |f| \\le f_\\chi(1 - \\alpha) \\\\ \\frac{1}{2}\\left(1 + \\cos\\frac{\\pi(|f| - f_\\chi(1 - \\alpha))}{2\\alpha f_\\chi}\\right), & |f| \\le f_\\chi(1 + \\alpha) \\\\ 0, & \\text{beyond} \\end{cases}",
           "note": "the raised-cosine spectrum of step 1, f_χ = Rs/2",
           "ref": "set 4, slides 23–24",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "H(f)",
+              "means": "raised-cosine transfer function (set 4, slide 24)"
+            },
+            {
+              "tex": "f",
+              "means": "frequency [Hz]"
+            },
+            {
+              "tex": "f_\\chi",
+              "means": "corner frequency of the reference low-pass, f_χ = R_s/2 = 1/(2T_0) [Hz] (set 4, slide 24)"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "roll-off factor, α = Δf/f_χ, 0 … 1 (set 4, slides 24, 26)"
+            }
+          ]
         }
       ]
     }

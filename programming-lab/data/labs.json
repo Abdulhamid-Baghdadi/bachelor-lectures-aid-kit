@@ -56,25 +56,77 @@
       "idea": "To find a number, look at one element after another, or, if the array is sorted, look in the middle and throw away the half that cannot hold it. Halving needs only about log₂ N looks.",
       "law": "m = ⌊(l + r)/2⌋;  l = m + 1 or r = m − 1, while r ≥ l",
       "lawTex": "m = \\Big\\lfloor \\frac{l + r}{2} \\Big\\rfloor; \\qquad l = m + 1 \\;\\text{or}\\; r = m - 1, \\quad \\text{while } r \\ge l",
+      "lawWhere": [
+        {
+          "tex": "m",
+          "means": "index of the element in the middle of the part (§ 13.7.2, p. 174)"
+        },
+        {
+          "tex": "l,\\ r",
+          "means": "left and right bound of the part still searched, indices (§ 13.7.2, p. 174)"
+        },
+        {
+          "tex": "\\lfloor\\ \\rfloor",
+          "means": "rounding down; the book's code gets it from C's integer division (l + r) / 2 (p. 174)"
+        }
+      ],
       "lecture": "Klima and Selberherr (2010), § 13.7, pp. 173–174",
       "equations": [
         {
           "eq": "l = 0, r = N − 1",
           "tex": "l = 0, \\qquad r = N - 1",
           "note": "the left and right bounds at the start",
-          "ref": "§ 13.7.2, p. 174"
+          "ref": "§ 13.7.2, p. 174",
+          "where": [
+            {
+              "tex": "l,\\ r",
+              "means": "left and right bound of the part still searched, indices (§ 13.7.2, p. 174)"
+            },
+            {
+              "tex": "N",
+              "means": "number of elements in the array (p. 174 writes N − 1 in the text, len − 1 in the code; N is not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "m = (l + r)/2 (integer division)",
           "tex": "m = (l + r) / 2",
           "note": "the middle; in C, long division rounds down",
-          "ref": "§ 13.7.2, p. 174"
+          "ref": "§ 13.7.2, p. 174",
+          "where": [
+            {
+              "tex": "m",
+              "means": "index of the element in the middle of the part (§ 13.7.2, p. 174)"
+            },
+            {
+              "tex": "l,\\ r",
+              "means": "left and right bound of the part still searched, indices (§ 13.7.2, p. 174)"
+            }
+          ]
         },
         {
           "eq": "feld[m] < wert ⇒ l = m + 1, else r = m − 1",
           "tex": "\\text{feld}[m] < \\text{wert} \\;\\Rightarrow\\; l = m + 1, \\quad \\text{else } r = m - 1",
           "note": "keep the half that can hold the number; −1 means not found",
-          "ref": "§ 13.7.2, p. 174"
+          "ref": "§ 13.7.2, p. 174",
+          "where": [
+            {
+              "tex": "\\text{feld}",
+              "means": "the array being searched or sorted (code of § 13.7.2, p. 174)"
+            },
+            {
+              "tex": "\\text{wert}",
+              "means": "the value sought (code of p. 174)"
+            },
+            {
+              "tex": "m",
+              "means": "index of the element in the middle of the part (§ 13.7.2, p. 174)"
+            },
+            {
+              "tex": "l,\\ r",
+              "means": "left and right bound of the part still searched, indices (§ 13.7.2, p. 174)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -106,13 +158,41 @@
       "idea": "Bubble sort compares neighbours and swaps them until no swap is left. Quicksort puts one element in its final place, smaller ones to its left and larger to its right, and sorts both sides the same way.",
       "law": "QuickSort(l, r): pos = Positioniere(l, r); QuickSort(l, pos − 1); QuickSort(pos + 1, r)",
       "lawTex": "\\text{QuickSort}(l, r):\\; pos = \\text{Positioniere}(l, r);\\; \\text{QuickSort}(l, pos - 1);\\; \\text{QuickSort}(pos + 1, r)",
+      "lawWhere": [
+        {
+          "tex": "\\text{QuickSort}",
+          "means": "sorts feld between the bounds l and r by calling itself on both parts (§ 18.3.2, p. 262)"
+        },
+        {
+          "tex": "\\text{Positioniere}",
+          "means": "puts one element, feld[pos], at its right place in [l, r]: nothing left of it larger, nothing right smaller (p. 262)"
+        },
+        {
+          "tex": "pos",
+          "means": "the index where Positioniere placed the element (p. 262)"
+        },
+        {
+          "tex": "l,\\ r",
+          "means": "left and right bound of the part to sort, indices (§ 18.3.2, p. 262)"
+        }
+      ],
       "lecture": "Klima and Selberherr (2010), § 13.6.2, p. 172; § 18.3.2, pp. 261–263",
       "equations": [
         {
           "eq": "feld[i] > feld[i + 1] ⇒ swap",
           "tex": "\\text{feld}[i] > \\text{feld}[i + 1] \\;\\Rightarrow\\; \\text{swap}",
           "note": "bubble sort's step; sorted when a pass makes no swap",
-          "ref": "§ 13.6.2, p. 172"
+          "ref": "§ 13.6.2, p. 172",
+          "where": [
+            {
+              "tex": "\\text{feld}",
+              "means": "the array being sorted (§ 13.6.2, p. 172)"
+            },
+            {
+              "tex": "i",
+              "means": "index of the left one of two neighbouring elements (not defined in the source: p. 172 says it in words)"
+            }
+          ]
         },
         {
           "eq": "6 4 7 9 1 5 2 8 3 → 2 1 3 9 4 5 6 8 7",
@@ -124,7 +204,13 @@
           "eq": "r ≤ l: stop",
           "tex": "r \\le l: \\text{stop}",
           "note": "an empty part or one of a single element is sorted",
-          "ref": "§ 18.3.2, p. 262"
+          "ref": "§ 18.3.2, p. 262",
+          "where": [
+            {
+              "tex": "l,\\ r",
+              "means": "left and right bound of the part to sort, indices (§ 18.3.2, p. 262)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -174,19 +260,49 @@
       "idea": "A heap keeps the largest key at the top of a complete binary tree stored in an array. A new key climbs up (UpHeap); after the top is removed, the last key sinks down (DownHeap). Removing the top again and again sorts.",
       "law": "feld[(i − 1)/2] ≥ feld[i]",
       "lawTex": "\\text{feld}\\big[\\lfloor (i - 1)/2 \\rfloor\\big] \\ge \\text{feld}[i]",
+      "lawWhere": [
+        {
+          "tex": "\\text{feld}",
+          "means": "the array the heap is stored in (§ 19.5.1, p. 287)"
+        },
+        {
+          "tex": "i",
+          "means": "index of a node; the lab counts from 0, the book from 1, with children 2i, 2i + 1 and parent i/2 (p. 288)"
+        },
+        {
+          "tex": "\\lfloor\\ \\rfloor",
+          "means": "rounding down, as C's integer division (the book's i/2, p. 288)"
+        }
+      ],
       "lecture": "Klima and Selberherr (2010), § 19.5, pp. 287–291",
       "equations": [
         {
           "eq": "children of i: 2i + 1 and 2i + 2",
           "tex": "\\text{children of } i: \\; 2i + 1, \\; 2i + 2",
           "note": "the tree is kept in an array without links; indices from 0 as in C",
-          "ref": "derived"
+          "ref": "derived",
+          "where": [
+            {
+              "tex": "i",
+              "means": "index of a node counted from 0 (derived here; the book counts from 1: children 2i and 2i + 1, p. 288)"
+            }
+          ]
         },
         {
           "eq": "key(parent) ≥ key(child)",
           "tex": "\\text{key}(\\text{parent}) \\ge \\text{key}(\\text{child})",
           "note": "the heap condition",
-          "ref": "§ 19.5, p. 287"
+          "ref": "§ 19.5, p. 287",
+          "where": [
+            {
+              "tex": "\\text{key}",
+              "means": "the node's key (Schlüssel) (p. 287)"
+            },
+            {
+              "tex": "\\text{parent},\\ \\text{child}",
+              "means": "a node and its successor (Nachfolger) in the tree (p. 287)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -215,25 +331,77 @@
       "idea": "A pointer holds an address. Adding n moves it on by n elements, not n bytes: ptr + n is the address of feld[n].",
       "law": "&feld[n] = ptr + n",
       "lawTex": "\\&\\text{feld}[n] = \\text{ptr} + n",
+      "lawWhere": [
+        {
+          "tex": "\\&",
+          "means": "address operator: the address of what follows (§ 14.4, p. 186)"
+        },
+        {
+          "tex": "\\text{feld}",
+          "means": "array of 10 long, long feld[10] (§ 14.4, p. 186)"
+        },
+        {
+          "tex": "\\text{ptr}",
+          "means": "pointer to long, set to &feld[0] (§ 14.4, p. 186)"
+        },
+        {
+          "tex": "n",
+          "means": "an integer (ganze Zahl): the step in elements (§ 14.4, p. 186)"
+        }
+      ],
       "lecture": "Klima and Selberherr (2010), ch. 14, pp. 179–187",
       "equations": [
         {
           "eq": "&feld[n] = ptr + n, with ptr = &feld[0]",
           "tex": "\\&\\text{feld}[n] = \\text{ptr} + n, \\qquad \\text{ptr} = \\&\\text{feld}[0]",
           "note": "pointer arithmetic counts in elements",
-          "ref": "§ 14.4, p. 186"
+          "ref": "§ 14.4, p. 186",
+          "where": [
+            {
+              "tex": "\\&",
+              "means": "address operator: the address of what follows (§ 14.4, p. 186)"
+            },
+            {
+              "tex": "\\text{feld}",
+              "means": "array of 10 long, long feld[10] (§ 14.4, p. 186)"
+            },
+            {
+              "tex": "\\text{ptr}",
+              "means": "pointer to long, set to &feld[0] (§ 14.4, p. 186)"
+            },
+            {
+              "tex": "n",
+              "means": "an integer (ganze Zahl): the step in elements (§ 14.4, p. 186)"
+            }
+          ]
         },
         {
           "eq": "ptr = ptr + 1 moves 4 bytes for long",
           "tex": "\\text{ptr} = \\text{ptr} + 1: \\; +4 \\text{ bytes for long}",
           "note": "on a 32-bit machine; the object's size is taken into account",
-          "ref": "§ 14.4, p. 186"
+          "ref": "§ 14.4, p. 186",
+          "where": [
+            {
+              "tex": "\\text{ptr}",
+              "means": "pointer to long; + 1 moves it by the object's size, 4 bytes on 32-bit machines (§ 14.4, p. 186)"
+            }
+          ]
         },
         {
           "eq": "[] on pointers, * on arrays",
           "tex": "[\\,] \\text{ on pointers}, \\; * \\text{ on arrays}",
           "note": "the duality of pointers and arrays; mixing the two makes programs hard to read",
-          "ref": "§ 14.3, p. 185"
+          "ref": "§ 14.3, p. 185",
+          "where": [
+            {
+              "tex": "[\\,]",
+              "means": "index operator (§ 14.3, p. 185)"
+            },
+            {
+              "tex": "*",
+              "means": "dereference operator (§ 14.3, p. 185)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -258,6 +426,16 @@
       "idea": "Each call puts a frame with its own local variables on the stack; each return takes it off. A recursive function stacks one frame per open call.",
       "law": "factorial(n) = n · factorial(n − 1),  factorial(1) = 1",
       "lawTex": "\\text{factorial}(n) = n \\cdot \\text{factorial}(n - 1), \\qquad \\text{factorial}(1) = 1",
+      "lawWhere": [
+        {
+          "tex": "\\text{factorial}",
+          "means": "the function Faktorielle (§ 18.2, p. 258)"
+        },
+        {
+          "tex": "n",
+          "means": "a whole number; the book writes N and ends at N = 0 with 0! = 1, (18.2), p. 257, where the lab ends at 1"
+        }
+      ],
       "lecture": "Klima and Selberherr (2010), § 18.2, pp. 258–259",
       "equations": [
         {
@@ -287,13 +465,29 @@
       "idea": "Memory from malloc lives on the heap until free gives it back; nobody frees it for you. Lose the last pointer and it leaks; free it twice or use it after free and the behaviour is undefined.",
       "law": "zeiger = malloc(sizeof(datentyp)); … free(zeiger); zeiger = 0;",
       "lawTex": "\\texttt{zeiger = malloc(sizeof(datentyp));} \\;\\dots\\; \\texttt{free(zeiger); zeiger = 0;}",
+      "lawWhere": [
+        {
+          "tex": "\\texttt{zeiger}",
+          "means": "pointer that receives the block's address (§ 20.2, p. 304)"
+        },
+        {
+          "tex": "\\texttt{datentyp}",
+          "means": "the data type the block is for; sizeof gives its size in bytes (p. 304)"
+        }
+      ],
       "lecture": "Klima and Selberherr (2010), ch. 20, pp. 303–310",
       "equations": [
         {
           "eq": "malloc(n): n bytes or 0",
           "tex": "\\texttt{malloc}(n): \\; n \\text{ bytes, or } 0",
           "note": "the length is in bytes, not elements; 0 when no memory is free",
-          "ref": "§ 20.2, p. 304"
+          "ref": "§ 20.2, p. 304",
+          "where": [
+            {
+              "tex": "n",
+              "means": "length of the block asked for, in bytes [B] (§ 20.2, p. 304)"
+            }
+          ]
         },
         {
           "eq": "2 bytes asked, 8 given",
@@ -311,7 +505,13 @@
           "eq": "free(p); p = 0;",
           "tex": "\\texttt{free(p); p = 0;}",
           "note": "freeing twice can crash the program; free(0) does nothing",
-          "ref": "§ 20.4, p. 308"
+          "ref": "§ 20.4, p. 308",
+          "where": [
+            {
+              "tex": "\\texttt{p}",
+              "means": "pointer to a block from malloc, calloc or realloc (the book's db, § 20.4, p. 308)"
+            }
+          ]
         }
       ],
       "practice": [

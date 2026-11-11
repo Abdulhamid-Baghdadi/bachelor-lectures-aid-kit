@@ -70,3 +70,11 @@ test("the page ranges hold the cited equations: (3.103) p. 69, (5.10) p. 122, (2
   assert.match(lab("collision").lecture, /p\. 29/);
   assert.match(lab("lagrange").lecture, /p\. 60/);
 });
+
+// Kugi (2015), Seite 161: the Tustin map (6.90) is written q = (2/Ta)(z − 1)/(z + 1), checked 11 Nov 2026.
+test("the drive lab writes the Tustin map (6.90) with Kugi's q", () => {
+  const e = lab("drive").equations.find(q => q.ref === "(6.90)");
+  assert.match(e.eq, /^q = \(2\/Ta\)/);
+  assert.ok(e.where.some(w => w.tex === "q"));
+  assert.ok(!e.where.some(w => w.tex === "s"));
+});

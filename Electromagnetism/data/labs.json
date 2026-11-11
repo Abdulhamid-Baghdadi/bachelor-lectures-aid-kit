@@ -194,32 +194,224 @@
           "eq": "Ψ(∂V) = Q(V)",
           "tex": "\\Psi(\\partial\\mathcal{V}) = Q(\\mathcal{V})",
           "note": "global form",
-          "ref": "Tab. 2.1"
+          "ref": "Tab. 2.1",
+          "where": [
+            {
+              "tex": "\\partial\\mathcal{V}",
+              "means": "the complete, consistently oriented boundary of the volume (p. 26)"
+            },
+            {
+              "tex": "\\mathcal{V}",
+              "means": "a volume fixed in space (p. 27)"
+            },
+            {
+              "tex": "\\Psi",
+              "means": "electric flux through the surface [C] (p. 28)"
+            },
+            {
+              "tex": "Q",
+              "means": "electric charge in the volume [C] (p. 27)"
+            }
+          ]
         },
         {
           "eq": "∮∂V n·D dA = ∫V ϱ dV",
           "tex": "\\int_{\\partial\\mathcal{V}} \\vec{n}\\cdot\\vec{D}\\,\\mathrm{d}A = \\int_{\\mathcal{V}} \\varrho\\,\\mathrm{d}V",
           "note": "integral form",
-          "ref": "Tab. 2.1"
+          "ref": "Tab. 2.1",
+          "where": [
+            {
+              "tex": "\\partial\\mathcal{V}",
+              "means": "the complete, consistently oriented boundary of the volume (p. 26)"
+            },
+            {
+              "tex": "\\vec{n}",
+              "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+            },
+            {
+              "tex": "\\vec{D}",
+              "means": "electric flux density [C/m²] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\mathrm{d}A",
+              "means": "surface element [m²] (p. 26)"
+            },
+            {
+              "tex": "\\mathcal{V}",
+              "means": "a volume fixed in space (p. 27)"
+            },
+            {
+              "tex": "\\varrho",
+              "means": "electric charge density [C/m³] (p. 27)"
+            },
+            {
+              "tex": "\\mathrm{d}V",
+              "means": "volume element [m³] (p. 28)"
+            }
+          ]
         },
         {
           "eq": "∇·D = ϱ,   n·[[D]] = σ",
           "tex": "\\nabla\\cdot\\vec{D} = \\varrho, \\qquad \\vec{n}\\cdot[\\![\\vec{D}]\\!] = \\sigma",
           "note": "local form and jump condition",
-          "ref": "(2.23)"
+          "ref": "(2.23)",
+          "where": [
+            {
+              "tex": "\\vec{n}",
+              "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+            },
+            {
+              "tex": "\\vec{D}",
+              "means": "electric flux density [C/m²] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\varrho",
+              "means": "electric charge density [C/m³] (p. 27)"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            },
+            {
+              "tex": "[\\![\\vec{D}]\\!]",
+              "means": "jump of D across a jump surface: the value in front minus the value behind (p. 23, (1.48))"
+            },
+            {
+              "tex": "\\sigma",
+              "means": "electric surface charge density on a carrier surface [C/m²] (p. 27)"
+            }
+          ]
         },
         {
           "eq": "Ψ(∂V) − Q(V) = ∫V′(∇·D − ϱ) dV + ∫S′(n·[[D]] − σ) dA = 0",
           "tex": "\\Psi(\\partial\\mathcal{V}) - Q(\\mathcal{V}) = \\int_{\\mathcal{V}'} (\\nabla\\cdot\\vec{D} - \\varrho)\\,\\mathrm{d}V + \\int_{\\mathcal{S}'} (\\vec{n}\\cdot[\\![\\vec{D}]\\!] - \\sigma)\\,\\mathrm{d}A = 0",
           "note": "from the global to the local form",
-          "ref": "(2.21)"
+          "ref": "(2.21)",
+          "where": [
+            {
+              "tex": "\\partial\\mathcal{V}",
+              "means": "the complete, consistently oriented boundary of the volume (p. 26)"
+            },
+            {
+              "tex": "\\vec{n}",
+              "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+            },
+            {
+              "tex": "\\vec{D}",
+              "means": "electric flux density [C/m²] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\mathrm{d}A",
+              "means": "surface element [m²] (p. 26)"
+            },
+            {
+              "tex": "\\mathcal{V}",
+              "means": "a volume fixed in space (p. 27)"
+            },
+            {
+              "tex": "\\varrho",
+              "means": "electric charge density [C/m³] (p. 27)"
+            },
+            {
+              "tex": "\\mathrm{d}V",
+              "means": "volume element [m³] (p. 28)"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            },
+            {
+              "tex": "\\Psi",
+              "means": "electric flux through the surface [C] (p. 28)"
+            },
+            {
+              "tex": "Q",
+              "means": "electric charge in the volume [C] (p. 27)"
+            },
+            {
+              "tex": "[\\![\\vec{D}]\\!]",
+              "means": "jump of D across a jump surface: the value in front minus the value behind (p. 23, (1.48))"
+            },
+            {
+              "tex": "\\sigma",
+              "means": "electric surface charge density on a carrier surface [C/m²] (p. 27)"
+            },
+            {
+              "tex": "\\mathcal{V}'",
+              "means": "the volume without the points of the jump surface (p. 27)"
+            },
+            {
+              "tex": "\\mathcal{S}'",
+              "means": "the part of the jump surface inside the volume (p. 27)"
+            }
+          ]
         },
         {
           "eq": "E = Σ Q_i e_R,i / (4πε R_i²)",
           "tex": "\\vec{E} = \\sum_i \\frac{Q_i\\,\\vec{e}_{R,i}}{4\\pi\\varepsilon R_i^2}",
           "note": "the field arrows: each charge's Coulomb field, added",
           "ref": "from (3.13) with E = −∇ϕ (3.4), summed",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26)"
+            },
+            {
+              "tex": "Q_i",
+              "means": "charge of the i-th point charge [C] (p. 61, (3.13))"
+            },
+            {
+              "tex": "\\vec{e}_{R,i}",
+              "means": "unit vector from the i-th charge to the field point (p. 95, (3.143): e_R = R/R)"
+            },
+            {
+              "tex": "R_i",
+              "means": "distance from the i-th charge to the field point [m] (p. 62, (3.16))"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 36)"
+            },
+            {
+              "tex": "i",
+              "means": "index over the point charges (not defined in the source)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\partial\\mathcal{V}",
+          "means": "the complete, consistently oriented boundary of the volume (p. 26)"
+        },
+        {
+          "tex": "\\vec{n}",
+          "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+        },
+        {
+          "tex": "\\vec{D}",
+          "means": "electric flux density [C/m²] (p. 28, (2.19))"
+        },
+        {
+          "tex": "\\mathrm{d}A",
+          "means": "surface element [m²] (p. 26)"
+        },
+        {
+          "tex": "\\mathcal{V}",
+          "means": "a volume fixed in space (p. 27)"
+        },
+        {
+          "tex": "\\varrho",
+          "means": "electric charge density [C/m³] (p. 27)"
+        },
+        {
+          "tex": "\\mathrm{d}V",
+          "means": "volume element [m³] (p. 28)"
+        },
+        {
+          "tex": "\\nabla",
+          "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
         }
       ]
     },
@@ -248,32 +440,136 @@
           "eq": "Φ(∂V) = 0",
           "tex": "\\Phi(\\partial\\mathcal{V}) = 0",
           "note": "global form",
-          "ref": "Tab. 2.1"
+          "ref": "Tab. 2.1",
+          "where": [
+            {
+              "tex": "\\Phi",
+              "means": "magnetic flux through the surface [Wb] (p. 25)"
+            },
+            {
+              "tex": "\\partial\\mathcal{V}",
+              "means": "the complete, consistently oriented boundary of the volume (p. 26)"
+            }
+          ]
         },
         {
           "eq": "∮∂V n·B dA = 0",
           "tex": "\\int_{\\partial\\mathcal{V}} \\vec{n}\\cdot\\vec{B}\\,\\mathrm{d}A = 0",
           "note": "integral form",
-          "ref": "Tab. 2.1"
+          "ref": "Tab. 2.1",
+          "where": [
+            {
+              "tex": "\\partial\\mathcal{V}",
+              "means": "the complete, consistently oriented boundary of the volume (p. 26)"
+            },
+            {
+              "tex": "\\vec{n}",
+              "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+            },
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\mathrm{d}A",
+              "means": "surface element [m²] (p. 26)"
+            }
+          ]
         },
         {
           "eq": "∇·B = 0,   n·[[B]] = 0",
           "tex": "\\nabla\\cdot\\vec{B} = 0, \\qquad \\vec{n}\\cdot[\\![\\vec{B}]\\!] = 0",
           "note": "local form: normal B is continuous",
-          "ref": "Tab. 2.1"
+          "ref": "Tab. 2.1",
+          "where": [
+            {
+              "tex": "\\vec{n}",
+              "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+            },
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            },
+            {
+              "tex": "[\\![\\vec{B}]\\!]",
+              "means": "jump of B across a jump surface: the value in front minus the value behind (p. 23, (1.48))"
+            }
+          ]
         },
         {
           "eq": "B = ∇×A",
           "tex": "\\vec{B} = \\nabla\\times\\vec{A}",
           "note": "so B is a curl: a vector potential exists",
-          "ref": "(5.5)"
+          "ref": "(5.5)",
+          "where": [
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            },
+            {
+              "tex": "\\vec{A}",
+              "means": "magnetic vector potential [V s/m] (p. 118, (5.5))"
+            }
+          ]
         },
         {
           "eq": "B = μ0 (3 e_r (e_r·m) − m)/(4π r³)",
           "tex": "\\vec{B} = \\frac{\\mu_0}{4\\pi}\\,\\frac{3\\vec{e}_r(\\vec{e}_r\\cdot\\vec{m}) - \\vec{m}}{r^3}",
           "note": "the field arrows of the small current loop: the magnetic counterpart of the electric dipole's field",
-          "ref": "by duality with (5.42), p. 127",
-          "explore": true
+          "ref": "by duality with (5.42), p. 124",
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\mu_0",
+              "means": "magnetic constant [H/m] (p. 31, (2.24))"
+            },
+            {
+              "tex": "\\vec{e}_r",
+              "means": "radial unit vector, pointing away from the source (p. 124)"
+            },
+            {
+              "tex": "\\vec{m}",
+              "means": "magnetic dipole moment [A m²] (p. 129, (5.57))"
+            },
+            {
+              "tex": "r",
+              "means": "distance from the dipole [m] (p. 123)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\partial\\mathcal{V}",
+          "means": "the complete, consistently oriented boundary of the volume (p. 26)"
+        },
+        {
+          "tex": "\\vec{n}",
+          "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+        },
+        {
+          "tex": "\\vec{B}",
+          "means": "magnetic flux density [T] (p. 26, (2.5))"
+        },
+        {
+          "tex": "\\mathrm{d}A",
+          "means": "surface element [m²] (p. 26)"
+        },
+        {
+          "tex": "\\nabla",
+          "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
         }
       ]
     },
@@ -305,26 +601,176 @@
           "eq": "U(∂A) = −Φ̇(A)",
           "tex": "U(\\partial\\mathcal{A}) = -\\dot{\\Phi}(\\mathcal{A})",
           "note": "global form",
-          "ref": "Tab. 2.1"
+          "ref": "Tab. 2.1",
+          "where": [
+            {
+              "tex": "\\partial\\mathcal{A}",
+              "means": "the complete, consistently oriented boundary curve of the surface (p. 25)"
+            },
+            {
+              "tex": "\\mathcal{A}",
+              "means": "a surface fixed in space (p. 25)"
+            },
+            {
+              "tex": "U",
+              "means": "electric voltage along the curve [V] (p. 25)"
+            },
+            {
+              "tex": "\\dot{\\Phi}",
+              "means": "rate of change of the magnetic flux [V] (p. 25, (2.3))"
+            }
+          ]
         },
         {
           "eq": "∮∂A s·E ds = −d/dt ∫A n·B dA",
           "tex": "\\int_{\\partial\\mathcal{A}} \\vec{s}\\cdot\\vec{E}\\,\\mathrm{d}s = -\\frac{\\mathrm{d}}{\\mathrm{d}t}\\int_{\\mathcal{A}} \\vec{n}\\cdot\\vec{B}\\,\\mathrm{d}A",
           "note": "integral form (fixed loop)",
-          "ref": "Tab. 2.1"
+          "ref": "Tab. 2.1",
+          "where": [
+            {
+              "tex": "\\partial\\mathcal{A}",
+              "means": "the complete, consistently oriented boundary curve of the surface (p. 25)"
+            },
+            {
+              "tex": "\\vec{s}",
+              "means": "unit tangent vector of the curve in its direction of travel (p. 26)"
+            },
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\mathrm{d}s",
+              "means": "line element [m] (p. 26)"
+            },
+            {
+              "tex": "\\frac{\\mathrm{d}}{\\mathrm{d}t}",
+              "means": "time derivative of the integral over the fixed region (p. 26)"
+            },
+            {
+              "tex": "\\mathcal{A}",
+              "means": "a surface fixed in space (p. 25)"
+            },
+            {
+              "tex": "\\vec{n}",
+              "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+            },
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\mathrm{d}A",
+              "means": "surface element [m²] (p. 26)"
+            }
+          ]
         },
         {
           "eq": "∇×E = −∂tB,   n×[[E]] = 0",
           "tex": "\\nabla\\times\\vec{E} = -\\partial_t \\vec{B}, \\qquad \\vec{n}\\times[\\![\\vec{E}]\\!] = \\vec{0}",
           "note": "local form: tangential E is continuous",
-          "ref": "Tab. 2.1"
+          "ref": "Tab. 2.1",
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{n}",
+              "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+            },
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            },
+            {
+              "tex": "\\partial_t",
+              "means": "partial derivative with respect to time (p. 26)"
+            },
+            {
+              "tex": "[\\![\\vec{E}]\\!]",
+              "means": "jump of E across a jump surface: the value in front minus the value behind (p. 23, (1.48))"
+            }
+          ]
         },
         {
           "eq": "Û = N A B̂ ω",
           "tex": "\\hat{U} = N A \\hat{B} \\omega",
           "note": "for B = B̂ sin ωt through N turns of area A (derived)",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\hat{U}",
+              "means": "amplitude of the induced voltage [V] (not defined in the source)"
+            },
+            {
+              "tex": "N",
+              "means": "number of turns of the coil (not defined in the source)"
+            },
+            {
+              "tex": "A",
+              "means": "area enclosed by one turn [m²] (not defined in the source)"
+            },
+            {
+              "tex": "\\hat{B}",
+              "means": "amplitude of the magnetic flux density through the coil [T] (not defined in the source)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency of the rotation or of the field [1/s] (not defined in the source)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\partial\\mathcal{A}",
+          "means": "the complete, consistently oriented boundary curve of the surface (p. 25)"
+        },
+        {
+          "tex": "\\vec{s}",
+          "means": "unit tangent vector of the curve in its direction of travel (p. 26)"
+        },
+        {
+          "tex": "\\vec{E}",
+          "means": "electric field strength [V/m] (p. 26, (2.5))"
+        },
+        {
+          "tex": "\\mathrm{d}s",
+          "means": "line element [m] (p. 26)"
+        },
+        {
+          "tex": "\\frac{\\mathrm{d}}{\\mathrm{d}t}",
+          "means": "time derivative of the integral over the fixed region (p. 26)"
+        },
+        {
+          "tex": "\\mathcal{A}",
+          "means": "a surface fixed in space (p. 25)"
+        },
+        {
+          "tex": "\\vec{n}",
+          "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+        },
+        {
+          "tex": "\\vec{B}",
+          "means": "magnetic flux density [T] (p. 26, (2.5))"
+        },
+        {
+          "tex": "\\mathrm{d}A",
+          "means": "surface element [m²] (p. 26)"
+        },
+        {
+          "tex": "\\nabla",
+          "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+        },
+        {
+          "tex": "\\partial_t",
+          "means": "partial derivative with respect to time (p. 26)"
         }
       ]
     },
@@ -354,26 +800,188 @@
           "eq": "V(∂A) = I(A) + Ψ̇(A)",
           "tex": "V(\\partial\\mathcal{A}) = I(\\mathcal{A}) + \\dot{\\Psi}(\\mathcal{A})",
           "note": "global form",
-          "ref": "Tab. 2.1"
+          "ref": "Tab. 2.1",
+          "where": [
+            {
+              "tex": "\\partial\\mathcal{A}",
+              "means": "the complete, consistently oriented boundary curve of the surface (p. 25)"
+            },
+            {
+              "tex": "\\mathcal{A}",
+              "means": "a surface fixed in space (p. 25)"
+            },
+            {
+              "tex": "V",
+              "means": "magnetic voltage along the curve [A] (p. 28)"
+            },
+            {
+              "tex": "I",
+              "means": "electric current through the surface [A] (p. 27)"
+            },
+            {
+              "tex": "\\dot{\\Psi}",
+              "means": "rate of change of the electric flux [A] (p. 28, (2.17))"
+            }
+          ]
         },
         {
           "eq": "∮∂A s·H ds = ∫A n·J dA + d/dt ∫A n·D dA",
           "tex": "\\int_{\\partial\\mathcal{A}} \\vec{s}\\cdot\\vec{H}\\,\\mathrm{d}s = \\int_{\\mathcal{A}} \\vec{n}\\cdot\\vec{J}\\,\\mathrm{d}A + \\frac{\\mathrm{d}}{\\mathrm{d}t}\\int_{\\mathcal{A}} \\vec{n}\\cdot\\vec{D}\\,\\mathrm{d}A",
           "note": "integral form",
-          "ref": "Tab. 2.1"
+          "ref": "Tab. 2.1",
+          "where": [
+            {
+              "tex": "\\partial\\mathcal{A}",
+              "means": "the complete, consistently oriented boundary curve of the surface (p. 25)"
+            },
+            {
+              "tex": "\\vec{s}",
+              "means": "unit tangent vector of the curve in its direction of travel (p. 26)"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\mathrm{d}s",
+              "means": "line element [m] (p. 26)"
+            },
+            {
+              "tex": "\\mathcal{A}",
+              "means": "a surface fixed in space (p. 25)"
+            },
+            {
+              "tex": "\\vec{n}",
+              "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+            },
+            {
+              "tex": "\\vec{J}",
+              "means": "electric current density [A/m²] (p. 27)"
+            },
+            {
+              "tex": "\\mathrm{d}A",
+              "means": "surface element [m²] (p. 26)"
+            },
+            {
+              "tex": "\\frac{\\mathrm{d}}{\\mathrm{d}t}",
+              "means": "time derivative of the integral over the fixed region (p. 26)"
+            },
+            {
+              "tex": "\\vec{D}",
+              "means": "electric flux density [C/m²] (p. 28, (2.19))"
+            }
+          ]
         },
         {
           "eq": "∇×H = J + ∂tD,   n×[[H]] = K",
           "tex": "\\nabla\\times\\vec{H} = \\vec{J} + \\partial_t \\vec{D}, \\qquad \\vec{n}\\times[\\![\\vec{H}]\\!] = \\vec{K}",
           "note": "local form, surface current K",
-          "ref": "(2.22)"
+          "ref": "(2.22)",
+          "where": [
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\vec{n}",
+              "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+            },
+            {
+              "tex": "\\vec{J}",
+              "means": "electric current density [A/m²] (p. 27)"
+            },
+            {
+              "tex": "\\vec{D}",
+              "means": "electric flux density [C/m²] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            },
+            {
+              "tex": "\\partial_t",
+              "means": "partial derivative with respect to time (p. 26)"
+            },
+            {
+              "tex": "[\\![\\vec{H}]\\!]",
+              "means": "jump of H across a jump surface: the value in front minus the value behind (p. 23, (1.48))"
+            },
+            {
+              "tex": "\\vec{K}",
+              "means": "electric surface current density, tangential to its carrier surface [A/m] (p. 27, p. 29)"
+            }
+          ]
         },
         {
           "eq": "H = I / (2πr)",
           "tex": "H = \\frac{I}{2\\pi r}",
           "note": "long straight wire, static (derived)",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "H",
+              "means": "magnitude of the magnetic field strength around a straight wire [A/m] (not defined in the source)"
+            },
+            {
+              "tex": "r",
+              "means": "distance from the wire axis [m] (not defined in the source)"
+            },
+            {
+              "tex": "I",
+              "means": "current in the straight wire [A] (not defined in the source)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\partial\\mathcal{A}",
+          "means": "the complete, consistently oriented boundary curve of the surface (p. 25)"
+        },
+        {
+          "tex": "\\vec{s}",
+          "means": "unit tangent vector of the curve in its direction of travel (p. 26)"
+        },
+        {
+          "tex": "\\vec{H}",
+          "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+        },
+        {
+          "tex": "\\mathrm{d}s",
+          "means": "line element [m] (p. 26)"
+        },
+        {
+          "tex": "\\mathcal{A}",
+          "means": "a surface fixed in space (p. 25)"
+        },
+        {
+          "tex": "\\vec{n}",
+          "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+        },
+        {
+          "tex": "\\vec{J}",
+          "means": "electric current density [A/m²] (p. 27)"
+        },
+        {
+          "tex": "\\mathrm{d}A",
+          "means": "surface element [m²] (p. 26)"
+        },
+        {
+          "tex": "\\frac{\\mathrm{d}}{\\mathrm{d}t}",
+          "means": "time derivative of the integral over the fixed region (p. 26)"
+        },
+        {
+          "tex": "\\vec{D}",
+          "means": "electric flux density [C/m²] (p. 28, (2.19))"
+        },
+        {
+          "tex": "\\nabla",
+          "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+        },
+        {
+          "tex": "\\partial_t",
+          "means": "partial derivative with respect to time (p. 26)"
         }
       ]
     },
@@ -403,32 +1011,196 @@
           "eq": "I(∂V) = −Q̇(V)",
           "tex": "I(\\partial\\mathcal{V}) = -\\dot{Q}(\\mathcal{V})",
           "note": "global form",
-          "ref": "Tab. 2.1"
+          "ref": "Tab. 2.1",
+          "where": [
+            {
+              "tex": "\\partial\\mathcal{V}",
+              "means": "the complete, consistently oriented boundary of the volume (p. 26)"
+            },
+            {
+              "tex": "\\mathcal{V}",
+              "means": "a volume fixed in space (p. 27)"
+            },
+            {
+              "tex": "\\dot{Q}",
+              "means": "rate of change of the charge in the volume [A] (p. 27, (2.11))"
+            },
+            {
+              "tex": "I",
+              "means": "electric current out through the boundary [A] (p. 27, (2.11))"
+            }
+          ]
         },
         {
           "eq": "∮∂V n·J dA = −d/dt ∫V ϱ dV",
           "tex": "\\int_{\\partial\\mathcal{V}} \\vec{n}\\cdot\\vec{J}\\,\\mathrm{d}A = -\\frac{\\mathrm{d}}{\\mathrm{d}t}\\int_{\\mathcal{V}} \\varrho\\,\\mathrm{d}V",
           "note": "integral form",
-          "ref": "Tab. 2.1"
+          "ref": "Tab. 2.1",
+          "where": [
+            {
+              "tex": "\\partial\\mathcal{V}",
+              "means": "the complete, consistently oriented boundary of the volume (p. 26)"
+            },
+            {
+              "tex": "\\vec{n}",
+              "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+            },
+            {
+              "tex": "\\vec{J}",
+              "means": "electric current density [A/m²] (p. 27)"
+            },
+            {
+              "tex": "\\mathrm{d}A",
+              "means": "surface element [m²] (p. 26)"
+            },
+            {
+              "tex": "\\mathcal{V}",
+              "means": "a volume fixed in space (p. 27)"
+            },
+            {
+              "tex": "\\varrho",
+              "means": "electric charge density [C/m³] (p. 27)"
+            },
+            {
+              "tex": "\\mathrm{d}V",
+              "means": "volume element [m³] (p. 28)"
+            },
+            {
+              "tex": "\\frac{\\mathrm{d}}{\\mathrm{d}t}",
+              "means": "time derivative of the integral over the fixed region (p. 26)"
+            }
+          ]
         },
         {
           "eq": "∇·J = −∂tϱ,   n·[[J]] = −∂tσ",
           "tex": "\\nabla\\cdot\\vec{J} = -\\partial_t \\varrho, \\qquad \\vec{n}\\cdot[\\![\\vec{J}]\\!] = -\\partial_t \\sigma",
           "note": "local form",
-          "ref": "(2.15), Tab. 2.1"
+          "ref": "(2.15), Tab. 2.1",
+          "where": [
+            {
+              "tex": "\\vec{n}",
+              "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+            },
+            {
+              "tex": "\\vec{J}",
+              "means": "electric current density [A/m²] (p. 27)"
+            },
+            {
+              "tex": "\\varrho",
+              "means": "electric charge density [C/m³] (p. 27)"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            },
+            {
+              "tex": "\\partial_t",
+              "means": "partial derivative with respect to time (p. 26)"
+            },
+            {
+              "tex": "\\sigma",
+              "means": "electric surface charge density on a carrier surface [C/m²] (p. 27)"
+            },
+            {
+              "tex": "[\\![\\vec{J}]\\!]",
+              "means": "jump of J across a jump surface: the value in front minus the value behind (p. 23, (1.48))"
+            }
+          ]
         },
         {
           "eq": "∇·(∇×H) = 0 ⇒ ∇·J + ∂t∇·D = 0",
           "tex": "\\nabla\\cdot(\\nabla\\times\\vec{H}) = 0 \\;\\Rightarrow\\; \\nabla\\cdot\\vec{J} + \\partial_t \\nabla\\cdot\\vec{D} = 0",
           "note": "follows from the Ampère–Maxwell and Gauss laws (derived)",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "\\vec{J}",
+              "means": "electric current density [A/m²] (p. 27)"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            },
+            {
+              "tex": "\\partial_t",
+              "means": "partial derivative with respect to time (p. 26)"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\vec{D}",
+              "means": "electric flux density [C/m²] (p. 28, (2.19))"
+            }
+          ]
         },
         {
           "eq": "Q(t) = C U0 (1 − e^(−t/RC)),  I(t) = (U0/R) e^(−t/RC)",
           "tex": "Q(t) = C U_0\\left(1 - \\mathrm{e}^{-t/RC}\\right), \\qquad I(t) = \\frac{U_0}{R}\\,\\mathrm{e}^{-t/RC}",
           "note": "the capacitor charged through R that the lab plots; I = dQ/dt is the row's law",
           "ref": "derived from Tab. 2.1, row 5, with Q = CU",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "C",
+              "means": "capacitance [F] (not defined in the source)"
+            },
+            {
+              "tex": "U_0",
+              "means": "source voltage [V] (not defined in the source)"
+            },
+            {
+              "tex": "R",
+              "means": "resistance [Ω] (not defined in the source)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (not defined in the source)"
+            },
+            {
+              "tex": "Q",
+              "means": "charge on the capacitor [C] (not defined in the source)"
+            },
+            {
+              "tex": "I",
+              "means": "charging current [A] (not defined in the source)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\partial\\mathcal{V}",
+          "means": "the complete, consistently oriented boundary of the volume (p. 26)"
+        },
+        {
+          "tex": "\\vec{n}",
+          "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+        },
+        {
+          "tex": "\\vec{J}",
+          "means": "electric current density [A/m²] (p. 27)"
+        },
+        {
+          "tex": "\\mathrm{d}A",
+          "means": "surface element [m²] (p. 26)"
+        },
+        {
+          "tex": "\\varrho",
+          "means": "electric charge density [C/m³] (p. 27)"
+        },
+        {
+          "tex": "\\nabla",
+          "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+        },
+        {
+          "tex": "\\partial_t",
+          "means": "partial derivative with respect to time (p. 26)"
+        },
+        {
+          "tex": "\\frac{\\mathrm{d}Q}{\\mathrm{d}t}",
+          "means": "rate of change of the charge in the volume [A] (p. 27, (2.11))"
         }
       ]
     },
@@ -458,37 +1230,239 @@
           "eq": "D = ε0E + P,   H = B/μ0 − M",
           "tex": "\\vec{D} = \\varepsilon_0 \\vec{E} + \\vec{P}, \\qquad \\vec{H} = \\frac{\\vec{B}}{\\mu_0} - \\vec{M}",
           "note": "general linking relations",
-          "ref": "(2.29), (3.3)"
+          "ref": "(2.29), (3.3)",
+          "where": [
+            {
+              "tex": "\\vec{D}",
+              "means": "electric flux density [C/m²] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{P}",
+              "means": "electric polarisation [C/m²] (p. 33)"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{M}",
+              "means": "magnetisation [A/m] (p. 33)"
+            },
+            {
+              "tex": "\\mu_0",
+              "means": "magnetic constant [H/m] (p. 31, (2.24))"
+            },
+            {
+              "tex": "\\varepsilon_0",
+              "means": "electric constant [F/m] (p. 31, (2.24))"
+            }
+          ]
         },
         {
           "eq": "J = γE",
           "tex": "\\vec{J} = \\gamma \\vec{E}",
           "note": "local Ohm's law",
-          "ref": "(2.34)"
+          "ref": "(2.34)",
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{J}",
+              "means": "electric current density [A/m²] (p. 27)"
+            },
+            {
+              "tex": "\\gamma",
+              "means": "electric conductivity [S/m] (p. 35, (2.34))"
+            }
+          ]
         },
         {
           "eq": "P = ε0χE,   M = κH",
           "tex": "\\vec{P} = \\varepsilon_0 \\chi \\vec{E}, \\qquad \\vec{M} = \\kappa \\vec{H}",
           "note": "linear isotropic polarisation and magnetisation",
-          "ref": "(2.36)"
+          "ref": "(2.36)",
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{P}",
+              "means": "electric polarisation [C/m²] (p. 33)"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\vec{M}",
+              "means": "magnetisation [A/m] (p. 33)"
+            },
+            {
+              "tex": "\\varepsilon_0",
+              "means": "electric constant [F/m] (p. 31, (2.24))"
+            },
+            {
+              "tex": "\\chi",
+              "means": "electric susceptibility (p. 36)"
+            },
+            {
+              "tex": "\\kappa",
+              "means": "magnetic susceptibility (p. 36)"
+            }
+          ]
         },
         {
           "eq": "D = εE,   B = μH",
           "tex": "\\vec{D} = \\varepsilon \\vec{E}, \\qquad \\vec{B} = \\mu \\vec{H}",
           "note": "",
-          "ref": "(2.37)"
+          "ref": "(2.37)",
+          "where": [
+            {
+              "tex": "\\vec{D}",
+              "means": "electric flux density [C/m²] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 36)"
+            },
+            {
+              "tex": "\\mu",
+              "means": "permeability [H/m] (p. 36)"
+            }
+          ]
         },
         {
           "eq": "ε = ε0εr, μ = μ0μr, εr = 1 + χ, μr = 1 + κ",
           "tex": "\\varepsilon = \\varepsilon_0 \\varepsilon_\\mathrm{r}, \\quad \\mu = \\mu_0 \\mu_\\mathrm{r}, \\quad \\varepsilon_\\mathrm{r} = 1 + \\chi, \\quad \\mu_\\mathrm{r} = 1 + \\kappa",
           "note": "",
-          "ref": "(2.38)"
+          "ref": "(2.38)",
+          "where": [
+            {
+              "tex": "\\mu_0",
+              "means": "magnetic constant [H/m] (p. 31, (2.24))"
+            },
+            {
+              "tex": "\\varepsilon_0",
+              "means": "electric constant [F/m] (p. 31, (2.24))"
+            },
+            {
+              "tex": "\\chi",
+              "means": "electric susceptibility (p. 36)"
+            },
+            {
+              "tex": "\\kappa",
+              "means": "magnetic susceptibility (p. 36)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 36)"
+            },
+            {
+              "tex": "\\mu",
+              "means": "permeability [H/m] (p. 36)"
+            },
+            {
+              "tex": "\\varepsilon_\\mathrm{r}",
+              "means": "relative permittivity (p. 36)"
+            },
+            {
+              "tex": "\\mu_\\mathrm{r}",
+              "means": "relative permeability (p. 36)"
+            }
+          ]
         },
         {
           "eq": "J − vϱ = γ(E + v×B)",
           "tex": "\\vec{J} - \\vec{v}\\varrho = \\gamma(\\vec{E} + \\vec{v}\\times\\vec{B})",
           "note": "Ohm's law in a moving body",
-          "ref": "(2.44)"
+          "ref": "(2.44)",
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{J}",
+              "means": "electric current density [A/m²] (p. 27)"
+            },
+            {
+              "tex": "\\gamma",
+              "means": "electric conductivity [S/m] (p. 35, (2.34))"
+            },
+            {
+              "tex": "\\vec{v}",
+              "means": "velocity of the body point [m/s] (p. 38)"
+            },
+            {
+              "tex": "\\varrho",
+              "means": "electric charge density [C/m³] (p. 27)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\vec{D}",
+          "means": "electric flux density [C/m²] (p. 28, (2.19))"
+        },
+        {
+          "tex": "\\vec{E}",
+          "means": "electric field strength [V/m] (p. 26, (2.5))"
+        },
+        {
+          "tex": "\\vec{P}",
+          "means": "electric polarisation [C/m²] (p. 33)"
+        },
+        {
+          "tex": "\\varepsilon_0",
+          "means": "electric constant [F/m] (p. 31, (2.24))"
+        },
+        {
+          "tex": "\\vec{J}",
+          "means": "electric current density [A/m²] (p. 27)"
+        },
+        {
+          "tex": "\\gamma",
+          "means": "electric conductivity [S/m] (p. 35, (2.34))"
+        },
+        {
+          "tex": "\\chi",
+          "means": "electric susceptibility (p. 36)"
+        },
+        {
+          "tex": "\\varepsilon",
+          "means": "permittivity [F/m] (p. 36)"
+        },
+        {
+          "tex": "\\varepsilon_\\mathrm{r}",
+          "means": "relative permittivity (p. 36)"
         }
       ]
     },
@@ -520,31 +1494,199 @@
           "eq": "S = E × H",
           "tex": "\\vec{S} = \\vec{E}\\times\\vec{H}",
           "note": "Poynting vector",
-          "ref": "(2.107)"
+          "ref": "(2.107)",
+          "where": [
+            {
+              "tex": "\\vec{S}",
+              "means": "Poynting vector, the energy flux density [W/m²] (p. 52, (2.107))"
+            },
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            }
+          ]
         },
         {
           "eq": "E·∂tD + H·∂tB + ∇·(E×H) = −J·E",
           "tex": "\\vec{E}\\cdot\\partial_t \\vec{D} + \\vec{H}\\cdot\\partial_t \\vec{B} + \\nabla\\cdot(\\vec{E}\\times\\vec{H}) = -\\vec{J}\\cdot\\vec{E}",
           "note": "local energy balance",
-          "ref": "(2.108)"
+          "ref": "(2.108)",
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\vec{D}",
+              "means": "electric flux density [C/m²] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{J}",
+              "means": "electric current density [A/m²] (p. 27)"
+            },
+            {
+              "tex": "\\partial_t",
+              "means": "partial derivative with respect to time (p. 26)"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            }
+          ]
         },
         {
           "eq": "∮∂V n·(E×H) dA = −∫V J·E dV",
           "tex": "\\oint_{\\partial\\mathcal{V}} \\vec{n}\\cdot(\\vec{E}\\times\\vec{H})\\,\\mathrm{d}A = -\\int_{\\mathcal{V}} \\vec{J}\\cdot\\vec{E}\\,\\mathrm{d}V",
           "note": "static fields: the inflow is the Joule heat",
-          "ref": "(2.109)"
+          "ref": "(2.109)",
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\vec{J}",
+              "means": "electric current density [A/m²] (p. 27)"
+            },
+            {
+              "tex": "\\vec{n}",
+              "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+            },
+            {
+              "tex": "\\partial\\mathcal{V}",
+              "means": "the complete, consistently oriented boundary of the volume (p. 26)"
+            },
+            {
+              "tex": "\\mathcal{V}",
+              "means": "a volume fixed in space (p. 27)"
+            },
+            {
+              "tex": "\\mathrm{d}A",
+              "means": "surface element [m²] (p. 26)"
+            },
+            {
+              "tex": "\\mathrm{d}V",
+              "means": "volume element [m³] (p. 28)"
+            }
+          ]
         },
         {
           "eq": "w = ½ E·D + ½ H·B",
           "tex": "w = \\tfrac{1}{2} \\vec{E}\\cdot\\vec{D} + \\tfrac{1}{2} \\vec{H}\\cdot\\vec{B}",
           "note": "energy density, linear media (derived)",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\vec{D}",
+              "means": "electric flux density [C/m²] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "w",
+              "means": "electromagnetic energy density [J/m³] (p. 51, (2.96), for empty space)"
+            }
+          ]
         },
         {
           "eq": "E = U/l,  H = I/(2πa)  ⇒  S·2πal = UI",
           "tex": "E = \\frac{U}{l}, \\quad H = \\frac{I}{2\\pi a} \\;\\Rightarrow\\; S \\cdot 2\\pi a l = UI",
           "note": "resistive wire (derived)",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "E",
+              "means": "magnitude of the field strength along the wire [V/m] (not defined in the source)"
+            },
+            {
+              "tex": "U",
+              "means": "voltage along the wire [V] (not defined in the source)"
+            },
+            {
+              "tex": "l",
+              "means": "length of the wire [m] (not defined in the source)"
+            },
+            {
+              "tex": "H",
+              "means": "magnitude of the field strength at the wire surface [A/m] (not defined in the source)"
+            },
+            {
+              "tex": "I",
+              "means": "current in the wire [A] (not defined in the source)"
+            },
+            {
+              "tex": "a",
+              "means": "radius of the wire [m] (not defined in the source)"
+            },
+            {
+              "tex": "S",
+              "means": "magnitude of the Poynting vector at the wire surface [W/m²] (not defined in the source)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\vec{S}",
+          "means": "Poynting vector, the energy flux density [W/m²] (p. 52, (2.107))"
+        },
+        {
+          "tex": "\\vec{E}",
+          "means": "electric field strength [V/m] (p. 26, (2.5))"
+        },
+        {
+          "tex": "\\vec{H}",
+          "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+        },
+        {
+          "tex": "\\vec{J}",
+          "means": "electric current density [A/m²] (p. 27)"
+        },
+        {
+          "tex": "\\vec{n}",
+          "means": "unit normal vector of the surface (of the jump surface in a jump condition) (p. 26)"
+        },
+        {
+          "tex": "\\partial\\mathcal{V}",
+          "means": "the complete, consistently oriented boundary of the volume (p. 26)"
+        },
+        {
+          "tex": "\\mathcal{V}",
+          "means": "a volume fixed in space (p. 27)"
+        },
+        {
+          "tex": "\\mathrm{d}A",
+          "means": "surface element [m²] (p. 26)"
+        },
+        {
+          "tex": "\\mathrm{d}V",
+          "means": "volume element [m³] (p. 28)"
         }
       ]
     },
@@ -576,31 +1718,167 @@
           "eq": "f = ϱE + J×B",
           "tex": "\\vec{f} = \\varrho \\vec{E} + \\vec{J}\\times\\vec{B}",
           "note": "force density on true charges and currents",
-          "ref": "(2.100)"
+          "ref": "(2.100)",
+          "where": [
+            {
+              "tex": "\\vec{f}",
+              "means": "force density on the true charges and currents [N/m³] (p. 52, (2.100), written f_m there)"
+            },
+            {
+              "tex": "\\varrho",
+              "means": "electric charge density [C/m³] (p. 27)"
+            },
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{J}",
+              "means": "electric current density [A/m²] (p. 27)"
+            },
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            }
+          ]
         },
         {
           "eq": "r = J·E",
           "tex": "r = \\vec{J}\\cdot\\vec{E}",
           "note": "power density given to matter",
-          "ref": "(2.100)"
+          "ref": "(2.100)",
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{J}",
+              "means": "electric current density [A/m²] (p. 27)"
+            },
+            {
+              "tex": "r",
+              "means": "power density given to the matter [W/m³] (p. 52, (2.100), written r_m there)"
+            }
+          ]
         },
         {
           "eq": "F = q(E + v×B)",
           "tex": "\\vec{F} = q(\\vec{E} + \\vec{v}\\times\\vec{B})",
           "note": "point charge: ϱ → qδ, J → qvδ (derived)",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{F}",
+              "means": "force on one point charge [N] (not defined in the source)"
+            },
+            {
+              "tex": "q",
+              "means": "charge of the particle [C] (not defined in the source)"
+            },
+            {
+              "tex": "\\vec{v}",
+              "means": "velocity of the particle [m/s] (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "r = m v / (|q| B),   ω = |q|B/m",
           "tex": "r = \\frac{mv}{|q| B}, \\qquad \\omega = \\frac{|q| B}{m}",
           "note": "circle in B alone (derived)",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "q",
+              "means": "charge of the particle [C] (not defined in the source)"
+            },
+            {
+              "tex": "m",
+              "means": "mass of the particle [kg] (not defined in the source)"
+            },
+            {
+              "tex": "B",
+              "means": "magnitude of the magnetic flux density [T] (not defined in the source)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency of the circular motion (cyclotron frequency) [1/s] (not defined in the source)"
+            },
+            {
+              "tex": "r",
+              "means": "radius of the circular path [m] (not defined in the source)"
+            },
+            {
+              "tex": "v",
+              "means": "speed of the particle across the field [m/s] (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "v_drift = E×B / B²",
           "tex": "\\vec{v}_\\mathrm{drift} = \\frac{\\vec{E}\\times\\vec{B}}{B^2}",
           "note": "crossed fields (derived)",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "B",
+              "means": "magnitude of the magnetic flux density [T] (not defined in the source)"
+            },
+            {
+              "tex": "\\vec{v}_\\mathrm{drift}",
+              "means": "drift velocity of the guiding centre [m/s] (not defined in the source)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\vec{f}",
+          "means": "force density on the true charges and currents [N/m³] (p. 52, (2.100), written f_m there)"
+        },
+        {
+          "tex": "\\varrho",
+          "means": "electric charge density [C/m³] (p. 27)"
+        },
+        {
+          "tex": "\\vec{E}",
+          "means": "electric field strength [V/m] (p. 26, (2.5))"
+        },
+        {
+          "tex": "\\vec{J}",
+          "means": "electric current density [A/m²] (p. 27)"
+        },
+        {
+          "tex": "\\vec{B}",
+          "means": "magnetic flux density [T] (p. 26, (2.5))"
+        },
+        {
+          "tex": "\\vec{F}",
+          "means": "force on one point charge [N] (not defined in the source)"
+        },
+        {
+          "tex": "q",
+          "means": "charge of the particle [C] (not defined in the source)"
+        },
+        {
+          "tex": "\\vec{v}",
+          "means": "velocity of the particle [m/s] (not defined in the source)"
         }
       ]
     },
@@ -630,32 +1908,172 @@
           "eq": "∇×E = 0  ⇒  E = −∇ϕ",
           "tex": "\\nabla\\times\\vec{E} = \\vec{0} \\;\\Rightarrow\\; \\vec{E} = -\\nabla\\varphi",
           "note": "electrostatics",
-          "ref": "(3.2), (3.4)"
+          "ref": "(3.2), (3.4)",
+          "where": [
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            },
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "electrostatic potential [V] (p. 60, (3.4))"
+            }
+          ]
         },
         {
           "eq": "U(C) = ∫C s·E ds = ϕ(r1) − ϕ(r2)",
           "tex": "U(C) = \\int_C \\vec{s}\\cdot\\vec{E}\\,\\mathrm{d}s = \\varphi(\\vec{r}_1) - \\varphi(\\vec{r}_2)",
           "note": "voltage as a potential difference",
-          "ref": "(3.4)"
+          "ref": "(3.4)",
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "electrostatic potential [V] (p. 60, (3.4))"
+            },
+            {
+              "tex": "\\vec{s}",
+              "means": "unit tangent vector of the curve in its direction of travel (p. 26)"
+            },
+            {
+              "tex": "\\mathrm{d}s",
+              "means": "line element [m] (p. 26)"
+            },
+            {
+              "tex": "C",
+              "means": "a curve from the start point to the end point (p. 60)"
+            },
+            {
+              "tex": "U",
+              "means": "electric voltage along the curve [V] (p. 60, (3.4))"
+            },
+            {
+              "tex": "\\vec{r}_1",
+              "means": "start point of the curve (p. 60)"
+            },
+            {
+              "tex": "\\vec{r}_2",
+              "means": "end point of the curve (p. 60)"
+            }
+          ]
         },
         {
           "eq": "G(r, r′) = 1 / (4π|r − r′|)",
           "tex": "G(\\vec{r}, \\vec{r}') = \\frac{1}{4\\pi |\\vec{r} - \\vec{r}'|}",
           "note": "fundamental solution of the Laplace operator",
-          "ref": "(3.11)"
+          "ref": "(3.11)",
+          "where": [
+            {
+              "tex": "G",
+              "means": "fundamental solution of the Laplace operator [1/m] (p. 61, (3.10))"
+            },
+            {
+              "tex": "\\vec{r}",
+              "means": "position vector of the field point (p. 62)"
+            },
+            {
+              "tex": "\\vec{r}'",
+              "means": "position vector of the source (integration) point (p. 62)"
+            }
+          ]
         },
         {
           "eq": "ϕ(r) = Q / (4πε|r − r′|)",
           "tex": "\\varphi(\\vec{r}) = \\frac{Q}{4\\pi\\varepsilon |\\vec{r} - \\vec{r}'|}",
           "note": "point charge",
-          "ref": "(3.13)"
+          "ref": "(3.13)",
+          "where": [
+            {
+              "tex": "\\varphi",
+              "means": "electrostatic potential [V] (p. 60, (3.4))"
+            },
+            {
+              "tex": "\\vec{r}",
+              "means": "position vector of the field point (p. 62)"
+            },
+            {
+              "tex": "\\vec{r}'",
+              "means": "position vector of the source (integration) point (p. 62)"
+            },
+            {
+              "tex": "Q",
+              "means": "point charge [C] (p. 61, (3.13))"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 60)"
+            }
+          ]
         },
         {
           "eq": "ϕ(r) = 1/(4πε) ∫V ϱ(r′)/|r − r′| dV′",
           "tex": "\\varphi(\\vec{r}) = \\frac{1}{4\\pi\\varepsilon} \\int_{\\mathcal{V}} \\frac{\\varrho(\\vec{r}')}{|\\vec{r} - \\vec{r}'|}\\,\\mathrm{d}V'",
           "note": "any charge distribution",
           "ref": "(3.14)",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\varphi",
+              "means": "electrostatic potential [V] (p. 60, (3.4))"
+            },
+            {
+              "tex": "\\vec{r}",
+              "means": "position vector of the field point (p. 62)"
+            },
+            {
+              "tex": "\\vec{r}'",
+              "means": "position vector of the source (integration) point (p. 62)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 60)"
+            },
+            {
+              "tex": "\\varrho",
+              "means": "electric charge density [C/m³] (p. 27)"
+            },
+            {
+              "tex": "\\mathcal{V}",
+              "means": "the whole region that carries the charge density (p. 61)"
+            },
+            {
+              "tex": "\\mathrm{d}V'",
+              "means": "volume element at the source point [m³] (p. 61)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\nabla",
+          "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+        },
+        {
+          "tex": "\\vec{E}",
+          "means": "electric field strength [V/m] (p. 26, (2.5))"
+        },
+        {
+          "tex": "\\varphi",
+          "means": "electrostatic potential [V] (p. 60, (3.4))"
+        },
+        {
+          "tex": "Q",
+          "means": "point charge [C] (p. 61, (3.13))"
+        },
+        {
+          "tex": "\\varepsilon",
+          "means": "permittivity [F/m] (p. 60)"
+        },
+        {
+          "tex": "r",
+          "means": "distance from the point charge, |r − r′| [m] (p. 62, (3.16))"
         }
       ]
     },
@@ -685,26 +2103,108 @@
           "eq": "∇·D = ϱ, D = εE, E = −∇ϕ",
           "tex": "\\nabla\\cdot\\vec{D} = \\varrho, \\qquad \\vec{D} = \\varepsilon \\vec{E}, \\qquad \\vec{E} = -\\nabla\\varphi",
           "note": "",
-          "ref": "(3.7)"
+          "ref": "(3.7)",
+          "where": [
+            {
+              "tex": "\\varphi",
+              "means": "electrostatic potential [V] (p. 60, (3.4))"
+            },
+            {
+              "tex": "\\varrho",
+              "means": "electric charge density [C/m³] (p. 27)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "constant permittivity of the field region [F/m] (p. 60)"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            },
+            {
+              "tex": "\\vec{D}",
+              "means": "electric flux density [C/m²] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            }
+          ]
         },
         {
           "eq": "∇²ϕ = −ϱ/ε",
           "tex": "\\nabla^2\\varphi = -\\frac{\\varrho}{\\varepsilon}",
           "note": "Poisson equation",
-          "ref": "(3.8)"
+          "ref": "(3.8)",
+          "where": [
+            {
+              "tex": "\\nabla^2",
+              "means": "Laplace operator (p. 61)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "electrostatic potential [V] (p. 60, (3.4))"
+            },
+            {
+              "tex": "\\varrho",
+              "means": "electric charge density [C/m³] (p. 27)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "constant permittivity of the field region [F/m] (p. 60)"
+            }
+          ]
         },
         {
           "eq": "∇²ϕ = 0",
           "tex": "\\nabla^2\\varphi = 0",
           "note": "Laplace equation, no space charge",
-          "ref": "(3.9)"
+          "ref": "(3.9)",
+          "where": [
+            {
+              "tex": "\\nabla^2",
+              "means": "Laplace operator (p. 61)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "electrostatic potential [V] (p. 60, (3.4))"
+            }
+          ]
         },
         {
           "eq": "ϕi,j = ¼(ϕi−1,j + ϕi+1,j + ϕi,j−1 + ϕi,j+1)",
           "tex": "\\varphi_{i,j} = \\tfrac{1}{4}\\big(\\varphi_{i-1,j} + \\varphi_{i+1,j} + \\varphi_{i,j-1} + \\varphi_{i,j+1}\\big)",
           "note": "five-point difference form solved here (derived)",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\varphi_{i,j}",
+              "means": "potential at grid node (i, j) of the finite-difference mesh [V] (not defined in the source)"
+            },
+            {
+              "tex": "\\varphi_{i-1,j}",
+              "means": "potentials at the four neighbouring nodes (the same for i+1, j−1, j+1) [V] (not defined in the source)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\nabla^2",
+          "means": "Laplace operator (p. 61)"
+        },
+        {
+          "tex": "\\varphi",
+          "means": "electrostatic potential [V] (p. 60, (3.4))"
+        },
+        {
+          "tex": "\\varrho",
+          "means": "electric charge density [C/m³] (p. 27)"
+        },
+        {
+          "tex": "\\varepsilon",
+          "means": "constant permittivity of the field region [F/m] (p. 60)"
         }
       ]
     },
@@ -735,25 +2235,143 @@
           "eq": "P(r, t) = p(t) δ(r)",
           "tex": "\\vec{P}(\\vec{r}, t) = \\vec{p}(t)\\,\\delta(\\vec{r})",
           "note": "dipole as a singular polarisation",
-          "ref": "(5.35)"
+          "ref": "(5.35)",
+          "where": [
+            {
+              "tex": "\\vec{P}",
+              "means": "electric polarisation [C/m²] (p. 33)"
+            },
+            {
+              "tex": "\\vec{r}",
+              "means": "position vector of the field point (p. 62)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s]"
+            },
+            {
+              "tex": "\\vec{p}",
+              "means": "electric dipole moment [C m] (p. 123, (5.35))"
+            },
+            {
+              "tex": "\\delta",
+              "means": "Dirac delta function (p. 60, (3.6))"
+            }
+          ]
         },
         {
           "eq": "ϕ = e_r·p / (4πε0r²)",
           "tex": "\\varphi = \\frac{\\vec{e}_r\\cdot\\vec{p}}{4\\pi\\varepsilon_0 r^2}",
           "note": "static potential",
-          "ref": "(5.42)"
+          "ref": "(5.42)",
+          "where": [
+            {
+              "tex": "\\vec{p}",
+              "means": "electric dipole moment [C m] (p. 123, (5.35))"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "electrostatic potential [V] (p. 60, (3.4))"
+            },
+            {
+              "tex": "\\vec{e}_r",
+              "means": "radial unit vector, pointing away from the source (p. 124)"
+            },
+            {
+              "tex": "\\varepsilon_0",
+              "means": "electric constant [F/m] (p. 31, (2.24))"
+            },
+            {
+              "tex": "r",
+              "means": "distance from the dipole [m] (p. 123)"
+            }
+          ]
         },
         {
           "eq": "E = (3e_r(e_r·p) − p) / (4πε0r³)",
           "tex": "\\vec{E} = \\frac{3\\vec{e}_r(\\vec{e}_r\\cdot\\vec{p}) - \\vec{p}}{4\\pi\\varepsilon_0 r^3}",
           "note": "static field",
-          "ref": "(5.42)"
+          "ref": "(5.42)",
+          "where": [
+            {
+              "tex": "\\vec{p}",
+              "means": "electric dipole moment [C m] (p. 123, (5.35))"
+            },
+            {
+              "tex": "\\vec{e}_r",
+              "means": "radial unit vector, pointing away from the source (p. 124)"
+            },
+            {
+              "tex": "\\varepsilon_0",
+              "means": "electric constant [F/m] (p. 31, (2.24))"
+            },
+            {
+              "tex": "r",
+              "means": "distance from the dipole [m] (p. 123)"
+            },
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            }
+          ]
         },
         {
           "eq": "E_r = 2p cos θ/(4πε0r³),  E_θ = p sin θ/(4πε0r³)",
           "tex": "E_r = \\frac{2p\\cos\\theta}{4\\pi\\varepsilon_0 r^3}, \\qquad E_\\theta = \\frac{p\\sin\\theta}{4\\pi\\varepsilon_0 r^3}",
           "note": "in spherical components (derived)",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "\\varepsilon_0",
+              "means": "electric constant [F/m] (p. 31, (2.24))"
+            },
+            {
+              "tex": "r",
+              "means": "distance from the dipole [m] (p. 123)"
+            },
+            {
+              "tex": "E_r",
+              "means": "radial component of the field strength [V/m] (not defined in the source)"
+            },
+            {
+              "tex": "E_\\theta",
+              "means": "polar component of the field strength [V/m] (not defined in the source)"
+            },
+            {
+              "tex": "p",
+              "means": "magnitude of the dipole moment [C m] (p. 125)"
+            },
+            {
+              "tex": "\\theta",
+              "means": "polar angle from the dipole axis (p. 126, (5.48))"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\vec{p}",
+          "means": "electric dipole moment [C m] (p. 123, (5.35))"
+        },
+        {
+          "tex": "\\varphi",
+          "means": "electrostatic potential [V] (p. 60, (3.4))"
+        },
+        {
+          "tex": "\\vec{e}_r",
+          "means": "radial unit vector, pointing away from the source (p. 124)"
+        },
+        {
+          "tex": "\\varepsilon_0",
+          "means": "electric constant [F/m] (p. 31, (2.24))"
+        },
+        {
+          "tex": "r",
+          "means": "distance from the dipole [m] (p. 123)"
+        },
+        {
+          "tex": "\\vec{E}",
+          "means": "electric field strength [V/m] (p. 26, (2.5))"
         }
       ]
     },
@@ -783,25 +2401,155 @@
           "eq": "D = εE,   J = γE + ϱv",
           "tex": "\\vec{D} = \\varepsilon \\vec{E}, \\qquad \\vec{J} = \\gamma \\vec{E} + \\varrho \\vec{v}",
           "note": "material equations used",
-          "ref": "(3.102)"
+          "ref": "(3.102)",
+          "where": [
+            {
+              "tex": "\\varrho",
+              "means": "electric charge density [C/m³] (p. 27)"
+            },
+            {
+              "tex": "\\gamma",
+              "means": "electric conductivity [S/m] (p. 35, (2.34))"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 85, (3.102))"
+            },
+            {
+              "tex": "\\vec{D}",
+              "means": "electric flux density [C/m²] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{J}",
+              "means": "electric current density [A/m²] (p. 27)"
+            },
+            {
+              "tex": "\\vec{v}",
+              "means": "material velocity field [m/s] (p. 85)"
+            }
+          ]
         },
         {
           "eq": "∂tϱ + ∇·(ϱv) + (γ/ε)ϱ = 0",
           "tex": "\\partial_t\\varrho + \\nabla\\cdot(\\varrho \\vec{v}) + \\frac{\\gamma}{\\varepsilon}\\varrho = 0",
           "note": "relaxation equation",
-          "ref": "(3.103)"
+          "ref": "(3.103)",
+          "where": [
+            {
+              "tex": "\\partial_t",
+              "means": "partial derivative with respect to time (p. 26)"
+            },
+            {
+              "tex": "\\varrho",
+              "means": "electric charge density [C/m³] (p. 27)"
+            },
+            {
+              "tex": "\\gamma",
+              "means": "electric conductivity [S/m] (p. 35, (2.34))"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 85, (3.102))"
+            },
+            {
+              "tex": "\\vec{v}",
+              "means": "material velocity field [m/s] (p. 85)"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            }
+          ]
         },
         {
           "eq": "T_R = ε/γ,   R_e = εv0/(γL)",
           "tex": "T_\\mathrm{R} = \\frac{\\varepsilon}{\\gamma}, \\qquad R_\\mathrm{e} = \\frac{\\varepsilon v_0}{\\gamma L}",
           "note": "relaxation time and electric Reynolds number",
-          "ref": "(3.105)"
+          "ref": "(3.105)",
+          "where": [
+            {
+              "tex": "\\gamma",
+              "means": "electric conductivity [S/m] (p. 35, (2.34))"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 85, (3.102))"
+            },
+            {
+              "tex": "T_\\mathrm{R}",
+              "means": "relaxation time constant [s] (p. 86, (3.105))"
+            },
+            {
+              "tex": "R_\\mathrm{e}",
+              "means": "electric Reynolds number (p. 86, (3.105), written Re there)"
+            },
+            {
+              "tex": "v_0",
+              "means": "characteristic speed of the material [m/s] (p. 85)"
+            },
+            {
+              "tex": "L",
+              "means": "characteristic length [m] (p. 85)"
+            }
+          ]
         },
         {
           "eq": "ϱ(t) = ϱ0 e^(−t/T_R)",
           "tex": "\\varrho(t) = \\varrho_0\\,\\mathrm{e}^{-t/T_\\mathrm{R}}",
           "note": "body at rest (derived)",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "\\varrho",
+              "means": "electric charge density [C/m³] (p. 27)"
+            },
+            {
+              "tex": "\\varrho_0",
+              "means": "charge density at t = 0 [C/m³] (p. 86, (3.108), written ϱ(r, 0) there)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s]"
+            },
+            {
+              "tex": "T_\\mathrm{R}",
+              "means": "relaxation time constant [s] (p. 86, (3.105))"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\partial_t",
+          "means": "partial derivative with respect to time (p. 26)"
+        },
+        {
+          "tex": "\\varrho",
+          "means": "electric charge density [C/m³] (p. 27)"
+        },
+        {
+          "tex": "\\gamma",
+          "means": "electric conductivity [S/m] (p. 35, (2.34))"
+        },
+        {
+          "tex": "\\varepsilon",
+          "means": "permittivity [F/m] (p. 85, (3.102))"
+        },
+        {
+          "tex": "\\varrho_0",
+          "means": "charge density at t = 0 [C/m³] (p. 86, (3.108), written ϱ(r, 0) there)"
+        },
+        {
+          "tex": "t",
+          "means": "time [s]"
+        },
+        {
+          "tex": "T_\\mathrm{R}",
+          "means": "relaxation time constant [s] (p. 86, (3.105))"
         }
       ]
     },
@@ -831,26 +2579,114 @@
           "eq": "∇·B = 0,  B = μH,  H = −∇ϕ_M",
           "tex": "\\nabla\\cdot\\vec{B} = 0, \\qquad \\vec{B} = \\mu \\vec{H}, \\qquad \\vec{H} = -\\nabla\\varphi_M",
           "note": "magnetic scalar potential in current-free regions",
-          "ref": "(3.145)"
+          "ref": "(3.145)",
+          "where": [
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\mu",
+              "means": "constant permeability [H/m] (p. 95)"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\varphi_M",
+              "means": "magnetic scalar potential [A] (p. 95)"
+            }
+          ]
         },
         {
           "eq": "∇²ϕ_M = 0",
           "tex": "\\nabla^2\\varphi_M = 0",
           "note": "",
-          "ref": "(3.146)"
+          "ref": "(3.146)",
+          "where": [
+            {
+              "tex": "\\varphi_M",
+              "means": "magnetic scalar potential [A] (p. 95)"
+            },
+            {
+              "tex": "\\nabla^2",
+              "means": "Laplace operator (p. 61)"
+            }
+          ]
         },
         {
           "eq": "B = μI/(4π) ∮C s′×e_R / R² ds′",
           "tex": "\\vec{B} = \\frac{\\mu I}{4\\pi} \\oint_{\\mathscr{C}} \\frac{\\vec{s}'\\times\\vec{e}_R}{R^2}\\,\\mathrm{d}s'",
           "note": "Biot–Savart formula",
-          "ref": "(3.144)"
+          "ref": "(3.144)",
+          "where": [
+            {
+              "tex": "\\vec{B}",
+              "means": "magnetic flux density [T] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\mu",
+              "means": "constant permeability [H/m] (p. 95)"
+            },
+            {
+              "tex": "I",
+              "means": "strength of the line current [A] (p. 95)"
+            },
+            {
+              "tex": "\\mathscr{C}",
+              "means": "the curve the line current flows along (p. 95)"
+            },
+            {
+              "tex": "\\vec{s}'",
+              "means": "unit tangent vector of the curve, in the direction of the current (p. 95)"
+            },
+            {
+              "tex": "\\vec{e}_R",
+              "means": "unit vector from the source point to the field point (p. 95, (3.143))"
+            },
+            {
+              "tex": "R",
+              "means": "distance from the source point to the field point [m] (p. 94)"
+            },
+            {
+              "tex": "\\mathrm{d}s'",
+              "means": "line element along the curve [m] (p. 95)"
+            }
+          ]
         },
         {
           "eq": "B_z = μIa² / (2(a² + z²)^(3/2))",
           "tex": "B_z = \\frac{\\mu I a^2}{2(a^2 + z^2)^{3/2}}",
           "note": "on the axis of a circular loop (derived)",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\mu",
+              "means": "constant permeability [H/m] (p. 95)"
+            },
+            {
+              "tex": "I",
+              "means": "strength of the line current [A] (p. 95)"
+            },
+            {
+              "tex": "B_z",
+              "means": "flux density on the axis of a circular loop [T] (not defined in the source)"
+            },
+            {
+              "tex": "a",
+              "means": "radius of the loop [m] (not defined in the source)"
+            },
+            {
+              "tex": "z",
+              "means": "distance from the loop centre along its axis [m] (not defined in the source)"
+            }
+          ]
         }
       ]
     },
@@ -894,25 +2730,155 @@
           "eq": "B = B̂0 e^(−x/δ) cos(ωt − x/δ)",
           "tex": "B = \\hat{B}_0\\,\\mathrm{e}^{-x/\\delta}\\cos(\\omega t - x/\\delta)",
           "note": "field in the half-space",
-          "ref": "(4.28)"
+          "ref": "(4.28)",
+          "where": [
+            {
+              "tex": "B",
+              "means": "flux density in the conducting half-space, along y [T] (p. 111, (4.28))"
+            },
+            {
+              "tex": "\\hat{B}_0",
+              "means": "amplitude of the flux density at the surface, μĤ₀ [T] (p. 111)"
+            },
+            {
+              "tex": "x",
+              "means": "distance from the surface into the conductor [m] (p. 110)"
+            },
+            {
+              "tex": "\\delta",
+              "means": "penetration depth [m] (p. 110, (4.27))"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 110, (4.25))"
+            },
+            {
+              "tex": "t",
+              "means": "time [s]"
+            }
+          ]
         },
         {
           "eq": "P″ = Ĥ0²/(2γδ) = (Ĥ0²/2)√(μω/(2γ))",
           "tex": "P'' = \\frac{\\hat{H}_0^2}{2\\gamma\\delta} = \\frac{\\hat{H}_0^2}{2}\\sqrt{\\frac{\\mu\\omega}{2\\gamma}}",
           "note": "time-averaged loss per unit surface",
-          "ref": "(4.31)"
+          "ref": "(4.31)",
+          "where": [
+            {
+              "tex": "\\delta",
+              "means": "penetration depth [m] (p. 110, (4.27))"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 110, (4.25))"
+            },
+            {
+              "tex": "\\mu",
+              "means": "permeability [H/m] (p. 110)"
+            },
+            {
+              "tex": "\\gamma",
+              "means": "electric conductivity [S/m] (p. 35, (2.34))"
+            },
+            {
+              "tex": "P''",
+              "means": "time-averaged loss power per surface area [W/m²] (p. 112, (4.31), written P there)"
+            },
+            {
+              "tex": "\\hat{H}_0",
+              "means": "amplitude of the tangential field strength at the surface [A/m] (p. 110, (4.25))"
+            }
+          ]
         },
         {
           "eq": "δ = √(2/(μωγ))",
           "tex": "\\delta = \\sqrt{\\frac{2}{\\mu\\omega\\gamma}}",
           "note": "skin depth; it sets the loss (4.31)",
-          "ref": "(4.27)"
+          "ref": "(4.27)",
+          "where": [
+            {
+              "tex": "\\delta",
+              "means": "penetration depth [m] (p. 110, (4.27))"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 110, (4.25))"
+            },
+            {
+              "tex": "\\mu",
+              "means": "permeability [H/m] (p. 110)"
+            },
+            {
+              "tex": "\\gamma",
+              "means": "electric conductivity [S/m] (p. 35, (2.34))"
+            }
+          ]
         },
         {
           "eq": "B̂(x) = B̂0 cos(kx)/cos(kd/2),  k = (1 − j)/δ",
           "tex": "\\hat{B}(x) = \\hat{B}_0 \\frac{\\cos(kx)}{\\cos(kd/2)}, \\qquad k = (1 - \\mathrm{j})/\\delta",
           "note": "plate of thickness d",
-          "ref": "(4.32)"
+          "ref": "(4.32)",
+          "where": [
+            {
+              "tex": "\\hat{B}_0",
+              "means": "amplitude of the flux density at the surface, μĤ₀ [T] (p. 111)"
+            },
+            {
+              "tex": "\\delta",
+              "means": "penetration depth [m] (p. 110, (4.27))"
+            },
+            {
+              "tex": "\\hat{B}(x)",
+              "means": "complex amplitude of the flux density inside the layer [T] (p. 112, (4.32))"
+            },
+            {
+              "tex": "k",
+              "means": "complex wave number (p. 112, (4.32))"
+            },
+            {
+              "tex": "x",
+              "means": "distance from the surface into the conductor [m] (p. 110)"
+            },
+            {
+              "tex": "d",
+              "means": "thickness of the layer [m] (p. 112)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "B",
+          "means": "flux density in the conducting half-space, along y [T] (p. 111, (4.28))"
+        },
+        {
+          "tex": "\\hat{B}_0",
+          "means": "amplitude of the flux density at the surface, μĤ₀ [T] (p. 111)"
+        },
+        {
+          "tex": "x",
+          "means": "distance from the surface into the conductor [m] (p. 110)"
+        },
+        {
+          "tex": "\\delta",
+          "means": "penetration depth [m] (p. 110, (4.27))"
+        },
+        {
+          "tex": "\\omega",
+          "means": "angular frequency [1/s] (p. 110, (4.25))"
+        },
+        {
+          "tex": "t",
+          "means": "time [s]"
+        },
+        {
+          "tex": "\\mu",
+          "means": "permeability [H/m] (p. 110)"
+        },
+        {
+          "tex": "\\gamma",
+          "means": "electric conductivity [S/m] (p. 35, (2.34))"
         }
       ]
     },
@@ -941,31 +2907,175 @@
           "eq": "μ0ε0c0² = 1",
           "tex": "\\mu_0\\varepsilon_0 c_0^2 = 1",
           "note": "Maxwell relation",
-          "ref": "(2.25)"
+          "ref": "(2.25)",
+          "where": [
+            {
+              "tex": "\\mu_0",
+              "means": "magnetic constant [H/m] (p. 31, (2.24))"
+            },
+            {
+              "tex": "\\varepsilon_0",
+              "means": "electric constant [F/m] (p. 31, (2.24))"
+            },
+            {
+              "tex": "c_0",
+              "means": "speed of light in empty space [m/s] (p. 31, (2.25))"
+            }
+          ]
         },
         {
           "eq": "∇²A − με∂t²A = −μJ,  ∇²ϕ − με∂t²ϕ = −ϱ/ε",
           "tex": "\\nabla^2\\vec{A} - \\mu\\varepsilon\\,\\partial_t^2\\vec{A} = -\\mu\\vec{J}, \\qquad \\nabla^2\\varphi - \\mu\\varepsilon\\,\\partial_t^2\\varphi = -\\frac{\\varrho}{\\varepsilon}",
           "note": "wave equations, Lorenz gauge",
-          "ref": "(5.14)"
+          "ref": "(5.14)",
+          "where": [
+            {
+              "tex": "\\mu",
+              "means": "permeability [H/m] (p. 36, (2.38))"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 36, (2.38))"
+            },
+            {
+              "tex": "\\nabla^2",
+              "means": "Laplace operator (p. 61)"
+            },
+            {
+              "tex": "\\vec{A}",
+              "means": "magnetic vector potential [V s/m] (p. 118, (5.5))"
+            },
+            {
+              "tex": "\\partial_t^2",
+              "means": "second partial derivative with respect to time (p. 119)"
+            },
+            {
+              "tex": "\\vec{J}",
+              "means": "electric current density [A/m²] (p. 27)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "scalar potential [V] (p. 118, (5.5))"
+            },
+            {
+              "tex": "\\varrho",
+              "means": "electric charge density [C/m³] (p. 27)"
+            }
+          ]
         },
         {
           "eq": "∇·A + με∂tϕ = 0",
           "tex": "\\nabla\\cdot\\vec{A} + \\mu\\varepsilon\\,\\partial_t\\varphi = 0",
           "note": "Lorenz gauge",
-          "ref": "(5.13)"
+          "ref": "(5.13)",
+          "where": [
+            {
+              "tex": "\\mu",
+              "means": "permeability [H/m] (p. 36, (2.38))"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 36, (2.38))"
+            },
+            {
+              "tex": "\\vec{A}",
+              "means": "magnetic vector potential [V s/m] (p. 118, (5.5))"
+            },
+            {
+              "tex": "\\partial_t",
+              "means": "partial derivative with respect to time (p. 26)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "scalar potential [V] (p. 118, (5.5))"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            }
+          ]
         },
         {
           "eq": "c = 1/√(με)",
           "tex": "c = \\frac{1}{\\sqrt{\\mu\\varepsilon}}",
           "note": "propagation speed",
-          "ref": "(5.19)"
+          "ref": "(5.19)",
+          "where": [
+            {
+              "tex": "c",
+              "means": "propagation speed in the medium [m/s] (p. 120, (5.19))"
+            },
+            {
+              "tex": "\\mu",
+              "means": "permeability [H/m] (p. 36, (2.38))"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 36, (2.38))"
+            }
+          ]
         },
         {
           "eq": "G = δ(t − t′ − |r − r′|/c) / (4π|r − r′|)",
           "tex": "G = \\frac{\\delta(t - t' - |\\vec{r} - \\vec{r}'|/c)}{4\\pi |\\vec{r} - \\vec{r}'|}",
           "note": "retarded fundamental solution",
-          "ref": "(5.21)"
+          "ref": "(5.21)",
+          "where": [
+            {
+              "tex": "c",
+              "means": "propagation speed in the medium [m/s] (p. 120, (5.19))"
+            },
+            {
+              "tex": "G",
+              "means": "fundamental solution (Green's function) of the d'Alembert operator (p. 120, (5.21))"
+            },
+            {
+              "tex": "\\delta",
+              "means": "Dirac delta function (p. 60, (3.6))"
+            },
+            {
+              "tex": "t",
+              "means": "time [s]"
+            },
+            {
+              "tex": "t'",
+              "means": "time of the source event [s] (p. 120)"
+            },
+            {
+              "tex": "\\vec{r}",
+              "means": "position vector of the field point (p. 62)"
+            },
+            {
+              "tex": "\\vec{r}'",
+              "means": "position vector of the source (integration) point (p. 62)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "c",
+          "means": "propagation speed in the medium [m/s] (p. 120, (5.19))"
+        },
+        {
+          "tex": "\\mu",
+          "means": "permeability [H/m] (p. 36, (2.38))"
+        },
+        {
+          "tex": "\\varepsilon",
+          "means": "permittivity [F/m] (p. 36, (2.38))"
+        },
+        {
+          "tex": "\\mu_0",
+          "means": "magnetic constant [H/m] (p. 31, (2.24))"
+        },
+        {
+          "tex": "\\varepsilon_0",
+          "means": "electric constant [F/m] (p. 31, (2.24))"
+        },
+        {
+          "tex": "c_0",
+          "means": "speed of light in empty space [m/s] (p. 31, (2.25))"
         }
       ]
     },
@@ -1046,37 +3156,191 @@
           "eq": "θ(r, t) = ct − κ·r",
           "tex": "\\theta(\\vec{r}, t) = ct - \\vec{\\kappa}\\cdot\\vec{r}",
           "note": "phase function",
-          "ref": "(5.64)"
+          "ref": "(5.64)",
+          "where": [
+            {
+              "tex": "\\theta",
+              "means": "phase function [m] (p. 132, (5.64))"
+            },
+            {
+              "tex": "t",
+              "means": "time [s]"
+            },
+            {
+              "tex": "\\vec{\\kappa}",
+              "means": "unit vector of the direction of propagation (p. 132)"
+            },
+            {
+              "tex": "\\vec{r}",
+              "means": "position vector of the field point (p. 62)"
+            }
+          ]
         },
         {
           "eq": "κ·E = 0,  κ·H = 0",
           "tex": "\\vec{\\kappa}\\cdot\\vec{E} = 0, \\qquad \\vec{\\kappa}\\cdot\\vec{H} = 0",
           "note": "transverse",
-          "ref": "(5.66)"
+          "ref": "(5.66)",
+          "where": [
+            {
+              "tex": "\\vec{\\kappa}",
+              "means": "unit vector of the direction of propagation (p. 132)"
+            },
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            }
+          ]
         },
         {
           "eq": "κ×E − μcH = 0,  κ×H + εcE = 0",
           "tex": "\\vec{\\kappa}\\times\\vec{E} - \\mu c \\vec{H} = \\vec{0}, \\qquad \\vec{\\kappa}\\times\\vec{H} + \\varepsilon c \\vec{E} = \\vec{0}",
           "note": "",
-          "ref": "(5.68)"
+          "ref": "(5.68)",
+          "where": [
+            {
+              "tex": "c",
+              "means": "propagation speed [m/s] (p. 132)"
+            },
+            {
+              "tex": "\\vec{\\kappa}",
+              "means": "unit vector of the direction of propagation (p. 132)"
+            },
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            },
+            {
+              "tex": "\\mu",
+              "means": "permeability [H/m] (p. 36, (2.38))"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 36, (2.38))"
+            }
+          ]
         },
         {
           "eq": "Z = √(μ/ε)",
           "tex": "Z = \\sqrt{\\frac{\\mu}{\\varepsilon}}",
           "note": "wave impedance",
-          "ref": "(5.70)"
+          "ref": "(5.70)",
+          "where": [
+            {
+              "tex": "\\mu",
+              "means": "permeability [H/m] (p. 36, (2.38))"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 36, (2.38))"
+            },
+            {
+              "tex": "Z",
+              "means": "characteristic impedance of the medium [Ω] (p. 133, (5.70))"
+            }
+          ]
         },
         {
           "eq": "H = κ×E / Z",
           "tex": "\\vec{H} = \\frac{1}{Z}\\vec{\\kappa}\\times\\vec{E}",
           "note": "",
-          "ref": "(5.71)"
+          "ref": "(5.71)",
+          "where": [
+            {
+              "tex": "\\vec{\\kappa}",
+              "means": "unit vector of the direction of propagation (p. 132)"
+            },
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            },
+            {
+              "tex": "Z",
+              "means": "characteristic impedance of the medium [Ω] (p. 133, (5.70))"
+            }
+          ]
         },
         {
           "eq": "S = E×H = (E²/Z) κ = ZH² κ",
           "tex": "\\vec{S} = \\vec{E}\\times\\vec{H} = \\frac{1}{Z}E^2 \\vec{\\kappa} = Z H^2 \\vec{\\kappa}",
           "note": "",
-          "ref": "(5.72)"
+          "ref": "(5.72)",
+          "where": [
+            {
+              "tex": "\\vec{\\kappa}",
+              "means": "unit vector of the direction of propagation (p. 132)"
+            },
+            {
+              "tex": "\\vec{E}",
+              "means": "electric field strength [V/m] (p. 26, (2.5))"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+            },
+            {
+              "tex": "Z",
+              "means": "characteristic impedance of the medium [Ω] (p. 133, (5.70))"
+            },
+            {
+              "tex": "\\vec{S}",
+              "means": "Poynting vector [W/m²] (p. 133, (5.72))"
+            },
+            {
+              "tex": "E",
+              "means": "magnitude of the electric field strength [V/m] (p. 133)"
+            },
+            {
+              "tex": "H",
+              "means": "magnitude of the magnetic field strength [A/m] (p. 133)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\vec{\\kappa}",
+          "means": "unit vector of the direction of propagation (p. 132)"
+        },
+        {
+          "tex": "\\vec{E}",
+          "means": "electric field strength [V/m] (p. 26, (2.5))"
+        },
+        {
+          "tex": "\\vec{H}",
+          "means": "magnetic field strength [A/m] (p. 28, (2.19))"
+        },
+        {
+          "tex": "\\mu",
+          "means": "permeability [H/m] (p. 36, (2.38))"
+        },
+        {
+          "tex": "\\varepsilon",
+          "means": "permittivity [F/m] (p. 36, (2.38))"
+        },
+        {
+          "tex": "Z",
+          "means": "characteristic impedance of the medium [Ω] (p. 133, (5.70))"
+        },
+        {
+          "tex": "S",
+          "means": "magnitude of the Poynting vector [W/m²] (p. 133, (5.72))"
+        },
+        {
+          "tex": "E",
+          "means": "magnitude of the electric field strength [V/m] (p. 133)"
         }
       ]
     },
@@ -1117,37 +3381,199 @@
           "eq": "Π(r, t) = p(t − r/c0) / (4πε0r)",
           "tex": "\\vec{\\Pi}(\\vec{r}, t) = \\frac{\\vec{p}(t - r/c_0)}{4\\pi\\varepsilon_0 r}",
           "note": "Hertz vector of an oscillating dipole",
-          "ref": "(5.36)"
+          "ref": "(5.36)",
+          "where": [
+            {
+              "tex": "\\vec{\\Pi}",
+              "means": "Hertz vector [C/m] (p. 123, (5.32))"
+            },
+            {
+              "tex": "\\vec{r}",
+              "means": "position vector of the field point (p. 62)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s]"
+            },
+            {
+              "tex": "\\vec{p}",
+              "means": "electric dipole moment (its complex amplitude in (5.49)) [C m] (p. 123)"
+            },
+            {
+              "tex": "r",
+              "means": "distance from the dipole [m] (p. 123)"
+            },
+            {
+              "tex": "c_0",
+              "means": "speed of light in empty space [m/s] (p. 31, (2.25))"
+            },
+            {
+              "tex": "\\varepsilon_0",
+              "means": "electric constant [F/m] (p. 31, (2.24))"
+            }
+          ]
         },
         {
           "eq": "A = (1/c0²) ∂tΠ,  ϕ = −∇·Π",
           "tex": "\\vec{A} = \\frac{1}{c_0^2}\\partial_t \\vec{\\Pi}, \\qquad \\varphi = -\\nabla\\cdot\\vec{\\Pi}",
           "note": "potentials from the Hertz vector",
-          "ref": "(5.32)"
+          "ref": "(5.32)",
+          "where": [
+            {
+              "tex": "\\vec{\\Pi}",
+              "means": "Hertz vector [C/m] (p. 123, (5.32))"
+            },
+            {
+              "tex": "c_0",
+              "means": "speed of light in empty space [m/s] (p. 31, (2.25))"
+            },
+            {
+              "tex": "\\vec{A}",
+              "means": "magnetic vector potential [V s/m] (p. 118, (5.5))"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "scalar potential [V] (p. 123)"
+            },
+            {
+              "tex": "\\partial_t",
+              "means": "partial derivative with respect to time (p. 26)"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            }
+          ]
         },
         {
           "eq": "P = ω²|p|² k² Z0 / (12π)",
           "tex": "P = \\frac{\\omega^2 |\\vec{p}|^2}{12\\pi} k^2 Z_0",
           "note": "radiated power",
-          "ref": "(5.49)"
+          "ref": "(5.49)",
+          "where": [
+            {
+              "tex": "P",
+              "means": "total radiated power [W] (p. 127, (5.49))"
+            },
+            {
+              "tex": "Z_0",
+              "means": "characteristic impedance of empty space [Ω] (p. 127, (5.50))"
+            },
+            {
+              "tex": "\\vec{p}",
+              "means": "electric dipole moment (its complex amplitude in (5.49)) [C m] (p. 123)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 110, (4.25))"
+            },
+            {
+              "tex": "k",
+              "means": "wave number, ω/c₀ [1/m] (p. 124, (5.39))"
+            }
+          ]
         },
         {
           "eq": "Z0 = √(μ0/ε0) = μ0c0 = 376.730… Ω",
           "tex": "Z_0 = \\sqrt{\\frac{\\mu_0}{\\varepsilon_0}} = \\mu_0 c_0 = 376.730\\ldots\\,\\Omega",
           "note": "",
-          "ref": "(5.50)"
+          "ref": "(5.50)",
+          "where": [
+            {
+              "tex": "Z_0",
+              "means": "characteristic impedance of empty space [Ω] (p. 127, (5.50))"
+            },
+            {
+              "tex": "c_0",
+              "means": "speed of light in empty space [m/s] (p. 31, (2.25))"
+            },
+            {
+              "tex": "\\varepsilon_0",
+              "means": "electric constant [F/m] (p. 31, (2.24))"
+            },
+            {
+              "tex": "\\mu_0",
+              "means": "magnetic constant [H/m] (p. 31, (2.24))"
+            }
+          ]
         },
         {
           "eq": "P = R_S I²,  R_S = (2π/3)(l/λ)² Z0",
           "tex": "P = R_S I^2, \\qquad R_S = \\frac{2\\pi}{3}\\Big(\\frac{l}{\\lambda}\\Big)^2 Z_0",
           "note": "radiation resistance",
-          "ref": "(5.52), (5.53)"
+          "ref": "(5.52), (5.53)",
+          "where": [
+            {
+              "tex": "P",
+              "means": "total radiated power [W] (p. 127, (5.49))"
+            },
+            {
+              "tex": "R_S",
+              "means": "radiation resistance [Ω] (p. 127, (5.53))"
+            },
+            {
+              "tex": "I",
+              "means": "rms value of the feed current [A] (p. 127)"
+            },
+            {
+              "tex": "l",
+              "means": "length of the dipole [m] (p. 127)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 127)"
+            },
+            {
+              "tex": "Z_0",
+              "means": "characteristic impedance of empty space [Ω] (p. 127, (5.50))"
+            }
+          ]
         },
         {
           "eq": "dP/dΩ ∝ sin²θ",
           "tex": "\\frac{\\mathrm{d}P}{\\mathrm{d}\\Omega} \\sim \\sin^2\\theta",
           "note": "far-field pattern (from (5.41))",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "P",
+              "means": "total radiated power [W] (p. 127, (5.49))"
+            },
+            {
+              "tex": "\\Omega",
+              "means": "solid angle [sr] (p. 126)"
+            },
+            {
+              "tex": "\\theta",
+              "means": "polar angle from the dipole axis (p. 126)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "P",
+          "means": "total radiated power [W] (p. 127, (5.49))"
+        },
+        {
+          "tex": "R_S",
+          "means": "radiation resistance [Ω] (p. 127, (5.53))"
+        },
+        {
+          "tex": "I",
+          "means": "rms value of the feed current [A] (p. 127)"
+        },
+        {
+          "tex": "l",
+          "means": "length of the dipole [m] (p. 127)"
+        },
+        {
+          "tex": "\\lambda",
+          "means": "wavelength [m] (p. 127)"
+        },
+        {
+          "tex": "Z_0",
+          "means": "characteristic impedance of empty space [Ω] (p. 127, (5.50))"
         }
       ]
     },
@@ -1210,63 +3636,349 @@
           "eq": "∂zU + L′∂tI = 0,  ∂zI + C′∂tU = 0",
           "tex": "\\partial_z U + L'\\partial_t I = 0, \\qquad \\partial_z I + C'\\partial_t U = 0",
           "note": "lossless line equations",
-          "ref": "(5.107)"
+          "ref": "(5.107)",
+          "where": [
+            {
+              "tex": "L'",
+              "means": "inductance per length [H/m] (p. 140)"
+            },
+            {
+              "tex": "C'",
+              "means": "capacitance per length [F/m] (p. 140)"
+            },
+            {
+              "tex": "U",
+              "means": "voltage between the conductors [V] (p. 139)"
+            },
+            {
+              "tex": "I",
+              "means": "current in the conductors [A] (p. 139)"
+            },
+            {
+              "tex": "\\partial_z",
+              "means": "partial derivative along the line (p. 140)"
+            },
+            {
+              "tex": "\\partial_t",
+              "means": "partial derivative with respect to time (p. 26)"
+            }
+          ]
         },
         {
           "eq": "L′C′ = με = 1/c²",
           "tex": "L'C' = \\mu\\varepsilon = 1/c^2",
           "note": "",
-          "ref": "(5.106)"
+          "ref": "(5.106)",
+          "where": [
+            {
+              "tex": "L'",
+              "means": "inductance per length [H/m] (p. 140)"
+            },
+            {
+              "tex": "C'",
+              "means": "capacitance per length [F/m] (p. 140)"
+            },
+            {
+              "tex": "\\mu",
+              "means": "permeability [H/m] (p. 36, (2.38))"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 36, (2.38))"
+            },
+            {
+              "tex": "c",
+              "means": "propagation speed [m/s] (p. 140, (5.106))"
+            }
+          ]
         },
         {
           "eq": "U1 = Z_W I1,  Z_W = √(L′/C′)",
           "tex": "U_1 = Z_\\mathrm{W} I_1, \\qquad Z_\\mathrm{W} = \\sqrt{L'/C'}",
           "note": "wave impedance, lossless",
-          "ref": "(5.110)"
+          "ref": "(5.110)",
+          "where": [
+            {
+              "tex": "L'",
+              "means": "inductance per length [H/m] (p. 140)"
+            },
+            {
+              "tex": "C'",
+              "means": "capacitance per length [F/m] (p. 140)"
+            },
+            {
+              "tex": "U_1",
+              "means": "voltage of the wave running in +z [V] (p. 141, (5.110))"
+            },
+            {
+              "tex": "I_1",
+              "means": "current of the wave running in +z [A] (p. 141)"
+            },
+            {
+              "tex": "Z_\\mathrm{W}",
+              "means": "wave impedance of the lossless line [Ω] (p. 141, (5.110))"
+            }
+          ]
         },
         {
           "eq": "∂zU + L′∂tI + R′I = 0,  ∂zI + C′∂tU + G′U = 0",
           "tex": "\\partial_z U + L'\\partial_t I + R'I = 0, \\qquad \\partial_z I + C'\\partial_t U + G'U = 0",
           "note": "lossy line (telegrapher's equations)",
-          "ref": "(5.111)"
+          "ref": "(5.111)",
+          "where": [
+            {
+              "tex": "R'",
+              "means": "resistance per length [Ω/m] (p. 141)"
+            },
+            {
+              "tex": "L'",
+              "means": "inductance per length [H/m] (p. 140)"
+            },
+            {
+              "tex": "G'",
+              "means": "conductance per length [S/m] (p. 141)"
+            },
+            {
+              "tex": "C'",
+              "means": "capacitance per length [F/m] (p. 140)"
+            },
+            {
+              "tex": "U",
+              "means": "voltage between the conductors [V] (p. 139)"
+            },
+            {
+              "tex": "I",
+              "means": "current in the conductors [A] (p. 139)"
+            },
+            {
+              "tex": "\\partial_z",
+              "means": "partial derivative along the line (p. 140)"
+            },
+            {
+              "tex": "\\partial_t",
+              "means": "partial derivative with respect to time (p. 26)"
+            }
+          ]
         },
         {
           "eq": "γ = √((G′ + jωC′)(R′ + jωL′)) = α + jβ",
           "tex": "\\underline{\\gamma} = \\sqrt{(G' + \\mathrm{j}\\omega C')(R' + \\mathrm{j}\\omega L')} = \\alpha + \\mathrm{j}\\beta",
           "note": "propagation constant",
-          "ref": "(5.116)"
+          "ref": "(5.116)",
+          "where": [
+            {
+              "tex": "\\underline{\\gamma}",
+              "means": "complex propagation coefficient [1/m] (p. 142, (5.116))"
+            },
+            {
+              "tex": "R'",
+              "means": "resistance per length [Ω/m] (p. 141)"
+            },
+            {
+              "tex": "L'",
+              "means": "inductance per length [H/m] (p. 140)"
+            },
+            {
+              "tex": "G'",
+              "means": "conductance per length [S/m] (p. 141)"
+            },
+            {
+              "tex": "C'",
+              "means": "capacitance per length [F/m] (p. 140)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 110, (4.25))"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "attenuation coefficient [1/m] (p. 142, (5.119))"
+            },
+            {
+              "tex": "\\beta",
+              "means": "phase coefficient [1/m] (p. 142)"
+            }
+          ]
         },
         {
           "eq": "Z_W = √(Z′/Y′)",
           "tex": "\\underline{Z}_\\mathrm{W} = \\sqrt{\\frac{\\underline{Z}'}{\\underline{Y}'}}",
           "note": "",
-          "ref": "(5.117)"
+          "ref": "(5.117)",
+          "where": [
+            {
+              "tex": "\\underline{Z}_\\mathrm{W}",
+              "means": "wave impedance of the line [Ω] (p. 142, (5.117))"
+            },
+            {
+              "tex": "\\underline{Z}'",
+              "means": "series impedance per length [Ω/m] (p. 142, (5.114))"
+            },
+            {
+              "tex": "\\underline{Y}'",
+              "means": "shunt admittance per length [S/m] (p. 142, (5.114))"
+            }
+          ]
         },
         {
           "eq": "L′/R′ = C′/G′ ⇒ α = √(R′G′), β = ω√(L′C′)",
           "tex": "\\frac{L'}{R'} = \\frac{C'}{G'} \\;\\Rightarrow\\; \\alpha = \\sqrt{R'G'}, \\qquad \\beta = \\omega\\sqrt{L'C'}",
           "note": "distortion-free line",
-          "ref": "(5.118), (5.119)"
+          "ref": "(5.118), (5.119)",
+          "where": [
+            {
+              "tex": "R'",
+              "means": "resistance per length [Ω/m] (p. 141)"
+            },
+            {
+              "tex": "L'",
+              "means": "inductance per length [H/m] (p. 140)"
+            },
+            {
+              "tex": "G'",
+              "means": "conductance per length [S/m] (p. 141)"
+            },
+            {
+              "tex": "C'",
+              "means": "capacitance per length [F/m] (p. 140)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 110, (4.25))"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "attenuation coefficient [1/m] (p. 142, (5.119))"
+            },
+            {
+              "tex": "\\beta",
+              "means": "phase coefficient [1/m] (p. 142)"
+            }
+          ]
         },
         {
           "eq": "U(z) = [Z_A cosh γ(l−z) + Z_W sinh γ(l−z)] / [Z_A cosh γl + Z_W sinh γl] · U(0)",
           "tex": "\\underline{U}(z) = \\frac{\\underline{Z}_\\mathrm{A}\\cosh[\\underline{\\gamma}(l - z)] + \\underline{Z}_\\mathrm{W}\\sinh[\\underline{\\gamma}(l - z)]}{\\underline{Z}_\\mathrm{A}\\cosh(\\underline{\\gamma} l) + \\underline{Z}_\\mathrm{W}\\sinh(\\underline{\\gamma} l)}\\,\\underline{U}(0)",
           "note": "voltage along the line",
           "ref": "(5.121)",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\underline{Z}_\\mathrm{W}",
+              "means": "wave impedance of the line [Ω] (p. 142, (5.117))"
+            },
+            {
+              "tex": "\\underline{\\gamma}",
+              "means": "complex propagation coefficient [1/m] (p. 142, (5.116))"
+            },
+            {
+              "tex": "\\underline{U}",
+              "means": "complex rms voltage along the line [V] (p. 142, (5.113))"
+            },
+            {
+              "tex": "z",
+              "means": "position along the line [m] (p. 139)"
+            },
+            {
+              "tex": "\\underline{Z}_\\mathrm{A}",
+              "means": "load impedance at the line end [Ω] (p. 142)"
+            },
+            {
+              "tex": "l",
+              "means": "length of the line [m] (p. 142)"
+            }
+          ]
         },
         {
           "eq": "Z_E = −jZ_W cot(2πl/λ)",
           "tex": "\\underline{Z}_\\mathrm{E} = -\\mathrm{j}Z_\\mathrm{W}\\cot(2\\pi l/\\lambda)",
           "note": "input impedance of an open lossless line",
-          "ref": "(5.125)"
+          "ref": "(5.125)",
+          "where": [
+            {
+              "tex": "Z_\\mathrm{W}",
+              "means": "wave impedance of the lossless line [Ω] (p. 141, (5.110))"
+            },
+            {
+              "tex": "l",
+              "means": "length of the line [m] (p. 142)"
+            },
+            {
+              "tex": "\\underline{Z}_\\mathrm{E}",
+              "means": "input impedance [Ω] (p. 144, (5.125))"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength on the line [m] (p. 144)"
+            }
+          ]
         },
         {
           "eq": "r = (Z_A − Z_W)/(Z_A + Z_W),  λ = 2π/β",
           "tex": "\\underline{r} = \\frac{\\underline{Z}_\\mathrm{A} - \\underline{Z}_\\mathrm{W}}{\\underline{Z}_\\mathrm{A} + \\underline{Z}_\\mathrm{W}}, \\qquad \\lambda = \\frac{2\\pi}{\\beta}",
           "note": "the returning wave's share at the load, from the coefficients (5.120); the wavelength as λ = 2π/k, p. 125",
-          "ref": "(5.120), p. 142",
-          "explore": true
+          "ref": "derived here from (5.120), p. 143 (the notes state no reflection factor)",
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\underline{Z}_\\mathrm{W}",
+              "means": "wave impedance of the line [Ω] (p. 142, (5.117))"
+            },
+            {
+              "tex": "\\beta",
+              "means": "phase coefficient [1/m] (p. 142)"
+            },
+            {
+              "tex": "\\underline{Z}_\\mathrm{A}",
+              "means": "load impedance at the line end [Ω] (p. 142)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength on the line [m] (p. 144)"
+            },
+            {
+              "tex": "\\underline{r}",
+              "means": "reflection factor at the load (not defined in the source); (5.120) gives only the wave coefficients U₁, U₂, on p. 143"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\underline{Z}_\\mathrm{W}",
+          "means": "wave impedance of the line [Ω] (p. 142, (5.117))"
+        },
+        {
+          "tex": "\\underline{Z}'",
+          "means": "series impedance per length [Ω/m] (p. 142, (5.114))"
+        },
+        {
+          "tex": "\\underline{Y}'",
+          "means": "shunt admittance per length [S/m] (p. 142, (5.114))"
+        },
+        {
+          "tex": "\\underline{\\gamma}",
+          "means": "complex propagation coefficient [1/m] (p. 142, (5.116))"
+        },
+        {
+          "tex": "R'",
+          "means": "resistance per length [Ω/m] (p. 141)"
+        },
+        {
+          "tex": "L'",
+          "means": "inductance per length [H/m] (p. 140)"
+        },
+        {
+          "tex": "G'",
+          "means": "conductance per length [S/m] (p. 141)"
+        },
+        {
+          "tex": "C'",
+          "means": "capacitance per length [F/m] (p. 140)"
+        },
+        {
+          "tex": "\\omega",
+          "means": "angular frequency [1/s] (p. 110, (4.25))"
         }
       ]
     },
@@ -1282,32 +3994,126 @@
           "eq": "e_x(0,t) = E1 cos ωt,  e_y(0,t) = E2 cos(ωt + ψ)",
           "tex": "e_x(0, t) = E_1\\cos\\omega t, \\qquad e_y(0, t) = E_2\\cos(\\omega t + \\psi)",
           "note": "components at a fixed place",
-          "ref": "pp. 33–34"
+          "ref": "pp. 33–34",
+          "where": [
+            {
+              "tex": "e_x",
+              "means": "instantaneous x component of the electric field [V/m] (p. 33)"
+            },
+            {
+              "tex": "e_y",
+              "means": "instantaneous y component of the electric field [V/m] (p. 33)"
+            },
+            {
+              "tex": "E_1",
+              "means": "amplitude of the x component [V/m] (p. 33)"
+            },
+            {
+              "tex": "E_2",
+              "means": "amplitude of the y component [V/m] (p. 33)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 33)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s]"
+            },
+            {
+              "tex": "\\psi",
+              "means": "phase shift between the two components (p. 33)"
+            }
+          ]
         },
         {
           "eq": "ψ = 0, ±180°",
           "tex": "\\psi = 0^\\circ, \\pm 180^\\circ",
           "note": "linear polarisation, ellipticity ∞",
-          "ref": "p. 35"
+          "ref": "p. 35",
+          "where": [
+            {
+              "tex": "\\psi",
+              "means": "phase shift between the two components (p. 33)"
+            }
+          ]
         },
         {
           "eq": "ψ = ∓90°, E1 = E2  ⇒  e_x² + e_y² = E²",
           "tex": "\\psi = \\mp 90^\\circ, \\; E_1 = E_2 \\;\\Rightarrow\\; e_x^2 + e_y^2 = E^2",
           "note": "circular: right-hand for −90°, clockwise seen along the wave",
-          "ref": "p. 34"
+          "ref": "p. 34",
+          "where": [
+            {
+              "tex": "e_x",
+              "means": "instantaneous x component of the electric field [V/m] (p. 33)"
+            },
+            {
+              "tex": "e_y",
+              "means": "instantaneous y component of the electric field [V/m] (p. 33)"
+            },
+            {
+              "tex": "E_1",
+              "means": "amplitude of the x component [V/m] (p. 33)"
+            },
+            {
+              "tex": "E_2",
+              "means": "amplitude of the y component [V/m] (p. 33)"
+            },
+            {
+              "tex": "\\psi",
+              "means": "phase shift between the two components (p. 33)"
+            },
+            {
+              "tex": "E",
+              "means": "common amplitude when E₁ = E₂ [V/m] (p. 34)"
+            }
+          ]
         },
         {
           "eq": "ellipticity = a/b  or  20 log(a/b) dB",
           "tex": "\\text{ellipticity} = \\frac{a}{b} \\quad \\text{or} \\quad 20\\log\\frac{a}{b}\\,\\mathrm{dB}",
           "note": "a, b the half axes of the ellipse",
           "ref": "Fig. 3.4",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "a",
+              "means": "major semi-axis of the polarisation ellipse (Fig. 3.4, p. 34)"
+            },
+            {
+              "tex": "b",
+              "means": "minor semi-axis of the polarisation ellipse (Fig. 3.4, p. 34)"
+            }
+          ]
         },
         {
           "eq": "e_x(z,0) = E cos kz,  e_y(z,0) = ±E sin kz",
           "tex": "e_x(z, 0) = E\\cos kz, \\qquad e_y(z, 0) = \\pm E\\sin kz",
           "note": "at a fixed time: a screw in space",
-          "ref": "p. 35"
+          "ref": "p. 35",
+          "where": [
+            {
+              "tex": "e_x",
+              "means": "instantaneous x component of the electric field [V/m] (p. 33)"
+            },
+            {
+              "tex": "e_y",
+              "means": "instantaneous y component of the electric field [V/m] (p. 33)"
+            },
+            {
+              "tex": "E",
+              "means": "common amplitude when E₁ = E₂ [V/m] (p. 34)"
+            },
+            {
+              "tex": "z",
+              "means": "position along the direction of propagation [m] (p. 33)"
+            },
+            {
+              "tex": "k",
+              "means": "wave number, 2π/λ [1/m] (p. 35)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1324,6 +4130,44 @@
           "solution": "With ψ = 90° the ellipse is upright with half axes a = 2 and b = 1, so 20 log(2/1) = 6.02 dB.",
           "source": "Worked by hand from Lasser (2012), Fig. 3.4"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "e_x",
+          "means": "instantaneous x component of the electric field [V/m] (p. 33)"
+        },
+        {
+          "tex": "e_y",
+          "means": "instantaneous y component of the electric field [V/m] (p. 33)"
+        },
+        {
+          "tex": "E_1",
+          "means": "amplitude of the x component [V/m] (p. 33)"
+        },
+        {
+          "tex": "E_2",
+          "means": "amplitude of the y component [V/m] (p. 33)"
+        },
+        {
+          "tex": "\\omega",
+          "means": "angular frequency [1/s] (p. 33)"
+        },
+        {
+          "tex": "t",
+          "means": "time [s]"
+        },
+        {
+          "tex": "\\psi",
+          "means": "phase shift between the two components (p. 33)"
+        },
+        {
+          "tex": "a",
+          "means": "major semi-axis of the polarisation ellipse (Fig. 3.4, p. 34)"
+        },
+        {
+          "tex": "b",
+          "means": "minor semi-axis of the polarisation ellipse (Fig. 3.4, p. 34)"
+        }
       ]
     },
     {
@@ -1338,44 +4182,210 @@
           "eq": "∇×E = −jωμH,  ∇×H = σE + jωεE",
           "tex": "\\nabla\\times\\vec{E} = -\\mathrm{j}\\omega\\mu\\vec{H}, \\qquad \\nabla\\times\\vec{H} = \\sigma\\vec{E} + \\mathrm{j}\\omega\\varepsilon\\vec{E}",
           "note": "Maxwell's equations for harmonic fields",
-          "ref": "(3.17), (3.18)"
+          "ref": "(3.17), (3.18)",
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "complex electric field strength [V/m] (p. 38, (3.17))"
+            },
+            {
+              "tex": "\\vec{H}",
+              "means": "complex magnetic field strength [A/m] (p. 38)"
+            },
+            {
+              "tex": "\\nabla",
+              "means": "nabla operator: ∇· is the divergence, ∇× the curl (p. 26)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 38)"
+            },
+            {
+              "tex": "\\mu",
+              "means": "permeability [H/m] (p. 38)"
+            },
+            {
+              "tex": "\\sigma",
+              "means": "electric conductivity [S/m] (p. 38)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 38)"
+            }
+          ]
         },
         {
           "eq": "δ = ε − jσ/ω = ε(1 − js)",
           "tex": "\\delta = \\varepsilon - \\mathrm{j}\\frac{\\sigma}{\\omega} = \\varepsilon(1 - \\mathrm{j}s)",
           "note": "complex permittivity",
-          "ref": "(3.19)"
+          "ref": "(3.19)",
+          "where": [
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 38)"
+            },
+            {
+              "tex": "\\sigma",
+              "means": "electric conductivity [S/m] (p. 38)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 38)"
+            },
+            {
+              "tex": "\\delta",
+              "means": "complex permittivity [F/m] (p. 38, (3.19)); the notes reuse δ, elsewhere the penetration depth"
+            },
+            {
+              "tex": "s",
+              "means": "loss factor (p. 38, (3.19))"
+            }
+          ]
         },
         {
           "eq": "s = 1/Q = tan θ = σ/(εω)",
           "tex": "s = \\frac{1}{Q} = \\tan\\theta = \\frac{\\sigma}{\\varepsilon\\omega}",
           "note": "loss tangent: quality factor of the medium, loss angle",
-          "ref": "(3.19)"
+          "ref": "(3.19)",
+          "where": [
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 38)"
+            },
+            {
+              "tex": "\\sigma",
+              "means": "electric conductivity [S/m] (p. 38)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity [F/m] (p. 38)"
+            },
+            {
+              "tex": "s",
+              "means": "loss factor (p. 38, (3.19))"
+            },
+            {
+              "tex": "Q",
+              "means": "quality factor of the medium (p. 38)"
+            },
+            {
+              "tex": "\\theta",
+              "means": "loss angle (p. 38)"
+            }
+          ]
         },
         {
           "eq": "E = Ê e^(−γ·r),  γ = α + jβ",
           "tex": "\\vec{E}(\\vec{r}) = \\hat{\\vec{E}}\\,\\mathrm{e}^{-\\vec{\\gamma}\\cdot\\vec{r}}, \\qquad \\vec{\\gamma} = \\vec{\\alpha} + \\mathrm{j}\\vec{\\beta}",
           "note": "plane wave with complex propagation constant",
           "ref": "(3.20)",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "complex electric field strength [V/m] (p. 38, (3.17))"
+            },
+            {
+              "tex": "\\hat{\\vec{E}}",
+              "means": "constant complex amplitude vector [V/m] (p. 38, (3.20))"
+            },
+            {
+              "tex": "\\vec{\\gamma}",
+              "means": "complex propagation vector [1/m] (p. 38, (3.20))"
+            },
+            {
+              "tex": "\\vec{r}",
+              "means": "position vector of the field point (p. 62)"
+            },
+            {
+              "tex": "\\vec{\\alpha}",
+              "means": "attenuation vector, the real part of γ [1/m] (p. 39)"
+            },
+            {
+              "tex": "\\vec{\\beta}",
+              "means": "phase vector, the imaginary part of γ [1/m] (p. 39)"
+            }
+          ]
         },
         {
           "eq": "γ × (γ × E) = ω²μδE",
           "tex": "\\vec{\\gamma}\\times(\\vec{\\gamma}\\times\\vec{E}) = \\omega^2\\mu\\delta\\vec{E}",
           "note": "",
-          "ref": "(3.26)"
+          "ref": "(3.26)",
+          "where": [
+            {
+              "tex": "\\vec{E}",
+              "means": "complex electric field strength [V/m] (p. 38, (3.17))"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 38)"
+            },
+            {
+              "tex": "\\mu",
+              "means": "permeability [H/m] (p. 38)"
+            },
+            {
+              "tex": "\\delta",
+              "means": "complex permittivity [F/m] (p. 38, (3.19)); the notes reuse δ, elsewhere the penetration depth"
+            },
+            {
+              "tex": "\\vec{\\gamma}",
+              "means": "complex propagation vector [1/m] (p. 38, (3.20))"
+            }
+          ]
         },
         {
           "eq": "γ = jω√(μδ)",
           "tex": "\\gamma = \\mathrm{j}\\omega\\sqrt{\\mu\\delta}",
           "note": "from γ·γ = −ω²μδ (3.27) for a uniform plane wave",
-          "ref": "(3.27), p. 39"
+          "ref": "(3.27), p. 39",
+          "where": [
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 38)"
+            },
+            {
+              "tex": "\\mu",
+              "means": "permeability [H/m] (p. 38)"
+            },
+            {
+              "tex": "\\delta",
+              "means": "complex permittivity [F/m] (p. 38, (3.19)); the notes reuse δ, elsewhere the penetration depth"
+            },
+            {
+              "tex": "\\gamma",
+              "means": "complex propagation constant [1/m] (p. 40)"
+            }
+          ]
         },
         {
           "eq": "s ≫ 1:  1/α → √(2/(μωσ))",
           "tex": "s \\gg 1: \\quad \\frac{1}{\\alpha} \\to \\sqrt{\\frac{2}{\\mu\\omega\\sigma}}",
           "note": "good conductor: the skin depth of Prechtl (2010), (4.31) (derived)",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 38)"
+            },
+            {
+              "tex": "\\mu",
+              "means": "permeability [H/m] (p. 38)"
+            },
+            {
+              "tex": "\\sigma",
+              "means": "electric conductivity [S/m] (p. 38)"
+            },
+            {
+              "tex": "s",
+              "means": "loss factor (p. 38, (3.19))"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "attenuation constant [1/m] (p. 40)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1392,6 +4402,44 @@
           "solution": "s = σ/(εω) = 4/(80 × 8.854 pF/m × 2π × 1 MHz) ≈ 900 ≫ 1, a good conductor: 1/α ≈ √(2/(μ0ωσ)) = √(2/(4π × 10⁻⁷ × 6.28 × 10⁶ × 4)) m = 0.252 m.",
           "source": "Worked by hand from Lasser (2012), p. 38"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\omega",
+          "means": "angular frequency [1/s] (p. 38)"
+        },
+        {
+          "tex": "\\mu",
+          "means": "permeability [H/m] (p. 38)"
+        },
+        {
+          "tex": "\\sigma",
+          "means": "electric conductivity [S/m] (p. 38)"
+        },
+        {
+          "tex": "\\varepsilon",
+          "means": "permittivity [F/m] (p. 38)"
+        },
+        {
+          "tex": "\\delta",
+          "means": "complex permittivity [F/m] (p. 38, (3.19)); the notes reuse δ, elsewhere the penetration depth"
+        },
+        {
+          "tex": "s",
+          "means": "loss factor (p. 38, (3.19))"
+        },
+        {
+          "tex": "\\gamma",
+          "means": "complex propagation constant [1/m] (p. 40)"
+        },
+        {
+          "tex": "\\alpha",
+          "means": "attenuation constant [1/m] (p. 40)"
+        },
+        {
+          "tex": "\\beta",
+          "means": "phase constant [1/m] (p. 40)"
+        }
       ]
     },
     {
@@ -1406,52 +4454,180 @@
           "eq": "Θ_e = Θ_r = Θ1",
           "tex": "\\Theta_\\mathrm{e} = \\Theta_\\mathrm{r} = \\Theta_1",
           "note": "law of reflection",
-          "ref": "p. 45"
+          "ref": "p. 45",
+          "where": [
+            {
+              "tex": "\\Theta_1",
+              "means": "angle of incidence (p. 45)"
+            },
+            {
+              "tex": "\\Theta_\\mathrm{e}",
+              "means": "angle of the incident wave (p. 45)"
+            },
+            {
+              "tex": "\\Theta_\\mathrm{r}",
+              "means": "angle of the reflected wave (p. 45)"
+            }
+          ]
         },
         {
           "eq": "sin Θ1 / sin Θ2 = √(ε2/ε1) = n2/n1",
           "tex": "\\frac{\\sin\\Theta_1}{\\sin\\Theta_2} = \\sqrt{\\frac{\\varepsilon_2}{\\varepsilon_1}} = \\frac{n_2}{n_1}",
           "note": "Snell's law",
-          "ref": "p. 45"
+          "ref": "p. 45",
+          "where": [
+            {
+              "tex": "\\Theta_1",
+              "means": "angle of incidence (p. 45)"
+            },
+            {
+              "tex": "\\Theta_2",
+              "means": "angle of the transmitted wave (p. 45)"
+            },
+            {
+              "tex": "n_1",
+              "means": "refractive index of medium 1 (p. 45)"
+            },
+            {
+              "tex": "n_2",
+              "means": "refractive index of medium 2 (p. 45)"
+            },
+            {
+              "tex": "\\varepsilon_1",
+              "means": "permittivity of medium 1 [F/m] (p. 43)"
+            },
+            {
+              "tex": "\\varepsilon_2",
+              "means": "permittivity of medium 2 [F/m] (p. 43)"
+            }
+          ]
         },
         {
           "eq": "Γ_TM = (n² cos Θ1 − √(n² − sin²Θ1)) / (n² cos Θ1 + √(n² − sin²Θ1))",
           "tex": "\\Gamma_\\mathrm{TM} = \\frac{n^2\\cos\\Theta_1 - \\sqrt{n^2 - \\sin^2\\Theta_1}}{n^2\\cos\\Theta_1 + \\sqrt{n^2 - \\sin^2\\Theta_1}}",
           "note": "Fresnel, TM case, n = n2/n1",
           "ref": "p. 45",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\Theta_1",
+              "means": "angle of incidence (p. 45)"
+            },
+            {
+              "tex": "\\Gamma_\\mathrm{TM}",
+              "means": "reflection factor, TM case (H parallel to the boundary) (p. 45, written r_TM there)"
+            },
+            {
+              "tex": "n",
+              "means": "relative refractive index n₂/n₁ (p. 45)"
+            }
+          ]
         },
         {
           "eq": "T_TM = 2n cos Θ1 / (n² cos Θ1 + √(n² − sin²Θ1))",
           "tex": "T_\\mathrm{TM} = \\frac{2n\\cos\\Theta_1}{n^2\\cos\\Theta_1 + \\sqrt{n^2 - \\sin^2\\Theta_1}}",
           "note": "",
-          "ref": "p. 45"
+          "ref": "p. 45",
+          "where": [
+            {
+              "tex": "\\Theta_1",
+              "means": "angle of incidence (p. 45)"
+            },
+            {
+              "tex": "T_\\mathrm{TM}",
+              "means": "transmission factor, TM case (p. 45)"
+            },
+            {
+              "tex": "n",
+              "means": "relative refractive index n₂/n₁ (p. 45)"
+            }
+          ]
         },
         {
           "eq": "Γ_TE = (cos Θ1 − √(n² − sin²Θ1)) / (cos Θ1 + √(n² − sin²Θ1))",
           "tex": "\\Gamma_\\mathrm{TE} = \\frac{\\cos\\Theta_1 - \\sqrt{n^2 - \\sin^2\\Theta_1}}{\\cos\\Theta_1 + \\sqrt{n^2 - \\sin^2\\Theta_1}}",
           "note": "Fresnel, TE case",
           "ref": "p. 45",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\Theta_1",
+              "means": "angle of incidence (p. 45)"
+            },
+            {
+              "tex": "\\Gamma_\\mathrm{TE}",
+              "means": "reflection factor, TE case (E parallel to the boundary) (p. 45, written r_TE there)"
+            },
+            {
+              "tex": "n",
+              "means": "relative refractive index n₂/n₁ (p. 45)"
+            }
+          ]
         },
         {
           "eq": "T_TE = 2 cos Θ1 / (cos Θ1 + √(n² − sin²Θ1))",
           "tex": "T_\\mathrm{TE} = \\frac{2\\cos\\Theta_1}{\\cos\\Theta_1 + \\sqrt{n^2 - \\sin^2\\Theta_1}}",
           "note": "",
-          "ref": "p. 45"
+          "ref": "p. 45",
+          "where": [
+            {
+              "tex": "\\Theta_1",
+              "means": "angle of incidence (p. 45)"
+            },
+            {
+              "tex": "T_\\mathrm{TE}",
+              "means": "transmission factor, TE case (p. 45)"
+            },
+            {
+              "tex": "n",
+              "means": "relative refractive index n₂/n₁ (p. 45)"
+            }
+          ]
         },
         {
           "eq": "Γ_TM = 0  ⇐  tan Θ_B = n2/n1",
           "tex": "\\Gamma_\\mathrm{TM} = 0 \\;\\Leftarrow\\; \\tan\\Theta_\\mathrm{B} = \\frac{n_2}{n_1}",
           "note": "Brewster angle; none in the TE case",
-          "ref": "p. 46"
+          "ref": "p. 46",
+          "where": [
+            {
+              "tex": "n_1",
+              "means": "refractive index of medium 1 (p. 45)"
+            },
+            {
+              "tex": "n_2",
+              "means": "refractive index of medium 2 (p. 45)"
+            },
+            {
+              "tex": "\\Gamma_\\mathrm{TM}",
+              "means": "reflection factor, TM case (H parallel to the boundary) (p. 45, written r_TM there)"
+            },
+            {
+              "tex": "\\Theta_\\mathrm{B}",
+              "means": "Brewster angle (p. 46)"
+            }
+          ]
         },
         {
           "eq": "sin Θ_c = n2/n1  (n2 < n1)",
           "tex": "\\sin\\Theta_\\mathrm{c} = \\frac{n_2}{n_1} \\quad (n_2 < n_1)",
           "note": "total reflection beyond Θ_c, from Snell's law with Θ2 = 90° (derived)",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "n_1",
+              "means": "refractive index of medium 1 (p. 45)"
+            },
+            {
+              "tex": "n_2",
+              "means": "refractive index of medium 2 (p. 45)"
+            },
+            {
+              "tex": "\\Theta_\\mathrm{c}",
+              "means": "critical angle of total reflection (not defined in the source)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1467,6 +4643,36 @@
           "solution": "tan Θ_B = n2/n1 = 1.5, so Θ_B = 56.3°.",
           "source": "Worked by hand from Lasser (2012), p. 46"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\Theta_1",
+          "means": "angle of incidence (p. 45)"
+        },
+        {
+          "tex": "\\Theta_2",
+          "means": "angle of the transmitted wave (p. 45)"
+        },
+        {
+          "tex": "n_1",
+          "means": "refractive index of medium 1 (p. 45)"
+        },
+        {
+          "tex": "n_2",
+          "means": "refractive index of medium 2 (p. 45)"
+        },
+        {
+          "tex": "\\Gamma_\\mathrm{TM}",
+          "means": "reflection factor, TM case (H parallel to the boundary) (p. 45, written r_TM there)"
+        },
+        {
+          "tex": "\\Gamma_\\mathrm{TE}",
+          "means": "reflection factor, TE case (E parallel to the boundary) (p. 45, written r_TE there)"
+        },
+        {
+          "tex": "\\Theta_\\mathrm{B}",
+          "means": "Brewster angle (p. 46)"
+        }
       ]
     },
     {
@@ -1481,45 +4687,203 @@
           "eq": "κ² = (mπ/a)² + (nπ/b)² = ω²εμ − k_z²",
           "tex": "\\kappa^2 = \\Big(\\frac{m\\pi}{a}\\Big)^2 + \\Big(\\frac{n\\pi}{b}\\Big)^2 = \\omega^2\\varepsilon\\mu - k_z^2",
           "note": "for TE and TM modes alike",
-          "ref": "(6.5), p. 65"
+          "ref": "(6.5), p. 65",
+          "where": [
+            {
+              "tex": "\\kappa",
+              "means": "transverse separation constant [1/m] (p. 64, (6.5))"
+            },
+            {
+              "tex": "m",
+              "means": "mode index across the broad side (p. 63)"
+            },
+            {
+              "tex": "n",
+              "means": "mode index across the narrow side (p. 63)"
+            },
+            {
+              "tex": "a",
+              "means": "inner width, the broad side [m] (Fig. 6.1, p. 63)"
+            },
+            {
+              "tex": "b",
+              "means": "inner height, the narrow side [m] (Fig. 6.1, p. 63)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 65)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity of the filling [F/m] (p. 63)"
+            },
+            {
+              "tex": "\\mu",
+              "means": "permeability of the filling [H/m] (p. 63)"
+            },
+            {
+              "tex": "k_z",
+              "means": "axial wave number [1/m] (p. 64)"
+            }
+          ]
         },
         {
           "eq": "f_G,m,n = (c/2) √((m/a)² + (n/b)²)",
           "tex": "f_{\\mathrm{G},m,n} = \\frac{c}{2}\\sqrt{\\Big(\\frac{m}{a}\\Big)^2 + \\Big(\\frac{n}{b}\\Big)^2}",
           "note": "cutoff frequency, where k_z = 0",
-          "ref": "(6.9), p. 64"
+          "ref": "(6.9), p. 64",
+          "where": [
+            {
+              "tex": "m",
+              "means": "mode index across the broad side (p. 63)"
+            },
+            {
+              "tex": "n",
+              "means": "mode index across the narrow side (p. 63)"
+            },
+            {
+              "tex": "a",
+              "means": "inner width, the broad side [m] (Fig. 6.1, p. 63)"
+            },
+            {
+              "tex": "b",
+              "means": "inner height, the narrow side [m] (Fig. 6.1, p. 63)"
+            },
+            {
+              "tex": "f_{\\mathrm{G},m,n}",
+              "means": "cut-off frequency of the TE_mn or TM_mn mode [Hz] (p. 64, (6.9))"
+            },
+            {
+              "tex": "c",
+              "means": "speed of light in the filling, c₀/√(μ_r ε_r) [m/s] (p. 64)"
+            }
+          ]
         },
         {
           "eq": "λ_G = 2a",
           "tex": "\\lambda_\\mathrm{G} = 2a",
           "note": "cutoff wavelength of the fundamental mode TE10",
-          "ref": "p. 66"
+          "ref": "p. 66",
+          "where": [
+            {
+              "tex": "a",
+              "means": "inner width, the broad side [m] (Fig. 6.1, p. 63)"
+            },
+            {
+              "tex": "\\lambda_\\mathrm{G}",
+              "means": "cut-off wavelength (p. 64, (6.7))"
+            }
+          ]
         },
         {
           "eq": "λ_H = λ / √(1 − (λ/2a)²)",
           "tex": "\\lambda_\\mathrm{H} = \\frac{\\lambda}{\\sqrt{1 - \\big(\\frac{\\lambda}{2a}\\big)^2}}",
           "note": "guide wavelength of TE10",
           "ref": "(6.8), p. 64",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "a",
+              "means": "inner width, the broad side [m] (Fig. 6.1, p. 63)"
+            },
+            {
+              "tex": "\\lambda_\\mathrm{H}",
+              "means": "guide wavelength [m] (p. 64, (6.6))"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "free wavelength in the filling [m] (p. 64)"
+            }
+          ]
         },
         {
           "eq": "Z_W = E_x/H_y = −E_y/H_x",
           "tex": "Z_\\mathrm{W} = \\frac{E_x}{H_y} = -\\frac{E_y}{H_x}",
           "note": "field wave impedance",
-          "ref": "p. 66"
+          "ref": "p. 66",
+          "where": [
+            {
+              "tex": "Z_\\mathrm{W}",
+              "means": "field wave impedance, ratio of the transverse main components [Ω] (p. 66)"
+            },
+            {
+              "tex": "E_x",
+              "means": "transverse electric field component [V/m] (p. 65)"
+            },
+            {
+              "tex": "E_y",
+              "means": "transverse electric field component [V/m] (p. 65)"
+            },
+            {
+              "tex": "H_x",
+              "means": "transverse magnetic field component [A/m] (p. 65)"
+            },
+            {
+              "tex": "H_y",
+              "means": "transverse magnetic field component [A/m] (p. 65)"
+            }
+          ]
         },
         {
           "eq": "Z_W,TE = η / √(1 − (λ/λ_G)²),  η = √(μ/ε)",
           "tex": "Z_\\mathrm{W,TE} = \\frac{\\eta}{\\sqrt{1 - \\big(\\frac{\\lambda}{\\lambda_\\mathrm{G}}\\big)^2}}, \\qquad \\eta = \\sqrt{\\frac{\\mu}{\\varepsilon}}",
           "note": "for TE modes",
           "ref": "p. 66",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity of the filling [F/m] (p. 63)"
+            },
+            {
+              "tex": "\\mu",
+              "means": "permeability of the filling [H/m] (p. 63)"
+            },
+            {
+              "tex": "\\lambda_\\mathrm{G}",
+              "means": "cut-off wavelength (p. 64, (6.7))"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "free wavelength in the filling [m] (p. 64)"
+            },
+            {
+              "tex": "Z_\\mathrm{W,TE}",
+              "means": "field wave impedance of TE waves [Ω] (p. 66)"
+            },
+            {
+              "tex": "\\eta",
+              "means": "field wave impedance of the filling, √(μ/ε) [Ω] (p. 66)"
+            }
+          ]
         },
         {
           "eq": "v_P/c = λ_H/λ,  v_P v_G = c²",
           "tex": "\\frac{v_\\mathrm{P}}{c} = \\frac{\\lambda_\\mathrm{H}}{\\lambda}, \\qquad v_\\mathrm{P} v_\\mathrm{G} = c^2",
           "note": "phase and group speed",
-          "ref": "Fig. 6.2, p. 64"
+          "ref": "Fig. 6.2, p. 64",
+          "where": [
+            {
+              "tex": "c",
+              "means": "speed of light in the filling, c₀/√(μ_r ε_r) [m/s] (p. 64)"
+            },
+            {
+              "tex": "\\lambda_\\mathrm{H}",
+              "means": "guide wavelength [m] (p. 64, (6.6))"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "free wavelength in the filling [m] (p. 64)"
+            },
+            {
+              "tex": "v_\\mathrm{P}",
+              "means": "phase velocity [m/s] (p. 64)"
+            },
+            {
+              "tex": "v_\\mathrm{G}",
+              "means": "group velocity [m/s] (p. 64)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1533,6 +4897,48 @@
           },
           "solution": "λ_G = 2a = 45.72 mm, so f_c = c0/λ_G = 299 792 458 m/s / 0.04572 m = 6.557 GHz.",
           "source": "Worked by hand from Lasser (2012), p. 66"
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\kappa",
+          "means": "transverse separation constant [1/m] (p. 64, (6.5))"
+        },
+        {
+          "tex": "m",
+          "means": "mode index across the broad side (p. 63)"
+        },
+        {
+          "tex": "n",
+          "means": "mode index across the narrow side (p. 63)"
+        },
+        {
+          "tex": "a",
+          "means": "inner width, the broad side [m] (Fig. 6.1, p. 63)"
+        },
+        {
+          "tex": "b",
+          "means": "inner height, the narrow side [m] (Fig. 6.1, p. 63)"
+        },
+        {
+          "tex": "\\omega",
+          "means": "angular frequency [1/s] (p. 65)"
+        },
+        {
+          "tex": "\\varepsilon",
+          "means": "permittivity of the filling [F/m] (p. 63)"
+        },
+        {
+          "tex": "\\mu",
+          "means": "permeability of the filling [H/m] (p. 63)"
+        },
+        {
+          "tex": "k_z",
+          "means": "axial wave number [1/m] (p. 64)"
+        },
+        {
+          "tex": "\\lambda_\\mathrm{G}",
+          "means": "cut-off wavelength (p. 64, (6.7))"
         }
       ]
     },
@@ -1548,31 +4954,97 @@
           "eq": "Z_L = Z_L,0 / √ε_eff",
           "tex": "Z_\\mathrm{L} = \\frac{Z_\\mathrm{L,0}}{\\sqrt{\\varepsilon_\\mathrm{eff}}}",
           "note": "Z_L,0 the same line in air",
-          "ref": "p. 96"
+          "ref": "p. 96",
+          "where": [
+            {
+              "tex": "Z_\\mathrm{L}",
+              "means": "wave impedance of the microstrip line [Ω] (p. 96)"
+            },
+            {
+              "tex": "Z_\\mathrm{L,0}",
+              "means": "wave impedance of the same line filled with air [Ω] (p. 96)"
+            },
+            {
+              "tex": "\\varepsilon_\\mathrm{eff}",
+              "means": "effective relative permittivity (p. 96)"
+            }
+          ]
         },
         {
           "eq": "λ = λ0 / √ε_eff",
           "tex": "\\lambda = \\frac{\\lambda_0}{\\sqrt{\\varepsilon_\\mathrm{eff}}}",
           "note": "wavelength on the line",
-          "ref": "p. 96"
+          "ref": "p. 96",
+          "where": [
+            {
+              "tex": "\\varepsilon_\\mathrm{eff}",
+              "means": "effective relative permittivity (p. 96)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength on the line [m] (p. 96)"
+            },
+            {
+              "tex": "\\lambda_0",
+              "means": "free-space wavelength [m] (p. 96)"
+            }
+          ]
         },
         {
           "eq": "ε_eff = 1 + q(ε_r − 1)",
           "tex": "\\varepsilon_\\mathrm{eff} = 1 + q(\\varepsilon_\\mathrm{r} - 1)",
           "note": "filling factor q",
-          "ref": "p. 96"
+          "ref": "p. 96",
+          "where": [
+            {
+              "tex": "\\varepsilon_\\mathrm{eff}",
+              "means": "effective relative permittivity (p. 96)"
+            },
+            {
+              "tex": "q",
+              "means": "filling factor (p. 96)"
+            },
+            {
+              "tex": "\\varepsilon_\\mathrm{r}",
+              "means": "relative permittivity of the substrate (p. 96)"
+            }
+          ]
         },
         {
           "eq": "w/h → 0: q → 0.5,   w/h → ∞: q → 1",
           "tex": "\\frac{w}{h} \\to 0: \\; q \\to 0.5, \\qquad \\frac{w}{h} \\to \\infty: \\; q \\to 1",
           "note": "narrow and wide strips",
-          "ref": "p. 96"
+          "ref": "p. 96",
+          "where": [
+            {
+              "tex": "q",
+              "means": "filling factor (p. 96)"
+            },
+            {
+              "tex": "w",
+              "means": "strip width [m] (Fig. 9.2, p. 95)"
+            },
+            {
+              "tex": "h",
+              "means": "substrate thickness [m] (Fig. 9.2, p. 95)"
+            }
+          ]
         },
         {
           "eq": "ε_eff ≈ (ε_r + 1)/2",
           "tex": "\\varepsilon_\\mathrm{eff} \\approx \\frac{\\varepsilon_\\mathrm{r} + 1}{2}",
           "note": "very narrow strips",
-          "ref": "p. 96"
+          "ref": "p. 96",
+          "where": [
+            {
+              "tex": "\\varepsilon_\\mathrm{eff}",
+              "means": "effective relative permittivity (p. 96)"
+            },
+            {
+              "tex": "\\varepsilon_\\mathrm{r}",
+              "means": "relative permittivity of the substrate (p. 96)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1612,6 +5084,36 @@
           "solution": "ε_eff = 1 + q(εr − 1), so q = (3.33 − 1)/(4.325 − 1) = 0.70; the nomogram gives about 0.7.",
           "source": "Wave propagation exercise collection (Übungsteil, 5th edition, October 2011), exercise 14; result from its worked solution, p. 32"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "Z_\\mathrm{L}",
+          "means": "wave impedance of the microstrip line [Ω] (p. 96)"
+        },
+        {
+          "tex": "Z_\\mathrm{L,0}",
+          "means": "wave impedance of the same line filled with air [Ω] (p. 96)"
+        },
+        {
+          "tex": "\\varepsilon_\\mathrm{eff}",
+          "means": "effective relative permittivity (p. 96)"
+        },
+        {
+          "tex": "\\lambda",
+          "means": "wavelength on the line [m] (p. 96)"
+        },
+        {
+          "tex": "\\lambda_0",
+          "means": "free-space wavelength [m] (p. 96)"
+        },
+        {
+          "tex": "q",
+          "means": "filling factor (p. 96)"
+        },
+        {
+          "tex": "\\varepsilon_\\mathrm{r}",
+          "means": "relative permittivity of the substrate (p. 96)"
+        }
       ]
     },
     {
@@ -1626,32 +5128,106 @@
           "eq": "Δd = λ/2",
           "tex": "\\Delta d = \\frac{\\lambda}{2}",
           "note": "the 1st Fresnel ellipsoid: detour of half a wavelength, phase shift π",
-          "ref": "p. 107"
+          "ref": "p. 107",
+          "where": [
+            {
+              "tex": "\\Delta d",
+              "means": "path difference to the line of sight [m] (p. 107)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 107)"
+            }
+          ]
         },
         {
           "eq": "Δd = λ",
           "tex": "\\Delta d = \\lambda",
           "note": "the 2nd ellipsoid, phase shift 2π",
-          "ref": "p. 107"
+          "ref": "p. 107",
+          "where": [
+            {
+              "tex": "\\Delta d",
+              "means": "path difference to the line of sight [m] (p. 107)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 107)"
+            }
+          ]
         },
         {
           "eq": "√(d1² + r²) + √(d2² + r²) − d = λ/2",
           "tex": "\\sqrt{d_1^2 + r^2} + \\sqrt{d_2^2 + r^2} - d = \\frac{\\lambda}{2}",
           "note": "the detour at height r above the line of sight (derived)",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 107)"
+            },
+            {
+              "tex": "r",
+              "means": "radius of the first Fresnel ellipsoid at the point considered [m] (p. 108, (10.5), there at mid-path only)"
+            },
+            {
+              "tex": "d",
+              "means": "distance from transmitter to receiver [m] (p. 107)"
+            },
+            {
+              "tex": "d_1",
+              "means": "distance of the point from the transmitter along the line of sight [m] (not defined in the source)"
+            },
+            {
+              "tex": "d_2",
+              "means": "distance of the point from the receiver along the line of sight [m] (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "r ≈ √(λ d1 d2 / d)",
           "tex": "r \\approx \\sqrt{\\frac{\\lambda d_1 d_2}{d}}",
           "note": "for r ≪ d1, d2 (derived)",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 107)"
+            },
+            {
+              "tex": "r",
+              "means": "radius of the first Fresnel ellipsoid at the point considered [m] (p. 108, (10.5), there at mid-path only)"
+            },
+            {
+              "tex": "d",
+              "means": "distance from transmitter to receiver [m] (p. 107)"
+            },
+            {
+              "tex": "d_1",
+              "means": "distance of the point from the transmitter along the line of sight [m] (not defined in the source)"
+            },
+            {
+              "tex": "d_2",
+              "means": "distance of the point from the receiver along the line of sight [m] (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "Δd = 0…λ/4: constructive;  λ/4…λ/2: destructive",
           "tex": "\\Delta d = 0 \\ldots \\frac{\\lambda}{4}: \\text{constructive}; \\qquad \\frac{\\lambda}{4} \\ldots \\frac{\\lambda}{2}: \\text{destructive}",
           "note": "inner and outer halves of the 1st zone",
-          "ref": "p. 107"
+          "ref": "p. 107",
+          "where": [
+            {
+              "tex": "\\Delta d",
+              "means": "path difference to the line of sight [m] (p. 107)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 107)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1667,6 +5243,32 @@
           "solution": "At mid-path d1 = d2 = 25 km: r = √(λ d1 d2/d) = √(0.05 m × 12.5 km) = 25 m, so the diameter is 50 m.",
           "source": "Lasser (2012), exercise on p. 107; the notes give D = 50 m"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\Delta d",
+          "means": "path difference to the line of sight [m] (p. 107)"
+        },
+        {
+          "tex": "\\lambda",
+          "means": "wavelength [m] (p. 107)"
+        },
+        {
+          "tex": "r",
+          "means": "radius of the first Fresnel ellipsoid at the point considered [m] (p. 108, (10.5), there at mid-path only)"
+        },
+        {
+          "tex": "d",
+          "means": "distance from transmitter to receiver [m] (p. 107)"
+        },
+        {
+          "tex": "d_1",
+          "means": "distance of the point from the transmitter along the line of sight [m] (not defined in the source)"
+        },
+        {
+          "tex": "d_2",
+          "means": "distance of the point from the receiver along the line of sight [m] (not defined in the source)"
+        }
       ]
     },
     {
@@ -1681,43 +5283,177 @@
           "eq": "T_e(r) = G P_s / (4πr²)",
           "tex": "T_\\mathrm{e}(r) = G\\frac{P_\\mathrm{s}}{4\\pi r^2}",
           "note": "power flux density of an antenna with gain G",
-          "ref": "(11.49)"
+          "ref": "(11.49)",
+          "where": [
+            {
+              "tex": "T_\\mathrm{e}",
+              "means": "radiation power density at the receiver [W/m²] (p. 119, (11.49); p. 139)"
+            },
+            {
+              "tex": "G",
+              "means": "gain of the antenna over the isotropic radiator (p. 119)"
+            },
+            {
+              "tex": "P_\\mathrm{s}",
+              "means": "transmitted power [W] (p. 139)"
+            },
+            {
+              "tex": "r",
+              "means": "distance from the antenna [m] (p. 119)"
+            }
+          ]
         },
         {
           "eq": "P_e = P_s G_s G_e (λ/(4πd))²",
           "tex": "P_\\mathrm{e} = P_\\mathrm{s} G_\\mathrm{s} G_\\mathrm{e} \\Big(\\frac{\\lambda}{4\\pi d}\\Big)^2",
           "note": "received power",
-          "ref": "(12.6)"
+          "ref": "(12.6)",
+          "where": [
+            {
+              "tex": "P_\\mathrm{s}",
+              "means": "transmitted power [W] (p. 139)"
+            },
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "received power [W] (p. 139)"
+            },
+            {
+              "tex": "G_\\mathrm{s}",
+              "means": "gain of the transmitting antenna (p. 139)"
+            },
+            {
+              "tex": "G_\\mathrm{e}",
+              "means": "gain of the receiving antenna (p. 139)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 140)"
+            },
+            {
+              "tex": "d",
+              "means": "distance between transmitter and receiver [m] (p. 139)"
+            }
+          ]
         },
         {
           "eq": "P_e = P_s A_s A_e / (λd)²",
           "tex": "P_\\mathrm{e} = P_\\mathrm{s}\\Big(\\frac{1}{\\lambda d}\\Big)^2 A_\\mathrm{s} A_\\mathrm{e}",
           "note": "with antenna areas instead of gains",
-          "ref": "(12.7)"
+          "ref": "(12.7)",
+          "where": [
+            {
+              "tex": "P_\\mathrm{s}",
+              "means": "transmitted power [W] (p. 139)"
+            },
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "received power [W] (p. 139)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 140)"
+            },
+            {
+              "tex": "d",
+              "means": "distance between transmitter and receiver [m] (p. 139)"
+            },
+            {
+              "tex": "A_\\mathrm{s}",
+              "means": "effective area of the transmitting antenna [m²] (p. 139)"
+            },
+            {
+              "tex": "A_\\mathrm{e}",
+              "means": "effective area of the receiving antenna [m²] (p. 139)"
+            }
+          ]
         },
         {
           "eq": "L = 10 log(P_s/P_e) dB",
           "tex": "L|_\\mathrm{dB} = 10\\log\\frac{P_\\mathrm{s}}{P_\\mathrm{e}}",
           "note": "transmission loss",
-          "ref": "(12.8)"
+          "ref": "(12.8)",
+          "where": [
+            {
+              "tex": "P_\\mathrm{s}",
+              "means": "transmitted power [W] (p. 139)"
+            },
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "received power [W] (p. 139)"
+            },
+            {
+              "tex": "L",
+              "means": "transmission loss [dB] (p. 140, (12.8))"
+            }
+          ]
         },
         {
           "eq": "P_e = P_s + G_s − L_ISO + G_e (in dB)",
           "tex": "P_\\mathrm{e}|_\\mathrm{dBW} = P_\\mathrm{s}|_\\mathrm{dBW} + G_\\mathrm{s}|_\\mathrm{dBi} - L_\\mathrm{ISO}|_\\mathrm{dB} + G_\\mathrm{e}|_\\mathrm{dBi}",
           "note": "level plan",
-          "ref": "(12.9)"
+          "ref": "(12.9)",
+          "where": [
+            {
+              "tex": "P_\\mathrm{s}",
+              "means": "transmitted power [W] (p. 139)"
+            },
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "received power [W] (p. 139)"
+            },
+            {
+              "tex": "G_\\mathrm{s}",
+              "means": "gain of the transmitting antenna (p. 139)"
+            },
+            {
+              "tex": "G_\\mathrm{e}",
+              "means": "gain of the receiving antenna (p. 139)"
+            },
+            {
+              "tex": "L_\\mathrm{ISO}",
+              "means": "basic free-space loss between isotropic antennas [dB] (p. 140)"
+            }
+          ]
         },
         {
           "eq": "L_ISO = −20 log(λ/(4πd)) dB",
           "tex": "L_\\mathrm{ISO}|_\\mathrm{dB} = -20\\log\\Big(\\frac{\\lambda}{4\\pi d}\\Big)",
           "note": "basic loss between isotropic antennas",
-          "ref": "(12.10)"
+          "ref": "(12.10)",
+          "where": [
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 140)"
+            },
+            {
+              "tex": "d",
+              "means": "distance between transmitter and receiver [m] (p. 139)"
+            },
+            {
+              "tex": "L_\\mathrm{ISO}",
+              "means": "basic free-space loss between isotropic antennas [dB] (p. 140)"
+            }
+          ]
         },
         {
           "eq": "L_Sys = L + SNR_min (dB)",
           "tex": "L_\\mathrm{Sys}|_\\mathrm{dB} = L|_\\mathrm{dB} + \\mathit{SNR}_\\mathrm{min}|_\\mathrm{dB}",
           "note": "system value",
-          "ref": "(12.11)"
+          "ref": "(12.11)",
+          "where": [
+            {
+              "tex": "L",
+              "means": "transmission loss [dB] (p. 140, (12.8))"
+            },
+            {
+              "tex": "L_\\mathrm{Sys}",
+              "means": "system value: transmitter power over receiver input noise power [dB] (p. 140)"
+            },
+            {
+              "tex": "\\mathit{SNR}_\\mathrm{min}",
+              "means": "minimum signal-to-noise ratio [dB] (p. 140)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1752,6 +5488,36 @@
           "solution": "Noise k T B = 2 × 10⁻¹⁵ W = −147.0 dBW, so P_e = −127.0 dBW. L_ISO = 20 log(4π × 100 km / 0.291 m) = 132.7 dB. From (12.9): P_s = −127.0 − 10 − 3 + 132.7 = −7.3 dBW = 0.19 W.",
           "source": "Wave propagation exercise collection (Übungsteil, 5th edition, October 2011), exercise 26, p. 50; the collection prints no number, answer worked by hand"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "P_\\mathrm{s}",
+          "means": "transmitted power [W] (p. 139)"
+        },
+        {
+          "tex": "P_\\mathrm{e}",
+          "means": "received power [W] (p. 139)"
+        },
+        {
+          "tex": "G_\\mathrm{s}",
+          "means": "gain of the transmitting antenna (p. 139)"
+        },
+        {
+          "tex": "G_\\mathrm{e}",
+          "means": "gain of the receiving antenna (p. 139)"
+        },
+        {
+          "tex": "\\lambda",
+          "means": "wavelength [m] (p. 140)"
+        },
+        {
+          "tex": "d",
+          "means": "distance between transmitter and receiver [m] (p. 139)"
+        },
+        {
+          "tex": "L_\\mathrm{ISO}",
+          "means": "basic free-space loss between isotropic antennas [dB] (p. 140)"
+        }
       ]
     },
     {
@@ -1766,25 +5532,117 @@
           "eq": "P_e = T_e A_e = P_s G_s σ λ² G_e / ((4πd²)² 4π)",
           "tex": "P_\\mathrm{e} = T_\\mathrm{e} A_\\mathrm{e} = \\frac{P_\\mathrm{s} G_\\mathrm{s}\\sigma}{(4\\pi d^2)^2}\\frac{\\lambda^2}{4\\pi} G_\\mathrm{e}",
           "note": "bistatic",
-          "ref": "(12.16)"
+          "ref": "(12.16)",
+          "where": [
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "received power [W] (p. 143)"
+            },
+            {
+              "tex": "P_\\mathrm{s}",
+              "means": "transmitted power [W] (p. 142)"
+            },
+            {
+              "tex": "\\sigma",
+              "means": "radar (back-scattering) cross-section [m²] (p. 142)"
+            },
+            {
+              "tex": "G_\\mathrm{s}",
+              "means": "gain of the transmitting antenna (p. 142)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 143)"
+            },
+            {
+              "tex": "d",
+              "means": "distance to the target [m] (p. 142)"
+            },
+            {
+              "tex": "T_\\mathrm{e}",
+              "means": "radiation power density back at the radar [W/m²] (p. 143)"
+            },
+            {
+              "tex": "A_\\mathrm{e}",
+              "means": "effective area of the receiving antenna [m²] (p. 143)"
+            },
+            {
+              "tex": "G_\\mathrm{e}",
+              "means": "gain of the receiving antenna (p. 143)"
+            }
+          ]
         },
         {
           "eq": "P_e/P_s = σ G_s² (λ/4π)² / (4π d⁴)",
           "tex": "\\frac{P_\\mathrm{e}}{P_\\mathrm{s}} = \\sigma G_\\mathrm{s}^2 \\Big(\\frac{\\lambda}{4\\pi}\\Big)^2 \\frac{1}{4\\pi d^4}",
           "note": "monostatic, G_s = G_e",
-          "ref": "(12.17)"
+          "ref": "(12.17)",
+          "where": [
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "received power [W] (p. 143)"
+            },
+            {
+              "tex": "P_\\mathrm{s}",
+              "means": "transmitted power [W] (p. 142)"
+            },
+            {
+              "tex": "\\sigma",
+              "means": "radar (back-scattering) cross-section [m²] (p. 142)"
+            },
+            {
+              "tex": "G_\\mathrm{s}",
+              "means": "gain of the transmitting antenna (p. 142)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 143)"
+            },
+            {
+              "tex": "d",
+              "means": "distance to the target [m] (p. 142)"
+            }
+          ]
         },
         {
           "eq": "σ = A G = 4π A²/λ²",
           "tex": "\\sigma = AG = 4\\pi\\frac{A^2}{\\lambda^2}",
           "note": "flat plate square to the beam",
-          "ref": "(12.18)"
+          "ref": "(12.18)",
+          "where": [
+            {
+              "tex": "\\sigma",
+              "means": "radar (back-scattering) cross-section [m²] (p. 142)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 143)"
+            },
+            {
+              "tex": "A",
+              "means": "effective area of a retroreflector [m²] (p. 143)"
+            },
+            {
+              "tex": "G",
+              "means": "gain of the retroreflector seen as an antenna (p. 143)"
+            }
+          ]
         },
         {
           "eq": "σ0 = π r²",
           "tex": "\\sigma_\\mathrm{o} = \\pi r^2",
           "note": "large metal sphere, r ≫ λ",
-          "ref": "(12.19)"
+          "ref": "(12.19)",
+          "where": [
+            {
+              "tex": "\\sigma_\\mathrm{o}",
+              "means": "cross-section of a large metal sphere [m²] (p. 143)"
+            },
+            {
+              "tex": "r",
+              "means": "radius of the sphere, r ≫ λ [m] (p. 143)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1899,51 +5757,215 @@
           "eq": "ℰ(t) = E0 cos(ωt − kd)",
           "tex": "\\vec{\\mathcal{E}}(t) = \\vec{E}_0\\cos(\\omega t - kd)",
           "note": "the wave after a path d",
-          "ref": "(13.9)"
+          "ref": "(13.9)",
+          "where": [
+            {
+              "tex": "\\vec{\\mathcal{E}}",
+              "means": "received electric field [V/m] (p. 150, (13.9))"
+            },
+            {
+              "tex": "\\vec{E}_0",
+              "means": "field amplitude [V/m] (p. 150)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 150)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s]"
+            },
+            {
+              "tex": "k",
+              "means": "wave number [1/m] (p. 150)"
+            },
+            {
+              "tex": "d",
+              "means": "path length from transmitter to receiver [m] (p. 150)"
+            }
+          ]
         },
         {
           "eq": "ℰ(t) = E0 cos(2πt [f − v/λ] − kd0)",
           "tex": "\\vec{\\mathcal{E}}(t) = \\vec{E}_0\\cos\\Big(2\\pi t\\Big[f - \\frac{v}{\\lambda}\\Big] - kd_0\\Big)",
           "note": "the path grows at speed v",
-          "ref": "(13.10)"
+          "ref": "(13.10)",
+          "where": [
+            {
+              "tex": "\\vec{\\mathcal{E}}",
+              "means": "received electric field [V/m] (p. 150, (13.9))"
+            },
+            {
+              "tex": "\\vec{E}_0",
+              "means": "field amplitude [V/m] (p. 150)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s]"
+            },
+            {
+              "tex": "f",
+              "means": "transmitted frequency [Hz] (p. 150)"
+            },
+            {
+              "tex": "v",
+              "means": "speed of the receiver [m/s] (p. 150)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 150)"
+            },
+            {
+              "tex": "k",
+              "means": "wave number [1/m] (p. 150)"
+            },
+            {
+              "tex": "d_0",
+              "means": "path length at t = 0 [m] (p. 150)"
+            }
+          ]
         },
         {
           "eq": "Δf_D = −v/λ = −f v/c",
           "tex": "\\Delta f_\\mathrm{D} = -\\frac{v}{\\lambda} = -f\\frac{v}{c}",
           "note": "Doppler shift, moving straight away",
-          "ref": "(13.11)"
+          "ref": "(13.11)",
+          "where": [
+            {
+              "tex": "f",
+              "means": "transmitted frequency [Hz] (p. 150)"
+            },
+            {
+              "tex": "v",
+              "means": "speed of the receiver [m/s] (p. 150)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 150)"
+            },
+            {
+              "tex": "\\Delta f_\\mathrm{D}",
+              "means": "Doppler shift [Hz] (p. 150, (13.11))"
+            },
+            {
+              "tex": "c",
+              "means": "speed of light [m/s] (p. 150)"
+            }
+          ]
         },
         {
           "eq": "Δf_D = −(v/λ) cos γ",
           "tex": "\\Delta f_\\mathrm{D} = -\\frac{v}{\\lambda}\\cos\\gamma",
           "note": "moving at an angle γ to the wave",
-          "ref": "(13.12)"
+          "ref": "(13.12)",
+          "where": [
+            {
+              "tex": "v",
+              "means": "speed of the receiver [m/s] (p. 150)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 150)"
+            },
+            {
+              "tex": "\\Delta f_\\mathrm{D}",
+              "means": "Doppler shift [Hz] (p. 150, (13.11))"
+            },
+            {
+              "tex": "\\gamma",
+              "means": "angle between the velocity and the direction of propagation (p. 150, Fig. 13.7)"
+            }
+          ]
         },
         {
           "eq": "fade rate = |Δf_D,1 − Δf_D,2|",
           "tex": "\\text{fade rate} = |\\Delta f_{\\mathrm{D},1} - \\Delta f_{\\mathrm{D},2}|",
           "note": "the beat of two Doppler-shifted carriers",
           "ref": "p. 151",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\Delta f_{\\mathrm{D},1}",
+              "means": "Doppler shift of wave 1 [Hz] (p. 151)"
+            },
+            {
+              "tex": "\\Delta f_{\\mathrm{D},2}",
+              "means": "Doppler shift of wave 2 [Hz] (p. 151)"
+            }
+          ]
         },
         {
           "eq": "λ_S = λ / (2 sin(φ/2))",
           "tex": "\\lambda_\\mathrm{S} = \\frac{\\lambda}{2\\sin(\\varphi/2)}",
           "note": "distance between fades across the pattern of two waves at angle φ (derived, as in exercise 24)",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 150)"
+            },
+            {
+              "tex": "\\lambda_\\mathrm{S}",
+              "means": "spacing of the fades along the interference pattern [m] (not defined in the source)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "angle between the two wave vectors (p. 148, Fig. 13.5)"
+            }
+          ]
         },
         {
           "eq": "(A1 − A2)/(A1 + A2)",
           "tex": "\\frac{A_1 - A_2}{A_1 + A_2}",
           "note": "fade depth: the weakest field against the strongest (derived)",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "A_1",
+              "means": "amplitude of wave 1 (p. 146)"
+            },
+            {
+              "tex": "A_2",
+              "means": "amplitude of wave 2 (p. 146)"
+            }
+          ]
         },
         {
           "eq": "|E| = |A1 + A2 e^(jk(x cos φ + y sin φ − x))|",
           "tex": "|E| = \\left|A_1 + A_2\\,\\mathrm{e}^{\\mathrm{j}k(x\\cos\\varphi + y\\sin\\varphi - x)}\\right|",
           "note": "two plane waves of (13.9) crossing at φ: the field the picture shades",
           "ref": "derived from (13.9)",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "k",
+              "means": "wave number [1/m] (p. 150)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "angle between the two wave vectors (p. 148, Fig. 13.5)"
+            },
+            {
+              "tex": "A_1",
+              "means": "amplitude of wave 1 (p. 146)"
+            },
+            {
+              "tex": "A_2",
+              "means": "amplitude of wave 2 (p. 146)"
+            },
+            {
+              "tex": "E",
+              "means": "complex field of the two superposed waves [V/m] (p. 148)"
+            },
+            {
+              "tex": "x",
+              "means": "position coordinates [m] (not defined in the source)"
+            },
+            {
+              "tex": "y",
+              "means": "position coordinate [m] (not defined in the source)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1995,6 +6017,40 @@
           "solution": "Δf_D = f v/c = 900 MHz × 16.67 m/s / 299 792 458 m/s = 50 Hz.",
           "source": "Lasser (2012), exercise on p. 150; worked by hand from (13.11)"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "v",
+          "means": "speed of the receiver [m/s] (p. 150)"
+        },
+        {
+          "tex": "\\lambda",
+          "means": "wavelength [m] (p. 150)"
+        },
+        {
+          "tex": "\\Delta f_\\mathrm{D}",
+          "means": "Doppler shift [Hz] (p. 150, (13.11))"
+        },
+        {
+          "tex": "\\gamma",
+          "means": "angle between the velocity and the direction of propagation (p. 150, Fig. 13.7)"
+        },
+        {
+          "tex": "\\lambda_\\mathrm{S}",
+          "means": "spacing of the fades along the interference pattern [m] (not defined in the source)"
+        },
+        {
+          "tex": "\\varphi",
+          "means": "angle between the two wave vectors (p. 148, Fig. 13.5)"
+        },
+        {
+          "tex": "A_1",
+          "means": "amplitude of wave 1 (p. 146)"
+        },
+        {
+          "tex": "A_2",
+          "means": "amplitude of wave 2 (p. 146)"
+        }
       ]
     },
     {
@@ -2009,37 +6065,161 @@
           "eq": "τ1 = d1/c,  τ2 = d2/c",
           "tex": "\\tau_1 = d_1/c, \\qquad \\tau_2 = d_2/c",
           "note": "the delays of the two paths",
-          "ref": "(13.1)"
+          "ref": "(13.1)",
+          "where": [
+            {
+              "tex": "\\tau_1",
+              "means": "delay of path 1 [s] (p. 146, (13.1))"
+            },
+            {
+              "tex": "\\tau_2",
+              "means": "delay of path 2 [s] (p. 146)"
+            },
+            {
+              "tex": "d_1",
+              "means": "length of path 1 [m] (p. 146)"
+            },
+            {
+              "tex": "d_2",
+              "means": "length of path 2 [m] (p. 146)"
+            },
+            {
+              "tex": "c",
+              "means": "speed of light [m/s] (p. 146)"
+            }
+          ]
         },
         {
           "eq": "h(τ) = A1 δ(τ − τ1) + A2 δ(τ − τ2)",
           "tex": "h(\\tau) = A_1\\,\\delta(\\tau - \\tau_1) + A_2\\,\\delta(\\tau - \\tau_2)",
           "note": "impulse response",
-          "ref": "(13.2)"
+          "ref": "(13.2)",
+          "where": [
+            {
+              "tex": "\\tau_1",
+              "means": "delay of path 1 [s] (p. 146, (13.1))"
+            },
+            {
+              "tex": "\\tau_2",
+              "means": "delay of path 2 [s] (p. 146)"
+            },
+            {
+              "tex": "h",
+              "means": "impulse response of the channel (p. 146, (13.2))"
+            },
+            {
+              "tex": "\\tau",
+              "means": "delay [s] (p. 146)"
+            },
+            {
+              "tex": "A_1",
+              "means": "amplitude of path 1 (p. 146)"
+            },
+            {
+              "tex": "A_2",
+              "means": "amplitude of path 2 (p. 146)"
+            },
+            {
+              "tex": "\\delta",
+              "means": "Dirac delta function"
+            }
+          ]
         },
         {
           "eq": "H(jω) = A1 e^(−jωτ1) + A2 e^(−jωτ2)",
           "tex": "H(\\mathrm{j}\\omega) = A_1\\,\\mathrm{e}^{-\\mathrm{j}\\omega\\tau_1} + A_2\\,\\mathrm{e}^{-\\mathrm{j}\\omega\\tau_2}",
           "note": "transfer function",
-          "ref": "(13.3)"
+          "ref": "(13.3)",
+          "where": [
+            {
+              "tex": "\\tau_1",
+              "means": "delay of path 1 [s] (p. 146, (13.1))"
+            },
+            {
+              "tex": "\\tau_2",
+              "means": "delay of path 2 [s] (p. 146)"
+            },
+            {
+              "tex": "A_1",
+              "means": "amplitude of path 1 (p. 146)"
+            },
+            {
+              "tex": "A_2",
+              "means": "amplitude of path 2 (p. 146)"
+            },
+            {
+              "tex": "H",
+              "means": "transfer function of the channel (p. 146, (13.3))"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 146)"
+            }
+          ]
         },
         {
           "eq": "|H(jω)| = √(A1² + A2² + 2A1A2 cos ωΔτ),  Δτ = τ2 − τ1",
           "tex": "|H(\\mathrm{j}\\omega)| = \\sqrt{A_1^2 + A_2^2 + 2A_1A_2\\cos(\\omega\\Delta\\tau)}, \\qquad \\Delta\\tau = \\tau_2 - \\tau_1",
           "note": "",
-          "ref": "(13.4)"
+          "ref": "(13.4)",
+          "where": [
+            {
+              "tex": "\\tau_1",
+              "means": "delay of path 1 [s] (p. 146, (13.1))"
+            },
+            {
+              "tex": "\\tau_2",
+              "means": "delay of path 2 [s] (p. 146)"
+            },
+            {
+              "tex": "A_1",
+              "means": "amplitude of path 1 (p. 146)"
+            },
+            {
+              "tex": "A_2",
+              "means": "amplitude of path 2 (p. 146)"
+            },
+            {
+              "tex": "H",
+              "means": "transfer function of the channel (p. 146, (13.3))"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 146)"
+            },
+            {
+              "tex": "\\Delta\\tau",
+              "means": "delay difference τ₂ − τ₁ [s] (p. 146, (13.4))"
+            }
+          ]
         },
         {
           "eq": "ΔB = 1/Δτ",
           "tex": "\\Delta B = \\frac{1}{\\Delta\\tau}",
           "note": "distance between notches (derived from (13.4))",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "\\Delta\\tau",
+              "means": "delay difference τ₂ − τ₁ [s] (p. 146, (13.4))"
+            },
+            {
+              "tex": "\\Delta B",
+              "means": "spacing of the notch frequencies [Hz] (p. 147, written Δf_Notch there)"
+            }
+          ]
         },
         {
           "eq": "symbol rate ≤ 1/(2Δτ)",
           "tex": "\\text{symbol rate} \\le \\frac{1}{2\\Delta\\tau}",
           "note": "strong ISI from half a symbol of delay, the collection's working rule",
-          "ref": "Übungsteil, p. 48"
+          "ref": "Wave propagation exercise collection (Übungsteil, 2011), exercise 25, worked solution, p. 48",
+          "where": [
+            {
+              "tex": "\\Delta\\tau",
+              "means": "delay difference τ₂ − τ₁ [s] (p. 146, (13.4))"
+            }
+          ]
         }
       ],
       "practice": [
@@ -2064,6 +6244,28 @@
           },
           "solution": "Strong ISI from a delay of half a symbol: the shortest symbol is 2Δτ = 40 ns, so at most 25 MBd.",
           "source": "Wave propagation exercise collection (Übungsteil, 5th edition, October 2011), exercise 25; result from its worked solution, p. 48"
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "A_1",
+          "means": "amplitude of path 1 (p. 146)"
+        },
+        {
+          "tex": "A_2",
+          "means": "amplitude of path 2 (p. 146)"
+        },
+        {
+          "tex": "H",
+          "means": "transfer function of the channel (p. 146, (13.3))"
+        },
+        {
+          "tex": "\\omega",
+          "means": "angular frequency [1/s] (p. 146)"
+        },
+        {
+          "tex": "\\Delta\\tau",
+          "means": "delay difference τ₂ − τ₁ [s] (p. 146, (13.4))"
         }
       ]
     },
@@ -2128,69 +6330,337 @@
           "eq": "E/E0 = 1/2 − e^(−jπ/4)(C(v) + jS(v))/√2",
           "tex": "\\frac{E}{E_0} = \\frac{1}{2} - e^{-j\\frac{\\pi}{4}}\\frac{C(v) + jS(v)}{\\sqrt{2}}",
           "note": "the field behind a screen",
-          "ref": "(10.2)"
+          "ref": "(10.2)",
+          "where": [
+            {
+              "tex": "E",
+              "means": "field strength behind the obstacle [V/m] (p. 106)"
+            },
+            {
+              "tex": "E_0",
+              "means": "free-space field strength the path would have without the obstacle [V/m] (p. 106)"
+            },
+            {
+              "tex": "C(v)",
+              "means": "Fresnel cosine integral (p. 106, (10.3))"
+            },
+            {
+              "tex": "v",
+              "means": "argument of the Fresnel integrals (p. 106, (10.4))"
+            },
+            {
+              "tex": "S(v)",
+              "means": "Fresnel sine integral (p. 106, (10.3))"
+            }
+          ]
         },
         {
           "eq": "C(v) = ∫₀^v cos(πt²/2) dt, S(v) = ∫₀^v sin(πt²/2) dt",
           "tex": "C(v) = \\int_0^v \\cos(\\pi t^2/2)\\,dt \\qquad S(v) = \\int_0^v \\sin(\\pi t^2/2)\\,dt",
           "note": "the Fresnel integrals",
           "ref": "(10.3)",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "C(v)",
+              "means": "Fresnel cosine integral (p. 106, (10.3))"
+            },
+            {
+              "tex": "S(v)",
+              "means": "Fresnel sine integral (p. 106, (10.3))"
+            },
+            {
+              "tex": "v",
+              "means": "argument of the Fresnel integrals (p. 106, (10.4))"
+            },
+            {
+              "tex": "t",
+              "means": "integration variable"
+            }
+          ]
         },
         {
           "eq": "v = h √((2/λ)(1/ds + 1/de))",
           "tex": "v = h\\sqrt{\\frac{2}{\\lambda}\\left(\\frac{1}{d_s} + \\frac{1}{d_e}\\right)}",
           "note": "the screen's distance from the line of sight, scaled",
-          "ref": "(10.4)"
+          "ref": "(10.4)",
+          "where": [
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 106)"
+            },
+            {
+              "tex": "v",
+              "means": "argument of the Fresnel integrals (p. 106, (10.4))"
+            },
+            {
+              "tex": "h",
+              "means": "height of the obstacle edge relative to the line of sight [m] (p. 107)"
+            },
+            {
+              "tex": "d_s",
+              "means": "distance from the transmitter to the obstacle [m] (Fig. 10.1, p. 106)"
+            },
+            {
+              "tex": "d_e",
+              "means": "distance from the obstacle to the receiver [m] (Fig. 10.1, p. 106)"
+            }
+          ]
         },
         {
           "eq": "r = √(dλ/4)",
           "tex": "r = \\sqrt{\\frac{d\\lambda}{4}}",
           "note": "the first Fresnel zone at mid-path",
-          "ref": "(10.5)"
+          "ref": "(10.5)",
+          "where": [
+            {
+              "tex": "r",
+              "means": "radius of the first Fresnel ellipsoid at mid-path [m] (p. 108, (10.5))"
+            },
+            {
+              "tex": "d",
+              "means": "distance from transmitter to receiver [m] (p. 108)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 106)"
+            }
+          ]
         },
         {
           "eq": "Pe = Ps (λ/(4πd))² Gs Ge",
           "tex": "P_\\mathrm{e} = P_\\mathrm{s}\\left(\\frac{\\lambda}{4\\pi d}\\right)^2 G_\\mathrm{s} G_\\mathrm{e}",
           "note": "",
-          "ref": "(12.6)"
+          "ref": "(12.6)",
+          "where": [
+            {
+              "tex": "P_\\mathrm{s}",
+              "means": "transmitted power [W; dBm in the level plan] (p. 139, p. 141)"
+            },
+            {
+              "tex": "G_\\mathrm{s}",
+              "means": "gain of the transmitting antenna [dBi] (p. 139)"
+            },
+            {
+              "tex": "G_\\mathrm{e}",
+              "means": "gain of the receiving antenna [dBi] (p. 139)"
+            },
+            {
+              "tex": "d",
+              "means": "distance from transmitter to receiver [m] (p. 108)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 106)"
+            },
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "received power (p. 139)"
+            }
+          ]
         },
         {
           "eq": "Pe = Ps + Gs − L_ISO + Ge (in dB)",
           "tex": "P_\\mathrm{e}|_\\mathrm{dBW} = P_\\mathrm{s}|_\\mathrm{dBW} + G_\\mathrm{s}|_\\mathrm{dBi} - L_\\mathrm{ISO}|_\\mathrm{dB} + G_\\mathrm{e}|_\\mathrm{dBi}",
           "note": "",
-          "ref": "(12.9)"
+          "ref": "(12.9)",
+          "where": [
+            {
+              "tex": "P_\\mathrm{s}",
+              "means": "transmitted power [W; dBm in the level plan] (p. 139, p. 141)"
+            },
+            {
+              "tex": "G_\\mathrm{s}",
+              "means": "gain of the transmitting antenna [dBi] (p. 139)"
+            },
+            {
+              "tex": "G_\\mathrm{e}",
+              "means": "gain of the receiving antenna [dBi] (p. 139)"
+            },
+            {
+              "tex": "L_\\mathrm{ISO}",
+              "means": "basic free-space loss between isotropic antennas [dB] (p. 140)"
+            },
+            {
+              "tex": "P_\\mathrm{e}",
+              "means": "received power (p. 139)"
+            }
+          ]
         },
         {
           "eq": "L_ISO = −20 log(λ/(4πd)) dB",
           "tex": "L_\\mathrm{ISO}|_\\mathrm{dB} = -20\\log\\left(\\frac{\\lambda}{4\\pi d}\\right)",
           "note": "114 dB at 2.4 GHz over 5 km",
           "ref": "(12.10)",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "L_\\mathrm{ISO}",
+              "means": "basic free-space loss between isotropic antennas [dB] (p. 140)"
+            },
+            {
+              "tex": "d",
+              "means": "distance from transmitter to receiver [m] (p. 108)"
+            },
+            {
+              "tex": "\\lambda",
+              "means": "wavelength [m] (p. 106)"
+            }
+          ]
         },
         {
           "eq": "L_sys = L + SNR_min (dB)",
           "tex": "L_\\mathrm{Sys}|_\\mathrm{dB} = L|_\\mathrm{dB} + SNR_\\mathrm{min}|_\\mathrm{dB}",
           "note": "the system value",
-          "ref": "(12.11)"
+          "ref": "(12.11)",
+          "where": [
+            {
+              "tex": "L",
+              "means": "transmission loss [dB] (p. 140)"
+            },
+            {
+              "tex": "L_\\mathrm{Sys}",
+              "means": "system value [dB] (p. 140)"
+            },
+            {
+              "tex": "SNR_\\mathrm{min}",
+              "means": "minimum signal-to-noise ratio [dB] (p. 140)"
+            }
+          ]
         },
         {
           "eq": "Pn = kB 290 K B F",
           "tex": "P_\\mathrm{n} = k_\\mathrm{B}\\,290\\,\\mathrm{K}\\,B\\,F",
           "note": "",
-          "ref": "(12.13)"
+          "ref": "(12.13)",
+          "where": [
+            {
+              "tex": "P_\\mathrm{n}",
+              "means": "receiver input noise power (p. 141)"
+            },
+            {
+              "tex": "k_\\mathrm{B}",
+              "means": "Boltzmann constant [J/K] (p. 141)"
+            },
+            {
+              "tex": "B",
+              "means": "bandwidth of the system [Hz] (p. 141)"
+            },
+            {
+              "tex": "F",
+              "means": "noise figure of the receiver (p. 141)"
+            }
+          ]
         },
         {
           "eq": "Pn = −174 dBm/Hz + B + F (dB)",
           "tex": "P_\\mathrm{n}|_\\mathrm{dBm} = -174|_\\mathrm{dBm/Hz} + B|_\\mathrm{dBHz} + F|_\\mathrm{dB}",
           "note": "−104 dBm in the example",
-          "ref": "(12.14)"
+          "ref": "(12.14)",
+          "where": [
+            {
+              "tex": "P_\\mathrm{n}",
+              "means": "receiver input noise power (p. 141)"
+            },
+            {
+              "tex": "B",
+              "means": "bandwidth of the system [Hz] (p. 141)"
+            },
+            {
+              "tex": "F",
+              "means": "noise figure of the receiver (p. 141)"
+            }
+          ]
         },
         {
           "eq": "|H(jω)| = √(A1² + A2² + 2A1A2 cos ωΔτ)",
           "tex": "|H(j\\omega)| = \\sqrt{A_1^2 + A_2^2 + 2A_1A_2\\cos\\omega\\Delta\\tau}",
           "note": "two paths; the deepest notch is A1 − A2",
-          "ref": "(13.4)"
+          "ref": "(13.4)",
+          "where": [
+            {
+              "tex": "A_1",
+              "means": "amplitude of path 1 (p. 146)"
+            },
+            {
+              "tex": "A_2",
+              "means": "amplitude of path 2 (p. 146)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (p. 146)"
+            },
+            {
+              "tex": "\\Delta\\tau",
+              "means": "delay difference between the two paths [s] (p. 146)"
+            },
+            {
+              "tex": "H",
+              "means": "transfer function of the channel (p. 146)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "P_\\mathrm{s}",
+          "means": "transmitted power [W; dBm in the level plan] (p. 139, p. 141)"
+        },
+        {
+          "tex": "P_\\mathrm{e,min}",
+          "means": "minimum received power, SNR_min times the noise power [W; dBm in the level plan] (p. 140)"
+        },
+        {
+          "tex": "L_\\mathrm{v,s}",
+          "means": "losses on the transmitter side, cables etc. [dB] (p. 141)"
+        },
+        {
+          "tex": "L_\\mathrm{v,e}",
+          "means": "losses on the receiver side [dB] (p. 141)"
+        },
+        {
+          "tex": "G_\\mathrm{s}",
+          "means": "gain of the transmitting antenna [dBi] (p. 139)"
+        },
+        {
+          "tex": "G_\\mathrm{e}",
+          "means": "gain of the receiving antenna [dBi] (p. 139)"
+        },
+        {
+          "tex": "L_\\mathrm{ISO}",
+          "means": "basic free-space loss between isotropic antennas [dB] (p. 140)"
+        },
+        {
+          "tex": "r",
+          "means": "radius of the first Fresnel ellipsoid at mid-path [m] (p. 108, (10.5))"
+        },
+        {
+          "tex": "d",
+          "means": "distance from transmitter to receiver [m] (p. 108)"
+        },
+        {
+          "tex": "\\lambda",
+          "means": "wavelength [m] (p. 106)"
+        },
+        {
+          "tex": "E",
+          "means": "field strength behind the obstacle [V/m] (p. 106)"
+        },
+        {
+          "tex": "E_0",
+          "means": "free-space field strength the path would have without the obstacle [V/m] (p. 106)"
+        },
+        {
+          "tex": "C(v)",
+          "means": "Fresnel cosine integral (p. 106, (10.3))"
+        },
+        {
+          "tex": "v",
+          "means": "argument of the Fresnel integrals (p. 106, (10.4))"
+        },
+        {
+          "tex": "S(v)",
+          "means": "Fresnel sine integral (p. 106, (10.3))"
         }
       ]
     }

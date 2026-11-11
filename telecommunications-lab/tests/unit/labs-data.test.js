@@ -32,3 +32,22 @@ for (const lab of data.labs) {
     });
   }
 }
+
+// Under every equation a list of what its symbols mean (asked for 11 Nov 2026). Right result by definition: each entry
+// has a symbol and a meaning, and the symbol typesets as the equation does.
+test("every equation and law with symbols has a where list whose entries typeset", async () => {
+  const { typeset } = await import("../../../kit/ui/math.js");
+  const check = (list, at) => {
+    assert.ok(Array.isArray(list) && list.length, `${at} has no where list`);
+    for (const s of list) {
+      assert.ok(s.tex && s.means, `${at}: an entry lacks tex or means`);
+      assert.equal(typeset(s.tex).error, "", `${at}: ${s.tex} does not typeset`);
+    }
+  };
+  // Words and numbers only (a recipe, a worked line) need no list.
+  const symbols = tex => /[A-Za-z]/.test(tex.replace(/\\text\{[^}]*\}|\\[A-Za-z]+|\\[,;]/g, ""));
+  for (const w of data.labs) {
+    for (const e of w.equations) if (symbols(e.tex) || e.where) check(e.where, `${w.id}: ${e.eq}`);
+    if (!w.equations.some(e => e.tex === w.lawTex)) check(w.lawWhere, `${w.id}'s main law`);
+  }
+});

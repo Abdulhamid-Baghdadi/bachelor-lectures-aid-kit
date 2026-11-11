@@ -98,40 +98,168 @@
           "eq": "Ψ1,2 = ΨH(r1) ± ΨH(r2)",
           "tex": "\\Psi_{1,2} = \\Psi_\\mathrm{H}(r_1) \\pm \\Psi_\\mathrm{H}(r_2)",
           "note": "two coupled states, bonding and anti-bonding",
-          "ref": "HL (2.1.2), p. 43"
+          "ref": "HL (2.1.2), p. 43",
+          "where": [
+            {
+              "tex": "\\Psi_{1,2}",
+              "means": "bonding (Ψ₁) and anti-bonding (Ψ₂) state of an electron shared by two hydrogen atoms (HL (2.1.2), p. 43)"
+            },
+            {
+              "tex": "\\Psi_\\mathrm{H}",
+              "means": "ground-state wave function of the hydrogen atom, C e^{−r/a₀} (HL (2.1.1), p. 43)"
+            },
+            {
+              "tex": "r_1,\\ r_2",
+              "means": "the electron's distances from the two nuclei (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "α² = 2mE/ħ², β² = 2m(V0 − E)/ħ²",
           "tex": "\\alpha^2 = \\frac{2m}{\\hbar^2}E, \\qquad \\beta^2 = \\frac{2m}{\\hbar^2}(V_0 - E)",
           "note": "wave numbers in the well and in the barrier",
           "ref": "HL (2.2.10), p. 56",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\alpha,\\ \\beta",
+              "means": "wave numbers in the well and in the barrier, the notes' 'arbitrary abbreviations' [1/cm] (HL (2.2.10), p. 56)"
+            },
+            {
+              "tex": "m",
+              "means": "electron mass [kg] (not defined in the source)"
+            },
+            {
+              "tex": "\\hbar",
+              "means": "reduced Planck constant h/2π [J s] (HL p. 9)"
+            },
+            {
+              "tex": "E",
+              "means": "energy of the electron [eV] (HL p. 55)"
+            },
+            {
+              "tex": "V_0",
+              "means": "height of the rectangular barriers [eV] (HL p. 55)"
+            }
+          ]
         },
         {
           "eq": "(β² − α²)/(2αβ) sinh(βb) sin(αa) + cosh(βb) cos(αa) = cos(k(a + b))",
           "tex": "\\frac{\\beta^2 - \\alpha^2}{2\\alpha\\beta}\\sinh(\\beta b)\\sin(\\alpha a) + \\cosh(\\beta b)\\cos(\\alpha a) = \\cos\\big(k(a + b)\\big)",
           "note": "the Kronig–Penney condition",
-          "ref": "HL (2.2.12), p. 56"
+          "ref": "HL (2.2.12), p. 56",
+          "where": [
+            {
+              "tex": "\\alpha,\\ \\beta",
+              "means": "wave numbers in the well and in the barrier [1/cm] (HL (2.2.10), p. 56)"
+            },
+            {
+              "tex": "a",
+              "means": "width of the wells [cm] (HL p. 55)"
+            },
+            {
+              "tex": "b",
+              "means": "width of the barriers; the period is a + b [cm] (HL p. 55)"
+            },
+            {
+              "tex": "k",
+              "means": "wave vector [1/cm] (HL p. 56)"
+            }
+          ]
         },
         {
           "eq": "P sin(αa)/(αa) + cos(αa) = cos(ka), P = m a V0 b/ħ²",
           "tex": "P\\,\\frac{\\sin(\\alpha a)}{\\alpha a} + \\cos(\\alpha a) = \\cos(ka), \\qquad P = \\frac{ma}{\\hbar^2}V_0 b",
           "note": "thin, high barriers; bands where the left side lies in [−1, 1]",
-          "ref": "HL (2.2.13), p. 57"
+          "ref": "HL (2.2.13), p. 57",
+          "where": [
+            {
+              "tex": "P",
+              "means": "barrier strength (m a/ħ²) V₀ b, for thin barriers with V₀ b kept fixed (HL p. 57; the text there writes sin(βb) ≈ βb where sinh is meant)"
+            },
+            {
+              "tex": "\\alpha",
+              "means": "wave number in the well [1/cm] (HL (2.2.10), p. 56)"
+            },
+            {
+              "tex": "a",
+              "means": "width of the wells, ≈ the lattice constant [cm] (HL p. 57)"
+            },
+            {
+              "tex": "k",
+              "means": "wave vector [1/cm] (HL p. 56)"
+            },
+            {
+              "tex": "m",
+              "means": "electron mass [kg] (not defined in the source)"
+            },
+            {
+              "tex": "\\hbar",
+              "means": "reduced Planck constant h/2π [J s] (HL p. 9)"
+            },
+            {
+              "tex": "V_0",
+              "means": "barrier height [eV] (HL p. 55)"
+            },
+            {
+              "tex": "b",
+              "means": "barrier width [cm] (HL p. 55)"
+            }
+          ]
         },
         {
           "eq": "E = n²π²ħ²/(2ma²)",
           "tex": "E = \\frac{n^2\\pi^2\\hbar^2}{2ma^2}",
           "note": "P → ∞: the levels of the infinite well",
           "ref": "HL §2.2.3, p. 58",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "E",
+              "means": "energy of a level [eV] (HL p. 58)"
+            },
+            {
+              "tex": "n",
+              "means": "number of the level, 1, 2, 3, … (HL p. 58)"
+            },
+            {
+              "tex": "\\hbar",
+              "means": "reduced Planck constant h/2π [J s] (HL p. 9)"
+            },
+            {
+              "tex": "m",
+              "means": "electron mass [kg] (not defined in the source)"
+            },
+            {
+              "tex": "a",
+              "means": "width of the well [cm] (HL p. 58)"
+            }
+          ]
         },
         {
           "eq": "ψ′ jumps by (2P/a) ψ at each barrier",
           "tex": "\\psi'(x_0^+) - \\psi'(x_0^-) = \\frac{2P}{a}\\,\\psi(x_0)",
           "note": "the thin-barrier limit of (2.2.12), from the Schrödinger equation integrated across V0 b δ(x); the transfer matrix used for N wells and as the second route",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\psi'(x_0^+),\\ \\psi'(x_0^-)",
+              "means": "slope of the wave function just right and just left of a thin barrier (not defined in the source)"
+            },
+            {
+              "tex": "\\psi(x_0)",
+              "means": "wave function at the barrier's position x₀ (not defined in the source)"
+            },
+            {
+              "tex": "P",
+              "means": "barrier strength (m a/ħ²) V₀ b (HL p. 57)"
+            },
+            {
+              "tex": "a",
+              "means": "period of the wells [cm] (HL p. 57)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -149,6 +277,24 @@
           "solution": "E1 = π²ħ²/(2 m* a²) = 9.87 × (1.055·10⁻³⁴ J s)² / (2 × 0.067 × 9.11·10⁻³¹ kg × 10⁻¹⁶ m²) = 8.99·10⁻²¹ J = 56 meV. It is the P → ∞ limit of this lab, where each band shrinks onto n² E1.",
           "source": "Worked by hand from Halbleiterphysik exercise sheet 10, problem 38 a (WS 2015/16), with Strasser (2015), section 2.2.3"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "P",
+          "means": "barrier strength (m a/ħ²) V₀ b (HL p. 57)"
+        },
+        {
+          "tex": "\\alpha",
+          "means": "wave number in the well, α² = 2mE/ħ² [1/cm] (HL (2.2.10), p. 56)"
+        },
+        {
+          "tex": "a",
+          "means": "width of the wells, about the lattice constant [cm] (HL pp. 55, 57)"
+        },
+        {
+          "tex": "k",
+          "means": "wave vector of the Bloch wave [1/cm] (HL p. 56)"
+        }
       ]
     },
     {
@@ -163,20 +309,82 @@
           "eq": "n2/n1 = exp(−(E2 − E1)/kT)",
           "tex": "\\frac{n_2}{n_1} = \\exp\\!\\Big(-\\frac{E_2 - E_1}{kT}\\Big)",
           "note": "Maxwell–Boltzmann, two levels with equal numbers of states",
-          "ref": "HL (3.1.4), p. 79"
+          "ref": "HL (3.1.4), p. 79",
+          "where": [
+            {
+              "tex": "n_2,\\ n_1",
+              "means": "occupation numbers of two levels with equal numbers of states (HL (3.1.4), p. 79)"
+            },
+            {
+              "tex": "E_2,\\ E_1",
+              "means": "energies of the two discrete levels, E₂ > E₁ [eV] (HL p. 79)"
+            },
+            {
+              "tex": "k",
+              "means": "Boltzmann constant [J/K] (not defined in the source; written k_B on HL p. 103)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature [K] (HL p. 79)"
+            }
+          ]
         },
         {
           "eq": "f(E) = 1/(1 + exp((E − EF)/kT)), f(EF) = 1/2",
           "tex": "f(E) = \\frac{1}{1 + \\exp\\big((E - E_\\mathrm{F})/kT\\big)}, \\qquad f(E_\\mathrm{F}) = \\frac{1}{2}",
           "note": "Fermi–Dirac occupation",
-          "ref": "HL §3.1.2, p. 79"
+          "ref": "HL §3.1.2, p. 79",
+          "where": [
+            {
+              "tex": "f(E)",
+              "means": "Fermi–Dirac occupation probability of a state at energy E (HL p. 79)"
+            },
+            {
+              "tex": "E",
+              "means": "energy of a state [eV] (HL p. 79)"
+            },
+            {
+              "tex": "E_\\mathrm{F}",
+              "means": "Fermi level [eV] (HL p. 79)"
+            },
+            {
+              "tex": "k",
+              "means": "Boltzmann constant [J/K] (not defined in the source; written k_B on HL p. 103)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature [K] (HL p. 79)"
+            }
+          ]
         },
         {
           "eq": "f(E) ≈ exp(−(E − EF)/kT)",
           "tex": "f(E) \\approx \\exp\\!\\Big(-\\frac{E - E_\\mathrm{F}}{kT}\\Big)",
           "note": "the non-degenerate approximation, for E − EF of several kT",
           "ref": "HL (3.1.16), p. 82",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "f(E)",
+              "means": "occupation probability, here in the Maxwell–Boltzmann approximation for a non-degenerate semiconductor (HL (3.1.16), p. 82)"
+            },
+            {
+              "tex": "E",
+              "means": "energy of a state [eV] (HL p. 79)"
+            },
+            {
+              "tex": "E_\\mathrm{F}",
+              "means": "Fermi level [eV] (HL p. 79)"
+            },
+            {
+              "tex": "k",
+              "means": "Boltzmann constant [J/K] (not defined in the source; written k_B on HL p. 103)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature [K] (HL p. 79)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -193,6 +401,28 @@
           "solution": "kT = 25.85 meV at 300 K, so (E − EF)/kT = 3.87 and f = 1/(1 + e^3.87) = 1/48.9 = 0.0205. The Boltzmann approximation gives e^−3.87 = 0.0209, already within 2 %.",
           "source": "Worked by hand from Strasser (2015), section 3.1.2"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "f(E)",
+          "means": "Fermi–Dirac occupation probability of a state at energy E (HL p. 79)"
+        },
+        {
+          "tex": "E",
+          "means": "energy of a state [eV] (HL p. 79)"
+        },
+        {
+          "tex": "E_\\mathrm{F}",
+          "means": "Fermi level [eV] (HL p. 79)"
+        },
+        {
+          "tex": "k",
+          "means": "Boltzmann constant [J/K] (not defined in the source; written k_B on HL p. 103)"
+        },
+        {
+          "tex": "T",
+          "means": "absolute temperature [K] (HL p. 79)"
+        }
       ]
     },
     {
@@ -207,39 +437,191 @@
           "eq": "n = NC exp(−(EC − EF)/kT), NC = 2(2π mn* kT)^(3/2)/h³",
           "tex": "n = N_\\mathrm{C}\\exp\\!\\Big(-\\frac{E_\\mathrm{C} - E_\\mathrm{F}}{kT}\\Big), \\qquad N_\\mathrm{C} = \\frac{2}{h^3}(2\\pi m_\\mathrm{n}^* kT)^{3/2}",
           "note": "electrons, non-degenerate",
-          "ref": "HL (3.1.17), p. 82"
+          "ref": "HL (3.1.17), p. 82",
+          "where": [
+            {
+              "tex": "n",
+              "means": "electron density [cm⁻³] (HL (3.1.14), p. 82)"
+            },
+            {
+              "tex": "N_\\mathrm{C}",
+              "means": "effective density of states (band weight) of the conduction band [cm⁻³] (HL (3.1.17), p. 82)"
+            },
+            {
+              "tex": "E_\\mathrm{C}",
+              "means": "conduction-band edge [eV] (HL p. 82)"
+            },
+            {
+              "tex": "E_\\mathrm{F}",
+              "means": "Fermi level [eV] (HL p. 79)"
+            },
+            {
+              "tex": "k",
+              "means": "Boltzmann constant [J/K] (not defined in the source; written k_B on HL p. 103)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature [K] (HL p. 79)"
+            },
+            {
+              "tex": "h",
+              "means": "Planck constant, 6.6262 × 10⁻³⁴ J s (HL p. 9)"
+            },
+            {
+              "tex": "m_\\mathrm{n}^*",
+              "means": "effective mass of the electrons [kg] (HL p. 82)"
+            }
+          ]
         },
         {
           "eq": "ni² = n p = NC NV exp(−(EC − EV)/kT)",
           "tex": "n_\\mathrm{i}^2 = np = N_\\mathrm{C}N_\\mathrm{V}\\exp\\!\\Big(-\\frac{E_\\mathrm{C} - E_\\mathrm{V}}{kT}\\Big)",
           "note": "mass action; ni = 1.45·10¹⁰ cm⁻³ for Si at 300 K (table p. 73)",
-          "ref": "HL (3.1.20), p. 83"
+          "ref": "HL (3.1.20), p. 83",
+          "where": [
+            {
+              "tex": "n_\\mathrm{i}",
+              "means": "intrinsic carrier density [cm⁻³] (HL (3.1.20), p. 83)"
+            },
+            {
+              "tex": "n",
+              "means": "electron density [cm⁻³] (HL (3.1.14), p. 82)"
+            },
+            {
+              "tex": "p",
+              "means": "hole density [cm⁻³] (HL (3.1.15), p. 82)"
+            },
+            {
+              "tex": "N_\\mathrm{C},\\ N_\\mathrm{V}",
+              "means": "effective densities of states (band weights) of conduction and valence band [cm⁻³] (HL (3.1.17), (3.1.18), p. 82)"
+            },
+            {
+              "tex": "E_\\mathrm{C},\\ E_\\mathrm{V}",
+              "means": "conduction- and valence-band edges [eV] (HL p. 82)"
+            },
+            {
+              "tex": "k",
+              "means": "Boltzmann constant [J/K] (not defined in the source; written k_B on HL p. 103)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature [K] (HL p. 79)"
+            }
+          ]
         },
         {
           "eq": "Ei = (EC + EV)/2 + ½ kT ln(NV/NC)",
           "tex": "E_\\mathrm{i} = \\frac{E_\\mathrm{C} + E_\\mathrm{V}}{2} + \\frac{1}{2}kT\\ln\\frac{N_\\mathrm{V}}{N_\\mathrm{C}}",
           "note": "the intrinsic level",
-          "ref": "HL (3.1.21), p. 84"
+          "ref": "HL (3.1.21), p. 84",
+          "where": [
+            {
+              "tex": "E_\\mathrm{i}",
+              "means": "intrinsic level, the Fermi level of the undoped semiconductor [eV] (HL (3.1.21), p. 84)"
+            },
+            {
+              "tex": "E_\\mathrm{C},\\ E_\\mathrm{V}",
+              "means": "conduction- and valence-band edges [eV] (HL p. 82)"
+            },
+            {
+              "tex": "k",
+              "means": "Boltzmann constant [J/K] (not defined in the source; written k_B on HL p. 103)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature [K] (HL p. 79)"
+            },
+            {
+              "tex": "N_\\mathrm{C},\\ N_\\mathrm{V}",
+              "means": "effective densities of states (band weights) of conduction and valence band [cm⁻³] (HL (3.1.17), (3.1.18), p. 82)"
+            }
+          ]
         },
         {
           "eq": "n = ni exp((EF − Ei)/kT), p = ni exp((Ei − EF)/kT)",
           "tex": "n = n_\\mathrm{i}\\exp\\!\\Big(\\frac{E_\\mathrm{F} - E_\\mathrm{i}}{kT}\\Big), \\qquad p = n_\\mathrm{i}\\exp\\!\\Big(\\frac{E_\\mathrm{i} - E_\\mathrm{F}}{kT}\\Big)",
           "note": "densities against the intrinsic level",
-          "ref": "HL (3.1.22), p. 84"
+          "ref": "HL (3.1.22), p. 84",
+          "where": [
+            {
+              "tex": "n",
+              "means": "electron density [cm⁻³] (HL (3.1.14), p. 82)"
+            },
+            {
+              "tex": "p",
+              "means": "hole density [cm⁻³] (HL (3.1.15), p. 82)"
+            },
+            {
+              "tex": "n_\\mathrm{i}",
+              "means": "intrinsic carrier density [cm⁻³] (HL (3.1.20), p. 83)"
+            },
+            {
+              "tex": "E_\\mathrm{F}",
+              "means": "Fermi level [eV] (HL p. 79)"
+            },
+            {
+              "tex": "E_\\mathrm{i}",
+              "means": "intrinsic level, the Fermi level of the undoped semiconductor [eV] (HL (3.1.21), p. 84)"
+            },
+            {
+              "tex": "k",
+              "means": "Boltzmann constant [J/K] (not defined in the source; written k_B on HL p. 103)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature [K] (HL p. 79)"
+            }
+          ]
         },
         {
           "eq": "n = ½(ND − NA) + √(¼(ND − NA)² + ni²)",
           "tex": "n = \\frac{1}{2}(N_\\mathrm{D} - N_\\mathrm{A}) + \\sqrt{\\tfrac{1}{4}(N_\\mathrm{D} - N_\\mathrm{A})^2 + n_\\mathrm{i}^2}",
           "note": "all dopants ionised, neutral sample",
           "ref": "HL (3.1.23), p. 84",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "n",
+              "means": "electron density [cm⁻³] (HL (3.1.14), p. 82)"
+            },
+            {
+              "tex": "N_\\mathrm{D},\\ N_\\mathrm{A}",
+              "means": "donor and acceptor densities, all ionised, N_D > N_A [cm⁻³] (HL p. 84)"
+            },
+            {
+              "tex": "n_\\mathrm{i}",
+              "means": "intrinsic carrier density [cm⁻³] (HL (3.1.20), p. 83)"
+            }
+          ]
         },
         {
           "eq": "ni(T) = ni(300 K) (T/300 K)^(3/2) exp(−Eg/2k (1/T − 1/300 K))",
           "tex": "n_\\mathrm{i}(T) = n_\\mathrm{i}(300\\,\\mathrm{K})\\Big(\\frac{T}{300\\,\\mathrm{K}}\\Big)^{3/2}\\exp\\!\\Big[-\\frac{E_\\mathrm{G}}{2k}\\Big(\\frac{1}{T} - \\frac{1}{300\\,\\mathrm{K}}\\Big)\\Big]",
           "note": "from (3.1.17) and (3.1.20) with Eg held constant",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "n_\\mathrm{i}(T)",
+              "means": "intrinsic density at temperature T [cm⁻³] (HL p. 83, Abb. 3.1.6)"
+            },
+            {
+              "tex": "n_\\mathrm{i}(300\\,\\mathrm{K})",
+              "means": "its value at room temperature, 1.5 × 10¹⁰ cm⁻³ for Si (HL Table 3.1, p. 83)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature [K] (HL p. 79)"
+            },
+            {
+              "tex": "E_\\mathrm{G}",
+              "means": "band gap [eV] (HL Table 3.1, p. 83)"
+            },
+            {
+              "tex": "k",
+              "means": "Boltzmann constant [J/K] (not defined in the source; written k_B on HL p. 103)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -269,6 +651,36 @@
           "solution": "EF − Ei = kT ln(n/ni) = 25.85 meV × ln(10¹⁶/1.45·10¹⁰) = 25.85 meV × 13.44 = 0.348 eV (3.1.22).",
           "source": "Worked by hand from Strasser (2015), section 3.1.2"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "n",
+          "means": "electron density [cm⁻³] (HL (3.1.14), p. 82)"
+        },
+        {
+          "tex": "p",
+          "means": "hole density [cm⁻³] (HL (3.1.15), p. 82)"
+        },
+        {
+          "tex": "n_\\mathrm{i}",
+          "means": "intrinsic carrier density [cm⁻³] (HL (3.1.20), p. 83)"
+        },
+        {
+          "tex": "N_\\mathrm{C},\\ N_\\mathrm{V}",
+          "means": "effective densities of states (band weights) of conduction and valence band [cm⁻³] (HL (3.1.17), (3.1.18), p. 82)"
+        },
+        {
+          "tex": "E_\\mathrm{G}",
+          "means": "band gap E_C − E_V [eV] (HL Table 3.1, p. 83)"
+        },
+        {
+          "tex": "k",
+          "means": "Boltzmann constant [J/K] (not defined in the source; written k_B on HL p. 103)"
+        },
+        {
+          "tex": "T",
+          "means": "absolute temperature [K] (HL p. 79)"
+        }
       ]
     },
     {
@@ -283,44 +695,250 @@
           "eq": "σ = e(n µn + p µp)",
           "tex": "\\sigma = e(n\\mu_\\mathrm{n} + p\\mu_\\mathrm{p})",
           "note": "conductivity from both carriers; the script writes q here and e elsewhere",
-          "ref": "HL (3.4.13), p. 96"
+          "ref": "HL (3.4.13), p. 96",
+          "where": [
+            {
+              "tex": "\\sigma",
+              "means": "conductivity [S/cm] (HL (3.4.13), p. 96)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; HL p. 96 writes q)"
+            },
+            {
+              "tex": "n",
+              "means": "electron density [cm⁻³] (HL (3.1.14), p. 82)"
+            },
+            {
+              "tex": "p",
+              "means": "hole density [cm⁻³] (HL (3.1.15), p. 82)"
+            },
+            {
+              "tex": "\\mu_\\mathrm{n}",
+              "means": "electron mobility [cm²/(V s)] (HL (3.4.16), p. 97)"
+            },
+            {
+              "tex": "\\mu_\\mathrm{p}",
+              "means": "hole mobility [cm²/(V s)] (HL (3.4.16), p. 97)"
+            }
+          ]
         },
         {
           "eq": "R = ρ L/A, ρ = 1/σ",
           "tex": "R = \\rho\\frac{L}{A}, \\qquad \\rho = \\frac{1}{\\sigma}",
           "note": "a bar's resistance",
-          "ref": "HL (3.4.14), (3.4.15), p. 96"
+          "ref": "HL (3.4.14), (3.4.15), p. 96",
+          "where": [
+            {
+              "tex": "R",
+              "means": "resistance of a bar-shaped conductor [Ω] (HL (3.4.15), p. 96)"
+            },
+            {
+              "tex": "\\rho",
+              "means": "resistivity [Ω cm] (HL (3.4.14), p. 96)"
+            },
+            {
+              "tex": "L",
+              "means": "length of the conductor [cm] (HL p. 96)"
+            },
+            {
+              "tex": "A",
+              "means": "its cross-section [cm²] (HL p. 96)"
+            },
+            {
+              "tex": "\\sigma",
+              "means": "conductivity [S/cm] (HL (3.4.13), p. 96)"
+            }
+          ]
         },
         {
           "eq": "vn = −µn E, vp = +µp E",
           "tex": "v_\\mathrm{n} = -\\mu_\\mathrm{n}E, \\qquad v_\\mathrm{p} = +\\mu_\\mathrm{p}E",
           "note": "drift velocities",
-          "ref": "HL (3.4.16), p. 97"
+          "ref": "HL (3.4.16), p. 97",
+          "where": [
+            {
+              "tex": "v_\\mathrm{n},\\ v_\\mathrm{p}",
+              "means": "drift velocities of electrons and holes [cm/s] (HL (3.4.16), p. 97)"
+            },
+            {
+              "tex": "\\mu_\\mathrm{n}",
+              "means": "electron mobility [cm²/(V s)] (HL (3.4.16), p. 97)"
+            },
+            {
+              "tex": "\\mu_\\mathrm{p}",
+              "means": "hole mobility [cm²/(V s)] (HL (3.4.16), p. 97)"
+            },
+            {
+              "tex": "E",
+              "means": "electric field strength [V/cm] (HL p. 97)"
+            }
+          ]
         },
         {
           "eq": "D = UT µ, UT = kT/e",
           "tex": "D = U_\\mathrm{T}\\mu, \\qquad U_\\mathrm{T} = \\frac{k_\\mathrm{B}T}{e}",
           "note": "Einstein relation; 25.85 mV at 300 K",
-          "ref": "HL §3.4.3, p. 103"
+          "ref": "HL §3.4.3, p. 103",
+          "where": [
+            {
+              "tex": "D",
+              "means": "diffusion coefficient [cm²/s] (HL p. 103)"
+            },
+            {
+              "tex": "U_\\mathrm{T}",
+              "means": "thermal voltage k_BT/e, 25.85 mV at 300 K (HL p. 103)"
+            },
+            {
+              "tex": "\\mu",
+              "means": "mobility [cm²/(V s)] (HL p. 97)"
+            },
+            {
+              "tex": "k_\\mathrm{B}",
+              "means": "Boltzmann constant [J/K] (not defined in the source)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature [K] (HL p. 79)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+            }
+          ]
         },
         {
           "eq": "Jp = e p µp E − e Dp dp/dx, Jn = e n µn E + e Dn dn/dx",
           "tex": "J_\\mathrm{p} = ep\\mu_\\mathrm{p}E - eD_\\mathrm{p}\\frac{\\mathrm{d}p}{\\mathrm{d}x}, \\qquad J_\\mathrm{n} = en\\mu_\\mathrm{n}E + eD_\\mathrm{n}\\frac{\\mathrm{d}n}{\\mathrm{d}x}",
           "note": "drift and diffusion currents",
-          "ref": "HL (3.4.27), p. 103"
+          "ref": "HL (3.4.27), p. 103",
+          "where": [
+            {
+              "tex": "J_\\mathrm{p},\\ J_\\mathrm{n}",
+              "means": "hole and electron current densities [A/cm²] (HL (3.4.27), p. 103)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+            },
+            {
+              "tex": "p",
+              "means": "hole density [cm⁻³] (HL (3.1.15), p. 82)"
+            },
+            {
+              "tex": "n",
+              "means": "electron density [cm⁻³] (HL (3.1.14), p. 82)"
+            },
+            {
+              "tex": "\\mu_\\mathrm{p}",
+              "means": "hole mobility [cm²/(V s)] (HL (3.4.16), p. 97)"
+            },
+            {
+              "tex": "\\mu_\\mathrm{n}",
+              "means": "electron mobility [cm²/(V s)] (HL (3.4.16), p. 97)"
+            },
+            {
+              "tex": "E",
+              "means": "electric field strength [V/cm] (HL p. 97)"
+            },
+            {
+              "tex": "D_\\mathrm{p}",
+              "means": "hole diffusion coefficient [cm²/s] (HL (3.4.25), p. 102)"
+            },
+            {
+              "tex": "D_\\mathrm{n}",
+              "means": "electron diffusion coefficient [cm²/s] (HL (3.4.26), p. 103)"
+            },
+            {
+              "tex": "x",
+              "means": "position, normal to the junction or along the sample [cm] (HL pp. 102, 128)"
+            }
+          ]
         },
         {
           "eq": "∂p/∂t − Dp ∂²p/∂x² + µp E ∂p/∂x + (p − p0)/τL = 0",
           "tex": "\\frac{\\partial p}{\\partial t} - D_\\mathrm{p}\\frac{\\partial^2 p}{\\partial x^2} + \\mu_\\mathrm{p}E\\frac{\\partial p}{\\partial x} + \\frac{p - p_0}{\\tau_\\mathrm{L}} = 0",
           "note": "the pulse's equation",
-          "ref": "HL (3.4.42), p. 107"
+          "ref": "HL (3.4.42), p. 107",
+          "where": [
+            {
+              "tex": "p",
+              "means": "hole density [cm⁻³] (HL (3.1.15), p. 82)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (HL p. 103)"
+            },
+            {
+              "tex": "D_\\mathrm{p}",
+              "means": "hole diffusion coefficient [cm²/s] (HL (3.4.25), p. 102)"
+            },
+            {
+              "tex": "x",
+              "means": "position, normal to the junction or along the sample [cm] (HL pp. 102, 128)"
+            },
+            {
+              "tex": "\\mu_\\mathrm{p}",
+              "means": "hole mobility [cm²/(V s)] (HL (3.4.16), p. 97)"
+            },
+            {
+              "tex": "E",
+              "means": "electric field strength [V/cm] (HL p. 97)"
+            },
+            {
+              "tex": "p_0",
+              "means": "equilibrium hole density [cm⁻³] (HL (3.4.34), p. 104)"
+            },
+            {
+              "tex": "\\tau_\\mathrm{L}",
+              "means": "minority-carrier lifetime [s] (HL (3.4.34), p. 104)"
+            }
+          ]
         },
         {
           "eq": "p − p0 = const/√(4πDp t) · exp(−(x − µp E t)²/(4 Dp t)) · exp(−t/τL)",
           "tex": "p - p_0 = \\frac{\\mathrm{const}}{\\sqrt{4\\pi D_\\mathrm{p}t}}\\exp\\!\\Big(-\\frac{(x - \\mu_\\mathrm{p}Et)^2}{4D_\\mathrm{p}t}\\Big)\\exp\\!\\Big(-\\frac{t}{\\tau_\\mathrm{L}}\\Big)",
           "note": "its solution, a drifting Gaussian; the script prints both exponents without their minus signs, a misprint (its text says the area decays as exp(−t/τL))",
           "ref": "HL (3.4.43), p. 107",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "p",
+              "means": "hole density [cm⁻³] (HL (3.1.15), p. 82)"
+            },
+            {
+              "tex": "p_0",
+              "means": "equilibrium hole density [cm⁻³] (HL (3.4.34), p. 104)"
+            },
+            {
+              "tex": "\\mathrm{const}",
+              "means": "constant set by the number of carriers injected (not defined in the source)"
+            },
+            {
+              "tex": "D_\\mathrm{p}",
+              "means": "hole diffusion coefficient [cm²/s] (HL (3.4.25), p. 102)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (HL p. 103)"
+            },
+            {
+              "tex": "x",
+              "means": "position, normal to the junction or along the sample [cm] (HL pp. 102, 128)"
+            },
+            {
+              "tex": "\\mu_\\mathrm{p}",
+              "means": "hole mobility [cm²/(V s)] (HL (3.4.16), p. 97)"
+            },
+            {
+              "tex": "E",
+              "means": "electric field strength [V/cm] (HL p. 97)"
+            },
+            {
+              "tex": "\\tau_\\mathrm{L}",
+              "means": "minority-carrier lifetime [s] (HL p. 104; (3.4.43) on p. 107 prints both exponents without their minus signs, though the text says the pulse decays as exp(−t/τ_L))"
+            }
+          ]
         }
       ],
       "practice": [
@@ -354,6 +972,36 @@
           "solution": "The peak moves at µp E = 450 × 10 = 4500 cm/s (3.4.43); 0.5 cm / 4500 cm/s = 111 µs.",
           "source": "Worked by hand from Strasser (2015), section 3.4.5"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "J_\\mathrm{p}",
+          "means": "hole current density [A/cm²] (HL (3.4.27), p. 103)"
+        },
+        {
+          "tex": "e",
+          "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+        },
+        {
+          "tex": "p",
+          "means": "hole density [cm⁻³] (HL (3.1.15), p. 82)"
+        },
+        {
+          "tex": "\\mu_\\mathrm{p}",
+          "means": "hole mobility [cm²/(V s)] (HL (3.4.16), p. 97)"
+        },
+        {
+          "tex": "E",
+          "means": "electric field strength [V/cm] (HL p. 97)"
+        },
+        {
+          "tex": "D_\\mathrm{p}",
+          "means": "hole diffusion coefficient [cm²/s] (HL (3.4.25), p. 102)"
+        },
+        {
+          "tex": "x",
+          "means": "position, normal to the junction or along the sample [cm] (HL pp. 102, 128)"
+        }
       ]
     },
     {
@@ -368,39 +1016,191 @@
           "eq": "∂p/∂t + (1/e) ∂Jp/∂x = G − R",
           "tex": "\\frac{\\partial p}{\\partial t} + \\frac{1}{e}\\frac{\\partial J_\\mathrm{p}}{\\partial x} = G - R",
           "note": "continuity for holes",
-          "ref": "HL (3.4.29), p. 103"
+          "ref": "HL (3.4.29), p. 103",
+          "where": [
+            {
+              "tex": "p",
+              "means": "hole density [cm⁻³] (HL (3.1.15), p. 82)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (HL p. 103)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+            },
+            {
+              "tex": "J_\\mathrm{p}",
+              "means": "hole current density [A/cm²] (HL (3.4.27), p. 103)"
+            },
+            {
+              "tex": "x",
+              "means": "position, normal to the junction or along the sample [cm] (HL pp. 102, 128)"
+            },
+            {
+              "tex": "G",
+              "means": "pair generation rate per volume and time [cm⁻³ s⁻¹] (HL p. 103)"
+            },
+            {
+              "tex": "R",
+              "means": "recombination rate per volume and time [cm⁻³ s⁻¹] (HL p. 103)"
+            }
+          ]
         },
         {
           "eq": "G − R = −(p − p0)/τL",
           "tex": "G - R = -\\frac{p - p_0}{\\tau_\\mathrm{L}}",
           "note": "the lifetime approximation",
-          "ref": "HL (3.4.34), p. 104"
+          "ref": "HL (3.4.34), p. 104",
+          "where": [
+            {
+              "tex": "G",
+              "means": "pair generation rate per volume and time [cm⁻³ s⁻¹] (HL p. 103)"
+            },
+            {
+              "tex": "R",
+              "means": "recombination rate per volume and time [cm⁻³ s⁻¹] (HL p. 103)"
+            },
+            {
+              "tex": "p",
+              "means": "hole density [cm⁻³] (HL (3.1.15), p. 82)"
+            },
+            {
+              "tex": "p_0",
+              "means": "equilibrium hole density [cm⁻³] (HL (3.4.34), p. 104)"
+            },
+            {
+              "tex": "\\tau_\\mathrm{L}",
+              "means": "minority-carrier lifetime [s] (HL (3.4.34), p. 104)"
+            }
+          ]
         },
         {
           "eq": "Δp(t) = Gτ(1 − e^(−t/τ)), then Δp(toff) e^(−(t − toff)/τ)",
           "tex": "\\Delta p(t) = G\\tau\\big(1 - \\mathrm{e}^{-t/\\tau}\\big), \\quad \\text{then} \\quad \\Delta p(t_\\mathrm{off})\\,\\mathrm{e}^{-(t - t_\\mathrm{off})/\\tau}",
           "note": "uniform light switched on and off",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\Delta p(t)",
+              "means": "excess hole density p − p₀ at time t [cm⁻³] (not defined in the source)"
+            },
+            {
+              "tex": "G",
+              "means": "pair generation rate per volume and time [cm⁻³ s⁻¹] (HL p. 103)"
+            },
+            {
+              "tex": "\\tau",
+              "means": "minority-carrier lifetime, τ_L in the source [s] (HL p. 104)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (HL p. 103)"
+            },
+            {
+              "tex": "t_\\mathrm{off}",
+              "means": "moment the generation is switched off (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "pn(x) = pn0 + (pn(0) − pn0) e^(−x/Lp), Lp = √(Dp τL)",
           "tex": "p_\\mathrm{n}(x) = p_{\\mathrm{n}0} + \\big(p_\\mathrm{n}(0) - p_{\\mathrm{n}0}\\big)\\,\\mathrm{e}^{-x/L_\\mathrm{p}}, \\qquad L_\\mathrm{p} = \\sqrt{D_\\mathrm{p}\\tau_\\mathrm{L}}",
           "note": "injection into a long sample",
-          "ref": "HL (3.4.35), p. 104"
+          "ref": "HL (3.4.35), p. 104",
+          "where": [
+            {
+              "tex": "p_\\mathrm{n}(x)",
+              "means": "hole (minority) density in the n region at x [cm⁻³] (HL p. 104)"
+            },
+            {
+              "tex": "p_{\\mathrm{n}0}",
+              "means": "its equilibrium value [cm⁻³] (HL p. 104)"
+            },
+            {
+              "tex": "p_\\mathrm{n}(0)",
+              "means": "the value held at x = 0 by injection [cm⁻³] (HL p. 104)"
+            },
+            {
+              "tex": "x",
+              "means": "position, normal to the junction or along the sample [cm] (HL pp. 102, 128)"
+            },
+            {
+              "tex": "L_\\mathrm{p}",
+              "means": "diffusion length of the minority holes [cm] (HL p. 104; (3.4.35) writes the exponent as −x/L without the index)"
+            },
+            {
+              "tex": "D_\\mathrm{p}",
+              "means": "hole diffusion coefficient [cm²/s] (HL (3.4.25), p. 102)"
+            },
+            {
+              "tex": "\\tau_\\mathrm{L}",
+              "means": "minority-carrier lifetime [s] (HL (3.4.34), p. 104)"
+            }
+          ]
         },
         {
           "eq": "pn(x) = pn0 + (pn(0) − pn0) sinh((W − x)/Lp)/sinh(W/Lp)",
           "tex": "p_\\mathrm{n}(x) = p_{\\mathrm{n}0} + \\big(p_\\mathrm{n}(0) - p_{\\mathrm{n}0}\\big)\\frac{\\sinh\\big((W - x)/L_\\mathrm{p}\\big)}{\\sinh(W/L_\\mathrm{p})}",
           "note": "a sample of length W",
           "ref": "HL (3.4.37), p. 105",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "p_\\mathrm{n}(x)",
+              "means": "hole (minority) density in the n region at x [cm⁻³] (HL p. 104)"
+            },
+            {
+              "tex": "p_{\\mathrm{n}0}",
+              "means": "its equilibrium value [cm⁻³] (HL p. 104)"
+            },
+            {
+              "tex": "p_\\mathrm{n}(0)",
+              "means": "the value held at x = 0 by injection [cm⁻³] (HL p. 104)"
+            },
+            {
+              "tex": "W",
+              "means": "length of the sample beyond x = 0 [cm] (HL p. 105)"
+            },
+            {
+              "tex": "x",
+              "means": "position, normal to the junction or along the sample [cm] (HL pp. 102, 128)"
+            },
+            {
+              "tex": "L_\\mathrm{p}",
+              "means": "diffusion length of the minority holes √(D_p τ_L) [cm] (HL (3.4.35), p. 104)"
+            }
+          ]
         },
         {
           "eq": "pn(x) = pn0 + (pn(0) − pn0)(W − x)/W",
           "tex": "p_\\mathrm{n}(x) = p_{\\mathrm{n}0} + \\big(p_\\mathrm{n}(0) - p_{\\mathrm{n}0}\\big)\\frac{W - x}{W}",
           "note": "a sample much shorter than Lp",
-          "ref": "HL (3.4.38), p. 105"
+          "ref": "HL (3.4.38), p. 105",
+          "where": [
+            {
+              "tex": "p_\\mathrm{n}(x)",
+              "means": "hole (minority) density in the n region at x [cm⁻³] (HL p. 104)"
+            },
+            {
+              "tex": "p_{\\mathrm{n}0}",
+              "means": "its equilibrium value [cm⁻³] (HL p. 104)"
+            },
+            {
+              "tex": "p_\\mathrm{n}(0)",
+              "means": "the value held at x = 0 by injection [cm⁻³] (HL p. 104)"
+            },
+            {
+              "tex": "W",
+              "means": "length of the sample, here W ≪ L_p [cm] (HL (3.4.38), p. 105)"
+            },
+            {
+              "tex": "x",
+              "means": "position, normal to the junction or along the sample [cm] (HL pp. 102, 128)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -435,6 +1235,24 @@
           "solution": "Dp = UT µp = 0.02585 V × 450 cm²/(V s) = 11.6 cm²/s; Lp = √(Dp τ) = √(11.6 × 10⁻⁵) cm = 0.0108 cm = 108 µm.",
           "source": "Worked by hand from Strasser (2015), section 3.4.4"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\Delta p",
+          "means": "excess hole density p − p₀ [cm⁻³] (not defined in the source)"
+        },
+        {
+          "tex": "t",
+          "means": "time [s] (HL p. 103)"
+        },
+        {
+          "tex": "G",
+          "means": "pair generation rate per volume and time [cm⁻³ s⁻¹] (HL p. 103)"
+        },
+        {
+          "tex": "\\tau",
+          "means": "minority-carrier lifetime, τ_L in the source [s] (HL p. 104)"
+        }
       ]
     },
     {
@@ -449,39 +1267,163 @@
           "eq": "E2 − E1 = ħ²k²/(2mp*) + Eg + ħ²k²/(2mn*) = ħω",
           "tex": "E_2 - E_1 = \\frac{\\hbar^2k^2}{2m_\\mathrm{p}^*} + E_\\mathrm{G} + \\frac{\\hbar^2k^2}{2m_\\mathrm{n}^*} = \\hbar\\omega",
           "note": "a vertical transition, parabolic bands",
-          "ref": "HL (4.2.2), p. 114"
+          "ref": "HL (4.2.2), p. 114",
+          "where": [
+            {
+              "tex": "E_1,\\ E_2",
+              "means": "the valence-band and conduction-band states joined by the transition [eV] (HL p. 113)"
+            },
+            {
+              "tex": "\\hbar",
+              "means": "reduced Planck constant h/2π [J s] (HL p. 9)"
+            },
+            {
+              "tex": "k",
+              "means": "wave vector, the same in both bands for a direct transition [1/cm] (HL p. 114)"
+            },
+            {
+              "tex": "m_\\mathrm{p}^*,\\ m_\\mathrm{n}^*",
+              "means": "effective masses of holes and electrons [kg] (HL p. 82, § 3.3)"
+            },
+            {
+              "tex": "E_\\mathrm{G}",
+              "means": "band gap [eV] (HL p. 114)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency of the light; ħω is the photon energy [1/s] (HL p. 113)"
+            }
+          ]
         },
         {
           "eq": "E1 = EV − (mr/mp*)(ħω − Eg), E2 = EC + (mr/mn*)(ħω − Eg), 1/mr = 1/mp* + 1/mn*",
           "tex": "E_1 = E_\\mathrm{V} - \\frac{m_\\mathrm{r}}{m_\\mathrm{p}^*}(\\hbar\\omega - E_\\mathrm{G}), \\qquad E_2 = E_\\mathrm{C} + \\frac{m_\\mathrm{r}}{m_\\mathrm{n}^*}(\\hbar\\omega - E_\\mathrm{G}), \\qquad \\frac{1}{m_\\mathrm{r}} = \\frac{1}{m_\\mathrm{p}^*} + \\frac{1}{m_\\mathrm{n}^*}",
           "note": "the states taking part; the script prints E2 = EC − …, a misprint: only + gives E2 − E1 = ħω of (4.2.2)",
           "ref": "HL §4.2.1, p. 114",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "E_1,\\ E_2",
+              "means": "the valence-band and conduction-band states joined by the transition [eV] (HL p. 113)"
+            },
+            {
+              "tex": "E_\\mathrm{V},\\ E_\\mathrm{C}",
+              "means": "valence- and conduction-band edges [eV] (HL p. 114)"
+            },
+            {
+              "tex": "m_\\mathrm{r}",
+              "means": "reduced mass, 1/m_r = 1/m_p* + 1/m_n* (HL p. 114)"
+            },
+            {
+              "tex": "m_\\mathrm{p}^*,\\ m_\\mathrm{n}^*",
+              "means": "effective masses of holes and electrons [kg] (HL p. 82, § 3.3)"
+            },
+            {
+              "tex": "\\hbar",
+              "means": "reduced Planck constant h/2π [J s] (HL p. 9)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency of the light; ħω is the photon energy [1/s] (HL p. 113)"
+            },
+            {
+              "tex": "E_\\mathrm{G}",
+              "means": "band gap [eV] (HL p. 114; the notes print E₂ = E_C − …, the minus where a plus belongs)"
+            }
+          ]
         },
         {
           "eq": "Zj(ω) = (2mr)^(3/2)/(2π²ħ²) √(ħω − Eg)",
           "tex": "Z_\\mathrm{j}(\\omega) = \\frac{1}{2\\pi^2}\\frac{(2m_\\mathrm{r})^{3/2}}{\\hbar^2}\\sqrt{\\hbar\\omega - E_\\mathrm{G}}",
           "note": "the joint density of states",
-          "ref": "HL (4.2.4), p. 114"
+          "ref": "HL (4.2.4), p. 114",
+          "where": [
+            {
+              "tex": "Z_\\mathrm{j}(\\omega)",
+              "means": "combined density of states: pairs of states that can take part in a transition at ω (HL (4.2.4), p. 114)"
+            },
+            {
+              "tex": "m_\\mathrm{r}",
+              "means": "reduced mass, 1/m_r = 1/m_p* + 1/m_n* (HL p. 114)"
+            },
+            {
+              "tex": "\\hbar",
+              "means": "reduced Planck constant h/2π [J s] (HL p. 9)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency of the light; ħω is the photon energy [1/s] (HL p. 113)"
+            },
+            {
+              "tex": "E_\\mathrm{G}",
+              "means": "band gap [eV] (HL p. 114)"
+            }
+          ]
         },
         {
           "eq": "α(ω) = σ(ω) Zj(ω) (fv(E1) − fc(E2))",
           "tex": "\\alpha(\\omega) = \\sigma(\\omega)Z_\\mathrm{j}(\\omega)\\big(f_\\mathrm{v}(E_1) - f_\\mathrm{c}(E_2)\\big)",
           "note": "absorption minus stimulated emission",
-          "ref": "HL (4.2.8), p. 115"
+          "ref": "HL (4.2.8), p. 115",
+          "where": [
+            {
+              "tex": "\\alpha(\\omega)",
+              "means": "absorption coefficient [1/cm] (HL (4.2.8), p. 115)"
+            },
+            {
+              "tex": "\\sigma(\\omega)",
+              "means": "transition cross-section from Fermi's golden rule (HL p. 115)"
+            },
+            {
+              "tex": "Z_\\mathrm{j}(\\omega)",
+              "means": "combined density of states: pairs of states that can take part in a transition at ω (HL (4.2.4), p. 114)"
+            },
+            {
+              "tex": "f_\\mathrm{v}(E_1),\\ f_\\mathrm{c}(E_2)",
+              "means": "quasi-Fermi occupations of valence and conduction band (HL p. 115; the notes then say f_c(E₂) = 1 for the unexcited semiconductor, where 0 is meant)"
+            }
+          ]
         },
         {
           "eq": "EFc − EFv > Eg",
           "tex": "E_{\\mathrm{F}_\\mathrm{C}} - E_{\\mathrm{F}_\\mathrm{V}} > E_\\mathrm{G}",
           "note": "the condition for gain",
-          "ref": "HL (4.2.10), p. 115"
+          "ref": "HL (4.2.10), p. 115",
+          "where": [
+            {
+              "tex": "E_{\\mathrm{F}_\\mathrm{C}},\\ E_{\\mathrm{F}_\\mathrm{V}}",
+              "means": "quasi-Fermi levels of conduction and valence band [eV] (HL p. 115)"
+            },
+            {
+              "tex": "E_\\mathrm{G}",
+              "means": "band gap [eV] (HL p. 115)"
+            }
+          ]
         },
         {
           "eq": "λg = hc/Eg",
           "tex": "\\lambda_\\mathrm{g} = \\frac{hc}{E_\\mathrm{G}}",
           "note": "the longest wavelength absorbed",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\lambda_\\mathrm{g}",
+              "means": "longest wavelength the semiconductor absorbs (not defined in the source)"
+            },
+            {
+              "tex": "h",
+              "means": "Planck constant, 6.6262 × 10⁻³⁴ J s (HL p. 9)"
+            },
+            {
+              "tex": "c",
+              "means": "speed of light [m/s] (not defined in the source)"
+            },
+            {
+              "tex": "E_\\mathrm{G}",
+              "means": "band gap [eV] (HL Table 3.1, p. 83)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -512,6 +1454,36 @@
           "solution": "1/mr = 1/0.067 + 1/0.5 = 16.93, mr = 0.0591 m0; E2 − EC = (mr/mn*)(ħω − Eg) = 0.882 × 0.1 eV = 88 meV. The hole takes the other 12 meV.",
           "source": "Worked by hand from Halbleiterphysik exercise sheet 10, problem 39 (WS 2015/16), its GaAs data, with Strasser (2015), p. 114"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\alpha(\\omega)",
+          "means": "absorption coefficient [1/cm] (HL (4.2.8), p. 115)"
+        },
+        {
+          "tex": "\\sigma",
+          "means": "transition cross-section from Fermi's golden rule (HL p. 115)"
+        },
+        {
+          "tex": "Z_\\mathrm{j}(\\omega)",
+          "means": "combined density of states: pairs of states that can take part in a transition at ω (HL (4.2.4), p. 114)"
+        },
+        {
+          "tex": "f_\\mathrm{v}(E_1),\\ f_\\mathrm{c}(E_2)",
+          "means": "occupation of E₁ and E₂ by the separate quasi-Fermi distributions of valence and conduction band (HL p. 115)"
+        },
+        {
+          "tex": "\\hbar",
+          "means": "reduced Planck constant h/2π [J s] (HL p. 9)"
+        },
+        {
+          "tex": "\\omega",
+          "means": "angular frequency of the light; ħω is the photon energy [1/s] (HL p. 113)"
+        },
+        {
+          "tex": "E_\\mathrm{G}",
+          "means": "band gap [eV] (HL p. 114)"
+        }
       ]
     },
     {
@@ -526,39 +1498,187 @@
           "eq": "NA dp = ND dn",
           "tex": "N_\\mathrm{A}d_\\mathrm{p} = N_\\mathrm{D}d_\\mathrm{n}",
           "note": "equal charges on both sides",
-          "ref": "HL (5.2.2), p. 129"
+          "ref": "HL (5.2.2), p. 129",
+          "where": [
+            {
+              "tex": "N_\\mathrm{A}",
+              "means": "acceptor density of the p side [cm⁻³] (HL p. 128)"
+            },
+            {
+              "tex": "N_\\mathrm{D}",
+              "means": "donor density of the n side [cm⁻³] (HL p. 128)"
+            },
+            {
+              "tex": "d_\\mathrm{p},\\ d_\\mathrm{n}",
+              "means": "extent of the space-charge region into the p and the n side [cm] (HL p. 128)"
+            }
+          ]
         },
         {
           "eq": "dE/dx = ρ/ε",
           "tex": "\\frac{\\mathrm{d}E}{\\mathrm{d}x} = \\frac{\\rho}{\\varepsilon}",
           "note": "Poisson's equation",
           "ref": "HL (5.2.3), p. 129",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "E",
+              "means": "electric field strength [V/cm] (HL (5.2.3), p. 129)"
+            },
+            {
+              "tex": "x",
+              "means": "position, normal to the junction or along the sample [cm] (HL pp. 102, 128)"
+            },
+            {
+              "tex": "\\rho",
+              "means": "space-charge density, −eN_A on the p side, +eN_D on the n side [C/cm³] (HL p. 128)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity of the semiconductor [F/cm] (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "Emax = e NA dp/ε = e ND dn/ε",
           "tex": "E_\\mathrm{max} = \\frac{eN_\\mathrm{A}d_\\mathrm{p}}{\\varepsilon} = \\frac{eN_\\mathrm{D}d_\\mathrm{n}}{\\varepsilon}",
           "note": "the peak field at the boundary, as a magnitude (the script drops its minus sign from p. 131 on)",
-          "ref": "HL (5.2.4), p. 129"
+          "ref": "HL (5.2.4), p. 129",
+          "where": [
+            {
+              "tex": "E_\\mathrm{max}",
+              "means": "largest field strength, at x = 0 [V/cm] (HL (5.2.4), p. 129; printed there with a minus sign, dropped from p. 131 on)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+            },
+            {
+              "tex": "N_\\mathrm{A}",
+              "means": "acceptor density of the p side [cm⁻³] (HL p. 128)"
+            },
+            {
+              "tex": "d_\\mathrm{p},\\ d_\\mathrm{n}",
+              "means": "extent of the space-charge region into the p and the n side [cm] (HL p. 128)"
+            },
+            {
+              "tex": "N_\\mathrm{D}",
+              "means": "donor density of the n side [cm⁻³] (HL p. 128)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity of the semiconductor [F/cm] (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "UD = (e/2ε)(NA dp² + ND dn²)",
           "tex": "U_\\mathrm{D} = \\frac{e}{2\\varepsilon}\\big(N_\\mathrm{A}d_\\mathrm{p}^2 + N_\\mathrm{D}d_\\mathrm{n}^2\\big)",
           "note": "the area under the field",
-          "ref": "HL (5.2.6), p. 129"
+          "ref": "HL (5.2.6), p. 129",
+          "where": [
+            {
+              "tex": "U_\\mathrm{D}",
+              "means": "built-in (diffusion) voltage [V] (HL (5.2.6), p. 129)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity of the semiconductor [F/cm] (not defined in the source)"
+            },
+            {
+              "tex": "N_\\mathrm{A}",
+              "means": "acceptor density of the p side [cm⁻³] (HL p. 128)"
+            },
+            {
+              "tex": "d_\\mathrm{p},\\ d_\\mathrm{n}",
+              "means": "extent of the space-charge region into the p and the n side [cm] (HL p. 128)"
+            },
+            {
+              "tex": "N_\\mathrm{D}",
+              "means": "donor density of the n side [cm⁻³] (HL p. 128)"
+            }
+          ]
         },
         {
           "eq": "d = √(2ε(UD − U)/(e N0)), dn = d NA/(NA + ND), dp = d ND/(NA + ND), Emax = √(2eN0(UD − U)/ε)",
           "tex": "d = \\sqrt{\\frac{2\\varepsilon(U_\\mathrm{D} - U)}{eN_0}}, \\quad d_\\mathrm{n} = d\\,\\frac{N_\\mathrm{A}}{N_\\mathrm{A} + N_\\mathrm{D}}, \\quad d_\\mathrm{p} = d\\,\\frac{N_\\mathrm{D}}{N_\\mathrm{A} + N_\\mathrm{D}}, \\quad E_\\mathrm{max} = \\sqrt{\\frac{2eN_0(U_\\mathrm{D} - U)}{\\varepsilon}}",
           "note": "with bias U",
           "ref": "HL (5.2.13), p. 131",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "d",
+              "means": "width of the space-charge region d_n + d_p [cm] (HL (5.2.10), p. 131)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity of the semiconductor [F/cm] (not defined in the source)"
+            },
+            {
+              "tex": "U_\\mathrm{D}",
+              "means": "built-in (diffusion) voltage [V] (HL (5.2.6), p. 129)"
+            },
+            {
+              "tex": "U",
+              "means": "applied voltage, positive in the forward direction, negative when reverse biased [V] (HL p. 131)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+            },
+            {
+              "tex": "N_0",
+              "means": "effective doping, 1/N_0 = 1/N_A + 1/N_D: the weaker side's doping [cm⁻³] (HL (5.2.7), (5.2.11), p. 131)"
+            },
+            {
+              "tex": "d_\\mathrm{p},\\ d_\\mathrm{n}",
+              "means": "extent of the space-charge region into the p and the n side [cm] (HL p. 128)"
+            },
+            {
+              "tex": "N_\\mathrm{A}",
+              "means": "acceptor density of the p side [cm⁻³] (HL p. 128)"
+            },
+            {
+              "tex": "N_\\mathrm{D}",
+              "means": "donor density of the n side [cm⁻³] (HL p. 128)"
+            },
+            {
+              "tex": "E_\\mathrm{max}",
+              "means": "largest field strength, at the junction x = 0 [V/cm] (HL (5.2.4), p. 129)"
+            }
+          ]
         },
         {
           "eq": "UD = UT ln(NA ND/ni²)",
           "tex": "U_\\mathrm{D} = U_\\mathrm{T}\\ln\\frac{N_\\mathrm{A}N_\\mathrm{D}}{n_\\mathrm{i}^2}",
           "note": "the diffusion voltage",
-          "ref": "HL (5.3.19), p. 139"
+          "ref": "HL (5.3.19), p. 139",
+          "where": [
+            {
+              "tex": "U_\\mathrm{D}",
+              "means": "built-in (diffusion) voltage [V] (HL (5.2.6), p. 129)"
+            },
+            {
+              "tex": "U_\\mathrm{T}",
+              "means": "thermal voltage k_BT/e, 25.85 mV at 300 K (HL p. 103)"
+            },
+            {
+              "tex": "N_\\mathrm{A}",
+              "means": "acceptor density of the p side [cm⁻³] (HL p. 128)"
+            },
+            {
+              "tex": "N_\\mathrm{D}",
+              "means": "donor density of the n side [cm⁻³] (HL p. 128)"
+            },
+            {
+              "tex": "n_\\mathrm{i}",
+              "means": "intrinsic carrier density [cm⁻³] (HL (3.1.20), p. 83)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -576,6 +1696,40 @@
           "solution": "UD = UT ln(NA ND/ni²) = 25.85 mV × ln(10³²/2.10·10²⁰) = 0.695 V. N0 = 1/(10⁻¹⁷ + 10⁻¹⁵) = 9.90·10¹⁴ cm⁻³. d = √(2 × 1.054·10⁻¹² F/cm × 0.695 V / (1.602·10⁻¹⁹ C × 9.90·10¹⁴ cm⁻³)) = 9.61·10⁻⁵ cm = 0.961 µm, 99 % of it on the n side.",
           "source": "Worked by hand from Strasser (2015), section 5.2.1"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "d",
+          "means": "width of the space-charge region d_n + d_p [cm] (HL (5.2.10), p. 131)"
+        },
+        {
+          "tex": "\\varepsilon",
+          "means": "permittivity of the semiconductor [F/cm] (not defined in the source)"
+        },
+        {
+          "tex": "U_\\mathrm{D}",
+          "means": "built-in (diffusion) voltage [V] (HL (5.2.6), p. 129)"
+        },
+        {
+          "tex": "U",
+          "means": "applied voltage, positive in the forward direction, negative when reverse biased [V] (HL p. 131)"
+        },
+        {
+          "tex": "e",
+          "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+        },
+        {
+          "tex": "N_0",
+          "means": "effective doping, 1/N_0 = 1/N_A + 1/N_D: the weaker side's doping [cm⁻³] (HL (5.2.7), (5.2.11), p. 131)"
+        },
+        {
+          "tex": "N_\\mathrm{A}",
+          "means": "acceptor density of the p side [cm⁻³] (HL p. 128)"
+        },
+        {
+          "tex": "N_\\mathrm{D}",
+          "means": "donor density of the n side [cm⁻³] (HL p. 128)"
+        }
       ]
     },
     {
@@ -590,25 +1744,137 @@
           "eq": "I = dQ/dt = (dQ/dU)(dU/dt) = Cs dU/dt",
           "tex": "I = \\frac{\\mathrm{d}Q}{\\mathrm{d}t} = \\frac{\\mathrm{d}Q}{\\mathrm{d}U}\\frac{\\mathrm{d}U}{\\mathrm{d}t} = C_\\mathrm{s}\\frac{\\mathrm{d}U}{\\mathrm{d}t}",
           "note": "the capacitive current",
-          "ref": "HL (5.2.14), p. 132"
+          "ref": "HL (5.2.14), p. 132",
+          "where": [
+            {
+              "tex": "I",
+              "means": "capacitive current through the junction [A] (HL (5.2.14), p. 132)"
+            },
+            {
+              "tex": "Q",
+              "means": "charge stored on one side of the space-charge region [C] (HL p. 132)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (HL p. 103)"
+            },
+            {
+              "tex": "U",
+              "means": "applied voltage, positive in the forward direction, negative when reverse biased [V] (HL p. 131)"
+            },
+            {
+              "tex": "C_\\mathrm{s}",
+              "means": "junction (depletion) capacitance [F] (HL (5.2.14), p. 132)"
+            }
+          ]
         },
         {
           "eq": "Cs = dQp/dU = εA/d = A √(ε e N0/(2(UD − U)))",
           "tex": "C_\\mathrm{s} = \\frac{\\mathrm{d}Q_\\mathrm{p}}{\\mathrm{d}U} = \\frac{\\varepsilon A}{d} = A\\sqrt{\\frac{\\varepsilon eN_0}{2(U_\\mathrm{D} - U)}}",
           "note": "the junction capacitance",
-          "ref": "HL (5.2.15), p. 132"
+          "ref": "HL (5.2.15), p. 132",
+          "where": [
+            {
+              "tex": "C_\\mathrm{s}",
+              "means": "junction (depletion) capacitance [F] (HL (5.2.14), p. 132)"
+            },
+            {
+              "tex": "Q_\\mathrm{p}",
+              "means": "charge on the p side, −e N_D d_n A [C] (HL p. 132)"
+            },
+            {
+              "tex": "U",
+              "means": "applied voltage, positive in the forward direction, negative when reverse biased [V] (HL p. 131)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity of the semiconductor [F/cm] (not defined in the source)"
+            },
+            {
+              "tex": "A",
+              "means": "cross-section area of the junction [cm²] (HL p. 129)"
+            },
+            {
+              "tex": "d",
+              "means": "width of the space-charge region d_n + d_p [cm] (HL (5.2.10), p. 131)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+            },
+            {
+              "tex": "N_0",
+              "means": "effective doping, 1/N_0 = 1/N_A + 1/N_D: the weaker side's doping [cm⁻³] (HL (5.2.7), (5.2.11), p. 131)"
+            },
+            {
+              "tex": "U_\\mathrm{D}",
+              "means": "built-in (diffusion) voltage [V] (HL (5.2.6), p. 129)"
+            }
+          ]
         },
         {
           "eq": "1/Cs² = 2(UD − U)/(A² ε e N0)",
           "tex": "\\frac{1}{C_\\mathrm{s}^2} = \\frac{2(U_\\mathrm{D} - U)}{A^2\\varepsilon eN_0}",
           "note": "a straight line in U; its slope gives N0",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "C_\\mathrm{s}",
+              "means": "junction (depletion) capacitance [F] (HL (5.2.14), p. 132)"
+            },
+            {
+              "tex": "U_\\mathrm{D}",
+              "means": "built-in (diffusion) voltage [V] (HL (5.2.6), p. 129)"
+            },
+            {
+              "tex": "U",
+              "means": "applied voltage, positive in the forward direction, negative when reverse biased [V] (HL p. 131)"
+            },
+            {
+              "tex": "A",
+              "means": "cross-section area of the junction [cm²] (HL p. 129)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity of the semiconductor [F/cm] (not defined in the source)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+            },
+            {
+              "tex": "N_0",
+              "means": "effective doping, 1/N_0 = 1/N_A + 1/N_D: the weaker side's doping [cm⁻³] (HL (5.2.7), (5.2.11), p. 131)"
+            }
+          ]
         },
         {
           "eq": "UB* ≈ ε Emax²/(2 e N0)",
           "tex": "U_\\mathrm{B}^* \\approx \\frac{\\varepsilon E_\\mathrm{max}^2}{2eN_0}",
           "note": "the breakdown estimate; Emax ≈ 300 kV/cm for Si",
-          "ref": "HL (5.3.22), p. 140"
+          "ref": "HL (5.3.22), p. 140",
+          "where": [
+            {
+              "tex": "U_\\mathrm{B}^*",
+              "means": "breakdown voltage [V] (HL p. 140)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity of the semiconductor [F/cm] (not defined in the source)"
+            },
+            {
+              "tex": "E_\\mathrm{max}",
+              "means": "field strength at breakdown, about 300 kV/cm for Si (HL p. 140)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+            },
+            {
+              "tex": "N_0",
+              "means": "doping of the weaker side [cm⁻³] (HL p. 140)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -627,6 +1893,40 @@
           "solution": "UD = UT ln(NA ND/ni²) = 0.874 V; N0 ≈ ND = 9.99·10¹⁵ cm⁻³. Cs/A = √(ε e N0/(2(UD − U))) = √(1.054·10⁻¹² × 1.602·10⁻¹⁹ × 9.99·10¹⁵ / (2 × 5.874)) = 1.198·10⁻⁸ F/cm²; with A = 10⁻⁴ cm², Cs = 1.20 pF.",
           "source": "Worked by hand from Strasser (2015), section 5.2.2"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "C_\\mathrm{s}",
+          "means": "junction (depletion) capacitance [F] (HL (5.2.14), p. 132)"
+        },
+        {
+          "tex": "\\varepsilon",
+          "means": "permittivity of the semiconductor [F/cm] (not defined in the source)"
+        },
+        {
+          "tex": "A",
+          "means": "cross-section area of the junction [cm²] (HL p. 129)"
+        },
+        {
+          "tex": "d",
+          "means": "width of the space-charge region d_n + d_p [cm] (HL (5.2.10), p. 131)"
+        },
+        {
+          "tex": "e",
+          "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+        },
+        {
+          "tex": "N_0",
+          "means": "effective doping, 1/N_0 = 1/N_A + 1/N_D: the weaker side's doping [cm⁻³] (HL (5.2.7), (5.2.11), p. 131)"
+        },
+        {
+          "tex": "U_\\mathrm{D}",
+          "means": "built-in (diffusion) voltage [V] (HL (5.2.6), p. 129)"
+        },
+        {
+          "tex": "U",
+          "means": "applied voltage, positive in the forward direction, negative when reverse biased [V] (HL p. 131)"
+        }
       ]
     },
     {
@@ -641,51 +1941,223 @@
           "eq": "pn = pN exp(U/UT), np = nP exp(U/UT)",
           "tex": "p_\\mathrm{n} = p_\\mathrm{N}\\exp\\frac{U}{U_\\mathrm{T}}, \\qquad n_\\mathrm{p} = n_\\mathrm{P}\\exp\\frac{U}{U_\\mathrm{T}}",
           "note": "minority densities at the zone's edges",
-          "ref": "HL (5.3.4), p. 134"
+          "ref": "HL (5.3.4), p. 134",
+          "where": [
+            {
+              "tex": "p_\\mathrm{n},\\ n_\\mathrm{p}",
+              "means": "minority densities at the n-side and p-side edges of the space-charge region with voltage applied [cm⁻³] (HL p. 134)"
+            },
+            {
+              "tex": "p_\\mathrm{N},\\ n_\\mathrm{P}",
+              "means": "their equilibrium values n_i²/N_D and n_i²/N_A [cm⁻³] (HL p. 133)"
+            },
+            {
+              "tex": "U",
+              "means": "applied voltage, positive in the forward direction, negative when reverse biased [V] (HL p. 131)"
+            },
+            {
+              "tex": "U_\\mathrm{T}",
+              "means": "thermal voltage k_BT/e, 25.85 mV at 300 K (HL p. 103)"
+            }
+          ]
         },
         {
           "eq": "Js = e ni² (Dp/(Lp ND) + Dn/(Ln NA))",
           "tex": "J_\\mathrm{s} = en_\\mathrm{i}^2\\Big(\\frac{D_\\mathrm{p}}{L_\\mathrm{p}N_\\mathrm{D}} + \\frac{D_\\mathrm{n}}{L_\\mathrm{n}N_\\mathrm{A}}\\Big)",
           "note": "the saturation current density, long diode",
           "ref": "HL (5.3.10), p. 136",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "J_\\mathrm{s}",
+              "means": "saturation current density [A/cm²] (HL (5.3.10), p. 136)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+            },
+            {
+              "tex": "n_\\mathrm{i}",
+              "means": "intrinsic carrier density [cm⁻³] (HL (3.1.20), p. 83)"
+            },
+            {
+              "tex": "D_\\mathrm{p},\\ D_\\mathrm{n}",
+              "means": "diffusion coefficients of holes and electrons [cm²/s] (HL p. 103)"
+            },
+            {
+              "tex": "L_\\mathrm{p},\\ L_\\mathrm{n}",
+              "means": "diffusion lengths of holes and electrons [cm] (HL (5.3.1), p. 133)"
+            },
+            {
+              "tex": "N_\\mathrm{D}",
+              "means": "donor density of the n side [cm⁻³] (HL p. 128)"
+            },
+            {
+              "tex": "N_\\mathrm{A}",
+              "means": "acceptor density of the p side [cm⁻³] (HL p. 128)"
+            }
+          ]
         },
         {
           "eq": "I = Is (exp(U/UT) − 1)",
           "tex": "I = I_\\mathrm{s}\\Big(\\exp\\frac{U}{U_\\mathrm{T}} - 1\\Big)",
           "note": "the ideal characteristic",
-          "ref": "HL (5.3.11), p. 136"
+          "ref": "HL (5.3.11), p. 136",
+          "where": [
+            {
+              "tex": "I",
+              "means": "diode current [A] (HL (5.3.11), p. 136)"
+            },
+            {
+              "tex": "I_\\mathrm{s}",
+              "means": "saturation current J_s A [A] (HL (5.3.12), p. 136)"
+            },
+            {
+              "tex": "U",
+              "means": "applied voltage, positive in the forward direction, negative when reverse biased [V] (HL p. 131)"
+            },
+            {
+              "tex": "U_\\mathrm{T}",
+              "means": "thermal voltage k_BT/e, 25.85 mV at 300 K (HL p. 103)"
+            }
+          ]
         },
         {
           "eq": "(1/Js) dJs/dT = UG/(UT T)",
           "tex": "\\frac{1}{J_\\mathrm{s}}\\frac{\\mathrm{d}J_\\mathrm{s}}{\\mathrm{d}T} = \\frac{U_\\mathrm{G}}{U_\\mathrm{T}T}",
           "note": "0.15 /K for Si at 300 K",
-          "ref": "HL (5.3.16), p. 139"
+          "ref": "HL (5.3.16), p. 139",
+          "where": [
+            {
+              "tex": "J_\\mathrm{s}",
+              "means": "saturation current density [A/cm²] (HL (5.3.10), p. 136)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature [K] (HL p. 79)"
+            },
+            {
+              "tex": "U_\\mathrm{G}",
+              "means": "band gap in volts, E_G = eU_G, 1.12 V for Si (HL p. 139)"
+            },
+            {
+              "tex": "U_\\mathrm{T}",
+              "means": "thermal voltage k_BT/e, 25.85 mV at 300 K (HL p. 103)"
+            }
+          ]
         },
         {
           "eq": "dU/dT = −(UG − U)/T",
           "tex": "\\frac{\\mathrm{d}U}{\\mathrm{d}T} = -\\frac{U_\\mathrm{G} - U}{T}",
           "note": "about −2 mV/K at constant current",
-          "ref": "HL (5.3.18), p. 139"
+          "ref": "HL (5.3.18), p. 139",
+          "where": [
+            {
+              "tex": "U",
+              "means": "applied voltage, positive in the forward direction, negative when reverse biased [V] (HL p. 131)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature [K] (HL p. 79)"
+            },
+            {
+              "tex": "U_\\mathrm{G}",
+              "means": "band gap in volts, E_G = eU_G, 1.12 V for Si (HL p. 139)"
+            }
+          ]
         },
         {
           "eq": "(1/J) dJ/dT = (UG − U)/(UT T)",
           "tex": "\\frac{1}{J}\\frac{\\mathrm{d}J}{\\mathrm{d}T} = \\frac{U_\\mathrm{G} - U}{U_\\mathrm{T}T}",
           "note": "at fixed forward voltage; 0.05 /K for Si at 0.7 V",
-          "ref": "HL (5.3.17), p. 139"
+          "ref": "HL (5.3.17), p. 139",
+          "where": [
+            {
+              "tex": "J",
+              "means": "diode current density [A/cm²] (HL (5.3.17), p. 139)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature [K] (HL p. 79)"
+            },
+            {
+              "tex": "U_\\mathrm{G}",
+              "means": "band gap in volts, E_G = eU_G, 1.12 V for Si (HL p. 139)"
+            },
+            {
+              "tex": "U",
+              "means": "applied voltage, positive in the forward direction, negative when reverse biased [V] (HL p. 131)"
+            },
+            {
+              "tex": "U_\\mathrm{T}",
+              "means": "thermal voltage k_BT/e, 25.85 mV at 300 K (HL p. 103)"
+            }
+          ]
         },
         {
           "eq": "I = Is (exp(Ud/(n UT)) − 1), U = Ud + I Rs",
           "tex": "I = I_\\mathrm{s}\\Big(\\exp\\frac{U_\\mathrm{d}}{nU_\\mathrm{T}} - 1\\Big), \\qquad U = U_\\mathrm{d} + IR_\\mathrm{s}",
           "note": "ideality factor n (the collection takes n = 2) and a series resistance; the script names both effects (p. 137)",
           "ref": "EB part 1, p. 3",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "I",
+              "means": "diode current [A] (HL (5.3.11), p. 136)"
+            },
+            {
+              "tex": "I_\\mathrm{s}",
+              "means": "saturation current J_s A [A] (HL (5.3.12), p. 136)"
+            },
+            {
+              "tex": "U_\\mathrm{d}",
+              "means": "voltage across the junction itself (not defined in the source)"
+            },
+            {
+              "tex": "n",
+              "means": "ideality factor, 2 unless stated (EB part 1, p. 3)"
+            },
+            {
+              "tex": "U_\\mathrm{T}",
+              "means": "thermal voltage k_BT/e, 25.85 mV at 300 K (HL p. 103)"
+            },
+            {
+              "tex": "U",
+              "means": "voltage at the diode's terminals (not defined in the source)"
+            },
+            {
+              "tex": "R_\\mathrm{s}",
+              "means": "series resistance of the bulk regions (not defined in the source; HL p. 137 names the Bahngebiete)"
+            }
+          ]
         },
         {
           "eq": "UB* ≈ ε Emax²/(2 e N0)",
           "tex": "U_\\mathrm{B}^* \\approx \\frac{\\varepsilon E_\\mathrm{max}^2}{2eN_0}",
           "note": "breakdown, marked only",
-          "ref": "HL (5.3.22), p. 140"
+          "ref": "HL (5.3.22), p. 140",
+          "where": [
+            {
+              "tex": "U_\\mathrm{B}^*",
+              "means": "breakdown voltage [V] (HL p. 140)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "permittivity of the semiconductor [F/cm] (not defined in the source)"
+            },
+            {
+              "tex": "E_\\mathrm{max}",
+              "means": "field strength at breakdown, about 300 kV/cm for Si (HL p. 140)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+            },
+            {
+              "tex": "N_0",
+              "means": "doping of the weaker side [cm⁻³] (HL p. 140)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -717,6 +2189,28 @@
           "solution": "I ∝ e^(U/(n UT)), so ΔU = n UT ln 10 = 2 × 25 mV × 2.303 = 115 mV a decade; the ideal diode (n = 1) needs about 60 mV.",
           "source": "Worked by hand from Strasser (2015), p. 137, and Hobler (2009), p. 3"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "I",
+          "means": "diode current [A] (HL (5.3.11), p. 136)"
+        },
+        {
+          "tex": "I_\\mathrm{s}",
+          "means": "saturation current J_s A [A] (HL (5.3.12), p. 136)"
+        },
+        {
+          "tex": "U",
+          "means": "applied voltage, positive in the forward direction, negative when reverse biased [V] (HL p. 131)"
+        },
+        {
+          "tex": "n",
+          "means": "ideality factor, 2 unless stated (EB part 1, p. 3)"
+        },
+        {
+          "tex": "U_\\mathrm{T}",
+          "means": "thermal voltage k_BT/e, 25.85 mV at 300 K (HL p. 103)"
+        }
       ]
     },
     {
@@ -731,37 +2225,161 @@
           "eq": "IC = e Dn np A/W",
           "tex": "I_\\mathrm{C} = eD_\\mathrm{n}\\Big|\\frac{\\partial n}{\\partial x}\\Big|A = \\frac{eD_\\mathrm{n}n_\\mathrm{p}}{W}A",
           "note": "diffusion across a thin base of width W",
-          "ref": "HL (6.1.1), p. 161"
+          "ref": "HL (6.1.1), p. 161",
+          "where": [
+            {
+              "tex": "I_\\mathrm{C}",
+              "means": "collector current [A] (HL (6.1.1), p. 161)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+            },
+            {
+              "tex": "D_\\mathrm{n}",
+              "means": "electron diffusion coefficient in the base [cm²/s] (HL p. 103)"
+            },
+            {
+              "tex": "n",
+              "means": "electron density in the base [cm⁻³] (HL p. 161)"
+            },
+            {
+              "tex": "x",
+              "means": "position, normal to the junction or along the sample [cm] (HL pp. 102, 128)"
+            },
+            {
+              "tex": "A",
+              "means": "cross-section of the transistor [cm²] (HL (6.1.1), p. 161)"
+            },
+            {
+              "tex": "n_\\mathrm{p}",
+              "means": "electron density at the base side of the base–emitter space-charge region, set by U_BE [cm⁻³] (HL p. 161)"
+            },
+            {
+              "tex": "W",
+              "means": "width of the neutral base [cm] (HL p. 161)"
+            }
+          ]
         },
         {
           "eq": "IC = IT = Is exp(UBE/UT)",
           "tex": "I_\\mathrm{C} = I_\\mathrm{T} = I_\\mathrm{s}\\exp\\frac{U_\\mathrm{BE}}{U_\\mathrm{T}}",
           "note": "the transfer current, active region",
-          "ref": "HL (6.1.2), p. 162"
+          "ref": "HL (6.1.2), p. 162",
+          "where": [
+            {
+              "tex": "I_\\mathrm{C}",
+              "means": "collector current [A] (HL (6.1.1), p. 161)"
+            },
+            {
+              "tex": "I_\\mathrm{T}",
+              "means": "transfer current, from emitter through base to collector [A] (HL p. 161)"
+            },
+            {
+              "tex": "I_\\mathrm{s}",
+              "means": "transfer saturation current of the transistor [A] (used in HL (6.1.2), p. 162, not defined there)"
+            },
+            {
+              "tex": "U_\\mathrm{BE}",
+              "means": "base–emitter voltage [V] (HL p. 161)"
+            },
+            {
+              "tex": "U_\\mathrm{T}",
+              "means": "thermal voltage k_BT/e, 25.85 mV at 300 K (HL p. 103)"
+            }
+          ]
         },
         {
           "eq": "B = IC/IB",
           "tex": "B = \\frac{I_\\mathrm{C}}{I_\\mathrm{B}}",
           "note": "the current gain",
-          "ref": "HL (6.1.3), p. 162"
+          "ref": "HL (6.1.3), p. 162",
+          "where": [
+            {
+              "tex": "B",
+              "means": "current gain I_C/I_B (HL (6.1.3), p. 162)"
+            },
+            {
+              "tex": "I_\\mathrm{C}",
+              "means": "collector current [A] (HL (6.1.1), p. 161)"
+            },
+            {
+              "tex": "I_\\mathrm{B}",
+              "means": "base current [A] (HL p. 162)"
+            }
+          ]
         },
         {
           "eq": "IC = Is (exp(UBE/UT) − exp(UBC/UT))",
           "tex": "I_\\mathrm{C} = I_\\mathrm{s}\\Big(\\exp\\frac{U_\\mathrm{BE}}{U_\\mathrm{T}} - \\exp\\frac{U_\\mathrm{BC}}{U_\\mathrm{T}}\\Big)",
           "note": "for small and medium currents",
-          "ref": "HL (6.1.4), p. 164"
+          "ref": "HL (6.1.4), p. 164",
+          "where": [
+            {
+              "tex": "I_\\mathrm{C}",
+              "means": "collector current [A] (HL (6.1.1), p. 161)"
+            },
+            {
+              "tex": "I_\\mathrm{s}",
+              "means": "transfer saturation current of the transistor [A] (used in HL (6.1.2), p. 162, not defined there)"
+            },
+            {
+              "tex": "U_\\mathrm{BE}",
+              "means": "base–emitter voltage [V] (HL p. 161)"
+            },
+            {
+              "tex": "U_\\mathrm{BC}",
+              "means": "base–collector voltage [V] (HL p. 164; p. 165 writes exp(U_CB/U_T) = 0 where exp(U_BC/U_T) ≈ 0 is meant)"
+            },
+            {
+              "tex": "U_\\mathrm{T}",
+              "means": "thermal voltage k_BT/e, 25.85 mV at 300 K (HL p. 103)"
+            }
+          ]
         },
         {
           "eq": "gm = ∂IC/∂UBE = IC/UT",
           "tex": "g_\\mathrm{m} = \\frac{\\partial I_\\mathrm{C}}{\\partial U_\\mathrm{BE}} = \\frac{I_\\mathrm{C}}{U_\\mathrm{T}}",
           "note": "the transconductance, from (6.1.2)",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "g_\\mathrm{m}",
+              "means": "transconductance (not defined in HL; Zimmermann's S, ST p. 7)"
+            },
+            {
+              "tex": "I_\\mathrm{C}",
+              "means": "collector current [A] (HL (6.1.1), p. 161)"
+            },
+            {
+              "tex": "U_\\mathrm{BE}",
+              "means": "base–emitter voltage [V] (HL p. 161)"
+            },
+            {
+              "tex": "U_\\mathrm{T}",
+              "means": "thermal voltage k_BT/e, 25.85 mV at 300 K (HL p. 103)"
+            }
+          ]
         },
         {
           "eq": "vu = −gm RC",
           "tex": "v_\\mathrm{u} = -g_\\mathrm{m}R_\\mathrm{C}",
           "note": "the common-emitter stage's small-signal gain",
-          "ref": "EB 2.1, solutions p. 12"
+          "ref": "EB 2.1, solutions p. 12",
+          "where": [
+            {
+              "tex": "v_\\mathrm{u}",
+              "means": "small-signal voltage gain u_a/u_e (EB 1.1 b, p. 3)"
+            },
+            {
+              "tex": "g_\\mathrm{m}",
+              "means": "transconductance I_C/U_T (not defined in EB)"
+            },
+            {
+              "tex": "R_\\mathrm{C}",
+              "means": "collector resistor [Ω] (EB 2.1)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -793,6 +2411,36 @@
           "solution": "gm = IC0/UT = 10 mA / 25 mV = 0.4 S; vu = −gm RC = −0.4 S × 200 Ω = −80.",
           "source": "Hobler (2009), exercise 2.1 b, p. 17; agrees with the course's worked solutions (Lösungswege, p. 12)"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "I_\\mathrm{C}",
+          "means": "collector current [A] (HL (6.1.1), p. 161)"
+        },
+        {
+          "tex": "I_\\mathrm{s}",
+          "means": "transfer saturation current of the transistor [A] (used in HL (6.1.2), p. 162, not defined there)"
+        },
+        {
+          "tex": "U_\\mathrm{BE}",
+          "means": "base–emitter voltage [V] (HL p. 161)"
+        },
+        {
+          "tex": "U_\\mathrm{BC}",
+          "means": "base–collector voltage, negative in the active region [V] (HL p. 164)"
+        },
+        {
+          "tex": "U_\\mathrm{T}",
+          "means": "thermal voltage k_BT/e, 25.85 mV at 300 K (HL p. 103)"
+        },
+        {
+          "tex": "B",
+          "means": "current gain I_C/I_B (HL (6.1.3), p. 162)"
+        },
+        {
+          "tex": "I_\\mathrm{B}",
+          "means": "base current [A] (HL p. 162)"
+        }
       ]
     },
     {
@@ -808,39 +2456,207 @@
           "tex": "\\Phi_\\mathrm{F} = \\frac{kT}{e}\\ln\\frac{N_\\mathrm{A}}{n_\\mathrm{i}}",
           "note": "the Fermi potential of the substrate; the script prints kBT/(q ln(NA/ni)), a misprint",
           "ref": "HL §6.2.2, p. 174",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\Phi_\\mathrm{F}",
+              "means": "Fermi potential of the substrate [V] (HL § 6.2.2, p. 174)"
+            },
+            {
+              "tex": "k",
+              "means": "Boltzmann constant [J/K] (not defined in the source; written k_B on HL p. 103)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature [K] (HL p. 79)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+            },
+            {
+              "tex": "N_\\mathrm{A}",
+              "means": "acceptor density of the p substrate [cm⁻³] (HL p. 174)"
+            },
+            {
+              "tex": "n_\\mathrm{i}",
+              "means": "intrinsic carrier density [cm⁻³] (HL p. 83; p. 174 prints Φ_F = k_BT/(q ln(N_A/n_i)), the logarithm wrongly in the denominator)"
+            }
+          ]
         },
         {
           "eq": "Ut = ΦMS − Qf/Cox − QB/Cox + 2ΦF",
           "tex": "U_\\mathrm{t} = \\Phi_\\mathrm{MS} - \\frac{Q_\\mathrm{f}}{C_\\mathrm{ox}} - \\frac{Q_\\mathrm{B}}{C_\\mathrm{ox}} + 2\\Phi_\\mathrm{F}",
           "note": "the threshold: work function, oxide charge, bulk charge, band bending",
           "ref": "HL §6.2.3, p. 183",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "U_\\mathrm{t}",
+              "means": "threshold voltage [V] (HL pp. 182–183)"
+            },
+            {
+              "tex": "\\Phi_\\mathrm{MS}",
+              "means": "work-function difference between gate and substrate [V] (HL (6.2.8), p. 174; p. 182)"
+            },
+            {
+              "tex": "Q_\\mathrm{f}",
+              "means": "fixed positive oxide charge per area, eN_f [C/cm²] (HL p. 183)"
+            },
+            {
+              "tex": "C_\\mathrm{ox}",
+              "means": "oxide capacitance per area ε_ox/d_ox [F/cm²] (HL p. 183)"
+            },
+            {
+              "tex": "Q_\\mathrm{B}",
+              "means": "substrate (bulk) charge per area, the fixed acceptors in the depletion region [C/cm²] (HL p. 178)"
+            },
+            {
+              "tex": "\\Phi_\\mathrm{F}",
+              "means": "Fermi potential of the substrate [V] (HL § 6.2.2, p. 174)"
+            }
+          ]
         },
         {
           "eq": "QB = −√(2 εSi e NA (2ΦF + USB)), Cox = εox/dox",
           "tex": "Q_\\mathrm{B} = -\\sqrt{2\\varepsilon_\\mathrm{Si}eN_\\mathrm{A}(2\\Phi_\\mathrm{F} + U_\\mathrm{SB})}, \\qquad C_\\mathrm{ox} = \\frac{\\varepsilon_\\mathrm{ox}}{d_\\mathrm{ox}}",
           "note": "the bulk charge, with the substrate voltage; negative, as p. 183 says (p. 184 prints its magnitude)",
           "ref": "HL §6.2.3, p. 184",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "Q_\\mathrm{B}",
+              "means": "substrate (bulk) charge per area, the fixed acceptors in the depletion region [C/cm²] (HL p. 178)"
+            },
+            {
+              "tex": "\\varepsilon_\\mathrm{Si}",
+              "means": "permittivity of silicon ≈ 10⁻¹² As/(V cm) (HL p. 184)"
+            },
+            {
+              "tex": "e",
+              "means": "elementary charge [C] (not defined in the source; written q on HL pp. 95–96)"
+            },
+            {
+              "tex": "N_\\mathrm{A}",
+              "means": "substrate doping [cm⁻³] (HL p. 184)"
+            },
+            {
+              "tex": "\\Phi_\\mathrm{F}",
+              "means": "Fermi potential of the substrate [V] (HL § 6.2.2, p. 174)"
+            },
+            {
+              "tex": "U_\\mathrm{SB}",
+              "means": "reverse voltage between source and substrate [V] (HL p. 183)"
+            },
+            {
+              "tex": "C_\\mathrm{ox}",
+              "means": "oxide capacitance per area ε_ox/d_ox [F/cm²] (HL p. 183)"
+            },
+            {
+              "tex": "\\varepsilon_\\mathrm{ox}",
+              "means": "permittivity of the oxide ≈ ε_Si/3 (HL p. 184)"
+            },
+            {
+              "tex": "d_\\mathrm{ox}",
+              "means": "oxide thickness [cm] (HL p. 183)"
+            }
+          ]
         },
         {
           "eq": "−QK = Cox (UGS − Ut)",
           "tex": "-Q_\\mathrm{K} = C_\\mathrm{ox}(U_\\mathrm{GS} - U_\\mathrm{t})",
           "note": "the channel charge",
-          "ref": "HL (6.2.15), p. 185"
+          "ref": "HL (6.2.15), p. 185",
+          "where": [
+            {
+              "tex": "Q_\\mathrm{K}",
+              "means": "channel charge per area, the mobile electrons [C/cm²] (HL p. 178)"
+            },
+            {
+              "tex": "C_\\mathrm{ox}",
+              "means": "oxide capacitance per area ε_ox/d_ox [F/cm²] (HL p. 183)"
+            },
+            {
+              "tex": "U_\\mathrm{GS}",
+              "means": "gate–source voltage [V] (HL p. 185)"
+            },
+            {
+              "tex": "U_\\mathrm{t}",
+              "means": "threshold voltage [V] (HL pp. 182–183)"
+            }
+          ]
         },
         {
           "eq": "ID = β((UGS − Ut)UDS − ½UDS²) for UDS ≤ UGS − Ut; ID = β/2 (UGS − Ut)² beyond",
           "tex": "I_\\mathrm{D} = \\beta\\Big((U_\\mathrm{GS} - U_\\mathrm{t})U_\\mathrm{DS} - \\tfrac{1}{2}U_\\mathrm{DS}^2\\Big) \\ \\text{for } U_\\mathrm{DS} \\le U_\\mathrm{GS} - U_\\mathrm{t}, \\qquad I_\\mathrm{D} = \\frac{\\beta}{2}(U_\\mathrm{GS} - U_\\mathrm{t})^2 \\ \\text{beyond}, \\qquad \\beta = \\frac{\\mu C_\\mathrm{ox}W}{L}",
           "note": "the output characteristics, β = µ Cox W/L",
-          "ref": "HL (6.2.19), (6.2.22), pp. 185, 187"
+          "ref": "HL (6.2.19), (6.2.22), pp. 185, 187",
+          "where": [
+            {
+              "tex": "I_\\mathrm{D}",
+              "means": "drain current [A] (HL (6.2.17), p. 185)"
+            },
+            {
+              "tex": "\\beta",
+              "means": "gain factor μC_ox W/L [A/V²] (HL p. 186)"
+            },
+            {
+              "tex": "U_\\mathrm{GS}",
+              "means": "gate–source voltage [V] (HL p. 185)"
+            },
+            {
+              "tex": "U_\\mathrm{t}",
+              "means": "threshold voltage [V] (HL pp. 182–183)"
+            },
+            {
+              "tex": "U_\\mathrm{DS}",
+              "means": "drain–source voltage [V] (HL p. 185)"
+            },
+            {
+              "tex": "\\mu",
+              "means": "electron mobility in the channel [cm²/(V s)] (HL p. 185)"
+            },
+            {
+              "tex": "C_\\mathrm{ox}",
+              "means": "oxide capacitance per area ε_ox/d_ox [F/cm²] (HL p. 183)"
+            },
+            {
+              "tex": "W",
+              "means": "channel width [cm] (HL p. 185)"
+            },
+            {
+              "tex": "L",
+              "means": "channel length [cm] (HL p. 185)"
+            }
+          ]
         },
         {
           "eq": "gm = β|UGS − Ut| = √(2β|ID|)",
           "tex": "g_\\mathrm{m} = \\beta\\,|U_\\mathrm{GS} - U_\\mathrm{t}| = \\sqrt{2\\beta|I_\\mathrm{D}|}",
           "note": "the transconductance in the current-source region",
-          "ref": "HL §6.2.3, p. 188"
+          "ref": "HL §6.2.3, p. 188",
+          "where": [
+            {
+              "tex": "g_\\mathrm{m}",
+              "means": "transconductance ∂I_D/∂U_GS (HL p. 188)"
+            },
+            {
+              "tex": "\\beta",
+              "means": "gain factor μC_ox W/L [A/V²] (HL p. 186)"
+            },
+            {
+              "tex": "U_\\mathrm{GS}",
+              "means": "gate–source voltage [V] (HL p. 185)"
+            },
+            {
+              "tex": "U_\\mathrm{t}",
+              "means": "threshold voltage [V] (HL pp. 182–183)"
+            },
+            {
+              "tex": "I_\\mathrm{D}",
+              "means": "drain current [A] (HL (6.2.17), p. 185)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -873,6 +2689,28 @@
           "solution": "UGS = 0, so ID = β/2 (0 − Ut)² = 1 mA/V² × 9 V² = 9 mA. The edge is UDS = UGS − Ut = 3 V, so RD = (12 V − 3 V)/9 mA = 1 kΩ.",
           "source": "Worked by hand from Hobler (2009), exercise 3.3 a, p. 48; agrees with the collection's solutions, p. 56 (1 kΩ)"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "I_\\mathrm{D}",
+          "means": "drain current [A] (HL (6.2.17), p. 185)"
+        },
+        {
+          "tex": "\\beta",
+          "means": "gain factor μC_ox W/L [A/V²] (HL p. 186)"
+        },
+        {
+          "tex": "U_\\mathrm{GS}",
+          "means": "gate–source voltage [V] (HL p. 185)"
+        },
+        {
+          "tex": "U_\\mathrm{t}",
+          "means": "threshold voltage [V] (HL pp. 182–183)"
+        },
+        {
+          "tex": "U_\\mathrm{DS}",
+          "means": "drain–source voltage [V] (HL p. 185)"
+        }
       ]
     },
     {
@@ -887,26 +2725,106 @@
           "eq": "A = ua/ue ≈ −S (RC ∥ rCE) ≈ −S RC",
           "tex": "A = \\frac{u_\\mathrm{a}}{u_\\mathrm{e}} \\approx -S(R_\\mathrm{C} \\parallel r_\\mathrm{CE}) \\approx -SR_\\mathrm{C}",
           "note": "without emitter resistor",
-          "ref": "ST (1.1), p. 1"
+          "ref": "ST (1.1), p. 1",
+          "where": [
+            {
+              "tex": "A",
+              "means": "small-signal voltage gain with the output open, i_a = 0 (ST (1.1), p. 1)"
+            },
+            {
+              "tex": "u_\\mathrm{a},\\ u_\\mathrm{e}",
+              "means": "small-signal output and input voltages (ST Bild 1.1, p. 1)"
+            },
+            {
+              "tex": "S",
+              "means": "transconductance (Steilheit) I_C/U_T [A/V] (ST p. 6; p. 7 below (1.19))"
+            },
+            {
+              "tex": "R_\\mathrm{C}",
+              "means": "collector resistor [Ω] (ST Bild 1.1, p. 1)"
+            },
+            {
+              "tex": "r_\\mathrm{CE}",
+              "means": "output resistance of the transistor [Ω] (ST Bild 1.2, p. 1)"
+            }
+          ]
         },
         {
           "eq": "A = −S RC/(1 + S RE) ≈ −RC/RE for S RE ≫ 1",
           "tex": "A = -\\frac{SR_\\mathrm{C}}{1 + SR_\\mathrm{E}} \\approx -\\frac{R_\\mathrm{C}}{R_\\mathrm{E}} \\quad \\text{for } SR_\\mathrm{E} \\gg 1",
           "note": "with current feedback",
-          "ref": "ST (1.4), p. 2"
+          "ref": "ST (1.4), p. 2",
+          "where": [
+            {
+              "tex": "A",
+              "means": "small-signal voltage gain (ST (1.4), p. 2)"
+            },
+            {
+              "tex": "S",
+              "means": "transconductance (Steilheit) I_C/U_T [A/V] (ST p. 6; p. 7 below (1.19))"
+            },
+            {
+              "tex": "R_\\mathrm{C}",
+              "means": "collector resistor [Ω] (ST Bild 1.1, p. 1)"
+            },
+            {
+              "tex": "R_\\mathrm{E}",
+              "means": "emitter resistor, the current feedback [Ω] (ST Bild 1.3, p. 2)"
+            }
+          ]
         },
         {
           "eq": "S = IC/UT",
           "tex": "S = \\frac{I_\\mathrm{C}}{U_\\mathrm{T}}",
           "note": "the transconductance",
-          "ref": "ST p. 7, below (1.19)"
+          "ref": "ST p. 7, below (1.19)",
+          "where": [
+            {
+              "tex": "S",
+              "means": "transconductance (Steilheit) I_C/U_T [A/V] (ST p. 6; p. 7 below (1.19))"
+            },
+            {
+              "tex": "I_\\mathrm{C}",
+              "means": "quiescent collector current [A] (ST p. 7)"
+            },
+            {
+              "tex": "U_\\mathrm{T}",
+              "means": "thermal voltage, 25.85 mV at 300 K (HL p. 103)"
+            }
+          ]
         },
         {
           "eq": "ue = UT ln(IC/Is) + IC RE, ua = U0 − IC RC",
           "tex": "u_\\mathrm{e} = U_\\mathrm{T}\\ln\\frac{I_\\mathrm{C}}{I_\\mathrm{s}} + I_\\mathrm{C}R_\\mathrm{E}, \\qquad u_\\mathrm{a} = U_0 - I_\\mathrm{C}R_\\mathrm{C}",
           "note": "the large-signal transfer, from HL (6.1.2)",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "u_\\mathrm{e},\\ u_\\mathrm{a}",
+              "means": "input and output voltages, here the large-signal values (ST Bild 1.3, p. 2)"
+            },
+            {
+              "tex": "U_\\mathrm{T}",
+              "means": "thermal voltage (HL p. 103)"
+            },
+            {
+              "tex": "I_\\mathrm{C}",
+              "means": "collector current [A] (HL (6.1.2), p. 162)"
+            },
+            {
+              "tex": "I_\\mathrm{s}",
+              "means": "transfer saturation current (used in HL (6.1.2), p. 162, not defined there)"
+            },
+            {
+              "tex": "R_\\mathrm{E}",
+              "means": "emitter resistor, the current feedback [Ω] (ST Bild 1.3, p. 2)"
+            },
+            {
+              "tex": "U_0",
+              "means": "supply voltage (the lab's name; ST Bild 1.1 calls it U_b)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -925,6 +2843,32 @@
           "solution": "S = IC/UT = 40 mS, S RE = 40, so A = −S RC/(1 + S RE) = −200/41 = −4.88; the approximation −RC/RE gives −5.",
           "source": "Worked by hand from Zimmermann (2010), (1.4)"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "A",
+          "means": "small-signal voltage gain u_a/u_e (ST (1.1), p. 1)"
+        },
+        {
+          "tex": "S",
+          "means": "transconductance (Steilheit) I_C/U_T [A/V] (ST p. 6; p. 7 below (1.19))"
+        },
+        {
+          "tex": "R_\\mathrm{C}",
+          "means": "collector resistor [Ω] (ST Bild 1.1, p. 1)"
+        },
+        {
+          "tex": "R_\\mathrm{E}",
+          "means": "emitter resistor, the current feedback [Ω] (ST Bild 1.3, p. 2)"
+        },
+        {
+          "tex": "I_\\mathrm{C}",
+          "means": "quiescent collector current [A] (ST p. 7)"
+        },
+        {
+          "tex": "U_\\mathrm{T}",
+          "means": "thermal voltage, 25.85 mV at 300 K (HL p. 103)"
+        }
       ]
     },
     {
@@ -939,25 +2883,109 @@
           "eq": "ra = UA/Ia",
           "tex": "r_\\mathrm{a} = \\frac{U_\\mathrm{A}}{I_\\mathrm{a}}",
           "note": "the plain transistor, by its Early voltage",
-          "ref": "ST (1.13), p. 5"
+          "ref": "ST (1.13), p. 5",
+          "where": [
+            {
+              "tex": "r_\\mathrm{a}",
+              "means": "output resistance of the current source [Ω] (ST p. 5)"
+            },
+            {
+              "tex": "U_\\mathrm{A}",
+              "means": "Early voltage [V] (ST Bild 1.11, p. 5)"
+            },
+            {
+              "tex": "I_\\mathrm{a}",
+              "means": "output current of the source [A] (ST p. 6)"
+            }
+          ]
         },
         {
           "eq": "ra ≈ rCE (1 + S RE) for RE ≪ rBE; β rCE for RE ≫ rBE",
           "tex": "r_\\mathrm{a} \\approx \\begin{cases} r_\\mathrm{CE}(1 + SR_\\mathrm{E}) & \\text{for } R_\\mathrm{E} \\ll r_\\mathrm{BE} \\\\ \\beta r_\\mathrm{CE} & \\text{for } R_\\mathrm{E} \\gg r_\\mathrm{BE} \\end{cases}",
           "note": "with emitter feedback",
-          "ref": "ST (1.19), p. 7"
+          "ref": "ST (1.19), p. 7",
+          "where": [
+            {
+              "tex": "r_\\mathrm{a}",
+              "means": "output resistance of the current source [Ω] (ST p. 5)"
+            },
+            {
+              "tex": "r_\\mathrm{CE}",
+              "means": "output resistance of the transistor [Ω] (ST Bild 1.2, p. 1)"
+            },
+            {
+              "tex": "S",
+              "means": "transconductance (Steilheit) I_C/U_T [A/V] (ST p. 6; p. 7 below (1.19))"
+            },
+            {
+              "tex": "R_\\mathrm{E}",
+              "means": "emitter resistor, the current feedback [Ω] (ST Bild 1.3, p. 2)"
+            },
+            {
+              "tex": "r_\\mathrm{BE}",
+              "means": "small-signal input resistance of the transistor [Ω] (ST Bild 1.2, p. 1; (1.18), p. 7)"
+            },
+            {
+              "tex": "\\beta",
+              "means": "small-signal current gain (ST p. 6)"
+            }
+          ]
         },
         {
           "eq": "rBE = β/S = β UT/Ia",
           "tex": "r_\\mathrm{BE} = \\frac{\\beta}{S} = \\frac{\\beta U_\\mathrm{T}}{I_\\mathrm{a}}",
           "note": "the base–emitter resistance",
-          "ref": "ST (1.18), p. 7; S = Ia/UT below (1.19)"
+          "ref": "ST (1.18), p. 7; S = Ia/UT below (1.19)",
+          "where": [
+            {
+              "tex": "r_\\mathrm{BE}",
+              "means": "small-signal input resistance of the transistor [Ω] (ST Bild 1.2, p. 1; (1.18), p. 7)"
+            },
+            {
+              "tex": "\\beta",
+              "means": "small-signal current gain (ST p. 6)"
+            },
+            {
+              "tex": "S",
+              "means": "transconductance (Steilheit) I_C/U_T [A/V] (ST p. 6; p. 7 below (1.19))"
+            },
+            {
+              "tex": "U_\\mathrm{T}",
+              "means": "thermal voltage (HL p. 103)"
+            },
+            {
+              "tex": "I_\\mathrm{a}",
+              "means": "output current of the source [A] (ST p. 6)"
+            }
+          ]
         },
         {
           "eq": "ra = rCE (1 + β RE/(RE + rBE))",
           "tex": "r_\\mathrm{a} = r_\\mathrm{CE}\\Big(1 + \\frac{\\beta R_\\mathrm{E}}{R_\\mathrm{E} + r_\\mathrm{BE}}\\Big)",
           "note": "the small-signal circuit solved; its two limits are (1.19)",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "r_\\mathrm{a}",
+              "means": "output resistance of the current source [Ω] (ST p. 5)"
+            },
+            {
+              "tex": "r_\\mathrm{CE}",
+              "means": "output resistance of the transistor [Ω] (ST Bild 1.2, p. 1)"
+            },
+            {
+              "tex": "\\beta",
+              "means": "small-signal current gain (ST p. 6)"
+            },
+            {
+              "tex": "R_\\mathrm{E}",
+              "means": "emitter resistor, the current feedback [Ω] (ST Bild 1.3, p. 2)"
+            },
+            {
+              "tex": "r_\\mathrm{BE}",
+              "means": "small-signal input resistance of the transistor [Ω] (ST Bild 1.2, p. 1; (1.18), p. 7)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -977,6 +3005,36 @@
           "solution": "rCE = UA/Ia = 100 kΩ, rBE = β UT/Ia = 2.5 kΩ; ra = rCE (1 + β RE/(RE + rBE)) = 100 kΩ × (1 + 100 × 0.976) = 9.86 MΩ, close to the limit β rCE = 10 MΩ of (1.19).",
           "source": "Worked by hand from Zimmermann (2010), (1.13) and (1.19)"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "r_\\mathrm{a}",
+          "means": "output resistance of the current source [Ω] (ST p. 5)"
+        },
+        {
+          "tex": "r_\\mathrm{CE}",
+          "means": "output resistance of the transistor [Ω] (ST Bild 1.2, p. 1)"
+        },
+        {
+          "tex": "\\beta",
+          "means": "small-signal current gain (ST p. 6)"
+        },
+        {
+          "tex": "R_\\mathrm{E}",
+          "means": "emitter resistor, the current feedback [Ω] (ST Bild 1.3, p. 2)"
+        },
+        {
+          "tex": "r_\\mathrm{BE}",
+          "means": "small-signal input resistance of the transistor [Ω] (ST Bild 1.2, p. 1; (1.18), p. 7)"
+        },
+        {
+          "tex": "U_\\mathrm{A}",
+          "means": "Early voltage [V] (ST Bild 1.11, p. 5)"
+        },
+        {
+          "tex": "I_\\mathrm{a}",
+          "means": "output current of the source [A] (ST p. 6)"
+        }
       ]
     },
     {
@@ -991,44 +3049,170 @@
           "eq": "η = PL/PB = 1/16 = 6.25 %",
           "tex": "\\eta = \\frac{P_\\mathrm{L}}{P_\\mathrm{B}} = \\frac{1}{16} = 6.25\\,\\%",
           "note": "class A emitter follower, RL = RE, swing to −UB/2",
-          "ref": "ST (2.16), p. 22"
+          "ref": "ST (2.16), p. 22",
+          "where": [
+            {
+              "tex": "\\eta",
+              "means": "efficiency P_L/P_B (ST p. 22)"
+            },
+            {
+              "tex": "P_\\mathrm{L}",
+              "means": "power delivered to the load [W] (ST p. 22)"
+            },
+            {
+              "tex": "P_\\mathrm{B}",
+              "means": "power drawn from the supply [W] (ST (2.15), p. 22)"
+            }
+          ]
         },
         {
           "eq": "PL = Ûa²/(2 RL)",
           "tex": "P_\\mathrm{L} = \\frac{\\hat{U}_\\mathrm{a}^2}{2R_\\mathrm{L}}",
           "note": "load power of a sine",
-          "ref": "ST (2.17), p. 23"
+          "ref": "ST (2.17), p. 23",
+          "where": [
+            {
+              "tex": "P_\\mathrm{L}",
+              "means": "power delivered to the load [W] (ST (2.17), p. 23)"
+            },
+            {
+              "tex": "\\hat{U}_\\mathrm{a}",
+              "means": "amplitude of the output sine [V] (ST p. 23)"
+            },
+            {
+              "tex": "R_\\mathrm{L}",
+              "means": "load resistor [Ω] (ST p. 23)"
+            }
+          ]
         },
         {
           "eq": "PB = 2 UB Ûa/(π RL)",
           "tex": "P_\\mathrm{B} = \\frac{2U_\\mathrm{B}\\hat{U}_\\mathrm{a}}{\\pi R_\\mathrm{L}}",
           "note": "drawn from both supplies",
-          "ref": "ST (2.18), p. 23"
+          "ref": "ST (2.18), p. 23",
+          "where": [
+            {
+              "tex": "P_\\mathrm{B}",
+              "means": "power drawn from the supplies [W] (ST (2.18), p. 23)"
+            },
+            {
+              "tex": "U_\\mathrm{B}",
+              "means": "supply voltages ±U_B [V] (ST p. 23)"
+            },
+            {
+              "tex": "\\hat{U}_\\mathrm{a}",
+              "means": "amplitude of the output sine [V] (ST p. 23)"
+            },
+            {
+              "tex": "R_\\mathrm{L}",
+              "means": "load resistor [Ω] (ST p. 23)"
+            }
+          ]
         },
         {
           "eq": "η = PL/PB = (π/4) Ûa/UB, at most 78.5 %",
           "tex": "\\eta = \\frac{P_\\mathrm{L}}{P_\\mathrm{B}} = \\frac{\\pi}{4}\\frac{\\hat{U}_\\mathrm{a}}{U_\\mathrm{B}}, \\qquad \\eta_\\mathrm{max} = 78.5\\,\\%",
           "note": "class B efficiency",
-          "ref": "ST (2.19), (2.20), p. 24"
+          "ref": "ST (2.19), (2.20), p. 24",
+          "where": [
+            {
+              "tex": "\\eta",
+              "means": "efficiency P_L/P_B (ST p. 22)"
+            },
+            {
+              "tex": "P_\\mathrm{L}",
+              "means": "power delivered to the load [W] (ST (2.17), p. 23)"
+            },
+            {
+              "tex": "P_\\mathrm{B}",
+              "means": "power drawn from the supplies [W] (ST (2.18), p. 23)"
+            },
+            {
+              "tex": "\\hat{U}_\\mathrm{a}",
+              "means": "amplitude of the output sine [V] (ST p. 23)"
+            },
+            {
+              "tex": "U_\\mathrm{B}",
+              "means": "supply voltages ±U_B [V] (ST p. 23)"
+            },
+            {
+              "tex": "\\eta_\\mathrm{max}",
+              "means": "efficiency at full swing Û_a = U_B (ST (2.20), p. 24)"
+            }
+          ]
         },
         {
           "eq": "PT,max at Ûa = 2UB/π = 0.637 UB; PT,max = 0.32 PB,max",
           "tex": "P_\\mathrm{T,max} \\ \\text{at} \\ \\hat{U}_\\mathrm{a} = \\frac{2}{\\pi}U_\\mathrm{B} = 0.637\\,U_\\mathrm{B}, \\qquad P_\\mathrm{T,max} = 0.32\\,P_\\mathrm{B,max}",
           "note": "both transistors; the worst case for the heat sink",
-          "ref": "ST (2.22), (2.23), p. 24"
+          "ref": "ST (2.22), (2.23), p. 24",
+          "where": [
+            {
+              "tex": "P_\\mathrm{T,max}",
+              "means": "largest loss in the two transistors together (ST (2.23), p. 24)"
+            },
+            {
+              "tex": "\\hat{U}_\\mathrm{a}",
+              "means": "amplitude of the output sine [V] (ST p. 23)"
+            },
+            {
+              "tex": "U_\\mathrm{B}",
+              "means": "supply voltages ±U_B [V] (ST p. 23)"
+            },
+            {
+              "tex": "P_\\mathrm{B,max}",
+              "means": "supply power at full swing (ST (2.20), p. 24)"
+            }
+          ]
         },
         {
           "eq": "PT = UB²/(π² RL) ≈ 0.1 UB²/RL",
           "tex": "P_\\mathrm{T} = \\frac{U_\\mathrm{B}^2}{\\pi^2R_\\mathrm{L}} \\approx 0.1\\,\\frac{U_\\mathrm{B}^2}{R_\\mathrm{L}}",
           "note": "per transistor, at its worst amplitude",
-          "ref": "ST (2.24), p. 24; Rechenbeispiele B1/3"
+          "ref": "ST (2.24), p. 24; Rechenbeispiele B1/3",
+          "where": [
+            {
+              "tex": "P_\\mathrm{T}",
+              "means": "loss in one transistor at its worst amplitude [W] (ST (2.24), p. 24, which gives only 0.1 U_B²/R_L; the 1/π² form is RB B1/3)"
+            },
+            {
+              "tex": "U_\\mathrm{B}",
+              "means": "supply voltages ±U_B [V] (ST p. 23)"
+            },
+            {
+              "tex": "R_\\mathrm{L}",
+              "means": "load resistor [Ω] (ST p. 23)"
+            }
+          ]
         },
         {
           "eq": "Is (e^((ue + Ub/2 − ua)/UT) − e^((ua − ue + Ub/2)/UT)) = ua/RL",
           "tex": "I_s\\left(\\mathrm{e}^{(u_e + U_b/2 - u_a)/U_T} - \\mathrm{e}^{(u_a - u_e + U_b/2)/U_T}\\right) = \\frac{u_a}{R_L}",
           "note": "the transfer curve: the npn's current less the pnp's flows into RL; Ub = 0 is class B",
           "ref": "HL (6.1.2); ST p. 25",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "I_s",
+              "means": "transfer saturation current of each transistor (used in HL (6.1.2), p. 162, not defined there)"
+            },
+            {
+              "tex": "u_e,\\ u_a",
+              "means": "input voltage and output voltage at the load (ST Bild 2.5, p. 23)"
+            },
+            {
+              "tex": "U_b",
+              "means": "bias voltage between the two bases; 0 is class B (ST p. 25 calls it U_AB)"
+            },
+            {
+              "tex": "U_T",
+              "means": "thermal voltage (HL p. 103)"
+            },
+            {
+              "tex": "R_L",
+              "means": "load resistor [Ω] (ST p. 23)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1058,6 +3242,32 @@
           "solution": "The loss peaks at Ûa = 2UB/π; there PvT,max = UB²/(π² RL) = 484/(9.87 × 8) W = 6.13 W, about 6 W per transistor.",
           "source": "Schneider & Zimmermann (2005), example 1, B1/3; agrees with its worked solution (about 6 W)"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "P_\\mathrm{L}",
+          "means": "power delivered to the load [W] (ST (2.17), p. 23)"
+        },
+        {
+          "tex": "\\hat{U}_\\mathrm{a}",
+          "means": "amplitude of the output sine [V] (ST p. 23)"
+        },
+        {
+          "tex": "R_\\mathrm{L}",
+          "means": "load resistor [Ω] (ST p. 23)"
+        },
+        {
+          "tex": "P_\\mathrm{B}",
+          "means": "power drawn from the supplies [W] (ST (2.18), p. 23)"
+        },
+        {
+          "tex": "U_\\mathrm{B}",
+          "means": "supply voltages ±U_B [V] (ST p. 23)"
+        },
+        {
+          "tex": "\\eta",
+          "means": "efficiency P_L/P_B (ST p. 22)"
+        }
       ]
     },
     {
@@ -1072,45 +3282,167 @@
           "eq": "vg(ω) = vg0/(1 + jω/ωg)",
           "tex": "v_\\mathrm{g}(\\omega) = \\frac{v_\\mathrm{g0}}{1 + \\mathrm{j}\\omega/\\omega_\\mathrm{g}}",
           "note": "one pole; the lab adds a second",
-          "ref": "ST (4.1), p. 69"
+          "ref": "ST (4.1), p. 69",
+          "where": [
+            {
+              "tex": "v_\\mathrm{g}(\\omega)",
+              "means": "open-loop gain of the op amp, one pole, complex (ST (4.1), p. 69)"
+            },
+            {
+              "tex": "v_\\mathrm{g0}",
+              "means": "its DC value v_g(0) (ST p. 69)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (ST p. 69)"
+            },
+            {
+              "tex": "\\omega_\\mathrm{g}",
+              "means": "its corner (−3 dB) angular frequency [1/s] (ST p. 69; written ω_G from (4.7) on)"
+            }
+          ]
         },
         {
           "eq": "vr = vg/(1 + β vg)",
           "tex": "v_\\mathrm{r} = \\frac{v_\\mathrm{g}}{1 + \\beta v_\\mathrm{g}}",
           "note": "the closed loop gain",
-          "ref": "ST (4.4), p. 70"
+          "ref": "ST (4.4), p. 70",
+          "where": [
+            {
+              "tex": "v_\\mathrm{r}",
+              "means": "closed-loop gain s_a/s_e (ST (4.4), p. 70)"
+            },
+            {
+              "tex": "v_\\mathrm{g}",
+              "means": "open-loop gain of the op amp, complex (ST (4.1), p. 69)"
+            },
+            {
+              "tex": "\\beta",
+              "means": "feedback factor (ST Bild 4.2, p. 70)"
+            }
+          ]
         },
         {
           "eq": "vs = β vg",
           "tex": "v_\\mathrm{s} = \\beta v_\\mathrm{g}",
           "note": "the loop gain",
-          "ref": "ST (4.6), p. 71"
+          "ref": "ST (4.6), p. 71",
+          "where": [
+            {
+              "tex": "v_\\mathrm{s}",
+              "means": "loop gain β v_g (ST (4.6), p. 71)"
+            },
+            {
+              "tex": "\\beta",
+              "means": "feedback factor (ST Bild 4.2, p. 70)"
+            },
+            {
+              "tex": "v_\\mathrm{g}",
+              "means": "open-loop gain of the op amp, complex (ST (4.1), p. 69)"
+            }
+          ]
         },
         {
           "eq": "vr0 ωr = vg0 ωg",
           "tex": "v_\\mathrm{r0}\\,\\omega_\\mathrm{r} = v_\\mathrm{g0}\\,\\omega_\\mathrm{G}",
           "note": "the gain-bandwidth product is kept",
-          "ref": "ST (4.11), p. 72"
+          "ref": "ST (4.11), p. 72",
+          "where": [
+            {
+              "tex": "v_\\mathrm{r0}",
+              "means": "closed-loop gain at ω = 0 (ST p. 72)"
+            },
+            {
+              "tex": "\\omega_\\mathrm{r}",
+              "means": "closed-loop bandwidth [1/s] (ST p. 71)"
+            },
+            {
+              "tex": "v_\\mathrm{g0}",
+              "means": "its DC value v_g(0) (ST p. 69)"
+            },
+            {
+              "tex": "\\omega_\\mathrm{G}",
+              "means": "corner angular frequency of the open-loop gain [1/s] (ST (4.7), p. 71)"
+            }
+          ]
         },
         {
           "eq": "phase margin ≥ 45°",
           "tex": "\\text{phase margin} \\ge 45^\\circ",
           "note": "for a usable amplifier",
-          "ref": "ST §4.1, p. 76"
+          "ref": "ST §4.1, p. 76",
+          "where": [
+            {
+              "tex": "\\text{phase margin}",
+              "means": "180° plus the phase of the loop gain where |v_s| = 1 (ST p. 76)"
+            }
+          ]
         },
         {
           "eq": "vs = β vg0/((1 + jω/ω1)(1 + jω/ω2))",
           "tex": "v_\\mathrm{s} = \\frac{\\beta v_\\mathrm{g0}}{(1 + \\mathrm{j}\\omega/\\omega_1)(1 + \\mathrm{j}\\omega/\\omega_2)}",
           "note": "the lab's loop, two poles; its step solved in closed form, checked against a simulation",
           "ref": "Rechenbeispiele B6/4, p. 4",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "v_\\mathrm{s}",
+              "means": "loop gain β v_g (ST (4.6), p. 71)"
+            },
+            {
+              "tex": "\\beta",
+              "means": "feedback factor (ST Bild 4.2, p. 70)"
+            },
+            {
+              "tex": "v_\\mathrm{g0}",
+              "means": "its DC value v_g(0) (ST p. 69)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (ST p. 69)"
+            },
+            {
+              "tex": "\\omega_1,\\ \\omega_2",
+              "means": "the loop's two corner frequencies [1/s] (not defined in the source; RB example 6 calls both ω_g)"
+            }
+          ]
         },
         {
           "eq": "vr = vg0 / (s²/(ω1ω2) + s(1/ω1 + 1/ω2) + 1 + β vg0)",
           "tex": "v_r = \\frac{v_{g0}}{\\frac{s^2}{\\omega_1\\omega_2} + s\\left(\\frac{1}{\\omega_1} + \\frac{1}{\\omega_2}\\right) + 1 + \\beta v_{g0}}",
           "note": "the closed loop (4.4) with two poles: the second-order system whose step response is plotted",
           "ref": "ST (4.4), p. 70, with two poles",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "v_r",
+              "means": "closed-loop gain (ST (4.4), p. 70)"
+            },
+            {
+              "tex": "v_{g0}",
+              "means": "DC open-loop gain (ST p. 69)"
+            },
+            {
+              "tex": "s",
+              "means": "complex frequency jω (not defined in the source)"
+            },
+            {
+              "tex": "\\omega_1,\\ \\omega_2",
+              "means": "the two corner frequencies [1/s] (not defined in the source)"
+            },
+            {
+              "tex": "\\beta",
+              "means": "feedback factor (ST Bild 4.2, p. 70)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1144,6 +3476,24 @@
           "solution": "arg vs = −arctan(105) − arctan(9.5) ≈ −174°, so the margin is about 6°: the circuit rings strongly before it settles.",
           "source": "Schneider & Zimmermann (2005), example 6 c, B6/4; agrees with its worked solution (about 6°)"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "v_\\mathrm{r}",
+          "means": "closed-loop gain s_a/s_e (ST (4.4), p. 70)"
+        },
+        {
+          "tex": "v_\\mathrm{g}",
+          "means": "open-loop gain of the op amp, complex (ST (4.1), p. 69)"
+        },
+        {
+          "tex": "\\beta",
+          "means": "feedback factor (ST Bild 4.2, p. 70)"
+        },
+        {
+          "tex": "\\text{margin}",
+          "means": "phase margin: 180° plus the phase of the loop gain where |v_s| = 1 (ST p. 76)"
+        }
       ]
     },
     {
@@ -1159,32 +3509,134 @@
           "tex": "\\mathrm{SR} = \\frac{\\mathrm{d}U_\\mathrm{a}}{\\mathrm{d}t}\\Big|_\\mathrm{max} = \\frac{I_\\mathrm{1max}}{C_\\mathrm{k}} = \\frac{2I_0}{C_\\mathrm{k}} = \\frac{20\\,\\mu\\mathrm{A}}{30\\,\\mathrm{pF}} = 0.6\\,\\mathrm{V}/\\mu\\mathrm{s}",
           "note": "the compensation capacitor charged by the input stage's current; 0.6 V/µs for the 741",
           "ref": "ST §4.4, p. 85",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\mathrm{SR}",
+              "means": "slew rate, the steepest slope the output can follow [V/µs] (ST p. 85)"
+            },
+            {
+              "tex": "U_\\mathrm{a}",
+              "means": "output voltage [V] (ST p. 85)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (HL p. 103)"
+            },
+            {
+              "tex": "I_\\mathrm{1max}",
+              "means": "largest output current of the input stage, ±2I₀ [A] (ST p. 85)"
+            },
+            {
+              "tex": "C_\\mathrm{k}",
+              "means": "compensation capacitor, 30 pF in the 741 (ST p. 85)"
+            },
+            {
+              "tex": "I_0",
+              "means": "half the input stage's tail current, 2I₀ = 20 µA (ST Bild 4.17, p. 85; 20 µA/30 pF is 0.67 V/µs, printed as 0.6)"
+            }
+          ]
         },
         {
           "eq": "dua/dt max = Ûa ω, at the zero crossing",
           "tex": "\\frac{\\mathrm{d}u_\\mathrm{a}}{\\mathrm{d}t}\\Big|_\\mathrm{max} = \\hat{U}_\\mathrm{a}\\,\\omega \\quad \\text{at the zero crossing}",
           "note": "a sine's steepest slope",
-          "ref": "ST §4.4, p. 86"
+          "ref": "ST §4.4, p. 86",
+          "where": [
+            {
+              "tex": "u_\\mathrm{a}",
+              "means": "output voltage, a sine Û_a sin ωt [V] (ST p. 85)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (HL p. 103)"
+            },
+            {
+              "tex": "\\hat{U}_\\mathrm{a}",
+              "means": "amplitude of the output sine [V] (ST p. 85)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (ST p. 86)"
+            }
+          ]
         },
         {
           "eq": "fp = SR/(2π Ûa)",
           "tex": "f_\\mathrm{p} = \\frac{\\mathrm{SR}}{2\\pi\\hat{U}_\\mathrm{a}}",
           "note": "the power bandwidth",
-          "ref": "ST §4.4, p. 86"
+          "ref": "ST §4.4, p. 86",
+          "where": [
+            {
+              "tex": "f_\\mathrm{p}",
+              "means": "power bandwidth: full output swing up to this frequency [Hz] (ST p. 86)"
+            },
+            {
+              "tex": "\\mathrm{SR}",
+              "means": "slew rate, the steepest slope the output can follow [V/µs] (ST p. 85)"
+            },
+            {
+              "tex": "\\hat{U}_\\mathrm{a}",
+              "means": "output amplitude [V] (ST p. 86)"
+            }
+          ]
         },
         {
           "eq": "Ûa,max = SR/(2π f) for f > fp",
           "tex": "\\hat{U}_\\mathrm{a,max} = \\frac{\\mathrm{SR}}{2\\pi f} \\quad \\text{for } f > f_\\mathrm{p}",
           "note": "the largest clean amplitude",
-          "ref": "ST §4.4, p. 86"
+          "ref": "ST §4.4, p. 86",
+          "where": [
+            {
+              "tex": "\\hat{U}_\\mathrm{a,max}",
+              "means": "largest undistorted amplitude [V] (ST p. 86)"
+            },
+            {
+              "tex": "\\mathrm{SR}",
+              "means": "slew rate, the steepest slope the output can follow [V/µs] (ST p. 85)"
+            },
+            {
+              "tex": "f",
+              "means": "signal frequency [Hz] (ST p. 86)"
+            },
+            {
+              "tex": "f_\\mathrm{p}",
+              "means": "power bandwidth [Hz] (ST p. 86)"
+            }
+          ]
         },
         {
           "eq": "dua/dt = clip(2π fT (ue − ua), ±SR)",
           "tex": "\\frac{\\mathrm{d}u_a}{\\mathrm{d}t} = \\operatorname{clip}\\left(2\\pi f_T\\,(u_e - u_a),\\ \\pm\\mathrm{SR}\\right)",
           "note": "the lab's follower: its loop of bandwidth fT, its rate limited to SR",
           "ref": "ST §4.4, p. 85",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "u_a",
+              "means": "output voltage [V] (ST p. 85)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (HL p. 103)"
+            },
+            {
+              "tex": "f_T",
+              "means": "small-signal bandwidth, 1 MHz for the 741 (ST p. 86)"
+            },
+            {
+              "tex": "u_e",
+              "means": "input voltage of the follower (not defined in the source)"
+            },
+            {
+              "tex": "\\mathrm{SR}",
+              "means": "slew rate, the steepest slope the output can follow [V/µs] (ST p. 85)"
+            },
+            {
+              "tex": "\\operatorname{clip}",
+              "means": "limits its argument to ±SR (not defined in the source)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1228,31 +3680,129 @@
           "eq": "v² = 4 kB T R Δf",
           "tex": "\\overline{v^2} = 4k_\\mathrm{B}TR\\,\\Delta f",
           "note": "open-circuit thermal noise of a resistor",
-          "ref": "ST (6.1), p. 128"
+          "ref": "ST (6.1), p. 128",
+          "where": [
+            {
+              "tex": "\\overline{v^2}",
+              "means": "mean square open-circuit noise voltage [V²] (ST (6.1), p. 128)"
+            },
+            {
+              "tex": "k_\\mathrm{B}",
+              "means": "Boltzmann constant 1.38 × 10⁻²³ J/K (ST p. 128)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature of the resistor [K] (ST p. 128)"
+            },
+            {
+              "tex": "R",
+              "means": "resistance [Ω] (ST p. 128)"
+            },
+            {
+              "tex": "\\Delta f",
+              "means": "bandwidth of the circuit [Hz] (ST p. 132)"
+            }
+          ]
         },
         {
           "eq": "i² = 4 kB T Δf / R",
           "tex": "\\overline{i^2} = 4k_\\mathrm{B}T\\,\\frac{1}{R}\\,\\Delta f",
           "note": "its short-circuit noise current",
-          "ref": "ST (6.2), p. 128"
+          "ref": "ST (6.2), p. 128",
+          "where": [
+            {
+              "tex": "\\overline{i^2}",
+              "means": "mean square short-circuit noise current [A²] (ST (6.2), p. 128)"
+            },
+            {
+              "tex": "k_\\mathrm{B}",
+              "means": "Boltzmann constant 1.38 × 10⁻²³ J/K (ST p. 128)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature of the resistor [K] (ST p. 128)"
+            },
+            {
+              "tex": "R",
+              "means": "resistance [Ω] (ST p. 128)"
+            },
+            {
+              "tex": "\\Delta f",
+              "means": "bandwidth of the circuit [Hz] (ST p. 132)"
+            }
+          ]
         },
         {
           "eq": "kB T0 = 4·10⁻²¹ W/Hz at T0 = 290 K",
           "tex": "n_0 = k_\\mathrm{B}T_0 = 4\\cdot 10^{-21}\\,\\mathrm{W/Hz}, \\qquad T_0 = 290\\,\\mathrm{K}",
           "note": "the reference noise density",
-          "ref": "ST §6.2, p. 130"
+          "ref": "ST §6.2, p. 130",
+          "where": [
+            {
+              "tex": "n_0",
+              "means": "reference noise power density [W/Hz] (ST p. 130)"
+            },
+            {
+              "tex": "k_\\mathrm{B}",
+              "means": "Boltzmann constant 1.38 × 10⁻²³ J/K (ST p. 128)"
+            },
+            {
+              "tex": "T_0",
+              "means": "reference temperature, 290 K (ST p. 130)"
+            }
+          ]
         },
         {
           "eq": "i² = 2 q I Δf",
           "tex": "\\overline{i^2} = 2qI\\,\\Delta f",
           "note": "shot noise of a current",
-          "ref": "ST (6.11), p. 132; σ = √(2qIΔf), (6.12), p. 133"
+          "ref": "ST (6.11), p. 132; σ = √(2qIΔf), (6.12), p. 133",
+          "where": [
+            {
+              "tex": "\\overline{i^2}",
+              "means": "mean square shot-noise current [A²] (ST (6.10), (6.11), p. 132)"
+            },
+            {
+              "tex": "q",
+              "means": "elementary charge [C] (ST p. 132)"
+            },
+            {
+              "tex": "I",
+              "means": "mean current through the junction, I_D in the source [A] (ST p. 132)"
+            },
+            {
+              "tex": "\\Delta f",
+              "means": "bandwidth of the circuit [Hz] (ST p. 132)"
+            }
+          ]
         },
         {
           "eq": "2qI = 4kT/R where I R = 2kT/q",
           "tex": "2qI = \\frac{4kT}{R} \\quad \\text{where} \\quad IR = \\frac{2kT}{q}",
           "note": "where the two are equal; the script's example: 1 kΩ at 300 K matches the shot noise of 50 µA",
-          "ref": "ST §6.2, p. 130"
+          "ref": "ST §6.2, p. 130",
+          "where": [
+            {
+              "tex": "q",
+              "means": "elementary charge [C] (ST p. 132)"
+            },
+            {
+              "tex": "I",
+              "means": "mean current through the junction, I_D in the source [A] (ST p. 132)"
+            },
+            {
+              "tex": "k",
+              "means": "Boltzmann constant (ST p. 128, written k_B)"
+            },
+            {
+              "tex": "T",
+              "means": "absolute temperature of the resistor [K] (ST p. 128)"
+            },
+            {
+              "tex": "R",
+              "means": "resistance [Ω] (ST p. 128)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -1282,6 +3832,40 @@
           },
           "solution": "v = √(4 kT R Δf) = √(4 × 1.38·10⁻²³ × 300 × 10³ × 10⁴) V = 0.41 µV.",
           "source": "Worked by hand from Zimmermann (2010), (6.1)"
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\overline{v^2}",
+          "means": "mean square open-circuit noise voltage [V²] (ST (6.1), p. 128)"
+        },
+        {
+          "tex": "k_\\mathrm{B}",
+          "means": "Boltzmann constant 1.38 × 10⁻²³ J/K (ST p. 128)"
+        },
+        {
+          "tex": "T",
+          "means": "absolute temperature of the resistor [K] (ST p. 128)"
+        },
+        {
+          "tex": "R",
+          "means": "resistance [Ω] (ST p. 128)"
+        },
+        {
+          "tex": "\\Delta f",
+          "means": "bandwidth of the circuit [Hz] (ST p. 132)"
+        },
+        {
+          "tex": "\\overline{i^2}",
+          "means": "mean square shot-noise current [A²] (ST (6.10), (6.11), p. 132)"
+        },
+        {
+          "tex": "q",
+          "means": "elementary charge [C] (ST p. 132)"
+        },
+        {
+          "tex": "I",
+          "means": "mean current through the junction, I_D in the source [A] (ST p. 132)"
         }
       ]
     },
@@ -1345,67 +3929,275 @@
           "eq": "PL = Ûa²/(2 RL)",
           "tex": "P_L = \\frac{\\hat{U}_a^2}{2R_L}",
           "note": "Ûa = 20 V for 25 W into 8 Ω; UB = 22 V with 2 V to spare",
-          "ref": "ST (2.17), p. 23; Rechenbeispiele B1/1, p. 5"
+          "ref": "ST (2.17), p. 23; Rechenbeispiele B1/1, p. 5",
+          "where": [
+            {
+              "tex": "P_L",
+              "means": "power delivered to the load [W] (ST (2.17), p. 23)"
+            },
+            {
+              "tex": "\\hat{U}_a",
+              "means": "amplitude of the output sine [V] (ST p. 23)"
+            },
+            {
+              "tex": "R_L",
+              "means": "load resistor [Ω] (ST p. 23)"
+            }
+          ]
         },
         {
           "eq": "PB = 2 UB Ûa/(π RL)",
           "tex": "P_B = \\frac{2U_B\\hat{U}_a}{\\pi R_L}",
           "note": "",
-          "ref": "ST (2.18), p. 23"
+          "ref": "ST (2.18), p. 23",
+          "where": [
+            {
+              "tex": "P_B",
+              "means": "power drawn from the supplies [W] (ST (2.18), p. 23)"
+            },
+            {
+              "tex": "U_B",
+              "means": "supply voltages ±U_B [V] (ST p. 23)"
+            },
+            {
+              "tex": "\\hat{U}_a",
+              "means": "output amplitude [V] (ST p. 23)"
+            },
+            {
+              "tex": "R_L",
+              "means": "load resistor [Ω] (ST p. 23)"
+            }
+          ]
         },
         {
           "eq": "η = (π/4) Ûa/UB",
           "tex": "\\eta = \\frac{\\pi}{4}\\frac{\\hat{U}_a}{U_B}",
           "note": "at most 78.5 %",
-          "ref": "ST (2.19), (2.20), p. 24"
+          "ref": "ST (2.19), (2.20), p. 24",
+          "where": [
+            {
+              "tex": "\\eta",
+              "means": "efficiency P_L/P_B (ST p. 22)"
+            },
+            {
+              "tex": "\\hat{U}_a",
+              "means": "output amplitude [V] (ST p. 24)"
+            },
+            {
+              "tex": "U_B",
+              "means": "supply voltage [V] (ST p. 24)"
+            }
+          ]
         },
         {
           "eq": "PvT = (1/RL)(UB Ûa/π − Ûa²/4)",
           "tex": "P_\\mathrm{vT} = \\frac{1}{R_L}\\left(\\frac{U_B\\hat{U}_a}{\\pi} - \\frac{\\hat{U}_a^2}{4}\\right)",
           "note": "one transistor's loss",
-          "ref": "Rechenbeispiele B1/3, p. 7"
+          "ref": "Rechenbeispiele B1/3, p. 7",
+          "where": [
+            {
+              "tex": "P_\\mathrm{vT}",
+              "means": "loss in one transistor [W] (RB B1/3, p. 7)"
+            },
+            {
+              "tex": "R_L",
+              "means": "load resistor [Ω] (RB B1/2)"
+            },
+            {
+              "tex": "U_B",
+              "means": "supply voltage [V] (RB B1/2)"
+            },
+            {
+              "tex": "\\hat{U}_a",
+              "means": "output amplitude [V] (RB B1/2)"
+            }
+          ]
         },
         {
           "eq": "PvT,max = UB²/(π² RL) ≈ 0.1 UB²/RL at Ûa = 2UB/π",
           "tex": "P_\\mathrm{vT,max} = \\frac{U_B^2}{\\pi^2 R_L} \\approx 0.1\\,\\frac{U_B^2}{R_L}",
           "note": "6 W for 22 V into 8 Ω",
-          "ref": "ST (2.24), p. 24; Rechenbeispiele B1/3, p. 7"
+          "ref": "ST (2.24), p. 24; Rechenbeispiele B1/3, p. 7",
+          "where": [
+            {
+              "tex": "P_\\mathrm{vT,max}",
+              "means": "largest loss in one transistor, at Û_a = 2U_B/π [W] (RB B1/3, p. 7)"
+            },
+            {
+              "tex": "U_B",
+              "means": "supply voltage [V] (RB B1/3)"
+            },
+            {
+              "tex": "R_L",
+              "means": "load resistor [Ω] (RB B1/3)"
+            }
+          ]
         },
         {
           "eq": "PT = (Tj − Tk)/(RthB + RthK)",
           "tex": "P_T = \\frac{T_j - T_k}{R_\\mathrm{thB} + R_\\mathrm{thK}}",
           "note": "the thermal Ohm's law",
-          "ref": "ST (2.25), p. 27; Rechenbeispiele B1/5, p. 9"
+          "ref": "ST (2.25), p. 27; Rechenbeispiele B1/5, p. 9",
+          "where": [
+            {
+              "tex": "P_T",
+              "means": "loss to be carried away [W] (ST (2.25), p. 27)"
+            },
+            {
+              "tex": "T_j",
+              "means": "allowed junction temperature (ST p. 27)"
+            },
+            {
+              "tex": "T_k",
+              "means": "temperature of the coolant (ST p. 27)"
+            },
+            {
+              "tex": "R_\\mathrm{thB}",
+              "means": "thermal resistance junction → plate [K/W] (ST p. 27)"
+            },
+            {
+              "tex": "R_\\mathrm{thK}",
+              "means": "thermal resistance plate → coolant [K/W] (ST p. 27)"
+            }
+          ]
         },
         {
           "eq": "ϑG,max = Tj,max − PTot·RthJC",
           "tex": "\\vartheta_\\mathrm{G,max} = T_\\mathrm{j,max} - P_\\mathrm{Tot}R_\\mathrm{thJC}",
           "note": "138.48 °C",
-          "ref": "Rechenbeispiele B1/4, p. 8"
+          "ref": "Rechenbeispiele B1/4, p. 8",
+          "where": [
+            {
+              "tex": "\\vartheta_\\mathrm{G,max}",
+              "means": "highest allowed case temperature [°C] (RB B1/4, p. 8; the index G is not spelt out)"
+            },
+            {
+              "tex": "T_\\mathrm{j,max}",
+              "means": "highest junction temperature, 150 °C (RB B1/4)"
+            },
+            {
+              "tex": "P_\\mathrm{Tot}",
+              "means": "loss of the transistor [W] (RB B1/4)"
+            },
+            {
+              "tex": "R_\\mathrm{thJC}",
+              "means": "thermal resistance junction → case, 1.92 K/W (RB B1/4, written R_θCJ there)"
+            }
+          ]
         },
         {
           "eq": "Rth,KB-U = (ϑKB − ϑU)/(2 PT)",
           "tex": "R_\\mathrm{th,KB\\text{-}U} = \\frac{\\vartheta_\\mathrm{KB} - \\vartheta_U}{2P_T}",
           "note": "7.125 K/W",
-          "ref": "Rechenbeispiele B1/5, p. 9"
+          "ref": "Rechenbeispiele B1/5, p. 9",
+          "where": [
+            {
+              "tex": "R_\\mathrm{th,KB\\text{-}U}",
+              "means": "thermal resistance heat sink → ambient [K/W] (RB B1/5, p. 9)"
+            },
+            {
+              "tex": "\\vartheta_\\mathrm{KB}",
+              "means": "heat-sink temperature [°C] (RB B1/5)"
+            },
+            {
+              "tex": "\\vartheta_U",
+              "means": "ambient temperature, 50 °C (RB B1/5)"
+            },
+            {
+              "tex": "P_T",
+              "means": "loss of one transistor; two share the sink (RB B1/5)"
+            }
+          ]
         },
         {
           "eq": "IC0 = (UB0 − 2UBE)/(R1 + R2)",
           "tex": "I_{C0} = \\frac{U_{B0} - 2U_\\mathrm{BE}}{R_1 + R_2}",
           "note": "50 mA cold, 200 mA hot",
-          "ref": "ST section 2.2, p. 30"
+          "ref": "ST section 2.2, p. 30",
+          "where": [
+            {
+              "tex": "I_{C0}",
+              "means": "quiescent collector current [A] (ST p. 30)"
+            },
+            {
+              "tex": "U_{B0}",
+              "means": "voltage between the bases set by the two diodes, 1.4 V (ST p. 30)"
+            },
+            {
+              "tex": "U_\\mathrm{BE}",
+              "means": "base–emitter voltage of each transistor [V] (ST p. 30)"
+            },
+            {
+              "tex": "R_1,\\ R_2",
+              "means": "emitter resistors of T₁ and T₂ [Ω] (ST p. 30)"
+            }
+          ]
         },
         {
           "eq": "PL loss factor (RL/(RL + R1))²",
           "tex": "\\left(\\frac{R_L}{R_L + R_1}\\right)^2",
           "note": "the price of the emitter resistors",
-          "ref": "ST section 2.2, p. 30"
+          "ref": "ST section 2.2, p. 30",
+          "where": [
+            {
+              "tex": "R_L",
+              "means": "load resistor [Ω] (ST p. 30)"
+            },
+            {
+              "tex": "R_1",
+              "means": "emitter resistor in series with the load [Ω] (ST p. 30)"
+            }
+          ]
         },
         {
           "eq": "dUBE/dT ≈ −2 mV/K at constant IC",
           "tex": "\\frac{\\mathrm{d}U_\\mathrm{BE}}{\\mathrm{d}T} \\approx -2\\,\\mathrm{mV/K}",
           "note": "between −1.7 and −2.4 mV/K; the cause of thermal runaway",
-          "ref": "HL section 6.1, Abb. 6.1.7, p. 166"
+          "ref": "HL section 6.1, Abb. 6.1.7, p. 166",
+          "where": [
+            {
+              "tex": "U_\\mathrm{BE}",
+              "means": "base–emitter voltage at constant collector current [V] (HL p. 166)"
+            },
+            {
+              "tex": "T",
+              "means": "temperature [K] (HL p. 166)"
+            }
+          ]
+        }
+      ],
+      "lawWhere": [
+        {
+          "tex": "P_\\mathrm{vT,max}",
+          "means": "largest loss in one transistor, at Û_a = 2U_B/π [W] (RB B1/3, p. 7)"
+        },
+        {
+          "tex": "U_B",
+          "means": "supply voltages ±U_B [V] (ST p. 23)"
+        },
+        {
+          "tex": "R_L",
+          "means": "load resistor [Ω] (ST p. 23)"
+        },
+        {
+          "tex": "P_T",
+          "means": "loss to be carried away [W] (ST (2.25), p. 27)"
+        },
+        {
+          "tex": "T_j",
+          "means": "allowed junction temperature (ST p. 27)"
+        },
+        {
+          "tex": "T_k",
+          "means": "temperature of the coolant (ST p. 27)"
+        },
+        {
+          "tex": "R_\\mathrm{thB}",
+          "means": "thermal resistance junction → plate [K/W] (ST p. 27)"
+        },
+        {
+          "tex": "R_\\mathrm{thK}",
+          "means": "thermal resistance plate → coolant [K/W] (ST p. 27)"
         }
       ]
     }

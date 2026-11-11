@@ -77,3 +77,10 @@ test("a first-order bilinear low-pass at fs/10 has the pole of sus2ue Lösung 5.
   assert.ok(Math.abs(f.poles[0][0] - (1 - v) / (1 + v)) < 1e-12 && Math.abs(f.poles[0][1]) < 1e-12, `pole ${f.poles[0]}`);
   assert.deepEqual(f.zeros[0], [-1, 0]);
 });
+
+// SS1 (1.39), the autocorrelation of a stationary random signal, is printed on p. 18 (PDF p. 21), checked 11 Nov 2026.
+test("the random-signals lab cites SS1 (1.39) on p. 18", () => {
+  const refs = lab("random").equations.map(e => e.ref).join(" | ");
+  assert.match(refs, /\(1\.39\), p\. 18/);
+  assert.doesNotMatch(refs, /\(1\.39\), p\. 15/);
+});

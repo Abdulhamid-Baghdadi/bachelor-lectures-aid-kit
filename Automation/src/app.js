@@ -3,7 +3,7 @@
 // and next lab as small cards below. The address (#bode) says which lab is open; none means the overview.
 // Reads the words from data/labs.json; a lab with no words there, or words with no lab, is reported, not skipped.
 import { h, practice, tabs } from "../../kit/ui/kit.js";
-import { math } from "../../kit/ui/math.js";
+import { math, symbolList } from "../../kit/ui/math.js";
 import { parseSi } from "./core/index.js";
 import { labs } from "./labs/index.js";
 
@@ -66,12 +66,15 @@ async function start() {
     const body = h("div", { class: "lab" });
     // The lab in tabs, so nothing waits below a long scroll. Explore first: the idea, the main law and the drawing it
     // animates. Equations: the full set, each with what it is and where it comes from. Practise: the course's questions.
+    // Under an equation, what each symbol means, the symbol typeset as in the equation (asked for 11 Nov 2026). The main
+    // law takes the list of the equation it repeats, or its own "lawWhere".
+    const lawWhere = w.lawWhere ?? (w.equations ?? []).find(e => e.tex === w.lawTex)?.where;
     const items = [["Explore", h("div", {}, h("p", { class: "idea" }, w.idea),
-      h("p", { class: "law" }, w.lawTex ? math(w.lawTex, { display: true }) : w.law),
+      w.lawTex ? h("div", { class: "law" }, math(w.lawTex, { display: true }), symbolList(lawWhere)) : h("p", { class: "law" }, w.law),
       // The equations the view below plots, so a curve never shows without its formula; the rest stay on Equations.
-      ...[(w.equations ?? []).filter(e => e.explore)].filter(es => es.length).map(es => h("div", { class: "law plotted" }, ...es.map(e => e.tex ? math(e.tex, { display: true }) : h("p", {}, e.eq)))), body)],
+      ...[(w.equations ?? []).filter(e => e.explore)].filter(es => es.length).map(es => h("div", { class: "law plotted" }, ...es.map(e => e.tex ? h("div", {}, math(e.tex, { display: true }), symbolList(e.where)) : h("p", {}, e.eq)))), body)],
       ["Equations", h("div", {}, w.equations?.length ? h("table", { class: "eqs" }, h("tbody", {}, w.equations.map(e => h("tr", {},
-          h("td", { class: "eq" }, e.tex ? math(e.tex, { display: true }) : e.eq), h("td", { class: "note" }, e.note), h("td", { class: "ref" }, e.ref || "derived"))))) : null,
+          h("td", { class: "eq" }, e.tex ? math(e.tex, { display: true }) : e.eq, symbolList(e.where)), h("td", { class: "note" }, e.note), h("td", { class: "ref" }, e.ref || "derived"))))) : null,
         h("p", { class: "source" }, `Source: ${w.lecture}`))]];
     if (w.practice.length) items.push(["Practise", h("div", { class: "practice-list" }, w.practice.map(q => practice({ ...q, parse: parseSi })))]);
     // Previous and next as plain text links, no picture or motion: the lab's own drawing keeps the eye.

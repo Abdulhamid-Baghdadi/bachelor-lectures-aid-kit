@@ -68,32 +68,126 @@
           "tex": "\\bar{x} = \\frac{1}{N} \\sum_{i=1}^{N} x_i",
           "note": "the mean of N readings",
           "ref": "eq. 1.46, p. 37",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\bar{x}",
+              "means": "the mean of the N readings [unit of the quantity] (eq. 1.46, p. 37)"
+            },
+            {
+              "tex": "N",
+              "means": "the number of readings (p. 37)"
+            },
+            {
+              "tex": "i",
+              "means": "index of a reading, 1 to N (eq. 1.46, p. 37)"
+            },
+            {
+              "tex": "x_i",
+              "means": "the i-th of the N readings of the same quantity [unit of the quantity] (p. 37)"
+            }
+          ]
         },
         {
           "eq": "s = √( Σ (xᵢ − x̄)² / (N − 1) )",
           "tex": "s(x_i) = \\sqrt{\\frac{\\sum_{i=1}^{N} (x_i - \\bar{x})^2}{N - 1}} = u(x_i)",
           "note": "the empirical standard deviation of one reading, its standard uncertainty",
           "ref": "eqs. 1.48–1.49, p. 38",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "s(x_i)",
+              "means": "empirical standard deviation of a single reading [unit of the quantity] (eq. 1.48, p. 38)"
+            },
+            {
+              "tex": "u(x_i)",
+              "means": "standard uncertainty of a single reading, equal to s(x_i) (eq. 1.49, p. 38)"
+            },
+            {
+              "tex": "x_i",
+              "means": "the i-th of the N readings of the same quantity [unit of the quantity] (p. 37)"
+            },
+            {
+              "tex": "\\bar{x}",
+              "means": "the mean of the N readings [unit of the quantity] (eq. 1.46, p. 37)"
+            },
+            {
+              "tex": "N",
+              "means": "the number of readings (p. 37)"
+            },
+            {
+              "tex": "i",
+              "means": "index of a reading, 1 to N (eq. 1.46, p. 37)"
+            }
+          ]
         },
         {
           "eq": "s(x̄) = s/√N",
           "tex": "s(\\bar{x}) = \\frac{s(x_i)}{\\sqrt{N}}",
           "note": "the standard deviation of the mean",
-          "ref": "eq. 1.53, p. 39"
+          "ref": "eq. 1.53, p. 39",
+          "where": [
+            {
+              "tex": "s(\\bar{x})",
+              "means": "standard deviation of the mean [unit of the quantity] (eq. 1.53, p. 39)"
+            },
+            {
+              "tex": "s(x_i)",
+              "means": "empirical standard deviation of a single reading [unit of the quantity] (eq. 1.48, p. 38)"
+            },
+            {
+              "tex": "N",
+              "means": "the number of readings (p. 37)"
+            }
+          ]
         },
         {
           "eq": "x̄ ± a · s/√N; a = 1, 2, 3 for 68.3, 95.5, 99.7 %",
           "tex": "\\bar{x} \\pm a\\,\\frac{s(x_i)}{\\sqrt{N}}, \\qquad a = 1, 2, 3 \\;\\text{for } 68.3, 95.5, 99.7\\,\\%",
           "note": "the result with a coverage factor, normal readings",
-          "ref": "eq. 1.55, pp. 38–40"
+          "ref": "eq. 1.55, pp. 38–40",
+          "where": [
+            {
+              "tex": "\\bar{x}",
+              "means": "the mean of the N readings [unit of the quantity] (eq. 1.46, p. 37)"
+            },
+            {
+              "tex": "a",
+              "means": "coverage factor: 1, 2, 3 cover 68.3, 95.5, 99.7 % of normal readings (p. 38; eq. 1.55, p. 40)"
+            },
+            {
+              "tex": "s(x_i)",
+              "means": "empirical standard deviation of a single reading [unit of the quantity] (eq. 1.48, p. 38)"
+            },
+            {
+              "tex": "N",
+              "means": "the number of readings (p. 37)"
+            }
+          ]
         },
         {
           "eq": "u(x̄) = t · s/√N",
           "tex": "u(\\bar{x}) = t\\,\\frac{s(x_i)}{\\sqrt{N}}",
           "note": "Student's factor for few readings, Table 1.6",
-          "ref": "eq. 1.83, p. 44"
+          "ref": "eq. 1.83, p. 44",
+          "where": [
+            {
+              "tex": "u(\\bar{x})",
+              "means": "uncertainty of the mean [unit of the quantity] (eqs. 1.54, 1.83, pp. 39, 44)"
+            },
+            {
+              "tex": "t",
+              "means": "Student's factor, from the number of readings and the confidence wanted (Table 1.6, p. 44)"
+            },
+            {
+              "tex": "s(x_i)",
+              "means": "empirical standard deviation of a single reading [unit of the quantity] (eq. 1.48, p. 38)"
+            },
+            {
+              "tex": "N",
+              "means": "the number of readings (p. 37)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -148,32 +242,142 @@
           "eq": "Δy = Σ ∂f/∂xᵢ · Δxᵢ",
           "tex": "\\Delta y = \\sum_{i=1}^{n} \\frac{\\partial f}{\\partial x_i}\\,\\Delta x_i",
           "note": "a known systematic error carried through the model, linearised",
-          "ref": "eq. 1.37, p. 35"
+          "ref": "eq. 1.37, p. 35",
+          "where": [
+            {
+              "tex": "\\Delta y",
+              "means": "known systematic error of the result y [unit of y] (eq. 1.37, p. 35)"
+            },
+            {
+              "tex": "f",
+              "means": "the model y = f(x_1, …, x_n) that gives the result from the measured inputs (eq. 1.33, p. 35)"
+            },
+            {
+              "tex": "\\frac{\\partial f}{\\partial x_i}",
+              "means": "sensitivity: partial derivative of the model f with respect to input x_i (p. 36)"
+            },
+            {
+              "tex": "\\Delta x_i",
+              "means": "known systematic error of input x_i, with its sign, assumed small [unit of x_i] (p. 35)"
+            },
+            {
+              "tex": "n",
+              "means": "number of inputs (eq. 1.33, p. 35)"
+            },
+            {
+              "tex": "i",
+              "means": "index of an input, 1 to n (p. 35)"
+            }
+          ]
         },
         {
           "eq": "Δy/y = Σ αᵢ · Δxᵢ/xᵢ for y = Π aᵢ xᵢ^αᵢ",
           "tex": "\\frac{\\Delta y}{y} = \\sum_{i=1}^{n} \\alpha_i \\frac{\\Delta x_i}{x_i} \\qquad \\text{for } y = a_1 x_1^{\\alpha_1} \\cdots a_n x_n^{\\alpha_n}",
           "note": "for products of powers the relative errors add, weighted by the exponents",
-          "ref": "eq. 1.43, p. 36"
+          "ref": "eq. 1.43, p. 36",
+          "where": [
+            {
+              "tex": "\\frac{\\Delta y}{y}",
+              "means": "relative error of the result (eq. 1.43, p. 36)"
+            },
+            {
+              "tex": "\\frac{\\Delta x_i}{x_i}",
+              "means": "relative error of input x_i (eq. 1.43, p. 36)"
+            },
+            {
+              "tex": "\\alpha_i",
+              "means": "exponent of input x_i in the product (eq. 1.40, p. 36)"
+            },
+            {
+              "tex": "a_1, \\ldots, a_n",
+              "means": "constant coefficients of the product (eq. 1.40, p. 36)"
+            },
+            {
+              "tex": "x_1, \\ldots, x_n",
+              "means": "the measured inputs (eq. 1.40, p. 36)"
+            },
+            {
+              "tex": "n",
+              "means": "number of inputs (p. 36)"
+            },
+            {
+              "tex": "i",
+              "means": "index of an input, 1 to n (p. 36)"
+            }
+          ]
         },
         {
           "eq": "s(y) = √Σ (∂f/∂xᵢ)² s²(xᵢ)",
           "tex": "s(y) = \\sqrt{\\sum_{i=1}^{N} \\Big(\\frac{\\partial f}{\\partial x_i}\\Big)^2 s^2(x_i)}",
           "note": "Gauss's law for independent inputs (1821)",
-          "ref": "eqs. 1.73–1.74, p. 42"
+          "ref": "eqs. 1.73–1.74, p. 42",
+          "where": [
+            {
+              "tex": "s(y)",
+              "means": "empirical standard deviation of the result, its standard uncertainty u(y) (eqs. 1.74–1.75, pp. 42–43)"
+            },
+            {
+              "tex": "\\frac{\\partial f}{\\partial x_i}",
+              "means": "sensitivity: partial derivative of the model f with respect to input x_i (p. 36)"
+            },
+            {
+              "tex": "s^2(x_i)",
+              "means": "variance of input x_i (eq. 1.73, p. 42)"
+            },
+            {
+              "tex": "N",
+              "means": "number of independent inputs (eq. 1.74, p. 42); the book reuses N, its symbol for the number of readings"
+            }
+          ]
         },
         {
           "eq": "P = U · I · cos Φ",
           "tex": "P = U I \\cos\\varphi",
           "note": "the lab script's model: the uncertainty of P from those of I and Φ",
-          "ref": "Schitter (2015), eq. 2.1, Seite 21"
+          "ref": "Schitter (2015), eq. 2.1, Seite 21",
+          "where": [
+            {
+              "tex": "P",
+              "means": "active power [W] (Schitter 2015, eq. 2.1, Seite 21)"
+            },
+            {
+              "tex": "U",
+              "means": "RMS voltage across the RL branch [V] (Schitter 2015, Seite 21)"
+            },
+            {
+              "tex": "I",
+              "means": "RMS current, measured through the shunt R_i [A] (Schitter 2015, Seite 21)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "phase angle between voltage and current [°]; the script writes it Φ (Seite 21)"
+            }
+          ]
         },
         {
           "eq": "sworst = Σ |∂f/∂xᵢ| s(xᵢ)",
           "tex": "s_\\mathrm{worst} = \\sum_{i} \\Big|\\frac{\\partial f}{\\partial x_i}\\Big|\\, s(x_i)",
           "note": "every contribution with the same sign: an upper bound",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "s_\\mathrm{worst}",
+              "means": "worst-case uncertainty of the result: all contributions taken with the same sign [unit of y] (not defined in the source)"
+            },
+            {
+              "tex": "\\frac{\\partial f}{\\partial x_i}",
+              "means": "sensitivity: partial derivative of the model f with respect to input x_i (p. 36)"
+            },
+            {
+              "tex": "s(x_i)",
+              "means": "standard uncertainty of input x_i [unit of x_i] (eq. 1.74, p. 42)"
+            },
+            {
+              "tex": "i",
+              "means": "index of an input (not defined in the source)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -230,31 +434,117 @@
           "eq": "UV = Uq · RV/(Ri + RV)",
           "tex": "U_\\mathrm{V} = U_\\mathrm{q}\\,\\frac{R_\\mathrm{V}}{R_\\mathrm{i} + R_\\mathrm{V}}",
           "note": "a voltmeter across a source with internal resistance Ri",
-          "ref": "eq. 2.28, p. 90, as UM/UL = 1/(1 + Ri/RM)"
+          "ref": "eq. 2.28, p. 90, as UM/UL = 1/(1 + Ri/RM)",
+          "where": [
+            {
+              "tex": "U_\\mathrm{V}",
+              "means": "voltage the voltmeter shows; the book's U_M [V] (eq. 2.28, p. 90)"
+            },
+            {
+              "tex": "U_\\mathrm{q}",
+              "means": "the source's open-circuit voltage; the book's U_L [V] (p. 89)"
+            },
+            {
+              "tex": "R_\\mathrm{V}",
+              "means": "the voltmeter's resistance; the book's R_M [Ω] (p. 90)"
+            },
+            {
+              "tex": "R_\\mathrm{i}",
+              "means": "the source's internal resistance [Ω] (p. 88)"
+            }
+          ]
         },
         {
           "eq": "I = Uq/(R + RA)",
           "tex": "I = \\frac{U_\\mathrm{q}}{R + R_\\mathrm{A}}",
           "note": "an ammeter in a loop of resistance R",
-          "ref": "eq. 2.24, p. 89, as IM = UL/(Ri + RM)"
+          "ref": "eq. 2.24, p. 89, as IM = UL/(Ri + RM)",
+          "where": [
+            {
+              "tex": "I",
+              "means": "current the ammeter shows; the book's I_M [A] (eq. 2.24, p. 89)"
+            },
+            {
+              "tex": "U_\\mathrm{q}",
+              "means": "the source's open-circuit voltage; the book's U_L [V] (p. 88)"
+            },
+            {
+              "tex": "R",
+              "means": "resistance of the rest of the loop, internal plus load; the book's R_i + R_b [Ω] (eq. 2.22, p. 89)"
+            },
+            {
+              "tex": "R_\\mathrm{A}",
+              "means": "the ammeter's resistance; the book's R_M [Ω] (p. 88)"
+            }
+          ]
         },
         {
           "eq": "Ri = RM when the reading halves",
           "tex": "R_\\mathrm{i} = R_\\mathrm{M} \\quad \\text{when the reading halves}",
           "note": "how to find a meter's or a source's resistance",
-          "ref": "p. 91"
+          "ref": "p. 91",
+          "where": [
+            {
+              "tex": "R_\\mathrm{i}",
+              "means": "the source's internal resistance [Ω] (p. 91)"
+            },
+            {
+              "tex": "R_\\mathrm{M}",
+              "means": "the meter's resistance, varied until the reading halves [Ω] (p. 91)"
+            }
+          ]
         },
         {
           "eq": "Rp = RM · IM/(I − IM)",
           "tex": "R_\\mathrm{p} = R_\\mathrm{M}\\,\\frac{I_\\mathrm{M}}{I - I_\\mathrm{M}}",
           "note": "the shunt that extends a current range",
-          "ref": "eq. 2.31, p. 91"
+          "ref": "eq. 2.31, p. 91",
+          "where": [
+            {
+              "tex": "R_\\mathrm{p}",
+              "means": "shunt resistor in parallel with the movement [Ω] (eq. 2.31, p. 91)"
+            },
+            {
+              "tex": "R_\\mathrm{M}",
+              "means": "resistance of the movement [Ω] (p. 91)"
+            },
+            {
+              "tex": "I_\\mathrm{M}",
+              "means": "current through the movement at full scale [A] (eq. 2.29, p. 91)"
+            },
+            {
+              "tex": "I",
+              "means": "total current to be measured, the new range [A] (eq. 2.29, p. 91)"
+            }
+          ]
         },
         {
           "eq": "Rv = U/I − Rp ‖ RM",
           "tex": "R_\\mathrm{v} = \\frac{U}{I} - (R_\\mathrm{p} \\parallel R_\\mathrm{M})",
           "note": "the series resistor that extends a voltage range",
-          "ref": "eq. 2.34, p. 92"
+          "ref": "eq. 2.34, p. 92",
+          "where": [
+            {
+              "tex": "R_\\mathrm{v}",
+              "means": "series resistor that extends the voltage range [Ω] (eq. 2.34, p. 92)"
+            },
+            {
+              "tex": "U",
+              "means": "the voltage to be measured, the new range [V] (eq. 2.33, p. 92)"
+            },
+            {
+              "tex": "I",
+              "means": "current through the meter at full scale [A] (eq. 2.33, p. 92)"
+            },
+            {
+              "tex": "R_\\mathrm{p}",
+              "means": "shunt resistor of the current range [Ω] (p. 91)"
+            },
+            {
+              "tex": "R_\\mathrm{M}",
+              "means": "resistance of the movement [Ω] (p. 91)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -314,25 +604,93 @@
           "eq": "Rx = (U − RA I)/I = U/I − RA",
           "tex": "R_x = \\frac{U - R_\\mathrm{A} I}{I} = \\frac{U}{I} - R_\\mathrm{A}",
           "note": "current-correct circuit (Bild 3.1 a), for large resistances",
-          "ref": "eq. 3.1, p. 195"
+          "ref": "eq. 3.1, p. 195",
+          "where": [
+            {
+              "tex": "R_x",
+              "means": "the resistance sought [Ω] (p. 195)"
+            },
+            {
+              "tex": "U",
+              "means": "voltmeter reading, across R_x and the ammeter [V] (Bild 3.1 a, p. 196)"
+            },
+            {
+              "tex": "I",
+              "means": "ammeter reading, the current through R_x [A] (p. 195)"
+            },
+            {
+              "tex": "R_\\mathrm{A}",
+              "means": "the ammeter's resistance [Ω] (p. 195)"
+            }
+          ]
         },
         {
           "eq": "Rx = U/(I − U/RV)",
           "tex": "R_x = \\frac{U}{I - U/R_\\mathrm{V}}",
           "note": "voltage-correct circuit (Bild 3.1 b), for small resistances",
-          "ref": "eq. 3.2, p. 196"
+          "ref": "eq. 3.2, p. 196",
+          "where": [
+            {
+              "tex": "R_x",
+              "means": "the resistance sought [Ω] (p. 195)"
+            },
+            {
+              "tex": "U",
+              "means": "voltmeter reading, the voltage across R_x [V] (p. 196)"
+            },
+            {
+              "tex": "I",
+              "means": "ammeter reading, including the voltmeter's current [A] (p. 196)"
+            },
+            {
+              "tex": "R_\\mathrm{V}",
+              "means": "the voltmeter's resistance [Ω] (p. 195)"
+            }
+          ]
         },
         {
           "eq": "Rx = √(RA RV)",
           "tex": "R_x = \\sqrt{R_\\mathrm{A} R_\\mathrm{V}}",
           "note": "where both raw errors are equal, to first order",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "R_x",
+              "means": "the resistance at which both circuits err equally [Ω] (not defined in the source)"
+            },
+            {
+              "tex": "R_\\mathrm{A}",
+              "means": "the ammeter's resistance [Ω] (p. 195)"
+            },
+            {
+              "tex": "R_\\mathrm{V}",
+              "means": "the voltmeter's resistance [Ω] (p. 195)"
+            }
+          ]
         },
         {
           "eq": "Rx = (Ux/Ur) · Rr",
           "tex": "R_x = \\frac{U_x}{U_\\mathrm{r}}\\,R_\\mathrm{r}",
           "note": "comparison with a reference resistor in series avoids the error",
-          "ref": "eq. 3.3, p. 196"
+          "ref": "eq. 3.3, p. 196",
+          "where": [
+            {
+              "tex": "R_x",
+              "means": "the resistance sought [Ω] (p. 196)"
+            },
+            {
+              "tex": "U_x",
+              "means": "voltage across R_x [V] (eq. 3.3, p. 196)"
+            },
+            {
+              "tex": "U_\\mathrm{r}",
+              "means": "voltage across the reference resistor [V] (eq. 3.3, p. 196)"
+            },
+            {
+              "tex": "R_\\mathrm{r}",
+              "means": "reference resistor, carrying the same current I_0 [Ω] (Bild 3.2 a, p. 196)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -363,6 +721,28 @@
           "solution": "Current-correct errs by RA/Rx, voltage-correct by about Rx/RV. They are equal at Rx = √(RA·RV) = √(10⁶) Ω = 1 kΩ.",
           "source": "Worked by hand from Schrüfer et al. (2012), eqs. 3.1–3.2"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "R_x",
+          "means": "the resistance sought [Ω] (p. 195)"
+        },
+        {
+          "tex": "U",
+          "means": "voltmeter reading [V] (p. 195)"
+        },
+        {
+          "tex": "I",
+          "means": "ammeter reading [A] (p. 195)"
+        },
+        {
+          "tex": "R_\\mathrm{A}",
+          "means": "the ammeter's resistance [Ω] (p. 195)"
+        },
+        {
+          "tex": "R_\\mathrm{V}",
+          "means": "the voltmeter's resistance [Ω] (p. 195)"
+        }
       ]
     },
     {
@@ -377,33 +757,115 @@
           "eq": "x̄ = (1/T) ∫₀ᵀ x(t) dt",
           "tex": "\\overline{x(t)} = \\frac{1}{T} \\int_0^T x(t)\\,\\mathrm{d}t",
           "note": "the linear mean, the DC part, what a moving coil shows",
-          "ref": "eq. 2.36, p. 95"
+          "ref": "eq. 2.36, p. 95",
+          "where": [
+            {
+              "tex": "\\overline{x(t)}",
+              "means": "linear mean, the signal's DC part (eq. 2.36, p. 95)"
+            },
+            {
+              "tex": "x(t)",
+              "means": "a time-varying signal (p. 95)"
+            },
+            {
+              "tex": "T",
+              "means": "averaging time, one period of a periodic signal [s] (not defined in the source)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (p. 95)"
+            }
+          ]
         },
         {
           "eq": "|x̄| = (1/T) ∫₀ᵀ |x(t)| dt",
           "tex": "\\overline{|x(t)|} = \\frac{1}{T} \\int_0^T |x(t)|\\,\\mathrm{d}t",
           "note": "the rectified mean",
           "ref": "eq. 2.37, p. 95",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\overline{|x(t)|}",
+              "means": "rectified mean: the mean of the signal's magnitude (eq. 2.37, p. 95)"
+            },
+            {
+              "tex": "x(t)",
+              "means": "a time-varying signal (p. 95)"
+            },
+            {
+              "tex": "T",
+              "means": "averaging time, one period of a periodic signal [s] (not defined in the source)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (p. 95)"
+            }
+          ]
         },
         {
           "eq": "Xeff = √( (1/T) ∫₀ᵀ x²(t) dt )",
           "tex": "X_\\mathrm{eff} = \\sqrt{\\frac{1}{T} \\int_0^T x^2(t)\\,\\mathrm{d}t}",
           "note": "the RMS value",
           "ref": "eqs. 2.38–2.39, p. 95",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "X_\\mathrm{eff}",
+              "means": "RMS value: root of the mean of the squared signal (eq. 2.39, p. 95)"
+            },
+            {
+              "tex": "x(t)",
+              "means": "a time-varying signal (p. 95)"
+            },
+            {
+              "tex": "T",
+              "means": "averaging time, one period of a periodic signal [s] (not defined in the source)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (p. 95)"
+            }
+          ]
         },
         {
           "eq": "|ū| = 2û/π = 0.637 û; U = û/√2 = 0.707 û",
           "tex": "\\overline{|u|} = \\frac{2}{\\pi}\\hat{u} = 0.637\\,\\hat{u} \\qquad U = \\frac{\\hat{u}}{\\sqrt{2}} = 0.707\\,\\hat{u}",
           "note": "for a sine",
-          "ref": "eqs. 2.41–2.42, pp. 95–96"
+          "ref": "eqs. 2.41–2.42, pp. 95–96",
+          "where": [
+            {
+              "tex": "\\overline{|u|}",
+              "means": "rectified mean of a sine voltage [V] (eq. 2.41, p. 95)"
+            },
+            {
+              "tex": "\\hat{u}",
+              "means": "peak value of the sine u(t) = û sin ωt [V] (p. 95)"
+            },
+            {
+              "tex": "U",
+              "means": "RMS value of the sine [V] (eq. 2.42, p. 96)"
+            }
+          ]
         },
         {
           "eq": "crest factor = û/U = 1.41; form factor = U/|ū| = 1.11",
           "tex": "\\text{crest factor} = \\frac{\\hat{u}}{U} = 1.41 \\qquad \\text{form factor} = \\frac{U}{\\overline{|u|}} = 1.11",
           "note": "for a sine",
-          "ref": "eqs. 2.43–2.44, p. 96"
+          "ref": "eqs. 2.43–2.44, p. 96",
+          "where": [
+            {
+              "tex": "\\hat{u}",
+              "means": "peak value [V] (eq. 2.43, p. 96)"
+            },
+            {
+              "tex": "U",
+              "means": "RMS value [V] (eq. 2.42, p. 96)"
+            },
+            {
+              "tex": "\\overline{|u|}",
+              "means": "rectified mean [V] (eq. 2.41, p. 95)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -432,6 +894,16 @@
           "solution": "A triangle of peak û has rectified mean û/2 and RMS û/√3. The meter shows 1.1107 · 0.5 û = 0.5554 û against 0.5774 û: −3.8 %.",
           "source": "Worked by hand from Schrüfer et al. (2012), eqs. 2.37–2.39"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "U",
+          "means": "RMS value of the voltage [V] (eq. 2.42, p. 96)"
+        },
+        {
+          "tex": "\\overline{|u|}",
+          "means": "rectified mean of the voltage [V] (eq. 2.41, p. 95)"
+        }
       ]
     },
     {
@@ -447,38 +919,166 @@
           "tex": "\\frac{\\underline{U}_1}{\\underline{U}_2} = 1 + \\frac{R_1}{R_2}\\,\\frac{1 + \\mathrm{j}\\omega R_2 C_2}{1 + \\mathrm{j}\\omega R_1 C_1}",
           "note": "the frequency-compensated divider",
           "ref": "eq. 2.96, p. 115",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\underline{U}_1",
+              "means": "voltage applied to the divider [V] (p. 114)"
+            },
+            {
+              "tex": "\\underline{U}_2",
+              "means": "voltage taken off the divider [V] (p. 114)"
+            },
+            {
+              "tex": "R_1,\\ R_2",
+              "means": "the divider's resistors, upper and lower [Ω] (eq. 2.95, Bild 2.41, p. 114)"
+            },
+            {
+              "tex": "C_1,\\ C_2",
+              "means": "capacitances in parallel with R_1 and R_2 [F] (eq. 2.95, p. 114)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (not defined in the source)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "R₁C₁ = R₂C₂ ⇒ U₁/U₂ = 1 + R₁/R₂",
           "tex": "R_1 C_1 = R_2 C_2 \\;\\Rightarrow\\; \\frac{\\underline{U}_1}{\\underline{U}_2} = 1 + \\frac{R_1}{R_2}",
           "note": "flat in frequency",
-          "ref": "eqs. 2.97–2.98, p. 115"
+          "ref": "eqs. 2.97–2.98, p. 115",
+          "where": [
+            {
+              "tex": "R_1,\\ R_2",
+              "means": "the divider's resistors [Ω] (p. 114)"
+            },
+            {
+              "tex": "C_1,\\ C_2",
+              "means": "capacitances in parallel with R_1 and R_2 [F] (p. 114)"
+            },
+            {
+              "tex": "\\underline{U}_1",
+              "means": "voltage applied to the divider [V] (p. 114)"
+            },
+            {
+              "tex": "\\underline{U}_2",
+              "means": "voltage taken off the divider [V] (p. 114)"
+            }
+          ]
         },
         {
           "eq": "RT·CT = RE·C*E, C*E = CE + CK",
           "tex": "R_\\mathrm{T} C_\\mathrm{T} = R_\\mathrm{E} C_\\mathrm{E}^{*}, \\qquad C_\\mathrm{E}^{*} = C_\\mathrm{E} + C_\\mathrm{K}",
           "note": "the probe's condition, the cable's capacitance included",
-          "ref": "eq. 2.100, p. 116"
+          "ref": "eq. 2.100, p. 116",
+          "where": [
+            {
+              "tex": "R_\\mathrm{T}",
+              "means": "the probe's fixed resistor [Ω] (p. 116)"
+            },
+            {
+              "tex": "C_\\mathrm{T}",
+              "means": "the probe's adjustable capacitor [F] (p. 116)"
+            },
+            {
+              "tex": "R_\\mathrm{E}",
+              "means": "the oscilloscope's input resistance [Ω] (p. 115)"
+            },
+            {
+              "tex": "C_\\mathrm{E}^{*}",
+              "means": "total capacitance loading the source [F] (p. 115)"
+            },
+            {
+              "tex": "C_\\mathrm{E}",
+              "means": "the oscilloscope's input capacitance, about 25 pF [F] (p. 115)"
+            },
+            {
+              "tex": "C_\\mathrm{K}",
+              "means": "the cable's capacitance [F] (p. 115)"
+            }
+          ]
         },
         {
           "eq": "u₂(t₀) = CT/(CT + C*E) · ue(t₀)",
           "tex": "u_2(t_0) = \\frac{C_\\mathrm{T}}{C_\\mathrm{T} + C_\\mathrm{E}^{*}}\\,u_\\mathrm{e}(t_0)",
           "note": "at an edge the capacitors divide",
-          "ref": "eq. 2.101, p. 116"
+          "ref": "eq. 2.101, p. 116",
+          "where": [
+            {
+              "tex": "u_2(t_0)",
+              "means": "output voltage at an edge [V] (eq. 2.101, p. 116)"
+            },
+            {
+              "tex": "u_\\mathrm{e}(t_0)",
+              "means": "input voltage at an edge [V] (Bild 2.43, p. 116)"
+            },
+            {
+              "tex": "t_0",
+              "means": "instant of a pulse edge [s] (p. 116)"
+            },
+            {
+              "tex": "C_\\mathrm{T}",
+              "means": "the probe's capacitor [F] (p. 116)"
+            },
+            {
+              "tex": "C_\\mathrm{E}^{*}",
+              "means": "input plus cable capacitance [F] (p. 115)"
+            }
+          ]
         },
         {
           "eq": "u₂(t₁) = RE/(RT + RE) · ue(t₁)",
           "tex": "u_2(t_1) = \\frac{R_\\mathrm{E}}{R_\\mathrm{T} + R_\\mathrm{E}}\\,u_\\mathrm{e}(t_1)",
           "note": "once settled the resistors divide",
-          "ref": "eq. 2.102, p. 116"
+          "ref": "eq. 2.102, p. 116",
+          "where": [
+            {
+              "tex": "u_2(t_1)",
+              "means": "output voltage once settled [V] (eq. 2.102, p. 116)"
+            },
+            {
+              "tex": "u_\\mathrm{e}(t_1)",
+              "means": "input voltage once settled [V] (p. 116)"
+            },
+            {
+              "tex": "t_1",
+              "means": "instant when no current flows through the capacitors any more [s] (p. 116)"
+            },
+            {
+              "tex": "R_\\mathrm{T}",
+              "means": "the probe's resistor [Ω] (p. 116)"
+            },
+            {
+              "tex": "R_\\mathrm{E}",
+              "means": "the oscilloscope's input resistance [Ω] (p. 115)"
+            }
+          ]
         },
         {
           "eq": "τ = (RT ‖ RE)(CT + C*E)",
           "tex": "\\tau = (R_\\mathrm{T} \\parallel R_\\mathrm{E})(C_\\mathrm{T} + C_\\mathrm{E}^{*})",
           "note": "how fast it settles between the two, from the node equation",
           "ref": "",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "\\tau",
+              "means": "time constant of the settling between the two divisions [s] (not defined in the source)"
+            },
+            {
+              "tex": "R_\\mathrm{T},\\ R_\\mathrm{E}",
+              "means": "probe resistor and input resistance [Ω] (pp. 115–116)"
+            },
+            {
+              "tex": "C_\\mathrm{T},\\ C_\\mathrm{E}^{*}",
+              "means": "probe capacitor and input plus cable capacitance [F] (pp. 115–116)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -511,6 +1111,24 @@
           "solution": "CT/(CT + CE*) = 8/108 = 0.074, less than the 0.1 it settles to: under-compensated, the corners round off.",
           "source": "Worked by hand from Schrüfer et al. (2012), eqs. 2.101–2.102"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "R_\\mathrm{T}",
+          "means": "the probe's fixed resistor [Ω] (p. 116)"
+        },
+        {
+          "tex": "C_\\mathrm{T}",
+          "means": "the probe's adjustable capacitor [F] (p. 116)"
+        },
+        {
+          "tex": "R_\\mathrm{E}",
+          "means": "the oscilloscope's input resistance, about 1 MΩ [Ω] (p. 115)"
+        },
+        {
+          "tex": "C_\\mathrm{E}^{*}",
+          "means": "input capacitance plus cable capacitance, C_E + C_K [F] (p. 115)"
+        }
       ]
     },
     {
@@ -525,37 +1143,157 @@
           "eq": "Ud = U₃ − U₁ = U₀ (R₂R₃ − R₁R₄)/((R₁ + R₂)(R₃ + R₄))",
           "tex": "U_\\mathrm{d} = U_3 - U_1 = U_0\\,\\frac{R_2 R_3 - R_1 R_4}{(R_1 + R_2)(R_3 + R_4)}",
           "note": "the diagonal voltage, U₁ across R₁, U₃ across R₃",
-          "ref": "eq. 3.12, p. 200"
+          "ref": "eq. 3.12, p. 200",
+          "where": [
+            {
+              "tex": "U_\\mathrm{d}",
+              "means": "diagonal voltage [V] (eq. 3.12, p. 200)"
+            },
+            {
+              "tex": "U_1",
+              "means": "voltage across R_1 [V] (eq. 3.10, p. 199)"
+            },
+            {
+              "tex": "U_3",
+              "means": "voltage across R_3 [V] (eq. 3.11, p. 199)"
+            },
+            {
+              "tex": "U_0",
+              "means": "bridge supply voltage [V] (p. 199)"
+            },
+            {
+              "tex": "R_1, \\ldots, R_4",
+              "means": "the four bridge resistors [Ω] (Bild 3.5, p. 199)"
+            }
+          ]
         },
         {
           "eq": "R₂R₃ = R₁R₄ ⇒ R₂ = R₁R₄/R₃",
           "tex": "R_2 R_3 = R_1 R_4 \\;\\Rightarrow\\; R_2 = \\frac{R_1 R_4}{R_3}",
           "note": "balance, and the unknown from it",
-          "ref": "eqs. 3.13–3.14, p. 200"
+          "ref": "eqs. 3.13–3.14, p. 200",
+          "where": [
+            {
+              "tex": "R_1, R_3, R_4",
+              "means": "known bridge resistors [Ω] (p. 200)"
+            },
+            {
+              "tex": "R_2",
+              "means": "the resistor sought [Ω] (eq. 3.14, p. 200)"
+            }
+          ]
         },
         {
           "eq": "Ud = U₀ ΔR/(4R₀ + 2ΔR) ≈ (U₀/4) ΔR/R₀",
           "tex": "U_\\mathrm{d} = U_0\\,\\frac{\\Delta R}{4R_0 + 2\\Delta R} \\approx \\frac{U_0}{4}\\,\\frac{\\Delta R}{R_0}",
           "note": "the quarter bridge",
-          "ref": "eqs. 3.18–3.19, p. 203"
+          "ref": "eqs. 3.18–3.19, p. 203",
+          "where": [
+            {
+              "tex": "U_\\mathrm{d}",
+              "means": "diagonal voltage [V] (p. 203)"
+            },
+            {
+              "tex": "U_0",
+              "means": "bridge supply voltage [V] (p. 199)"
+            },
+            {
+              "tex": "R_0",
+              "means": "resistance of the unchanged arms [Ω] (Bild 3.9, p. 203)"
+            },
+            {
+              "tex": "\\Delta R",
+              "means": "change of the one variable arm [Ω] (eq. 3.18, p. 203)"
+            }
+          ]
         },
         {
           "eq": "Ud = (U₀/2) ΔR/R₀; Ud = U₀ ΔR/R₀",
           "tex": "U_\\mathrm{d} = \\frac{U_0}{2}\\,\\frac{\\Delta R}{R_0} \\qquad U_\\mathrm{d} = U_0\\,\\frac{\\Delta R}{R_0}",
           "note": "half bridge with opposite changes in one divider, and full bridge: exact",
-          "ref": "Bild 3.9 f, h, pp. 203–204"
+          "ref": "Bild 3.9 f, h, pp. 203–204",
+          "where": [
+            {
+              "tex": "U_\\mathrm{d}",
+              "means": "diagonal voltage [V] (p. 203)"
+            },
+            {
+              "tex": "U_0",
+              "means": "bridge supply voltage [V] (p. 199)"
+            },
+            {
+              "tex": "R_0",
+              "means": "resistance of the arms at rest [Ω] (Bild 3.9, p. 203)"
+            },
+            {
+              "tex": "\\Delta R",
+              "means": "change of each variable arm, ± [Ω] (Bild 3.9, p. 203)"
+            }
+          ]
         },
         {
           "eq": "Ri = R₁ ‖ R₂ + R₃ ‖ R₄; IM = Ud/(Ri + RM)",
           "tex": "R_\\mathrm{i} = (R_1 \\parallel R_2) + (R_3 \\parallel R_4) \\qquad I_\\mathrm{M} = \\frac{U_\\mathrm{d}}{R_\\mathrm{i} + R_\\mathrm{M}}",
           "note": "the bridge as a source loaded by a meter",
-          "ref": "eqs. 3.22–3.23, p. 205"
+          "ref": "eqs. 3.22–3.23, p. 205",
+          "where": [
+            {
+              "tex": "R_\\mathrm{i}",
+              "means": "internal resistance of the bridge seen from a and b, supply short-circuited [Ω] (eq. 3.22, p. 205)"
+            },
+            {
+              "tex": "R_1, \\ldots, R_4",
+              "means": "the four bridge resistors [Ω] (p. 199)"
+            },
+            {
+              "tex": "I_\\mathrm{M}",
+              "means": "current through the meter in the diagonal [A] (eq. 3.23, p. 205)"
+            },
+            {
+              "tex": "U_\\mathrm{d}",
+              "means": "open-circuit diagonal voltage [V] (p. 205)"
+            },
+            {
+              "tex": "R_\\mathrm{M}",
+              "means": "the meter's resistance [Ω] (p. 204)"
+            }
+          ]
         },
         {
           "eq": "ΔR/R₀ = K ε; σ = F/A = E ε",
           "tex": "\\frac{\\Delta R}{R_0} = K\\varepsilon \\qquad \\sigma = \\frac{F}{A} = E\\varepsilon",
           "note": "a strain gauge on a loaded bar",
-          "ref": "eqs. 3.68, 3.75–3.76, pp. 235–238"
+          "ref": "eqs. 3.68, 3.74, 3.75–3.76, pp. 235–238",
+          "where": [
+            {
+              "tex": "\\frac{\\Delta R}{R_0}",
+              "means": "relative resistance change of the gauge (eq. 3.74, p. 236)"
+            },
+            {
+              "tex": "K",
+              "means": "gauge factor: relative resistance change over strain (eq. 3.68, p. 235)"
+            },
+            {
+              "tex": "\\varepsilon",
+              "means": "strain Δl/l (p. 236)"
+            },
+            {
+              "tex": "\\sigma",
+              "means": "normal stress [N/m²] (eq. 3.75, p. 238)"
+            },
+            {
+              "tex": "F",
+              "means": "force applied [N] (p. 238)"
+            },
+            {
+              "tex": "A",
+              "means": "area the force acts on [m²] (p. 238)"
+            },
+            {
+              "tex": "E",
+              "means": "modulus of elasticity [N/m²] (eq. 3.76, p. 238)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -602,6 +1340,20 @@
           "solution": "Ud = U₀ · ΔR/R₀ = 10 V · 0.002 = 20 mV, four times the quarter bridge and exactly linear.",
           "source": "Worked by hand from Schrüfer et al. (2012), Bild 3.9 h"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "U_\\mathrm{d}",
+          "means": "diagonal voltage between points a and b [V] (eq. 3.12, p. 200)"
+        },
+        {
+          "tex": "U_0",
+          "means": "bridge supply voltage [V] (p. 199)"
+        },
+        {
+          "tex": "R_1, \\ldots, R_4",
+          "means": "the four bridge resistors, two voltage dividers [Ω] (Bild 3.5, p. 199)"
+        }
       ]
     },
     {
@@ -616,32 +1368,134 @@
           "eq": "α = k I₁ I₂ cos φ",
           "tex": "\\bar{\\alpha} = k I_1 I_2 \\cos\\varphi",
           "note": "the electrodynamic movement averages the product of its coils' currents",
-          "ref": "eqs. 2.60–2.65, p. 103"
+          "ref": "eqs. 2.60–2.65, p. 103",
+          "where": [
+            {
+              "tex": "\\bar{\\alpha}",
+              "means": "mean deflection of the electrodynamic movement (eq. 2.65, p. 103)"
+            },
+            {
+              "tex": "k",
+              "means": "the movement's constant (eq. 2.60, p. 103)"
+            },
+            {
+              "tex": "I_1,\\ I_2",
+              "means": "RMS currents in the field coil and the moving coil [A] (eq. 2.63, p. 103)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "phase angle between the two currents (eq. 2.59, p. 102)"
+            }
+          ]
         },
         {
           "eq": "P = U I cos φ; Q = U I sin φ; S = U I",
           "tex": "P = U I \\cos\\varphi \\qquad Q = U I \\sin\\varphi \\qquad S = U I",
           "note": "active, reactive and apparent power",
-          "ref": "eqs. 2.56–2.58, p. 102"
+          "ref": "eqs. 2.56–2.58, p. 102",
+          "where": [
+            {
+              "tex": "P",
+              "means": "active power, the real part of the complex power [W] (eq. 2.56, p. 102)"
+            },
+            {
+              "tex": "Q",
+              "means": "reactive power, the imaginary part; the book writes P_B [var] (eq. 2.57, p. 102)"
+            },
+            {
+              "tex": "S",
+              "means": "apparent power, the magnitude; the book writes P_S [VA] (eq. 2.58, p. 102)"
+            },
+            {
+              "tex": "U",
+              "means": "RMS voltage [V] (eq. 2.52, p. 102)"
+            },
+            {
+              "tex": "I",
+              "means": "RMS current [A] (eq. 2.53, p. 102)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "phase angle between voltage and current (p. 102)"
+            }
+          ]
         },
         {
           "eq": "Pq = PV + PM",
           "tex": "P_\\mathrm{q} = P_\\mathrm{V} + P_\\mathrm{M}",
           "note": "the source's power splits between the load and the meter",
-          "ref": "eq. 2.51, p. 101"
+          "ref": "eq. 2.51, p. 101",
+          "where": [
+            {
+              "tex": "P_\\mathrm{q}",
+              "means": "power delivered by the source [W] (eq. 2.51, p. 101)"
+            },
+            {
+              "tex": "P_\\mathrm{V}",
+              "means": "power converted in the load R_V [W] (p. 101)"
+            },
+            {
+              "tex": "P_\\mathrm{M}",
+              "means": "the meter's own consumption [W] (p. 101)"
+            }
+          ]
         },
         {
           "eq": "error = UV²/RU (at the load); IV² RI (at the source)",
           "tex": "\\frac{U_\\mathrm{V}^2}{R_U} \\;\\text{(at the load)} \\qquad I_\\mathrm{V}^2 R_I \\;\\text{(at the source)}",
           "note": "the meter's own consumption in the two connections of Bild 2.26 a, b",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "U_\\mathrm{V}",
+              "means": "voltage at the load [V] (Bild 2.26, p. 101)"
+            },
+            {
+              "tex": "R_U",
+              "means": "resistance of the meter's voltage path [Ω] (not defined in the source)"
+            },
+            {
+              "tex": "I_\\mathrm{V}",
+              "means": "current through the load [A] (Bild 2.26, p. 101)"
+            },
+            {
+              "tex": "R_I",
+              "means": "resistance of the meter's current path [Ω] (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "p(t) = U I [cos φ − cos(2ωt + φ)]",
           "tex": "p(t) = U I\\,[\\cos\\varphi - \\cos(2\\omega t + \\varphi)]",
           "note": "the instantaneous power",
           "ref": "eqs. 2.62–2.63, p. 103",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "p(t)",
+              "means": "instantaneous power [W]; the book derives the deflection α, not p(t) (eqs. 2.62–2.63, p. 103)"
+            },
+            {
+              "tex": "U",
+              "means": "RMS voltage [V] (p. 102)"
+            },
+            {
+              "tex": "I",
+              "means": "RMS current [A] (p. 102)"
+            },
+            {
+              "tex": "\\varphi",
+              "means": "phase angle between voltage and current (p. 102)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency [1/s] (eq. 2.59, p. 102)"
+            },
+            {
+              "tex": "t",
+              "means": "time [s] (p. 102)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -672,6 +1526,24 @@
           "solution": "The current path carries the voltage path's current too, so the meter adds U²/RU = 230²/20 000 W = 2.645 W.",
           "source": "Worked by hand from Schrüfer et al. (2012), eq. 2.51 and Bild 2.26 a"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "P",
+          "means": "active power [W] (eq. 2.56, p. 102)"
+        },
+        {
+          "tex": "U",
+          "means": "RMS voltage [V] (p. 102)"
+        },
+        {
+          "tex": "I",
+          "means": "RMS current [A] (p. 102)"
+        },
+        {
+          "tex": "\\varphi",
+          "means": "phase angle between voltage and current, φ_u − φ_i (eq. 2.56, p. 102)"
+        }
       ]
     },
     {
@@ -686,32 +1558,150 @@
           "eq": "c xa + w ẋa + m ẍa = −m ẍe",
           "tex": "c\\,x_\\mathrm{a} + w\\,\\dot{x}_\\mathrm{a} + m\\,\\ddot{x}_\\mathrm{a} = -m\\,\\ddot{x}_\\mathrm{e}",
           "note": "the mass's motion xa relative to the housing, the housing's xe",
-          "ref": "eq. 7.108, p. 369"
+          "ref": "eq. 7.108, p. 369",
+          "where": [
+            {
+              "tex": "c",
+              "means": "spring constant [N/m] (p. 366)"
+            },
+            {
+              "tex": "w",
+              "means": "damping constant [N·s/m] (p. 366)"
+            },
+            {
+              "tex": "m",
+              "means": "the seismic mass [kg] (p. 366)"
+            },
+            {
+              "tex": "x_\\mathrm{a}",
+              "means": "displacement of the mass relative to the housing [m] (p. 368)"
+            },
+            {
+              "tex": "x_\\mathrm{e}",
+              "means": "motion of the housing in space [m] (p. 369)"
+            },
+            {
+              "tex": "\\dot{x},\\ \\ddot{x}",
+              "means": "first and second time derivatives, velocity and acceleration (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "xa + 2DT ẋa + T² ẍa = −T² ẍe",
           "tex": "x_\\mathrm{a} + 2DT\\,\\dot{x}_\\mathrm{a} + T^2\\ddot{x}_\\mathrm{a} = -T^2\\ddot{x}_\\mathrm{e}, \\qquad T = \\frac{1}{\\omega_0} = \\sqrt{\\frac{m}{c}}, \\quad D = \\frac{w}{2\\sqrt{cm}}",
           "note": "the standard form, T = 1/ω₀ = √(m/c), D = w/(2√(cm))",
-          "ref": "eq. 7.112, p. 369"
+          "ref": "eq. 7.112, p. 369",
+          "where": [
+            {
+              "tex": "x_\\mathrm{a}",
+              "means": "displacement of the mass relative to the housing [m] (p. 368)"
+            },
+            {
+              "tex": "x_\\mathrm{e}",
+              "means": "motion of the housing [m] (p. 369)"
+            },
+            {
+              "tex": "T",
+              "means": "time constant, T² = m/c [s] (eq. 7.98, p. 366)"
+            },
+            {
+              "tex": "D",
+              "means": "damping factor, from w/c = 2DT (eq. 7.99, p. 366); the book also calls D a damping constant, its name for w"
+            },
+            {
+              "tex": "\\omega_0",
+              "means": "natural angular frequency of the undamped system [1/s] (eq. 7.98, p. 366)"
+            },
+            {
+              "tex": "m,\\ c,\\ w",
+              "means": "mass [kg], spring constant [N/m], damping constant [N·s/m] (p. 366)"
+            }
+          ]
         },
         {
           "eq": "G(jω) = Ω²/(1 − Ω² + j2DΩ), Ω = ω/ω₀",
           "tex": "G(\\mathrm{j}\\Omega) = \\frac{x_\\mathrm{a}}{x_\\mathrm{e}} = \\frac{\\Omega^2}{1 - \\Omega^2 + \\mathrm{j}2D\\Omega}, \\qquad \\Omega = \\frac{\\omega}{\\omega_0}",
           "note": "the frequency response",
           "ref": "eq. 7.113, p. 369",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "G(\\mathrm{j}\\Omega)",
+              "means": "frequency response, output over input; the book writes G(jω) (eq. 7.113, p. 369)"
+            },
+            {
+              "tex": "x_\\mathrm{a}",
+              "means": "complex response, the mass relative to the housing (p. 369)"
+            },
+            {
+              "tex": "x_\\mathrm{e}",
+              "means": "complex excitation, the housing's motion (p. 369)"
+            },
+            {
+              "tex": "\\Omega",
+              "means": "normalised frequency (p. 369)"
+            },
+            {
+              "tex": "\\omega",
+              "means": "angular frequency of the excitation [1/s] (p. 369)"
+            },
+            {
+              "tex": "\\omega_0",
+              "means": "natural angular frequency [1/s] (p. 366)"
+            },
+            {
+              "tex": "D",
+              "means": "damping factor (p. 366)"
+            },
+            {
+              "tex": "\\mathrm{j}",
+              "means": "imaginary unit (not defined in the source)"
+            }
+          ]
         },
         {
           "eq": "|G| = Ω²/√((1 − Ω²)² + 4D²Ω²); D = 1: Ω²/(1 + Ω²)",
           "tex": "|G(\\mathrm{j}\\Omega)| = \\frac{\\Omega^2}{\\sqrt{(1 - \\Omega^2)^2 + 4D^2\\Omega^2}} \\qquad D = 1:\\; \\frac{\\Omega^2}{1 + \\Omega^2}",
           "note": "the amplitude response",
-          "ref": "eqs. 7.114–7.115, p. 370"
+          "ref": "eqs. 7.114–7.115, p. 370",
+          "where": [
+            {
+              "tex": "|G(\\mathrm{j}\\Omega)|",
+              "means": "amplitude response, x̂_a/x̂_e (eq. 7.114, p. 370)"
+            },
+            {
+              "tex": "\\Omega",
+              "means": "normalised frequency ω/ω_0 (p. 369)"
+            },
+            {
+              "tex": "D",
+              "means": "damping factor (p. 366)"
+            }
+          ]
         },
         {
           "eq": "Ω ≫ 1: x̂a = x̂e; Ω ≪ 1: |G| = Ω²",
           "tex": "\\Omega \\gg 1:\\; \\hat{x}_\\mathrm{a} = \\hat{x}_\\mathrm{e} \\qquad \\Omega \\ll 1:\\; |G| = \\Omega^2",
           "note": "displacement sensor above, accelerometer below",
-          "ref": "eqs. 7.116–7.117, p. 370"
+          "ref": "eqs. 7.116–7.117, p. 370",
+          "where": [
+            {
+              "tex": "\\Omega",
+              "means": "normalised frequency ω/ω_0 (p. 369)"
+            },
+            {
+              "tex": "\\hat{x}_\\mathrm{a}",
+              "means": "amplitude of the mass relative to the housing [m] (p. 370)"
+            },
+            {
+              "tex": "\\hat{x}_\\mathrm{e}",
+              "means": "amplitude of the housing's motion [m] (p. 370)"
+            },
+            {
+              "tex": "|G|",
+              "means": "amplitude response (eq. 7.117, p. 370)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -741,6 +1731,24 @@
           "solution": "Eq. 7.115 at Ω = 1: 1/(1 + 1) = 0.5.",
           "source": "Worked by hand from Schrüfer et al. (2012), eq. 7.115"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "\\hat{x}_\\mathrm{a}",
+          "means": "amplitude of the mass's motion relative to the housing [m] (eq. 7.114, p. 370)"
+        },
+        {
+          "tex": "\\hat{x}_\\mathrm{e}",
+          "means": "amplitude of the housing's motion [m] (eq. 7.114, p. 370)"
+        },
+        {
+          "tex": "\\Omega",
+          "means": "normalised frequency ω/ω_0 (p. 369)"
+        },
+        {
+          "tex": "D",
+          "means": "damping factor (eqs. 7.99, 7.112, pp. 366, 369)"
+        }
       ]
     },
     {
@@ -755,25 +1763,85 @@
           "eq": "Nx = f₀ Tx",
           "tex": "N_x = f_0 T_x",
           "note": "a time interval or period counted in clock periods; ±1 count",
-          "ref": "eq. 5.7, p. 295"
+          "ref": "eq. 5.7, p. 295",
+          "where": [
+            {
+              "tex": "N_x",
+              "means": "count between start and stop pulses (eq. 5.7, p. 295)"
+            },
+            {
+              "tex": "f_0",
+              "means": "known clock frequency [Hz] (p. 295)"
+            },
+            {
+              "tex": "T_x",
+              "means": "time between start and stop pulses [s] (p. 295)"
+            }
+          ]
         },
         {
           "eq": "fx = Nx/T",
           "tex": "f_x = \\frac{N_x}{T}",
           "note": "a frequency counted in a gate of known length",
-          "ref": "eq. 5.9, p. 297"
+          "ref": "eq. 5.9, p. 297",
+          "where": [
+            {
+              "tex": "f_x",
+              "means": "frequency sought [Hz] (eq. 5.9, p. 297)"
+            },
+            {
+              "tex": "N_x",
+              "means": "count during the gate time (p. 297)"
+            },
+            {
+              "tex": "T",
+              "means": "gate (measuring) time [s] (p. 297)"
+            }
+          ]
         },
         {
           "eq": "fx = (f₀/N₀) Nx",
           "tex": "f_x = \\frac{f_0}{N_0}\\,N_x",
           "note": "the gate made by counting N₀ clock periods",
-          "ref": "eq. 5.10, p. 298"
+          "ref": "eq. 5.10, p. 298",
+          "where": [
+            {
+              "tex": "f_x",
+              "means": "frequency sought [Hz] (eq. 5.10, p. 298)"
+            },
+            {
+              "tex": "f_0",
+              "means": "clock frequency [Hz] (p. 297)"
+            },
+            {
+              "tex": "N_0",
+              "means": "preset count of clock periods that ends the gate, T = N_0/f_0 (p. 298)"
+            },
+            {
+              "tex": "N_x",
+              "means": "count of the signal's periods (p. 298)"
+            }
+          ]
         },
         {
           "eq": "fx = √(f₀/T)",
           "tex": "f_x = \\sqrt{\\frac{f_0}{T}}",
           "note": "where both modes resolve alike: 1/T = fx²/f₀",
-          "ref": ""
+          "ref": "",
+          "where": [
+            {
+              "tex": "f_x",
+              "means": "frequency at which period and frequency counting resolve alike [Hz] (not defined in the source)"
+            },
+            {
+              "tex": "f_0",
+              "means": "clock frequency [Hz] (p. 295)"
+            },
+            {
+              "tex": "T",
+              "means": "gate time [s] (p. 297)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -816,6 +1884,28 @@
           "solution": "1/T = fx²/f₀ gives fx = √(f₀/T) = √(10⁷) Hz = 3.16 kHz.",
           "source": "Worked by hand from Schrüfer et al. (2012), eqs. 5.7 and 5.9"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "f_x",
+          "means": "frequency sought [Hz] (eq. 5.9, p. 297)"
+        },
+        {
+          "tex": "N_x",
+          "means": "count in the counter (pp. 295, 297)"
+        },
+        {
+          "tex": "T",
+          "means": "gate time [s] (p. 297)"
+        },
+        {
+          "tex": "f_0",
+          "means": "known clock frequency [Hz] (p. 295)"
+        },
+        {
+          "tex": "T_x",
+          "means": "time interval sought [s] (eq. 5.7, p. 295)"
+        }
       ]
     },
     {
@@ -830,26 +1920,82 @@
           "eq": "n comparators: n + 1 ranges",
           "tex": "n \\text{ comparators: } n + 1 \\text{ ranges}",
           "note": "the parallel (flash) converter, thermometer code to Gray code",
-          "ref": "Table 6.1, pp. 307–308"
+          "ref": "Table 6.1, pp. 307–308",
+          "where": [
+            {
+              "tex": "n",
+              "means": "number of comparators (p. 307)"
+            }
+          ]
         },
         {
           "eq": "Ur = U₀/2, then ± U₀/4, …",
           "tex": "U_\\mathrm{r} = \\frac{U_0}{2}, \\text{ then } \\pm\\frac{U_0}{4}, \\ldots",
           "note": "successive approximation: keep a weight while ux ≥ Ur",
-          "ref": "Bild 6.6, p. 310"
+          "ref": "Bild 6.6, p. 310",
+          "where": [
+            {
+              "tex": "U_\\mathrm{r}",
+              "means": "comparison voltage set in the converter [V] (p. 310)"
+            },
+            {
+              "tex": "U_0",
+              "means": "reference voltage, the full range [V] (p. 310)"
+            }
+          ]
         },
         {
           "eq": "ua(t₂) = −(1/RC) ūx (t₂ − t₁)",
           "tex": "u_\\mathrm{a}(t_2) = -\\frac{1}{RC}\\,\\bar{u}_x\\,(t_2 - t_1)",
           "note": "the dual slope's run-down over a fixed time",
           "ref": "eq. 6.11, p. 313",
-          "explore": true
+          "explore": true,
+          "where": [
+            {
+              "tex": "u_\\mathrm{a}(t_2)",
+              "means": "integrator output at the end of the run-down [V] (eq. 6.11, p. 313)"
+            },
+            {
+              "tex": "R,\\ C",
+              "means": "the integrator's resistor [Ω] and capacitor [F] (eq. 6.9, p. 313)"
+            },
+            {
+              "tex": "\\bar{u}_x",
+              "means": "input voltage averaged over t_2 − t_1 [V] (eq. 6.10, p. 313)"
+            },
+            {
+              "tex": "t_1,\\ t_2",
+              "means": "start and end of the fixed run-down [s] (p. 313)"
+            }
+          ]
         },
         {
           "eq": "ūx Na/f = U₀ Nx/f ⇒ Nx = (Na/U₀) ūx",
           "tex": "\\bar{u}_x \\frac{N_\\mathrm{a}}{f} = U_0 \\frac{N_x}{f} \\;\\Rightarrow\\; N_x = \\frac{N_\\mathrm{a}}{U_0}\\,\\bar{u}_x",
           "note": "R, C and the clock cancel",
-          "ref": "eqs. 6.13–6.16, pp. 313–314"
+          "ref": "eqs. 6.13–6.16, pp. 313–314",
+          "where": [
+            {
+              "tex": "\\bar{u}_x",
+              "means": "input voltage averaged over t_2 − t_1 [V] (eq. 6.10, p. 313)"
+            },
+            {
+              "tex": "N_\\mathrm{a}",
+              "means": "clock pulses for the fixed time t_2 − t_1 (eq. 6.14, p. 313)"
+            },
+            {
+              "tex": "f",
+              "means": "clock frequency [Hz] (p. 313)"
+            },
+            {
+              "tex": "U_0",
+              "means": "reference voltage [V] (p. 313)"
+            },
+            {
+              "tex": "N_x",
+              "means": "count for the run-up time t_x − t_2 (eq. 6.14, p. 313)"
+            }
+          ]
         }
       ],
       "practice": [
@@ -893,6 +2039,24 @@
           "solution": "2⁸ = 256 ranges need 255 comparators; the 3-bit converter of Bild 6.4 has seven.",
           "source": "Worked by hand from Schrüfer et al. (2012), section 6.2.3"
         }
+      ],
+      "lawWhere": [
+        {
+          "tex": "N_x",
+          "means": "count during the run-up (eq. 6.14, p. 313)"
+        },
+        {
+          "tex": "N_\\mathrm{a}",
+          "means": "clock pulses counted for the fixed run-down time t_2 − t_1 (eq. 6.14, p. 313)"
+        },
+        {
+          "tex": "U_0",
+          "means": "reference voltage [V] (p. 313)"
+        },
+        {
+          "tex": "\\bar{u}_x",
+          "means": "the input voltage averaged over t_2 − t_1 [V] (eq. 6.10, p. 313)"
+        }
       ]
     },
     {
@@ -907,31 +2071,89 @@
           "eq": "uR = udig − uan, |uR| ≤ Δu/2",
           "tex": "u_\\mathrm{R} = u_\\mathrm{dig} - u_\\mathrm{an}, \\qquad |u_\\mathrm{R}| \\le \\frac{\\Delta u}{2}",
           "note": "the quantisation error",
-          "ref": "eq. 6.36, p. 323"
+          "ref": "eq. 6.36, p. 323",
+          "where": [
+            {
+              "tex": "u_\\mathrm{R}",
+              "means": "quantisation error, the noise voltage [V] (eq. 6.36, p. 323)"
+            },
+            {
+              "tex": "u_\\mathrm{dig}",
+              "means": "the digital value of the shown voltage [V] (p. 323)"
+            },
+            {
+              "tex": "u_\\mathrm{an}",
+              "means": "the analogue voltage actually applied [V] (p. 323)"
+            },
+            {
+              "tex": "\\Delta u",
+              "means": "height of one quantisation step [V] (p. 323)"
+            }
+          ]
         },
         {
           "eq": "UR = Δu/√12",
           "tex": "U_\\mathrm{R} = \\frac{\\Delta u}{\\sqrt{12}}",
           "note": "its RMS value, spread evenly over a step",
-          "ref": "eq. 6.37, p. 323"
+          "ref": "eq. 6.37, p. 323",
+          "where": [
+            {
+              "tex": "U_\\mathrm{R}",
+              "means": "RMS value of the quantisation noise, uniformly distributed [V] (eq. 6.37, p. 323)"
+            },
+            {
+              "tex": "\\Delta u",
+              "means": "height of one quantisation step [V] (p. 323)"
+            }
+          ]
         },
         {
           "eq": "SNR = 6.02 n + 10.79 dB",
           "tex": "\\mathrm{SNR} = 6.02\\,n + 10.79\\,\\mathrm{dB}",
           "note": "a full-scale DC value",
-          "ref": "eq. 6.42, p. 324"
+          "ref": "eq. 6.42, p. 324",
+          "where": [
+            {
+              "tex": "\\mathrm{SNR}",
+              "means": "signal-to-noise ratio, 10 log P_N/P_R [dB] (p. 324)"
+            },
+            {
+              "tex": "n",
+              "means": "number of bits of the converter (eq. 6.41, p. 324)"
+            }
+          ]
         },
         {
           "eq": "SNR = 6.02 n + 1.76 dB",
           "tex": "\\mathrm{SNR} = 6.02\\,n + 1.76\\,\\mathrm{dB}",
           "note": "a full-scale sine",
-          "ref": "eq. 6.44, p. 325"
+          "ref": "eq. 6.44, p. 325",
+          "where": [
+            {
+              "tex": "\\mathrm{SNR}",
+              "means": "signal-to-noise ratio [dB] (p. 324)"
+            },
+            {
+              "tex": "n",
+              "means": "number of bits of the converter (p. 324)"
+            }
+          ]
         },
         {
           "eq": "neff = (SNRgem − 1.76)/6.02",
           "tex": "n_\\mathrm{eff} = \\frac{\\mathrm{SNR}_\\mathrm{gem} - 1.76}{6.02}",
           "note": "the effective number of bits",
-          "ref": "eq. 6.45, p. 325"
+          "ref": "eq. 6.45, p. 325",
+          "where": [
+            {
+              "tex": "n_\\mathrm{eff}",
+              "means": "effective number of bits, ENOB (eq. 6.45, p. 325)"
+            },
+            {
+              "tex": "\\mathrm{SNR}_\\mathrm{gem}",
+              "means": "measured signal-to-noise ratio [dB] (p. 325)"
+            }
+          ]
         }
       ],
       "practice": [

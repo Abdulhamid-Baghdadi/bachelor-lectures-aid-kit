@@ -4,6 +4,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { solve, isRight } from "../../src/core/index.js";
+import { typeset } from "../../../kit/ui/math.js";
 
 const data = JSON.parse(readFileSync(new URL("../../data/labs.json", import.meta.url), "utf8"));
 
@@ -32,3 +33,25 @@ for (const lab of data.labs) {
     });
   }
 }
+
+// Under every equation a list of what its symbols mean (asked for 11 Nov 2026): each entry names its symbol in LaTeX
+// that typesets as the equation's does, says what it means, and every main law has a list of its own or its equation's.
+test("every symbol list entry has tex and means, and its tex typesets", () => {
+  const lists = data.labs.flatMap(l => [["law of " + l.id, l.lawWhere], ...(l.equations ?? []).map((e, i) => [`${l.id} equation ${i + 1}`, e.where])])
+    .filter(([, list]) => list !== undefined);
+  assert.ok(lists.length > 0, "some equations have symbol lists");
+  for (const [where, list] of lists) {
+    assert.ok(Array.isArray(list) && list.length, `${where}: a non-empty list`);
+    for (const s of list) {
+      assert.ok(typeof s.tex === "string" && s.tex.trim(), `${where}: an entry without tex`);
+      assert.ok(typeof s.means === "string" && s.means.trim(), `${where}: ${s.tex} says nothing`);
+      assert.equal(typeset(s.tex).error, "", `${where}: ${s.tex} does not typeset`);
+    }
+  }
+  // A law written only in words (the languages lab) has no symbols to list.
+  const symbolic = tex => /[A-Za-z]/.test(tex.replace(/\\text(tt)?\{[^}]*\}|\\[A-Za-z]+/g, ""));
+  for (const l of data.labs.filter(l => l.lawTex && symbolic(l.lawTex))) {
+    const list = l.lawWhere ?? (l.equations ?? []).find(e => e.tex === l.lawTex)?.where;
+    assert.ok(list?.length, `${l.id}: the main law has a symbol list`);
+  }
+});
