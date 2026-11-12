@@ -33,9 +33,23 @@ test("heap (§ 19.5): every insert and removal keeps the heap condition; removal
   assert.deepEqual(out, [...out].sort((x, y) => y - x));
 });
 
-test("stack (§ 18.2): factorial(5) stacks five frames and ends with an empty stack", () => {
+test("heap: inserting P into Fig. 19.26 gives the array of Fig. 19.25 (pp. 288–289)", () => {
+  const fig26 = [..."SPILIEEBHEA"];
+  assert.ok(C.isHeap(fig26));
+  assert.deepEqual(C.heapInsert(fig26, "P").heap, [..."SPPLIIEBHEAE"]);
+});
+
+test("heap: removing S from Fig. 19.25 gives Fig. 19.29(b), the left child taken on a tie (pp. 289–290)", () => {
+  const r = C.heapRemoveMax([..."SPPLIIEBHEAE"]);
+  assert.equal(r.max, "S");
+  assert.deepEqual(r.heap, [..."PLPHIIEBEEA"]);
+});
+
+test("stack (§ 18.2): factorial(5) stacks six levels, N = 5 down to 0 (Fig. 18.2, p. 260), and ends empty", () => {
   const e = C.factorialFrames(5);
-  assert.equal(Math.max(...e.map(x => x.stack.length)), 5);
+  assert.equal(Math.max(...e.map(x => x.stack.length)), 6);
+  assert.deepEqual(e.find(x => x.stack.length === 6).stack, [5, 4, 3, 2, 1, 0]);
+  assert.ok(e.some(x => x.what === "factorial(0) returns 1"));
   assert.deepEqual(e.at(-1).stack, []);
   assert.match(e.at(-1).what, /returns 120/);
 });

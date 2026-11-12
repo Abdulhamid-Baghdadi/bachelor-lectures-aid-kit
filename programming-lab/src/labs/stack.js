@@ -18,7 +18,7 @@ export default {
         s("text", { x: 230, y: 260 - (i + 1) * 30 + 18, class: "value-text", "text-anchor": "middle" }, `factorial: n = ${v}`)]).flat();
       box.replaceChildren(s("svg", { viewBox: "0 0 460 300", class: "schematic", role: "img", "aria-label": `The stack with ${e.stack.length} frames` },
         s("line", { x1: 120, y1: 262, x2: 340, y2: 262, class: "axis" }), s("text", { x: 230, y: 285, class: "index-text", "text-anchor": "middle" }, "bottom of the stack"), ...frames));
-      rD.set(String(e.stack.length), "", `at most ${n} for factorial(${n})`);
+      rD.set(String(e.stack.length), "", `at most ${n + 1} for factorial(${n}): n = ${n} down to 0`);
       rW.set(e.what);
       stepSlider.el.querySelector("input").max = String(events.length - 1);
     };

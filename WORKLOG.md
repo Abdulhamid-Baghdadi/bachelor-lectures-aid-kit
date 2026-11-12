@@ -66,3 +66,14 @@ every entry has a meaning and typesets. Definitions from the lecture notes with 
   (Gawlik p. 111) not confirmed.
 - Open: the heap lab counts from 0 and the factorial lab stops at 1! (the book: from 1, and at 0! = 1, pp. 288, 257).
   Nothing committed.
+
+## 12 Nov 2026: heap and factorial as the book has them
+
+You chose to close the two open items. Read again in Klima and Selberherr (2010): positions from 1, children 2i and
+2i + 1, parent i/2 (p. 288); the recursion ends at N = 0 with 0! = 1 ((18.2), p. 257; code p. 258), so 5! stacks six
+levels (Fig. 18.2, p. 260).
+- Heap: the arithmetic now runs on the book's positions; the readout, law and equation say so (ref p. 288, no longer
+  "derived"). Its behaviour was already right. New tests from the book's own figures: inserting P into Fig. 19.26
+  gives the array of Fig. 19.25; removing S gives Fig. 19.29(b), the left child taken on a tie as the book chose.
+- Stack: factorial ends at 0; the practice answer is now 6 frames (was 5), from Fig. 18.2.
+- 29 Programming tests pass; both labs checked in the browser. Nothing committed.

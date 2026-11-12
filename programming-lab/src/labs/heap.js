@@ -21,7 +21,7 @@ export default {
       const nodes = heap.flatMap((v, i) => [s("circle", { cx: X(i), cy: Y(i), r: 15, class: `node ${moved.includes(i) ? "moved" : ""}` }),
         s("text", { x: X(i), y: Y(i) + 5, class: "value-text", "text-anchor": "middle" }, String(v))]);
       box.replaceChildren(s("svg", { viewBox: "0 0 460 300", class: "schematic", role: "img", "aria-label": `A heap of ${heap.length} keys drawn as a tree` }, ...edges, ...nodes));
-      rA.set(heap.length ? heap.join(" ") : "empty", "", "children of index i at 2i + 1 and 2i + 2");
+      rA.set(heap.length ? heap.join(" ") : "empty", "", "positions 1, 2, 3 … from the left; the children of position i are at 2i and 2i + 1, its parent at i/2 (p. 288)");
       rO.set(out.length ? out.join(" ") : "none yet");
       rC.set(isHeap(heap) ? "holds" : "broken", isHeap(heap) ? "" : "danger");
     };

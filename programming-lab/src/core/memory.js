@@ -2,12 +2,13 @@
 // languages give memory back, each rule quoted from that language's own documentation (bibliography.json).
 
 /** The stack of calls for factorial(n), recursive as in § 18.2 (pp. 258–259): each call puts a frame with its own n
- *  on the stack; each return takes it off. Returns the stack after every push and pop. */
+ *  on the stack; each return takes it off. It stops at N = 0 with 0! = 1, as (18.2) and the code on p. 258 do, so 5!
+ *  stacks six levels, N = 5 down to 0 (Fig. 18.2, p. 260). Returns the stack after every push and pop. */
 export function factorialFrames(n) {
   const events = [], stack = [];
   const fact = k => {
     stack.push(k); events.push({ stack: [...stack], what: `call factorial(${k})` });
-    const result = k <= 1 ? 1 : k * fact(k - 1);
+    const result = k === 0 ? 1 : k * fact(k - 1);
     stack.pop(); events.push({ stack: [...stack], what: `factorial(${k}) returns ${result}` });
     return result;
   };

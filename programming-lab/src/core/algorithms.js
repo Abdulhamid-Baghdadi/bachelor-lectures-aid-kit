@@ -81,12 +81,15 @@ export function positionOnce(input) {
 }
 
 /** A heap (§ 19.5, pp. 287–291): a complete binary tree kept in an array, each key at least as large as its
- *  children's; children of i at 2i + 1 and 2i + 2. Insert puts the new key last and repairs upwards (UpHeap). */
+ *  children's. The book counts positions from 1: the children of position i are at 2i and 2i + 1, its parent at i/2
+ *  (p. 288). JavaScript's array counts from 0, so array index k is position k + 1; the arithmetic below is the book's
+ *  on positions. Insert puts the new key last and repairs upwards (UpHeap). */
+const parent = k => Math.floor((k + 1) / 2) - 1, left = k => 2 * (k + 1) - 1;
 export function heapInsert(heap, key) {
   const h = [...heap, key], moves = [];
   let i = h.length - 1;
   while (i > 0) {
-    const p = Math.floor((i - 1) / 2);
+    const p = parent(i);
     if (h[p] >= h[i]) break;
     [h[p], h[i]] = [h[i], h[p]]; moves.push([i, p]); i = p;
   }
@@ -101,7 +104,8 @@ export function heapRemoveMax(heap) {
     h[0] = last;
     let i = 0;
     for (;;) {
-      const l = 2 * i + 1, r = l + 1;
+      // On a tie the left child is taken, as the book chose (p. 289).
+      const l = left(i), r = l + 1;
       let k = i;
       if (l < h.length && h[l] > h[k]) k = l;
       if (r < h.length && h[r] > h[k]) k = r;
@@ -113,4 +117,4 @@ export function heapRemoveMax(heap) {
 }
 
 /** True when every key is at least as large as its children's: the heap condition (p. 287). */
-export const isHeap = h => h.every((v, i) => i === 0 || h[Math.floor((i - 1) / 2)] >= v);
+export const isHeap = h => h.every((v, i) => i === 0 || h[parent(i)] >= v);

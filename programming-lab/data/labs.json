@@ -258,8 +258,8 @@
       "id": "heap",
       "title": "The heap: a tree in an array",
       "idea": "A heap keeps the largest key at the top of a complete binary tree stored in an array. A new key climbs up (UpHeap); after the top is removed, the last key sinks down (DownHeap). Removing the top again and again sorts.",
-      "law": "feld[(i − 1)/2] ≥ feld[i]",
-      "lawTex": "\\text{feld}\\big[\\lfloor (i - 1)/2 \\rfloor\\big] \\ge \\text{feld}[i]",
+      "law": "feld[i/2] ≥ feld[i]",
+      "lawTex": "\\text{feld}\\big[\\lfloor i/2 \\rfloor\\big] \\ge \\text{feld}[i]",
       "lawWhere": [
         {
           "tex": "\\text{feld}",
@@ -267,7 +267,7 @@
         },
         {
           "tex": "i",
-          "means": "index of a node; the lab counts from 0, the book from 1, with children 2i, 2i + 1 and parent i/2 (p. 288)"
+          "means": "position of a node, counted from 1 as in the book: its children are at 2i and 2i + 1, its parent at i/2 (p. 288)"
         },
         {
           "tex": "\\lfloor\\ \\rfloor",
@@ -277,14 +277,18 @@
       "lecture": "Klima and Selberherr (2010), § 19.5, pp. 287–291",
       "equations": [
         {
-          "eq": "children of i: 2i + 1 and 2i + 2",
-          "tex": "\\text{children of } i: \\; 2i + 1, \\; 2i + 2",
-          "note": "the tree is kept in an array without links; indices from 0 as in C",
-          "ref": "derived",
+          "eq": "children of i: 2i and 2i + 1; parent: i/2",
+          "tex": "\\text{children of } i: \\; 2i, \\; 2i + 1; \\qquad \\text{parent: } \\lfloor i/2 \\rfloor",
+          "note": "the tree is kept in an array without links; positions counted from 1, as in the book",
+          "ref": "§ 19.5.1, p. 288",
           "where": [
             {
               "tex": "i",
-              "means": "index of a node counted from 0 (derived here; the book counts from 1: children 2i and 2i + 1, p. 288)"
+              "means": "position of a node in the array, counted from 1 (p. 288)"
+            },
+            {
+              "tex": "\\lfloor\\ \\rfloor",
+              "means": "rounding down: the book's integer division i/2 (p. 288)"
             }
           ]
         },
@@ -424,8 +428,8 @@
       "id": "stack",
       "title": "The program stack",
       "idea": "Each call puts a frame with its own local variables on the stack; each return takes it off. A recursive function stacks one frame per open call.",
-      "law": "factorial(n) = n · factorial(n − 1),  factorial(1) = 1",
-      "lawTex": "\\text{factorial}(n) = n \\cdot \\text{factorial}(n - 1), \\qquad \\text{factorial}(1) = 1",
+      "law": "factorial(n) = n · factorial(n − 1),  factorial(0) = 1",
+      "lawTex": "\\text{factorial}(n) = n \\cdot \\text{factorial}(n - 1), \\qquad \\text{factorial}(0) = 1",
       "lawWhere": [
         {
           "tex": "\\text{factorial}",
@@ -433,10 +437,10 @@
         },
         {
           "tex": "n",
-          "means": "a whole number; the book writes N and ends at N = 0 with 0! = 1, (18.2), p. 257, where the lab ends at 1"
+          "means": "a whole number, N in the book; the recursion ends at N = 0 with 0! = 1, (18.2), p. 257"
         }
       ],
-      "lecture": "Klima and Selberherr (2010), § 18.2, pp. 258–259",
+      "lecture": "Klima and Selberherr (2010), § 18.1–18.2, pp. 257–260",
       "equations": [
         {
           "eq": "call: push a frame; return: pop it",
@@ -448,14 +452,14 @@
       "practice": [
         {
           "question": "How many frames of factorial are on the stack at most while factorial(5) runs?",
-          "source": "Worked by hand, § 18.2",
-          "answer": 5,
+          "source": "Fig. 18.2, p. 260",
+          "answer": 6,
           "unit": "",
           "compute": {
             "law": "maxFrames",
             "n": 5
           },
-          "solution": "factorial(5) calls 4, 3, 2 and 1 before any returns: five frames at once."
+          "solution": "factorial(5) calls 4, 3, 2, 1 and 0 before any returns: six frames at once, as Fig. 18.2 shows (N = 5 down to N = 0)."
         }
       ]
     },
