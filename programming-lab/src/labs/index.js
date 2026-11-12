@@ -3,9 +3,12 @@
 import search from "./search.js";
 import sorting from "./sorting.js";
 import heap from "./heap.js";
+import list from "./list.js";
+import tree from "./tree.js";
+import hash from "./hash.js";
 import pointers from "./pointers.js";
 import stack from "./stack.js";
 import malloc from "./malloc.js";
 import languages from "./languages.js";
 
-export const labs = [search, sorting, heap, pointers, stack, malloc, languages];
+export const labs = [search, sorting, heap, list, tree, hash, pointers, stack, malloc, languages];

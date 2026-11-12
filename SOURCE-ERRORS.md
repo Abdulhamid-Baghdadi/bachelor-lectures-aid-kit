@@ -26,6 +26,7 @@ page numbers; the source files are named in each lab's `CLAUDE.md`.
 | Kugi (2015) | Seite 90, (3.164)–(3.165) | n(s) = 1 + 2ξ(sT) + (sT)², then the same n(s) = 1/T² + 2ξ s/T + s² | the two differ by the factor T²; (3.165) is n(s)/T² | P-T2 poles: n(s)'s `means` says so | page image read |
 | Goiser (2016) | set 3, slide 33 | Q(x) called the "Marcum Q-Funktion" | the Gaussian Q-function, ½ erfc(x/√2); the Marcum Q-function is a different, two-argument function | Q's `means` says so in the four labs that use it | text layer |
 | Goiser (2016) | set 5, slide 40 | "Code-Effizienz" η = H/Hmax at the top, η = H/L at the bottom | two different quantities under one name; the code efficiency of a source code is H/L | Mean codeword length: η = H/L, and its `means` notes the first form | text layer |
+| Klima and Selberherr (2010) | p. 282, § 19.4.4.1 | "Bei der Preorder-Traversierung wird jeder Knoten Ebene für Ebene der Reihe nach bearbeitet", right after level order is described the same way | that sentence describes level order; preorder, as the same page then says and shows on Fig. 19.14, takes the node, then the left subtree, then the right | Binary search trees: preorder is node, left, right; level order is row by row; tests use the page's own orders for Fig. 19.14 | text layer (12 Nov) |
 
 ## Notation and conventions, not errors
 
@@ -36,6 +37,7 @@ page numbers; the source files are named in each lab's `CLAUDE.md`.
 | Doblinger (2015) | p. 150, (6.60) and Abb. 6.12 | \|H_a(ω)\|² in (6.60) and the caption; \|H(jω)\|² on the plot's axis | one function, two names | Butterworth: the `means` names both | page image read |
 | Prechtl (2010), SS1 | p. 71, footnote 4 | si(x) = sin(x)/x, "in der englischsprachigen [Literatur] dagegen sinc(x)" | much English literature defines sinc x = sin(πx)/(πx); others use sin(x)/x | The lab uses sin(πx)/(πx) and says the footnote equates sinc with si | text layer |
 | Strasser (2015), HL | p. 129, (5.2.4) | E_max = −eNA dp/ε = −eND dn/ε | the sign is right for the field pointing from n to p; footnote 5 on p. 131 says the sign is dropped from then on | pn junction: gives the magnitude and says so | text layer |
+| Klima and Selberherr (2010) | p. 278, § 19.4.2 | binary trees are trees "deren Knoten genau zwei Nachfolger haben" | the book's own Fig. 19.14 has nodes with one or no successor, a missing one drawn as ×: each node has two links, at most two successors | Binary search trees: draws missing successors as no edge; nothing in the lab says "exactly two" | text layer (12 Nov) |
 
 ## Not confirmed
 

@@ -1,6 +1,7 @@
 # Programming Lab
 
-Programming in C to play with in the browser, searching, sorting, heaps, pointers, the stack, malloc and free, and
+Programming in C to play with in the browser, searching, sorting, heaps, linked lists, binary search trees, hash
+tables, pointers, the stack, malloc and free, and
 how five languages give memory back, after Klima and Selberherr (2010), *Programmieren in C*, the course book of TU
 Wien's Programmieren 1 and 2.
 
@@ -14,6 +15,7 @@ Wien's Programmieren 1 and 2.
 | Source | Labs |
 |---|---|
 | Klima and Selberherr (2010), ch. 13, 18, 19 | sequential and binary search, bubble sort and quicksort, the heap as a tree in an array |
+| Klima and Selberherr (2010), ch. 19 | the linked list kept in an array, binary search trees and how the order of insertion shapes them, hash tables with separate chaining |
 | Klima and Selberherr (2010), ch. 14, 18, 20 | pointers and pointer arithmetic, the program stack, malloc, realloc and free with their typical errors |
 | The languages' own documentation | who gives memory back: C, C++, Java, Python and JavaScript in the same three situations |
 

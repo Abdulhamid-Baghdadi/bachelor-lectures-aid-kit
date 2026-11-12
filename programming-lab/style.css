@@ -27,3 +27,8 @@
 .buttons { display: flex; flex-wrap: wrap; gap: 6px; }
 .stage.wide { grid-template-columns: 1fr; }
 .lang-table caption { text-align: left; font-weight: 700; padding: 4px 0 8px; }
+
+/* The lists, trees and hashes: a link line, a node found, the one-letter key box. */
+.edge.link { stroke: var(--ink); stroke-width: 2; }
+.node.found { fill: var(--accent); fill-opacity: 0.25; stroke-width: 4; }
+.controls input[type=text] { min-height: 32px; padding: 4px 8px; border: 1px solid var(--muted); border-radius: 6px; background: var(--panel); color: var(--ink); font: 15px ui-monospace, monospace; }

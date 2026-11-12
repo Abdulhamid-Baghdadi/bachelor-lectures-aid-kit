@@ -1,6 +1,7 @@
 # Programming Lab
 
-Interactive labs for TU Wien's Programmieren 1 and 2, taught in C in 2015: searching, sorting and heaps, pointers, the stack,
+Interactive labs for TU Wien's Programmieren 1 and 2, taught in C in 2015: searching, sorting and heaps, lists,
+search trees and hashes, pointers, the stack,
 malloc and free, then a comparison of how C, C++, Java, Python and JavaScript give memory back. Layers and rules:
 ARCHITECTURE.md. Tests: `node --test "tests/unit/*.test.js"`.
 Sources, in `H:\My Drive\02_Personal\02_Education\TU\01_TU_Bachelor\`: the course book Klima and Selberherr (2010),

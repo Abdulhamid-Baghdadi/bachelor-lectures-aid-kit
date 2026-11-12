@@ -19,7 +19,8 @@ lab's own `style.css` is linked after `../kit/style.css` and adds only its famil
 | app | `src/app.js` | kit-core, core, kit, labs | the page, `index.html` |
 
 The core is pure: no DOM, network, clock or randomness (`forbid` in `architecture.json`). `algorithms.js` holds
-the book's searching and sorting algorithms and the heap, each recording its steps; `memory.js` the stack of calls,
+the book's searching and sorting algorithms and the heap, each recording its steps; `structures.js` the list,
+the binary search tree and the hash of ch. 19; `memory.js` the stack of calls,
 a model of C's malloc, realloc and free, and the five languages' rules with their sources. `src/labs/cells.js` is
 the array drawing several labs share, not a lab. The kit draws and knows no law. A
 lab holds one idea. The core names no lab.
@@ -38,6 +39,7 @@ languages is listed in README.md, Sources.
   `tests/unit/architecture.test.js`.
 - The laws: `tests/unit/core.test.js`, against the book's worked examples: quicksort's first pass (p. 262), bubble
   sort's first pass (p. 172); the malloc model against chapter 20's rules; the languages against their sources.
+  `tests/unit/structures.test.js`: the list, tree and hash against the figures and tables of ch. 19.
 - Practice answers: `tests/unit/labs-data.test.js`. Modules and data agree: `tests/unit/labs-modules.test.js`.
 - Citations: `tests/unit/design-citations.test.js`. README pictures: `tests/unit/readme.test.js`.
 

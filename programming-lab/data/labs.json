@@ -29,6 +29,17 @@
       ]
     },
     {
+      "number": "19",
+      "pages": "pp. 265–301",
+      "title": "Data structures: lists, search trees and hashes",
+      "family": "algorithms",
+      "labs": [
+        "list",
+        "tree",
+        "hash"
+      ]
+    },
+    {
       "number": "14, 18, 20",
       "pages": "pp. 179–310",
       "title": "Pointers, the stack and dynamic memory",
@@ -326,6 +337,404 @@
             ]
           },
           "solution": "Each new key climbs while its parent is smaller; the largest, 12, ends at the top: 12 9 3 5 7."
+        }
+      ]
+    },
+    {
+      "id": "list",
+      "title": "The linked list: order kept in links",
+      "idea": "A list stores its elements and, separately, their order: each node holds an element and a link to the next node, and the head names the first. Inserting or removing changes one or two links and moves nothing, but finding a place means walking from the head.",
+      "law": "neu.naechster = knoten.naechster; knoten.naechster = neu",
+      "lawTex": "\\text{neu.naechster} \\leftarrow \\text{knoten.naechster}; \\quad \\text{knoten.naechster} \\leftarrow \\text{neu}",
+      "lawWhere": [
+        {
+          "tex": "\\text{knoten}",
+          "means": "the node after which the new one goes, reached by walking from the head (ListeEinfuegen, p. 270)"
+        },
+        {
+          "tex": "\\text{neu}",
+          "means": "the index of the new node in the array (the book's neuesElement, p. 270)"
+        },
+        {
+          "tex": "\\text{naechster}",
+          "means": "a node's link: the array index of the next node, −1 at the end of the list (pp. 267–268)"
+        },
+        {
+          "tex": "\\leftarrow",
+          "means": "assignment, the C statement ="
+        }
+      ],
+      "lecture": "Klima and Selberherr (2010), § 19.2, pp. 266–274",
+      "equations": [
+        {
+          "eq": "knoten.naechster = neu.naechster after neu.naechster = knoten.naechster",
+          "tex": "\\text{neu.naechster} \\leftarrow \\text{knoten.naechster}; \\quad \\text{knoten.naechster} \\leftarrow \\text{neu}",
+          "note": "insert after a node: first the new node points on, then its predecessor points to it; position 0 sets the head instead",
+          "ref": "§ 19.2.2.1, p. 270",
+          "where": [
+            {
+              "tex": "\\text{knoten}",
+              "means": "the node reached after position − 1 steps from the head (p. 270)"
+            },
+            {
+              "tex": "\\text{neu}",
+              "means": "the index of the new node (p. 270)"
+            },
+            {
+              "tex": "\\text{naechster}",
+              "means": "the link to the next node (p. 267)"
+            },
+            {
+              "tex": "\\leftarrow",
+              "means": "assignment, the C statement ="
+            }
+          ]
+        },
+        {
+          "eq": "knoten.naechster = naechster.naechster; naechster.naechster = −2",
+          "tex": "\\text{knoten.naechster} \\leftarrow \\text{naechster.naechster}; \\quad \\text{naechster.naechster} \\leftarrow -2",
+          "note": "remove the node after knoten: its predecessor points past it, and in the array it is only marked removed",
+          "ref": "§ 19.2.2.2, p. 272",
+          "where": [
+            {
+              "tex": "\\text{knoten}",
+              "means": "the predecessor of the node to remove (p. 272)"
+            },
+            {
+              "tex": "\\text{naechster}",
+              "means": "the node to remove, the one after knoten; also the name of a node's link (p. 272)"
+            },
+            {
+              "tex": "-2",
+              "means": "a second invalid index, marking a removed node (p. 272)"
+            },
+            {
+              "tex": "\\leftarrow",
+              "means": "assignment, the C statement ="
+            }
+          ]
+        },
+        {
+          "eq": "end of the list: naechster = −1",
+          "tex": "\\text{naechster} = -1",
+          "note": "an invalid index ends the list (method 1, Fig. 19.4); the other method is an end node that points to itself (Fig. 19.5)",
+          "ref": "§ 19.2.2, p. 268",
+          "where": [
+            {
+              "tex": "\\text{naechster}",
+              "means": "a node's link to the next node (p. 268)"
+            },
+            {
+              "tex": "-1",
+              "means": "the invalid index that marks the end of the list (p. 268)"
+            }
+          ]
+        }
+      ],
+      "practice": [
+        {
+          "question": "The list L I S T E of Fig. 19.4 is in array cells 0 to 4. ListeEinfuegen(feld, &kopf, 5, 3) inserts N from cell 5. At which place in the list does N now stand, counted from 1?",
+          "source": "Klima and Selberherr (2010), pp. 270–271: the call is the book's; the place worked by hand",
+          "answer": 4,
+          "unit": "",
+          "compute": {
+            "law": "listPlaceOf",
+            "text": "LISTE",
+            "element": "N",
+            "position": 3
+          },
+          "solution": "Position 3 means after the third node: the walk goes L, I, S, then N is linked in after S. The list reads L I S N T E, so N is fourth, although it sits in array cell 5."
+        }
+      ]
+    },
+    {
+      "id": "tree",
+      "title": "Binary search trees: shape from order",
+      "idea": "In a binary search tree every key in a node's left subtree is smaller and every key in its right subtree larger; equal keys go left. Searching and inserting go down one path. The order in which keys are inserted decides the shape: the same keys can make a bushy tree of few levels or a chain as slow as a list.",
+      "law": "keys left ≤ key < keys right",
+      "lawTex": "\\text{key}(\\text{left subtree}) \\le \\text{key}(\\text{node}) < \\text{key}(\\text{right subtree})",
+      "lawWhere": [
+        {
+          "tex": "\\text{key}",
+          "means": "the criterion a node is inserted and searched by (Schlüssel, p. 278)"
+        },
+        {
+          "tex": "\\text{left subtree},\\ \\text{right subtree}",
+          "means": "all nodes reached through the node's left or right link (p. 280)"
+        },
+        {
+          "tex": "\\le",
+          "means": "equal keys go into the left subtree, the book's own convention (p. 280)"
+        }
+      ],
+      "lecture": "Klima and Selberherr (2010), § 19.4, pp. 276–286",
+      "equations": [
+        {
+          "eq": "key(left subtree) ≤ key(node) < key(right subtree)",
+          "tex": "\\text{key}(\\text{left subtree}) \\le \\text{key}(\\text{node}) < \\text{key}(\\text{right subtree})",
+          "note": "the condition of a binary search tree, equal keys to the left",
+          "ref": "§ 19.4.3, p. 280",
+          "where": [
+            {
+              "tex": "\\text{key}",
+              "means": "the node's key (Schlüssel, p. 278)"
+            },
+            {
+              "tex": "\\text{left subtree},\\ \\text{right subtree}",
+              "means": "the nodes reached through the left or right link (p. 280)"
+            },
+            {
+              "tex": "\\text{node}",
+              "means": "any node of the tree (p. 280)"
+            }
+          ]
+        },
+        {
+          "eq": "height of a complete binary tree = ⌊log₂ N⌋ + 1",
+          "tex": "H = \\lfloor \\log_2 N \\rfloor + 1",
+          "note": "the number of levels; for Fig. 19.16, N = 11 gives 4",
+          "ref": "§ 19.4.2, p. 280",
+          "where": [
+            {
+              "tex": "H",
+              "means": "the height: the number of levels the tree has (p. 279)"
+            },
+            {
+              "tex": "N",
+              "means": "the number of nodes (p. 280)"
+            },
+            {
+              "tex": "\\lfloor\\ \\rfloor",
+              "means": "the whole part, the book's \"ganzzahliger Wert\" (p. 280)"
+            }
+          ]
+        },
+        {
+          "eq": "a tree of N nodes has N − 1 edges",
+          "tex": "E = N - 1",
+          "note": "every node but the root hangs from its parent by one edge",
+          "ref": "§ 19.4.1, p. 277",
+          "where": [
+            {
+              "tex": "E",
+              "means": "the number of edges (Kanten), the links between two nodes (p. 276)"
+            },
+            {
+              "tex": "N",
+              "means": "the number of nodes (p. 277)"
+            }
+          ]
+        },
+        {
+          "eq": "at most N_I + 1 leaves",
+          "tex": "N_{\\text{leaves}} \\le N_I + 1",
+          "note": "a binary tree with N_I inner nodes; Fig. 19.16 has 5 inner nodes and 6 leaves",
+          "ref": "§ 19.4.2, p. 279",
+          "where": [
+            {
+              "tex": "N_I",
+              "means": "the number of inner nodes, those with a successor (p. 279)"
+            },
+            {
+              "tex": "N_{\\text{leaves}}",
+              "means": "the number of outer nodes or leaves, those without a successor (p. 279)"
+            }
+          ]
+        },
+        {
+          "eq": "comparisons ≈ log₂ N − 1 (found), ≈ log₂ N (not found)",
+          "tex": "C_{\\text{found}} \\approx \\log_2 N - 1, \\qquad C_{\\text{not found}} \\approx \\log_2 N",
+          "note": "mean comparisons in a complete binary tree with evenly spread keys and large N",
+          "ref": "§ 19.4.4.2, pp. 282–283",
+          "where": [
+            {
+              "tex": "C_{\\text{found}}",
+              "means": "mean comparisons of a successful search (p. 282)"
+            },
+            {
+              "tex": "C_{\\text{not found}}",
+              "means": "mean comparisons of an unsuccessful search, which ends at a leaf (p. 283)"
+            },
+            {
+              "tex": "N",
+              "means": "the number of nodes (p. 282)"
+            }
+          ]
+        }
+      ],
+      "practice": [
+        {
+          "question": "Insert E I N B E I S P I E L, in this order, into an empty binary search tree (Fig. 19.21). How many nodes does a search for N compare?",
+          "source": "Klima and Selberherr (2010), p. 283: N is greater than E, greater than I, then found",
+          "answer": 3,
+          "unit": "",
+          "compute": {
+            "law": "bstSearchLooks",
+            "keys": "EINBEISPIEL",
+            "key": "N"
+          },
+          "solution": "The tree is Fig. 19.18. N > E: go right to I; N > I: go right to N; found. Three nodes: E, I and N."
+        },
+        {
+          "question": "How many levels has a complete binary tree of 11 nodes?",
+          "source": "Klima and Selberherr (2010), p. 280, Fig. 19.16",
+          "answer": 4,
+          "unit": "",
+          "compute": {
+            "law": "completeHeight",
+            "n": 11
+          },
+          "solution": "log₂ 11 ≈ 3.46; its whole part is 3, plus 1 gives 4 levels."
+        }
+      ]
+    },
+    {
+      "id": "hash",
+      "title": "Hash tables: an index from the key",
+      "idea": "A hash function turns a key into an array index 0 … N − 1, so a search goes straight to one cell. Keys that collide share a list in that cell (separate chaining). Searching then costs a few comparisons along one short list, as long as the array is long enough and the keys spread evenly.",
+      "law": "i = code mod N",
+      "lawTex": "i = \\text{code} \\bmod N",
+      "lawWhere": [
+        {
+          "tex": "i",
+          "means": "the index of the array cell the key belongs to, 0 … N − 1 (p. 297)"
+        },
+        {
+          "tex": "\\text{code}",
+          "means": "a number the hash function works out from the key (p. 297)"
+        },
+        {
+          "tex": "\\bmod",
+          "means": "the modulo operator %: the remainder of the integer division (p. 297, footnote 10)"
+        },
+        {
+          "tex": "N",
+          "means": "the length of the array; best a prime (p. 297)"
+        }
+      ],
+      "lecture": "Klima and Selberherr (2010), § 19.6, pp. 293–300",
+      "equations": [
+        {
+          "eq": "index = (64 · index + text[i]) % N, over at most 20 letters",
+          "tex": "\\text{index} \\leftarrow (64 \\cdot \\text{index} + \\text{text}[i]) \\bmod N",
+          "note": "the book's hash function for strings, from index = 0; its faster form takes the modulo only at the end (p. 298)",
+          "ref": "§ 19.6.1, p. 297",
+          "where": [
+            {
+              "tex": "\\text{index}",
+              "means": "the index being built up, 0 at the start (p. 297)"
+            },
+            {
+              "tex": "\\text{text}[i]",
+              "means": "the ASCII code of the i-th letter of the key (p. 297)"
+            },
+            {
+              "tex": "\\bmod",
+              "means": "the remainder of the integer division, C's % (p. 297)"
+            },
+            {
+              "tex": "N",
+              "means": "the length of the array, FELD_LEN in the code (p. 298)"
+            },
+            {
+              "tex": "\\leftarrow",
+              "means": "assignment, the C statement ="
+            }
+          ]
+        },
+        {
+          "eq": "N ≈ 3M or more",
+          "tex": "N \\gtrsim 3M",
+          "note": "an array at least three times the number of records; never let it fill even to 90 %",
+          "ref": "§ 19.6.1, p. 297; § 19.6.3, p. 300",
+          "where": [
+            {
+              "tex": "N",
+              "means": "the length of the array (p. 297)"
+            },
+            {
+              "tex": "M",
+              "means": "the number of records (p. 297)"
+            }
+          ]
+        },
+        {
+          "eq": "unsuccessful: Σ list lengths / N",
+          "tex": "C_{\\text{not found}} = \\frac{1}{N} \\sum_{i=0}^{N-1} \\ell_i",
+          "note": "for Fig. 19.34(f): 5/11 ≈ 0.45 comparisons",
+          "ref": "§ 19.6.2, p. 299",
+          "where": [
+            {
+              "tex": "C_{\\text{not found}}",
+              "means": "mean comparisons of an unsuccessful search, keys spread evenly (p. 299)"
+            },
+            {
+              "tex": "\\ell_i",
+              "means": "the length of the list in cell i (p. 299)"
+            },
+            {
+              "tex": "N",
+              "means": "the length of the array (p. 299)"
+            }
+          ]
+        },
+        {
+          "eq": "successful: Σ places / M",
+          "tex": "C_{\\text{found}} = \\frac{1}{M} \\sum_{r=1}^{M} p_r",
+          "note": "for Fig. 19.34(f): (1 + 1 + 2 + 3 + 1)/5 = 1.6 comparisons",
+          "ref": "§ 19.6.2, p. 300",
+          "where": [
+            {
+              "tex": "C_{\\text{found}}",
+              "means": "mean comparisons of a successful search, each record sought once (p. 300)"
+            },
+            {
+              "tex": "p_r",
+              "means": "the place of record r in its list, counted from 1 (p. 300)"
+            },
+            {
+              "tex": "M",
+              "means": "the number of records (p. 300)"
+            }
+          ]
+        }
+      ],
+      "practice": [
+        {
+          "question": "Wald, Wiese, Dorf, Bach and Holz are inserted, in this order, into a hash of length 11 with separate chaining (Fig. 19.34). How many comparisons does an unsuccessful search take on average?",
+          "source": "Klima and Selberherr (2010), p. 299",
+          "answer": 0.45,
+          "unit": "",
+          "compute": {
+            "law": "hashUnsuccessful",
+            "n": 11,
+            "words": [
+              "Wald",
+              "Wiese",
+              "Dorf",
+              "Bach",
+              "Holz"
+            ]
+          },
+          "solution": "The lists have lengths 0 0 1 0 0 3 0 0 1 0 0 (Table 19.2: 5, 2, 5, 8, 5). An unsuccessful search reads a whole list: 5/11 ≈ 0.45."
+        },
+        {
+          "question": "In the same hash, how many comparisons does a successful search take on average?",
+          "source": "Klima and Selberherr (2010), p. 300",
+          "answer": 1.6,
+          "unit": "",
+          "compute": {
+            "law": "hashSuccessful",
+            "n": 11,
+            "words": [
+              "Wald",
+              "Wiese",
+              "Dorf",
+              "Bach",
+              "Holz"
+            ]
+          },
+          "solution": "New records go to the head of their list, so list 5 reads Holz, Dorf, Wald. The places are 1 (Wiese), 1 (Bach), 1, 2 and 3: (1 + 1 + 2 + 3 + 1)/5 = 1.6."
         }
       ]
     },

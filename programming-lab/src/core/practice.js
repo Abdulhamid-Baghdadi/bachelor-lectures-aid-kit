@@ -2,6 +2,7 @@
 // trusted.
 import * as A from "./algorithms.js";
 import * as M from "./memory.js";
+import * as S from "./structures.js";
 
 const LAWS = {
   binaryLooks: q => A.binarySearch(q.a, q.value).steps.length,
@@ -10,6 +11,11 @@ const LAWS = {
   heapRootAfter: q => q.keys.reduce((h, k) => A.heapInsert(h, k).heap, [])[0],
   maxFrames: q => Math.max(...M.factorialFrames(q.n).map(e => e.stack.length)),
   roundedBytes: q => Math.ceil(q.n / M.ROUND) * M.ROUND,
+  listPlaceOf: q => { const r = S.listInsert(S.listFrom(q.text), q.element, q.position); return S.listOrder(r.list).indexOf(r.node) + 1; },
+  bstSearchLooks: q => S.bstSearch(S.bstFrom([...q.keys]), q.key).path.length,
+  completeHeight: q => S.completeHeight(q.n),
+  hashUnsuccessful: q => S.hashCosts(q.words.reduce((t, w) => S.hashInsert(t, w).table, S.emptyHash(q.n))).unsuccessful,
+  hashSuccessful: q => S.hashCosts(q.words.reduce((t, w) => S.hashInsert(t, w).table, S.emptyHash(q.n))).successful,
   pointerAddress: q => q.base + q.k * q.size,
 };
 

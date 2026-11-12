@@ -77,3 +77,20 @@ levels (Fig. 18.2, p. 260).
   gives the array of Fig. 19.25; removing S gives Fig. 19.29(b), the left child taken on a tie as the book chose.
 - Stack: factorial ends at 0; the practice answer is now 6 frames (was 5), from Fig. 18.2.
 - 29 Programming tests pass; both labs checked in the browser. Nothing committed.
+
+## 12 Nov 2026: lists, search trees and hashes
+
+You asked for three labs from ch. 19 of Klima and Selberherr (2010), read again from the text layer: lists § 19.2
+(pp. 266–274), trees § 19.4 (pp. 276–286), hashes § 19.6 (pp. 293–300). The book covers hashes, so all three are built.
+- New core file `programming-lab/src/core/structures.js` (the list in an array as in Fig. 19.4, the binary search tree
+  with equal keys to the left, the hash function of p. 297 with separate chaining) and labs `list`, `tree`, `hash`,
+  under a new chapter 19 section. Words, equations with pages and symbol lists, and five practice questions in
+  `data/labs.json`; README, ARCHITECTURE.md, CLAUDE.md and the bibliography say what is new.
+- Tests from the book's own examples (`tests/unit/structures.test.js`): Fig. 19.3, 19.4, 19.6, 19.7 and the call
+  ListeEinfuegen(feld, &kopf, 5, 3); the three orders of Fig. 19.14; Fig. 19.21 building Fig. 19.18; the search for N;
+  deleting M (Fig. 19.22 to 19.23); the height of Fig. 19.16; Table 19.2 (5, 2, 5, 8, 5) and the means 0.45 and 1.6.
+  46 Programming tests pass (29 before).
+- SOURCE-ERRORS.md: one slip (p. 282, a sentence calls level order "preorder") and one notation note (p. 278, "genau
+  zwei Nachfolger").
+- The chapter label now says "Chapter 19" for a single chapter. Checked in the browser: light and dark, 375 px with no
+  sideways scroll, keyboard (Enter in the text boxes inserts). Nothing committed.

@@ -10,7 +10,7 @@ import { labs } from "./labs/index.js";
 const main = document.querySelector("main");
 
 /** "Chapters 13, 18, 19": the labs follow the chapters of Klima and Selberherr (2010); the comparison has none. */
-const chapterOf = lecture => lecture.number === "—" ? "Beyond the course" : `Chapters ${lecture.number}`;
+const chapterOf = lecture => lecture.number === "—" ? "Beyond the course" : `${/,/.test(lecture.number) ? "Chapters" : "Chapter"} ${lecture.number}`;
 
 function fail(message) {
   main.replaceChildren(h("p", { class: "error", role: "alert" }, message));
