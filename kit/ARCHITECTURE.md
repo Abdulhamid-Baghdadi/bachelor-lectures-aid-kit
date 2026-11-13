@@ -7,7 +7,12 @@ architecture.json name its layers, bottom first:
 |---|---|---|---|
 | vendor | `vendor/*.mjs` | nothing | Temml, `vendor/temml.mjs`, imported only by `ui/math.js` |
 | kit-core | `core/**` | nothing | `core/index.js` |
-| kit | `ui/**` | kit-core, vendor | `ui/kit.js`, `ui/chart.js`, `ui/field.js`, `ui/art.js`, `ui/math.js` |
+| kit | `ui/**` | kit-core, vendor | `ui/kit.js`, `ui/chart.js`, `ui/field.js`, `ui/art.js`, `ui/math.js`, `ui/backdrop.js` |
+
+The start page's moving background (`ui/backdrop.js`, copied on 13 Nov 2026 from the Mill and lathe kit): the
+seeded "field" scene, at most 30 frames per second, stopped while the tab is hidden, a pause button (WCAG 2.2.2) and a
+still frame for reduced motion (WCAG 2.3.3). Its tests: `tests/backdrop.test.js`. The start page's course pictures
+are inline SVG drawn with the `.em` classes of `style.css`, coloured by the theme's tokens.
 
 Tests: `node --test "kit/tests/*.test.js"` from the repository root. The layering of each lab, the kit within it, is
 checked by `scripts/check-architecture.js`, run from every lab's `tests/unit/architecture.test.js`.
