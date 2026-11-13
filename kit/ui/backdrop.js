@@ -1,6 +1,7 @@
 // The moving background of the start pages and part overviews: a canvas behind the page, in the theme's own colours.
-// Two scenes. "workshop": CNC toolpaths traced on a machine-table grid, a glowing tool tip, a few sparks where it cuts.
-// "field": particles flowing along the field lines of a few slowly drifting charges. Every random choice comes from a
+// Three scenes, one per kit. "workshop" (Mill and lathe): CNC toolpaths traced on a machine-table grid, a glowing tool
+// tip, a few sparks where it cuts. "field" (Bachelor): particles flowing along the field lines of a few slowly drifting
+// charges. "linkage" (Master): four-bar linkages turning, each coupler point tracing its curve. Every random choice comes from a
 // seeded generator, so the same page draws the same scene on every visit (the user's rule: deterministic).
 // Motion is decoration, so it gives way: none when the reader asks for reduced motion (a still frame instead, WCAG
 // 2.3.3), a pause button (WCAG 2.2.2), no work while the tab is hidden, and at most 30 frames per second.
@@ -66,6 +67,27 @@ export function field(charges, x, y) {
   return [ex, ey];
 }
 
+/** A four-bar linkage at crank angle theta: ground pivots O2 = (0, 0) and O4 = (d, 0), crank a, coupler b, rocker c;
+ *  the coupler point sits ex along the coupler and ey across it, measured from the crank's end. Returns the joints
+ *  { A, B, P } or null where the linkage cannot be assembled. B is the open branch (above the line from A to O4).
+ *  Geometry by definition: B lies on the circle of radius b about A and of radius c about O4. Pure. */
+export function fourBar({ d, a, b, c, ex = 0.5, ey = 0 }, theta) {
+  const A = [a * Math.cos(theta), a * Math.sin(theta)];
+  const dx = d - A[0], dy = -A[1], e = Math.hypot(dx, dy);
+  if (e > b + c || e < Math.abs(b - c) || e === 0) return null;
+  const along = (b * b - c * c + e * e) / (2 * e), h = Math.sqrt(Math.max(0, b * b - along * along));
+  const B = [A[0] + along * dx / e - h * dy / e, A[1] + along * dy / e + h * dx / e];
+  const ux = (B[0] - A[0]) / b, uy = (B[1] - A[1]) / b;
+  return { A, B, P: [A[0] + ex * ux - ey * uy, A[1] + ex * uy + ey * ux] };
+}
+
+/** Whether the crank turns all the way round: Grashof's condition with the crank as the shortest link,
+ *  s + l ≤ p + q. Pure. */
+export function crankRotates({ d, a, b, c }) {
+  const links = [d, a, b, c].sort((x, y) => x - y);
+  return a === links[0] && links[0] + links[3] <= links[1] + links[2];
+}
+
 const css = (el, name) => getComputedStyle(el).getPropertyValue(name).trim();
 
 /** Starts the scene on a fixed canvas behind the page; puts a pause button into `controls` (an element in the header).
@@ -96,10 +118,13 @@ export function startBackdrop({ scene = "workshop", seed = 12, strength = 1, con
 
   // The scenes keep their own state; reset() lays them out again for a new size.
   const rand = rng(seed);
-  let jobs = [], sparks = [], particles = [], charges = [], t = 0;
+  let jobs = [], sparks = [], particles = [], charges = [], linkages = [], t = 0;
   const reset = () => {
     t = 0; sparks = [];
-    if (scene === "workshop") {
+    if (scene === "linkage") {
+      const count = Math.max(2, Math.min(5, Math.round(W * H / 230000)));
+      linkages = Array.from({ length: count }, (_, k) => newLinkage(k, count));
+    } else if (scene === "workshop") {
       const count = Math.max(2, Math.min(5, Math.round(W * H / 260000)));
       jobs = Array.from({ length: count }, (_, k) => newJob(k / count));
     } else {
@@ -114,6 +139,55 @@ export function startBackdrop({ scene = "workshop", seed = 12, strength = 1, con
     return { pts: toolpath(rand, [Math.min(x, W - w - 20), y, w, h]), at: 0, trail: [], fade: 1 };
   };
   const newParticle = () => ({ x: rand() * W, y: rand() * H, trail: [], age: 0, life: 120 + rand() * 160 });
+  // A crank-rocker whose crank turns all the way round (Grashof), placed in its share of the page, drawn upside up.
+  const newLinkage = (k, count) => {
+    let dims;
+    do {
+      dims = { d: 1, a: 0.22 + rand() * 0.18, b: 0.8 + rand() * 0.6, c: 0.6 + rand() * 0.5, ex: 0.2 + rand() * 1.1, ey: (rand() - 0.3) * 1.2 };
+    } while (!crankRotates(dims) || Array.from({ length: 48 }, (_, i) => fourBar(dims, i * Math.PI / 24)).some(q => !q));
+    const size = Math.min(W, H) * (0.24 + rand() * 0.12);
+    const ox = W * (k + 0.1 + rand() * 0.5) / count, oy = H * (0.3 + rand() * 0.55);
+    return { dims, size, ox, oy, theta: rand() * 6.283, speed: (0.012 + rand() * 0.014) * (rand() < 0.5 ? 1 : -1), trail: [] };
+  };
+  // Screen position of a linkage point (y up in the mechanism, down on the screen).
+  const at = (L, [x, y]) => [L.ox + x * L.size, L.oy - y * L.size];
+
+  const stepLinkage = () => {
+    for (const L of linkages) {
+      L.theta += L.speed;
+      const q = fourBar(L.dims, L.theta);
+      if (!q) continue;
+      L.now = q;
+      L.trail.push(at(L, q.P)); if (L.trail.length > 520) L.trail.shift();
+    }
+  };
+  const drawLinkage = () => {
+    for (const L of linkages) {
+      // The coupler curve, older parts fainter.
+      ctx.lineWidth = 2.6; ctx.strokeStyle = colours.accent;
+      for (let k = 1; k < L.trail.length; k++) {
+        ctx.globalAlpha = 0.75 * strength * k / L.trail.length;
+        ctx.beginPath(); ctx.moveTo(...L.trail[k - 1]); ctx.lineTo(...L.trail[k]); ctx.stroke();
+      }
+      if (!L.now) continue;
+      const O2 = at(L, [0, 0]), O4 = at(L, [L.dims.d, 0]), A = at(L, L.now.A), B = at(L, L.now.B), P = at(L, L.now.P);
+      ctx.globalAlpha = 0.5 * strength; ctx.strokeStyle = colours.ink; ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.moveTo(...O2); ctx.lineTo(...A); ctx.lineTo(...B); ctx.lineTo(...O4); ctx.stroke();
+      ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(...A); ctx.lineTo(...P); ctx.lineTo(...B); ctx.stroke();
+      // Ground pivots with their hatching, joints as rings.
+      for (const G of [O2, O4]) {
+        ctx.beginPath(); ctx.moveTo(G[0] - 12, G[1] + 8); ctx.lineTo(G[0] + 12, G[1] + 8); ctx.stroke();
+        for (let i = -10; i <= 6; i += 8) { ctx.beginPath(); ctx.moveTo(G[0] + i, G[1] + 8); ctx.lineTo(G[0] + i - 5, G[1] + 14); ctx.stroke(); }
+      }
+      ctx.fillStyle = colours.bg;
+      for (const J of [O2, O4, A, B]) { ctx.beginPath(); ctx.arc(J[0], J[1], 4.5, 0, 6.283); ctx.fill(); ctx.stroke(); }
+      ctx.globalAlpha = 0.85 * strength;
+      const g = ctx.createRadialGradient(P[0], P[1], 0, P[0], P[1], 14);
+      g.addColorStop(0, colours.accent); g.addColorStop(1, "transparent");
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(P[0], P[1], 14, 0, 6.283); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  };
 
   const stepWorkshop = () => {
     for (let i = 0; i < jobs.length; i++) {
@@ -185,7 +259,8 @@ export function startBackdrop({ scene = "workshop", seed = 12, strength = 1, con
     ctx.globalAlpha = 1;
   };
 
-  const step = scene === "workshop" ? stepWorkshop : stepField, draw = scene === "workshop" ? drawWorkshop : drawField;
+  const step = { workshop: stepWorkshop, field: stepField, linkage: stepLinkage }[scene] ?? stepField;
+  const draw = { workshop: drawWorkshop, field: drawField, linkage: drawLinkage }[scene] ?? drawField;
   const frame = () => { ctx.clearRect(0, 0, W, H); draw(); };
   // A still picture for reduced motion or pause: run the scene ahead without drawing, then draw once.
   const still = () => { for (let k = 0; k < 260; k++) step(); frame(); };
